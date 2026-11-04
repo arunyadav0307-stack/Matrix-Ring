@@ -94,6 +94,215 @@ Proof location for every row of this block is `03_THEOREMS/RING_AND_GALOIS_FOUND
 
 ---
 
+### Rows added by Phase-2 planning (source: `PHASE2_PROPOSAL_v2.md`, commit `1327b26`)
+
+**Read this first.** Phase 2 is **NOT STARTED**. This block registers *planning* items:
+definitions, proposed statements, proof obligations, conjectures, open problems and
+computational tests. **Nothing in this block is a theorem, a proved result, or evidence for
+one.** No Phase-2 computation has been run (CT-0 … CT-6 are all *pending*), the Phase-2
+theorem document `03_THEOREMS/CYCLIC_CODE_STRUCTURE.md` does not exist yet, and no
+Phase-2 result may be cited anywhere.
+
+**IDs.** Items keep the IDs of `PHASE2_PROPOSAL_v2.md` (`D-2.x`, `P-2.x`, `L-2.x`, `C-2.1`,
+`O-2.x`, `CT-x`) so that proposal and register are traceable to each other. Rows for
+Phase-2 **results** (once proved or refuted) will be added as `T-044 …` during execution,
+per v2 §10 deliverable (3).
+
+**Source discipline.** v2 is authoritative; `PHASE2_PROPOSAL.md` (v1, commit `13fa2fa`) is
+**superseded, not deleted** — see `PHASE1_COMPLETION_AND_APPROVAL_GATE.md` §10. v1's
+uniform bound `$\mu_B(W)\le4$` is withdrawn and survives only as **O-2.2**.
+
+#### Phase-2 status vocabulary (added to the Phase-0/1 vocabulary above)
+
+| Status | Meaning |
+|---|---|
+| `PROVED IN PHASE 1` | already proved in `03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md`; the Phase-2 row is a cross-reference, not a new claim |
+| `IMPORTED RESULT` | taken from the literature or from standard algebra, **with a reference** (`E-0xx` below or a citation); the *application* to our rings is still to be written out and checked |
+| `PROPOSED / UNPROVED` | a proof (or a complete proof strategy) exists **only in the proposal**; not transcribed into a theorem file; **may not be cited as a result** |
+| `CONJECTURE` | stated with a derivation/sketch, explicitly unproved; **numerical agreement is not evidence of truth** |
+| `OPEN PROBLEM` | no claim made; recorded so it cannot be silently dropped (decision **D3**) |
+| `COMPUTATIONAL TEST PENDING` | a test is specified but **has not been run**; nothing has been verified |
+| `DEFINITION` (added for completeness) | fixes notation/convention; true by stipulation, carries no truth claim |
+
+**Counts in this block (77 rows, each assigned exactly one primary status):** 10
+`DEFINITION`, 5 `PROVED IN PHASE 1`, 6 `IMPORTED RESULT`, 33 `PROPOSED / UNPROVED`, 3
+`CONJECTURE`, 9 `OPEN PROBLEM`, 11 `COMPUTATIONAL TEST PENDING` (the 9 `CT-` rows plus
+`C-2.1g`, with `C-2.1f` additionally carrying that label), and **1 withdrawn claim**
+(`P-2.5-W`, no status). **0 proved Phase-2 results.**
+
+#### D-2.x — definitions adopted for Phase 2 (`DEFINITION`; v2 §1.2, §3, §4, §6.0)
+
+| ID | Object | Definition / convention | Source | Status |
+|----|--------|------------------------|--------|--------|
+| **D-2.1** | `$\rho_a,\lambda_a$` | coordinate-wise right / left actions on `$R^n$` | v2 §1.2 = RGF §5.6.1 | `DEFINITION` |
+| **D-2.2** | `$T$` | `$(Tx)_e := x_{e-1\ \mathrm{mod}\ n}$` (Phase-1 direction, Cor. 6.4) | v2 §1.2 | `DEFINITION` (matches T-033) |
+| **D-2.3** | `$\mathrm{rev}$` | `$\mathrm{rev}(x)_e := x_{-e}$` on `$R^n$`; `$\mathrm{rev}(\sum u_eX^e):=\sum u_{-e}X^e$` on `$R_n$` | v2 §1.2, P-2.1f | `DEFINITION` |
+| **D-2.4** | `$\mu_B(W)$`, `$\mu_S(I)$` | minimal number of `$B$`- resp. right-ideal generators; `$\mu(0)=0$`; principal `$\iff\mu\le1$` | v2 §3 | `DEFINITION` |
+| **D-2.5** | `$\mathrm{ann}_r,\mathrm{ann}_l$` | `$\mathrm{ann}_r(v)=\{w:vw=0\}$` (`$v$` on the left); `$\mathrm{ann}_l(v)=\{w:wv=0\}$` | v2 §6.0 | `DEFINITION` |
+| **D-2.6** | `$B_j,m_j,K_j$` | `$n=p^vn'$` with `$\gcd(n',p)=1$`; `$X^{n'}-1=\prod f_j$`; `$B_j=A_t[X]/\langle F_j^{p^v}\rangle$`, `$m_j=(u,F_j)$`, `$K_j=\mathbb F_{q^{d_j}}$` | v2 §4 | `DEFINITION` |
+| **D-2.7** | case names | **squarefree** `$p\nmid n$`; **repeated-root** `$p\mid n,t=1$`; **wild** `$p\mid n,t\ge2$` | v2 §4 | `DEFINITION` |
+| **D-2.8** | `$N(t,Q)$` | number of `$S$`-submodules of `$S^2$`, `$S=\mathbb F_Q[u]/\langle u^t\rangle$` | v2 §7 | `DEFINITION` |
+| **D-2.9** | commutation convention | "$R$-linearity" = the scalar is untouched; "$\theta_s$-compatibility" = commutation `$T\theta_s=\theta_sT$`; "intertwining" = `$\theta_s\rho_a=\lambda_{\theta_s(a)}\theta_s$` | v2 §1.3 | `DEFINITION` |
+
+#### P-2.1 — the shift and the commutation table (v2 §1.3, §2)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **L-2.1.1** | `$X$` is central in `$R_n$` (so left = right multiplication by `$X$`) | — | RGF §3 Lemma 3.1 | T-004 | **`PROVED IN PHASE 1`** (= T-033) | CT-0 re-checks it | CCS §2 |
+| **P-2.1a** | `$T$` is **right** `$R$`-linear: `$T(x\cdot a)=(Tx)\cdot a$` | — | RGF §3 Lemma 3.2 | L-2.1.1 | **`PROVED IN PHASE 1`** (= T-033); v2 §2 adds a coordinate-level proof | CT-0 | CCS §2 |
+| **P-2.1b** | `$T$` is **left** `$R$`-linear: `$T(a\cdot x)=a\cdot(Tx)$` | — | v2 §2 (coordinate proof only) | P-2.1a | **`PROPOSED / UNPROVED`** (new: T-033 proves only the right side) | CT-0 | CCS §2 |
+| **P-2.1c** | `$T\sigma_k=\sigma_kT$`, `$T\theta_s=\theta_sT$` (commutation of `$F_p$`-linear maps) | — | v2 §2 | — | **`PROPOSED / UNPROVED`**; not to be confused with Lemma 5.6a(5) `$B_s(x,Ty)=B_s(T^{-1}x,y)$` | CT-0 | CCS §2 |
+| **P-2.1d** | `$\sigma_k$` preserves the side | — | v2 §2 | T-002 | **`PROPOSED / UNPROVED`** | CT-0 | CCS §2 |
+| **P-2.1e** | `$\theta_s$` **swaps** the side: `$\theta_s\rho_a=\lambda_{\theta_s(a)}\theta_s$` | — | v2 §2 (cross-checked against `$\theta_s^2=\sigma_{2s}$`) | T-002, T-034 | **`PROPOSED / UNPROVED`** | CT-0 | CCS §2 |
+| **P-2.1f** | `$\mathrm{rev}$`: (i) `$F_q$`-linear, `$\mathrm{rev}^2=\mathrm{id}$`, `$\mathrm{rev}\,T=T^{-1}\mathrm{rev}$`; (ii) commutes with `$\rho_a,\sigma_k,\theta_s$`; (iii) is a ring **automorphism** of `$R_n$`; (iv) `$\mathrm{rev}(\mathrm{ann}_r(v))=\mathrm{ann}_r(\mathrm{rev}\,v)$` | — | v2 §2 | L-2.1.1 | **`PROPOSED / UNPROVED`**; (iii) **corrects v1**, which treated `$\mathrm{rev}$` as an anti-automorphism | CT-0 (`$\mathrm{rev}(uv)=\mathrm{rev}(u)\mathrm{rev}(v)$`) | CCS §2 |
+| **P-2.1g** | `$T$` = right **and** left multiplication by `$X$`; `$T^n=\mathrm{id}$`; `$T$` is a Hamming isometry | `$X$` central | RGF §3 Lemma 3.2 | L-2.1.1 | **`PROVED IN PHASE 1`** (= T-033) | CT-0 | CCS §2 |
+| **TBL-2.1** | the commutation table of v2 §1.3 (which maps commute, under which convention, with which linearity type) | — | v2 §1.3, proofs in §2 | P-2.1a–g | **`PROPOSED / UNPROVED`** as a package | CT-0 | CCS §2 |
+
+#### P-2.3 — generator numbers (v2 §3)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **P-2.3(1)** | `$W\mapsto I_W=\{M:\mathrm{im}\,M\subseteq W\}$` is a bijection `$B$`-submodules of `$B^2$` → right ideals of `$S=M_2(B)$`; `$I_W\cong W\oplus W$`; `$\dim I_W=2\dim W$`, `$\lvert I_W\rvert=\lvert W\rvert^2$` | `$B$` commutative; column convention | bijection and `$\mathrm{Hom}$` description: standard Morita; dimension part proved in RGF §2 Prop. 2.6 / Cor. 2.7 | T-005, E-005 | **`IMPORTED RESULT`** (Morita; T-005) — **the dimension/count part is `PROVED IN PHASE 1` (T-032)**; column-convention write-out pending | CT-1a (small rings) | CCS §3 |
+| **L-2.3.1** | `$I_W$` is a right ideal and `$W(I_W)=W$` | — | v2 §3 (strategy only) | P-2.3(1) | **`PROPOSED / UNPROVED`** | CT-1a | CCS §3 |
+| **P-2.3(2)** | `$\mu_S(I_W)=\lceil\mu_B(W)/2\rceil$` | `$B$` commutative finite | v2 §3, **via L-2.3a + L-2.3b + L-2.3c** | L-2.3a–c, L-2.3.1 | **`PROPOSED / UNPROVED`** — retaining this status is mandatory; it does **not** follow from projectivity alone | CT-1a (exhaustive, three rings) | CCS §3 |
+| **L-2.3a** | `$\sum_i x_iS=I_{W'}$` with `$W'=\sum_i\mathrm{im}(x_i)$` (uses **only** freeness/projectivity of `$B^2$`) | `$P=B^2$` projective | v2 §3 | — | **`PROPOSED / UNPROVED`** | CT-1a | CCS §3 |
+| **L-2.3b** | `$\min\{k: W=\sum_i U_i,\ \mu_B(U_i)\le2\}=\lceil\mu_B(W)/2\rceil$` (counting) | — | v2 §3 | — | **`PROPOSED / UNPROVED`** | CT-1a | CCS §3 |
+| **L-2.3c** | any `$\le2$`-generated submodule of `$B^2$` is `$\mathrm{im}(x)$` for one `$x\in S$` | — | v2 §3 | — | **`PROPOSED / UNPROVED`** | CT-1a | CCS §3 |
+| **P-2.3(3)** | `$I_W$` two-sided `$\iff W=J\oplus J$` for an ideal `$J\trianglelefteq B$` | `$B$` commutative | standard Morita | E-003, T-031 (`$n=1$` case: `$t+1$` ideals `$u^iR$`) | **`IMPORTED RESULT`** (E-003) | — | CCS §3 |
+
+#### P-2.4 — CRT / Hensel with precise hypotheses (v2 §4)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **P-2.4** | (1) Hensel lifts `$f_j$` to `$F_j\in A_t[X]$`; (2) `$B\cong\prod_j B_j$`, `$B_j=A_t[X]/\langle F_j^{p^v}\rangle$`; (3) `$B_j$` local with `$m_j=(u,F_j)$`, residue `$K_j$`, `$\dim_{\mathbb F_q}B_j=t\,d_jp^v$`; (4) `$\mu_B(W)=\max_j\mu_{B_j}(W_j)$` | `$n=p^vn'$`, `$\gcd(n',p)=1$`; Hensel applied to the **squarefree part only** | v2 §4 | L-2.4.1–L-2.4.5 | **`PROPOSED / UNPROVED`** (parts 1–2 are imported; the ring-theoretic description 3–4 is the content to be proved) | CT-2 | CCS §4 |
+| **L-2.4.1** | Hensel lift of the coprime factorisation `$X^{n'}-1=\prod f_j$` (repeated factor obtained as `$F_j^{p^v}$`, **never lifted directly**) | `$A_t$` finite local, hence `$(u)$`-adically complete; `$f_j$` pairwise coprime monic | standard Hensel | E-012 | **`IMPORTED RESULT`** (E-012); the discipline "squarefree part only" is a **proposed** application rule | CT-2 | CCS §4 |
+| **L-2.4.2** | CRT for the pairwise comaximal ideals `$\langle F_j^{p^v}\rangle$` | — | standard CRT | E-011 | **`IMPORTED RESULT`** (E-011) | CT-2 | CCS §4 |
+| **L-2.4.3** | `$B_j$` is local, `$m_j=(u,F_j)$` nilpotent, `$B_j/m_j\cong K_j$` | — | v2 §4 | L-2.4.1, L-2.4.2 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §4 |
+| **L-2.4.4** | `$\dim_{\mathbb F_q}B_j=t\,d_jp^v$` (normal form `$\sum_{a<t,b<d_jp^v}c_{ab}u^aX^b$`) | — | v2 §4 | L-2.4.3 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §4 |
+| **L-2.4.5** | `$\mu_B(W)=\max_j\mu_{B_j}(W_j)$` across CRT components | — | v2 §4 | L-2.4.2 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §4 |
+| **L-2.4.6** | **Wild case is genuinely non-chain:** `$t\ge2$` and `$p^v\ge2$` `$\Rightarrow\dim_{K_j}(m_j/m_j^2)=2$`, so `$m_j$` is not principal and `$B_j$` is not a chain ring | `$p\mid n$`, `$t\ge2$` | v2 §4 (strategy) | L-2.4.3 | **`PROPOSED / UNPROVED`** — load-bearing for P-2.6 and for the "no SNF in the wild case" warning | CT-2 (`$\dim_{K_j}(m_j/m_j^2)$` must be `$1$` or `$2$` exactly as predicted) | CCS §4 |
+| **CASE-2.4** | Three-case table: squarefree `$p\nmid n$` (chain ring, nilpotency `$t$`); repeated-root `$t=1$` (chain ring, nilpotency `$p^v$`); **wild** `$p\mid n,t\ge2$` (local, **not** chain: no SNF, no shape classification, no product-of-chain-ring counts) | D-2.7 | v2 §4 | L-2.4.6 | `DEFINITION` of the cases + **`PROPOSED / UNPROVED`** classification | CT-2, CT-5 | CCS §4 |
+
+#### P-2.5 / P-2.6 — principality: individual criterion and global claim (v2 §5)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **P-2.5** | (a) `$\mu_S(I_W)=\lceil\mu_B(W)/2\rceil$`; (b) `$I_W$` principal `$\iff\mu_B(W)\le2$`; (c) `$I_W$` is `$2$`-generated whenever `$\mu_B(W)\le4$` | `$B$` commutative finite | v2 §5.1 | L-2.3.1, L-2.3a–c | **`PROPOSED / UNPROVED`** ((c) is a conditional corollary of (a)) | CT-1a, CT-1 | CCS §5 |
+| **P-2.5-W** | **Withdrawn (v1):** the uniform bound "$\mu_B(W)\le4$ for every `$W$`" | — | withdrawn in v2 §5.1 | — | **not a claim**; retained as **O-2.2** (`OPEN PROBLEM`) | — | — |
+| **P-2.6** | **Global:** every right ideal of `$R_n$` is principal `$\iff p\nmid n$` or `$t=1$` | D-2.7 | v2 §5.2 | L-2.6.1 … L-2.6.8 | **`PROPOSED / UNPROVED`** — retaining this status is mandatory (it is the sharp form of T-021, which stays open) | CT-1 (incl. the explicit `$M_2(m_j)$` test) | CCS §5 |
+| **L-2.6.1** | every right ideal of `$R_n$` is `$I_W$` for a unique `$W$` (Morita onto) | — | standard Morita | T-005, E-005 | **`IMPORTED RESULT`** (T-005/E-005); column-convention write-out pending | CT-1 | CCS §5 |
+| **L-2.6.2** | CRT/Hensel decomposition with the case analysis | D-2.7 | = P-2.4 | L-2.4.1–L-2.4.6 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §5 |
+| **L-2.6.3** | `$B_j$` is a chain ring `$\iff t=1$` or `$p\nmid n$` | — | v2 §5.2 | L-2.4.6 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §5 |
+| **L-2.6.4** | over a finite chain ring `$S$`, every submodule of `$S^2$` is `$\cong u^aS\oplus u^bS$`, hence `$2$`-generated (Smith normal form; in a chain ring one of any two elements divides the other) | `$B_j$` a chain ring | v2 §5.2 (strategy); background E-015 | L-2.6.3 | **`PROPOSED / UNPROVED`** — may be upgraded to `IMPORTED RESULT` only if E-015 is verified against the source | CT-1, CT-3 | CCS §5 |
+| **L-2.6.5** | `$\mu_B(W)=\max_j\mu_{B_j}(W_j)$` and `$\mu_{B_j}(W_j)=\dim_{K_j}(W_j/m_jW_j)$` (Nakayama) | `$B_j$` local | v2 §5.2; background E-014 | L-2.4.3 | **`PROPOSED / UNPROVED`** | CT-1 | CCS §5 |
+| **L-2.6.6** | `$\dim_{K_j}(m_j/m_j^2)=2\iff(t\ge2$` and `$p\mid n)$`, else `$1$` | — | = L-2.4.6 | L-2.4.6 | **`PROPOSED / UNPROVED`** | CT-2 | CCS §5 |
+| **L-2.6.7** | `$p\nmid n$` or `$t=1\Rightarrow$` every `$W_j$` is `$2$`-generated `$\Rightarrow\mu_B(W)\le2\Rightarrow$` every `$I_W$` principal (the `$\Leftarrow$` direction of P-2.6) | — | v2 §5.2 | L-2.6.2–L-2.6.5, P-2.5 | **`PROPOSED / UNPROVED`** | CT-1 | CCS §5 |
+| **L-2.6.8** | converse: `$p\mid n,t\ge2\Rightarrow W=m_j\oplus m_j$` has `$\mu_B(W)=4\Rightarrow I_W=M_2(m_j)$` has `$\mu_S=2$`, so **not** principal (the `$\Rightarrow$` direction of P-2.6) | — | v2 §5.2 | L-2.6.5, L-2.6.6 | **`PROPOSED / UNPROVED`**; the predicted counterexample is **unverified** | CT-1 at `$(4,2,2)$` | CCS §5 |
+| **BC-2.6** | Boundary-case predictions: `$n=1$` all principal (Phase 1 counted `$7/12/11/33$` ideals but **never tested principality**); `$t=1,p\nmid n$` all principal; `$t=1,p\mid n$` all principal (new: `$33$` at `$(4,1,2)$` is consistent but untested); `$t\ge2,p\nmid n$` all principal (new); `$t\ge2,p\mid n$` **not** all principal (new, explicit `$M_2(m_j)$`) | — | v2 §5.2 | L-2.6.1–L-2.6.8 | **`PROPOSED / UNPROVED`** predictions; each entry is `COMPUTATIONAL TEST PENDING` | CT-1 | CCS §5 |
+
+#### P-2.7 / P-2.8 — dual and annihilator (v2 §6)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **L-6.1** | `$\theta_s$` is an **anti-automorphism of `$R_n$`** (`$\theta_s(uv)=\theta_s(v)\theta_s(u)$`, `$\theta_s^{-1}=\sigma_{-2s}\theta_s$`) | `$n\ge1$` | v2 §6.1 (proof via the index swap `$(a,b)\mapsto(b,a)$`) | T-002, T-034 | **`PROPOSED / UNPROVED`** — **retaining this status is mandatory**; Phase 1 proves it only for `$n=1$` (`$R$`, T-002/T-034) | CT-0 (`$n=2,3$`) | CCS §6 |
+| **P-2.7** | `$C^{\perp_s}=\mathrm{rev}\big(\mathrm{ann}_r^{R_n}(\theta_s(g))\big)=\mathrm{ann}_r^{R_n}(\theta_s(\mathrm{rev}\,g))=\{y:\theta_s(g)\cdot\mathrm{rev}(y)=0\}$`; in Morita form `$\mathrm{ann}_r(\theta_s(g))=I_{\ker\theta_s(g)}$`, so `$\dim C^{\perp_s}=2\dim\ker\theta_s(g)$` | `$C=gR_n$` **principal**; `$s$` arbitrary | v2 §6.3 (six-step derivation) | L-6.1, T-037 (non-degeneracy / right radical trivial), D-2.3, D-2.5 | **`PROPOSED / UNPROVED`** — retaining this status is mandatory | CT-4 (incl. a mandatory `$\mathrm{rev}$`-sensitive case) | CCS §6 |
+| **P-2.8** | explicit generator: with `$v=\theta_s(\mathrm{rev}\,g)$` and `$v_j=U_j\,\mathrm{diag}(\omega^{a_j},\omega^{b_j})\,V_j$` in SNF over the chain ring `$B_j$`, `$C^{\perp_s}=hR_n$` with `$h_j=V_j^{-1}\mathrm{diag}(\omega^{\ell_j-a_j},\omega^{\ell_j-b_j})$` | `$B$` a product of **chain rings** (`$p\nmid n$` or `$t=1$`) | v2 §6.6 | P-2.7, L-2.6.4 | **`PROPOSED / UNPROVED`**; gives **nothing** in the wild case (see O-2.8) | CT-4 | CCS §6 |
+| **L-6.5** | for `$x\in M_m(B)$`, `$B$` finite Frobenius: the row module and the column module of `$x$` have equal cardinality (so `$\lvert gR_n\rvert=\lvert R_ng\rvert$`) | `$B$` Frobenius | v2 §6.5 (strategy via `$\mathrm{im}(x)^\perp=\ker(x^{\mathsf T})$`) | L-6.6 | **`PROPOSED / UNPROVED`** | CT-4 (check `$\lvert gR_n\rvert=\lvert R_ng\rvert$`) | CCS §6 |
+| **L-6.6** | `$B=A_t[X]/\langle h\rangle$` (`$h$` monic) is Frobenius; `$M_2(B)$` is Frobenius | — | v2 §6.5 (strategy); background E-013 | T-001, E-001 | **`IMPORTED RESULT`** (E-013) **conditional on verifying the reference**; if no source can be verified it reverts to `PROPOSED / UNPROVED` | CT-4 | CCS §6 |
+| **CHK-2.7** | Consistency checks C1–C4: sizes (`$\lvert C^{\perp_s}\rvert=\lvert R_n\rvert/\lvert R_ng\rvert$`), `$n=1$` degeneration, extremes `$g=0,1$`, right-ideal property of `$\mathrm{rev}(\mathrm{ann}_r(v))$` | — | v2 §6.5 | P-2.7, L-6.5 | **`PROPOSED / UNPROVED`** (each check is itself a falsification opportunity) | CT-4 | CCS §6 |
+| **NOTE-6.5** | **Registration note (not a change to v2).** The identity `$\lvert\mathrm{ann}_r(v)\rvert\cdot\lvert vS\rvert=\lvert S\rvert$` used in v2 §6.5 (C1) is **elementary** for every finite ring (`$m\mapsto vm$` is right `$S$`-linear with kernel `$\mathrm{ann}_r(v)$` and image `$vS$`); the Frobenius hypothesis is needed for **L-6.5**, not for this identity. To be re-examined when §6.5 is transcribed | — | this row | — | `DEFINITION` (clarification of attribution) | — | CCS §6 |
+
+#### C-2.1 — submodule counts over a chain ring (v2 §7)
+
+| ID | Statement | Assumptions | Proof / file | Dependencies | Status | Tests / falsification | Target § |
+|----|-----------|-------------|--------------|--------------|--------|-----------------------|----------|
+| **C-2.1a** | `$N(1,Q)=Q+3$` | `$t=1$` | RGF §2 Cor. 2.7 | T-032 | **`PROVED IN PHASE 1`** (T-032; verified `$7,12,11$` at `$Q=4,9,8$`) | — | CCS §7 |
+| **C-2.1b** | `$N(2,Q)=Q^2+3Q+5$` | `$t=2$` | RGF §2 Cor. 2.7 | T-032 | **`PROVED IN PHASE 1`** (T-032; verified `$33$` at `$Q=4$`) | — | CCS §7 |
+| **C-2.1c** | shape classification: every `$S$`-submodule of `$S^2$` is `$\cong u^aS\oplus u^bS$`, `$0\le a\le b\le t$` | `$S$` a finite chain ring | v2 §7; = L-2.6.4 | L-2.6.4 | **`PROPOSED / UNPROVED`** (the SNF existence part) | CT-3 | CCS §7 |
+| **C-2.1d** | number of submodules of shape `$(a,b)$` is `$Q^{\,b-a-1}(Q+1)$` for `$a<b$`, and `$1$` for `$a=b$` | C-2.1c | v2 §7 | C-2.1c | **`CONJECTURE`** (the genuinely open part: it requires counting the cosets/orbits parametrising the embeddings) | CT-3 | CCS §7 |
+| **C-2.1e** | closed form `$N(t,Q)=(t+1)+(Q+1)\sum_{d=1}^{t}(t+1-d)Q^{\,d-1}$` | C-2.1c + C-2.1d | v2 §7 | C-2.1d | **`CONJECTURE`** for `$t\ge3$`; for `$t=1,2$` it reduces to C-2.1a/C-2.1b (`PROVED IN PHASE 1`) | CT-3 | CCS §7 |
+| **C-2.1f** | predicted values `$N(3,2)=37$`, `$N(3,4)=139$`, `$N(3,9)=1024$`, `$N(4,2)=83$` | — | arithmetic from C-2.1e | C-2.1e | **`CONJECTURE`** + **`COMPUTATIONAL TEST PENDING`** (CT-3). These are predictions, **not** computed values | CT-3 | CCS §7 |
+| **C-2.1g** | census predictions from **proved** formulas that have **not been run**: `$113$` codes at `$(9,2,1)$` (from C-2.1b) and `$35\,937=33^3$` at `$(4,2,3)$` (from C-2.1b **plus** the `$t\ge2$` product decomposition, which is `PROPOSED`) | — | v2 §5.2, §9 | C-2.1b, P-2.4 | **`COMPUTATIONAL TEST PENDING`** — not known values; the `$(4,2,3)$` figure is **not** a Phase-1 result | CT-1, CT-3 | CCS §7 |
+
+**Mandatory recording rule for C-2.1 (decision C-2.1 rule).** When CT-3 is run, the register
+row must state **which `$(t,Q)$` values were actually checked**, by which of the three routes
+(BFS lattice / brute-force over `$\mathbb F_Q$`-subspaces / closed form), and with which
+`[EXH]`/`[SMP]` label. "They matched" is not an acceptable register entry. Agreement of the
+enumeration with the closed form is **evidence, not proof**.
+
+#### O-2.x — open problems carried into Phase 2 (v2 §8)
+
+| ID | Problem | Status | Test |
+|----|---------|--------|------|
+| **O-2.1** | Principality boundary (P-2.6), incl. the predicted counterexample `$M_2(m)$` at `$(4,2,2)$` | `OPEN PROBLEM` | CT-1 |
+| **O-2.2** | Wild case: classify `$B_j$`-submodules of `$B_j^2$`; decide whether `$\mu_B(W)\le4$` always (i.e. every right ideal `$2$`-generated). **The v1 claim of this bound is withdrawn** | `OPEN PROBLEM` | CT-1, CT-5 |
+| **O-2.3** | Enumeration at `$t\ge2$`: `$N(t,Q)$` (C-2.1) and the product formula over CRT factors | `OPEN PROBLEM` (closed form part is `CONJECTURE`) | CT-2, CT-3 |
+| **O-2.4** | Explicit generator of the dual (P-2.8) and its failure mode in the wild case | `OPEN PROBLEM` | CT-4 |
+| **O-2.5** | For which `$v$` is `$\ker v$` a direct summand of `$B^2$`? — **not** always (`$v=uI_2$` over `$\mathbb F_4[u]/\langle u^2\rangle$` gives `$\ker v=uS\oplus uS$`, not a summand) | `OPEN PROBLEM` (partially answered: negative in general; classification open) | CT-4 |
+| **O-2.6** | Galois action `$\sigma_s$` on the CRT components (preserves each `$B_j$`, induces Frobenius on `$K_j$`); effect on `$\sigma_{2s}$`-invariance and on the per-code rescue (Thm 7.4) | `OPEN PROBLEM` | CT-6 |
+| **O-2.7** | `$n=1$` anchor: confirm the theory degenerates to the ideal theory of `$M_2(A_t)$` (`$7/12/11/33$` right ideals, all principal) | `OPEN PROBLEM` | CT-1 |
+| **O-2.8** | In the wild case, is `$\mu_B(\ker\theta_s(g))\le2$` for every `$g$` (equivalently, is the dual of every principal code principal)? | `OPEN PROBLEM` | CT-4, CT-5 |
+| **CF-D3** | Carried forward per decision **D3**: T-006 (entry-wise form, uncharacterised), T-021 (resolved by P-2.6 **only if P-2.6 is proved**), T-027 (general `$\tau\in\operatorname{Aut}(A_t)$`), hull formulas (Phase 4), Gray map (Phase 5), quantum (Phase 6, warning B3.5), coverage gaps (`$q=9,n=3$`; `$q=4,t=2,n=2$`), `$n\ge2$` left-submodule gap | `OPEN PROBLEM` (recorded, not resolved) | — |
+
+#### CT-0 … CT-6 — computational test plan (v2 §9). **None of these has been run.**
+
+| ID | Test | Refutes / decides | Status |
+|----|------|-------------------|--------|
+| **CT-0** | P-2.1a–g as vector identities (`[EXH]` where feasible, else `[SMP]` with seed), plus `$\theta_s(uv)=\theta_s(v)\theta_s(u)$` on `$R_n$` for `$n=2,3$` and `$\mathrm{rev}(uv)=\mathrm{rev}(u)\mathrm{rev}(v)$` | P-2.1a–g, L-6.1, P-2.1f(iii) | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-1a** | exhaustive check of `$\mu_S(I_W)=\lceil\mu_B(W)/2\rceil$` on `$\mathbb F_2[u]/\langle u^2\rangle$`, `$\mathbb F_2[u]/\langle u^3\rangle$`, `$\mathbb F_2[u,\varepsilon]/\langle u^2,\varepsilon^2\rangle$` | P-2.3(2), L-2.3a–c, P-2.5 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-1** | principality census over the boundary-case table (`$n=1$`; `$t=1$` with/without `$p\mid n$`; `$t\ge2$` with/without `$p\mid n$`) incl. the explicit `$M_2(m)$` test | P-2.6, BC-2.6, O-2.1, O-2.2, O-2.7 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-2** | CRT/Hensel data: `$J$`, `$d_j$`, `$e=p^v$`, `$\dim_{K_j}(m_j/m_j^2)$`, chain-ring predicate | P-2.4, L-2.4.3–L-2.4.6 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-3** | `$N(t,Q)$` census at `$t\ge2$` with `$p\nmid n$` (three counting routes), compared with C-2.1 | C-2.1c–g, O-2.3 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-4** | P-2.7 / P-2.8 on every principal code at six parameter sets; `$\mathrm{rev}$`-sensitivity search; `$\lvert gR_n\rvert=\lvert R_ng\rvert$` | P-2.7, P-2.8, L-6.5, CHK-2.7, O-2.8 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-5** | wild-case census at `$(4,2,2)$`, `$(4,2,4)$`, `$(9,2,3)$`: submodule counts, `$\mu_B$` distribution, principality | O-2.2, O-2.8 | **`COMPUTATIONAL TEST PENDING`** |
+| **CT-6** | Galois action on CRT components and `$\sigma_{2s}$`-invariant counts | O-2.6 | **`COMPUTATIONAL TEST PENDING`** |
+| **REG-2** | Phase-1 regression: re-run `ring_structure_checks.py` (401/401) and `module_actions_checks.py` (276/276), require byte-identical logs | guards Phase 1 (D1) | **`COMPUTATIONAL TEST PENDING`** |
+
+#### Traceability table — proposed Phase-2 result → obligations → tests → risks
+
+| Proposed result | Status | Proof obligations | Computational tests | Unresolved risks / stop conditions |
+|-----------------|--------|-------------------|---------------------|-----------------------------------|
+| **P-2.1a–g** (shift) | P-2.1a,g,L-2.1.1 `PROVED IN PHASE 1`; P-2.1b–f, TBL-2.1 `PROPOSED / UNPROVED` | L-2.1.1 (= T-033); coordinate proofs v2 §2 | CT-0 | the direction convention for `$T$` (fixed by Cor. 6.4 and `module_actions_checks.py` part B); a wrong convention shows up immediately in CT-0 |
+| **P-2.3** (generator numbers) | `PROPOSED / UNPROVED` (+ `IMPORTED` bijection) | L-2.3.1, L-2.3a, L-2.3b, L-2.3c | CT-1a | L-2.3a uses **only** freeness of `$B^2$`; if it fails the identity fails. Brute-force `$\mu_B$` must itself be validated (Nakayama route vs tuple search) |
+| **P-2.4** (CRT/Hensel) | `PROPOSED / UNPROVED` (+ L-2.4.1, L-2.4.2 `IMPORTED`) | L-2.4.1–L-2.4.6, CASE-2.4 | CT-2 | Hensel must be applied to the **squarefree part only**; in the wild case there is **no** SNF and **no** product-of-chain-ring count — any such step invalidates the argument. Reference for E-012 to be confirmed |
+| **P-2.5** (individual principality) | `PROPOSED / UNPROVED` | L-2.3.1, L-2.3a–c | CT-1a, CT-1 | the withdrawn uniform bound `$\mu_B\le4$` is **not** available (O-2.2); (c) is conditional on (a) |
+| **P-2.6** (global principality) | `PROPOSED / UNPROVED` | L-2.6.1 … L-2.6.8, BC-2.6 | CT-1 | the predicted counterexample `$M_2(m_j)$` at `$(4,2,2)$` is **unverified**; `$n=1$` principality was never tested in Phase 1; T-021 stays open until P-2.6 is proved |
+| **L-6.1** (`$\theta_s$` anti on `$R_n$`) | `PROPOSED / UNPROVED` | — (self-contained) | CT-0 | Phase 1 proves only the `$n=1$` case; must be checked before P-2.7 is used |
+| **P-2.7** (dual / annihilator) | `PROPOSED / UNPROVED` | L-6.1, T-037 non-degeneracy, D-2.3, D-2.5 | CT-4 | the worked example in v2 §6.4 is `$\mathrm{rev}$`-stable and **does not test the reversal**; a `$\mathrm{rev}$`-sensitive case is mandatory; `$\lvert gR_n\rvert=\lvert R_ng\rvert$` (L-6.5) is unproved |
+| **P-2.8** (explicit dual generator) | `PROPOSED / UNPROVED` | P-2.7, L-2.6.4 (SNF), L-6.5, L-6.6 | CT-4 | meaningless in the wild case (no SNF) — see O-2.4/O-2.8; `$\ker v$` need not be a summand (O-2.5) |
+| **C-2.1** (counts) | `$t=1,2$` `PROVED IN PHASE 1`; `$t\ge3$` `CONJECTURE` | C-2.1c (shape classification = L-2.6.4) + C-2.1d (per-shape count) | CT-3 (three routes) | agreement is **not** proof; the register must record which `$(t,Q)$` were checked; the `$35\,937$` figure at `$(4,2,3)$` rests on the unproved `$t\ge2$` product decomposition |
+| **O-2.1 … O-2.8** | `OPEN PROBLEM` | — | CT-1, CT-4, CT-5, CT-6 | carried forward per **D3**; none may be treated as settled until a proof exists and a row says `proved` |
+
+#### Phase-2 dependency graph (planning only)
+
+```
+T-033 (X central, T right-linear) ──► L-2.1.1 ──► P-2.1a,g (PROVED IN PHASE 1)
+                                              └──► P-2.1b–f, TBL-2.1 (PROPOSED) ──► L-6.1 ──► P-2.7
+T-005/E-005 (Morita) ──► P-2.3(1) ──► L-2.3.1 ──┬──► L-2.3a ──► P-2.3(2) ──► P-2.5
+                                                 ├──► L-2.3b ───┘
+                                                 └──► L-2.3c ───┘
+E-012 (Hensel) + E-011 (CRT) ──► P-2.4 ──► L-2.4.3–L-2.4.6 ──► CASE-2.4
+                                        └──► L-2.6.2, L-2.6.3 ──► L-2.6.4 (SNF) ──► L-2.6.5
+                                                                                  └──► L-2.6.7 ──► P-2.6
+                                        └──► L-2.4.6 ──► L-2.6.6 ──► L-2.6.8 ──► P-2.6 (counterexample)
+P-2.7 + L-2.6.4 ──► P-2.8 ;   P-2.7 + L-6.5 + L-6.6 ──► CHK-2.7
+C-2.1c (= L-2.6.4) + C-2.1d ──► C-2.1e ──► C-2.1f ;   C-2.1b + P-2.4 ──► C-2.1g
+CT-0 … CT-6, REG-2 : all pending
+```
+
+#### Phase-2 imported facts (background; not ours to prove)
+
+| ID | Fact | Source |
+|----|------|--------|
+| **E-011** | Chinese remainder theorem for pairwise comaximal ideals | standard (Atiyah & MacDonald, *Introduction to Commutative Algebra*, Ch. 1) |
+| **E-012** | Hensel's lemma for lifting a factorisation into pairwise coprime monic factors over a complete local ring | standard (Atiyah & MacDonald, Ch. 10; Eisenbud, *Commutative Algebra with a View Toward Algebraic Geometry*, §7) — **reference to be confirmed against the source in Phase 2** |
+| **E-013** | A finite free algebra over a Frobenius ring defined by a monic polynomial is Frobenius; the Frobenius property is transitive and Morita-invariant | standard (Wood 1999 = E-001; Lam, *Lectures on Modules and Rings*, GTM 189, §16) — **reference to be confirmed** |
+| **E-014** | Nakayama: for a finite module `$M$` over a local ring `$(B,m,k)$`, elements generate `$M$` iff their images generate `$M/mM$`; hence `$\mu_B(M)=\dim_k(M/mM)$` | standard (Atiyah & MacDonald, Prop. 2.6, Prop. 2.8) |
+| **E-015** | Matrices over a chain ring admit a Smith normal form; submodules of free modules over a chain ring | background literature (McDonald, *Finite Rings with Identity*, Dekker 1974) — **cited as prior art, not as a substitute for the proof L-2.6.4** |
+| **E-017** | For any **finite** ring `$S$` and `$v\in S$`, `$\lvert\mathrm{ann}_r(v)\rvert\cdot\lvert vS\rvert=\lvert S\rvert$` (elementary: `$m\mapsto vm$` is right `$S$`-linear, kernel `$\mathrm{ann}_r(v)$`, image `$vS$`); **no Frobenius hypothesis needed** | elementary — see NOTE-6.5 |
+
+---
+
 ## Imported established facts (not ours to prove)
 
 | ID | Fact | Source |

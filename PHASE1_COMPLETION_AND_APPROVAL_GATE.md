@@ -5,11 +5,15 @@ The researcher acknowledged the handover and recorded four decisions; they are t
 verbatim in **§9**. No Phase-2 work has been started, and no Phase-1 file and no
 mathematical content of Phase 1 has been modified after the final commit `238a174`.
 This document is the handover and decision record only; it introduces no new mathematical
-claim.
+claim. §10 (added 2026-11-04) records which Phase-2 proposal is authoritative and where the
+Phase-2 planning rows live; it likewise introduces no mathematical claim.
 
 **Gate status after the decisions:** Phase 1 is accepted as the foundation for subsequent
-research. Phase 2 remains **not started**: it may begin only after the separate Phase-2
-proposal (`PHASE2_PROPOSAL.md`) is approved. Phase-2 proposal status: **awaiting approval**.
+research. Phase 2 remains **not started**: it may begin only after the **authoritative**
+Phase-2 proposal, **`PHASE2_PROPOSAL_v2.md`** (commit `1327b26`), is approved.
+`PHASE2_PROPOSAL.md` (v1, commit `13fa2fa`) is **superseded, not deleted** — see **§10**.
+Phase-2 proposal status: **v2 accepted as the authoritative planning document for the next
+approval stage (2026-11-04); Phase-2 execution is NOT YET APPROVED.**
 
 ---
 
@@ -157,8 +161,8 @@ Alahmadi et al.'s Theorem 1.
 
 **Phase 1 is complete and frozen, and was approved by the researcher on 2026-11-04** (see §9
 for the four decisions recorded at that time). The gate that remains open is the **Phase-2
-proposal** (`PHASE2_PROPOSAL.md`), which requires separate explicit approval before any
-Phase-2 execution begins.
+proposal** — now **`PHASE2_PROPOSAL_v2.md`** (see **§10**; v1 is superseded, not deleted) —
+which requires separate explicit approval before any Phase-2 execution begins.
 
 Requested sign-off (please reply explicitly with APPROVED or with the changes required):
 
@@ -239,10 +243,68 @@ here in substance. **No mathematical content of Phase 1 was changed by recording
 
 * Phase 1 files are **frozen** except by the same open-correction procedure used for T-042
   (record the error, the correction, and a register row).
-* The next document is `PHASE2_PROPOSAL.md` (scope, definitions, proposed theorems,
-  proof strategies and computational test cases). It contains **no proved results**: every
-  item there is a proposal to be proved or refuted during Phase 2, and it awaits the
-  researcher's explicit approval before any Phase-2 execution begins.
+* The next document was `PHASE2_PROPOSAL.md`; **the authoritative planning document is now
+  `PHASE2_PROPOSAL_v2.md`** (§10). It contains **no proved results**: every item there is a
+  proposal to be proved or refuted during Phase 2, and it awaits the researcher's explicit
+  approval before any Phase-2 execution begins.
 
 **On approval, the next step is the independent review; Phase 2 and the manuscript remain
 un-started and must not begin without a further explicit instruction.**
+
+---
+
+## 10. Phase-2 proposal: v2 is authoritative (v1 superseded, not deleted)
+
+**Recorded 2026-11-04.** This section is documentation and traceability only: it changes no
+mathematical content, no Phase-1 file, and nothing in `PHASE2_PROPOSAL_v2.md` or
+`PHASE2_PROPOSAL.md`.
+
+| Item | Value |
+|---|---|
+| **Authoritative Phase-2 planning document** | `PHASE2_PROPOSAL_v2.md` (785 lines) |
+| Commit that added it | `1327b26` |
+| Status of v2 | **accepted as the authoritative planning document for the next approval stage** |
+| Superseded document | `PHASE2_PROPOSAL.md` (v1), commit `13fa2fa` — **superseded, NOT deleted**; retained for the audit trail |
+| Reason for v2 | v1 was returned with six mandatory mathematical clarification points: (1) coordinate-level proofs of left/right `R`-linearity of the shift, distinguishing `R`-linearity from `θ_s`-compatibility; (2) a precise definition of `μ` and a proof-or-withdrawal of `μ_S(I_W) = ⌈μ_B(W)/2⌉`; (3) separation of the individual principality criterion from the global claim, with all boundary cases; (4) a step-by-step derivation of the dual/annihilator formula; (5) all enumeration values kept explicitly conjectural, with counting method, verification strategy and falsification criteria; (6) precise CRT/Hensel factorisation hypotheses (squarefree / repeated-root / wild). v2 §0 is the change log |
+| **Phase-2 execution** | **NOT YET APPROVED.** No CT-0 … CT-6 test has been run; `03_THEOREMS/CYCLIC_CODE_STRUCTURE.md` does not exist; no manuscript text has been written |
+| Register block | `03_THEOREMS/UPDATED_THEOREM_REGISTER.md`, section **"Rows added by Phase-2 planning"** (77 rows) |
+| Traceability table | same register block, **"Traceability table — proposed Phase-2 result → obligations → tests → risks"** |
+
+### 10.1 What the register block contains
+
+* **10 definitions** (`D-2.1 … D-2.9`, `NOTE-6.5`) — notation only, no truth claim;
+* **5 items already `PROVED IN PHASE 1`** — `L-2.1.1`, `P-2.1a`, `P-2.1g` (centrality of `X`
+  and the shift, = **T-033**), and `C-2.1a`, `C-2.1b` (the counts `N(1,Q) = Q+3` and
+  `N(2,Q) = Q²+3Q+5`, = **T-032**);
+* **6 `IMPORTED RESULT`** rows, each with a reference — `P-2.3(1)` (Morita, T-005 / E-005),
+  `P-2.3(3)` (E-003), `L-2.4.1` (E-012, Hensel), `L-2.4.2` (E-011, CRT), `L-2.6.1`
+  (T-005 / E-005), `L-2.6.6` (E-013, Frobenius, conditional on verifying the reference);
+* **33 `PROPOSED / UNPROVED`** rows, including (statuses retained as required)
+  **`L-6.1`**, **`P-2.3(2)`**, **`P-2.5`**, **`P-2.6`** with `L-2.6.1 … L-2.6.8`,
+  **`P-2.7`**, **`P-2.8`**, `L-2.4.1 … L-2.4.6` and `L-2.3a … L-2.3c`;
+* **3 `CONJECTURE`** rows — `C-2.1d` (number of submodules of a given shape), `C-2.1e` (the
+  closed form for `N(t,Q)`, conjectural for `t ≥ 3`), `C-2.1f` (the predicted values
+  `N(3,2) = 37`, `N(3,4) = 139`, `N(3,9) = 1024`, `N(4,2) = 83`). **Every `t ≥ 3` case of
+  C-2.1 is conjectural**; `t = 1, 2` are Phase-1 results;
+* **9 `OPEN PROBLEM`** rows — `O-2.1 … O-2.8` plus the carried-forward list `CF-D3`
+  (decision **D3**);
+* **11 `COMPUTATIONAL TEST PENDING`** rows — `CT-0`, `CT-1a`, `CT-1`, `CT-2`, `CT-3`,
+  `CT-4`, `CT-5`, `CT-6`, `REG-2` (Phase-1 regression), the not-yet-run census `C-2.1g`,
+  and `C-2.1f` (dual-labelled `CONJECTURE` + test pending);
+* **1 withdrawn claim** — `P-2.5-W`, v1's uniform bound `μ_B(W) ≤ 4`, recorded with no
+  status and carried as **O-2.2**.
+
+**No Phase-2 result is recorded as proved.** Row IDs are those of v2; rows for Phase-2
+*results* will be added as `T-044 …` only when Phase 2 is executed and something is proved
+or refuted (v2 §10, deliverable 3).
+
+### 10.2 Standing constraints for the next stage
+
+1. Phase-2 execution begins only on explicit approval; until then no CT test is run, no
+   `CYCLIC_CODE_STRUCTURE.md` is created, no manuscript text is written.
+2. Phase-1 files, commits, scripts, logs and the audit package stay byte-for-byte
+   unchanged; the register is extended **by insertion only** (no Phase-1 row is edited).
+3. `PHASE2_PROPOSAL_v2.md` and `PHASE2_PROPOSAL.md` are not modified by this section; v1's
+   withdrawn uniform bound `μ_B(W) ≤ 4` survives only as open problem **O-2.2**.
+4. T-042 stays `needs correction` and may be cited only as "withdrawn / corrected" (**D2**);
+   every unresolved issue of §5 is carried forward per **D3**.
