@@ -1,5 +1,5 @@
 t = 2 CHECK  (q = 4, A = F_4[u]/<u^2>, R = M_2(A), n = 1, s = 1)
-run: 2026-11-04 06:39:06
+run: 2026-11-04 08:08:23
 
 q = 4, t = 2, m = 2, n = 1 ; N = dim_{F_q} R^n = 8 ; |R^n| = 65536
 
@@ -15,16 +15,16 @@ q = 4, t = 2, m = 2, n = 1 ; N = dim_{F_q} R^n = 8 ; |R^n| = 65536
    Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_4[u]/<u^2>): rank 8 / 8
    Lambda(XY) = Lambda(YX) for all pairs: True
 -- enumeration of the cyclic codes (right ideals of R) --
-   #A-submodules of A^2 = 32  (= #right ideals of M_2(A))
-   F_q-dimension distribution (dim W : #) : [(1, 5), (2, 21), (3, 5), (4, 1)]
-   #right ideals = 32 ; F_q-dim distribution : [(2, 5), (4, 21), (6, 5), (8, 1)]
--- per-code checks, s = 1 (all 32 codes) --
-      C right R-submodule ................ 32/32
-      C^{perp_s} right R-submodule ....... 32/32
-      |C|.|C^{perp_s}| = |R|^n ........... 32/32
-      Hull_s(C) right R-submodule ........ 32/32
-      (C^{perp_s})^{perp_s} = sigma_{2s}(C) 32/32
-      (C^{perp_s})^{perp_s} = C .......... 32/32
-      PLAIN dual: right module 32/32 ; left module 32/32 ; size formula 2/32
+   #A-submodules of A^2 = 33  (= #right ideals of M_2(A))
+   F_q-dimension distribution (dim W : #) : [(0, 1), (1, 5), (2, 21), (3, 5), (4, 1)]
+   #right ideals = 33 ; F_q-dim distribution : [(0, 1), (2, 5), (4, 21), (6, 5), (8, 1)]
+-- per-code checks, s = 1 (all 33 codes) --
+      C right R-submodule ................ 33/33
+      C^{perp_s} right R-submodule ....... 33/33
+      |C|.|C^{perp_s}| = |R|^n ........... 33/33
+      Hull_s(C) right R-submodule ........ 33/33
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C) 33/33
+      (C^{perp_s})^{perp_s} = C .......... 33/33
+      PLAIN dual: right module 33/33 ; left module 33/33 ; size formula 3/33
 
-   [elapsed 1.0 s]
+   [elapsed 0.7 s]

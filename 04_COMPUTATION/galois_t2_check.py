@@ -126,6 +126,9 @@ def main():
             out.extend(comp)
         return tuple(out)
 
+    # the ZERO submodule must be seeded explicitly (it is a right ideal too);
+    # without it the count comes out one short (32 instead of 33).
+    seen = {tuple(): []}
     for v in vecs:
         if not any(flat(v)):
             continue
