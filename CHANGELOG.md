@@ -120,3 +120,55 @@ Matrix-Ring/
   U5 principality for $t\ge2$; U6 Gray map; U7 hull-dimension formulas;
   **U8 A1 convention question (adjudication requested)**;
   **U9 is reflexivity required? (adjudication requested)**; U10 $t=2$ only at $n=1$.
+
+---
+
+## Phase 1 — final verification, supplementary conventions and audit package
+*(2026-11-04, branch `arena/59de606f-matrix-ring`)*
+
+### Added
+* **`03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md` §5.6** — "Left and right actions: complete
+  conventions" (Task-C clarification). Documents, with side and coordinate formula, the four
+  actions on `R = M_2(A_t)` (A1 right/columns, A2 left/rows, A3 `σ_k`, A4 `θ_s`), the
+  actions on `R_n` and on code coordinates (B1 right `R`-action, B2 left `R`-action,
+  B3 `X` = shift `T`, B4 `σ_k`, B5 `θ_s`), Morita in **both** handednesses, and:
+  * **Lemma 5.6a** — the five pairing/action identities, e.g.
+    `B_s(a·x, y) = B_s(x, θ_s(a)·y)` and `B_s(x, a·y) = B_s(θ_s^{-1}(a)·x, y)`;
+  * **Lemma 5.6b** — for an **arbitrary** subset both orthogonals are right `R`-submodules
+    (this strengthens Lemma 5.5, whose hypothesis is unnecessary); if the subset is a left
+    `R`-submodule, both orthogonals are left submodules too (hence subbimodules);
+  * **Remark 5.6c** — at `n = 1` the orthogonal of a left ideal is two-sided, i.e. one of
+    the `t+1` ideals `u^iR`.
+* **`04_COMPUTATION/module_actions_checks.py`** + `module_actions_log.txt` — 276 new
+  checks (**276/276 PASS**, deterministic: two consecutive runs are byte-identical),
+  covering §5.6 and including a brute-force cross-check of the orthogonal encoding.
+* **`03_THEOREMS/UPDATED_THEOREM_REGISTER.md`** — rows **T-030 … T-043** for the Phase-1
+  results (structure of `A_t` and `M_2(A_t)`, Morita both handednesses, `R_n ≅ M_2(B)`,
+  `σ_s`/`θ_s` orders, Lemma 5.6a/b, the pairing package, the regime-dependent theorems,
+  the cyclic-code counts, the withdrawn claim, and the Phase-1 scope).
+* **`PHASE1_FINAL_AUDIT_PACKAGE.zip`** (24 entries) + `06_AUDIT/PHASE1_FINAL_AUDIT_MANIFEST.md`
+  — hand-off bundle with a SHA-256 manifest; CRC test OK, 23/23 content hashes verified
+  from inside the archive.
+
+### Corrected
+* **Remark 5.6 (last clause) is withdrawn** (register row **T-042**): it asserted that the
+  left-handed closure "fails in general"; by Lemma 5.6b(2) the orthogonal of a left module
+  *is* a left module. The premise of the remark (that `B_s(a·x,y)` is not a left multiple
+  of `B_s(x,y)`) is correct, and a witness is printed in the computation log. Nothing in
+  §§6–8 depends on the withdrawn clause.
+
+### New computational facts (exhaustive over the `B`-submodule lattice)
+* Cyclic-code counts `7 / 33 / 343 / 12 / 144 / 11 / 93 / 33` for
+  `(q,t,n) = (4,1,1), (4,1,2), (4,1,3), (9,1,1), (9,1,2), (8,1,1), (8,1,2), (4,2,1)`.
+  `343 = (q+3)^3` and `144 = (q+3)^2` confirm T-018 where `X^n−1` is squarefree;
+  **`93 ≠ 121` at `q=8, n=2`** is a second confirmation (after `33 ≠ 49`) that the
+  squarefree hypothesis is essential.
+* Lemma 5.6b(2) holds for **every** left ideal enumerated (`0` failures out of
+  `7, 33, 343, 12, 144, 11, 93, 33`) and the test is non-vacuous.
+* Both logs regenerated and verified reproducible byte-for-byte;
+  `ring_structure_log.txt` is byte-identical to the copy at commit `2e627b8`.
+
+### Known open items carried forward (unchanged)
+T-006 (entry-wise failure uncharacterised), T-021 (principality for `t ≥ 2` or `p ∣ n`),
+T-027 (general `τ ∈ Aut(A_t)` undeveloped), hull-dimension formulas (Phase 4), Gray map
+(Phase 5), quantum construction (Phase 6, regime R3 needs the hypothesis of Theorem 7.4).

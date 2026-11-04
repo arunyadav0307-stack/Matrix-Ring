@@ -467,6 +467,13 @@ left multiple of `B_s(x,y)`; the analogous closure therefore fails in general. W
 **exclusively with right modules** and make **no** claim about left modules. (The relation
 between the two orthogonals of a right module is Lemma 5.7.)
 
+> **Correction (Phase-1 final verification, §5.6.4).** The last clause above — "the
+> analogous closure therefore fails in general" — is **wrong** and is withdrawn: the
+> orthogonal of a left module *is* a left module, always (Lemma 5.6b(2)); the correct
+> mechanism transfers the multiplier to the other slot (Lemma 5.6a(3)–(4)) instead of
+> factoring it out. The premise (that `B_s(a·x,y)` is not a left multiple of `B_s(x,y)`)
+> is correct. Nothing in §§6–8 uses this remark.
+
 **Lemma 5.7 (left/right orthogonal identity).** For every `F_q`-subspace `C ⊆ R^n`,
 
 $${}^{\perp_s}\!C \;=\; \big(\sigma_{-2s}C\big)^{\perp_s}.$$
@@ -553,6 +560,157 @@ Per decision **B1**, Alahmadi–Sboui–Solé–Yemen (2013) is cited **for its 
 its disputed Theorem 1 is **neither restated nor challenged**, and the discrepancy is
 preserved as a documented literature limitation (see
 `06_AUDIT/PHASE0_RESEARCHER_DECISION_SHEET.md` §1).
+
+### 5.6 Left and right actions: complete conventions (Task-C clarification)
+
+This subsection makes every action used in the paper explicit — its **side**, its formula
+on **coordinates**, and its behaviour under the pairing — for the three ambient objects
+`R`, `R_n` and `R^n`. It is a documentation and bookkeeping section: no earlier proof is
+changed, except that §5.6.4 records **one correction** to the final sentence of
+Remark 5.6 (a genuine error, found during the Phase-1 final verification).
+
+#### 5.6.1 The four actions on `R = M_2(A_t)`
+
+| # | Action | Notation | Formula | Kind |
+|---|---|---|---|---|
+| A1 | right multiplication | `X ↦ Xa` | `col_j(Xa) = Σ_k a_{kj} col_k(X)` | right action |
+| A2 | left multiplication | `X ↦ aX` | `row_i(aX) = Σ_k a_{ik} row_k(X)` | left action |
+| A3 | coefficient Frobenius | `σ_k` | `σ_k(X)_{ij} = (X_{ij})^{p^k}` (entry-wise) | automorphism |
+| A4 | transpose–Frobenius | `θ_s = σ_s ∘ (·)^T` | `θ_s(XY) = θ_s(Y)θ_s(X)` | anti-automorphism |
+
+Facts used throughout: `(aX)b = a(Xb)` (associativity — `R` is an `(R,R)`-bimodule over
+itself); the two actions agree on `F_p`-scalars because `F_p·I ⊆ Z(R)`; `σ_k` is a ring
+automorphism fixing `u` (Convention 1.7) and `θ_s = σ_s ∘ (·)^T` is an anti-automorphism
+(Lemma 4.3). Note the **side convention**: A1 mixes **columns**, A2 mixes **rows**.
+
+**Proposition 2.6, both handednesses (completed).** With the column convention of
+Proposition 2.6:
+
+* **right** ideals of `R` ↔ `A_t`-submodules `W ⊆ A_t²` of the **column** space:
+  `I_W = {X : every column of X lies in W}`, `dim_{F_q} I_W = 2 dim_{F_q} W`;
+* **left** ideals of `R` ↔ `A_t`-submodules `U ⊆ A_t²` of the **row** space:
+  `L_U = {X : every row of X lies in U}`, `dim_{F_q} L_U = 2 dim_{F_q} U`;
+* `X ↦ X^T` is a bijection from the family of right ideals onto the family of left
+  ideals, so the two families are **equinumerous** — `q+3` at `t = 1`, `q²+3q+5` at
+  `t = 2` (`33` at `q = 4, t = 2`).
+
+#### 5.6.2 The actions on `R_n` and on code coordinates
+
+The ambient space of a code is `R^n` (Definition 5.1). Under `R_n ≅ M_2(B)`
+(Lemma 3.1), `x ∈ R^n ↔ Σ_e x_e X^e ∈ M_2(B)`:
+
+| # | Action | Formula on coordinates | Remark |
+|---|---|---|---|
+| B1 | right action of `a ∈ R` | `(x·a)_e = x_e a` | the right `R`-module structure of Definition 5.1 |
+| B2 | left action of `a ∈ R` | `(a·x)_e = a x_e` | the left `R`-module structure (not used for codes) |
+| B3 | multiplication by `X` (either side) | `(Tx)_e = x_{e−1 mod n}` | `X` is **central** in `B`, so left = right; `T^n = 1` |
+| B4 | `σ_k` on `R^n` | `σ_k(x)_e = σ_k(x_e)` (entry-wise `p^k`-power) | ring automorphism of `R_n`, fixes `X` |
+| B5 | `θ_s` on `R^n` | `θ_s(x)_e = θ_s(x_e)` | anti-automorphism of `R_n`, fixes `X` |
+
+`T` commutes with **both** the left and the right `R`-action, since it only permutes
+coordinates: `(T(x·a))_e = x_{e−1}a = ((Tx)·a)_e` and `(T(a·x))_e = ax_{e−1} =
+(a·(Tx))_e`. Hence a cyclic code (a right ideal of `R_n`) is exactly an `F_q`-subspace of
+`R^n` closed under B1 and B3 (Definition 5.1 and Lemma 5.3), and the **same** description
+with B2 in place of B1 describes the left ideals of `R_n`. The asymmetry between the sides
+comes from the pairing, not from `T` (Convention 5.2).
+
+#### 5.6.3 The pairing versus the four actions
+
+**Lemma 5.6a (pairing/action compatibility).** For all `x, y ∈ R^n` and `a ∈ R`:
+
+1. `B_s(x·a, y) = θ_s(a)·B_s(x,y)`;
+2. `B_s(x, y·a) = B_s(x,y)·a`;
+3. `B_s(a·x, y) = B_s(x, θ_s(a)·y)`;
+4. `B_s(x, a·y) = B_s(θ_s^{-1}(a)·x, y)`;
+5. `B_s(x, Ty) = B_s(T^{-1}x, y)`.
+
+Items 1 and 2 are Lemma 6.2, item 5 is the computation inside the proof of
+Corollary 6.4; items 3 and 4 are the left-handed counterparts.
+
+*Proof.* (3) Both sides equal `Σ_e θ_s(x_e)θ_s(a)y_e`: the left-hand side because
+`θ_s(a x_e) = θ_s(x_e)θ_s(a)`, the right-hand side by associativity
+`θ_s(x_e)(θ_s(a)y_e) = (θ_s(x_e)θ_s(a))y_e`. (4) Both sides equal `Σ_e θ_s(x_e) a y_e`:
+the right-hand side because `θ_s(θ_s^{-1}(a) x_e) = θ_s(x_e)θ_s(θ_s^{-1}(a)) =
+θ_s(x_e)a`. ∎
+
+**Lemma 5.6b (which side an orthogonal has — sharp form).** Let `S ⊆ R^n` be an
+**arbitrary** subset. Then
+
+1. `S^{⊥_s}` and `^{⊥_s}S` are **right** `R`-submodules of `R^n`;
+2. if moreover `S` is a **left** `R`-submodule, then `S^{⊥_s}` and `^{⊥_s}S` are **left**
+   `R`-submodules as well, hence `R`-subbimodules.
+
+*Proof.* (1) Let `y ∈ S^{⊥_s}` and `a ∈ R`. By Lemma 5.6a(2),
+`B_s(x, y·a) = B_s(x,y)a = 0` for every `x ∈ S`, so `y·a ∈ S^{⊥_s}`; no property of `S`
+is used. For the left orthogonal, by Lemma 5.6a(1), `B_s(y·a, x) = θ_s(a)B_s(y,x) = 0`.
+(2) Let `S` be a left submodule, `y ∈ S^{⊥_s}`, `a ∈ R`. By Lemma 5.6a(4),
+`B_s(x, a·y) = B_s(θ_s^{-1}(a)·x, y) = 0` for every `x ∈ S`, because
+`θ_s^{-1}(a)·x ∈ S`; hence `a·y ∈ S^{⊥_s}`. For the left orthogonal, by Lemma 5.6a(3),
+`B_s(a·y, x) = B_s(y, θ_s(a)·x) = 0` because `θ_s(a)·x ∈ S`. ∎
+
+Part 1 strengthens Lemma 5.5, whose right-module hypothesis is in fact unnecessary; part 2
+is the left-handed statement that Remark 5.6 asserted to fail.
+
+#### 5.6.4 Correction to Remark 5.6 (recorded openly)
+
+Remark 5.6 ends: *"For a **left** module `C`, replacing `x` by `a·x` gives
+`B_s(a·x,y) = Σ_e θ_s(x_e)θ_s(a)y_e`, which is not a left multiple of `B_s(x,y)`; the
+analogous closure therefore fails in general."*
+
+The **premise is correct** — `B_s(a·x,y)` is indeed not, in general, a left multiple of
+`B_s(x,y)` (an explicit witness is printed in `module_actions_log.txt`, e.g. at
+`q = 4, t = 1, n = 1, s = 0`: `B_s(a·x,y) = [[3,0],[2,1]]` while
+`a·B_s(x,y) = [[2,3],[1,0]]`). The **conclusion is wrong**: the criterion being tested —
+factoring the multiplier out of `B_s` — is not the one that governs closure of an
+orthogonal. By Lemma 5.6a(3)–(4) the multiplier is not extracted but **transferred to the
+other slot**, and by Lemma 5.6b(2) the orthogonal of a left module **is** a left module,
+always. The last clause of Remark 5.6 is therefore **withdrawn**; it is superseded by
+Lemma 5.6b.
+
+Scope of the correction: nothing in §§6–8 depends on Remark 5.6. Every statement there
+concerns right modules and rests on Lemma 6.2 / Corollary 6.4, which are untouched. The
+convention itself is unchanged: we work with right modules (Definition 5.1,
+Convention 5.2) because only for them is the *dual of a cyclic code again a cyclic code*
+(Corollary 6.4) — a left module has no shift-stability to preserve.
+
+**Remark 5.6c (at `n = 1` the left dual is even two-sided).** At `n = 1` and for a left
+ideal `L ⊆ R`, `L^{⊥_s} = {y ∈ R : my = 0 ∀ m ∈ θ_s(L)}`; since `θ_s` is an
+anti-automorphism, `θ_s(L)` is a **right** ideal, so this set is the right annihilator of
+a right ideal, hence a **two-sided** ideal of `R` — one of the `t+1` ideals `u^iR` (§2).
+(Verified for `q = 4, 9, 8` and `t = 1, 2`.) At `n ≥ 2` no such description is available:
+`B_s(c,y) = Σ_e θ_s(c_e)y_e` is not a coefficient of the product in `M_2(B)`.
+
+#### 5.6.5 Computational corroboration of §5.6
+
+`04_COMPUTATION/module_actions_checks.py` (log `module_actions_log.txt`, **276 of 276
+checks PASS**) re-derives the whole of §5.6 from the definitions, importing only the
+`F_q`/`A_t`/`M_2(A_t)` arithmetic and the `F_q`-linear algebra of
+`ring_structure_checks.py`, and building `B = A_t[X]/⟨X^n−1⟩` and `M_2(B)` afresh.
+
+| Part | Content | Parameters |
+|---|---|---|
+| A | A1–A2 on `R`: column/row mixing, `(aX)b = a(Xb)`, Morita in **both** handednesses, `dim I_W = dim L_U = 2 dim W`, transpose bijection, `F_p` centrality | `q = 4, 9` (`t = 1`), `q = 4` (`t = 2`) |
+| B | `X` central in `B`, `X^n = 1`, left = right multiplication by `X` = the shift `T`, B1/B2 coordinate-wise | `(q,t,n) = (4,1,1), (4,1,2), (4,1,3), (9,1,2), (4,2,2)` |
+| C | Lemma 5.6a(1)–(5); the Remark 5.6 witness; Lemma 5.6b(1) for arbitrary subsets; Lemma 5.6b(2) for every enumerated left ideal and for randomly generated left submodules; non-vacuity; Remark 5.6c; `σ_k(C^{⊥_s}) = (σ_k C)^{⊥_s}` (Lemma 6.11); Corollary 6.4 and `dim C + dim C^{⊥_s} = 4tn` at `n ≥ 2` | `q = 4` (`t = 1`, `n = 1,2,3`), `q = 9` (`n = 1,2`), `q = 8` (`n = 1,2`), `q = 4, t = 2` (`n = 1,2`) |
+
+Highlights:
+
+* Part C also verifies the linear-algebra encoding of both orthogonals against a
+  **brute-force** enumeration at `q = 4, t = 1, n = 1` (all `256` ambient vectors), so the
+  semilinear solve of `^{⊥_s}C` (in the variables `σ_s(y_j)`) is not taken on trust.
+* Non-vacuity of the left-module test: the cyclic code generated by `E_11` in coordinate 0
+  is a right module and **not** a left module (`dim = 4` at `n = 1`, `6` at `n = 3`,
+  `q = 4`).
+* Cyclic-code counts obtained by the Morita/`B`-submodule enumeration — an independent
+  cross-check of Convention 5.8 (T-018): `(q,t,n) = (4,1,1) → 7 = q+3`;
+  `(4,1,3) → 343 = (q+3)³` (`X³−1` splits into three distinct linear factors over `F_4`,
+  since `3 ∣ q−1`); `(9,1,1) → 12 = q+3`; `(9,1,2) → 144 = (q+3)²` (`X²−1 = (X∓1)`,
+  squarefree in characteristic `3`); and, where the **squarefree hypothesis fails**,
+  `(4,1,2) → 33` (formula would give `49`) and `(8,1,2) → 93` (formula would give `121`).
+  The last two are new confirmations that the hypothesis of Convention 5.8 is essential.
+* Enumeration is exhaustive over the `B`-submodule lattice and is skipped, with a note in
+  the log, when `dim_{F_q} B² > 6` or `|B²| > 20 000` (i.e. for `q = 9, n = 3` and
+  `q = 4, t = 2, n = 2`).
 
 ---
 
@@ -813,3 +971,15 @@ object: all elements of the ring, all subspaces of the relevant space, all `s` m
   `E_11 R` is `{0}` (degenerate), that of `R E_11` is perfect, and the same left ideal
   degenerates when the code is moved to the other slot (Remark 5.9a); the entry-wise form
   is perfect on both at `n = 1` (Remark 5.9b).
+
+A second, independent script `04_COMPUTATION/module_actions_checks.py` (log
+`module_actions_log.txt`, **276 of 276 checks PASS**) covers §5.6, the left/right module
+conventions: the column/row mixing formulas, the Morita dictionary in **both**
+handednesses, centrality of `X` and `T` = the shift, the five pairing/action identities of
+Lemma 5.6a, Lemma 5.6b (both parts, with a brute-force cross-check of the orthogonal
+encoding at `q = 4, t = 1, n = 1`), Remark 5.6c, and the cyclic-code counts
+`7 / 33 / 343 / 12 / 144 / 11 / 93 / 33` for `(q,t,n) = (4,1,1), (4,1,2), (4,1,3),
+(9,1,1), (9,1,2), (8,1,1), (8,1,2), (4,2,1)`; see §5.6.5. It also produced the two new
+non-squarefree data points (`33` at `q=4,n=2` and `93` at `q=8,n=2`, against the
+squarefree predictions `49` and `121`) and the correction to Remark 5.6 recorded in
+§5.6.4.
