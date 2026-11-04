@@ -1,9 +1,15 @@
 # PHASE 1 — COMPLETION AND APPROVAL GATE
 
-**Status: PHASE 1 COMPLETE — AWAITING THE RESEARCHER'S EXPLICIT APPROVAL.**
-No Phase-2 work has been started, and no Phase-1 file has been modified after the
-final commit. This document is the handover record only; it introduces no new
-mathematical claim.
+**Status: PHASE 1 COMPLETE — APPROVED BY THE RESEARCHER (2026-11-04).**
+The researcher acknowledged the handover and recorded four decisions; they are transcribed
+verbatim in **§9**. No Phase-2 work has been started, and no Phase-1 file and no
+mathematical content of Phase 1 has been modified after the final commit `238a174`.
+This document is the handover and decision record only; it introduces no new mathematical
+claim.
+
+**Gate status after the decisions:** Phase 1 is accepted as the foundation for subsequent
+research. Phase 2 remains **not started**: it may begin only after the separate Phase-2
+proposal (`PHASE2_PROPOSAL.md`) is approved. Phase-2 proposal status: **awaiting approval**.
 
 ---
 
@@ -149,8 +155,10 @@ Alahmadi et al.'s Theorem 1.
 
 ## 8. Approval gate
 
-**Phase 1 is complete and frozen. The researcher's explicit approval is required before any
-further phase begins.**
+**Phase 1 is complete and frozen, and was approved by the researcher on 2026-11-04** (see §9
+for the four decisions recorded at that time). The gate that remains open is the **Phase-2
+proposal** (`PHASE2_PROPOSAL.md`), which requires separate explicit approval before any
+Phase-2 execution begins.
 
 Requested sign-off (please reply explicitly with APPROVED or with the changes required):
 
@@ -164,8 +172,77 @@ Requested sign-off (please reply explicitly with APPROVED or with the changes re
 
 | Role | Name | Decision | Date |
 |---|---|---|---|
-| Researcher | | ☐ Approved ☐ Approved with changes ☐ Not approved | |
+| Researcher | (recorded in-session) | **Approved** — items 1–3 confirmed; the four decisions of §9 were recorded at the researcher's instruction | 2026-11-04 |
 | Independent reviewer (ChatGPT) | | ☐ Findings recorded | |
+
+---
+
+## 9. Researcher decisions (recorded 2026-11-04)
+
+The following decisions were given by the researcher after the handover and are recorded
+here in substance. **No mathematical content of Phase 1 was changed by recording them.**
+
+### D1 — Phase-1 framework accepted as the foundation
+
+> "Accept the Phase-1 algebraic framework, including the clarified left/right action
+> conventions in §5.6 and Lemmas 5.6a–5.6b, as the foundation for subsequent research."
+
+* Accepted: `A_t = F_q[u]/⟨u^t⟩`, `R = M_2(A_t)`, `R_n = R[X]/⟨X^n−1⟩ ≅ M_2(B)`,
+  `B = A_t[X]/⟨X^n−1⟩`; the right-module convention (Definition 5.1); Convention 5.8
+  (Morita, columns); the pairing `B_s(x,y) = Σ_e θ_s(x_e)y_e` with `θ_s = σ_s ∘ (·)^T`;
+  and §5.6 in full (the four actions on `R`, the actions on `R_n` and on code coordinates,
+  **Lemma 5.6a** (five pairing/action identities) and **Lemma 5.6b** (sides of the
+  orthogonals)).
+* Consequence: later phases build on these conventions and may not silently change them.
+
+### D2 — T-042 is a withdrawn and corrected claim, never a result
+
+> "Record T-042 strictly as a withdrawn and corrected claim. It must never be cited as a
+> valid theorem or result."
+
+* T-042 = the final clause of Remark 5.6 ("for a left module … the analogous closure
+  therefore fails in general"). It is **withdrawn**; the correct statement is Lemma 5.6b(2).
+* Citation rule: T-042 may be cited **only** as "withdrawn / corrected", never as a result,
+  never as a lemma, and never as evidence for a left-module duality theory. Register status
+  remains `needs correction`.
+* The premise of the withdrawn clause (that `B_s(a·x,y)` is not in general a left multiple
+  of `B_s(x,y)`) is correct and remains available as a fact about the pairing; it is the
+  inference that was invalid.
+
+### D3 — Unresolved issues and coverage limitations are carried forward explicitly
+
+> "Carry all unresolved issues and coverage limitations forward explicitly. Do not silently
+> treat them as resolved."
+
+* The list in **§5** above is the carried-forward list: T-006, T-027, T-021, T-011, T-012,
+  T-013/T-014, warning B3.5, the enumeration coverage gap (`q = 9, n = 3` and
+  `q = 4, t = 2, n = 2` not covered), and the `n ≥ 2` structural gap for left submodules.
+* Standing rule for later phases: each of these must be re-stated at the point where it
+  becomes relevant, and none may be treated as settled until a proof exists in the
+  repository and a register row records it as `proved`.
+
+### D4 — Approved Phase-0 decisions retained
+
+> "Retain the approved decisions: B1 framework-only citation; B2 narrowed novelty claim;
+> B3 hybrid general/reflexive regime."
+
+* **B1** — Alahmadi–Sboui–Solé–Yemen (2013) is cited **for its framework only**; its
+  Theorem 1 is neither restated nor challenged, and the discrepancy is preserved as a
+  documented literature limitation.
+* **B2** — the novelty claim stays narrowed (four parts); anti-automorphism duality is
+  **not** claimed new (Wood 2010; Szabo–Wood 2017; Nebe–Rains–Sloane 2006).
+* **B3** — the hybrid regime is retained: general statements for every `s`, with the
+  reflexive regime (`r ∣ 2s`) singled out whenever symmetry/Hermitian structure is needed,
+  subject to warning B3.5 in regime R3.
+
+### Effect on subsequent work
+
+* Phase 1 files are **frozen** except by the same open-correction procedure used for T-042
+  (record the error, the correction, and a register row).
+* The next document is `PHASE2_PROPOSAL.md` (scope, definitions, proposed theorems,
+  proof strategies and computational test cases). It contains **no proved results**: every
+  item there is a proposal to be proved or refuted during Phase 2, and it awaits the
+  researcher's explicit approval before any Phase-2 execution begins.
 
 **On approval, the next step is the independent review; Phase 2 and the manuscript remain
 un-started and must not begin without a further explicit instruction.**
