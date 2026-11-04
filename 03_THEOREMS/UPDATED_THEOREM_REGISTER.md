@@ -344,6 +344,65 @@ T-029 (prior art) : governs the wording of every novelty claim
 
 ---
 
+### Rows added by Phase 2 Stage 1 (`03_THEOREMS/PHASE2_STAGE1_CYCLIC_SHIFT.md`)
+
+**Scope of this block.** Stage 1 = definitions, the cyclic shift, left/right action
+conventions, centrality of `$X$`, and `$\sigma_k/\theta_s$` compatibility. Verification:
+`04_COMPUTATION/phase2_stage1_shift_checks.py`, log `phase2_stage1_shift_log.txt`,
+**553 / 553 checks PASS** (91 `[EXH]`, 462 `[SMP]`, seed `20261104`, two consecutive runs
+byte-identical). **A passing script is evidence, not proof**: every `PROVED` row below
+rests on the proof written in `PHASE2_STAGE1_CYCLIC_SHIFT.md`, not on the computation.
+
+**Status vocabulary for this block** (extends the Phase-2 planning vocabulary above):
+`PROVED IN PHASE 1`, `IMPORTED RESULT`, `PROVED IN PHASE 2 STAGE 1`,
+`COMPUTATIONALLY VERIFIED ONLY` (**not** a theorem), `PROPOSED / UNPROVED`, `OPEN`.
+Rows T-049, T-050, T-060, T-061, T-062 **supersede** the planning rows `P-2.1a`,
+`P-2.1b`, `P-2.1c`, `P-2.1d`, `P-2.1e`, which are left in place as the record of what was
+proposed. Row T-046 discharges the planning row `L-2.1.1`.
+
+**Out of Stage-1 scope (unchanged, not attempted):** P-2.3, P-2.4, P-2.5, P-2.6, P-2.7,
+P-2.8, P-2.1f (`rev`), L-6.1, C-2.1, hulls, Gray map, quantum, manuscript.
+
+| ID | Claim / theorem | Assumptions | Proof / file | Dependencies | Status | Audit / tests | Target § |
+|----|-----------------|-------------|--------------|--------------|--------|---------------|----------|
+| **T-044** | `$R_n=R[X]/\langle X^n-1\rangle$`; every element has a unique form `$\sum_{e<n}x_eX^e$`; `$\iota:R^n\to R_n$` is a bijection; `$\dim_{\mathbb F_q}R_n=4tn$` | `$t\ge1,n\ge1$` | RGF §3 Lemma 3.1, Lemma 3.2 (Stage-1 §2, Def. 2.1 / Lemma 2.2) | — | **`PROVED IN PHASE 1`** | `[EXH]` `$\iota$`-round-trip and surjectivity at `$(4,1,1)$`; sampled elsewhere | CCS §2 |
+| **T-045** | **Cyclic convolution:** `$(\iota(x)\iota(y))_e=\sum_{a+b\equiv e\ (\mathrm{mod}\ n)}x_ay_b$` (coefficient of the earlier factor on the left) | `$X$` central | Stage 1 §2 Lemma 2.3 | T-044, T-046 | **`PROVED IN PHASE 2 STAGE 1`** | `[EXH]` over all `$B$`-pairs at `$(4,1,1),(4,1,2),(4,2,1)$` | CCS §2 |
+| **T-046** | **Centrality of `$X$`** (= planning row **L-2.1.1**): `$XI_2\in Z(R_n)$`; `$B$` commutative; `$R_n\cong M_2(B)$` with `$\iota(x)_{ij}=\sum_e (x_e)_{ij}X^e$` | — | RGF §3 Lemma 3.1 | T-004 | **`PROVED IN PHASE 1`** (= T-033; **L-2.1.1 is discharged**) | `[EXH]` at `$(4,1,1),(9,1,1)$`; `[SMP]` elsewhere | CCS §2 |
+| **T-047** | `$\mathrm{emb}:R\to R_n$` is an injective ring homomorphism; `$\iota$` is additive, `$F_q$`-linear, **right and left `$R$-linear**; and `$\iota(Tx)=\iota(x)\,(XI_2)$` (this last item needs **no** centrality) | centrality for the linearity items | Stage 1 §2 Lemma 2.5 | T-044, T-046 | **`PROVED IN PHASE 2 STAGE 1`** (the last item = T-033) | `[EXH]` all `$(x,a)$` at `$(4,1,1)$`; `[SMP]` elsewhere | CCS §2 |
+| **T-048** | `$T$` is `$F_q$`-linear, bijective (`$(T^{-1}x)_e=x_{e+1}$`), a Hamming isometry, and `$T^n=\mathrm{id}$` | `$n\ge1$` | Stage 1 §3 Lemma 3.3 | T-044 | **`PROVED IN PHASE 2 STAGE 1`** (`$T^n=\mathrm{id}$` is T-033, `PROVED IN PHASE 1`) | `[EXH]` at `$(4,1,1),(9,1,1)$` | CCS §3 |
+| **T-049** | **P-2.1a:** `$T$` is **right `$R$-linear** (`$T\rho_a=\rho_aT$`) | none — the coordinate proof uses only that the right action is coordinate-wise | Stage 1 §3 Lemma 3.4 (the computation also appears in RGF §5.6.2) | — | **`PROVED IN PHASE 2 STAGE 1`** — supersedes planning row P-2.1a | `[EXH]` all `65 536` pairs at `$(4,1,1)$` | CCS §3 |
+| **T-050** | **P-2.1b:** `$T$` is **left `$R$-linear** (`$T\lambda_a=\lambda_aT$`) | none | Stage 1 §3 Lemma 3.5 | — | **`PROVED IN PHASE 2 STAGE 1`** — supersedes planning row P-2.1b (was `PROPOSED / UNPROVED`) | `[EXH]` all `65 536` pairs at `$(4,1,1)$` | CCS §3 |
+| **T-051** | **P-2.1g:** `$T$` = **right** multiplication by `$X$` (Phase 1, no centrality needed) = **left** multiplication by `$X$` (Stage 1, **needs centrality**) | centrality for the left statement | Stage 1 §3 Lemma 3.6 + RGF Lemma 3.2 | T-046 | **`PROVED IN PHASE 1`** (right) **+ `PROVED IN PHASE 2 STAGE 1`** (left) | `[EXH]` over all `$65 536$` vectors at `$(4,1,1),(4,1,2),(4,2,1)$` | CCS §3 |
+| **T-052** | `$T$` is **left `$R_n$-linear** by associativity alone, and **right `$R_n$-linear iff `$X$` is central** | — | Stage 1 §3 Lemma 3.7 | T-046 | **`PROVED IN PHASE 2 STAGE 1`** | `[SMP]` 8 000 pairs per set; negative control with non-central `$Y=E_{11}$` (`$3 984/4 000$` at `$(4,2,2)$`) vs `$Y=XI_2$` (`$0$`) | CCS §3 |
+| **T-053** | **Theorem 4.1 (the equivalence).** `$C\mapsto\iota(C)$` is a bijection from `$T$`-invariant right `$R$`-submodules of `$R^n$` onto right ideals of `$R_n$`, inverse `$J\mapsto\iota^{-1}(J)$`; it preserves inclusions and `$F_q$`-dimensions | `$t,n\ge1$`; **no squarefree hypothesis**, no `$p\nmid n$`, no principality; right-module convention | Stage 1 §4 (both directions proved in full) | T-044, T-046, T-047 | **`PROVED IN PHASE 2 STAGE 1`** (statement = RGF Def. 5.1 + Lemma 5.3; the complete two-direction proof, boundary analysis and counterexamples are new) | 25 trials × 8 parameter sets, both directions + both round trips; `[EXH]` census at `$(4,1,1)$` (T-064) | CCS §4 |
+| **T-054** | Boundary cases of T-053: `$n=1$` (`$T=\mathrm{id}$`, `$R_1=R$`, the `$T$`-condition is vacuous); `$C=0$`; `$C=R^n$`; `$p\mid n$` (theorem unchanged) | — | Stage 1 §4.2 | T-053 | **`PROVED IN PHASE 2 STAGE 1`** | `[EXH]` at `$(4,1,1),(9,1,1)$`; wild case `$(4,2,2)$` tested | CCS §4 |
+| **T-055** | Negative control (a): a right `$R$`-submodule that is not `$T$`-invariant is not a right ideal (`$C_0=\{x:x_e=0,\ e\ge1\}$`; witness `$1\cdot X=X\notin\iota(C_0)$`) | `$n\ge2$` | Stage 1 §4.3(a) | T-053 | **`PROVED IN PHASE 2 STAGE 1`** | verified at every `$n\ge2$` parameter set | CCS §4 |
+| **T-056** | Negative control (b): a `$T$`-invariant `$F_q$`-subspace need **not** be a right `$R$`-submodule, hence not a right ideal | `$n\ge2$` | — (no proof; one random generator per parameter set) | — | **`COMPUTATIONALLY VERIFIED ONLY`** (`[SMP]`) — no general claim | verified at every `$n\ge2$` set | CCS §4 |
+| **T-057** | Negative control (c): a `$T$`-invariant **left** `$R$`-submodule need not be a right ideal (`$E=\{y:\ y_e\in RE_{11}\}$` is `$T$`-invariant and left, but `$v\cdot E_{12}\notin E$`) | `$n\ge2$` | Stage 1 §4.3(c) | T-050 | **`PROVED IN PHASE 2 STAGE 1`** | verified at every `$n\ge2$` parameter set | CCS §4 |
+| **T-058** | **Centrality and `$XT=TX$`:** `$L_XR_X=R_XL_X$` (associativity, no centrality); `$L_X=R_X$` **iff** `$X$` is central; hence "multiplication by `$X$`" is the single operator `$T$` and `$XT=TX$` holds as `$T^2=T^2$` | — | Stage 1 §5.1 | T-046 | **`PROVED IN PHASE 2 STAGE 1`** | `[SMP]` 200 elements per set | CCS §5 |
+| **T-059** | **What fails without centrality:** (1) `$\langle X^n-1\rangle$` need not be two-sided, so the quotient need not be a ring (skew case — **OPEN**, T-027); (2) `$B$` non-commutative, no `$M_2(B)$`/Morita; (3) `$\iota$` not `$R$`-linear, so **T-053 fails**; (4) `$T$` not right `$R_n$`-linear; (5) left multiplication by `$X$` is not `$T$` | — | Stage 1 §5.3 (comparison only; skew-polynomial theory is out of scope) | T-046, T-052 | **`PROVED IN PHASE 2 STAGE 1`** as a comparison; item (1) is **`OPEN`** (T-027) | negative control `$Y=E_{11}$` vs `$Y=XI_2$` | CCS §5 |
+| **T-060** | **P-2.1c:** `$T\sigma_k=\sigma_kT$` and `$T\theta_s=\theta_sT$` — plain commutation of `$F_p$`-linear maps on `$R^n$`; **not** to be confused with RGF Lemma 5.6a(5) `$B_s(x,Ty)=B_s(T^{-1}x,y)$` | — | Stage 1 §6.2 | — | **`PROVED IN PHASE 2 STAGE 1`** — supersedes planning row P-2.1c | `[EXH]` at `$(4,1,1),(9,1,1)$`; all `$k,s$` mod `$r$` | CCS §6 |
+| **T-061** | **P-2.1d:** `$\sigma_k\rho_a=\rho_{\sigma_k(a)}\sigma_k$` and `$\sigma_k\lambda_a=\lambda_{\sigma_k(a)}\sigma_k$` — `$\sigma_k$` **preserves** the side | — | Stage 1 §6.3 | T-002 (RGF Lemma 4.2) | **`PROVED IN PHASE 2 STAGE 1`** — supersedes planning row P-2.1d | `[EXH]` all `65 536` pairs at `$(4,1,1)$` | CCS §6 |
+| **T-062** | **P-2.1e:** `$\theta_s\rho_a=\lambda_{\theta_s(a)}\theta_s$` and `$\theta_s\lambda_a=\rho_{\theta_s(a)}\theta_s$` — `$\theta_s$` **swaps** the side; and `$\theta_s\rho_a\neq\rho_{\theta_s(a)}\theta_s$` (witness `$x=E_{11},a=E_{12},s=0$`: `$\theta_0(x\cdot a)=E_{21}\neq0=\theta_0(x)\theta_0(a)$`). This is **not** a commutation | — | Stage 1 §6.4 | T-002 (RGF Lemma 4.3) | **`PROVED IN PHASE 2 STAGE 1`** — supersedes planning row P-2.1e | `[EXH]`: the correct identity holds on all pairs at `$(4,1,1)$`; the "commuted" form fails on `$60 480/65 536$` | CCS §6 |
+| **T-063** | **Semilinearity:** `$\sigma_k(cx)=\sigma_k(c)\sigma_k(x)$`, `$\theta_s(cx)=\sigma_s(c)\theta_s(x)$` (`$c\in\mathbb F_q$` acting as `$cI$`), while `$T(cx)=c\,T(x)$` (`$T$` is plain `$F_q$`-linear). `$\sigma_k,\theta_s$` are `$F_p$`-linear only | — | Stage 1 §6.5 | T-002 | **`PROVED IN PHASE 2 STAGE 1`** | `[SMP]`, plus negative controls showing `$\sigma_k,\theta_s$` are not `$F_q$`-linear | CCS §6 |
+| **T-064** | **Independent census at `$(4,1,1)$`:** brute force over all `529` `$F_q$`-subspaces of `$R^1$` finds exactly `7 = q+3` `$T$`-invariant right `$R$`-submodules, of `$F_q$`-dimensions `[0,2,2,2,2,2,4]`, and every right `$R$`-submodule is `$T$`-invariant (`$T=\mathrm{id}$`) | — | `phase2_stage1_shift_checks.py` Part 2 (`enumerate_subspaces`, **no Morita used**) | T-053 | **`COMPUTATIONALLY VERIFIED ONLY`** (`[EXH]`); agrees with T-032/T-041 by a different route | — | CCS §4 |
+| **T-065** | **Stage-1 computational record:** `04_COMPUTATION/phase2_stage1_shift_checks.py`, log `phase2_stage1_shift_log.txt`: **553 / 553 PASS**, 91 `[EXH]` + 462 `[SMP]`, 8 parameter sets, deterministic (seed `20261104`), two runs byte-identical (SHA-256 `98383c76c957b2f4b613d97b8889c4bb39eebecf2c616edf48bc1fb1d9c5c3ef`) | — | the script and its log | — | **`COMPUTATIONALLY VERIFIED ONLY`** (supporting evidence; proves nothing by itself) | — | CCS §8 |
+| **T-066** | **P-2.1f (`rev`)**: `$\mathrm{rev}$` is a ring **automorphism** of `$R_n$`, `$\mathrm{rev}\,T=T^{-1}\mathrm{rev}$`, `$\mathrm{rev}\vert_R=\mathrm{id}$`, `$\mathrm{rev}(\mathrm{ann}_r v)=\mathrm{ann}_r(\mathrm{rev}\,v)$` | — | **not treated in Stage 1** (needed only for P-2.7) | — | **`PROPOSED / UNPROVED`** (planning row unchanged) | CT-0 (not run) | later stage |
+| **T-067** | **L-6.1:** `$\theta_s$` is an anti-automorphism of `$R_n$` | — | **not treated in Stage 1.** Recorded without claim: RGF Lemma 4.3 states this for `$R_n$`, and its matrix proof applies verbatim to `$M_2(B)$`; to be settled in the P-2.7 stage | T-002 | **`PROPOSED / UNPROVED`** (planning row unchanged) | CT-0 (not run) | later stage |
+| **T-068** | **Stage-1 scope and carried-forward limitations:** P-2.3/P-2.4/P-2.5/P-2.6/P-2.7/P-2.8/C-2.1 not attempted; **T-021 (principality) remains `proved (conditional)` and open for `$t\ge2$` or `$p\mid n$`**; T-006, T-027, T-011–T-014, warning B3.5, the Phase-1 coverage gaps (`$q=9,n=3$`; no enumeration at `$q=4,t=2,n=2$`) and the `$n\ge2$` left-submodule gap are carried forward per **D3**; pair tests are sampled outside `$(4,1,1)$`; the only exhaustive subspace census is at `$n=1$` | — | Stage 1 §9.3 | — | **`OPEN`** (recorded, not resolved) | — | — |
+
+**Counts in this block (25 rows).** 16 `PROVED IN PHASE 2 STAGE 1` (T-045, T-047, T-048,
+T-049, T-050, T-052, T-053, T-054, T-055, T-057, T-058, T-059, T-060, T-061, T-062,
+T-063); 2 `PROVED IN PHASE 1` (T-044, T-046); 1 mixed `PROVED IN PHASE 1` +
+`PROVED IN PHASE 2 STAGE 1` (T-051: right multiplication is Phase 1, left is Stage 1);
+3 `COMPUTATIONALLY VERIFIED ONLY` (T-056, T-064, T-065); 2 `PROPOSED / UNPROVED`
+(T-066, T-067); 1 `OPEN` (T-068). T-059 is a proved comparison that contains one `OPEN`
+item (the skew-polynomial case, T-027); T-047, T-048 and T-051 each contain a Phase-1
+sub-item, named in the row. **No Phase-2 statement is recorded as proved on the strength
+of a computation.**
+
+---
+
 ## Audit checklist for the reviewer (updated after the independent audit)
 
 1. **T-016/T-017 are confirmed and are the load-bearing new statements.** Double-dual
