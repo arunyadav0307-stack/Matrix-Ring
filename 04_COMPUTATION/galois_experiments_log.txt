@@ -1,0 +1,246 @@
+NONTRIVIAL GALOIS EXPERIMENTS  --  Phase 0 revised, Task 1
+run: 2026-11-04 06:38:46
+python: 3.11.2
+
+
+==============================================================================
+PARAMETER SET   p=2 r=2 q=4  m=2  t=1  n=3   (N = dim_Fq R^n = 12)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=1 : additive=True multiplicative=True ; nontrivial=True (witness a=2 -> a^(p^s)=3) ; order(sigma_s)=2  [r/gcd(r,s)=2]
+-- B. theta_s = sigma_s o transpose --
+   s=1 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? True (2s mod r = 0)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_4): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^3 - 1 = deg1 * deg1 * deg1  (fields of sizes 4,4,4)
+    #B-submodules of B^2 = 343  (= #right ideals of R_n)
+   Morita/CRT enumeration : 343 right ideals (343 tested)
+   F_q-dimension distribution (dim : #codes): [(0, 1), (2, 15), (4, 78), (6, 155), (8, 78), (10, 15), (12, 1)]
+   lattice closure skipped (ambient 16777216 > 20000)
+-- E. per-code checks (every code, every s) --
+   s=1 : 343 codes tested
+      C right R-submodule .................. 343/343
+      C cyclic (T-invariant) ............... 343/343
+      C^{perp_s} right R-submodule ......... 343/343
+      C^{perp_s} cyclic .................... 343/343
+      |C|.|C^{perp_s}| = |R|^n ............. 343/343
+      Hull_s(C) right R-submodule .......... 343/343
+      Hull_s(C) cyclic ..................... 343/343
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  343/343
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 343/343
+      PLAIN dual: right module 343/343 ; left module 343/343 ; size formula 8/343
+      hull F_q-dimension distribution: [(0, 64), (2, 144), (4, 108), (6, 27)]
+      plain-dual F_q-dimension distribution: [(0, 216), (4, 108), (8, 18), (12, 1)]
+      no failure
+   [elapsed 1.2 s]
+
+==============================================================================
+PARAMETER SET   p=2 r=3 q=8  m=2  t=1  n=3   (N = dim_Fq R^n = 12)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=1 : additive=True multiplicative=True ; nontrivial=True (witness a=2 -> a^(p^s)=4) ; order(sigma_s)=3  [r/gcd(r,s)=3]
+   s=2 : additive=True multiplicative=True ; nontrivial=True (witness a=2 -> a^(p^s)=7) ; order(sigma_s)=3  [r/gcd(r,s)=3]
+-- B. theta_s = sigma_s o transpose --
+   s=1 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? False (2s mod r = 2)
+   s=2 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? False (2s mod r = 1)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_8): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^3 - 1 = deg1 * deg2  (fields of sizes 8,64)
+    #B-submodules of B^2 = 737  (= #right ideals of R_n)
+   Morita/CRT enumeration : 737 right ideals (737 tested)
+   F_q-dimension distribution (dim : #codes): [(0, 1), (2, 9), (4, 66), (6, 585), (8, 66), (10, 9), (12, 1)]
+   lattice closure skipped (ambient 68719476736 > 20000)
+-- E. per-code checks (every code, every s) --
+   s=1 : 737 codes tested
+      C right R-submodule .................. 737/737
+      C cyclic (T-invariant) ............... 737/737
+      C^{perp_s} right R-submodule ......... 737/737
+      C^{perp_s} cyclic .................... 737/737
+      |C|.|C^{perp_s}| = |R|^n ............. 737/737
+      Hull_s(C) right R-submodule .......... 737/737
+      Hull_s(C) cyclic ..................... 737/737
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  737/737
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 35/737
+      witness for non-reflexivity: code #3
+         C               = [(1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 2, 0), (0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 2), (0, 0, 1, 0, 6, 0, 0, 0, 6, 0, 1, 0), (0, 0, 0, 1, 0, 6, 0, 0, 0, 6, 0, 1)]
+         (C^{perp})^{perp} = [(1, 0, 0, 0, 1, 0, 7, 0, 0, 0, 7, 0), (0, 1, 0, 0, 0, 1, 0, 7, 0, 0, 0, 7), (0, 0, 1, 0, 5, 0, 0, 0, 5, 0, 1, 0), (0, 0, 0, 1, 0, 5, 0, 0, 0, 5, 0, 1)]
+      PLAIN dual: right module 737/737 ; left module 737/737 ; size formula 4/737
+      hull F_q-dimension distribution: [(0, 640), (2, 64), (4, 30), (6, 3)]
+      plain-dual F_q-dimension distribution: [(0, 660), (4, 66), (8, 10), (12, 1)]
+      no failure
+   s=2 : 737 codes tested
+      C right R-submodule .................. 737/737
+      C cyclic (T-invariant) ............... 737/737
+      C^{perp_s} right R-submodule ......... 737/737
+      C^{perp_s} cyclic .................... 737/737
+      |C|.|C^{perp_s}| = |R|^n ............. 737/737
+      Hull_s(C) right R-submodule .......... 737/737
+      Hull_s(C) cyclic ..................... 737/737
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  737/737
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 35/737
+      witness for non-reflexivity: code #3
+         C               = [(1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 2, 0), (0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 2), (0, 0, 1, 0, 6, 0, 0, 0, 6, 0, 1, 0), (0, 0, 0, 1, 0, 6, 0, 0, 0, 6, 0, 1)]
+         (C^{perp})^{perp} = [(1, 0, 0, 0, 1, 0, 4, 0, 0, 0, 4, 0), (0, 1, 0, 0, 0, 1, 0, 4, 0, 0, 0, 4), (0, 0, 1, 0, 3, 0, 0, 0, 3, 0, 1, 0), (0, 0, 0, 1, 0, 3, 0, 0, 0, 3, 0, 1)]
+      PLAIN dual: right module 737/737 ; left module 737/737 ; size formula 4/737
+      hull F_q-dimension distribution: [(0, 640), (2, 64), (4, 30), (6, 3)]
+      plain-dual F_q-dimension distribution: [(0, 660), (4, 66), (8, 10), (12, 1)]
+      no failure
+   [elapsed 4.9 s]
+
+==============================================================================
+PARAMETER SET   p=3 r=2 q=9  m=2  t=1  n=2   (N = dim_Fq R^n = 8)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=1 : additive=True multiplicative=True ; nontrivial=True (witness a=3 -> a^(p^s)=7) ; order(sigma_s)=2  [r/gcd(r,s)=2]
+-- B. theta_s = sigma_s o transpose --
+   s=1 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? True (2s mod r = 0)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_9): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^2 - 1 = deg1 * deg1  (fields of sizes 9,9)
+    #B-submodules of B^2 = 144  (= #right ideals of R_n)
+   Morita/CRT enumeration : 144 right ideals (144 tested)
+   F_q-dimension distribution (dim : #codes): [(0, 1), (2, 20), (4, 102), (6, 20), (8, 1)]
+   lattice closure skipped (ambient 43046721 > 20000)
+-- E. per-code checks (every code, every s) --
+   s=1 : 144 codes tested
+      C right R-submodule .................. 144/144
+      C cyclic (T-invariant) ............... 144/144
+      C^{perp_s} right R-submodule ......... 144/144
+      C^{perp_s} cyclic .................... 144/144
+      |C|.|C^{perp_s}| = |R|^n ............. 144/144
+      Hull_s(C) right R-submodule .......... 144/144
+      Hull_s(C) cyclic ..................... 144/144
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  144/144
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 144/144
+      PLAIN dual: right module 144/144 ; left module 144/144 ; size formula 4/144
+      hull F_q-dimension distribution: [(0, 64), (2, 64), (4, 16)]
+      plain-dual F_q-dimension distribution: [(0, 121), (4, 22), (8, 1)]
+      no failure
+   [elapsed 0.2 s]
+
+==============================================================================
+PARAMETER SET   p=3 r=2 q=9  m=2  t=1  n=4   (N = dim_Fq R^n = 16)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=1 : additive=True multiplicative=True ; nontrivial=True (witness a=3 -> a^(p^s)=7) ; order(sigma_s)=2  [r/gcd(r,s)=2]
+-- B. theta_s = sigma_s o transpose --
+   s=1 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? True (2s mod r = 0)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_9): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^4 - 1 = deg1 * deg1 * deg1 * deg1  (fields of sizes 9,9,9,9)
+    #B-submodules of B^2 = 20736  (= #right ideals of R_n)
+   Morita/CRT enumeration : 20736 right ideals (1200 tested)
+   F_q-dimension distribution (dim : #codes): [(2, 2), (4, 38), (6, 240), (8, 622), (10, 255), (12, 42), (14, 1)]
+   !! the lattice has 20736 right ideals > 400: a RANDOM SAMPLE of 1200 is tested (NOT exhaustive)
+   lattice closure skipped (ambient 1853020188851841 > 20000)
+-- E. per-code checks (every code, every s) --
+   s=1 : 1200 codes tested (SAMPLE)
+      C right R-submodule .................. 1200/1200
+      C cyclic (T-invariant) ............... 1200/1200
+      C^{perp_s} right R-submodule ......... 1200/1200
+      C^{perp_s} cyclic .................... 1200/1200
+      |C|.|C^{perp_s}| = |R|^n ............. 1200/1200
+      Hull_s(C) right R-submodule .......... 1200/1200
+      Hull_s(C) cyclic ..................... 1200/1200
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  1200/1200
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 1200/1200
+      PLAIN dual: right module 1200/1200 ; left module 1200/1200 ; size formula 2/1200
+      hull F_q-dimension distribution: [(0, 236), (2, 449), (4, 383), (6, 112), (8, 20)]
+      plain-dual F_q-dimension distribution: [(0, 849), (4, 308), (8, 41), (12, 2)]
+      no failure
+   [elapsed 9.5 s]
+
+##############################################################################
+# VALIDATION OF THE ENUMERATION MACHINERY.
+# r = 1 (q = 2): sigma_s IS THE IDENTITY HERE, so these two cases are
+# NOT Galois evidence.  They are run only because the ambient set is
+# small enough for a SECOND, INDEPENDENT enumeration (exhaustive
+# lattice closure of all principal right ideals) to be affordable.
+##############################################################################
+
+==============================================================================
+PARAMETER SET   p=2 r=1 q=2  m=2  t=1  n=1   (N = dim_Fq R^n = 4)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=0 : additive=True multiplicative=True ; nontrivial=False (witness a=None -> a^(p^s)=None) ; order(sigma_s)=1  [r/gcd(r,s)=1]
+-- B. theta_s = sigma_s o transpose --
+   s=0 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? True (2s mod r = 0)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_2): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^1 - 1 = deg1  (fields of sizes 2)
+    #B-submodules of B^2 = 5  (= #right ideals of R_n)
+   Morita/CRT enumeration : 5 right ideals (5 tested)
+   F_q-dimension distribution (dim : #codes): [(0, 1), (2, 3), (4, 1)]
+   independent lattice-closure enumeration : 5 right ideals
+   the two lists agree: True
+-- E. per-code checks (every code, every s) --
+   s=0 : 5 codes tested
+      C right R-submodule .................. 5/5
+      C cyclic (T-invariant) ............... 5/5
+      C^{perp_s} right R-submodule ......... 5/5
+      C^{perp_s} cyclic .................... 5/5
+      |C|.|C^{perp_s}| = |R|^n ............. 5/5
+      Hull_s(C) right R-submodule .......... 5/5
+      Hull_s(C) cyclic ..................... 5/5
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  5/5
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 5/5
+      PLAIN dual: right module 5/5 ; left module 5/5 ; size formula 2/5
+      hull F_q-dimension distribution: [(0, 4), (2, 1)]
+      plain-dual F_q-dimension distribution: [(0, 4), (4, 1)]
+      no failure
+   [elapsed 0.0 s]
+
+==============================================================================
+PARAMETER SET   p=2 r=1 q=2  m=2  t=1  n=3   (N = dim_Fq R^n = 12)
+==============================================================================
+-- A. sigma_s (entrywise Frobenius, u-trivial since t = 1) --
+   s=0 : additive=True multiplicative=True ; nontrivial=False (witness a=None -> a^(p^s)=None) ; order(sigma_s)=1  [r/gcd(r,s)=1]
+-- B. theta_s = sigma_s o transpose --
+   s=0 : additive=True  anti-multiplicative=True ; theta_s^2 = sigma_{2s} : True ; theta_s INVOLUTION? True (2s mod r = 0)
+-- C. Lambda = trace (t = 1) --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_2): rank = 4 / 4
+   right-ideal-catching (trace(X.E_{j0,i0}) = X_{i0,j0} != 0): True
+-- D. enumeration of the cyclic codes (right ideals of R_n) --
+    X^3 - 1 = deg1 * deg2  (fields of sizes 2,4)
+    #B-submodules of B^2 = 35  (= #right ideals of R_n)
+   Morita/CRT enumeration : 35 right ideals (35 tested)
+   F_q-dimension distribution (dim : #codes): [(0, 1), (2, 3), (4, 6), (6, 15), (8, 6), (10, 3), (12, 1)]
+   independent lattice-closure enumeration : 35 right ideals
+   the two lists agree: True
+-- E. per-code checks (every code, every s) --
+   s=0 : 35 codes tested
+      C right R-submodule .................. 35/35
+      C cyclic (T-invariant) ............... 35/35
+      C^{perp_s} right R-submodule ......... 35/35
+      C^{perp_s} cyclic .................... 35/35
+      |C|.|C^{perp_s}| = |R|^n ............. 35/35
+      Hull_s(C) right R-submodule .......... 35/35
+      Hull_s(C) cyclic ..................... 35/35
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C)  35/35
+      (C^{perp_s})^{perp_s} = C  (reflexivity) 35/35
+      PLAIN dual: right module 35/35 ; left module 35/35 ; size formula 4/35
+      hull F_q-dimension distribution: [(0, 16), (2, 4), (4, 12), (6, 3)]
+      plain-dual F_q-dimension distribution: [(0, 24), (4, 6), (8, 4), (12, 1)]
+      no failure
+   [elapsed 4.1 s]
+
+==============================================================================
+SUMMARY
+==============================================================================
+q      m    n    #codes     exhaustive   independent closure check
+4      2    3    343        yes          not run
+8      2    3    737        yes          not run
+9      2    2    144        yes          not run
+9      2    4    1200       no (sample)  not run
+2      2    1    5          yes          5 ideals, agree=True
+2      2    3    35         yes          35 ideals, agree=True
