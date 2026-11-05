@@ -265,3 +265,72 @@ produce a quantum code.
 insertion-only), `04_COMPUTATION/README.md`,
 `UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md` (new §11), and this decision log (D-022).
 **Nothing was deleted, rewritten or moved**, and the push is a normal fast-forward.
+
+## D-023 — Phase 3, Stage 3A: Galois hull structure and dimension (Tasks A–G)
+
+**Authorised scope (Phase 3 §2–§8 only).** Tasks A–G: the definition and structure of
+`Hull_s(C) = C ∩ C^{⊥_s}` (A), the hull formula (B), hull dimension theory (C), the
+general versus reflexive Galois regimes (D), the LCD / self-orthogonal / self-dual
+characterisations (E), computation (F) and literature comparison (G). **Excluded, by
+instruction:** hull enumeration (Phase 4), Gray maps (Phase 5), CSS/EAQECC
+constructions and quantum parameter claims (Phase 6), manuscript writing. **No claim is
+made that a Galois hull produces a quantum code**; warning B3.5 is retained in full.
+
+**Deliverable.** `03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md` (922 lines, §0–§9)
+with `04_COMPUTATION/phase3_stage3a_hull_structure.py` → `phase3_stage3a_hull_log.txt`
+(**583 checks, 583 PASS, 0 FAIL**, 117 `[EXH]` / 467 `[SMP]`, seed `20261108`, two
+consecutive runs byte-identical, log SHA-256 `478d62ff31f6…acfe2`, 792 lines).
+
+**Main results proved.** (1) `Hull_s(C) = I_{W∩W'}` with `W = W(C)`,
+`W' = W(C^{⊥_s})`, hence `dim Hull = 2 dim(W∩W')` — so the hull dimension is **always
+even** — and `Hull` is principal iff `μ_B(W∩W') ≤ 2` (T-148, T-149). (2) The
+non-principal formula `Hull = C ∩ rev(⋂ᵢ ann_r(θ_s(gᵢ)))`, with the side discipline
+(`θ_s(ann_r I) = ann_l(θ_s I)`, `ann_r` not `ann_l`, `rev` load-bearing for `n ≥ 3` and
+provably vacuous for `n ≤ 2`) and a proof that the `1`-generator formula is wrong for
+non-principal codes (T-141, T-145). (3) The CRT permutation `τ = π⁻¹∘ρ` with
+`(C^{⊥_s})_j = (C_{τ(j)})^{⊥_s}` and the **exact criterion `n ∣ p^s+1`** for
+componentwise decomposition; when `τ ≠ id` the naive `Σ_j dim Hull_s(C_j)` fails (9/20
+codes at `(4,1,3)`, `s = 0`; witness with `dim Hull = 2` versus `0`) (T-151). (4) The
+three regimes are kept distinct: `dim`-equality (all `s`, T-155), set equality (reflexive
+`r ∣ 2s` or codewise `σ_{2s}`-stability, T-157/T-158). (5) LCD ⟺ `C ⊕ C^{⊥_s} = R^n` ⟺
+`W ∩ W' = 0`; SO ⟺ `θ_s(rev g)g = 0`; SD ⟺ SO and `2 dim C = 4tn` (T-161–T-163).
+(6) **No universal closed (gcd-type) hull formula exists**: the hull need not be
+principal (Stage-2C's wild `M_2(m)`), so the strongest universal statement is the
+structural formula of (1) (T-154).
+
+**Two statements were downgraded during the audit of this own document.** (i) The
+dimension equality `dim Hull_s(C^{⊥_s}) = dim Hull_s(C)` was initially written as a
+theorem; the proof conflated `C^{⊥_s}` with `(σ_{2s}C)^{⊥_s}`. It is now **Conjecture
+H-3A.2** (T-160) and the gap is recorded in §4.1 rather than papered over. (ii) The
+closed-formula question is now stated as a proved impossibility plus open problem O-3.1
+rather than as an aspiration.
+
+**Conjectures and open problems.** H-3A.1 (`Hull_s(C) ⊆ σ_{2s}(C)`, 68 nonzero hulls
+tested, ~10% of them not `σ_{2s}`-stable, 0 violations) and H-3A.2 (≈680 sample codes
+plus 64 probe hulls, 0 violations); **O-3.1** (is `μ_B(W_hull) ≤ 2` always? 120 wild
+probes found none with `μ_B ≥ 3`) and **O-3.2** (O-3.2: the closed-formula obstruction).
+Carried forward unchanged: O-2.2, O-2.4 (partially), O-2.5, O-2.6, O-2.9, the unconfirmed
+import L-6.6 (now unused), T-006, T-027, T-011–T-014, warning B3.5, the Phase-1 coverage
+gaps, the `n ≥ 2` left-submodule gap, C-2.1d/e/f/g.
+
+**Novelty is narrowed (T-167).** Galois hulls over fields (Liu–Pan 2020), over
+commutative chain rings (Talbi–Batoul–Fotue Tabue–Martínez-Moro, arXiv:2102.06995) and
+cyclic codes over matrix rings (Alahmadi *et al.*; Islam–Prakash–Bhunia) are each
+established; none of the references found treats **Galois hulls of cyclic codes over
+`M_2(A_t)`**, and the absence statement is explicitly limited to this targeted search.
+The candidate contribution is the combination in §7.3 — the Morita hull formula and its
+parity/principality consequences, the non-principal annihilator/reversal formula, the
+`τ`-permutation criterion, the regime separation and the wild-regime obstruction.
+
+**Repo safeguards.** All Phase-1/2 files, scripts, logs and audit packages are preserved
+byte-for-byte; the register grew by insertion only (+32 rows, T-137 … T-168); the
+documentation index and this decision log grew by appending only; no log was
+overwritten; the commit is a normal fast-forward. The Stage-3A script imports the
+Stage-2C module read-only, so Stage-2A/2B/2C are unaffected. A passing script is
+treated as supporting evidence only: 20 rows are `PROVED IN PHASE 3 STAGE 3A` on the
+strength of the proofs in the deliverable, 3 are `PROVED IN PHASE 1`, 1 is an
+`IMPORTED RESULT`, 6 are `COMPUTATIONALLY VERIFIED ONLY`, 2 are `CONJECTURE` and 1 is
+`OPEN`.
+
+**Stopping point.** Stage 3A is complete as authorised. No further phase is begun
+without explicit approval.

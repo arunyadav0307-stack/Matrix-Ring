@@ -409,3 +409,75 @@ tautological pass; it detects 19 of 40 codes at `(4,1,3)`); neg-5 `θ_s` omitted
 `phase2_stage2a_morita_checks.py` and `phase2_stage2b_crt_principality.py` were re-run
 unchanged on the same Phase-1 library and reproduced their recorded logs byte-for-byte
 (429/429 and 460/460), so the Stage-2A and Stage-2B results are unaffected by Stage 2C.
+
+## 12. Phase 3 — Stage 3A: `phase3_stage3a_hull_structure.py`
+
+Stage 3A defines and studies the **Galois hull** `Hull_s(C) = C ∩ C^{⊥_s}` of a cyclic
+code over `M_2(A_t)`: its structure (Task A), the hull formula in principal and
+non-principal cases (Task B), hull dimension theory by four independent routes
+(Task C), the general / reflexive / codewise Galois regimes (Task D), and the
+LCD / self-orthogonal / self-dual characterisations (Task E).
+Companion document: `03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md`.
+
+**Log.** `phase3_stage3a_hull_log.txt` — **583 checks, 583 PASS, 0 FAIL**, 117 `[EXH]`
+and 467 `[SMP]`, seed `20261108`, two consecutive runs byte-identical, SHA-256
+`478d62ff31f6d95d36731e4a25b8026f7d40bbf030ba39c6113b2427bd9acfe2` (792 lines, ~45 s
+per run).
+
+**Cases** (each for every `s ∈ {0,…,r−1}`): `(4,1,1)` exhaustive (all 256 elements of
+`R_n`) — the `O-2.7` anchor; `(4,1,2)`, `(4,2,1)`, `(9,1,2)`, `(8,1,2)`, `(4,1,3)`,
+`(4,2,3)` sampled; `(4,2,2)` sampled (wild) plus 120 dedicated wild probes; `(8,1,2)`
+additionally carries 600 dedicated non-reflexive probes (`r = 3`, `s = 1, 2`).
+
+### 12.1 Independence of the four routes
+
+| Route | How the hull is obtained | What it never touches |
+|---|---|---|
+| **D** (definition) | `C^{⊥_s}` by `F_q`-linear algebra on `b_s`; hull = intersection of two subspaces | `im`, `ker`, `ann_r`, `rev` |
+| **A** (annihilator) | `rev(ann_r(θ_s(C)))`, annihilators as **kernels of the multiplication maps** | the pairing |
+| **M** (Morita) | `Hull = I_{W∩W'}`, `W = Σ im gᵢ`, `W' = ⋂ ker θ_s(rev gᵢ)` | the pairing, `ann_r` |
+| **N** (numerical) | `dim = 4tn − dim(C+C^{⊥_s}) = dim C − rank ψ_C = 2 dim(W∩W')` | the hull itself |
+
+Route M never touches the pairing and route D never touches `im`/`ker`, so their
+agreement is meaningful. `dim_{F_p} = r·dim_{F_q}` is recomputed by a direct `F_p`-rank,
+and principality is decided by an **exhaustive generator search** inside the hull, not
+by `μ`.
+
+### 12.2 Proved versus computationally verified (Stage 3A)
+
+* **Proved** (register T-137, T-139, T-141, T-142, T-143, T-144, T-145, T-147, T-148,
+  T-149, T-151, T-152, T-153, T-154, T-155, T-157, T-158, T-161, T-162, T-163): the
+  `F_q`-subspace structure and the correct scalar field; the right-module (cyclic)
+  structure and the failure of left closure; `θ_s(ann_r I) = ann_l(θ_s I)` and the
+  `θ_s`/`rev` images of the hull; the principal and non-principal hull formulas; the
+  kernel, sum, Morita, matrix and Smith-normal-form dimension formulas; the CRT
+  permutation `τ` with the decomposition criterion `n ∣ p^s+1`; the absence of a
+  universal closed formula; the `(C+D)^{⊥_s}` identity; the reflexive and codewise
+  regime statements; and the LCD / SO / SD characterisations.
+* **Computationally verified only** (T-146, T-150, T-164, T-165, T-166): the
+  removal-sensitivity census, the generator search, the LCD/SO/SD census, the harness
+  itself and the negative controls.
+* **Conjectures** (T-159, T-160): `Hull_s(C) ⊆ σ_{2s}(C)` and
+  `dim Hull_s(C^{⊥_s}) = dim Hull_s(C)`. The second was **downgraded from a claimed
+  theorem** after the proof gap was found (it conflated `C^{⊥_s}` with
+  `(σ_{2s}C)^{⊥_s}`); the document records the gap.
+* **Not attempted** (T-168): hull enumeration, Gray maps, quantum constructions.
+
+### 12.3 Negative controls
+
+Seven controls must fail, and all seven do (counts in T-166): omitting `rev` (detected
+only at `n = 3`; provably vacuous for `n ≤ 2`, and the log says so instead of emitting a
+tautological pass), `ann_l` for `ann_r`, `I_W` from rows, "the hull is always
+two-sided", `Hull(σ_kC) = Hull(C)`, the Euclidean form `Σ x_e y_e`, and
+"`dim Hull_s(C)` is independent of `s`". A further contrast — the naive componentwise
+hull `Σ_j dim Hull_s(C_j)` — fails exactly when `τ ≠ id`. Three real bugs were caught by
+this discipline during development and are recorded in the document: row-vs-`R_n`
+coordinates in the restricted pairing matrix, list-vs-tuple basis comparison (three
+times), and a diagonal-only search for the Euclidean witness.
+
+### 12.4 Regression
+
+The Stage-2A, Stage-2B and Stage-2C scripts, their logs and the Phase-1 library are
+**unchanged** by Stage 3A; `phase3_stage3a_hull_structure.py` imports
+`phase2_stage2c_galois_duality.py` (and `ring_structure_checks.py`) read-only. The
+71-file start-of-stage baseline is re-checked at the end of the stage.

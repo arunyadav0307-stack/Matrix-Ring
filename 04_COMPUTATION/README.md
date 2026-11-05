@@ -325,3 +325,49 @@ could have failed.
 * **Regression.** `phase2_stage2a_morita_checks.py` and
   `phase2_stage2b_crt_principality.py` were re-run unchanged on the same Phase-1 library
   and reproduced their recorded logs byte-for-byte (429/429 and 460/460).
+
+## Phase 3 — Stage 3A: Galois hull structure and dimension
+`phase3_stage3a_hull_structure.py` → `phase3_stage3a_hull_log.txt`
+
+Studies `Hull_s(C) = C ∩ C^{⊥_s}` for cyclic codes over `M_2(A_t)`:
+structure and closure properties (Task A), the hull formula in the principal and
+non-principal cases (Task B), hull dimension by four independent routes (Task C), the
+general / reflexive / codewise Galois regimes (Task D), and LCD / self-orthogonal /
+self-dual characterisations (Task E).
+Companion document: `03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md`.
+
+Cases: `(q,t,n) = (4,1,1), (4,1,2), (4,2,1), (4,2,2), (4,1,3), (9,1,2), (8,1,2),
+(4,2,3)`, every `s ∈ {0,…,r−1}`; `(8,1,2)` additionally probes the **non-reflexive**
+regime (`r = 3`, `s = 1, 2`) with 600 dedicated codes.
+
+Run: `python3 -u phase3_stage3a_hull_structure.py` (~45 s), which rewrites
+`phase3_stage3a_hull_log.txt`. The script imports the Stage-2C module
+(`phase2_stage2c_galois_duality.py`) and `ring_structure_checks.py` **without
+modifying** them; the hull machinery — the `F_q`-subspace intersection, the four routes,
+the `F_p`-rank routine, the CRT permutation `τ`, the exhaustive principality search and
+all tests — is written here.
+
+### What the 583/583 result does and does not mean
+
+* It is **supporting evidence, not proof.** The theorems are proved in
+  `PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md`; register rows T-137 … T-168 record, per
+  statement, whether it is `PROVED IN PHASE 3 STAGE 3A` (20 rows), `PROVED IN PHASE 1`
+  (3), `IMPORTED RESULT` (1), `COMPUTATIONALLY VERIFIED ONLY` (6), `CONJECTURE` (2) or
+  `OPEN` (1).
+* **Settled here:** the Morita hull formula `Hull = I_{W∩W'}` with the parity and
+  principality consequences; the non-principal annihilator/reversal formula; the CRT
+  permutation `τ` and the exact criterion `n ∣ p^s+1` for componentwise decomposition
+  (with a witness where the naive formula gives `0` but `dim Hull = 2`); the separation
+  of the general, reflexive and codewise regimes; the LCD/SO/SD characterisations.
+  **No universal closed (gcd-type) hull formula exists** — the document proves the
+  obstruction and records what is available instead.
+* **Conjectures, unproved:** `Hull_s(C) ⊆ σ_{2s}(C)` (H-3A.1) and
+  `dim Hull_s(C^{⊥_s}) = dim Hull_s(C)` (H-3A.2). The second was **downgraded** from a
+  claimed theorem when the proof gap was found.
+* **Open:** O-3.1 (is the hull of a principal code always principal, even in the wild
+  regime? 120 wild probes found none with `μ_B ≥ 3`) and O-3.2 (the closed-formula
+  obstruction, now a proved impossibility plus an open refinement).
+* **Not attempted** (T-168): hull enumeration, Gray maps, quantum constructions, and no
+  quantum parameter claim is made anywhere.
+* **Regression.** The Stage-2A, Stage-2B and Stage-2C scripts and their logs are
+  unchanged and were re-run unchanged against the start-of-stage baseline.
