@@ -273,3 +273,55 @@ sufficient — the certificates check `x ∈ I_W` **and** `|xS| = |I_W|`.
   case) remains **open** — Stage 2B uses only `μ ≤ 2`, proved where it is used.
 * **Regression.** `phase2_stage2a_morita_checks.py` was re-run unchanged on the same
   Phase-1 library and reproduced its log byte-for-byte (429/429, `3ef38b17…23abe5`).
+
+---
+
+## Phase 2 — Stage 2C: Galois duality, annihilators and reciprocal generators
+
+**Deliverable:** `03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md`
+**Script:** `phase2_stage2c_galois_duality.py` (1975 lines)
+**Log:** `phase2_stage2c_galois_log.txt` — **596 checks, 596 PASS, 0 FAIL** (101 `[EXH]`,
+495 `[SMP]`), seed `20261107`, Python 3.11.2, two consecutive runs byte-identical,
+SHA-256 `00355e7f205de16cbe0a567881a978f326007e564a606663135a71f5103a30ed` (777 lines).
+**Register rows:** T-115 … T-136 (insertion-only).
+
+Tasks: (A) **L-6.1** — `θ_s = σ_s ∘ (·)^T` is an anti-automorphism of `R_n`, proved on the
+normal forms (matrix order + convolution + index swap), with the three levels
+`R` / `R[X]` / `R_n` kept separate and the descent proved via `θ_s(X^n−1) = X^n−1` and the
+centrality of `X^n−1`; (B) annihilator conventions and their exact side laws;
+(C) **P-2.7** — `C^{⊥_s} = rev(ann_r(θ_s(g)))`, derived from the convolution equations,
+in three equivalent forms plus the Morita form `ann_r(θ_s(g)) = I_{ker θ_s(g)}`, and in a
+general form for **non-principal** right ideals; (D) **P-2.8** — reciprocal generators, in
+a regime-free form (`h = [w_1∣w_2]` from `ker θ_s(rev g)`) and in the Smith-normal-form
+form of the proposal for the chain-ring regime; (E) cardinality and double-dual
+consistency, including the non-reflexive regime; (F) the computation above.
+
+Cases: `(q,t,n) = (4,1,1), (4,1,2), (4,2,1), (4,2,2), (4,1,3), (9,1,2), (8,1,2), (4,2,3)`,
+every `s ∈ {0,…,r−1}`.
+
+Run: `python3 -u phase2_stage2c_galois_duality.py` (~78 s), which rewrites
+`phase2_stage2c_galois_log.txt`. The script imports from `ring_structure_checks.py` only
+`Field`, `Local`, `MatRing`, `rref`, `nullspace_basis` and the reporting helpers; the ring
+`B = A_t[X]/⟨X^n−1⟩`, the maps `σ_k`, `θ_s`, `rev`, `ι`, both pairings, all annihilators
+(computed as kernels of the multiplication maps) and the Smith normal form are written
+from scratch here. The dual is always computed **from the definition**, so every formula
+could have failed.
+
+### What the 596/596 result does and does not mean
+
+* It is **supporting evidence, not proof.** L-6.1, P-2.7 and P-2.8 are proved in
+  `PHASE2_STAGE2C_GALOIS_DUALITY.md` §1, §3 and §4; register rows T-115 … T-136 record,
+  per statement, whether it is `PROVED IN PHASE 2 STAGE 2C`, `COMPUTATIONALLY VERIFIED
+  ONLY` (T-129, T-133, T-134, T-135) or `OPEN` (T-136).
+* **Settled here:** L-6.1 (T-115), `rev` (T-124, discharging T-066), P-2.7 in a general
+  form (T-125, T-126), L-6.5 (T-128, proved without the unconfirmed import L-6.6),
+  P-2.8 (T-130, T-131), the `n = 1` anchor O-2.7, and **O-2.8, answered NO** by the wild
+  counterexample `g = diag(uε, uε)` at `(4,2,2)` (T-132): `C^{⊥_s} = M_2(m)` with
+  `μ_B(ker) = 4`, all 16 777 216 of its elements scanned and none generating it.
+* **Not attempted** (T-136): hull dimensions, hull enumeration, Gray maps, quantum
+  constructions. Still open: **O-2.9** (is every generator of a principal right ideal of
+  the form `h·u`? — exhaustively verified at three parameter sets, unproved in general),
+  **O-2.2**, **O-2.4** (partially resolved), **O-2.5**, **O-2.6**.
+* **Regression.** `phase2_stage2a_morita_checks.py` and
+  `phase2_stage2b_crt_principality.py` were re-run unchanged on the same Phase-1 library
+  and reproduced their recorded logs byte-for-byte (429/429 and 460/460).

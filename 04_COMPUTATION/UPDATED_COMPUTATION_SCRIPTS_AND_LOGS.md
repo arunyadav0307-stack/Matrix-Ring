@@ -354,3 +354,58 @@ all 4096 elements of `I_W`).
 Phase-1 library and produced its recorded log byte-for-byte
 (`3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5`, 429/429 PASS), so the
 Stage-2A results are unaffected by Stage 2B.
+
+---
+
+## 11. Phase 2 — Stage 2C: `phase2_stage2c_galois_duality.py`
+
+Stage 2C verifies **L-6.1** (`θ_s` is an anti-automorphism of `R_n`), the annihilator
+conventions, **P-2.7** (`C^{⊥_s} = rev(ann_r(θ_s(g)))`), **P-2.8** (reciprocal
+generators), and the cardinality / double-dual identities.
+Companion document: `03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md`.
+
+**Log.** `phase2_stage2c_galois_log.txt` — **596 checks, 596 PASS, 0 FAIL**, 101 `[EXH]`
+and 495 `[SMP]`, seed `20261107`, two consecutive runs byte-identical, SHA-256
+`00355e7f205de16cbe0a567881a978f326007e564a606663135a71f5103a30ed` (777 lines).
+
+**Cases** (each for every `s ∈ {0,…,r−1}`): `(4,1,1)` exhaustive over all 256 elements of
+`R_n`; `(4,1,2)`, `(4,2,1)`, `(9,1,2)`, `(8,1,2)`, `(4,1,3)`, `(4,2,3)` with 200 distinct
+random generators each (`[SMP]`); `(4,2,2)` sampled plus a fully `[EXH]` wild
+counterexample.
+
+### 11.1 Independence of the tests
+
+The dual `C^{⊥_s}` is computed **from the definition** by `F_q`-linear algebra
+(`{y : B_s(x,y) = 0 ∀ x ∈ C}`); every annihilator is computed as the **kernel of the
+multiplication map** `w ↦ vw` over the standard basis (brute force, never from `im`,
+never via Morita); `im` and `ker` are separate routines, and the Morita form
+`ann_r(v) = I_{ker v}` is therefore an independent statement. Two real bugs were caught
+this way during development and are recorded in T-132 (the SNF exponent `ω^{ℓ−a}` at
+`a = 0`) and in the negative controls (rows vs columns of `I_W`).
+
+### 11.2 Proved versus computationally verified (Stage 2C)
+
+* **Proved** (register rows T-115 … T-128, T-130, T-131, T-132): L-6.1 on `R[X]` and on
+  `R_n`; the descent to the quotient; additivity/bijectivity/inverse; `θ_s² = σ_{2s}` and
+  the order `2r/gcd(r,2s)`; the annihilator side laws; `ann_r(R_n g) = ann_r(g)` versus
+  the strict inclusion for right ideals; P-2.1f (`rev`); P-2.7 in three equivalent forms
+  and the Morita form, for principal **and** non-principal right ideals; L-6.5; P-2.8 in
+  its regime-free and Smith-normal-form versions; the wild counterexample.
+* **Computationally verified only** (T-129, T-133, T-134, T-135): the C1–C4 consistency
+  checks, the cardinality and double-dual checks (the identities themselves are Phase-1
+  theorems), the generator-orbit uniqueness statement, and the census/negative controls.
+* **Not attempted** (T-136): hulls, Gray maps, quantum constructions.
+
+### 11.3 Negative controls
+
+All seven **must** fail, and all seven do: neg-1 wrong multiplication order in `θ_s`;
+neg-2 `rev` treated as an anti-automorphism; neg-3 `ann_l` in place of `ann_r`; neg-4
+`rev` omitted (genuinely vacuous for `n ≤ 2`, and the log says so instead of emitting a
+tautological pass; it detects 19 of 40 codes at `(4,1,3)`); neg-5 `θ_s` omitted; neg-6
+`I_W` built from rows instead of columns; neg-7 the swapped pairing.
+
+### 11.4 Regression
+
+`phase2_stage2a_morita_checks.py` and `phase2_stage2b_crt_principality.py` were re-run
+unchanged on the same Phase-1 library and reproduced their recorded logs byte-for-byte
+(429/429 and 460/460), so the Stage-2A and Stage-2B results are unaffected by Stage 2C.

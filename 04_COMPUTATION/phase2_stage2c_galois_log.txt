@@ -1,0 +1,777 @@
+
+################################################################################################
+#  PHASE 2 -- STAGE 2C: Galois duality, annihilators, reciprocal generators
+################################################################################################
+  seed 20261107 ;  every [SMP] line carries the sample size
+
+################################################################################################
+#  (q,t,n) = (4,1,1)   |B| = 4, |R_n| = 256, dim_{F_q} R^n = 4
+################################################################################################
+  regime: split   n = 1: rev = id, the theory degenerates to the ideal theory of M_2(F_4)  (register O-2.7).  Exhaustive over all of R_n.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: ALL 256 elements of R_n  [EXH]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [EXH] (q,t,n)=(4,1,1), s=0: theta_s is additive                    PASS  200 pairs
+  [EXH] (q,t,n)=(4,1,1), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  65536 pairs
+  [EXH] (q,t,n)=(4,1,1), s=0: theta_s is injective (hence bijective, R_n finite) PASS  256 images, 256 distinct
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,1), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,1), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,1), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,1), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [EXH] (q,t,n)=(4,1,1), s=1: theta_s is additive                    PASS  200 pairs
+  [EXH] (q,t,n)=(4,1,1), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  65536 pairs
+  [EXH] (q,t,n)=(4,1,1), s=1: theta_s is injective (hence bijective, R_n finite) PASS  256 images, 256 distinct
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,1), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,1), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,1), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,1), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [EXH] (q,t,n)=(4,1,1): rev^2 = id                                  PASS  256 elements
+  [EXH] (q,t,n)=(4,1,1): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  65536 pairs
+  [EXH] (q,t,n)=(4,1,1): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,1,1): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,1,1): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,1,1): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,1): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,1): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,1,1): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,1,1): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,1,1): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  19 of 25 elements differ
+  [EXH] (q,t,n)=(4,1,1): ann_r(v) = ker(left mult by v), ann_l(v) = ker(right mult) PASS  8 elements, brute force over all 256 w
+  [SMP] (q,t,n)=(4,1,1): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,1,1): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,1,1): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,1,1): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (6 of them two-sided)
+  [SMP] (q,t,n)=(4,1,1): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,1,1): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  19 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [EXH] (q,t,n)=(4,1,1), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=0: |C| |C^{perp_s}| = |R|^n               PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  256 of 256 g
+  [EXH] (q,t,n)=(4,1,1), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 180, mu=1: 75, mu=2: 1
+  [EXH] (q,t,n)=(4,1,1), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  256 of 256 codes
+  [SMP] (q,t,n)=(4,1,1), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,1), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [EXH] (q,t,n)=(4,1,1), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=1: |C| |C^{perp_s}| = |R|^n               PASS  256 of 256 generators agree
+  [EXH] (q,t,n)=(4,1,1), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  256 of 256 g
+  [EXH] (q,t,n)=(4,1,1), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 180, mu=1: 75, mu=2: 1
+  [EXH] (q,t,n)=(4,1,1), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  256 of 256 codes
+  [SMP] (q,t,n)=(4,1,1), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,1), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+  [EXH] (q,t,n)=(4,1,1): every generator of a principal right ideal is (generator)*(unit) PASS  7 ideals checked exhaustively (all 256 elements of R_n grouped by the ideal they generate)
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,1,1), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,1,1), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,1,1), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  23 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(4,1,1), s=0: neg-5 -- omitting theta_s FAILS        PASS  20 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,1), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  23 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,1), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  23 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (4,1,2)   |B| = 16, |R_n| = 65536, dim_{F_q} R^n = 8
+################################################################################################
+  regime: chain   t = 1 with p | n: B = F_4[X]/<(X-1)^2> is a chain ring.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,2), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,2), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,2), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,2), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,2), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,2), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,2), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,2), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,2), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,2), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,1,2): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(4,1,2): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(4,1,2): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,1,2): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,1,2): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,1,2): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,2): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,2): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,1,2): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,1,2): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,1,2): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  4 of 25 elements differ
+  [SMP] (q,t,n)=(4,1,2): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,1,2): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,1,2): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,1,2): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (21 of them two-sided)
+  [SMP] (q,t,n)=(4,1,2): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,1,2): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  4 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(4,1,2), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(4,1,2), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 149, mu=1: 49, mu=2: 2
+  [SMP] (q,t,n)=(4,1,2), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,1,2), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,2), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(4,1,2), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,2), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(4,1,2), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 149, mu=1: 49, mu=2: 2
+  [SMP] (q,t,n)=(4,1,2), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,1,2), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,2), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+  [EXH] (q,t,n)=(4,1,2): every generator of a principal right ideal is (generator)*(unit) PASS  33 ideals checked exhaustively (all 65536 elements of R_n grouped by the ideal they generate)
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,1,2), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,1,2), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,1,2), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  9 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(4,1,2), s=0: neg-5 -- omitting theta_s FAILS        PASS  7 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,2), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  9 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,2), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  7 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (4,2,1)   |B| = 16, |R_n| = 65536, dim_{F_q} R^n = 8
+################################################################################################
+  regime: split   t >= 2 with p does not divide n: B = F_4[u]/<u^2> is a chain ring.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,1), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,1), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,1), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,1), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,1), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,1), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,1), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,1), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,1), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,1), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,1): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(4,2,1): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(4,2,1): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,2,1): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,2,1): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,2,1): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,1): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,1): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,2,1): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,2,1): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,2,1): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  8 of 25 elements differ
+  [SMP] (q,t,n)=(4,2,1): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,2,1): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,2,1): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,2,1): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (17 of them two-sided)
+  [SMP] (q,t,n)=(4,2,1): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,2,1): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  8 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(4,2,1), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(4,2,1), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 136, mu=1: 62, mu=2: 2
+  [SMP] (q,t,n)=(4,2,1), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(4,2,1), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,1), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(4,2,1), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 136, mu=1: 62, mu=2: 2
+  [SMP] (q,t,n)=(4,2,1), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+  [EXH] (q,t,n)=(4,2,1): every generator of a principal right ideal is (generator)*(unit) PASS  33 ideals checked exhaustively (all 65536 elements of R_n grouped by the ideal they generate)
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,2,1), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,2,1), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,2,1), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  15 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(4,2,1), s=0: neg-5 -- omitting theta_s FAILS        PASS  13 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,1), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  15 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,1), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  15 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (4,2,2)   |B| = 256, |R_n| = 4294967296, dim_{F_q} R^n = 16
+################################################################################################
+  regime: wild   WILD: t >= 2 and p | n.  B is local but not a chain ring.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,2), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,2), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,2), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,2), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,2), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,2), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,2), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,2), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,2), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,2), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,2): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(4,2,2): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(4,2,2): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,2,2): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,2,2): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,2,2): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,2): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,2): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,2,2): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,2,2): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,2,2): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  8 of 25 elements differ
+  [SMP] (q,t,n)=(4,2,2): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,2,2): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,2,2): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,2,2): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (17 of them two-sided)
+  [SMP] (q,t,n)=(4,2,2): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,2,2): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  8 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(4,2,2), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+     [WILD] mu_B(ker theta_s(rev g)) over the sample: mu=0: 136, mu=1: 61, mu=2: 3
+  [SMP] (q,t,n)=(4,2,2), s=0 [WILD]: mu_B(ker) <= 4 on every sampled g  (the O-2.2 bound) PASS  largest mu observed in this sample: 2
+  [SMP] (q,t,n)=(4,2,2), s=0 [WILD]: where mu <= 2 the Nakayama generator h = [w1|w2] generates C^{perp_s} PASS  200 of 200 such codes
+  [SMP] (q,t,n)=(4,2,2), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,2), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(4,2,2), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,2), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+     [WILD] mu_B(ker theta_s(rev g)) over the sample: mu=0: 136, mu=1: 61, mu=2: 3
+  [SMP] (q,t,n)=(4,2,2), s=1 [WILD]: mu_B(ker) <= 4 on every sampled g  (the O-2.2 bound) PASS  largest mu observed in this sample: 2
+  [SMP] (q,t,n)=(4,2,2), s=1 [WILD]: where mu <= 2 the Nakayama generator h = [w1|w2] generates C^{perp_s} PASS  200 of 200 such codes
+  [SMP] (q,t,n)=(4,2,2), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,2), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+     [SMP] generator uniqueness not tested at (q,t,n)=(4,2,2): |R_n| = 4294967296 is too large to enumerate the units
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,2,2), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,2,2), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,2,2), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  12 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(4,2,2), s=0: neg-5 -- omitting theta_s FAILS        PASS  11 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,2), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  12 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,2), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  12 of 40 codes detect the difference
+
+-- Task D -- the wild counterexample: a principal code whose dual is NOT principal  (O-2.8) --
+  [EXH] (4,2,2) wild: u*(X-1) is non-zero and annihilated exactly by m PASS  socle element u eps != 0, u*eps*m = 0
+  [EXH] (4,2,2) s=0: the chosen g satisfies theta_s(rev g) = v       PASS  
+  [EXH] (4,2,2) s=0: C^{perp_s} = I_W with W = ker v                 PASS  dim C^{perp_s} = 12
+  [EXH] (4,2,2) s=0: mu_B(ker v) = 4  (Nakayama over the local ring B) PASS  mu = 4
+  [EXH] (4,2,2) s=0: ker v = m + m                                   PASS  |ker v| = 4096, |m| = 64
+  [EXH] (4,2,2) s=0: C^{perp_s} is NOT principal (no single generator, exhaustive scan) PASS  all 16777216 elements of C^{perp_s} scanned, none generates it
+  [EXH] (4,2,2) s=0: C^{perp_s} is 2-generated (mu_S = 2)            PASS  |C^{perp_s}| = 16777216
+  [EXH] (4,2,2) s=0: |C| |C^{perp_s}| = |R|^n                        PASS  |C| = 256, |C^{perp_s}| = 16777216
+  [EXH] (4,2,2) s=1: the chosen g satisfies theta_s(rev g) = v       PASS  
+  [EXH] (4,2,2) s=1: C^{perp_s} = I_W with W = ker v                 PASS  dim C^{perp_s} = 12
+  [EXH] (4,2,2) s=1: mu_B(ker v) = 4  (Nakayama over the local ring B) PASS  mu = 4
+  [EXH] (4,2,2) s=1: ker v = m + m                                   PASS  |ker v| = 4096, |m| = 64
+  [EXH] (4,2,2) s=1: C^{perp_s} is NOT principal (no single generator, exhaustive scan) PASS  all 16777216 elements of C^{perp_s} scanned, none generates it
+  [EXH] (4,2,2) s=1: C^{perp_s} is 2-generated (mu_S = 2)            PASS  |C^{perp_s}| = 16777216
+  [EXH] (4,2,2) s=1: |C| |C^{perp_s}| = |R|^n                        PASS  |C| = 256, |C^{perp_s}| = 16777216
+
+################################################################################################
+#  (q,t,n) = (4,1,3)   |B| = 64, |R_n| = 16777216, dim_{F_q} R^n = 12
+################################################################################################
+  regime: split   split semisimple, B = F_4^3, rev is non-trivial (n = 3).
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,3), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,3), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,3), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,3), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,3), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,3), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,1,3), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,1,3), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,1,3), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,1,3), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,1,3): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(4,1,3): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(4,1,3): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,1,3): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,1,3): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,1,3): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,3): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,1,3): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,1,3): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,1,3): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,1,3): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  16 of 25 elements differ
+  [SMP] (q,t,n)=(4,1,3): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,1,3): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,1,3): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,1,3): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (9 of them two-sided)
+  [SMP] (q,t,n)=(4,1,3): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,1,3): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  16 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(4,1,3), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=0: rev-sensitivity -- some g has rev(ann_r(theta_s(g))) != ann_r(theta_s(g)) PASS  92 of 200 g are NOT rev-stable, so the reversal is load-bearing
+  [SMP] (q,t,n)=(4,1,3), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 65, mu=1: 135
+  [SMP] (q,t,n)=(4,1,3), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(4,1,3), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,1,3), s=1: rev-sensitivity -- some g has rev(ann_r(theta_s(g))) != ann_r(theta_s(g)) PASS  92 of 200 g are NOT rev-stable, so the reversal is load-bearing
+  [SMP] (q,t,n)=(4,1,3), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 65, mu=1: 135
+  [SMP] (q,t,n)=(4,1,3), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+     [SMP] generator uniqueness not tested at (q,t,n)=(4,1,3): |R_n| = 16777216 is too large to enumerate the units
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,1,3), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,1,3), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,1,3), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  24 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,3), s=0: neg-4 -- omitting rev FAILS            PASS  19 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,3), s=0: neg-5 -- omitting theta_s FAILS        PASS  19 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,3), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  24 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,1,3), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  24 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (9,1,2)   |B| = 81, |R_n| = 43046721, dim_{F_q} R^n = 8
+################################################################################################
+  regime: split   split semisimple, B = F_9 x F_9;  r = 2, s = 1 is REFLEXIVE.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(9,1,2), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(9,1,2), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(9,1,2), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(9,1,2), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(9,1,2), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(9,1,2), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(9,1,2), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(9,1,2), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(9,1,2), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(9,1,2), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(9,1,2): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(9,1,2): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(9,1,2): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(9,1,2): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(9,1,2): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(9,1,2): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(9,1,2): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(9,1,2): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(9,1,2): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(9,1,2): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(9,1,2): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  6 of 25 elements differ
+  [SMP] (q,t,n)=(9,1,2): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(9,1,2): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(9,1,2): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(9,1,2): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (19 of them two-sided)
+  [SMP] (q,t,n)=(9,1,2): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(9,1,2): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  6 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(9,1,2), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(9,1,2), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 155, mu=1: 45
+  [SMP] (q,t,n)=(9,1,2), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(9,1,2), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(9,1,2), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(9,1,2), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 155, mu=1: 45
+  [SMP] (q,t,n)=(9,1,2), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+     [SMP] generator uniqueness not tested at (q,t,n)=(9,1,2): |R_n| = 43046721 is too large to enumerate the units
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(9,1,2), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(9,1,2), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(9,1,2), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  8 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(9,1,2), s=0: neg-5 -- omitting theta_s FAILS        PASS  8 of 40 codes detect the difference
+  [SMP] (q,t,n)=(9,1,2), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  8 of 40 codes detect the difference
+  [SMP] (q,t,n)=(9,1,2), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  8 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (8,1,2)   |B| = 64, |R_n| = 16777216, dim_{F_q} R^n = 8
+################################################################################################
+  regime: chain   chain ring F_8[X]/<(X-1)^2>;  r = 3 is odd, so NO non-trivial reflexive s exists -- the non-reflexive regime.
+  r = 3, so the reflexive s are those with r | 2s: all s
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(8,1,2), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(8,1,2), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(8,1,2), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=1: ord(theta_s) = 2r/gcd(r,2s) = 6        PASS  theta^6 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(8,1,2), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(8,1,2), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(8,1,2), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=2: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(8,1,2), s=2: ord(theta_s) = 2r/gcd(r,2s) = 6        PASS  theta^6 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(8,1,2), s=2: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(8,1,2), s=2: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(8,1,2), s=2: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(8,1,2): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(8,1,2): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(8,1,2): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(8,1,2): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(8,1,2): rev commutes with sigma_k and theta_s       PASS  150 elements x 3 values of s
+  [SMP] (q,t,n)=(8,1,2): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(8,1,2): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(8,1,2): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(8,1,2): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(8,1,2): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(8,1,2): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  6 of 25 elements differ
+  [SMP] (q,t,n)=(8,1,2): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(8,1,2): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(8,1,2): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(8,1,2): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (19 of them two-sided)
+  [SMP] (q,t,n)=(8,1,2): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(8,1,2): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  6 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(8,1,2), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=0: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(8,1,2), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 169, mu=1: 31
+  [SMP] (q,t,n)=(8,1,2), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(8,1,2), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(8,1,2), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(8,1,2), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=1: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(8,1,2), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 169, mu=1: 31
+  [SMP] (q,t,n)=(8,1,2), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(8,1,2), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(8,1,2), s=1: r does not divide 2s, and the double dual is genuinely different from C PASS  8 of 60 codes have (C^{perp_s})^{perp_s} != C
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 2 ---------------------------
+  [SMP] (q,t,n)=(8,1,2), s=2: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=2: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=2: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=2: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=2: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(8,1,2), s=2: rev = id for n <= 2, so ann_r(theta_s(g)) is rev-stable for every g PASS  200 of 200 g
+  [SMP] (q,t,n)=(8,1,2), s=2: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 169, mu=1: 31
+  [SMP] (q,t,n)=(8,1,2), s=2: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(8,1,2), s=2: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(8,1,2), s=2: r does not divide 2s, and the double dual is genuinely different from C PASS  8 of 60 codes have (C^{perp_s})^{perp_s} != C
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+     [SMP] generator uniqueness not tested at (q,t,n)=(8,1,2): |R_n| = 16777216 is too large to enumerate the units
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(8,1,2), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(8,1,2), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(8,1,2), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  8 of 40 codes detect the difference
+     neg-4 is vacuous for n <= 2 (rev = id there, since -e = e mod n); it is run at n >= 3
+  [SMP] (q,t,n)=(8,1,2), s=0: neg-5 -- omitting theta_s FAILS        PASS  6 of 40 codes detect the difference
+  [SMP] (q,t,n)=(8,1,2), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  8 of 40 codes detect the difference
+  [SMP] (q,t,n)=(8,1,2), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  8 of 40 codes detect the difference
+
+################################################################################################
+#  (q,t,n) = (4,2,3)   |B| = 4096, |R_n| = 281474976710656, dim_{F_q} R^n = 24
+################################################################################################
+  regime: split   t >= 2, p does not divide n, split: B = A_2^3, rev non-trivial.
+  r = 2, so the reflexive s are those with r | 2s: s = 0 and s = 1
+  generators tested: 200 random elements of R_n, seed 20261107  [SMP]
+
+-- Task A -- L-6.1 (theta_s on R_n) and rev --------------------------------------------------
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,3), s=0: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,3), s=0: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,3), s=0: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,3), s=0: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,3), s=0: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s is additive                    PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,3), s=1: L-6.1 -- theta_s(uv) = theta_s(v)theta_s(u) on R_n PASS  150 pairs
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s is injective (hence bijective, R_n finite) PASS  150 images, 150 distinct
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s^2 = sigma_{2s}                 PASS  200 elements
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s^{-1} = sigma_{-2s} theta_s     PASS  200 elements
+  [SMP] (q,t,n)=(4,2,3), s=1: ord(theta_s) = 2r/gcd(r,2s) = 2        PASS  theta^2 = id, no smaller exponent on 60 probes
+  [EXH] (q,t,n)=(4,2,3), s=1: theta_s fixes X and u                  PASS  
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s is an anti-automorphism of R = M_2(A_t) PASS  200 pairs
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s is an anti-automorphism of the polynomial ring R[X] PASS  200 pairs of polynomials
+  [EXH] (q,t,n)=(4,2,3), s=1: theta_s(X^n - 1) = X^n - 1             PASS  
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s preserves the ideal <X^n-1>  (m*(X^n-1) and its image both reduce to 0) PASS  100 multipliers
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s is well defined on the quotient R_n PASS  100 congruent pairs
+  [SMP] (q,t,n)=(4,2,3), s=1: the descended theta_s is coefficient-wise theta_s PASS  100 polynomials
+  [SMP] (q,t,n)=(4,2,3): rev^2 = id                                  PASS  150 elements
+  [SMP] (q,t,n)=(4,2,3): P-2.1f(iii) -- rev is an AUTOMORPHISM of R_n PASS  150 pairs
+  [EXH] (q,t,n)=(4,2,3): rev(X) = X^{n-1}, rev(1) = 1                PASS  
+  [SMP] (q,t,n)=(4,2,3): rev restricts to the identity on R          PASS  100 constants
+  [SMP] (q,t,n)=(4,2,3): rev commutes with sigma_k and theta_s       PASS  150 elements x 2 values of s
+  [SMP] (q,t,n)=(4,2,3): rev T = T^{-1} rev on R^n                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,3): iota(rev y) = rev(iota y)                   PASS  100 words
+  [SMP] (q,t,n)=(4,2,3): P-2.1f(iv) -- rev(ann_r(v)) = ann_r(rev v)  PASS  40 elements
+
+-- Task B -- annihilator conventions ---------------------------------------------------------
+  [SMP] (q,t,n)=(4,2,3): ann_r(v) is a RIGHT ideal (v an element)    PASS  25 elements
+  [SMP] (q,t,n)=(4,2,3): ann_l(v) is a LEFT ideal (v an element)     PASS  25 elements
+  [SMP] (q,t,n)=(4,2,3): ann_r(v) and ann_l(v) are genuinely different (noncommutative) PASS  19 of 25 elements differ
+  [SMP] (q,t,n)=(4,2,3): ann_r of a RIGHT ideal is two-sided         PASS  25 right ideals
+  [SMP] (q,t,n)=(4,2,3): ann_r(gR_n) subset of ann_r(g)              PASS  25 generators
+  [SMP] (q,t,n)=(4,2,3): the inclusion is STRICT for some g (element vs ideal annihilator) PASS  witness found
+  [SMP] (q,t,n)=(4,2,3): ann_r of a LEFT ideal is a right ideal      PASS  25 left ideals (6 of them two-sided)
+  [SMP] (q,t,n)=(4,2,3): ann_r(R_n g) = ann_r(g)  (a LEFT ideal is annihilator-determined by its generator) PASS  25 generators
+  [SMP] (q,t,n)=(4,2,3): ann_r(g R_n) =/= ann_r(g) for at least one g  (a RIGHT ideal is NOT annihilator-determined by its generator) PASS  19 of 25 generators show a strict difference
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 0 ---------------------------
+  [SMP] (q,t,n)=(4,2,3), s=0: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=0: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=0: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=0: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=0: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=0: rev-sensitivity -- some g has rev(ann_r(theta_s(g))) != ann_r(theta_s(g)) PASS  108 of 200 g are NOT rev-stable, so the reversal is load-bearing
+  [SMP] (q,t,n)=(4,2,3), s=0: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 68, mu=1: 131, mu=2: 1
+  [SMP] (q,t,n)=(4,2,3), s=0: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Tasks C/D/E -- P-2.7, P-2.8, cardinality and double dual, s = 1 ---------------------------
+  [SMP] (q,t,n)=(4,2,3), s=1: P-2.7 form 1 -- C^{perp_s} = rev(ann_r(theta_s(g))) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=1: P-2.7 form 2 -- C^{perp_s} = ann_r(theta_s(rev g)) PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=1: P-2.7 form 3 -- C^{perp_s} = {y : theta_s(g) rev(y) = 0} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=1: Morita form -- ann_r(theta_s(g)) = I_{ker theta_s(g)} PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=1: |C| |C^{perp_s}| = |R|^n               PASS  200 of 200 generators agree
+  [SMP] (q,t,n)=(4,2,3), s=1: rev-sensitivity -- some g has rev(ann_r(theta_s(g))) != ann_r(theta_s(g)) PASS  108 of 200 g are NOT rev-stable, so the reversal is load-bearing
+  [SMP] (q,t,n)=(4,2,3), s=1: mu_B(ker theta_s(rev g)) <= 2 for every g (chain-ring regime) PASS  mu distribution: mu=0: 68, mu=1: 131, mu=2: 1
+  [SMP] (q,t,n)=(4,2,3), s=1: P-2.8 -- the SNF generator h satisfies h R_n = C^{perp_s} PASS  200 of 200 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: (C^{perp_s})^{perp_s} = sigma_{2s}(C)  PASS  60 of 60 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: r | 2s, so the duality is reflexive: (C^{perp_s})^{perp_s} = C PASS  60 of 60 codes fixed
+
+-- Task D -- uniqueness of the generator -----------------------------------------------------
+     [SMP] generator uniqueness not tested at (q,t,n)=(4,2,3): |R_n| = 281474976710656 is too large to enumerate the units
+
+-- Task F -- negative controls (wrong conventions must FAIL) ---------------------------------
+  [EXH] (q,t,n)=(4,2,3), s=0: neg-1 -- 'theta_s(uv) = theta_s(u)theta_s(v)' FAILS PASS  counterexample found
+  [EXH] (q,t,n)=(4,2,3), s=0: neg-2 -- 'rev is an anti-automorphism' FAILS PASS  counterexample found
+  [SMP] (q,t,n)=(4,2,3), s=0: neg-3 -- using ann_l instead of ann_r FAILS PASS  26 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,3), s=0: neg-4 -- omitting rev FAILS            PASS  20 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,3), s=0: neg-5 -- omitting theta_s FAILS        PASS  23 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,3), s=0: neg-6 -- building I_W from ROWS instead of COLUMNS FAILS PASS  26 of 40 codes detect the difference
+  [SMP] (q,t,n)=(4,2,3), s=0: neg-7 -- the swapped pairing B_s(y,x) gives a different dual PASS  26 of 40 codes detect the difference
+
+################################################################################################
+#  summary
+################################################################################################
+  596 checks, 596 PASS, 0 FAIL
+  no failures
+  end of log

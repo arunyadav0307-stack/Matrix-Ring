@@ -197,3 +197,71 @@ decision log (D-021). **Nothing was deleted, rewritten or moved**: Phase-1 files
 `PHASE2_PROPOSAL_v2.md`, the audit ZIP and all Stage-1 and Stage-2A files are byte-for-byte
 unchanged (re-checked against the end-of-stage baseline), and the push is a normal
 fast-forward.
+
+---
+
+## D-022 — Phase 2, Stage 2C: Galois duality, annihilators and reciprocal generators (L-6.1, P-2.7, P-2.8)
+
+**Decision.** Execute `PHASE2_PROPOSAL_v2.md` §6 (Stage 2C) and nothing beyond it:
+Task A (L-6.1 on `R_n`, proved on the normal forms rather than quoted from Phase 1),
+Task B (annihilator conventions and their exact side laws), Task C (P-2.7 derived from
+first principles, in principal and non-principal form), Task D (P-2.8, regime-free and
+Smith-normal-form), Task E (cardinality and double-dual, with reflexivity separated),
+Task F (computation with negative controls).
+
+**Outcomes.**
+
+1. **L-6.1 is proved** (T-115): `θ_s(uv) = θ_s(v)θ_s(u)` on `R_n`, via the convolution
+   `(uv)_e = Σ u_av_b` (needs `X` central), the matrix-order swap from `θ_s(u_av_b) =
+   θ_s(v_b)θ_s(u_a)`, and the re-indexing `(a,b) ↦ (b,a)`. The three levels
+   `R` / `R[X]` / `R_n` are proved separately (T-116, T-117); the descent rests on
+   `θ_s(X^n−1) = X^n−1` together with the centrality of `X^n−1`, which makes the ideal
+   two-sided. `θ_s² = σ_{2s}` and `ord(θ_s) = 2r/gcd(r,2s)` are proved, the order being
+   the same as on `R` (T-119).
+2. **P-2.7 is proved and sharpened** (T-125, T-126): `C^{⊥_s} = rev(ann_r(θ_s(g)))` for
+   principal `C`, and `C^{⊥_s} = rev(ann_r(θ_s(C))) = rev(⋂_i ann_r(θ_s(g_i)))` for every
+   right ideal. The general form explains why one generator suffices: `θ_s` turns the
+   right ideal into a **left** ideal, and left ideals, unlike right ideals, are
+   annihilator-determined by their generators (T-122). Three equivalent forms and the
+   Morita form `ann_r(θ_s(g)) = I_{ker θ_s(g)}` are proved and all four are tested.
+3. **`rev` is proved** (T-124, discharging T-066) and is shown to be **load-bearing
+   exactly when `n ≥ 3`** (T-127) — it is the identity for `n ≤ 2`, which closes the gap
+   the proposal flagged in §6.4(6).
+4. **L-6.5 is proved** (T-128) from P-2.7 and the Phase-1 size formula, **without** the
+   import L-6.6 (`B` Frobenius, unconfirmed reference). L-6.6 is now unused.
+5. **P-2.8 is proved** in two forms (T-130, T-131): regime-free
+   (`C^{⊥_s} = hR_n` with `h = [w_1∣w_2]` from `ker θ_s(rev g)` whenever `μ_B ≤ 2`) and
+   the proposal's Smith-normal-form formula `h_j = V_j^{-1}diag(ω^{ℓ−a},ω^{ℓ−b})` in the
+   chain-ring regime (`p ∤ n` or `t = 1`).
+6. **O-2.8 is answered NO** (T-132): at `(4,2,2)`, `g = diag(uε,uε)` gives
+   `C^{⊥_s} = M_2(m)` with `μ_B(ker) = 4`; exhaustive scan of all 16 777 216 elements,
+   none generating it. In the wild regime the Galois dual of a principal code need not be
+   principal.
+7. **Cardinality and double dual** (T-133): `|C||C^{⊥_s}| = |R|^n` for every `s`
+   (reflexivity **not** needed); `C^{⊥_s⊥_s} = σ_{2s}(C)` for every `s`, and `= C` for
+   all `C` iff `r ∣ 2s`; exhibited at `(8,1,2)` (`r = 3`), where 8 of 60 codes have a
+   genuinely different double dual at `s = 1, 2`.
+8. **New open problem O-2.9** (T-134): is the set of generators of a principal right
+   ideal exactly the orbit `{h·u : u ∈ R_n^×}`? Exhaustively verified at `(4,1,1)`,
+   `(4,1,2)`, `(4,2,1)`; unproved in general. The weaker `hR_n = h'R_n ⟺ im h = im h'`
+   **is** proved.
+
+**Safeguards honoured.** All Phase-1, Stage-1, Stage-2A and Stage-2B files are
+byte-for-byte unchanged (re-checked against the start-of-stage baseline); the register
+grew by insertion only (+22 rows, T-115 … T-136); no log was overwritten; the commit is a
+normal fast-forward. A passing script is treated as supporting evidence only — 17 rows are
+`PROVED IN PHASE 2 STAGE 2C` on the strength of the proofs in the deliverable, 4 rows are
+`COMPUTATIONALLY VERIFIED ONLY`, and 1 is `OPEN`.
+
+**Scope boundary (unchanged, T-136).** No hull dimensions (Phase 3), no hull enumeration
+(Phase 4), no Gray maps (Phase 5), no quantum or CSS/EAQECC constructions (Phase 6). The
+recorded-but-unused observation `Hull_s(C) = C ∩ rev(ann_r(θ_s(C)))` is logged for later
+use and is **not** a quantum claim: the existence of a Galois dual does not by itself
+produce a quantum code.
+
+**10. Files changed by the Stage-2C commit** (all additive): the new theorem document
+`03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md`, the new script and log under
+`04_COMPUTATION/`, `UPDATED_THEOREM_REGISTER.md` (+22 rows, T-115 … T-136,
+insertion-only), `04_COMPUTATION/README.md`,
+`UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md` (new §11), and this decision log (D-022).
+**Nothing was deleted, rewritten or moved**, and the push is a normal fast-forward.
