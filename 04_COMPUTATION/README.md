@@ -187,3 +187,89 @@ The log carries no timestamp and no elapsed time, so the comparison is exact.
   still `PROPOSED / UNPROVED`)**, the wild-case classification, P-2.7/P-2.8 (hence
   **L-6.1**), hulls, Gray maps, quantum constructions, C-2.1. **T-021 is not discharged.**
   `O-2.2` (`μ_B(W) ≤ 4` uniformly) remains open; the largest value observed is `4`.
+
+
+---
+
+## Phase 2 — Stage 2B: CRT/Hensel decomposition and the global principality criterion
+
+**Deliverable:** `03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md`
+**Script:** `phase2_stage2b_crt_principality.py` (2006 lines)
+**Log:** `phase2_stage2b_crt_log.txt` — **460 checks, 460 PASS, 0 FAIL** (434 `[EXH]`,
+26 `[SMP]`), seed `20261106`, 709 lines, SHA-256
+`8db6fb5fd82bce710b792b74019e1e43b68b9232660215d55a559675b7ce0460`.
+
+**Result.** P-2.4 (CRT/Hensel) and **P-2.6** are proved:
+
+```
+Every right ideal of R_n is principal   ⟺   p ∤ n   or   t = 1 .
+```
+
+* `⇐` R_n ≅ M_2(B) → Morita (Stage 2A) → CRT splits `W` → each component is a chain ring
+  (`t = 1` or `p ∤ n`) → Smith normal form gives `μ ≤ 2` → `μ_B = max_j μ_{B_j}` →
+  Stage-2A criterion.
+* `⇒` In the wild case (`t ≥ 2`, `p ∣ n`) the component `B_j = A_t[X]/⟨f_j^{p^v}⟩` has
+  `dim_{K_j}(m_j/m_j^2) = 2`, so `μ_B(m_j ⊕ m_j) = 4` and `I_W = M_2(m_j)` is **not**
+  principal; `dim_{F_q}(I_W/I_W J(S)) = 8 > 4`, the bound for a cyclic module.
+
+**What the script implements from scratch** (only `Field`, `Local`, `rref`,
+`nullspace_basis` are imported from the Phase-1 library): polynomial arithmetic and
+factorisation over `F_q` (cross-checked against `q`-cyclotomic cosets), Hensel lifting
+(proved in the document, Lemma 1.2), the CRT map and its Bézout idempotents, the local
+invariants of `B_j`, `M_2` over a quotient ring, submodule enumeration, four independent
+`μ` computations, and principality certificates.
+
+### Cases
+
+| `(q,t,n)` | regime | `v`, `n'`, `e` | `J`, `{d_j}` | `#submodules of B^2` | all principal? |
+|---|---|---|---|---|---|
+| `(4,2,1)` | squarefree, `t ≥ 2` | 0, 1, 1 | 1, [1] | 33 | yes |
+| `(4,1,2)` | repeated root, `t = 1` | 1, 1, 2 | 1, [1] | 33 | yes |
+| `(2,1,3)` | squarefree, `t = 1` | 0, 3, 1 | 2, [1,2] | 35 = 5·7 | yes |
+| `(9,1,2)` | squarefree, `t = 1` | 0, 2, 1 | 2, [1,1] | 144 = 12² | yes |
+| `(8,1,2)` | repeated root, `t = 1` | 1, 1, 2 | 1, [1] | 93 | yes |
+| `(4,2,3)` | squarefree, `t ≥ 2` | 0, 3, 1 | 3, [1,1,1] | 35 937 = 33³ | yes |
+| `(2,2,2)` | **wild** | 1, 1, 2 | 1, [1] | targeted | **no** |
+| `(4,2,2)` | **wild** | 1, 1, 2 | 1, [1] | targeted | **no** |
+| `(9,2,3)` | **wild** | 1, 1, 3 | 1, [1] | targeted | **no** |
+
+The counts 33, 33, 35, 144 agree with Phase 1 / Stage 2A; 93 is `N(2,8) = 8² + 3·8 + 5`
+(C-2.1b, proved in Phase 1); 35 937 = 33³ confirms the pending register value C-2.1g.
+The 35 937 submodules are **built** componentwise via the CRT (`|B^2| = 1.7·10⁷` forbids
+element scanning): the count is `[EXH]`, the closure/`μ`/principality certificates are
+`[SMP]` (200 / 399 / 180 samples).
+
+### Wild certificates (`W = m_j ⊕ m_j`, so `I_W = M_2(m_j)`)
+
+| `(q,t,n)` | `|W|` | `dim_{K_j}(W/m_jW)` | `dim_{F_q}(I_W/I_WJ(S))` | principal? | `μ_S` |
+|---|---|---|---|---|---|
+| `(2,2,2)` | 64 | 4 | 8 > 4 | **no** (all 4096 elements of `I_W` scanned) | 2 |
+| `(4,2,2)` | 4096 | 4 | 8 > 4 | **no** | 2 |
+| `(9,2,3)` | 3 486 784 401 | 4 | 8 > 4 | **no** | 2 |
+
+### Negative controls (a wrong convention must FAIL — all five do)
+
+| Control | Wrong convention | Outcome |
+|---|---|---|
+| neg-1 | reduced modulus `⟨f_j⟩` instead of `⟨f_j^{p^v}⟩` | kills `X^{n'}-1 ≠ 0`, so the map is not injective |
+| neg-2 | `{M : rows of M ⊆ W}` | not a right ideal (counterexample found exhaustively) |
+| neg-3 | `{M : im M ⊇ W}` | not a right ideal; does not even contain `0` |
+| neg-4 | "`σ_1` fixes every component" | false: at `(4,2,3)` the permutation is `(0,2,1)` |
+| neg-5 | "all principal" is vacuous in chain-ring cases | false: 33 submodules, `max μ = 2` |
+
+**Why they matter.** During development an early version packed basis vectors of `W` into
+the **rows** of the matrix; every dimension and cardinality check still passed, and only
+the containment half of the certificate exposed it. Size-only principality tests are not
+sufficient — the certificates check `x ∈ I_W` **and** `|xS| = |I_W|`.
+
+### What the 460/460 result does and does not mean
+
+* It is **supporting evidence, not proof.** P-2.4 and P-2.6 are proved in
+  `PHASE2_STAGE2B_CRT_PRINCIPALITY.md` §1–§4; register rows T-094 … T-114 record, per
+  statement, whether it is `PROVED IN PHASE 2 STAGE 2B`, `COMPUTATIONALLY VERIFIED ONLY`
+  (T-112, T-113) or `OPEN` (T-114).
+* **Not attempted** (T-114): P-2.7/P-2.8, hull dimensions, Gray maps, quantum
+  constructions, C-2.1d/e/f/g closed forms. `O-2.2` (`μ_B(W) ≤ 4` uniformly in the wild
+  case) remains **open** — Stage 2B uses only `μ ≤ 2`, proved where it is used.
+* **Regression.** `phase2_stage2a_morita_checks.py` was re-run unchanged on the same
+  Phase-1 library and reproduced its log byte-for-byte (429/429, `3ef38b17…23abe5`).

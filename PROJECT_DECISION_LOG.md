@@ -124,3 +124,76 @@ script, the new log, `UPDATED_THEOREM_REGISTER.md` (+65), `04_COMPUTATION/README
 (+69), `UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md` (+81), and this decision log. **Nothing
 was deleted, rewritten or moved**: Phase-1 files, `PHASE2_PROPOSAL_v2.md`, the audit ZIP
 and all Stage-1 files are byte-for-byte unchanged, and the push is a normal fast-forward.
+
+
+---
+
+## D-021 — Phase 2, Stage 2B: CRT/Hensel (P-2.4) and the global principality criterion (P-2.6)
+
+**Date of decision.** 2026-11-05. **Scope.** `PHASE2_PROPOSAL_v2.md` §4 (P-2.4), §5.2
+(P-2.6), and the Task-D Galois-compatibility question — **and nothing else**.
+
+**1. P-2.6 is proved as proposed.** "Every right ideal of `R_n` is principal `⟺ p ∤ n` or
+`t = 1`" is **true**; no counterexample to the statement was found, and both directions
+are proved (register T-105, T-106, T-107). **O-2.1 is discharged.**
+
+**2. P-2.4 is sharpened, not corrected.** The Hensel lifts are the base-field factors
+themselves: `F_j = f_j` (T-096). The proposal asserted only `F_j ≡ f_j mod u`; the
+identification is what makes `B_j = A_t[X]/⟨f_j^{p^v}⟩` with `f_j ∈ F_q[X]` and
+`m_j = (u, f_j)` explicit. No error in the proposal.
+
+**3. T-021 is superseded, not deleted.** It proved principality under `t = 1` **and**
+`p ∤ n`; the correct hypothesis is the **disjunction** `p ∤ n` **or** `t = 1`, and the
+converse is now proved too. T-021 keeps its own row as
+`PROVED IN PHASE 1 (conditional)`; T-107 records the supersession.
+
+**4. The three regimes are separated as instructed (mandatory point 6).** Squarefree
+(`p ∤ n`), repeated-root chain ring (`t = 1`, `p ∣ n`) and **wild** (`t ≥ 2`, `p ∣ n`).
+The wild components are local but **not** chain rings: `dim_{K_j}(m_j/m_j²) = 2`, so `m_j`
+is not principal. No Smith normal form, no uniformizer, no shape classification and no
+`(Q²+3Q+5)`-type count is used or claimed there. In particular **E-015 is cited as prior
+art only and does not carry the proof** of L-2.6.4 (which is proved in full), and **E-012
+is deliberately not used**: the Hensel instance needed here is proved from scratch
+(T-095) because E-012's reference is unconfirmed.
+
+**5. No uniform generator bound is assumed.** The proof of the `⇐` direction uses only
+`μ_{B_j}(W_j) ≤ 2`, which follows from the Smith normal form over a chain ring. The
+withdrawn v1 claim `μ_B(W) ≤ 4` (now **O-2.2**) is neither used nor needed, and remains
+`OPEN`.
+
+**6. Conventions were policed by negative controls, and one real bug was caught.** Five
+controls (T-112) assert that wrong conventions **fail**: reduced modulus, rows-in-`W`,
+superset-instead-of-subset, "`σ_1` fixes every component" (false — at `(4,2,3)` the
+permutation is `(0,2,1)`), and the vacuity of "all principal". During development an early
+version of `I_W` packed basis vectors into **rows**; all dimension and cardinality checks
+still passed, and only the containment test `x ∈ I_W` exposed it. Certificate design
+lesson recorded: a principality test must check **both** containment and size.
+
+**7. Numerical agreement is not a proof.** The 460/460 result is recorded with the status
+`COMPUTATIONALLY VERIFIED ONLY` (T-113) and is corroboration only. Notably, 35 937 = 33³
+at `(4,2,3)` was obtained by **building** the submodules componentwise via the CRT
+(`|B²| = 1.7·10⁷` forbids element scanning): the count is `[EXH]` over the 33³
+combinations, but completeness rests on the theorem (T-099), corroborated by 180 random
+submodules of `B²`.
+
+**8. Task D does not anticipate the hull work.** Only the action of `σ_k` on the
+components, its stability conditions, and the invariance of `μ` and principality are
+established (T-109 … T-111). **No hull dimension, no dual-space formula and no quantum
+construction is derived here.** Three observations are recorded for later use: the CRT
+decomposition is equivariant only up to `C ↦ p^kC`; the fixed components are those with
+`p^kC = C`, on which `σ_k` is an automorphism inducing Frobenius on `K_j`; and the
+wild obstruction (T-106) cannot be removed by a Galois twist (T-111).
+
+**9. Carried forward unchanged (T-114).** P-2.7/P-2.8 (hence **L-6.1**, register T-067),
+hulls, Gray maps, quantum constructions, C-2.1d/e/f/g; `O-2.2`; the unenumerated wild
+lattices at `(4,2,2)` and `(9,2,3)`; T-066 (`rev`), T-006, T-027, T-011 … T-014, warning
+B3.5, the Phase-1 coverage gaps, the `n ≥ 2` left-submodule gap.
+
+**10. Files changed by the Stage-2B commit** (all additive): the new theorem document
+`03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md`, the new script and log under
+`04_COMPUTATION/`, `UPDATED_THEOREM_REGISTER.md` (+21 rows, T-094 … T-114, insertion-only),
+`04_COMPUTATION/README.md`, `UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md` (new §10), and this
+decision log (D-021). **Nothing was deleted, rewritten or moved**: Phase-1 files,
+`PHASE2_PROPOSAL_v2.md`, the audit ZIP and all Stage-1 and Stage-2A files are byte-for-byte
+unchanged (re-checked against the end-of-stage baseline), and the push is a normal
+fast-forward.

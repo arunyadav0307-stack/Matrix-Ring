@@ -288,3 +288,69 @@ consecutive runs produced byte-identical logs**, SHA-256
 **A passing script never promotes a statement.** The right ideals `xS` are computed from
 the definition (`span_{F_q}{xN}`), never from `im x`, so that L-2.3a could have failed;
 it did not, anywhere.
+
+
+---
+
+## 10. Phase 2 — Stage 2B: `phase2_stage2b_crt_principality.py`
+
+**Purpose.** Independent verification of P-2.4 (CRT/Hensel with exact hypotheses) and
+P-2.6 (the global principality criterion), plus the Galois-compatibility question of
+Task D. Companion document: `03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md`.
+
+**Log.** `phase2_stage2b_crt_log.txt` — **460 checks, 460 PASS, 0 FAIL**, 434 `[EXH]` and
+26 `[SMP]`, seed `20261106`, 709 lines, 60 383 bytes, SHA-256
+`8db6fb5fd82bce710b792b74019e1e43b68b9232660215d55a559675b7ce0460`. Two consecutive runs
+(Python 3.11.2, ≈ 82 s each) produced **byte-identical** logs; the log carries no
+timestamp and no elapsed time, so the comparison is exact.
+
+### 10.1 Independence from Stage 2A
+
+Only `Field`, `Local`, `rref` and `nullspace_basis` are imported from
+`ring_structure_checks.py`. Everything else is written again here, with different
+representations: `B` is `A_t[X]/⟨h⟩` (coefficient lists) rather than the Stage-2A model;
+factorisation is by trial division with an irreducibility test and is cross-checked
+against the `q`-cyclotomic cosets; `μ` is computed by (i) a lattice BFS, (ii) brute-force
+`k`-tuples, (iii) Nakayama on components, (iv) an exhaustive single-generator scan for
+principality.
+
+### 10.2 Sections of the log
+
+| Section | Content | Tests |
+|---|---|---|
+| Hensel (per case) | lifts are monic, reduce to `f_j` mod `u`, product = `g`; non-vacuity `X²+X+u ↦ (X+u)(X+1+u)`; both routes (squarefree-only, repeated) agree | `[EXH]` |
+| CRT (per case) | additivity, multiplicativity, bijectivity of `B → ∏ B_j`; Bézout idempotent identities; `e_j ↦ (0,…,1,…,0)` | `[EXH]` |
+| local components | `ρ_j` a surjective homomorphism; `m_j = (u,f_j) = ker ρ_j`; `B_j/m_j` a field; nilpotency `t+p^v−1`; units = complement; `dim_{F_q}`, `|B_j|` | `[EXH]`/`[SMP]` |
+| invariant | `dim_{K_j}(m_j/m_j²)` vs. the 0/1/2 trichotomy (falsification test CT-2) | `[EXH]` |
+| ideals/submodules | ideal tuples; submodule tuples; reconstruction; `dim` additive, `|W|` multiplicative | `[EXH]` |
+| Galois (Task D) | `σ_k` permutation vs. `C ↦ p^kC`; `σ_k(e_j) = e_{perm(j)}`; equivariance; `m_j` preimages | `[EXH]` |
+| census | full submodule lattices (5 rings); `[EXH]` `μ` agreement; principality certificates | `[EXH]` |
+| CRT-built lattice | 35 937 = 33³ at `(4,2,3)`, closure / `μ` / principality sampled | `[EXH]` + `[SMP]` |
+| wild | `dim_K(m/m²) = 2`; `dim_{K}(W/mW) = 4`; `dim_{F_q}(I_W/I_WJ(S)) = 8 > 4`; exhaustive `x`-scan; two generators | `[EXH]` |
+| negative controls | neg-1 … neg-5 | `[EXH]` 5/5 |
+
+### 10.3 Proved versus computationally verified (Stage 2B)
+
+* **Proved** (in the companion document, independently of the script): the squarefree-part
+  lemma; **Hensel (L-2.4.1) from scratch**; `F_j = f_j`; the CRT decomposition (L-2.4.2);
+  locality, dimension and nilpotence of `B_j` (L-2.4.3/L-2.4.4); the ideal and submodule
+  correspondences; the trichotomy `dim_{K_j}(m_j/m_j²) ∈ {0,1,2}` (L-2.4.6 = L-2.6.6);
+  **Smith normal form over a finite chain ring (L-2.6.4), proved in full**; chain ring
+  `⟺ t = 1` or `p ∤ n` (L-2.6.3); `μ_B = max_j μ_{B_j}` (L-2.4.5 = L-2.6.5); **P-2.6 in
+  both directions**; the Galois permutation and its corollaries (Task D).
+* **`COMPUTATIONALLY VERIFIED ONLY`** (T-112, T-113): the census, the negative controls and
+  the byte-identical reproducibility.
+* **Not attempted** (T-114): P-2.7/P-2.8, hulls, Gray maps, quantum constructions,
+  C-2.1d/e/f/g; `O-2.2` remains open.
+
+**A passing script never promotes a statement.** Every principality certificate exhibits a
+generator `x` and checks both `x ∈ I_W` and `|xS| = |I_W|`; every non-principality
+certificate is backed by a dimension bound (and, at `(2,2,2)`, by an exhaustive scan of
+all 4096 elements of `I_W`).
+
+### 10.4 Regression
+
+`phase2_stage2a_morita_checks.py` was re-run unchanged in a scratch directory on the same
+Phase-1 library and produced its recorded log byte-for-byte
+(`3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5`, 429/429 PASS), so the
+Stage-2A results are unaffected by Stage 2B.
