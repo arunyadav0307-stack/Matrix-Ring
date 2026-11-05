@@ -64,3 +64,63 @@ started.
 | `PHASE2_PROPOSAL_v2.md` | unchanged (`acc3ff37…`) |
 | Stage-1 proofs, script and log | frozen at `bfb16d7` |
 | Stage 2 | not started; awaiting approval |
+
+---
+
+## D-020 (2026-11-05) — Phase 2, Stage 2A completed; scope held at the authorised boundary
+
+**Decision.** Execute **Phase 2, Stage 2A** (`PHASE2_PROPOSAL_v2.md` §3 and §5.1 only):
+the Morita correspondence, the generator-number identity, and the **individual**
+principality criterion. Stage 2A is now complete and the work **stops** at the authorised
+boundary: no Stage 2B, no P-2.6, no duality, no hulls, no Gray maps, no quantum
+constructions, no C-2.1, no manuscript.
+
+**What was delivered.**
+
+1. `03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md` — the correspondence in both
+   directions with the row/column conventions fixed (`P = B^2` **columns**, right
+   `$B$`-action by matrix multiplication, `$\mathrm{im}\,M$` = the `$B$`-span of the two
+   columns); the inclusion/sum/intersection/cardinality properties; the left-ideal and
+   two-sided-ideal dictionaries; the agreement of the Stage-1 cyclic-code representation
+   with the Morita correspondence; **L-2.3a** proved by column packing (**no** hypothesis)
+   with the projectivity-based lifting route recorded as a second proof, and
+   **Proposition 3.3** showing projectivity is **not** removable for a general module
+   (`$P' = B\oplus k$` over `$B=F_2[\varepsilon]/\langle\varepsilon^2\rangle$`:
+   `$xS'\subsetneq I_{\mathrm{im}\,x}$`, `$2 < 4$`); **L-2.3b**, **L-2.3c**; the identity
+   `$\mu_S(I_W)=\lceil\mu_B(W)/2\rceil$` (both inequalities); the individual principality
+   criterion `$I_W$` principal `$\iff\mu_B(W)\le2$`; the wild counterexample
+   `$(4,2,2)$`, `$W=m\oplus m$`, `$\mu_B=4$`, `$M_2(m)$` not principal; and the reduction
+   of the global question.
+2. `04_COMPUTATION/phase2_stage2a_morita_checks.py` (1566 lines) and its log
+   `phase2_stage2a_morita_log.txt` (699 lines): **429 checks, 429 PASS, 0 FAIL** (391
+   `[EXH]`, 38 `[SMP]`), seed `20261105`, **two consecutive runs byte-identical**
+   (SHA-256 `3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5`).
+3. Register rows **T-069 … T-093** (25 rows, insertion-only): 18 `PROVED IN PHASE 2
+   STAGE 2A`, 6 `COMPUTATIONALLY VERIFIED ONLY`, 1 `OPEN` (T-093, the carried-forward
+   limitations). No Phase-1 row (T-001 … T-043), no planning row (P-2.x) and no Stage-1
+   row (T-044 … T-068) was edited.
+
+**Two decisions taken inside Stage 2A, recorded here because they change plans.**
+
+* **L-2.3a is proved without projectivity** (via column packing), so the identity does not
+  depend on the projectivity of `$B^2$`. The projectivity-based route is kept as a second
+  proof, and Proposition 3.3 records that projectivity is genuinely needed for the
+  general form `$\mathrm{End}_B(P)$` — so the proposal's remark that L-2.3a "uses
+  projectivity" is true of that route and false of the statement.
+* **P-2.5(b) is proved for individual ideals only.** The `(4,2,2)` counterexample is an
+  individual non-principal ideal; it does **not** settle the global P-2.6 and does **not**
+  discharge T-021.
+
+**Still out of scope / carried forward (T-093).** P-2.4 (CRT/Hensel) — not used;
+**P-2.6 and L-2.6.1 … L-2.6.8 — untouched, `PROPOSED / UNPROVED`**; **T-021 — not
+discharged** (still `proved (conditional)`, open for `$t\ge2$` or `$p\mid n$`); L-6.1 and
+P-2.7/P-2.8 (register T-067); hulls, Gray maps, quantum constructions, C-2.1; CT-0 … CT-6
+not run as a suite; `O-2.2` (`$\mu_B(W)\le4$` uniformly) remains open — the largest value
+observed in Stage 2A is `$4$`. Carried forward from Stage 1: T-066 (`rev`), T-006, T-027,
+T-011 … T-014, warning B3.5, the Phase-1 coverage gaps, the `$n\ge2$` left-submodule gap.
+
+**Files changed by the Stage-2A commit** (all additive): the new theorem document, the new
+script, the new log, `UPDATED_THEOREM_REGISTER.md` (+65), `04_COMPUTATION/README.md`
+(+69), `UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md` (+81), and this decision log. **Nothing
+was deleted, rewritten or moved**: Phase-1 files, `PHASE2_PROPOSAL_v2.md`, the audit ZIP
+and all Stage-1 files are byte-for-byte unchanged, and the push is a normal fast-forward.

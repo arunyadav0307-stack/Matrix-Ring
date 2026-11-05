@@ -118,3 +118,72 @@ All $k,s \bmod r$ are tested at every parameter set.
 * Not attempted anywhere in Stage 1 (register T-066, T-067, T-068): `rev` (P-2.1f),
   **L-6.1** ($\theta_s$ as an anti-automorphism of $R_n$), and **T-021** (principality,
   still `proved (conditional)` and open for $t\ge2$ or $p\mid n$).
+
+---
+
+## Phase 2 — Stage 2A (added 2026-11-05)
+
+Companion to `03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md` (Morita correspondence,
+generator numbers, individual principality). Delivered in the Stage-2A commit; register
+rows **T-069 … T-093**.
+
+| File | Role |
+|---|---|
+| `phase2_stage2a_morita_checks.py` | Stage-2A verification: the Morita correspondence `W ↦ I_W = {M : im M ⊆ W}` (both directions, lattice operations, cardinality, left/two-sided ideals, and the dictionary with the Stage-1 cyclic-code representation); the generator-number identity `μ_S(I_W) = ⌈μ_B(W)/2⌉` via L-2.3a, L-2.3b, L-2.3c; the individual principality criterion `I_W` principal ⟺ `μ_B(W) ≤ 2`; and the projectivity counterexample for a non-projective module. Imports only `Field`, `Local`, `MatRing`, `rref` and the reporting helpers from `ring_structure_checks.py` (read-only); `B = A_t[X]/⟨X^n−1⟩`, `P = B^2` and `S = M_2(B)` are built here. Writes its log to the current directory. |
+| `phase2_stage2a_morita_log.txt` | Recorded output: **429 checks, 429 PASS, 0 FAIL** (391 `[EXH]`, 38 `[SMP]`). |
+
+### How to reproduce
+
+```bash
+cd 04_COMPUTATION
+python3 phase2_stage2a_morita_checks.py        # -> phase2_stage2a_morita_log.txt
+```
+
+Run from its own directory: it imports `ring_structure_checks` (which must sit beside it)
+and writes `phase2_stage2a_morita_log.txt` to the current working directory. Environment
+as above (Python 3.11.2, standard library only). Sampling seed **20261105**; every check
+is labelled `[EXH]` (exhaustive) or `[SMP]` (sampled). Runtime ≈ **285 s**.
+
+**Reproducibility verified:** two consecutive runs produced **byte-identical** logs,
+SHA-256 `3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5` (699 lines).
+The log carries no timestamp and no elapsed time, so the comparison is exact.
+
+### Independence safeguards
+
+* `xS` is computed as `span_{F_q}{xN : N ∈ S}` by direct multiplication, **never** from
+  `im x`, so that L-2.3a is tested rather than assumed.
+* `μ_B` and `μ_S` are each computed by **three independent methods** — lattice BFS over
+  sums of cyclics/principals; brute-force scan over `k`-tuples (resp. over all `x ∈ I`);
+  and Nakayama on the semisimple quotient — and the three are cross-checked against each
+  other before any comparison with `⌈μ_B(W)/2⌉`.
+
+### Parameter coverage
+
+| `(q,t,n)` | `B` | `|B|` | coverage |
+|---|---|---|---|
+| `(2,1,1)` | `F_2` | 2 | exhaustive over both lattices |
+| `(2,1,2)` | `F_2[ε]/⟨ε²⟩` | 4 | exhaustive (repeated root, `t=1`) |
+| `(2,2,1)` | `F_2[u]/⟨u²⟩` | 4 | exhaustive — **CT-1a model ring 1** |
+| `(4,1,1)` | `F_4` | 4 | exhaustive (Phase-1 anchor: 7) |
+| `(9,1,1)` | `F_9` | 9 | exhaustive (Phase-1 anchor: 12) |
+| `(2,1,3)` | `F_2 × F_4` | 8 | exhaustive (Phase-1 anchor: 35) |
+| `(2,3,1)` | `F_2[u]/⟨u³⟩` | 8 | exhaustive — **CT-1a model ring 2** |
+| `(8,1,1)` | `F_8` | 8 | exhaustive (Phase-1 anchor: 11) |
+| `(4,1,2)` | `F_4[ε]/⟨ε²⟩` | 16 | exhaustive (Phase-1 anchor: 33) |
+| `(4,2,1)` | `F_4[u]/⟨u²⟩` | 16 | exhaustive (Phase-1 anchor: 33) |
+| `(2,2,2)` | `F_2[u,ε]/⟨u²,ε²⟩` | 16 | exhaustive — **CT-1a model ring 3, wild**: `μ_B` up to `4`, 22 non-principal right ideals |
+| `(4,1,3)` | `F_4³` | 64 | submodule lattice exhaustive (343, Phase-1 anchor); ideals targeted |
+| `(4,2,2)` | `F_4[u,ε]/⟨u²,ε²⟩` | 256 | **targeted** (`|S| = 2³²`): six submodules, incl. `W = m ⊕ m` with `μ_B = 4` |
+
+### What the 429/429 result does and does not mean
+
+* It is **supporting evidence, not proof.** The identity, the correspondence and the
+  principality criterion are proved in `PHASE2_STAGE2A_MORITA_GENERATORS.md` §2–§4; the
+  register rows T-069 … T-093 record, per statement, whether it is
+  `PROVED IN PHASE 2 STAGE 2A`, `COMPUTATIONALLY VERIFIED ONLY`, or `OPEN`.
+* `COMPUTATIONALLY VERIFIED ONLY` rows (T-087 … T-092) are claims about the listed
+  parameter sets only.
+* **Not attempted** (T-093): P-2.4 (CRT/Hensel), **P-2.6 (global principality — untouched,
+  still `PROPOSED / UNPROVED`)**, the wild-case classification, P-2.7/P-2.8 (hence
+  **L-6.1**), hulls, Gray maps, quantum constructions, C-2.1. **T-021 is not discharged.**
+  `O-2.2` (`μ_B(W) ≤ 4` uniformly) remains open; the largest value observed is `4`.

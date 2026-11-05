@@ -25,6 +25,8 @@ All runs dated **2026-11-04**; timestamps are inside each log.
 | `galois_t2_log.txt` | ~35 | log of `galois_t2_check.py` | — |
 | `alahmadi_reconciliation_log.txt` | 487+ | log of the reconciliation script | — |
 | `README.md` | — | reproducibility notes for the original runs | — |
+| `phase2_stage2a_morita_checks.py` | 1566 | **Phase 2, Stage 2A**: the Morita correspondence (both directions, lattice operations, left/two-sided ideals, Stage-1 dictionary), the identity `μ_S(I_W) = ⌈μ_B(W)/2⌉` via L-2.3a/b/c, the individual principality criterion, and the projectivity counterexample (see §9) | ≈ 285 s |
+| `phase2_stage2a_morita_log.txt` | 699 | log of the Stage-2A script: **429 / 429 checks PASS** (391 `[EXH]`, 38 `[SMP]`) | — |
 | `phase2_stage1_shift_checks.py` | 1001 | **Phase 2, Stage 1**: definitions and shift structure — $\iota$, cyclic convolution, centrality of $X$, $T^n=1$, $T$ as left/right multiplication by $X$, $F_q$- vs $R$-linearity, right ideals $\leftrightarrow$ $T$-invariant right $R$-submodules, $\sigma_k$/$\theta_s$ compatibility (see §8) | ≈ 100 s |
 | `phase2_stage1_shift_log.txt` | 734 | log of the Stage-1 script: **553 / 553 checks PASS** (91 `[EXH]`, 462 `[SMP]`), 8 parameter sets | — |
 
@@ -36,6 +38,7 @@ python3 -u galois_duality_experiments.py full     # -> galois_experiments_log.tx
 python3 -u galois_t2_check.py                     # -> galois_t2_log.txt
 python3 -u alahmadi_reconciliation.py             # -> alahmadi_reconciliation_log.txt
 python3 -u phase0_feasibility.py                  # -> phase0_results.txt (original E1-E5)
+python3 -u phase2_stage2a_morita_checks.py        # -> phase2_stage2a_morita_log.txt (Stage 2A)
 python3 -u phase2_stage1_shift_checks.py          # -> phase2_stage1_shift_log.txt (Phase 2, Stage 1)
 ```
 
@@ -51,6 +54,7 @@ parts explicitly labelled `[SMP]`, which use fixed seeds (see below).
 | `galois_duality_experiments.py` | all enumerations, all per-code checks | `q=9,n=4` sampling: 1200 of 20736 codes, seed **13572468**; $\theta$-anti-multiplicativity sanity: 300 random matrices |
 | `galois_t2_check.py` | all 32 codes, all 65536 elements | 5000 random matrix pairs, seed **20261104** |
 | `alahmadi_reconciliation.py` | everything (exhaustive scans of 16 and 4096 ambient vectors, all 27 triples) | none |
+| `phase2_stage2a_morita_checks.py` | the whole submodule lattice of `B^2` and the whole right-ideal lattice of `S = M_2(B)` at the eleven parameter sets with `|B| ≤ 16` (every object, every statement); the submodule lattice at `(4,1,3)`; all `x ∈ S` for L-2.3a with `k = 1`; all `x ∈ I` for `μ_S = 1`; all pairs where the product is within budget; all 32 endomorphisms in the projectivity counterexample | L-2.3a with `k = 2` and L-2.3c at the largest rings; the Stage-1 dictionary where `|R^n|·#ideals` exceeds the budget (6 ideals); the `(x,a)` right-`R`-submodule pairs above budget; six targeted submodules at `(4,2,2)`; seed **20261105** |
 | `phase2_stage1_shift_checks.py` | all checks at $(q,t,n)=(4,1,1)$ and $(9,1,1)$ (incl. all $65\,536$ $(x,a)$ pairs at $(4,1,1)$); all $B$-pairs at $(4,1,2)$; all $65\,536$ vectors for $T=$ right multiplication by $X$ at $(4,1,2)$ and $(4,2,1)$; the whole subspace census at $(4,1,1)$ | everything else: 20 000 sampled $(x,a)$ pairs per parameter set, 500 sampled vectors, seed **20261104** |
 
 ## 4. What each script verifies (at a glance)
@@ -207,3 +211,80 @@ binding for every later stage:
 (e.g. non-central $Y=E_{11}$: $59\,760/65\,536$ mismatches at $(4,1,1)$ versus $0/65\,536$
 for $Y=XI_2$; $\theta_s\rho_a\neq\rho_{\theta_s(a)}\theta_s$: $60\,480/65\,536$) so that a
 test comparing the wrong two quantities cannot pass silently.
+
+---
+
+## 9. Phase 2 — Stage 2A (added 2026-11-05)
+
+Companion document: `03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md`; register rows
+**T-069 … T-093**. Scope: the Morita correspondence, the generator-number identity, and
+the **individual** principality criterion. **Out of scope (not attempted):** P-2.4
+(CRT/Hensel), **P-2.6 (global principality)**, the wild-case classification,
+P-2.7/P-2.8, hulls, Gray maps, quantum constructions, C-2.1, manuscript. CT-0 … CT-6 were
+**not** run as a suite.
+
+### 9.1 Files
+
+| File | Role |
+|---|---|
+| `phase2_stage2a_morita_checks.py` | 1566 lines. Builds `B = A_t[X]/⟨X^n−1⟩`, `P = B^2` and `S = M_2(B)` from scratch. Parts: ring sanity and the Jacobson radical; the submodule lattice and `μ_B` (three methods); the right-ideal lattice and `μ_S` (three methods); the Morita dictionary (bijection, lattice operations, cardinality, left/two-sided ideals); the identity and L-2.3a/b/c; the principality criterion; the Stage-1 dictionary (`R_n ≅ M_2(B)`, `W(I) = ρ(C·P_A)`); the wild case `(4,2,2)`; the projectivity counterexample. |
+| `phase2_stage2a_morita_log.txt` | 699 lines, recorded output of 2026-11-05. |
+
+### 9.2 Result
+
+**429 checks, 429 PASS, 0 FAIL** — 391 `[EXH]`, 38 `[SMP]`.
+
+### 9.3 Headline numbers
+
+| `(q,t,n)` | `#submodules of B^2` = `#right ideals of S` | `#principal` | `μ_B` distribution | `μ_S` distribution |
+|---|---|---|---|---|
+| `(2,1,1)` | 5 | 5 | `0:1, 1:3, 2:1` | `0:1, 1:4` |
+| `(2,1,2)` | 15 | 15 | `0:1, 1:9, 2:5` | `0:1, 1:14` |
+| `(2,2,1)` | 15 | 15 | `0:1, 1:9, 2:5` | `0:1, 1:14` |
+| `(4,1,1)` | 7 | 7 | `0:1, 1:5, 2:1` | `0:1, 1:6` |
+| `(9,1,1)` | 12 | 12 | `0:1, 1:10, 2:1` | `0:1, 1:11` |
+| `(2,1,3)` | 35 | 35 | `0:1, 1:23, 2:11` | `0:1, 1:34` |
+| `(2,3,1)` | 37 | 37 | `0:1, 1:21, 2:15` | `0:1, 1:36` |
+| `(8,1,1)` | 11 | 11 | `0:1, 1:9, 2:1` | `0:1, 1:10` |
+| `(4,1,2)` | 33 | 33 | `0:1, 1:25, 2:7` | `0:1, 1:32` |
+| `(4,2,1)` | 33 | 33 | `0:1, 1:25, 2:7` | `0:1, 1:32` |
+| `(2,2,2)` (wild model) | **159** | **137** | `0:1, 1:51, 2:85, 3:21, 4:1` | `0:1, 1:136, 2:22` |
+| `(4,1,3)` | 343 (ideals targeted) | — | `0:1, 1:215, 2:127` | `0:1, 1:342` |
+
+The values 7, 12, 11, 33, 33, 343 and 35 reproduce the Phase-1 cyclic-code counts
+(T-041, T-020); 159 at `(2,2,2)` is new. At `(2,2,2)`: `1+51+85 = 137` = the number of
+principal right ideals = `#{W : μ_B(W) ≤ 2}`, and `21+1 = 22` = the number of right ideals
+needing two generators; the unique `μ_B = 4` submodule is `m ⊕ m`, whose ideal `M_2(m)` is
+**not principal** (certified by an exhaustive `x`-scan over all 4096 of its elements).
+
+### 9.4 Reproducibility
+
+```bash
+cd 04_COMPUTATION
+python3 phase2_stage2a_morita_checks.py        # -> phase2_stage2a_morita_log.txt
+```
+
+Python 3.11.2, standard library only; seed **20261105**; runtime ≈ 285 s. **Two
+consecutive runs produced byte-identical logs**, SHA-256
+`3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5` (699 lines).
+
+### 9.5 Proved versus computationally verified
+
+* **Proved** (in the companion document, independently of any script): the identification
+  `R_n ≅ M_2(B)`; the Morita correspondence with all its lattice properties; the left-ideal
+  and two-sided-ideal dictionaries; the agreement of the Stage-1 and Morita
+  correspondences; **L-2.3a** (by column packing, with no hypothesis — the lifting proof
+  that uses projectivity is recorded as a second route, and Proposition 3.3 shows the
+  projectivity hypothesis is not removable for a general module `P`); **L-2.3b**;
+  **L-2.3c**; the identity `μ_S(I_W) = ⌈μ_B(W)/2⌉`; the individual principality criterion;
+  the wild counterexample at `(4,2,2)`; and the reduction of the global question.
+* **`COMPUTATIONALLY VERIFIED ONLY`** (T-087 … T-092): the census tables, the agreement of
+  the three `μ` methods, the `(2,2,2)` wild census, the `(4,2,2)` targeted certificates, the
+  projectivity counterexample as computed, and the byte-identical reproducibility.
+* **Not attempted** (T-093): P-2.4, **P-2.6** (untouched), L-2.6.1–L-2.6.8, **T-021**
+  (unchanged), L-6.1, P-2.7/P-2.8, hulls, Gray maps, quantum, C-2.1; `O-2.2` remains open
+  (largest `μ_B` observed: 4).
+
+**A passing script never promotes a statement.** The right ideals `xS` are computed from
+the definition (`span_{F_q}{xN}`), never from `im x`, so that L-2.3a could have failed;
+it did not, anywhere.
