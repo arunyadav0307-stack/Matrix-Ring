@@ -635,9 +635,9 @@ record.
   place with explicit labels (§7); the literature is recorded and
   `references.bib` is updated with `VERIFY` tags (§8).
 * **Verification:** 88 checks, 88 PASS, 0 FAIL; log byte-reproducible.
-  Artefact hashes (SHA-256): deliverable `8801541f…694bc`,
+  Artefact hashes (SHA-256): deliverable `8801541f…694bc` (the blob as committed in `ba95853`; §11 is the only later edit),
   script `d18dc66d…9c64` (1637 lines), log `dd4962cc…d03a0` (491 lines).
-  Commit `ba95853` on `arena/59de606f-matrix-ring`.
+  Branch `arena/59de606f-matrix-ring`; the deliverable was added in commit `ba95853`.
 * **Safeguards honoured:** no assumption that the induced form is Euclidean
   (refuted: T-191, T-200); no assumption that a non-monomial transformation
   preserves Hamming distance (measured: 3/5 codes change `d` at `(9,2,2)`);
