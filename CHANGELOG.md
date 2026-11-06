@@ -172,3 +172,64 @@ Matrix-Ring/
 T-006 (entry-wise failure uncharacterised), T-021 (principality for `t ≥ 2` or `p ∣ n`),
 T-027 (general `τ ∈ Aut(A_t)` undeveloped), hull-dimension formulas (Phase 4), Gray map
 (Phase 5), quantum construction (Phase 6, regime R3 needs the hypothesis of Theorem 7.4).
+
+---
+
+## 2026-11-06 — Phase 5: Quantum Error-Correcting Code Construction (Tasks A–H)
+
+**New deliverable:** `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`
+**New script/log:** `04_COMPUTATION/phase5_quantum_constructions.py` →
+`phase5_quantum_log.txt` (88 checks, 88 PASS, 0 FAIL, seed `20261120`, ≈ 80 s,
+two runs byte-identical, log SHA-256 `055a8af0…6cd1`).
+
+The quantum framework (Weyl operators over `F_q`, commutation
+`⟺ Tr_{F_q/F_p}(a·b' − a'·b) = 0`, `K = q^N/|C|`, the distance as a minimum
+symplectic weight, Knill–Laflamme) is built from scratch and verified on a genuine
+Hilbert space (`q = 4`, `N = 2`, `dim = 16`).
+
+### Results (register rows T-190 … T-203)
+* **T-190** the general-Galois / reflexive (`r | 2s`) / per-code
+  `σ̂_{2s}`-invariant regimes are pairwise **non-equivalent** (witness
+  `(8,1,2,1)`: 14 of 92 codes are `σ̂_2`-invariant and exactly those satisfy
+  `D^{⊥⊥} = D`).
+* **T-191/T-192** the transported form is Euclidean `⟺ t = 1 ∧ r | s`; **every
+  Galois hull is self-orthogonal**, with no reflexivity and no principality
+  hypothesis (226 hulls, `[EXH]`).
+* **T-193 … T-197** three construction routes — R1 Galois-native twisted
+  embedding (`[[N,N−k,d]]_q`, `d ≤ min wt(D^{⊥_E})`), R2 Euclidean/CSS
+  (`[[N,N−2k,d]]_q` / `[[N,2k−N,d]]_q`), R3 entanglement-assisted
+  (`[[N,N−k−h_E,d;k−h_E]]_q`) — compared; **R2 recommended** where available,
+  R1 in the obstructed cases, R3 when entanglement may be spent.
+* **T-198 … T-200** `N_phys = 4tn` **derived**; the form conversion
+  `Ψ(u) = u(I_{4n} ⊗ T)`, `TᵀH_tT = I_t`, with eight verified properties, is
+  non-monomial for `t ≥ 2`, `p` odd, and **does not exist** for `p = 2`,
+  `t` even (alternating obstruction) — the Euclidean route is then impossible.
+* **T-201/T-202** parameters proved; all 17 constructed codes satisfy the quantum
+  Singleton and Hamming bounds.
+* **T-203** commutation must be tested on an `F_p`-basis
+  (`Tr_{F_4/F_2}(1) = 0`): the naive `F_q`-generator test would report `d = 1`
+  for a code whose distance is `3`.
+
+### Explicit codes
+`[[8,4,2]]_4`, `[[12,8,2]]_4`, `[[16,4,3]]_4` (Knill–Laflamme with `t = 1`
+verified over 58 081 error pairs), `[[8,4,2]]_8`, `[[8,4,2]]_9`,
+`[[8,4,2]]_9` (via `Ψ` at `(9,2,1)`), `[[24,16,2]]_4`, `[[24,8,2]]_4`, and —
+**prioritising non-principal hulls** — `[[16,10,2]]_4` and `[[16,8,2]]_4` from
+hulls with `µ_B = 4` (the O-3.1 witness family of T-173).
+Entanglement-assisted: `[[8,4,3;4]]_4`, `[[12,10,2;2]]_4`, `[[16,12,2;0]]_4`.
+
+### Verification and safeguards
+Seven negative controls (N1a, N1b, N2, N3, N4, N5, A4b) fail as they must.
+Regression: Stage 2A 429/429, 2B 460/460, 2C 596/596, 3A 583/583, 3B 206/206,
+Phase 4 463/463 — each reproducing its committed log byte-for-byte.  Protected-file
+baseline (83 files, list SHA-256 `4e3814b1…9b66`): 78/78 files other than the five
+append-only documents (`references.bib`, theorem register, computation README,
+computation inventory, decision log) are byte-identical.
+
+### Open problems newly recorded
+O-5.1 (`d ≥ 3` for `t ≥ 2`?), O-5.2 (is `d_R1 = min wt(D^{⊥_E})`?), O-5.3 (EA
+defect for the semilinear group `C_T`), O-5.4 (comparison with Grassl's tables —
+not reachable offline; required before any manuscript text), O-5.5 (per-code `µ_B`
+census), O-5.6 (R1 distance search capped at symplectic weight 2 for `N = 16`).
+
+**Boundary honoured:** no manuscript text and no journal-submission material.

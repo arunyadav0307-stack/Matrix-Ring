@@ -461,3 +461,48 @@ Deliverable: `03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md`.
 
 **Not attempted** (phase boundary): CSS construction, EAQECC construction, quantum
 parameters, manuscript text.
+
+---
+
+## Phase 5 — quantum error-correcting code construction (Tasks A–H)
+
+**Deliverable:** `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`
+**Script:** `phase5_quantum_constructions.py` → `phase5_quantum_log.txt`
+(88 checks, 88 PASS, 0 FAIL, seed 20261120, byte-reproducible).
+
+The quantum framework (Weyl operators, the commutation criterion
+$\operatorname{Tr}_{F_q/F_p}(a\cdot b'-a'\cdot b)=0$, $K=q^N/\lvert\mathcal C\rvert$,
+the distance as a minimum symplectic weight, Knill–Laflamme) is **set up from
+scratch** in §0 of the deliverable and verified on a genuine Hilbert space
+($q=4$, $N=2$, $\dim\mathcal H=16$); nothing is imported for it.
+
+* **Task A** — the induced form is T-177's $u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}$;
+  the general Galois, reflexive ($r\mid2s$) and per-code $\widehat\sigma_{2s}$-invariant
+  regimes are separated with witnesses (T-190) and are **not** equivalent.
+* **Task B** — every Galois hull is self-orthogonal, with **no** reflexivity and
+  **no** principality hypothesis (T-192, proved one-sidedly); three routes are
+  compared (R1 twisted/Galois-native, R2 Euclidean/CSS, R3 entanglement-assisted)
+  and **R2 is recommended** where available, R1 in the obstructed cases, R3 when
+  entanglement may be spent.
+* **Task C** — $N_{\rm phys}=4tn$ is **derived** from $\dim_{F_q}R=4t$; the
+  conversion $\Psi(u)=u(I_{4n}\otimes T)$ with $T^{\mathsf T}H_tT=I_t$ is given with
+  eight verified properties; it is non-monomial for $t\ge2$, $p$ odd, and it does
+  **not** exist for $p=2$, $t$ even (T-200) — the Euclidean route is then
+  obstructed outright.
+* **Task D** — explicit codes for the four required parameter sets $(4,1,2)$,
+  $(4,2,1)$, $(4,2,2)$, $(4,2,3)$ plus $q=8,9$, **prioritising non-principal
+  hulls**: $[[16,10,2]]_4$ and $[[16,8,2]]_4$ come from hulls with $\mu_B=4$
+  (the O-3.1 witness family of T-173).
+* **Task E** — parameters $[[N,K,d]]_q$ proved for all three routes (T-201);
+  the best distance found is $d=3$ ($[[16,4,3]]_4$ and $[[8,4,3;4]]_4$).
+* **Task F** — quantum Singleton and Hamming bounds verified for all codes
+  (T-202); **no claim of record parameters** (Grassl's tables are not reachable
+  offline — O-5.4).
+* **Task G** — per-code verification, seven negative controls, and
+  PROVED / COMPUTATIONALLY VERIFIED ONLY / CONJECTURE / OPEN labels throughout.
+* **Task H** — literature recorded; `01_LITERATURE/references.bib` extended by
+  nine entries (Greferath–Schmidt 1999, Greferath–O'Sullivan 2004,
+  arXiv:1409.7228, Calderbank–Shor, Steane, Gottesman, Knill–Laflamme,
+  Wilde–Brun, Rains), every one carrying a `VERIFY` note.
+
+**Not attempted** (phase boundary): manuscript text, journal submission material.

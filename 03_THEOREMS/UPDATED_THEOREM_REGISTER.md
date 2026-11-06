@@ -664,6 +664,57 @@ CSS/EAQECC construction, quantum parameters and manuscript text.
   unchanged; Phase 4 re-ran the Stage-2A/2B/2C/3A/3B suites with no failures (§"regression"
   of the Phase-4 completion report).
 
+### Rows added by Phase 5 (`03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`)
+
+Source: `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`; script
+`04_COMPUTATION/phase5_quantum_constructions.py`; log
+`04_COMPUTATION/phase5_quantum_log.txt` (464 lines, **88 checks, 88 PASS, 0 FAIL**,
+seed 20261120, two runs byte-identical, SHA-256 `055a8af0…6cd1`).  Phase 5 answers
+Tasks A–H of the Phase-5 brief (quantum constructions from Galois hulls through the
+Gray map) and stops short of manuscript text; no Phase 0–4 result is modified.
+
+| ID | statement | status |
+|---|---|---|
+| **T-190** | the three regimes of the induced form are pairwise **non-equivalent**: general Galois ($\sigma_s$-Hermitian Hankel) $\supsetneq$ reflexive ($r\mid2s$) $\supsetneq$ per-code $\widehat\sigma_{2s}$-invariance. Witness $(8,1,2,1)$ ($r=3$, $2s=2$, not reflexive): exactly $14$ of $92$ codes are $\widehat\sigma_2$-invariant and exactly those $14$ satisfy $D^{\perp\perp}=D$; in the reflexive instances all codes are invariant ($32/32$, $112/112$, $1220/1220$) | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-191** | the transported form is Euclidean $\iff t=1$ and $r\mid s$ | **PROVED** (`[EXH]`, 7 instances) |
+| **T-192** | **every Galois hull is self-orthogonal**: $\varphi_n(\mathrm{Hull}_s(C))\subseteq\varphi_n(\mathrm{Hull}_s(C))^{\perp^{\widehat{}}_s}$, with **no reflexivity and no principality hypothesis** (one-sided argument: $x\in C$, $y\in C^{\perp_s}$) | **PROVED** (`[EXH]`, 226 hulls, 8 parameter sets) |
+| **T-193** | Route R1 (Galois-native twisted embedding $\mathcal C_T=\{(u\mid T_su)\}$): $\omega=\langle u',u\rangle-\langle u,u'\rangle$; self-orthogonal $D$ $\Rightarrow$ abelian group, generators of order $p$, $\lvert\mathcal C_T\rvert=q^k$, hence $[[N,N-k,d]]_q$. No transformation, no reflexivity | **PROVED** |
+| **T-194** | $d_{R1}\le\min\mathrm{wt}(D^{\perp_E})$ (because $(0\mid b)\in\mathcal C_T^{\perp_\omega}$ for every $b\in D^{\perp_E}$); in every scanned case the value is $1$ or $2$ | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`) |
+| **T-195** | in the reflexive regime $\mathcal C_T$ is abelian for **every** code ($32/32$ at $(4,1,2,1)$); outside it, abelian $\iff$ self-orthogonal ($12$ abelian $=12$ SO of $92$ at $(8,1,2,1)$) | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`) |
+| **T-196** | Route R2 (Euclidean/CSS): self-orthogonal $D'$ gives $[[N,N-2k,d]]_q$, $d=\min\mathrm{wt}(D'^{\perp_E}\setminus D')$; dual-containing $D'$ gives $[[N,2k-N,d]]_q$, $d=\min\mathrm{wt}(D'\setminus D'^{\perp_E})$ | **PROVED** |
+| **T-197** | Route R3 (entanglement-assisted, $\mathcal C=D\times D$): $[[N,N-k-h_E,d\\,;\\,k-h_E]]_q$, $h_E=\dim\mathrm{Hull}_E(D)$, $d=\min\mathrm{wt}(D^{\perp_E}\setminus\mathrm{Hull}_E(D))$; degenerates to T-196(1) when $h_E=k$ | **PROVED** (re-derived in symplectic language, not imported) |
+| **T-198** | the number of **physical** coordinates is $N_{\rm phys}=N=4tn$, derived from $\dim_{\mathbb F_q}R=4t$ (no doubling to $2N$; $F_q^{2N}$ is the symplectic bookkeeping space) | **PROVED** (`[EXH]`) |
+| **T-199** | the physical-coordinate map $\Psi(u)=u\,(I_{4n}\otimes T)$, $T^{\mathsf T}H_tT=I_t$: eight verified properties ($TT^{\mathsf T}=J$; $J^2=I$; invertible; monomial iff $t=1$; transports the form to Euclidean; commutes with the block shift; $\mathbb F_q$-linear) | **PROVED** (`[EXH]`, 3 instances) |
+| **T-200** | **obstruction**: for $p=2$ and $t$ even **no** congruence exists ($H_t$ alternating), so the Euclidean/CSS route is impossible in principle for $(q,t)=(4,2)$; R1 is then the only Galois route. Exhaustive over all $4\times4$ matrices over $\mathbb F_4$ | **PROVED** (`[EXH]`) |
+| **T-201** | the parameter theorem for all three routes; all dimensions over $\mathbb F_q$, alphabet $\mathbb F_q$, no $p$-ary substitution | **PROVED** |
+| **T-202** | all $17$ constructed codes satisfy the quantum Singleton bound $N-K\ge2(d-1)$ and the quantum Hamming bound (defects tabulated; best distance found $d=3$) | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-203** | commutation must be tested on an $\mathbb F_p$-basis of the stabilizer: for the $[[16,4,3]]_4$ code the weight-1 operator $(0\mid e_0)$ commutes with all $12$ $\mathbb F_q$-generators (because $\operatorname{Tr}_{\mathbb F_4/\mathbb F_2}(1)=0$) but not with all $24$ $\mathbb F_p$-basis elements; the naive test would report $d=1$ | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`) |
+
+**Explicit codes (Phase 5 §4):** $[[8,4,2]]_4$, $[[12,8,2]]_4$, $[[16,4,3]]_4$,
+$[[8,4,2]]_8$, $[[8,4,2]]_9$, $[[8,4,2]]_9$ (via $\Psi$ at $(9,2,1)$),
+$[[16,10,2]]_4$ and $[[16,8,2]]_4$ (**non-principal** Galois hull, $\mu_B=4$, the
+O-3.1 witness family), $[[24,16,2]]_4$, $[[24,8,2]]_4$, and the
+entanglement-assisted $[[8,4,3;4]]_4$, $[[12,10,2;2]]_4$.
+
+**Annotations to older rows (append-only; no existing row is modified):**
+
+* **T-013** (CSS/EAQECC) — **discharged in Phase 5** by T-196, T-197 and T-201; the
+  Phase-4 preconditions F1–F8 are met only in the regimes stated there (in
+  particular F-"Euclidean" fails for $t\ge2$ unless a congruence exists, and
+  fails outright for $p=2$, $t$ even by T-200).
+* **O-3.1** (refuted by T-173, "hulls are principal" banned by D-024) — **used in
+  Phase 5**: the non-principal ($\mu_B=4$) hulls of $(4,2,2)$, $s=1$ yield the
+  quantum codes $[[16,10,2]]_4$ and $[[16,8,2]]_4$ through T-179 + T-193, with no
+  principality hypothesis anywhere.
+* **T-184/T-185** are re-derived and extended: T-191 (Euclidean characterisation)
+  and T-200 (the alternating obstruction).
+* **New open problems: O-5.1** ($d\ge3$ for $t\ge2$?), **O-5.2** (is
+  $d_{R1}=\min\mathrm{wt}(D^{\perp_E})$?), **O-5.3** (EA defect for the
+  semilinear group $\mathcal C_T$, only $\mathbb F_p$-linear), **O-5.4**
+  (comparison with Grassl's tables — not reachable offline; must be done before
+  any manuscript text), **O-5.5** (per-code $\mu_B$ census), **O-5.6** (the R1
+  distance search stops at symplectic weight $2$ for $N=16$).
+
 ## Audit checklist for the reviewer (updated after the independent audit)
 
 1. **T-016/T-017 are confirmed and are the load-bearing new statements.** Double-dual

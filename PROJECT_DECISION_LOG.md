@@ -457,3 +457,65 @@ byte-for-byte.
 
 **Stopping point.** Phase 4 is complete as authorised. No further phase is begun without
 explicit approval.
+
+---
+
+## D-026 — Phase 5: the quantum construction routes and the Hankel obstruction
+
+**Decision (Phase 5).** The quantum codes are built from the Gray image through
+three routes, and the route is chosen by the arithmetic of `(t, s)`, not by
+convenience:
+
+1. **R1 — Galois-native twisted stabilizer embedding** $\mathcal C_T=\{(u\mid T_su)\}$,
+   $T_s(u)=(u^{[s]}J)^{\mathsf T}$. Valid for **every** `t` and `s` provided the
+   image code is self-orthogonal for the transported form; yields $[[N,N-k,d]]_q$;
+   needs no coordinate transformation and no reflexivity hypothesis (T-193).
+2. **R2 — Euclidean/CSS**, $\mathcal C=D'\times D'$, valid when the transported
+   form *is* Euclidean (`t=1` and `r|s`) or when a congruence $\Psi$ exists;
+   yields $[[N,N-2k,d]]_q$ (self-orthogonal) or $[[N,2k-N,d]]_q$
+   (dual-containing) — T-196.
+3. **R3 — entanglement-assisted**, $\mathcal C=D\times D$ for an arbitrary code;
+   $[[N,N-k-h_E,d;k-h_E]]_q$ — T-197.
+
+**Reason for the record.** Two facts decided the ranking and both are proved, not
+assumed:
+
+* R1's distance is **capped** by $\min\mathrm{wt}(D^{\perp_E})$ (T-194), because
+  $(0\mid b)\in\mathcal C_T^{\perp_\omega}$ for every $b\in D^{\perp_E}$. In every
+  instance scanned this cap is $1$ or $2$, so R1 alone cannot produce a good code.
+* R2 needs the Euclidean form, and for `p = 2`, `t` even **no congruence exists at
+  all** — $H_t$ is alternating there, hence not congruent to $I_t$ (T-200,
+  verified exhaustively over all $4\times4$ matrices over $\mathbb F_4$). This is
+  an **obstruction, not a gap**: for `(q,t) = (4,2)` — which is precisely the
+  family carrying the non-principal ($\mu_B\ge3$) O-3.1 hull witnesses — the
+  Euclidean/CSS route is impossible in principle, so R1 is the only route attached
+  to the Galois structure.
+
+**Consequence recorded.** The recommendation is R2 where available (best
+distances: $[[16,4,3]]_4$), R1 for the obstructed `t≥2` characteristic-2 cases
+(where it still delivers $[[16,10,2]]_4$ from a **non-principal** hull), and R3
+when entanglement may be spent (best distance overall: $[[8,4,3;4]]_4$).
+
+**Two subtler points that are now enforced by negative controls.**
+
+* Commutation of the Weyl operators must be tested on an $\mathbb F_p$-basis of
+  the stabilizer, never on an $\mathbb F_q$-basis: $\operatorname{Tr}_{\mathbb
+  F_4/\mathbb F_2}(1)=0$, so the naive test would report $d=1$ for a code whose
+  true distance is $3$ (T-203, control N5).
+* In the reflexive regime ($r\mid2s$) the twisted group is abelian for **every**
+  code (T-195), so "self-orthogonal" is sufficient always but necessary only
+  outside that regime; the extra abelian groups have distance $1$ by T-194.
+
+**Repo safeguards.** All Phase-0/1/2/3A/3B/4 files preserved byte-for-byte
+(83-file start-of-stage baseline, list SHA-256 `4e3814b1…9b66`, re-checked at the
+end of the phase); the register grew by insertion only (+14 rows, T-190 … T-203,
+plus annotations to T-013, T-184/T-185 and O-3.1); the inventory, the README,
+`01_LITERATURE/references.bib` and this decision log grew by appending only; no
+log was overwritten; the commit is a normal fast-forward on
+`arena/59de606f-matrix-ring`. Regressions re-run in this phase: Stage 2A no
+failures, Stage 2B 460/460, Stage 2C 596/596, Stage 3A 583/583, Stage 3B 206/206,
+Phase 4 463/463, each reproducing its committed log byte-for-byte.
+
+**Stopping point.** Phase 5 is complete as authorised. No manuscript text and no
+journal-submission material has been produced; no further phase is begun without
+explicit approval.

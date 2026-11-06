@@ -631,3 +631,57 @@ The Phase-0/1/2/3A/3B scripts and logs are **unchanged** by Phase 4 (80-file
 start-of-stage baseline re-checked at the end of the phase). Regression re-runs in this
 phase: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596, Stage 3A 583/583,
 Stage 3B 206/206, each reproducing its committed log byte-for-byte.
+
+---
+
+## 15. Phase 5 — quantum error-correcting code construction
+
+**Script:** `phase5_quantum_constructions.py` (SHA-256 `633e471d…af41`, 1540 lines).
+**Log:** `phase5_quantum_log.txt` (464 lines, SHA-256 `055a8af0…6cd1`).
+**Run:** `python3 phase5_quantum_constructions.py` (≈ 80 s, Python 3.11.2, seed `20261120`).
+**Result: 88 checks, 88 PASS, 0 FAIL; two consecutive runs byte-identical.**
+
+### 15.1 What the script does
+
+| part | content |
+|---|---|
+| A | the quantum framework built from scratch on a genuine Hilbert space ($q=4$, $N=2$, $\dim=16$): the Weyl relation `X(a)Z(b)=chi(Tr(a·b))Z(b)X(a)` `[EXH]` 256 pairs; commutation $\iff\operatorname{Tr}(\omega)=0$ `[SMP]`; $K=(1/\lvert S\rvert)\sum_g\operatorname{Tr}(g)=q^N/\lvert\mathcal C\rvert$ `[EXH]` ($K=8,4,2,1$); the Knill–Laflamme criterion and its group form |
+| B | Task B1: hull self-orthogonality (226 hulls, `[EXH]`); Route R1 (twisted embedding, abelian + order $p$ + distances); Route R2b: the entanglement-assisted route |
+| B3 | Route R2 (Euclidean/CSS) over 7 parameter sets |
+| C | Task C: $N_{\rm phys}=4tn$; the eight properties of $\Psi(u)=u(I_{4n}\otimes T)$; the weight-change measurement for non-monomial $\Psi$ |
+| D, D2 | explicit codes and their per-code verification (abelian on an $\mathbb F_p$-basis, $\lvert\mathcal C\rvert=q^{\dim\mathcal C}$, $K=N-\dim\mathcal C$, exhaustive distance, Knill–Laflamme) |
+| D3 | the O-3.1 witness family: quantum codes from **non-principal** Galois hulls ($\mu_B=4$) |
+| E | quantum Singleton and Hamming bounds for every constructed code |
+| F | negative controls N1a, N1b, N2, N3, N4, N5 (each must fail and does) |
+
+### 15.2 Main numeric outputs
+
+* Best stabilizer codes: $[[16,4,3]]_4$ (Knill–Laflamme with $t=1$ verified over
+  58 081 error pairs), $[[8,4,2]]_{4,8,9}$, $[[12,8,2]]_4$, $[[24,8,2]]_4$,
+  $[[24,16,2]]_4$.
+* Non-principal hulls ($\mu_B=4$, 66 codes at $(4,2,2)$, $s=1$):
+  $[[16,10,2]]_4$ and $[[16,8,2]]_4$ via the Galois-native route R1.
+* Entanglement-assisted: $[[8,4,3;4]]_4$ (from an LCD code, $h_E=0$),
+  $[[12,10,2;2]]_4$, $[[16,12,2;0]]_4$.
+* Obstruction: no congruence $T^{\mathsf T}H_2T=I_2$ exists over $\mathbb F_4$
+  (`[EXH]`, all $4\times4$ matrices), so the Euclidean route is impossible at
+  $(q,t)=(4,2)$.
+
+### 15.3 Negative controls (all must fail, all do)
+
+N1a (reflexive regime: $\mathcal C_T$ abelian for every code) ·
+N1b (non-reflexive: abelian $\iff$ self-orthogonal) ·
+N2 (transported-SO codes that are not Euclidean SO) ·
+N3 (no congruence at $(4,2)$) ·
+N4 (the twisted embedding has $d=1$, weight-1 witness exhibited) ·
+N5 (the $\mathbb F_q$-generator commutation test is insufficient:
+$\operatorname{Tr}_{\mathbb F_4/\mathbb F_2}(1)=0$) ·
+A4b (a distance-1 code fails Knill–Laflamme with $t=1$).
+
+### 15.4 Regression
+
+The Phase-0/1/2/3A/3B/4 scripts and logs are **unchanged** by Phase 5 (83-file
+start-of-stage baseline, SHA-256 list `4e3814b1…9b66`, re-checked at the end of the
+phase). Regression re-runs in this phase: Stage 2A no failures, Stage 2B 460/460,
+Stage 2C 596/596, Stage 3A 583/583, Stage 3B 206/206, Phase 4 463/463, each
+reproducing its committed log byte-for-byte.
