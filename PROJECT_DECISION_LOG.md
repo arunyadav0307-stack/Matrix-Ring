@@ -334,3 +334,63 @@ strength of the proofs in the deliverable, 3 are `PROVED IN PHASE 1`, 1 is an
 
 **Stopping point.** Stage 3A is complete as authorised. No further phase is begun
 without explicit approval.
+
+## D-024 — Phase 3, Stage 3B: enumeration of Galois hull dimensions (Tasks A–H)
+
+**Decision taken (2026-11-06).** Complete Phase 3 Stage 3B — exhaustive enumeration of
+Galois hull dimensions, hull-dimension distributions and LCD/SO/SD counts for codes over
+`R = M_2(A_t)` — and **stop there**, pending explicit approval for Phase 4/5/6. Gray maps
+(Phase 5), CSS/EAQECC constructions and quantum parameters (Phase 6) and the manuscript
+are **not** started, and no hull enumerator is read as a quantum-code parameter.
+
+**Deliverables.** `03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md`;
+`04_COMPUTATION/phase3_stage3b_hull_enumeration.py` and
+`04_COMPUTATION/phase3_stage3b_hull_log.txt` (696 lines, **206 checks, 206 PASS, 0 FAIL**;
+189 `[EXH]`, 19 `[SMP]`; seed `20261109`; Python 3.11.2; two consecutive runs
+byte-identical; SHA-256 `c8904a23…59814`).
+
+**Task map used.** A = the four counting problems; B = the code family and its exhaustive
+enumeration; C = two independent hull routes; D = hull-dimension distributions;
+E = LCD/SO/SD counts; F = the split-regime closed form and the open questions;
+G = O-3.1 (resolved, negatively) and the left-ideal gap; H = negative controls, boundary
+cases, traceability and limitations.
+
+**Decisions that need recording.**
+
+1. **The four counting problems are kept separate** (T-171): distinct right ideals,
+   distinct generator matrices, unit-equivalence classes, Morita-equivalent submodules.
+   They are four different numbers and no table mixes them.
+2. **Unit equivalence = left multiplication by `R_n^× = GL_2(B)`** (`W ↦ UW` under
+   Morita). The two naive candidates are trivial and the log says so on every case:
+   right multiplication fixes every right ideal, and the scalar action `W ↦ uW`
+   (`u ∈ B^×`) fixes every `B`-submodule.
+3. **O-3.1 is REFUTED** (T-173). An exhaustive scan over every code of every enumerable
+   family found 1 hull with `μ_B = 3` at `(4,2,2)`, `s = 0` and 3 at `s = 1`; all four
+   witnesses are self-dual codes, each verified by two hull routes, by the Nakayama
+   identity computed from `rad(B) = B \ B^×`, and by a randomised search for a
+   2-element generating set. **"Hulls are principal" may not be used as a hypothesis in
+   later phases.** The restricted (split/chain) question survives as **O-3.5**.
+4. **The τ-orbit product formula (T-169) is the only Stage-3B row carrying a proof**, and
+   it is not a data fit: states, transitions, initialisation, exactly-once counting and
+   the absence of inadmissible tuples all come from Morita/CRT plus Stage 3A Thm 3.5.
+   It is proved and tested only in the split regime; in the chain regime it degenerates
+   (the log says so instead of printing a tautological pass) and in the wild regime it is
+   undefined (**O-3.4**).
+5. **New open items:** O-3.3 (Morita classes in the wild regime — no SNF), O-3.4 (closed
+   form outside the split regime), O-3.5 (hull principality in the split/chain regimes).
+   O-3.1 is discharged (negatively).
+6. **Bugs caught by the negative-control discipline** (recorded in the inventory §13.1):
+   `μ` computed from a `B`-generating set instead of an `F_q`-basis; a missing factor 2
+   in the transfer matrix (which reproduced every coefficient and half of every
+   exponent); the trivial unit action; and a structural edit that deleted a function.
+
+**Repo safeguards.** All Phase-0/1/2/3A files are preserved byte-for-byte (77-file
+baseline re-checked: 77/77 identical); the register grew by insertion only (+7 rows,
+T-169 … T-175); the inventory, the README and this decision log grew by appending only;
+no log was overwritten; the commit is a normal fast-forward on
+`arena/59de606f-matrix-ring`. Regressions re-run in this stage: Stage 2A no failures,
+Stage 2B 460/460, Stage 2C 596/596, Stage 3A 583/583, each reproducing its committed log
+byte-for-byte.
+
+**Stopping point.** Stage 3B is complete as authorised. No further phase is begun without
+explicit approval.

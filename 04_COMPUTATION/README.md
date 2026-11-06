@@ -371,3 +371,47 @@ all tests — is written here.
   quantum parameter claim is made anywhere.
 * **Regression.** The Stage-2A, Stage-2B and Stage-2C scripts and their logs are
   unchanged and were re-run unchanged against the start-of-stage baseline.
+
+## Phase 3 — Stage 3B: enumeration of Galois hull dimensions
+
+`phase3_stage3b_hull_enumeration.py` → `phase3_stage3b_hull_log.txt`
+(696 lines, **206 checks, 206 PASS, 0 FAIL**; 189 `[EXH]`, 19 `[SMP]`;
+seed `20261109`; Python 3.11.2; two consecutive runs byte-identical;
+SHA-256 `c8904a232faf25b550a9e7f84cc1ea7f41ed3921779ac2324bf6fa7887409814`).
+Deliverable: `03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md`.
+
+* **Task A — the four counting problems, kept separate:** (1) distinct right ideals
+  (= `B`-submodules of `B^2`), (2) distinct generator matrices (generating tuples;
+  `Σ_W f_k(W) = |B^2|^k` verified exhaustively), (3) unit-equivalence classes =
+  orbits of `R_n^× = GL_2(B)` acting by **left** multiplication (`W ↦ UW` under
+  Morita — the scalar action `u·W`, `u ∈ B^×`, is trivial and the log says so),
+  (4) Morita-equivalent submodules = isomorphism classes of the `B`-modules `W`.
+  Results `(1)/(3)/(4)`: `7/3/3`, `33/6/6`, `33/6/6`, `1221/58/nc`, `343/27/27`,
+  `144/9/9`, `93/6/6`, `35937/216/216`.
+* **Task B — enumeration:** exhaustive BFS over the submodule lattice of `B^2` where
+  `|B^2| ≤ 6561`; the CRT product `L(A_t^2)^{n}` in the split regime otherwise
+  (`(4,2,3)`: `33^3 = 35937` codes). Counts agree wherever both are affordable.
+* **Tasks C–E:** two independent hull routes (restricted Gram/pairing; Morita
+  annihilator `W' = ⋂ᵢ ker θ_s(rev gᵢ)`) agree **in dimension and as subspaces** on
+  every code of every family, every `s`; hull-dimension distributions and
+  `N_LCD / N_SO / N_SD` for all eight parameter sets, with SO verified by containment
+  and SD by equality, never from the hull dimension alone.
+* **Task F — closed form (T-169, proved):** in the split regime
+  `H_{q,t,n,s}(Z) = ∏_{τ-orbits O} Tr(N^{|O|})`, `N[V,W] = Z^{dim(V ∩ δ_s(W))}`
+  (bivariate version with `U^{2 dim V}`), verified exhaustively against brute force
+  at `(4,1,3)`, `(9,1,2)` and `(4,2,3)` — including a case with `τ ≠ id`.
+  **O-3.1 is REFUTED:** at `(4,2,2)` there are 1 (`s=0`) and 3 (`s=1`) codes whose hull
+  has `μ_B = 3`; all four witnesses are self-dual codes, verified by two hull routes,
+  by `μ_B(V) = dim_k(V/rad V)`, and by a randomised 2-generator search.
+* **Task H — negative controls** (a wrong argument must fail): the split product count
+  in the wild regime (`33 ≠ 1221`); `τ = id` when it is not; `dim C = 2tn ⇒ SD`
+  (e.g. `155` vs `7` at `(4,1,3)`, `s=0`); additivity of hull dimensions over CRT
+  components (`210` of `343` disagree); "every code is principal" (fails in the wild
+  regime: `1125` of `1221`); the hull dimension determining the hull; and the trivial
+  scalar unit action. Boundary: the zero code and the ambient code `R_n` both have
+  hull `0` (so `𝔟_s` is non-degenerate on `R_n` in every case tested).
+* **Not attempted** (T-175): Gray maps, CSS/EAQECC, quantum parameters, manuscript.
+  No hull enumerator is read as a quantum-code parameter.
+* **Regression.** Stage 2A (no failures), 2B `460/460`, 2C `596/596`, 3A `583/583`
+  re-run unchanged, each reproducing its committed log byte-for-byte; the 77-file
+  start-of-stage baseline is unchanged.

@@ -481,3 +481,71 @@ The Stage-2A, Stage-2B and Stage-2C scripts, their logs and the Phase-1 library 
 **unchanged** by Stage 3A; `phase3_stage3a_hull_structure.py` imports
 `phase2_stage2c_galois_duality.py` (and `ring_structure_checks.py`) read-only. The
 71-file start-of-stage baseline is re-checked at the end of the stage.
+
+---
+
+## 13. Phase 3 — Stage 3B: `phase3_stage3b_hull_enumeration.py`
+
+**Purpose.** Exhaustive enumeration of Galois hull dimensions, hull-dimension
+distributions, and LCD / SO / SD counts for **all** codes over
+$R_n=M_2(A_t)[X]/\langle X^n-1\rangle$ on the eight parameter sets
+$(4,1,1),(4,1,2),(4,2,1),(4,2,2),(4,1,3),(9,1,2),(8,1,2),(4,2,3)$, together with the
+four counting problems (right ideals / generator matrices / unit-equivalence classes /
+Morita classes), a closed form for the hull enumerator in the split regime, and the
+refutation of conjecture O-3.1.
+
+**Log.** `phase3_stage3b_hull_log.txt` — 696 lines, **206 checks, 206 PASS, 0 FAIL**
+(189 `[EXH]`, 19 `[SMP]`), seed $20261109$, Python 3.11.2, two consecutive runs
+**byte-identical**, SHA-256 `c8904a232faf25b550a9e7f84cc1ea7f41ed3921779ac2324bf6fa7887409814`.
+Wall-clock timings are printed to stdout only, never into the log, so that the
+byte-identity of consecutive runs is a meaningful reproducibility statement.
+
+**Structure of the script.**
+
+| § | content |
+|---|---|
+| 2 | the $B$-module $B^2$: coordinates, cyclic submodules, BFS over the submodule lattice, $\mu_B$ |
+| 3 | `Ring3B`: one parameter set, its rings, $\mu$, generators, $I_W$ |
+| 4 | $\mathbb F_q$-matrix helpers (transpose, matmul, rref key) |
+| 5 | **route 1**: ambient words, Gram matrix, restricted form $M=\sigma_s(A)GA^{\!\top}$, $\dim\operatorname{Hull}=\dim C-\operatorname{rank}M$, hull subspace, dual subspace |
+| 6 | **route 2**: $W'=\bigcap_i\ker\theta_s(\operatorname{rev}g_i)$ (Morita/annihilator), $\operatorname{Hull}=I_{W\cap W'}$, $\dim=2\dim(W\cap W')$ |
+| 7 | the local lattice $L(A_t^2)$, the local dual $\delta_s$ (pairing **and** Morita variants), the $\tau$-orbit transfer matrix, $\operatorname{Tr}(N^\ell)$ by exponent bookkeeping, $\tau$ from $\zeta_{\tau(j)}^{p^s}=\zeta_j^{-1}$ |
+| 8 | the case runner: enumeration, distributions, LCD/SO/SD by containment/equality, the trace identities, sampled verification for product-enumerated families |
+| 9 | the four counting problems: generating tuples by $f_k(V)=\lvert V\rvert^k-\sum_{U<V}f_k(U)$, $\mathrm{GL}_2(B)$-orbits (reduced and full generating sets), the SNF/valuation type invariant |
+| 10 | open questions and negative controls |
+| 11 | `main`, case list, reproducibility |
+| 12 | the O-3.1 exhaustive scan and the witness verification (two hull routes, Nakayama $\mu_B(V)=\dim_k(V/\operatorname{rad}V)$, randomised pair search) |
+
+**Main results recorded in the log.** Code-family counts $7,33,33,1221,343,144,93,35\,937$;
+hull-dimension distributions for every case and $s$; $N_{\mathrm{LCD}},N_{\mathrm{SO}},N_{\mathrm{SD}}$
+for every case and $s$; the four counting numbers per case; the $\tau$-orbit product
+formula $\prod_O\operatorname{Tr}(N^{|O|})$ verified exhaustively (univariate **and**
+bivariate) at $(4,1,3),(9,1,2),(4,2,3)$; and **four witnesses at $(4,2,2)$ whose Galois
+hull has $\mu_B=3$**, refuting O-3.1.
+
+### 13.1 Bugs caught by the negative-control discipline
+
+1. **$\mu$ from a generating set instead of a basis.** The Stage-2C helpers
+   `mu_local`/`mu_components` take $\dim W$ from the $\mathbb F_q$-rank of the list they
+   are given, so a $B$-generating set (whose $\mathbb F_q$-span can be smaller than $W$)
+   silently under-counts $\mu$ and desynchronises the two hull routes. Fixed by an
+   explicit `basis_pairs` and by documenting the precondition.
+2. **Missing factor 2 in the transfer matrix.** The local entry
+   $\dim_{\mathbb F_q}(V\cap\delta_s(W))$ contributes $2\dim_{\mathbb F_q}$ to the hull;
+   with the factor omitted the trace formula reproduced every **coefficient** and half of
+   every **exponent** — a warning that matching coefficients prove little.
+3. **Trivial "unit equivalence".** The scalar action $W\mapsto uW$, $u\in B^\times$, is
+   trivial ($uW=W$), and so is right multiplication on a right ideal; the meaningful
+   action is **left** multiplication by $\mathrm{GL}_2(B)=R_n^\times$, i.e. $W\mapsto UW$.
+4. **Structural edit hazard.** A slice-based rewrite of `run_case` deleted
+   `_run_case_bfs` (always re-list `def`s after a structural edit); the function was
+   reconstructed and re-verified.
+
+### 13.2 Regression
+
+The Stage-2A, Stage-2B, Stage-2C and Stage-3A scripts and logs are **unchanged** by
+Stage 3B; `phase3_stage3b_hull_enumeration.py` imports
+`phase2_stage2c_galois_duality.py` and `ring_structure_checks.py` read-only. Regression
+re-runs in this stage: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596,
+Stage 3A 583/583 — each reproducing its committed log byte-for-byte. The 77-file
+start-of-stage baseline was re-checked at the end of the stage: 77/77 identical.
