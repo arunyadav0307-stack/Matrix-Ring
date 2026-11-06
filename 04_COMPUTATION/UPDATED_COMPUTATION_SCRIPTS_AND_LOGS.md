@@ -549,3 +549,85 @@ Stage 3B; `phase3_stage3b_hull_enumeration.py` imports
 re-runs in this stage: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596,
 Stage 3A 583/583 — each reproducing its committed log byte-for-byte. The 77-file
 start-of-stage baseline was re-checked at the end of the stage: 77/77 identical.
+
+## 14. Phase 4 — Gray map compatibility: `phase4_gray_map_compatibility.py`
+
+**Run:** `python3 phase4_gray_map_compatibility.py` (≈135 s, seed 20261110).
+**Log:** `phase4_gray_map_log.txt` — 1106 lines, **463 checks, 463 PASS, 0 FAIL**
+(311 `[EXH]`, 152 `[SMP]`), two consecutive runs **byte-identical**, SHA-256
+`55656a9d…9a92`.  Python 3.11.2.
+
+**Dependencies (read-only).** `ring_structure_checks.py` (field, local ring, matrix ring,
+`rref`, `nullspace_basis`, `say`/`check`), `phase2_stage2c_galois_duality.py` (the Ctx:
+`bs`, `Bs`, `flat_word`/`unflat_word`, `flat_rn`/`unflat_rn`, `iota`/`iota_inv`,
+`sigma_word`, `theta_word`, `rev_word`), `phase3_stage3b_hull_enumeration.py`
+(`Ring3B`, `enumerate_submodules`, `code_basis`, `Wprime_ann`, `hull_by_morita`,
+`build_product_submodule`, `local_lattice`, `intersect_rows`, `mu`, `gens_of`).
+None of these is modified by Phase 4.
+
+**Parameter sets.** Part A/B: $(q,t,n)=(4,1,1),(4,1,2),(4,2,1),(8,1,2),(9,1,2),(4,1,3),(4,2,2)$.
+Part C/D/E/F: the same with $s=0,1$ (and $s=0,1,2$ at $q=8$), plus $(9,2,1)$ and
+$(4,2,3)$ (400 of $33^3=35\,937$ codes sampled, `[SMP]`), i.e. 18 (instance, $s$) pairs and
+$5\,140$ code/instance pairs.  The enumeration matches Phase 3B: 7, 33, 33, 93, 144, 343,
+1221 codes (113 at $(9,2,1)$, which Phase 3B did not run).
+
+**Sections.**
+
+| part | content | key functions |
+|---|---|---|
+| A | the maps $\varphi_A,\varphi_R,\varphi_n$; additivity, $\mathbb F_q$-linearity, bijectivity, the transported left regular representation $a\mapsto M_L(a)$, shift-compatibility $\varphi_nT=\widehat T\varphi_n$, the variants $P$, $\varphi^{\mathrm B}$ | `task_a_maps`, `phi_A/phi_R/phi_n`, `mat_of_left` |
+| B | the four weights, the inequality chain, and the homogeneous weight built from the generating character in exact integer arithmetic | `task_b_weights`, `hom_from_nonunits`, `w_Hamming/w_entry/w_coef/w_rank` |
+| C | the transported Gram matrix, the duality correspondence (two routes), the three symmetry notions, the congruence question | `gram_transported`, `predicted_gram`, `hat_form`, `orth_hat`, `dual_img`, `find_block_congruence` |
+| D | hull compatibility (Morita route vs. intersection in $\mathbb F_q^N$), the $\mu_B\ge3$ witnesses | `run_case_p4` |
+| E | length, dimension, quasi-cyclic index, cyclicity, minimum distances | `min_distances` |
+| F | counts of self-orthogonal / self-dual / LCD codes for three different forms | `run_case_p4` |
+| G | negative-control summary | `task_g_summary` |
+
+### 14.1 Independence of the routes
+
+| identity | route 1 | route 2 |
+|---|---|---|
+| $C^{\perp_s}$ | annihilator / $\operatorname{rev}$ (Stage 2C Thm 3.8) | nullspace of $\sigma_s(\text{basis})\;J$ in $\mathbb F_q^{N}$ |
+| $\operatorname{Hull}_s(C)$ | Morita intersection $I_{W\cap W'}$ | $\varphi_n(C)\cap\varphi_n(C)^{\perp^{\widehat{}}_s}$ |
+| Gram matrix | element-wise $b_s(\varepsilon_i,\varepsilon_j)$ | closed form $I_{4n}\otimes H_t$ |
+| $w_{\mathrm{hom}}$ | character sum over $R^\times$ | character orthogonality (non-units) + closed form |
+
+### 14.2 Bugs caught by the discipline
+
+1. **"Coefficient reversal makes the Gram the identity" is FALSE.** The reversal $P$ is
+   *equal* to $J$ ($P=I_{4n}\otimes H_t$), so $P^{\mathsf T}JP=J$; the check failed at
+   $t=2$ and the claim was withdrawn (§3.5 of the deliverable). The correct statement is
+   that the reversal cannot help and that one must solve a *congruence* problem instead.
+2. **Two different symmetry notions were conflated.** "$\langle v,u\rangle=\sigma_s\langle u,v\rangle$"
+   and "the orthogonality relation is symmetric" both need $r\mid2s$, but
+   "the form is symmetric as a value" needs $r\mid s$; the first code predicted all three
+   from the same condition and produced spurious failures at $(8,1,2,1)$ and $(4,1,3,1)$.
+   The three are now separate checks (T-186).
+3. **A wrong reflexivity predicate.** `r % gcd(r,2s) == 0` is always true; the correct test
+   is `(2*s) % r == 0`. Found because the `(8,1,2,1)` predictions disagreed with the data.
+4. **Sampled injectivity tests measured the sample, not the map.** Counting
+   `len(set(images)) == len(samples)` fails by the birthday paradox (4000 samples from
+   $|R|=65\,536$); the check now compares against `len(set(inputs))`.
+5. **Wrong ring size in the character orthogonality term.** In the sampled branch
+   `len(elems)` (the sample size) was used where $|R|$ was required, giving
+   $w_{\mathrm{hom}}(0)=10921/7680$; `hom_from_nonunits` now takes `sizeR` explicitly and
+   the check `w_hom(0)=0` is `[EXH]` for every ring tested.
+6. **Distance computations dominated the runtime** ($62$ M word-enumerations at
+   $(4,2,2)$); the distances are now computed for at most 120 sampled codes with
+   $|C|\le4100$ and labelled `[SMP]`.
+
+### 14.3 Negative controls
+
+See §7.2 of the deliverable. All of the following **fail**, as they must: the Euclidean
+orthogonal of the image equals $\varphi_n(C^{\perp_s})$ (fails unless $t=1$ and $r\mid s$);
+the plain $\widehat\sigma_s$-Hermitian orthogonal equals it (fails for $t\ge2$);
+$\varphi_n$ preserves the ring-Hamming weight; the image is cyclic; $\varphi_n$ is a ring
+homomorphism; a Hamming isometry exists for the homogeneous weight; the coefficient
+reversal makes the Gram the identity; the Bachoc-type map is a $w_{\mathrm{coef}}$-isometry.
+
+### 14.4 Regression
+
+The Phase-0/1/2/3A/3B scripts and logs are **unchanged** by Phase 4 (80-file
+start-of-stage baseline re-checked at the end of the phase). Regression re-runs in this
+phase: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596, Stage 3A 583/583,
+Stage 3B 206/206, each reproducing its committed log byte-for-byte.

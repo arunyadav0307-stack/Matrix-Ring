@@ -415,3 +415,49 @@ Deliverable: `03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md`.
 * **Regression.** Stage 2A (no failures), 2B `460/460`, 2C `596/596`, 3A `583/583`
   re-run unchanged, each reproducing its committed log byte-for-byte; the 77-file
   start-of-stage baseline is unchanged.
+
+---
+
+## Phase 4 — Gray map compatibility (Tasks A–H)
+
+`phase4_gray_map_compatibility.py` → `phase4_gray_map_log.txt`
+(1106 lines, **463 checks, 463 PASS, 0 FAIL** — 311 `[EXH]`, 152 `[SMP]` —,
+seed 20261110, two runs byte-identical, SHA-256 `55656a9d…9a92`).
+Deliverable: `03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md`.
+
+* **Task A** — the candidate maps $\varphi_A:A_t\to\mathbb F_q^t$,
+  $\varphi_R:R\to\mathbb F_q^{4t}$, $\varphi_n:R^n\to\mathbb F_q^{4tn}$
+  (coefficient expansion: coordinate $((e\cdot4+k)t+a)$). Each is $\mathbb F_q$-linear,
+  additive, injective and surjective; $\varphi_nT=\widehat T\varphi_n$ with $\widehat T$
+  the rotation by $4t$; none is a ring homomorphism ($R$ is non-commutative); the
+  transported left regular representation $a\mapsto M_L(a)$ is an injective
+  $\mathbb F_q$-algebra homomorphism $R\hookrightarrow M_{4t}(\mathbb F_q)$. Variants:
+  the coefficient reversal $P$, the Bachoc-type map (for $t=2$), and a general linear
+  change of coordinates $T$.
+* **Task B** — four weights ($w_{\mathrm H}$, $w_{\mathrm{ent}}$, $w_{\mathrm{coef}}$,
+  $w_{\mathrm{rank}}$) with the sharp chain
+  $w_{\mathrm H}\le\mathrm{wt}_{\mathrm H}\varphi_n\le4t\,w_{\mathrm H}$, plus the
+  homogeneous weight built from the generating character in exact integer arithmetic:
+  closed form $0\,/\,1+\frac1{q^2-1}\,/\,1-\frac1{(q-1)^2(q+1)}$ on $M_2(\mathbb F_q)$,
+  verified exhaustively for $q=4,8,9$; **no Hamming isometry exists for it**.
+* **Task C (central)** — the transported form is
+  $\langle u,v\rangle^{\widehat{}}_s=u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}$, a
+  $\widehat\sigma_s$-Hermitian form with a **Hankel** Gram matrix, and
+  $\varphi_n(C^{\perp_s})=\varphi_n(C)^{\perp^{\widehat{}}_s}$ holds for every code of
+  every instance, by two independent routes.
+* **Task D** — $\varphi_n(\operatorname{Hull}_s(C))=\varphi_n(C)\cap\varphi_n(C)^{\perp^{\widehat{}}_s}$,
+  including the four $\mu_B=3$ (non-principal) witnesses of T-173; no principality
+  hypothesis is used.
+* **Task E** — the image is an $\mathbb F_q$-linear $[4tn,\dim C]_q$ code, **quasi-cyclic
+  of index $4t$ and co-index $n$**, and **not** cyclic in general (measured counts, e.g.
+  4 of 1220 at $(4,2,2)$ and 0 of 400 at $(4,2,3)$); minimum distances are bounded by the
+  ring-Hamming distance, not equal to it.
+* **Task F** — eight quantum-relevant sufficient conditions are recorded (F1–F8 of §6);
+  no CSS/EAQECC is constructed and no quantum parameter is derived.
+* **Task G** — two independent routes for every critical identity, `[EXH]`/`[SMP]` labels,
+  and eight negative controls that must fail and do (§7).
+* **Task H** — literature review and the novelty gap, with the search limitation stated
+  explicitly (§8).
+
+**Not attempted** (phase boundary): CSS construction, EAQECC construction, quantum
+parameters, manuscript text.

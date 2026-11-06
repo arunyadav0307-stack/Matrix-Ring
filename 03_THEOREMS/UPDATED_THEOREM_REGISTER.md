@@ -625,6 +625,45 @@ T-115 … T-136 are unaffected; Stage-2A/2B/2C/3A were re-run in this stage with
 failures (Stage 2A: none; 2B 460/460; 2C 596/596; 3A 583/583) and reproduced their
 committed logs byte-for-byte.
 
+### Rows added by Phase 4 (`03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md`)
+
+Source: `03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md`; script
+`04_COMPUTATION/phase4_gray_map_compatibility.py`; log
+`04_COMPUTATION/phase4_gray_map_log.txt` (1106 lines, 463 checks, 463 PASS, 0 FAIL
+— 311 `[EXH]`, 152 `[SMP]` —, seed 20261110, two runs byte-identical, SHA-256
+`55656a9d…9a92`).  Phase 4 answers Tasks A–H of the Phase-4 brief; it stops short of
+CSS/EAQECC construction, quantum parameters and manuscript text.
+
+| ID | statement | status |
+|---|---|---|
+| **T-176** | $\varphi_A,\varphi_R,\varphi_n$ (coefficient expansion $R^n\to\mathbb F_q^{4tn}$) are $\mathbb F_q$-linear bijections; additive, injective, surjective; $\varphi_nT=\widehat T\varphi_n$ with $\widehat T$ the rotation by $4t$ | **PROVED** |
+| **T-177** | the form transported by $\varphi_n$ is $\langle u,v\rangle^{\widehat{}}_s=u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}$ with $H_t[a][b]=1\iff a+b=t-1$; $J$ is non-singular; $\operatorname{tr}(\theta_s(X)Y)=\sum_{k,l}\sigma_s(X_{kl})Y_{kl}$ | **PROVED** (`[EXH]`, 18 instances) |
+| **T-178** | $\varphi_n(C^{\perp_s})=\varphi_n(C)^{\perp^{\widehat{}}_s}$ for **every** code and every $s$, the target orthogonality being the explicit $\widehat\sigma_s$-Hermitian-with-Hankel form of T-177 (not Euclidean) | **PROVED** (2 independent routes) |
+| **T-179** | $\varphi_n(\operatorname{Hull}_s(C))=\varphi_n(C)\cap\varphi_n(C)^{\perp^{\widehat{}}_s}$; **no principality hypothesis**; verified on the four $\mu_B=3$ witnesses of T-173 | **PROVED** (`[EXH]`) |
+| **T-180** | $w_{\mathrm H}\le w_{\mathrm{ent}}\le w_{\mathrm{coef}}\le t\,w_{\mathrm{ent}}$ and $w_{\mathrm H}\le\mathrm{wt}_{\mathrm H}\varphi_n\le4t\,w_{\mathrm H}$ (both bounds sharp); $\varphi_n$ is a $d_{\mathrm{coef}}$/Hamming isometry | **PROVED** |
+| **T-180b** | "$\varphi_n$ preserves the ring-Hamming weight" | **REFUTED** |
+| **T-181** | closed form of the homogeneous weight on $R=M_2(\mathbb F_q)$: $0$, $1+\frac1{q^2-1}$ (rank 1), $1-\frac1{(q-1)^2(q+1)}$ (units) | **PROVED** (one imported standard $\mathrm{GL}_2$ Gauss-sum identity) + **COMPUTATIONALLY VERIFIED** `[EXH]` for $q=4,8,9$ |
+| **T-182** | **no** map into any Hamming space is an isometry for the normalised homogeneous weight on $R$ (its values are non-integral) | **PROVED** |
+| **T-183** | $\varphi_n(C)$ is $\mathbb F_q$-linear of length $4tn$ and dimension $\dim_{\mathbb F_q}C$, **quasi-cyclic of index $4t$ and co-index $n$**, invariant under the transported right $R_n$-action; **not** cyclic in general (measured counts) | **PROVED** |
+| **T-184** | the transported form is Euclidean $\iff(t=1\ \wedge\ r\mid s)$; is the plain $\widehat\sigma_s$-Hermitian form $\iff t=1$ | **PROVED** |
+| **T-185** | congruence to the standard form: impossible for $q$ even and $t$ even; no per-block $T$ with $T^{\mathsf T}H_2T=I_2$ at $(4,2)$ (exhaustive); one exists at $(9,2)$, commutes with the block shift, but is non-monomial (loses Hamming weights) — a genuine trade-off | **PROVED** for the stated cases; **OPEN** in general (O-4.2) |
+| **T-186** | three different symmetry notions: (a) $\langle v,u\rangle=\sigma_s\langle u,v\rangle\iff r\mid2s$; (b) orthogonality *relation* symmetric $\iff r\mid2s$; (c) value-symmetric $\iff r\mid s$ | **PROVED** |
+| **T-187** | $\bigl(\varphi_n(C)^{\perp^{\widehat{}}_s}\bigr)^{\perp^{\widehat{}}_s}=\widehat\sigma_{2s}(\varphi_n(C))$ | **PROVED** |
+| **T-188** | $a\mapsto M_L(a)$ (transported left multiplication) is an injective $\mathbb F_q$-algebra homomorphism $R\hookrightarrow M_{4t}(\mathbb F_q)$ | **PROVED** |
+| **T-189** | the Bachoc-type map ($t=2$): additive, $\mathbb F_q$-linear, shift-compatible; transports $b_s$ to the same Hankel form **iff** $\operatorname{char}\mathbb F_q=2$; is **not** a $w_{\mathrm{coef}}$-isometry | **PROVED** (char 2) / **COMPUTATIONALLY VERIFIED** |
+
+**Annotations to older rows (append-only; no existing row is modified):**
+
+* **T-012** (Gray/Bachoc-type map with a duality relation) — **partially resolved** by
+  Phase 4: the duality relation is established for the coefficient expansion (T-178), but
+  the isometry requirement fails for the homogeneous weight (T-182). The remaining open
+  part is O-4.4 (§11 of the Phase-4 deliverable).
+* **T-013** (CSS/EAQECC) — still **open**; the Phase-4 preconditions it needs are
+  T-178, T-179 and items F1–F8 of §6 of the Phase-4 deliverable.
+* T-001, T-037, Lemma 6.2, Thm 6.8, Stage 2C Thm 3.8 and Stage 3A Thm 3.3 are used
+  unchanged; Phase 4 re-ran the Stage-2A/2B/2C/3A/3B suites with no failures (§"regression"
+  of the Phase-4 completion report).
+
 ## Audit checklist for the reviewer (updated after the independent audit)
 
 1. **T-016/T-017 are confirmed and are the load-bearing new statements.** Double-dual

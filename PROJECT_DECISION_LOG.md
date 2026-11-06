@@ -394,3 +394,66 @@ byte-for-byte.
 
 **Stopping point.** Stage 3B is complete as authorised. No further phase is begun without
 explicit approval.
+
+---
+
+## D-025 — Phase 4 (Gray map compatibility): the coefficient expansion is the map, the
+## transported form is Hermitian-with-Hankel, and no homogeneous-weight isometry exists
+
+**Context.** Phase 4 (Tasks A–H) had to decide which finite-field map $R^n\to\mathbb F_q^N$
+to study, which target orthogonality to use, and how to report the weight situation
+honestly. Register rows **T-176 … T-189**; deliverable
+`03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md`; log `phase4_gray_map_log.txt`
+(463 checks, 0 FAIL, byte-reproducible).
+
+**Decisions.**
+
+1. **The baseline candidate is the coefficient expansion**, treated as a *hypothesis*
+   (additivity, $\mathbb F_q$-linearity, bijectivity, shift-compatibility, and
+   multiplication behaviour are each measured, not assumed). It is **not** called a Gray
+   map: it is an isometry only for the weight it defines ($w_{\mathrm{coef}}$), not for
+   the ring-Hamming weight and not for the homogeneous weight.
+2. **The target orthogonality is the transported one**, computed explicitly rather than
+   assumed Euclidean: $\langle u,v\rangle^{\widehat{}}_s=u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}$
+   (T-177). The duality correspondence $\varphi_n(C^{\perp_s})=\varphi_n(C)^{\perp^{\widehat{}}_s}$
+   (T-178) is then a transport statement whose *content* is T-177.
+3. **Hull compatibility (T-179) uses only bijectivity and T-178**, so it holds for
+   non-principal hulls as well; the four $\mu_B=3$ witnesses of T-173 are re-checked
+   explicitly. "Hulls are principal" is never assumed (D-024 stands).
+4. **The homogeneous weight is reported with an obstruction, not a construction.** Its
+   closed form on $M_2(\mathbb F_q)$ is proved (T-181) and verified exhaustively for
+   $q=4,8,9$; since its values are non-integral, **no** map into a Hamming space can be an
+   isometry for it (T-182). The rescaled/linear variant is left OPEN with the necessary
+   conditions recorded (O-4.4).
+5. **The image is quasi-cyclic of index $4t$, not cyclic** (T-183); the number of codes
+   whose image is invariant under the shift by 1 is measured per family and is small.
+6. **"Coefficient reversal makes the Gram the identity" is REFUTED** (the reversal *is*
+   $J$); the correct replacement is the congruence question, where a genuine trade-off
+   appears: at $(9,2)$ a Gram-standardising change of coordinates exists and commutes with
+   the block shift, but it is non-monomial and therefore loses the Hamming weight
+   (T-185).
+7. **Two symmetry notions that had been conflated are separated** (T-186): reflexivity of
+   the orthogonality relation needs $r\mid2s$, while symmetry of the form *as a value*
+   needs $r\mid s$.
+8. **The literature search limitation is recorded, not hidden** (§8.3): no PDF was
+   retrieved and no bibliography was followed, so the novelty claim is evidence-based, and
+   five references (Greferath–Schmidt 1999, Honold, Oggier–Belfiore–Viterbo,
+   arXiv:1409.7228, arXiv:2602.18255) still need to be added to `references.bib` with
+   VERIFY tags before any manuscript is written.
+
+**Consequences for later phases.** T-012 is partially resolved (duality yes, isometry no);
+T-013 remains open and now has F1–F8 (§6 of the deliverable) as its preconditions. Any
+CSS/EA step must either use the $\widehat\sigma_s$-Hermitian-with-Hankel form or pay the
+weight cost of the congruence map.
+
+**Repo safeguards.** All Phase-0/1/2/3A/3B files are preserved byte-for-byte (80-file
+start-of-stage baseline re-checked at the end of the phase: 80/80 identical); the register
+grew by insertion only (+15 rows, T-176 … T-189, plus annotations to T-012/T-013); the
+inventory, the README and this decision log grew by appending only; no log was
+overwritten; the commit is a normal fast-forward on `arena/59de606f-matrix-ring`.
+Regressions re-run in this phase: Stage 2A no failures, Stage 2B 460/460, Stage 2C
+596/596, Stage 3A 583/583, Stage 3B 206/206, each reproducing its committed log
+byte-for-byte.
+
+**Stopping point.** Phase 4 is complete as authorised. No further phase is begun without
+explicit approval.
