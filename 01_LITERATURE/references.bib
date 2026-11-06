@@ -478,3 +478,46 @@
              quantum Hamming bounds used in Phase 5 Section 6 and T-202;
              details TO CONFIRM; not retrieved in this sandbox).}
 }
+
+@misc{GrasslCodetables,
+  author  = {Grassl, Markus},
+  title   = {Bounds on the minimum distance of linear codes and quantum codes},
+  howpublished = {Online table, \url{http://www.codetables.de}},
+  year    = {2024},
+  note    = {VERIFY: RETRIEVED IN PHASE 6 (2026-11-06). Query pattern
+             \texttt{http://www.codetables.de/QECC.php?q=$Q$\&n=$N$\&k=$K$};
+             page last changed 10.06.2024; lower bounds constructed with MAGMA.
+             Values used, all for the best known minimum distance of an
+             additive $q$-ary quantum code:
+             $[[8,4]]_4 = 2$ (lower = upper = 2);
+             $[[12,8]]_4 = 2$ (lower = upper = 2);
+             $[[16,4]]_4 = 5$ (lower = upper = 5);
+             $[[16,8]]_4 = 3$ (lower = upper = 3);
+             $[[16,12]]_4 = 2$ (lower = upper = 2);
+             $[[24,8]]_4 = 5$ (upper bound 6);
+             $[[24,16]]_4 = 3$ (lower = upper = 3);
+             $[[8,4]]_9 = 3$ (lower = upper = 3);
+             $q = 8$ is NOT tabulated (``currently not available for q=8'').
+             These tables cover stabilizer codes only: no
+             entanglement-assisted table exists at that site
+             (\texttt{QECC-EA.php} returns 404), so the Phase-6 EA codes are
+             compared with the EA Singleton bound only.  Used in Phase 6
+             Section 8.1 and register row T-215.  Citation details for the
+             printed companion (Grassl, ``Bounds on the minimum distance of
+             linear codes over $\mathbb{F}_q$'', J. Combin. Math. Combin.
+             Comput. 2007) TO CONFIRM.}
+}
+
+@article{LaiBrunWilde2013EADualities,
+  author  = {Lai, Ching-Yi and Brun, Todd A. and Wilde, Mark M.},
+  title   = {Dualities and identities for entanglement-assisted quantum codes},
+  journal = {Quantum Information Processing},
+  year    = {2013},
+  note    = {VERIFY: SECONDARY (source of the EA Singleton bound
+             $k \le c + n - 2(d-1)$ used in Phase 6 Section 8 and T-214, and of
+             the convention that the EA distance is a minimum over the
+             symplectic dual minus the whole group, not minus its radical;
+             details TO CONFIRM; not retrieved in this sandbox). Phase 6
+             re-derives the identity in symplectic language (T-207) and
+             verifies it computationally (T-206) rather than importing it.}
+}

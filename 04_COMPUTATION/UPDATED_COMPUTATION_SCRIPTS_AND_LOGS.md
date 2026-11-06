@@ -685,3 +685,104 @@ start-of-stage baseline, SHA-256 list `4e3814b1…9b66`, re-checked at the end o
 phase). Regression re-runs in this phase: Stage 2A no failures, Stage 2B 460/460,
 Stage 2C 596/596, Stage 3A 583/583, Stage 3B 206/206, Phase 4 463/463, each
 reproducing its committed log byte-for-byte.
+
+---
+
+## 16. Phase 6 — quantum parameter enhancement, exact distance certification and novel code construction
+
+**Deliverable:** `03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md`
+**Script:** `phase6_quantum_parameter_enhancement.py`.
+**Log:** `phase6_quantum_parameter_log.txt` (424 lines, **13 checks, 13 PASS, 0
+FAIL**; seed `20261130`; two runs byte-identical, SHA-256 `985a41b2…43ee`;
+runtime ≈ 3 minutes, Python 3.11.2, standard library only).
+
+Built **read-only** on Phases 0–5 (ring, Morita dictionary, Galois duality, Gray
+map, transported Hankel form, and the Phase-5 routes R1/R2/R3).
+
+### 16.1 What the script does (Parts 1–9, mirroring the deliverable)
+
+1. **Parameter census** — which `(q,t,n)` are enumerable exhaustively
+   (`q^{2tn} ≤ 200000`, BFS over the submodule lattice of `B^2`) and which only
+   samplable (CRT product lattice, seeded sample of 300). 13 families, 2 samples.
+2. **Task A** — the R1 cap `d_{R1} ≤ min wt(D^{⊥_E})`: the mechanism
+   `(0|b) ∈ C_T^{⊥_ω}` for every `b ∈ D^{⊥_E}` is verified exhaustively (99
+   codes); R2/R3 are shown to escape it; the computational boundary (no ring
+   routine for `n = 5,6` at `t = 1`, nor `n = 3` at `q = 8`) is recorded.
+3. **Task B** — systematic search (SO / DC / EA) over 3942 codes, with the
+   Pareto frontier, the best code per route, and the minimum entanglement per
+   distance.
+4. **Task C** — exact certification of 22 codes by three methods (below).
+5. **Task D** — the O-3.1 witnesses re-derived, `µ_B` by two implementations,
+   the `µ_B` census of the hull, and all three routes on each witness.
+6. **Task E** — the characteristic-two obstruction (E1 universal over linear
+   maps, E2 the constructive congruence for `t` odd, E3 the four bypasses).
+7. **Task G** — `K = N − dim S − c` recomputed from the stabilizer, with the
+   `F_p`-basis trace-symplectic commutation test.
+8. **Task H** — EA Singleton / EA Hamming bounds, and the comparison table
+   against Grassl's codetables.de.
+9. **Negative controls** — N1 (the R1 cap is real), N2 (abelian ⟺ SO outside
+   the reflexive regime), N3 (the `F_q`-generator commutation test is invalid).
+
+### 16.2 The exact-distance engine (why the reported distances are exact)
+
+`min wt(G \ E)` is computed in three passes, and the pass that decided each
+value is printed on every row of the log:
+
+1. increasing-weight support search up to weight 2 (cheap filter; a miss
+   **proves** `d > 2`);
+2. **complete enumeration** of `G` (every codeword) when `q^{dim G} ≤ 2·10^6`.
+   For `q = 2^r` this uses a reflected mod-`q` Gray code over the coefficients
+   of an rref basis: consecutive codewords differ by one basis vector, so the
+   codeword and its syndrome with respect to a parity-check matrix of `E` are
+   each updated by one big-integer XOR (addition in `F_{2^r}` is bitwise XOR in
+   the stored digit basis), and membership in `E` is the test `syndrome == 0`.
+   The Hamming weight is read by OR-ing the `r` bit-planes and counting set
+   bits. **Cross-checked against brute force on 110 instances, 0 disagreements.**
+3. otherwise a support search to weight 6 (`N ≤ 16`) or 4 (`N = 24`): exact if
+   it finds a codeword, else the proved lower bound `d > 6` resp. `d > 4`.
+
+The three certification methods are: **M1** complete enumeration (exact,
+complete); **M2** an independent algorithm (increasing-weight support search —
+a left-kernel problem per support); **M3** an exhaustive search of the ambient
+quantum space `F_q^{2N}` in increasing **symplectic** weight, testing
+`v ∈ V^{⊥_ω}` and `v ∉ V`, complete only up to the weight it reaches and
+reported as a bound otherwise. No random search is used as a certificate.
+
+### 16.3 Results
+
+* Best distances: **stabilizer `d = 3`** (`[[16,4,3]]_4`, SO `k = 6` and DC
+  `k = 10`), **R1 `d ≤ 2`** (the cap is attained), **EA `d = 6`**
+  (`[[12,2,6;10]]_4`, `k = 10`, `h_E = 0`), with `d = 5` at `[[16,4,5;8]]_4`
+  and `[[24,4,5;12]]_4`. Every `d ≥ 4` requires entanglement (`c + K = N − k`).
+* 22 codes certified by three methods with no disagreement; every stabilizer
+  group abelian on an `F_p`-basis.
+* `µ_B` census of the Galois hull: `{0: 258, 1: 522, 2: 440, 3: 1}` at
+  `(4,2,2,0)` and `{0: 130, 1: 538, 2: 550, 3: 3}` at `(4,2,2,1)` — reproducing
+  Stage 3B's four witnesses (1 at `s = 0`, 3 at `s = 1`), `µ_B = 3` by two
+  implementations.
+* Char-2 obstruction: alternatingness is preserved by every congruence
+  (200 invertible `S` at each of five parameter pairs); a congruence **is**
+  constructed for `t = 1,3,5` at `q = 4,8`; the J-frame CSS bypass gives `d = 2`
+  over 398 valid pairs.
+
+### 16.4 Two defects found and fixed in Phase 6's own verification
+
+1. The first version of the certification re-selected "a code with the same
+   invariants" instead of certifying the reported one, and therefore certified a
+   **different** code (2 failures). Fixed: the search now stores the image basis
+   of every reported code.
+2. The ambient quantum search tested commutation with `rad V` instead of `V`,
+   which understates the entanglement-assisted distance (it reported `d = 1`
+   for a code whose distance is 6). Fixed: with entanglement the whole group `V`
+   is measurable, so the correct set is `V^{⊥_ω} \ V`.
+
+Both are recorded in the deliverable's completion report; neither was patched
+silently.
+
+### 16.5 Regression
+
+The Phase 0–5 scripts and logs are unchanged by Phase 6 (86-file baseline,
+re-checked at the end of the phase). Regressions re-run in this phase: Stage 2A,
+2B (`460/460`), 2C (`596/596`), 3A (`583/583`), 3B (`206/206`), Phase 4
+(`463/463`), Phase 5 (`88/88`), each reproducing its committed log
+byte-for-byte.

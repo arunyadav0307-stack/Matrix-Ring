@@ -715,6 +715,79 @@ entanglement-assisted $[[8,4,3;4]]_4$, $[[12,10,2;2]]_4$.
   any manuscript text), **O-5.5** (per-code $\mu_B$ census), **O-5.6** (the R1
   distance search stops at symplectic weight $2$ for $N=16$).
 
+---
+
+## Phase 6 — quantum parameter enhancement, exact distance certification and novel code construction
+
+Source: `03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md`; script
+`04_COMPUTATION/phase6_quantum_parameter_enhancement.py`; log
+`04_COMPUTATION/phase6_quantum_parameter_log.txt` (424 lines, **13 checks, 13 PASS, 0
+FAIL**, seed 20261130, two runs byte-identical, SHA-256 `985a41b2…43ee`).  Phase 6
+answers Tasks A–I of the Phase-6 brief (systematic search, **exact** distance
+certification, non-principal hulls re-derived, the exact domain of the
+characteristic-two obstruction, parameter verification, and the literature
+comparison O-5.4 asked for).  No Phase 0–5 result is modified; three Phase-5
+*statements* are corrected in the append-only annotations below.
+
+| ID | statement | status |
+|---|---|---|
+| **T-204** | parameter census: a family is enumerable exhaustively iff $q^{2tn}\le 200000$; $13$ families scanned ($11$ exhaustive, $2$ seeded $300$-code samples), $3942$ codes | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`/`[SMP]`) |
+| **T-205** | over the whole accessible range: $d\le3$ for the **stabilizer** routes R2-SO/R2-DC (both $[[16,4,3]]_4$), $d\le2$ for R1, and $d=6$ for the **EA** route ($[[12,2,6;10]]_4$); every $d\ge4$ found requires entanglement, and $c+K=N-k$ | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`/`[SMP]`) |
+| **T-206** | the $22$ reported distances are **exact**: three independent methods agree — complete enumeration of the classical quotient, an independent increasing-weight support search, and an exhaustive search of the ambient quantum space $\mathbb F_q^{2N}$ in symplectic weight (the last complete only up to the weight reached, and reported as a bound otherwise) | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-207** | for **all three routes** $d=\min\\{\\mathrm{swt}(v):v\\in V^{\\perp_\\omega}\\setminus V\\}$ with $V=D\\oplus D$ (R1: the twisted graph), $2c=\\dim V-\\dim\\mathrm{rad}V$, $K=N-\\dim V+c=N-\\dim S-c$; and $D^{\\perp_E}\\setminus D=D^{\\perp_E}\\setminus\\mathrm{Hull}_E(D)$, so T-197's distance formula is the **same number** | **PROVED** |
+| **T-208** | the cap $d_{R1}\\le\\min\\mathrm{wt}(D^{\\perp_E})$ is a statement about **route R1 only**: $(0\\mid b)\\in\\mathcal C_T^{\\perp_\\omega}$ for every $b\\in D^{\\perp_E}$; R2 and R3 are not subject to it and measurably escape it ($d=3$ resp. $d=6$) | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`, 99 codes) |
+| **T-209** | the four O-3.1 witnesses of T-173 are **re-derived from the enumeration**: exactly $1$ at $s=0$ and $3$ at $s=1$ at $(4,2,2)$, each with $\\dim C=8$, hull $=C$, $\\mu_B=3$ under two implementations of the Nakayama count; the hull census is $\\{0,1,2,3\\}$ and no hull with $\\mu_B\\ge3$ occurs in $(4,2,3)$, $(4,3,1)$, $(4,4,1)$ | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-210** | for $p=2$ and $t$ **even**, alternatingness is preserved by **every** congruence $S^{\\mathsf T}H_tS$ (since $(Sx)^{\\mathsf T}H_t(Sx)=0$), and $I_t$ is not alternating: no **linear** physical-coordinate transformation maps $H_t$ to $I_t$. The obstruction is therefore not an artefact of the block form $I_{4n}\\otimes T$ | **PROVED** (`[SMP]` $200$ invertible $S$ at each of $(4,2),(4,4),(8,2),(8,4),(4,6)$; the proof is universal) |
+| **T-211** | for $t$ **odd** a congruence **exists**: $H_t\\cong(\\text{hyperbolic plane})^{\\oplus m}\\oplus\\langle1\\rangle$ and $\\langle u,v,z\\rangle\\cong I_3$ via $z+u$, $z+v$, $z+u+v$; hence $H_t\\cong I_t$. Constructed and verified for $t=1,3,5$ at $q=4,8$; the same routine returns no congruence for $t=2,4$ | **PROVED** + constructive verification |
+| **T-212** | the J-frame CSS $C'=A\\times(JB)$ (valid when $A\\subseteq(JB)^{\\perp_E}$, with $(C')^{\\perp_\\omega}=(JB)^{\\perp_E}\\times A^{\\perp_E}$) is a genuine bypass of the char-2 obstruction, but over $398$ valid pairs at $(4,2,2)$ and $(4,1,4)$ its distance never exceeds $2$ | **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-213** | for all $22$ certified codes: $K=N-\\dim S-c$ recomputed from the stabilizer, $c=(\\dim V-\\dim\\mathrm{rad}V)/2$, $\\dim S=\\dim V-2c$, and $S$ is abelian on an $\\mathbb F_p$-basis with $\\operatorname{Tr}(a\\cdot b'-a'\\cdot b)$ | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-214** | all $22$ certified codes satisfy the EA quantum Singleton bound $N-K+c\\ge2(d-1)$ and the EA quantum Hamming bound $q^{K-c}\\sum_{j\\le t}\\binom Nj(q^2-1)^j\\le q^N$ | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-215** | **no record parameters**: against Grassl's tables (codetables.de, accessed 2026-11-06) three of the eight comparable stabilizer tuples ($[[8,4,2]]_4$, $[[12,8,2]]_4$, $[[16,12,2]]_4$) meet the best known distance exactly and five are $1$–$3$ below it; the EA codes are comparable with the EA Singleton bound only (no EA table exists at that site) | **IMPORTED RESULT** + **COMPUTATIONALLY VERIFIED ONLY** |
+
+**New codes found in Phase 6 (all entanglement-assisted, all certified exact):**
+$[[12,2,6;10]]_4$, $[[16,4,5;8]]_4$, $[[24,4,5;12]]_4$ `[SMP]`,
+$[[12,2,5;6]]_4$, $[[8,2,4;6]]_9$, $[[16,4,4;12]]_4$, $[[8,4,3;4]]_{4,8}$.
+The best **stabilizer** code remains Phase 5's $[[16,4,3]]_4$.
+
+**Annotations to older rows (append-only; no existing row is modified):**
+
+* **T-197** (Route R3 distance) — **clarified, not weakened**: the distance may be
+  written with $D$ or with $\\mathrm{Hull}_E(D)$ as the excluded set; the two sets
+  coincide inside $D^{\\perp_E}$ (T-207). The limitation that held Phase 5 back
+  was the maximum search weight, not the formula.
+* **T-200** (the char-2 obstruction) — **extended by T-210**: it holds for every
+  linear coordinate transformation (not only $I_{4n}\\otimes T$), and **delimited
+  by T-211**: it concerns $t$ even only, since for $t$ odd a congruence exists.
+* **T-202** (bounds for the 17 Phase-5 codes) — **superseded in scope** by T-214,
+  which covers the EA Singleton and EA Hamming bounds for the $22$ Phase-6 codes.
+* **Phase 5 §6** ("the sandbox has no access to Grassl's code tables") —
+  **corrected**: the tables are reachable at `http://www.codetables.de`
+  (`QECC.php?q=…&n=…&k=…`); the comparison is carried out in Phase 6 §8.1
+  (T-215), with **no** record claimed.
+* **Phase 5 §4** ($\\mu_B=4$ priority examples at $(4,2,2,1)$) — **disambiguated**:
+  those values are $\\mu_B$ of the **codes** $C$; the O-3.1/T-173 quantity is
+  $\\mu_B$ of the **hull**, whose census is $\{0,1,2,3\}$ with exactly four
+  $\\mu_B=3$ hulls (T-209).
+* **O-5.1** — **resolved (yes, with entanglement)**: $d=5$ at $t=2$
+  ($[[24,4,5;12]]_4$, $[[16,4,4;12]]_4$); for the stabilizer routes at $t\ge2$
+  the answer is no in the scanned range.
+* **O-5.2** — **resolved**: the cap mechanism is exhibited ($[EXH]$, 99 codes),
+  $d_{R1}=\\min\\mathrm{wt}(D^{\\perp_E})$ in the scanned range, and the cap is
+  R1-only.
+* **O-5.4** — **resolved** (see the Phase 5 §6 correction above and T-215).
+* **O-5.5** — **resolved** by the $\\mu_B$ census of T-209.
+* **O-5.6** — **resolved (no improvement possible)**: at $(4,2,2)$, $N=16$, the
+  proved upper bound T-194 equals $2$ and the exhaustive search at weight $\\le2$
+  finds nothing smaller, so $d_{R1}=2$ exactly.
+* **O-5.3** — **still OPEN** (carried to O-6.6).
+* **New open problems: O-6.1** ($d\\ge4$ with bounded entanglement?), **O-6.2**
+  ($d\\ge3$ at $t\\ge2$ from the Gram form?), **O-6.3** (ring routine for
+  $n=5,6$ at $t=1$ and $n=3$ at $q=8$), **O-6.4** (is $(4,2,2)$ the only wild
+  family?), **O-6.5** (an EA table or an EA-specific upper bound), **O-6.6**
+  (= O-5.3, the semilinear entanglement number).
+
+---
+
 ## Audit checklist for the reviewer (updated after the independent audit)
 
 1. **T-016/T-017 are confirmed and are the load-bearing new statements.** Double-dual

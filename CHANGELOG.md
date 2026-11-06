@@ -233,3 +233,74 @@ not reachable offline; required before any manuscript text), O-5.5 (per-code `µ
 census), O-5.6 (R1 distance search capped at symplectic weight 2 for `N = 16`).
 
 **Boundary honoured:** no manuscript text and no journal-submission material.
+
+---
+
+## 2026-11-06 — Phase 6: Quantum Parameter Enhancement, Exact Distance Certification and Novel Code Construction (Tasks A–I)
+
+**Scope.** Systematic search over the whole accessible range, **exact** distance
+certification, re-derivation of the O-3.1 witnesses, the exact domain of the
+characteristic-two obstruction, parameter verification, and the literature
+comparison that O-5.4 had declared impossible offline. No manuscript text.
+
+### Added
+* `03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md` — the Phase-6
+  deliverable (§0 conventions and the corrected distance framework, §1 Task A,
+  §2 Task B + Pareto frontier, §3 Task C certification, §4 Task D non-principal
+  hulls, §5 Task E obstruction, §6 Task F negative controls, §7 Task G
+  parameters, §8 Task H bounds + literature, §9 Task I search report, §10
+  register rows, §11 resolution of O-5.1 … O-5.6, §12 open problems O-6.1 … O-6.6,
+  §13 completion report).
+* `04_COMPUTATION/phase6_quantum_parameter_enhancement.py` and its log
+  `04_COMPUTATION/phase6_quantum_parameter_log.txt` (424 lines, **13 checks, 13
+  PASS, 0 FAIL**, seed 20261130, two runs byte-identical, SHA-256 `985a41b2…43ee`).
+
+### New register rows T-204 … T-215
+* **T-204** parameter census: exhaustive iff $q^{2tn}\le200000$; 13 families,
+  3942 codes, 2 of them seeded 300-code samples (`[SMP]`).
+* **T-205** maximum certified distances: $d=3$ (stabilizer, $[[16,4,3]]_4$),
+  $d\le2$ (R1), **$d=6$** (entanglement-assisted, $[[12,2,6;10]]_4$); every
+  $d\ge4$ requires entanglement.
+* **T-206** all 22 certified distances are exact by three independent methods
+  (complete enumeration, independent support search, ambient quantum search).
+* **T-207** $d=\min\mathrm{swt}(V^{\perp_\omega}\setminus V)$ for all three
+  routes; $D^{\perp_E}\setminus D=D^{\perp_E}\setminus\mathrm{Hull}_E(D)$, so
+  T-197's formula is the **same number** (clarified, not refuted).
+* **T-208** the R1 cap is R1-only (`[EXH]`, 99 codes); R2/R3 escape it.
+* **T-209** the four O-3.1 witnesses re-derived: exactly 1 at $s=0$ and 3 at
+  $s=1$, $\mu_B=3$ by two implementations; $\mu_B$ census for 5 families.
+* **T-210/T-211** the char-2 obstruction holds for **every** linear coordinate
+  transformation ($t$ even) and **only** for $t$ even ($t$ odd: congruence
+  constructed for $t=1,3,5$).
+* **T-212** the J-frame CSS $A\times(JB)$ is a valid bypass but yields $d\le2$.
+* **T-213/T-214** $K=N-\dim S-c$ recomputed for all 22 codes, abelian on an
+  $F_p$-basis; EA Singleton and EA Hamming bounds hold.
+* **T-215** **no record parameters**: 3 of 8 comparable stabilizer tuples meet
+  Grassl's best known distance, 5 are 1–3 below; EA codes compared with the EA
+  Singleton bound only.
+
+### New codes (all entanglement-assisted, all exactly certified)
+$[[12,2,6;10]]_4$, $[[16,4,5;8]]_4$, $[[24,4,5;12]]_4$ `[SMP]`, $[[12,2,5;6]]_4$,
+$[[8,2,4;6]]_9$, $[[16,4,4;12]]_4$, $[[8,4,3;4]]_{4,8}$.
+
+### Corrections (append-only, recorded in the register's annotations)
+* **Phase 5 §6** ("no access to Grassl's code tables") — **corrected**: the
+  tables are reachable at `http://www.codetables.de`; the comparison is done.
+* **Phase 5 §4** — disambiguated: $\mu_B=4$ there is $\mu_B$ of the **codes**;
+  the O-3.1/T-173 quantity is $\mu_B$ of the **hull** (census $\{0,1,2,3\}$).
+* **T-200** — extended (every linear transformation) **and** delimited ($t$ even
+  only).
+
+### Open problems
+O-5.1, O-5.2, O-5.4, O-5.5, O-5.6 **resolved**; O-5.3 **still open** (carried to
+O-6.6). New: O-6.1 … O-6.6.
+
+### Verification and safeguards
+13 checks, 13 PASS, 0 FAIL; log byte-identical on two runs; the exact enumerator
+cross-checked against brute force on 110 instances. Two defects found and fixed
+in Phase 6's own verification are recorded in the completion report
+(certification of a re-selected code; the entanglement-assisted distance tested
+against $\mathrm{rad}\,V$ instead of $V$). Regressions of Phases 2A/2B/2C/3A/3B/4/5
+re-run; protected Phase 0–5 files verified against the Phase-6 baseline.
+
+**Boundary honoured:** no manuscript text and no journal-submission material.

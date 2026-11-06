@@ -519,3 +519,78 @@ Phase 4 463/463, each reproducing its committed log byte-for-byte.
 **Stopping point.** Phase 5 is complete as authorised. No manuscript text and no
 journal-submission material has been produced; no further phase is begun without
 explicit approval.
+
+---
+
+## D-027 — Phase 6: parameter enhancement, exact certification, and the
+## literature comparison (2026-11-06)
+
+**Decision.** Execute Phase 6 exactly as authorised: a systematic search over
+the whole accessible parameter range with **exact** distance certification, the
+re-derivation of the O-3.1 witnesses, the exact domain of the characteristic-two
+obstruction, parameter verification, and the comparison against Grassl's code
+tables — and then **stop**, without manuscript text.
+
+**What was decided, and why.**
+
+* *Exactness over coverage.* The Phase-5 distance search was capped at
+  symplectic weight 4, which silently truncated every larger distance. Phase 6
+  replaces it with a three-pass computation: a cheap weight-2 filter, then
+  **complete enumeration** of the relevant classical code (every codeword, via a
+  reflected mod-$q$ Gray code with bit-packed XOR updates for $q=2^r$), then a
+  support search to weight 6. Every reported distance is therefore exact with an
+  explicit witness, or a proved lower bound labelled as such. The enumerator was
+  cross-checked against brute force on 110 instances (0 disagreements) before
+  being trusted.
+* *Certify the code that is reported.* The first version of the certification
+  re-selected "a code with the same invariants" and then certified that one —
+  which silently certified a **different** code (2 failures). Fixed: the search
+  now stores the image basis of every reported code. This is recorded in the
+  completion report as a defect found and fixed, not as a silent patch.
+* *The entanglement-assisted distance.* The ambient quantum search initially
+  tested commutation with $\mathrm{rad}\,V$ only and reported $d=1$ for codes
+  whose true distance is 6. The correct set is $V^{\perp_\omega}\setminus V$:
+  with entanglement the **whole** group $V$ is measurable, so an undetected
+  error must commute with all of $V$. Corrected (T-207); at the same time it was
+  checked that Phase 5's T-197 formula is the **same number**, because
+  $D^{\perp_E}\setminus D=D^{\perp_E}\setminus\mathrm{Hull}_E(D)$ — so T-197 is
+  clarified, not refuted.
+* *The obstruction is delimited, not extended.* T-200 is strengthened (it holds
+  for **every** linear coordinate transformation, T-210) and at the same time
+  bounded (for $t$ **odd** a congruence exists and is constructed, T-211). The
+  scope note is explicit: nothing here says that good characteristic-two codes
+  are impossible; one route is closed, and three bypasses are measured.
+* *Novelty: none in parameters.* Grassl's tables **are** reachable
+  (`http://www.codetables.de`), which resolves O-5.4 and **corrects** Phase 5
+  §6. Three of the eight comparable stabilizer tuples meet the best known
+  distance exactly; five are 1–3 below. No record is claimed; the defensible
+  claim remains the **origin** of the codes (non-commutative matrix ring,
+  Galois hulls, Gray map).
+
+**Results (register rows T-204 … T-215).** Maximum certified distances:
+$d=3$ for the stabilizer routes ($[[16,4,3]]_4$, unchanged from Phase 5),
+$d\le2$ for R1 (the cap $d_{R1}\le\min\mathrm{wt}(D^{\perp_E})$ is attained), and
+**$d=6$** for the entanglement-assisted route ($[[12,2,6;10]]_4$) with
+$d=5$ at $[[16,4,5;8]]_4$ and $[[24,4,5;12]]_4$. Every $d\ge4$ requires
+entanglement, and $c+K=N-k$. The four O-3.1 witnesses are re-derived (1 at
+$s=0$, 3 at $s=1$, $\mu_B=3$ by two implementations); the $\mu_B$ census shows
+no $\mu_B\ge3$ hull outside $(4,2,2)$.
+
+**Honesty constraints imposed on this phase (all enforced in the script).**
+No random search is used as a certificate; the two sampled families are labelled
+`[SMP]` and never passed off as exhaustive; commutation is tested on an
+$\mathbb F_p$-basis with the trace-symplectic form; O-5.6's negative answer is
+reported as "no improvement is possible", not as a search that found nothing;
+and the failure of one coordinate transformation is explicitly **not** presented
+as the impossibility of the characteristic-two regime.
+
+**Repo safeguards.** Phase 0–5 files preserved (86-file Phase-6 start baseline,
+re-checked at the end); the register grew by insertion only (+12 rows,
+T-204 … T-215, plus annotations to T-197, T-200, T-202 and corrections of Phase 5
+§4/§6); inventory, README, `references.bib`, CHANGELOG and this log grew by
+appending only; no log overwritten; commits are normal fast-forwards on
+`arena/59de606f-matrix-ring`.
+
+**Stopping point.** Phase 6 is complete as authorised. No manuscript text and no
+journal-submission material has been produced; no further phase is begun without
+explicit approval.

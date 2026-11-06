@@ -506,3 +506,76 @@ scratch** in §0 of the deliverable and verified on a genuine Hilbert space
   Wilde–Brun, Rains), every one carrying a `VERIFY` note.
 
 **Not attempted** (phase boundary): manuscript text, journal submission material.
+
+---
+
+## Phase 6 — quantum parameter enhancement, exact distance certification and novel code construction
+
+**Deliverable:** `03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md`
+**Script:** `phase6_quantum_parameter_enhancement.py` →
+`phase6_quantum_parameter_log.txt` (424 lines, **13 checks, 13 PASS, 0 FAIL**;
+seed `20261130`; runtime ≈ 3 minutes; two runs byte-identical, SHA-256
+`985a41b2540cfc8db1831bc4565fa26b196824e95c81f4c78561943b896a43ee`).
+
+### How to reproduce
+
+```bash
+cd 04_COMPUTATION
+python3 phase6_quantum_parameter_enhancement.py   # -> phase6_quantum_parameter_log.txt
+```
+
+Run it **from its own directory**: it imports `ring_structure_checks`,
+`phase2_stage2c_galois_duality`, `phase3_stage3b_hull_enumeration`,
+`phase4_gray_map_compatibility` and `phase5_quantum_constructions`, and writes
+`phase6_quantum_parameter_log.txt` to the current working directory. Standard
+library only, no floating point.
+
+### What is computed, and how completely
+
+| Part | Question | Method | Completeness |
+|---|---|---|---|
+| 1 | which `(q,t,n)` are enumerable? | `q^{2tn} ≤ 200000` decides BFS vs CRT sample | exhaustive where stated; **2 of 13 families are 300-code seeded samples**, labelled `[SMP]` |
+| 2 | is the R1 distance cap inherent? | the mechanism `(0|b) ∈ C_T^{⊥_ω}` for `b ∈ D^{⊥_E}` | `[EXH]` 99 codes |
+| 3 | systematic search | three-pass **exact** distance (weight-2 filter → complete enumeration → support search to weight 6) | exact with a witness, or a proved lower bound labelled as such |
+| 4 | certification | M1 complete enumeration · M2 independent support search · M3 exhaustive ambient symplectic search | M1/M2 exact; M3 complete only to the weight reached (reported as `d > w`) |
+| 5 | O-3.1 witnesses | re-derived from the enumeration; `µ_B` by two implementations | `[EXH]` |
+| 6 | char-2 obstruction | 200 invertible `S` per parameter pair; constructive congruence for `t` odd | proof universal; sample confirms the implementation (`[SMP]`) |
+| 7 | parameters | `K = N − dim S − c`, `c = (dim V − dim rad V)/2`, `F_p`-basis commutation | `[EXH]` 22 codes |
+| 8 | bounds + literature | EA Singleton, EA Hamming, Grassl's codetables.de | bounds `[EXH]`; literature **IMPORTED RESULT** |
+| 9 | negative controls | N1, N2, N3 must fail as they do | `[EXH]` |
+
+### Exact-distance engine (the point of Phase 6)
+
+The Phase-5 search was capped at symplectic weight 4, which truncated every
+larger distance. Phase 6 enumerates the relevant classical code **completely**
+when it is small enough (`q^{dim} ≤ 2·10^6`). For `q = 2^r` this is done with a
+reflected mod-`q` Gray code over the coefficients of an rref basis: consecutive
+codewords differ by one basis vector, so the codeword **and** its syndrome with
+respect to a parity-check matrix of the excluded subcode are each updated by a
+single big-integer XOR, and exclusion is the test `syndrome == 0`. The weight is
+read by OR-ing the `r` bit-planes and counting set bits. This enumerator was
+cross-checked against brute force on **110 instances with 0 disagreements**
+before being used.
+
+### Results
+
+* Stabilizer routes: `d = 3` (`[[16,4,3]]_4`). R1: `d ≤ 2` (cap attained).
+  Entanglement-assisted: **`d = 6`** (`[[12,2,6;10]]_4`), `d = 5`
+  (`[[16,4,5;8]]_4`, `[[24,4,5;12]]_4`). Every `d ≥ 4` needs entanglement.
+* `µ_B` census of the Galois hull at `(4,2,2)`: `3` occurs exactly once at
+  `s = 0` and three times at `s = 1` — Stage 3B's four O-3.1 witnesses,
+  re-derived, `µ_B = 3` by two implementations.
+* The char-2 obstruction holds for **every** linear coordinate transformation
+  (`t` even) and **only** for `t` even (congruence constructed for `t = 1,3,5`).
+* **No record parameters.** Against Grassl's tables (codetables.de, accessed
+  2026-11-06) three of eight comparable stabilizer tuples meet the best known
+  distance and five are 1–3 below it; the EA codes are compared with the EA
+  Singleton bound only (no EA table exists at that site).
+
+### What is NOT claimed
+
+* No distance is reported without an exhaustive computation or a proved bound.
+* No sample is presented as exhaustive; the two sampled families are `[SMP]`.
+* No record; the novelty claim is about the **origin** of the codes.
+* The failure of one coordinate transformation is **not** a statement about the
+  whole characteristic-two regime.
