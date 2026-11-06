@@ -668,8 +668,8 @@ CSS/EAQECC construction, quantum parameters and manuscript text.
 
 Source: `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`; script
 `04_COMPUTATION/phase5_quantum_constructions.py`; log
-`04_COMPUTATION/phase5_quantum_log.txt` (464 lines, **88 checks, 88 PASS, 0 FAIL**,
-seed 20261120, two runs byte-identical, SHA-256 `055a8af0…6cd1`).  Phase 5 answers
+`04_COMPUTATION/phase5_quantum_log.txt` (491 lines, **88 checks, 88 PASS, 0 FAIL**,
+seed 20261120, two runs byte-identical, SHA-256 `dd4962cc…d03a0`).  Phase 5 answers
 Tasks A–H of the Phase-5 brief (quantum constructions from Galois hulls through the
 Gray map) and stops short of manuscript text; no Phase 0–4 result is modified.
 

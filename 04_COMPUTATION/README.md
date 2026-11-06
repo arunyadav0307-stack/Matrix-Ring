@@ -468,7 +468,7 @@ parameters, manuscript text.
 
 **Deliverable:** `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`
 **Script:** `phase5_quantum_constructions.py` → `phase5_quantum_log.txt`
-(88 checks, 88 PASS, 0 FAIL, seed 20261120, byte-reproducible).
+(88 checks, 88 PASS, 0 FAIL, 491 lines, seed 20261120, byte-reproducible, log SHA-256 `dd4962cc…d03a0`).
 
 The quantum framework (Weyl operators, the commutation criterion
 $\operatorname{Tr}_{F_q/F_p}(a\cdot b'-a'\cdot b)=0$, $K=q^N/\lvert\mathcal C\rvert$,

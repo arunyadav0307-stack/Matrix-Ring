@@ -10,7 +10,7 @@
 | file | content |
 |---|---|
 | `04_COMPUTATION/phase5_quantum_constructions.py` | the verification script (Parts A–G), `SEED = 20261120` |
-| `04_COMPUTATION/phase5_quantum_log.txt` | its log: **88 checks, 88 PASS, 0 FAIL**, byte-reproducible |
+| `04_COMPUTATION/phase5_quantum_log.txt` | its log: **88 checks, 88 PASS, 0 FAIL**, 491 lines, byte-reproducible |
 
 **Dependencies (read-only, never modified in this phase):**
 `RING_AND_GALOIS_FOUNDATIONS.md` (§6, the pairing package),
@@ -635,6 +635,9 @@ record.
   place with explicit labels (§7); the literature is recorded and
   `references.bib` is updated with `VERIFY` tags (§8).
 * **Verification:** 88 checks, 88 PASS, 0 FAIL; log byte-reproducible.
+  Artefact hashes (SHA-256): deliverable `8801541f…694bc`,
+  script `d18dc66d…9c64` (1637 lines), log `dd4962cc…d03a0` (491 lines).
+  Commit `ba95853` on `arena/59de606f-matrix-ring`.
 * **Safeguards honoured:** no assumption that the induced form is Euclidean
   (refuted: T-191, T-200); no assumption that a non-monomial transformation
   preserves Hamming distance (measured: 3/5 codes change `d` at `(9,2,2)`);

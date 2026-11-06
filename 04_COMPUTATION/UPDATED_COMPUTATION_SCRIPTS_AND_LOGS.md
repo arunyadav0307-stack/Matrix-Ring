@@ -636,8 +636,8 @@ Stage 3B 206/206, each reproducing its committed log byte-for-byte.
 
 ## 15. Phase 5 — quantum error-correcting code construction
 
-**Script:** `phase5_quantum_constructions.py` (SHA-256 `633e471d…af41`, 1540 lines).
-**Log:** `phase5_quantum_log.txt` (464 lines, SHA-256 `055a8af0…6cd1`).
+**Script:** `phase5_quantum_constructions.py` (SHA-256 `d18dc66d…9c64`, 1637 lines).
+**Log:** `phase5_quantum_log.txt` (491 lines, SHA-256 `dd4962cc…d03a0`).
 **Run:** `python3 phase5_quantum_constructions.py` (≈ 80 s, Python 3.11.2, seed `20261120`).
 **Result: 88 checks, 88 PASS, 0 FAIL; two consecutive runs byte-identical.**
 

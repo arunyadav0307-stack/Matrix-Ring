@@ -180,7 +180,7 @@ T-027 (general `τ ∈ Aut(A_t)` undeveloped), hull-dimension formulas (Phase 4)
 **New deliverable:** `03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md`
 **New script/log:** `04_COMPUTATION/phase5_quantum_constructions.py` →
 `phase5_quantum_log.txt` (88 checks, 88 PASS, 0 FAIL, seed `20261120`, ≈ 80 s,
-two runs byte-identical, log SHA-256 `055a8af0…6cd1`).
+two runs byte-identical, log SHA-256 `dd4962cc…d03a0`, 491 lines).
 
 The quantum framework (Weyl operators over `F_q`, commutation
 `⟺ Tr_{F_q/F_p}(a·b' − a'·b) = 0`, `K = q^N/|C|`, the distance as a minimum
