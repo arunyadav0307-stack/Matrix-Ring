@@ -27,7 +27,9 @@ Let $C\le\Rn$ be a right $\Rn$-submodule. Then:
   $\Hull_s(\sigma_{2s}C)=\sigma_{2s}\Hull_s(C)$;
 \item in the reflexive regime ($r\mid 2s$), $\Hull_s(C^{\perp_s})
   =\Hull_s(C)$ as subspaces; in general
-  $\Hull_s(C^{\perp_s})=C^{\perp_s}\cap\sigma_{2s}(C)$.
+  \[
+    \Hull_s(C^{\perp_s})=C^{\perp_s}\cap\sigma_{2s}(C).
+  \]
 \end{enumerate}
 \end{theorem}
 
@@ -42,11 +44,13 @@ $\bb_s(x,y)=\Lambda\bigl(\sum_e\theta_s(x_e)y_e\bigr)$ is a sum over
 positions, so $\bb_s(Tx,Ty)=\bb_s(x,y)$. Now $C$ is $T$-invariant and $T$ is a
 bijection, so for $y\in R^n$,
 \[
-  y\in C^{\perp_s}
-  \iff \bb_s(x,y)=0\ \forall x\in C
-  \iff \bb_s(Tx,Ty)=0\ \forall x\in C
-  \iff \bb_s(x',Ty)=0\ \forall x'\in C
-  \iff Ty\in C^{\perp_s}.
+  \begin{aligned}
+    y\in C^{\perp_s}
+    &\iff \bb_s(x,y)=0\ \forall x\in C\\
+    &\iff \bb_s(Tx,Ty)=0\ \forall x\in C\\
+    &\iff \bb_s(x',Ty)=0\ \forall x'\in C\\
+    &\iff Ty\in C^{\perp_s}.
+  \end{aligned}
 \]
 Hence $C^{\perp_s}$ is $T$-invariant, and $T$ preserves the intersection
 $C\cap C^{\perp_s}$. The \emph{principality} of the hull is not asserted here
@@ -153,8 +157,11 @@ $\MU_{\Bq}=3$; see Section~\ref{subsec:witnesses} for the explicit witnesses.
 The family \eqref{eq:witnessfamily} is finite and completely deterministic, so
 the witnesses are reproducible without search. The use of $e_1$ and of
 $\ann(\mathfrak m)$ is essential: the attempted construction
-$W=\mathfrak m^ie_1\oplus U$ with $U$ arbitrary does \emph{not} give a
-$\Bq$-submodule, and the direct ``complement-lift'' construction fails.
+\[
+  W=\mathfrak m^ie_1\oplus U,\qquad U\le\Bq^2\ \text{arbitrary},
+\]
+does \emph{not} give a $\Bq$-submodule, and the direct
+``complement-lift'' construction fails.
 \end{remark}
 
 \subsection{The witnesses}\label{subsec:witnesses}
@@ -164,11 +171,12 @@ The following families have been examined; in each, the deterministic family
 $\Hull_s(W)$ computed by the Morita route, with $\MU_{\Bq}$ of the hull
 recomputed directly (not inferred).
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\caption{Wild families: maximal ideal structure and the best witness found.
-Here $\dim\mathfrak m^i$ lists $\dim_{\F_q}\mathfrak m^i$ for $i\ge1$.}
+\caption{Wild families: ideal structure and the best witness found. Here
+$\dim\mathfrak m^i$ means $\dim_{\F_q}\mathfrak m^i$.}
 \label{tab:witnesses}
+\small
 \begin{tabular}{@{}ccccccc@{}}
 \toprule
 $(q,t,n,s)$ & $\Nlen$ & $\dim\mathfrak m,\dim\mathfrak m^2,\dots$
@@ -347,9 +355,12 @@ originally known family $(4,2,2)$.
 \begin{example}[the $(4,2,4)$ witness]\label{ex:witnessB}
 Let $q=4$, $t=2$, $n=4$. Then $X^4-1=(X-1)^4$ over $\F_4$ and
 \[
-  \Bq\cong\F_4[u,w]/\langle u^2,w^4\rangle,\qquad
-  \dim_{\F_4}\mathfrak m=7,\ \dim\mathfrak m^2=5,\ \dim\mathfrak m^3=3,\
-  \dim\mathfrak m^4=1,\ \ \dim\ann_{\Bq^2}(\mathfrak m)=2 .
+  \begin{gathered}
+    \Bq\cong\F_4[u,w]/\langle u^2,w^4\rangle,\\
+    \dim_{\F_4}\mathfrak m=7,\ \dim\mathfrak m^2=5,\
+      \dim\mathfrak m^3=3,\ \dim\mathfrak m^4=1,\\
+    \dim_{\F_4}\ann_{\Bq^2}(\mathfrak m)=2 .
+  \end{gathered}
 \]
 The same construction \eqref{eq:witnessfamily} has $36$ members with
 $\MU_{\Bq}(W)\ge3$, and for $s=0$ and $s=1$ the best witness satisfies

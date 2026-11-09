@@ -1,5 +1,6 @@
 % =====================================================================
-\section{Preliminaries and the noncommutative matrix-ring framework}
+\section[Preliminaries and the noncommutative matrix-ring framework]%
+  {Preliminaries and the noncommutative\\ matrix-ring framework}
 \label{sec:prelim}
 % =====================================================================
 
@@ -24,8 +25,8 @@ and write $C\le \Rn$ for a right $\Rn$-submodule.
 \end{definition}
 
 The choice of right ideals is forced, not conventional: see
-Lemma~\ref{lem:failure}. The ring $\Bq$ is commutative (it is a quotient of the
-commutative ring $A_t[X]$), and there is a canonical isomorphism
+Lemma~\ref{lem:failure}. The ring $\Bq$ is commutative, being a quotient of the
+commutative ring $A_t[X]$, and there is a canonical isomorphism
 \begin{equation}\label{eq:morita}
   \Rn \;\cong\; M_2(\Bq)
 \end{equation}
@@ -181,7 +182,8 @@ generalises verbatim to $\tau\in\Aut(A_t)$ with $\theta_\tau=\tau\circ(\cdot)^{\
 and $\theta_\tau^2=\tau^2$; we keep $\sigma_s$ for concreteness.
 \end{remark}
 
-\subsection{The CRT decomposition of $\Bq$}\label{subsec:crt}
+\subsection{The CRT decomposition of \texorpdfstring{$\Bq$}{B}}%
+\label{subsec:crt}
 
 Let $X^n-1=\prod_{j}g_j^{e_j}$ be the factorisation into pairwise coprime
 monic irreducibles over $\F_q$. By the Chinese remainder theorem,
@@ -251,12 +253,15 @@ $\rev=\id$ on $\Rn$ if and only if $n\le2$.
 
 \begin{proof}
 Multiplicativity is the computation
-$\rev(ab)=\sum_e\bigl(\sum_{i+j=e}a_ib_j\bigr)X^{-e}
-=\sum_{i,j}a_ib_jX^{-i-j}=\rev(a)\rev(b)$; note that this uses commutativity
-of $X$ with the coefficients but no commutativity of the coefficients with each
-other, and it is an automorphism because the index map $e\mapsto -e$ is an
-involution. If $n\le2$ then $-e\equiv e\pmod n$ for all $e$, so $\rev=\id$;
-conversely, if $n\ge3$ then $\rev(X)=X^{-1}\ne X$.
+\[
+  \rev(ab)=\sum_e\Bigl(\sum_{i+j=e}a_ib_j\Bigr)X^{-e}
+  =\sum_{i,j}a_ib_jX^{-i-j}=\rev(a)\rev(b) ,
+\]
+which uses commutativity of $X$ with the coefficients but no commutativity of
+the coefficients with each other; and $\rev$ is an automorphism because the
+index map $e\mapsto -e$ is an involution. If $n\le2$ then
+$-e\equiv e\pmod n$ for all $e$, so $\rev=\id$; conversely, if $n\ge3$ then
+$\rev(X)=X^{-1}\ne X$.
 \end{proof}
 
 \subsection{Worked examples I: the ring and the CRT decomposition}
@@ -302,7 +307,7 @@ $\mathfrak m=(u,w)$, which needs two generators, and
 \[
   \mathfrak m^2=(uw),\qquad \mathfrak m^3=0,\qquad
   \dim_{\F_4}\mathfrak m=3,\ \dim_{\F_4}\mathfrak m^2=1,\qquad
-  \dim_{\F_4}\ann(\mathfrak m)=2 .
+  \dim_{\F_4}\ann_{\Bq^2}(\mathfrak m)=2 .
 \]
 This is the ring in which $\MU_{\Bq}(W)\le2$ fails
 (Lemma~\ref{lem:components}), and it is the source of all the witnesses of

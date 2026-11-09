@@ -17,28 +17,37 @@ to regenerate this file and compare the table.
 
 | file | size (bytes) | SHA-256 |
 |---|---:|---|
+| `.gitignore` | 196 | `932fafee55fde903936eba0153c6d5b4245e0f42ebefb6239fbecaeae94adbd5` |
+| `CHANGELOG.md` | 7413 | `be7924e4a97d1cd149006df3d377708fa678a15623b74b8eff8523898afd7a3d` |
 | `CLAIM_TRACEABILITY_MATRIX.md` | 21728 | `9b48c995e4e16a6430e8af1fee69c1c12856af3bb6a1ef07ab2168a8f756037b` |
 | `CONTRIBUTION_MAP.md` | 15041 | `be485514b6c7610f4c4e830b86bef408e6b9d2c46b77432dae8113d2c50c25ce` |
+| `FINAL_VALIDATION_REPORT.md` | 11864 | `4dbf01daa02c303cd7268f628f020fa0432b4294fc9ae9dfe1cf37f347656ba2` |
 | `LITERATURE_VERIFICATION.md` | 9967 | `1e3296e671d174e884d405df09dd9a587fdb1cfff860e4226620731e9725f029` |
-| `MANUSCRIPT_SELF_AUDIT.md` | 11575 | `f02b875d98de01393e99bbce3faa6cf03be2f142e1d0d61e6bda79e20740ac93` |
+| `MANUSCRIPT_SELF_AUDIT.md` | 17846 | `8e7c57c6fa79665b435a1f529529be6d008dff878a6c21b4964c3e47c3a93afb` |
 | `NOVELTY_COMPARISON.md` | 9801 | `932755b346327e280903bd9fb1c640c5916011053acbd68d61579eefa990787a` |
-| `OPEN_ISSUES_AND_LIMITATIONS.md` | 5066 | `d81188818f7332cf509ce03bf61029b785632855fefaf0fcd19166cc69e44669` |
+| `OPEN_ISSUES_AND_LIMITATIONS.md` | 5348 | `ecf4e62136a07f1d4b3095575698f7ef46f7fa5baa5916c70e846412869931d9` |
 | `PARAMETER_COMPARISON.md` | 11559 | `e5954f931dac15d51e7612df2133300dec8d595a8fbe56c6bbe0b3f5e20833f6` |
-| `README.md` | 6590 | `bd8c8f4bf7ce5aade65c50fb15c86d0b3587822c278567986b969adac43820ae` |
-| `main.tex` | 5723 | `3fbeb2153bbd92d39dd184a40d53aa6541c647ca94218929d99353427438389f` |
-| `references.bib` | 8079 | `4a2af91fa06b65e71e8e4f581dea2ff5e917449e642b6c4f1bec497ca35cbe88` |
-| `sections/01_introduction.tex` | 7924 | `e0962d19fcb645eba0fefe76678db13187285fcb7a9612bfcfa441433132760f` |
+| `README.md` | 9530 | `81c68eab3c537080b7b895f0422af1e7f4d7bd1c9cf5a13e5a8db1a364d34744` |
+| `main.bbl` | 3892 | `23074d101b9171bdc3222c31eb70693caf699a2bcca5e6418bb4ceabb477b2d3` |
+| `main.pdf` | 648899 | `b2ba1fee72b6e70ae18f3f043c10ac3390673281e1d0ccd35da3f863d8641a03` |
+| `main.tex` | 6574 | `10eadbd148321d91ec76072a594f7e477ae588bfe272d96c00c33dfd7addc1ae` |
+| `references.bib` | 8074 | `73388338bb83adb695db32d2f69b3d2c8d7279647c546cf4da4b9dc5abd22feb` |
+| `compile/README.md` | 6334 | `a78544f3e2403e728ae712ac88a0b2baa4a62b11a9e476956299b489f7562453` |
+| `compile/build.sh` | 3033 | `831f3874104bb22972a5c64bdf4ad6ee30ee1541c792e2490799f5486b426c57` |
+| `compile/fetch_texlive.sh` | 3694 | `54f50d8d15c749f6422d47cb354b07221a24961f1ebcb5e21db37cfc32666c8f` |
+| `compile/texenv.sh` | 1721 | `867a58244b390f5d504817352bb305d17b00bf3716d13675f1d8950c81bf72a4` |
+| `sections/01_introduction.tex` | 7983 | `2442af8cfa4ab3f47737b0a145e289144d7d0841f9b26ff04305b4e522be3538` |
 | `sections/02_literature.tex` | 6164 | `d7b92a2ff1cedb6e325f5ce59fa72fb98d39ae7a8b8de02c03173c4b353de0c5` |
-| `sections/03_preliminaries.tex` | 13983 | `c6b10f702bb8a38028c24d6e86c04f199dbdeef959babc1fe1e4f335a000b456` |
-| `sections/04_cyclic_galois.tex` | 13348 | `0a43f31da027873320feac1161e56d5c625abb39531557edcf14de05cb74df16` |
-| `sections/05_hulls.tex` | 16548 | `a52fd73aa0801f09d7d60d25078734cd5f4fe73bf6af472783272b2a87978ba1` |
-| `sections/06_gray.tex` | 16569 | `aba0d0a33bb0d758ea152c32bc517b4803141c4eee055dd1e8ae02dba99d570a` |
-| `sections/07_quantum.tex` | 16697 | `2784a8f51cda32f3d55c83da4d4d1f7fe46149cfc809b9f1911b713f5e36c838` |
-| `sections/08_certification.tex` | 17175 | `429c47f66f9b716af30b0bded28914203466501968799b3faa461ff0389f4a25` |
-| `sections/09_comparison.tex` | 7513 | `4b6f741076695454feb6a963f8019bb1a839a18011dced92ede576e76bc419d3` |
-| `sections/10_conclusion.tex` | 3822 | `85e53089cd3e2afc6adfa0269a05c0daf2c245609f6eb729ec56230b9c994dfe` |
-| `sections/appendix_reproducibility.tex` | 5552 | `bed988b0a83dd6476b14f44ae83ec9b8aad438b4e6d2315c428feda2e5570f80` |
-| `sections/appendix_tables.tex` | 5170 | `75ef687a3589d21c12d878b0bcae8dfa4d6a5903601b283f5b0c1ccb3fdaa5fb` |
+| `sections/03_preliminaries.tex` | 14082 | `f595c690fa7b36179515d0db3ba6ab65de0b67cdd2e157efcd842c2ef973c9dd` |
+| `sections/04_cyclic_galois.tex` | 13377 | `5cb71fcf6f627a940ac835df3ee1db5bc8a5799a5843301f336cb681a5075779` |
+| `sections/05_hulls.tex` | 16673 | `9aae2d7aa4df85144ddf2da49070e31a66ce7a783a3ab69c8c676fc4ac8ab5c6` |
+| `sections/06_gray.tex` | 16590 | `1f34e5da2992a6826a0051fe07ef821c17b59afd2814fc99183a9cff9431b9a1` |
+| `sections/07_quantum.tex` | 16840 | `95c706036aaeaa610a0f19894c244e792f3f5de5e27ecdc2787a1ecb97432144` |
+| `sections/08_certification.tex` | 17608 | `044e6bec6762519cd1e01f8ffade7b93d3bedbe5affa7f4df5c249820e26679a` |
+| `sections/09_comparison.tex` | 7598 | `f0a6d5adaa83c25a631d16ccba6c82a09d7a994b341ad077bf7bc161bc292be1` |
+| `sections/10_conclusion.tex` | 3887 | `4413432cbc1fce848e280790038eb5f7b4ef0ff38d7ab07e9f7c55cb67ed7011` |
+| `sections/appendix_reproducibility.tex` | 5559 | `8938d5eb359dbd8339dda29e2624eb1bdabd95b381c311d252259ac80cd3e67f` |
+| `sections/appendix_tables.tex` | 5170 | `64d3b8a39ccb023c2eed38392cdb665f77123e21359767fe43a5e98d3f9ab71c` |
 | `supplementary/CERTIFICATION_PROCEDURE.md` | 5347 | `02c1a8906f4a733612386d2273f68864070de237ae55dc39dc74c2d1a7e791c0` |
 | `supplementary/ENVIRONMENT.md` | 2584 | `35c22e50034d41799a18f780bb96ddb93299761209c634ecf1f6df2158983cc3` |
 | `supplementary/README.md` | 5720 | `f4f453581a084af8f942ba279aa32ecae12480c7a3a909b3e08d9fe966354baf` |
@@ -125,12 +134,16 @@ to regenerate this file and compare the table.
 | `supplementary/scripts/ring_structure_checks.py` | 49367 | `5f74c8116b169945788e808518dcc4c938937f8d1a5245705f82e94dac500670` |
 | `supplementary/scripts/u8_n3_selfdual_check.py` | 12061 | `0c330f7d650c5fd3e75ae2004cfedb0ba30e4ed96ba363855d0b5cfbc58a2775` |
 | `tools/build_parameter_tables.py` | 8751 | `ce2b1ee50489345fb68c41b99d25defd97c8987b4d2b12fcf539678619348730` |
-| `tools/make_manifest.py` | 3307 | `a3eff7ec89a39bdf32efb174096450e3f43c08568430114f2cbddfa5daf811c2` |
+| `tools/check_log.py` | 10434 | `56b4763562f6f525c10bf8f342492c8131262e1d5c90ca15633984ed6e50119e` |
+| `tools/make_bbl.py` | 5136 | `f21704d2f981dcec06565e2084e04ea0d53a608972b967189e4aad31756c1e6f` |
+| `tools/make_manifest.py` | 3565 | `b3c4378e30b60574a013dcb7d750c29a3f1aaee7cdd5acd165eb4a4255125284` |
+| `tools/make_package.py` | 3286 | `41cacb7491ca36915116ce69a119559d873295d6e921c249210be2b57b0ff6f9` |
 | `tools/manuscript_stats.py` | 4693 | `33d74eddaee60b99d093321c8b1995a8683bce9867089db5de31d5d1a7ff430b` |
-| `tools/validate_latex.py` | 15992 | `25c41a5a66f23d4de889536f53cb71177ad374e42771e5cc27bdbeccd9635d2a` |
+| `tools/validate_latex.py` | 16267 | `037d7ae0a511192bb0b240bcab4f9c493b88d8cde792e62b01929f74b3603624` |
+| `tools/verify_examples.py` | 10680 | `760de23042924f39f0777cc6d91a13a70446adcbbd8dfc2e34f5ec6972f1980c` |
 
-Totals: 111 files, 2120930 bytes.
+Totals: 124 files, 2849450 bytes.
 
 
 Self-hash of this manifest (SHA-256 of everything above this
-line, UTF-8 encoded): `011a3cbcd70530aed64b70f83b300d623ffd2b27e38c7136c506f9335cff7f69`
+line, UTF-8 encoded): `f07c66b636344a5d295b97657406036c997067cf5535fc57dbaeb2f56b7538ef`

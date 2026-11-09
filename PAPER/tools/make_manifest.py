@@ -19,7 +19,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 
 SKIP_DIRS = {".git", "__pycache__", ".arena", "Unselected files"}
-SKIP_FILES = {"SHA256_MANIFEST.md", "MANIFEST.sha256"}
+# LaTeX build artefacts: reproducible from main.tex, not part of the package.
+SKIP_FILES = {"SHA256_MANIFEST.md", "MANIFEST.sha256",
+              "main.aux", "main.log", "main.toc", "main.out", "main.lof",
+              "main.lot", "main.blg", "missfont.log", "build_pass3.log",
+              ".build_main.tex"}
 SKIP_SUFFIX = (".zip", ".sha256")
 
 

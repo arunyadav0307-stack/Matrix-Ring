@@ -27,7 +27,7 @@ PAPER/supplementary/
 \end{verbatim}
 
 The scripts are byte-identical copies of the scripts committed in
-\texttt{04\_COMPUTATION/} of the project repository; the logs are the
+\filepath{04_COMPUTATION/} of the project repository; the logs are the
 committed logs. Nothing was re-run to produce the package, so no script hash
 is invalidated.
 
@@ -35,7 +35,7 @@ is invalidated.
 
 The computation is pure Python~3 standard library. No third-party package
 (numpy, sympy, GAP, Magma) is used or required; arithmetic in $\F_q$ and in
-$A_t$, $R$, $\Rn$ is implemented in \texttt{matrix\_ring\_lib.py} and is
+$A_t$, $R$, $\Rn$ is implemented in \filepath{matrix_ring_lib.py} and is
 elementary by design, so that every step can be inspected. See
 \texttt{ENVIRONMENT.md} for the interpreter version and platform of the
 recorded run.
@@ -43,8 +43,8 @@ recorded run.
 \subsection{Randomness}
 
 The search uses pseudo-random sampling for the families that are too large to
-enumerate. The seed is fixed (\texttt{SEED = 20261210}) and every random
-choice is drawn from a single \texttt{random.Random(SEED)} instance in a
+enumerate. The seed is fixed (\filepath{SEED = 20261210}) and every random
+choice is drawn from a single \filepath{random.Random(SEED)} instance, in a
 fixed order of families, so a re-run reproduces every line of the log except
 the per-family elapsed-time annotations and the peak-memory line, which are
 wall-clock and resource readings and take no part in any computation.
@@ -63,8 +63,8 @@ enumerated exhaustively.
   \ref{thm:nonprincipal}: proved in the text; no computation enters.
 \item Table~\ref{tab:witnesses} (the $\MU_{\Bq}=3$ witnesses) and the four
   witness codes of Appendix~\ref{app:tables}: Part~5 of
-  \texttt{phase7\_extended\_search\_log.txt}, produced by
-  \texttt{phase7\_extended\_search.py}.
+  \filepath{phase7_extended_search_log.txt}, produced by
+  \filepath{phase7_extended_search.py}.
 \item Table~\ref{tab:cert} (all 28 certified codes): Part~6 of the same log.
 \item Table~\ref{tab:headline}: Part~4(d) (Pareto frontier), Part~4(e) (best
   per route) and Part~6 of the same log.
@@ -97,8 +97,8 @@ recorded platform. The \texttt{grep -v} filter removes the elapsed-time
 annotations; the peak-memory line is the only other difference.
 
 The earlier phases are reproduced the same way from their own scripts; see
-\texttt{04\_COMPUTATION/README.md} in the repository for the dependency
-order (\texttt{matrix\_ring\_lib.py} first, then the phase scripts).
+\filepath{04_COMPUTATION/README.md} in the repository for the dependency
+order (\filepath{matrix_ring_lib.py} first, then the phase scripts).
 
 \subsection{What is \emph{not} reproducible from the package}
 
@@ -115,5 +115,5 @@ not an output of this computation.
 \end{verbatim}
 
 Every file listed in the manifest is checked against its recorded hash; see
-\texttt{PAPER/SHA256\_MANIFEST.md} for the same check over the manuscript and
+\filepath{PAPER/SHA256_MANIFEST.md} for the same check over the manuscript and
 the whole package.

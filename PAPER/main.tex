@@ -13,12 +13,27 @@
 \documentclass[11pt,a4paper]{article}
 
 \usepackage[margin=2.6cm]{geometry}
-\usepackage[T1]{fontenc}
+% NOTE: \usepackage[T1]{fontenc} is intentionally NOT used.  See
+% compile/README.md: the recovered engine's texmf tree has no EC (T1)
+% font metrics, so T1 silently falls back to nullfont.  OT1 (the
+% article-class default) renders this manuscript identically: the .tex
+% sources contain no non-ASCII characters.  On a current TeX Live,
+% either setting compiles.
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{array,booktabs,multirow,longtable}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array,booktabs,longtable}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{url}
+% File and directory names are long and contain underscores, so they are set
+% with url.sty's \path, which may break at '_', '/' and '.'.  A plain
+% \texttt{...} cannot break there and pushes into the margin.
+\newcommand{\filepath}{\path}
+% Typesetting: allow extra interword stretch on lines that would otherwise be
+% pushed into the right margin.  This is a last-resort stretch (TeX's third
+% pass) and is only used on lines that would otherwise be overfull; it never
+% loosens a line that sets correctly.
+\emergencystretch=2em
 \usepackage[hypertexnames=false]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=green!35!black,
             urlcolor=blue!45!black,pdfauthor={\AUTHORPLACEHOLDER}}
@@ -52,7 +67,7 @@
 \newcommand{\omegaperp}{{}^{\perp_\omega}}
 \newcommand{\AUTHORPLACEHOLDER}{\textbf{[\,AUTHOR METADATA TO BE
   SUPPLIED\,]}}
-\newcommand{\blanksymbol}{\textcolor{red}{\textbf{[TO BE SUPPLIED]}}}
+\newcommand{\blanksymbol}{\textbf{[TO BE SUPPLIED]}}
 
 % ------------------------------ theorems ------------------------------
 \theoremstyle{plain}

@@ -2,11 +2,11 @@
 """
 validate_latex.py -- a STATIC validator for the manuscript in PAPER/.
 
-There is no TeX engine in this environment (pdflatex, xelatex, lualatex,
-tectonic and kpsewhich are all absent, and no WASM/JS build of TeX could be
-obtained), so the manuscript cannot be compiled here.  This script performs
-the structural checks a compiler would perform that can be done without
-typesetting:
+Structural checks on the sources, performed without typesetting.  They are a
+complement to an actual build, not a substitute for it: the manuscript is
+compiled by compile/build.sh, and tools/check_log.py analyses the resulting
+main.log.  Run this script when you want a fast check that needs no TeX
+engine at all.
 
   V1  every \input{...} resolves to an existing file
   V2  braces are balanced in every file (ignoring \{ \} and \%)
@@ -75,6 +75,10 @@ BUILTIN = set(r"""
 \multicolumn \multirow \arraybackslash \arraystretch \tabcolsep
 \newline \verb \begin \end \\[ ] \item \description
 \href \url \nolinkurl \texorpdfstring \hypersetup
+\path \filepath
+% TeX primitive parameters and registers set in the preamble
+\emergencystretch \tolerance \hbadness \vbadness \hfuzz \vfuzz
+\pretolerance \looseness \widowpenalty \clubpenalty \hyphenpenalty
 \qed \qedhere \qedsymbol \hfill \hfil \dotfill
 \ensuremath \everymath \displaystyle \textstyle \scriptstyle
 \numberwithin \allowdisplaybreaks \notag \nonumber
@@ -102,6 +106,7 @@ itemize
 theorem proposition lemma corollary definition example assumption remark
 openproblem conjecture
 equation align gather multline eqnarray split cases displaymath math
+aligned gathered alignedat smallmatrix subarray
 verbatim verbatim* lstlisting proof pmatrix matrix
 thebibliography
 """.split())
@@ -359,7 +364,7 @@ def main():
     # ---------------------------------------------------------------- print
     width = max(len(c[1]) for c in rep.checks)
     print("=" * 78)
-    print("STATIC LaTeX VALIDATION  (no TeX engine in this environment)")
+    print("STATIC LaTeX VALIDATION  (source-level checks; not a substitute for a build)")
     print("root: %s" % os.path.abspath(root))
     print("=" * 78)
     nfail = 0

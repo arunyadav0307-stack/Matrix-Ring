@@ -243,7 +243,7 @@ $[[24,8,4]]_9$     & $(9,1,6)$ & R2-SO & 8  & 8 & 8  & 4  & 0  & 10\\
 $[[20,4,4]]_4$     & $(4,1,5)$ & R2-SO & 8  & 8 & 4  & 4  & 0  & 10\\
 $[[20,4,4]]_4$     & $(4,1,5)$ & R2-DC & 12 & 8 & 4  & 4  & 0  & 10\\
 $[[16,4,3]]_4$     & $(4,1,4)$ & R2-SO & 6  & 6 & 4  & 3  & 0  & 8\\
-$[[16,4,3]]_4$     & $(4,1,4)$ & R2-DC & 10 & 10 & 4 & 3  & 0  & 8\\
+$[[16,4,3]]_4$     & $(4,1,4)$ & R2-DC & 10 & 6  & 4 & 3  & 0  & 8\\
 $[[20,2,10;18]]_4$ & $(4,1,5)$ & R3    & 18 & 0 & 2  & 10 & 18 & 18\\
 $[[24,2,10;18]]_9$ & $(9,1,6)$ & R3    & 20 & 2 & 2  & 10 & 18 & 22\\
 $[[20,4,9;16]]_9$  & $(9,1,5)$ & R3    & 16 & 0 & 4  & 9  & 16 & 16\\
@@ -292,7 +292,10 @@ which a given distance becomes available.
 \begin{table}[t]
 \centering
 \caption{Minimum entanglement $c$ for each distance, over the whole search,
-with the attaining code.}
+with the attaining code. The distance range is $d=2,\dots,8$: these are the
+distances for which Part~4(c) of the Phase-7 log records a minimum-entanglement
+attaining code. The two larger distances of the search, $d=9$ and $d=10$, are
+attained only at $c=16$ and $c=18$ (Table~\ref{tab:headline}).}
 \label{tab:budget}
 \begin{tabular}{@{}clll@{}}
 \toprule
@@ -327,8 +330,10 @@ finds a cyclic code $C\le\Rn$ whose Gray image $D=\varphi_5(C)\subseteq
 \]
 Route R3 (Theorem~\ref{thm:R3}) then gives
 \[
-  c=k-h_E=18,\qquad K=\Nlen-k-h_E=20-18-0=2,\qquad
-  [[20,2,d;18]]_4 .
+  \begin{gathered}
+    c=k-h_E=18,\qquad K=\Nlen-k-h_E=20-18-0=2,\\
+    [[20,2,d;18]]_4 .
+  \end{gathered}
 \]
 The distance. By Theorem~\ref{thm:cosetdistance}, $d$ is the minimum weight of
 the quotient code $\mathcal Q=D^{\perp_E}/\Hull_E(D)$; here $h_E=0$, so
@@ -358,8 +363,10 @@ $k=18$ is even; $K-c=2-18=-16=\Nlen-2k=20-36$ is divisible by $4$; and
 $c+K=20=\Nlen-2h_E$, in accordance with the corrected identity --- the
 earlier formula $c+K=\Nlen-k$ would give $20=2$, which is false.
 
-This code is the largest-distance code found anywhere in the search, and it is
-also the most entanglement-hungry ($c=18$ out of $\Nlen=20$). That trade-off is
+No code found anywhere in the search has $d>10$; together with the
+$[[24,2,10;18]]_9$ of Example~\ref{ex:routes}, this $[[20,2,10;18]]_4$ is
+one of the two largest-distance codes of the search, and it is also the
+most entanglement-hungry ($c=18$ out of $\Nlen=20$). That trade-off is
 the content of Theorem~\ref{thm:feasibility}: $d\ge4$ together with
 $K\ge2$ forces $2k\le\Nlen+c_0-K_0$, i.e. large $d$ and moderate $K$ cannot
 both be had at small $c$.

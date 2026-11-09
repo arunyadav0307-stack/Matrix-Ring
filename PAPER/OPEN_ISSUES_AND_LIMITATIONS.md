@@ -85,8 +85,12 @@ comparison is therefore a *sample* comparison and is presented as such.
   $C^{\perp_s}$ (the $\theta_s$-pairing on $R^n$),
   $D^{\perp^{\widehat{}}_s}$ (the transported Hankel form on
   $\mathbb F_q^{4tn}$) and $D^{\perp_E}$ (Euclidean, used by routes R2/R3).
-* **The paper is not declared submission-ready**, because it has not been
-  typeset (issue M-1 of the self-audit).
+* **The paper is not declared submission-ready.** It *has* now been typeset
+  (issue M-1 of the self-audit is resolved and `main.pdf` is shipped), but the
+  rendering used a recovered 2010-vintage pdfTeX engine with a Python
+  stand-in for the missing `bibtex` binary, and has not been reproduced on a
+  current TeX Live. That one recompilation is the outstanding item; see
+  `compile/README.md`.
 * **No journal is named.** Suitability for any venue, Q1 or otherwise, has not
   been assessed; doing so would require a documented comparison of scope,
   standards and novelty that was not carried out in Phase 8.
