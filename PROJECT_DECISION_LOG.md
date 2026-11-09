@@ -594,3 +594,68 @@ appending only; no log overwritten; commits are normal fast-forwards on
 **Stopping point.** Phase 6 is complete as authorised. No manuscript text and no
 journal-submission material has been produced; no further phase is begun without
 explicit approval.
+
+---
+
+## D-028 — Phase 7: extended search, entanglement efficiency and the structure of the attainable frontier
+
+**Authorisation.**  Phase 6 stopped at O-6.1 … O-6.4.  This decision records
+the authorisation and the *method* of Phase 7, in particular the four
+deliberate constraints below, which were fixed **before** the run and are
+enforced in `phase7_extended_search.py`.
+
+**What was done.**  The Phase-2C component routine covers three regimes of
+`X^n − 1` and raises `no component routine` outside them.  It is **replaced**
+(not extended) by the Chinese remainder theorem
+`B = A_t[X]/(X^n−1) ≅ ∏_j A_t[X]/(g_j^{e_j})`, realised as an `F_q`-linear
+isomorphism so that it composes unchanged with the Gray map, the Morita hull
+and the three quantum routes of Phases 4–5.  The replacement is validated
+**against the old routine** (as a set of submodules of `B^2`) on every family
+the old routine supports — ten families, all `YES` — before it is allowed to
+produce a single new number.  Only then is the search re-run over the enlarged
+list (25 families, 120721 codes with invariants, 5055 with a distance).
+
+**Result.**  17 checks, 17 PASS, 0 FAIL.  `d = 10` entanglement-assisted
+(`[[20,2,10;18]]_4`, `[[24,2,10;18]]_9`); the first **stabilizer** distance 4 in
+this framework (`[[24,8,4]]_9` SO, `[[20,4,4]]_4` DC); O-6.3 resolved (three
+families newly enumerable); O-6.4 answered (`µ_B(Hull_s) ≥ 3` at `(9,2,3)` and
+`(4,2,4)`, not at `(8,2,2)`); O-6.1 and O-6.2 answered quantitatively.
+
+**Honesty constraints imposed on this phase (all enforced in the script).**
+1. *No number without a completeness label.*  Every family is `[EXH]`,
+   `[SMP]` (seeded 2000-code sample, printed as `#codes < total`) or
+   `COUNTED-ONLY`/blocked with the reason printed.  Samples are never printed
+   as exhaustive.
+2. *No distance without an exhaustive or proved computation.*  4418 of the
+   5055 distances are exact; the other 637 are printed as lower bounds (`>= d`)
+   with the method that proved them.
+3. *No record claim, and no false benchmark.*  The `q = 4` reference values
+   were read off `codetables.de` one page at a time, and the entries that could
+   not be checked (all of `q = 8`, `q = 9`, and every entanglement-assisted
+   code) are declared unbenchmarked rather than omitted.
+4. *Every obstruction statement of Phase 6 is re-examined, not trusted.*  This
+   produced one erratum (E-7.1: `c + K = N − 2h_E`, not `N − k`), one
+   re-scoping ("no stabilizer `d ≥ 4`" holds for `N ≤ 16`), and one correction
+   of a claim about the tables (`q = 8` is not available there).
+
+**Errors found and fixed in this phase's own verification (recorded, not
+patched silently).**  The seeded sampling branch of the product enumeration
+passed *indices* where the exhaustive branch passes *submodules* (a crash on
+the four sampled families, fixed and re-tested on all four); `main()` stood
+before the parts it calls (a `NameError` at the first full run); and the
+per-family elapsed times were computed from `time.time()`, which the sandbox
+clock moved by 63 hours mid-run — replaced by `time.monotonic()`.  Two dead and
+partly wrong helpers (`poly_pow_mod`, `is_irreducible`) were deleted rather
+than left in place.
+
+**Repo safeguards.**  Phase 0–6 files preserved (89-file Phase-7 start
+baseline, re-checked at the end of the phase); the register grew by insertion
+only (+14 rows, T-216 … T-229, plus annotations to T-205, T-209, T-215 and the
+erratum E-7.1); inventory, README, CHANGELOG and this log grew by appending
+only; no log overwritten; commits are normal fast-forwards on
+`arena/59de606f-matrix-ring`.
+
+**Stopping point.**  Phase 7 is complete as authorised.  No manuscript text and
+no journal-submission material has been produced; no further phase is begun
+without explicit approval.  Six open problems are carried forward: O-7.1 … O-7.6
+(the binding one is O-7.2: the component BFS blocks every `N = 32` family).

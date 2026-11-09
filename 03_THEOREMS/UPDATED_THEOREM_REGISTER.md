@@ -788,6 +788,83 @@ The best **stabilizer** code remains Phase 5's $[[16,4,3]]_4$.
 
 ---
 
+## Phase 7 — extended search: optimal quantum parameters, entanglement efficiency, and the structure of the attainable frontier
+
+Source: `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`; script
+`04_COMPUTATION/phase7_extended_search.py`; log
+`04_COMPUTATION/phase7_extended_search_log.txt` (639 lines, **17 checks, 17 PASS, 0
+FAIL**, seed 20261210, $\approx1050$ s).  Phase 7 answers Tasks A–H of the Phase-7
+brief: it replaces the ring-component routine by a general CRT decomposition
+(Task B), re-runs the whole search over the enlarged family list (Task C),
+measures the entanglement budget of the high-distance codes (Task A), settles the
+non-principal-hull question O-6.4 (Task D), certifies the headline codes (Task
+E), re-examines every Phase-6 obstruction statement (Task F), and performs the
+literature comparison (Task G).  **Four** Phase-6 open problems are resolved
+(O-6.1, O-6.2, O-6.3, O-6.4); one Phase-6 identity is **corrected** (E-7.1), one
+Phase-6 sentence is **re-scoped**, and one Phase-6 sentence about the tables is
+**corrected**.  No Phase 0–5 result is modified.
+
+| ID | statement | status |
+|---|---|---|
+| **T-216** | the CRT decomposition $B=A_t[X]/(X^n-1)=\prod_j A_t[X]/(g_j^{e_j})$, $B_j\cong\mathbb F_{q^{d_j}}[u,w]/(u^t,w^{e_j})$, implemented as an $\mathbb F_q$-linear isomorphism, reproduces the Phase-3B exhaustive BFS **as a set** of submodules of $B^2$ on all ten families the Phase-2C routine supports, and $\Psi$ is multiplicative there. Three families no earlier phase could enumerate become exhaustive: $(4,1,5)$ ($N=20$, $2527$ codes), $(4,1,6)$ ($N=24$, $35937$), $(8,1,3)$ ($N=12$, $737$). **O-6.3 resolved** | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-217** | census over the $42$ families with $q\in\\{4,8,9\\}$, $t\ge1$, $n\ge1$, $tn\le8$: $23$ exhaustive, $4$ counted-only, $15$ blocked by the component BFS ($q^{2\dim S}>4\cdot10^6$ for some component); ten families Phase 6 could only sample ($300$ codes each) are now exhaustive | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-218** | over the enlarged list: $25$ families, $120721$ codes with computed invariants, $5055$ with a distance ($4418$ exact, $637$ a proved lower bound); the largest exact distance is $d=10$, at $(4,1,5)$ ($N=20$) and $(9,1,6)$ ($N=24$), both entanglement-assisted | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`/`[SMP]`) |
+| **T-219** | for every code of the search: $k$ is even, $K-c=N-2k\equiv0\pmod4$ (so $K\equiv c\pmod4$), $c+K=N-2h_E$, and $c\ge2k-N$ is forced | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`, $5055$ codes) |
+| **T-220** | **O-6.1**: with the entanglement bounded by $c\le4$ the best attainable distance is $d=4$ ($[[24,10,4;2]]_9$, $K=10$, $c=2$, a proved lower bound); $d=5$ first appears at $c=2$ with $K=6$; $d=6$ requires $c=10$ ($[[12,2,6;10]]_4$, $h_E=0$); $d=7,8$ require $c=10,14$ | **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-221** | **O-6.2**: the stabilizer barrier in $t$ is absolute in the scanned range — best $d=4$ at $t=1$, $d\le2$ at $t=2$, and $d=1$ for every stabilizer code at $t\ge3$ (no detection at all). The entanglement-assisted route is not subject to it: $d=6$ at $t=2$ ($(4,2,3)$), $d=4$ at $t=3$ ($(9,3,2)$) | **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-222** | structure theorem for $\mu_B$: (i) $B=\prod_jB_j$ with $B_j\cong\mathbb F_{q^{d_j}}[u,w]/(u^t,w^{e_j})$; (ii) $\mu_B(W)=\max_j\mu_{B_j}(W_j)$; (iii) $B_j$ is a chain ring $\iff$ $t=1$ or $e_j=1$; (iv) over a finite chain ring every submodule of $S^2$ is free of rank $\le2$; (v) hence $\mu_B(W)\ge3$ **requires** $t\ge2$ and $p\mid n$. The bound $\mu_B(W)\le2$ is **false** without the chain hypothesis: $\mu_B(\mathrm{Hull}_s(W))=3$ occurs at $(9,2,3)$ and $(4,2,4)$ | **PROVED** ((iii) verified `[EXH]` over every component of every enumerable family) |
+| **T-223** | $\mu_B(W)\le2$ in every non-wild family, and $\mu_B(W)=3$ occurs in the wild family $(4,2,2)$; the chain/non-chain verdict of T-222(iii) agrees with the direct test (maximal ideal principal) on every component of all $25$ enumerable families | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-224** | **O-6.4 answered**: $\mu_B(\mathrm{Hull}_s(W))\ge3$ **reappears** outside $(4,2,2)$ — at $(9,2,3)$ ($N=24$, $s=0,1$: $\dim W=5$, $\mu_B(W)=3$, $\dim\mathrm{Hull}_s=10$, $\mu_B(\mathrm{Hull}_s)=3$, $\mathrm{Hull}_s(W)=W$) and at $(4,2,4)$ ($N=32$, $s=0,1$: $\dim W=7$, $\dim\mathrm{Hull}_s=10$, $\mu_B(\mathrm{Hull}_s)=3$, $\mathrm{Hull}_s(W)\supsetneq W$); it does **not** reappear at $(8,2,2)$ ($56$ modules with $\mu_B(W)=3$, all hulls with $\mu_B=2$). The witnesses come from the deterministic family $W=(m^ie_1)\oplus U$, $U\le\mathrm{ann}_{B^2}(m)$, with $\mu_B(W)=\dim m^i-\dim m^{i+1}+\dim U$ | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]` over the constructed family) |
+| **T-225** | $28$ headline codes certified: the **exact** code found by the search (image basis carried through), by three independent methods — complete classical enumeration, an increasing-weight support search, and an exhaustive ambient quantum search — with an abelian stabilizer on an $\mathbb F_p$-basis and $K,c$ recomputed | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-226** | on all $8$ (family, route) pairs shared with Phase 6's Pareto frontier the new search never reports a smaller distance ($3$ improved: $(4,2,3)$ EA $5\to6$, $(4,1,4)$ DC $1\to3$, $(4,1,3)$ DC $1\to2$; $5$ equal). Phase 6's "no stabilizer point has $d\ge4$" is **re-scoped** to the families Phase 6 scanned ($N\le16$): $(4,1,5)$, $N=20$, contains stabilizer codes of distance $4$ | **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-227** | all $5055$ codes with a computed distance satisfy the EA quantum Singleton bound $N-K+c\ge2(d-1)$ and the EA quantum Hamming bound with effective dimension $K-c$: $0$ violations of either | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-228** | literature comparison: of the alphabets used here **only $\mathbb F_4$ is tabulated** (`codetables.de` returns "currently not available for q=8"; $q=9$ is not offered), so every $q=8$ and $q=9$ code of this search is unbenchmarked; of the $12$ comparable stabilizer entries, $5$ meet the best known distance (all with $d=2$: $[[24,20,2]]_4$, $[[20,16,2]]_4$, $[[16,12,2]]_4$) and $7$ are $1$–$2$ below. **No record is claimed.** No EA table exists at that site | **IMPORTED RESULT** + **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-229** | the run is seeded ($\mathrm{SEED}=20261210$) and every random choice is drawn from `random.Random(SEED)` in a fixed order: two runs of the final script agree on every line except the per-family elapsed-time annotations, which are wall-clock readings | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+
+**New codes found in Phase 7 (best per distance; all entanglement-assisted unless
+marked, all certified as in T-225):** $[[20,2,10;18]]_4$, $[[24,2,10;18]]_9$,
+$[[20,4,9;16]]_9$, $[[24,4,9;20]]_4$, $[[16,2,8;14]]_9$, $[[16,2,7;10]]_9$,
+$[[12,2,6;10]]_4$.  Best **stabilizer** codes: $[[24,8,4]]_9$ (SO) and
+$[[20,4,4]]_4$ (DC) — the first stabilizer distance $4$ in this framework.
+
+**Annotations to older rows (append-only; no existing row is modified):**
+
+* **E-7.1 — erratum to Phase 6 §12 (O-6.1), and hence to T-205.**  The identity
+  $c+K=N-k$ stated there is **false**: with $c=k-h_E$ and $K=N-k-h_E$ one has
+  $c+K=N-2h_E$, and $c+K=N-k$ would force $h_E=k/2$.  Phase 6's *own* Pareto
+  table satisfies $c+K=N-k$ in only $2$ of its $25$ rows (T-220, F1 of the
+  Phase-7 log).  No Phase-6 **parameter** is affected: $K$, $c$ and $d$ were
+  computed from $k$ and $h_E$ directly.
+* **T-205** — **re-scoped** by T-226: "$d\le3$ for the stabilizer routes" and "no
+  stabilizer point has $d\ge4$" are statements about the families Phase 6
+  scanned ($N\le16$, $n\le4$).  Over the extended list the stabilizer routes
+  reach $d=4$.  Every Phase-6 number remains correct.
+* **T-215** — **corrected in one respect**: the parenthetical "($q=2,3,4,5,7,8$
+  are tabulated)" of Phase 6 §8.1 is wrong for the alphabets used here; the site
+  answers "$q=8$: currently not available", so only the $\mathbb F_4$ codes can
+  be compared (T-228).  The conclusion of T-215 — **no record** — is unchanged.
+* **T-209** — **extended** by T-224: $(4,2,2)$ is *not* the only family with
+  $\mu_B(\mathrm{Hull})\ge3$; the phenomenon is nonetheless confined to the wild
+  regime, as T-222(v) proves.
+* **O-6.1** — **resolved** (T-220).  **O-6.2** — **resolved** (T-221).
+  **O-6.3** — **resolved** (T-216, T-217).  **O-6.4** — **resolved** (T-224),
+  with the structural reason (T-222(v)).
+* **O-6.5** — **still OPEN, and worse than recorded**: not only is there no EA
+  table, there is no table for $q=8$ or $q=9$ at all, so most of the codes
+  found here cannot be benchmarked even in the stabilizer case.
+* **O-6.6** — **still OPEN** (carried to O-7.6).
+* **New open problems: O-7.1** (the true maximum distance at $N=24$: the
+  families are enumerated but the distance pipeline handles only $\approx390$
+  codes per family), **O-7.2** (the component BFS blocks all $15$ families with
+  $q^{2\dim S}>4\cdot10^6$, including every $N=32$ family), **O-7.3** (is
+  $\mu_B(\mathrm{Hull})\ge4$ attainable? every witness has $\mu_B=3$ and
+  $\dim\mathrm{ann}_{B^2}(m)=2$ in all four wild families examined), **O-7.4**
+  (any upper bound stronger than EA-Singleton for these $(N,K,c)$), **O-7.5**
+  (is $d=1$ for all stabilizer codes at $t\ge3$ forced, or an artefact of
+  $n\le8$?), **O-7.6** (= O-6.6 = O-5.3, the semilinear entanglement number).
+
+---
+
 ## Audit checklist for the reviewer (updated after the independent audit)
 
 1. **T-016/T-017 are confirmed and are the load-bearing new statements.** Double-dual

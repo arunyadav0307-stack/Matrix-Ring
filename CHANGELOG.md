@@ -304,3 +304,94 @@ against $\mathrm{rad}\,V$ instead of $V$). Regressions of Phases 2A/2B/2C/3A/3B/
 re-run; protected Phase 0–5 files verified against the Phase-6 baseline.
 
 **Boundary honoured:** no manuscript text and no journal-submission material.
+
+---
+
+## 2026-11-04 — Phase 7: Extended search for optimal quantum parameters, entanglement efficiency, and the structure of the attainable frontier (Tasks A–H)
+
+**Scope.**  Phase 6 left four open problems that its own machinery could not
+settle: the ring-component routine did not support `n = 5, 6` at `t = 1` nor
+`n = 3` at `q = 8` (O-6.3), the `µ_B ≥ 3` hull phenomenon was seen in one
+family only (O-6.4), the entanglement budget of the high-distance codes was
+unmeasured (O-6.1), and the `t ≥ 2` barrier was unquantified (O-6.2).  Phase 7
+replaces the component routine by a general CRT decomposition, re-runs the
+whole search over the enlarged family list, and answers all four.  No
+manuscript text.
+
+### Added
+* `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` — the Phase-7 deliverable (§0
+  conventions, §1 Task B + census, §2 Task C, §3 Task A and O-6.1, §4 Task D
+  and O-6.4, §5 Task E certification, §6 Task F recheck and errata, §7 Task G
+  bounds and literature, §8 Task H controls, §9 register rows, §10 resolution
+  of O-6.1 … O-6.6, §11 open problems O-7.1 … O-7.6, §12 completion report).
+* `04_COMPUTATION/phase7_extended_search.py` and its log
+  `04_COMPUTATION/phase7_extended_search_log.txt` (639 lines, **17 checks, 17
+  PASS, 0 FAIL**, seed 20261210, ≈1050 s, SHA-256 `634a63d3…c35eb`).
+
+### New register rows T-216 … T-229
+* **T-216/T-217** a general CRT decomposition
+  `B = A_t[X]/(X^n−1) = ∏_j A_t[X]/(g_j^{e_j})`, implemented as an `F_q`-linear
+  isomorphism, reproduces the Phase-3B exhaustive BFS **as a set** on all ten
+  supported families; `(4,1,5)` (`N=20`, 2527 codes), `(4,1,6)` (`N=24`, 35937)
+  and `(8,1,3)` (`N=12`, 737) become exhaustive, and ten families Phase 6 could
+  only sample are now exhaustive.  **O-6.3 resolved.**  Census: 42 families, 23
+  exhaustive, 4 counted-only, 15 blocked by the component BFS.
+* **T-218** 25 families, 120721 codes with invariants, 5055 with a distance
+  (4418 exact, 637 proved lower bounds); largest exact distance `d = 10`.
+* **T-219 / E-7.1** the corrected bookkeeping: `k` even,
+  `K − c = N − 2k ≡ 0 (mod 4)`, `c + K = N − 2h_E`, `c ≥ 2k − N`.
+  **Erratum E-7.1**: Phase 6 §12 (O-6.1) states `c + K = N − k`; that is wrong
+  (only 2 of Phase 6's own 25 Pareto rows satisfy it).  No Phase 6 *parameter*
+  is affected.
+* **T-220 / T-221** **O-6.1** answered: with `c ≤ 4` the frontier is `d = 4`
+  (`[[24,10,4;2]]_9`, `K = 10`); `d = 5` costs `c ≥ 2` and leaves `K ≤ 6`;
+  `d = 6` costs `c = 10`.  **O-6.2** answered: the stabilizer routes give
+  `d ≤ 4` at `t = 1`, `d ≤ 2` at `t = 2`, and `d = 1` (no detection at all) for
+  `t ≥ 3`; the entanglement-assisted route reaches `d = 6` at `t = 2` and
+  `d = 4` at `t = 3`.
+* **T-222 … T-224** a structure theorem for `µ_B` (chain ring `⟺` `t = 1` or
+  `e_j = 1`; `µ_B(W) = max_j µ_{B_j}(W_j)`; `µ_B ≥ 3` **requires** `t ≥ 2` and
+  `p | n`; and the bound `µ_B ≤ 2` is **false** over non-chain local rings).
+  **O-6.4 answered: `µ_B(Hull_s) ≥ 3` reappears at `(9,2,3)` and `(4,2,4)`, not
+  at `(8,2,2)`**, via the deterministic family `W = m^i e_1 ⊕ U`,
+  `U ≤ ann_{B^2}(m)`.
+* **T-225/T-226** 28 headline codes certified by three independent methods; the
+  new search reproduces or improves every shared Phase-6 Pareto distance (3
+  improved, 5 equal), and Phase 6's "no stabilizer `d ≥ 4`" is **re-scoped** to
+  the families Phase 6 scanned (`N ≤ 16`).
+* **T-227/T-228** 5055 codes, 0 EA-Singleton and 0 EA-Hamming violations;
+  literature comparison limited to `GF(4)` (see the correction below), 5 of 12
+  comparable stabilizer entries meet the best known distance, 7 are 1–2 below.
+  **No record is claimed.**
+
+### New codes (all certified; stabilizer ones marked)
+`[[20,2,10;18]]_4`, `[[24,2,10;18]]_9`, `[[20,4,9;16]]_9`, `[[24,4,9;20]]_4`,
+`[[16,2,8;14]]_9`, `[[16,2,7;10]]_9`, `[[12,2,6;10]]_4`, and — the first
+stabilizer distance 4 in this framework — **`[[24,8,4]]_9` (SO)** and
+**`[[20,4,4]]_4` (DC)**.
+
+### Corrections (append-only, recorded in the register's annotations)
+* **E-7.1** — Phase 6 §12 (O-6.1): `c + K = N − k` is wrong; correct is
+  `c + K = N − 2 h_E`.
+* **T-205** — re-scoped: "no stabilizer point has `d ≥ 4`" holds for the
+  families Phase 6 scanned (`N ≤ 16`); `(4,1,5)`, `N = 20`, has `d = 4`.
+* **T-215** — corrected in one respect: `codetables.de` does **not** tabulate
+  `q = 8` ("currently not available for q=8"), so of the alphabets used here
+  only `GF(4)` can be compared.  The conclusion (no record) is unchanged.
+
+### Open problems
+O-6.1, O-6.2, O-6.3, O-6.4 **resolved**; O-6.5 **still open** (and worse than
+recorded: there is no table for `q = 8` or `q = 9` either); O-6.6 **still
+open** (carried to O-7.6).  New: O-7.1 … O-7.6.
+
+### Verification and safeguards
+17 checks, 17 PASS, 0 FAIL; the run is seeded (`20261210`) and two runs of the
+final script agree on every line except the per-family elapsed-time
+annotations, which are wall-clock readings.  Three negative controls (N1–N3)
+have teeth: a deliberately false factorisation of `X^5 − 1` is detected by the
+multiplicativity test; the chain-ring test separates `F_4[u]/(u^2)` from the
+wild `F_4[u,w]/(u^2,w^2)`; the product assembly is exactly the product of the
+component lattices.  Protected-file baseline (89 files, list SHA-256
+`60f654ba…4312a`): Phases 0–6 documents, scripts and logs verified unchanged.
+
+**Boundary honoured:** no manuscript text and no journal-submission material.

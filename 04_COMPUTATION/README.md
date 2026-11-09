@@ -572,6 +572,74 @@ before being used.
   distance and five are 1–3 below it; the EA codes are compared with the EA
   Singleton bound only (no EA table exists at that site).
 
+
+---
+
+## Phase 7 — extended search: optimal quantum parameters, entanglement efficiency and the structure of the attainable frontier
+
+**Deliverable:** `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`
+**Script:** `phase7_extended_search.py` → `phase7_extended_search_log.txt`
+(639 lines, **17 checks, 17 PASS, 0 FAIL**; seed `20261210`; runtime ≈ 18
+minutes; SHA-256 `634a63d3…c35eb`).
+
+### How to reproduce
+
+```bash
+cd 04_COMPUTATION
+python3 phase7_extended_search.py   # -> phase7_extended_search_log.txt
+```
+
+Run it **from its own directory**: it imports `ring_structure_checks`,
+`phase2_stage2c_galois_duality`, `phase3_stage3b_hull_enumeration`,
+`phase4_gray_map_compatibility`, `phase5_quantum_constructions` and
+`phase6_quantum_parameter_enhancement`, reads
+`phase6_quantum_parameter_log.txt`, and writes `phase7_extended_search_log.txt`
+to the current working directory.  Standard library only, no floating point.
+The run is seeded; two runs agree on every line except the per-family
+elapsed-time annotations `[..s]`, which are wall-clock readings.
+
+### What is computed, and how completely
+
+| Part | Question | Method | Completeness |
+|---|---|---|---|
+| 1 | can the component routine be replaced? | CRT `B ≅ ∏_j A_t[X]/(g_j^{e_j})` as an `F_q`-linear isomorphism | `[EXH]`: set-equality with the Phase-3B BFS on all 10 supported families |
+| 2 | what is enumerable after the extension? | census over `q ∈ {4,8,9}`, `tn ≤ 8` | 42 families: 23 exhaustive, 4 counted-only, 15 blocked (reason printed) |
+| 3 | systematic search | cheap invariants for every code; staged exact distances for a deterministic subset | 120721 codes with invariants, 5055 with a distance (4418 exact, 637 proved lower bounds); 4 families are seeded 2000-code samples, printed as `#codes < total` |
+| 4 | entanglement budget (O-6.1, O-6.2) | attainable set with `c` bounded; minimum `c` per `d`; Pareto frontier; per-`t` breakdown | over the whole search |
+| 5 | O-6.4 (`µ_B ≥ 3` hulls) | structure theorem + the constructed family `W = m^i e_1 ⊕ U`, `U ≤ ann_{B^2}(m)` | `[EXH]` over the constructed family in `(4,2,2)`, `(8,2,2)`, `(9,2,3)`, `(4,2,4)` |
+| 6 | certification | M1 complete enumeration · M2 support search · M3 ambient quantum search | 28 codes, `[EXH]` |
+| 7 | recheck of Phase 6 | re-parse of `phase6_quantum_parameter_log.txt` + verbatim re-run of Phase 6's Task E | `[EXH]` 25 rows re-parsed |
+| 8 | bounds + literature | EA Singleton, EA Hamming, codetables.de | `[EXH]` 5055 codes; literature **IMPORTED RESULT**, `GF(4)` only |
+| 9 | negative controls | N1, N2, N3 must fail (or be detected) as they do | `[EXH]` |
+
+### Results
+
+* Extended search: **EA `d = 10`** (`[[20,2,10;18]]_4`, `[[24,2,10;18]]_9`);
+  **stabilizer `d = 4`** (`[[24,8,4]]_9` SO, `[[20,4,4]]_4` DC) — the first
+  stabilizer distance 4 in this framework, which **re-scopes** Phase 6's "no
+  stabilizer point has `d ≥ 4`" to the families Phase 6 scanned (`N ≤ 16`).
+* Per nilpotency index: stabilizer best `d = 4 / 2 / 1 / 1` and EA best
+  `d = 10 / 6 / 4 / 2` for `t = 1, 2, 3, 4`.  For `t ≥ 3` every stabilizer code
+  found detects nothing at all (`d = 1`).
+* O-6.3 resolved: `(4,1,5)` (`N = 20`, 2527 codes), `(4,1,6)` (`N = 24`, 35937)
+  and `(8,1,3)` (`N = 12`, 737) are exhaustively enumerable for the first time,
+  and ten families Phase 6 sampled are now exhaustive.
+* O-6.4 answered: `µ_B(Hull_s) = 3` reappears at `(9,2,3)` and `(4,2,4)`, not at
+  `(8,2,2)`; T-222 proves the phenomenon is confined to `t ≥ 2` with `p | n`.
+* Bounds: 5055 codes, 0 EA-Singleton and 0 EA-Hamming violations.
+* **No record parameters.**  Only `GF(4)` is tabulated at codetables.de
+  (`q = 8` is "currently not available", `q = 9` is not offered), so the
+  comparison covers 12 stabilizer entries: 5 meet the best known distance (all
+  `d = 2`), 7 are 1–2 below.
+
+### Errata recorded in this phase
+
+* **E-7.1** — Phase 6 §12 (O-6.1) states `c + K = N − k`; the correct identity
+  is `c + K = N − 2 h_E` (Phase 6's own Pareto table satisfies the stated
+  identity in only 2 of 25 rows).  No Phase 6 **parameter** is affected.
+* Phase 6 §8's "q = 2,3,4,5,7,8 are tabulated" is corrected: `q = 8` is not
+  available at that site.
+
 ### What is NOT claimed
 
 * No distance is reported without an exhaustive computation or a proved bound.

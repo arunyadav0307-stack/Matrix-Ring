@@ -786,3 +786,94 @@ re-checked at the end of the phase). Regressions re-run in this phase: Stage 2A,
 2B (`460/460`), 2C (`596/596`), 3A (`583/583`), 3B (`206/206`), Phase 4
 (`463/463`), Phase 5 (`88/88`), each reproducing its committed log
 byte-for-byte.
+
+---
+
+## 17. Phase 7 — extended search: `phase7_extended_search.py`
+
+**Run:** `python3 phase7_extended_search.py` (≈1050 s, `SEED = 20261210`,
+Python 3.11.2).  Log: `phase7_extended_search_log.txt` (639 lines, **17 checks,
+17 PASS, 0 FAIL**, SHA-256 `634a63d3…c35eb`; script `0c9486a1…6e031`, 1911 lines).
+
+### 17.1 What the script does (Parts 1–9, mirroring the deliverable)
+
+* **Part 1** builds the CRT decomposition
+  `B = A_t[X]/(X^n−1) ≅ ∏_j A_t[X]/(g_j^{e_j})` (trial-division factorisation,
+  verified by re-multiplication; `Ψ` an `F_q`-linear ring isomorphism with
+  matrix and inverse) and compares its submodule list **as a set** with the
+  Phase-3B exhaustive BFS on every family the Phase-2C routine supports
+  (10/10 `YES`).  `Ψ` is checked multiplicative on all pairs of basis elements
+  and `Ψ ∘ Ψ^{-1} = id` on a basis.
+* **Part 2** re-runs the census over `q ∈ {4,8,9}`, `t ≥ 1`, `n ≥ 1`,
+  `tn ≤ 8` (42 families) and classifies each as EXHAUSTIVE / COUNTED-ONLY /
+  blocked, printing the blocking quantity `q^{2 dim S}` when it applies.
+* **Part 3** scans every enumerable family (25 families): cheap invariants for
+  every code, distances for a deterministic subset (all SO/DC up to 150 per
+  family; the 120 EA codes with the smallest dual; the 120 with the smallest
+  entanglement), then a staged exact/lower-bound distance pipeline and, for ≤ 25
+  survivors per family, a deep support search.
+* **Part 4** measures the entanglement budget (O-6.1): the attainable set with
+  `c` bounded, the minimum `c` per distance, the Pareto frontier, and the best
+  distance per route and per nilpotency index `t` (O-6.2).
+* **Part 5** proves and verifies the `µ_B` structure theorem and constructs the
+  O-6.4 witnesses `W = m^i e_1 ⊕ U`, `U ≤ ann_{B^2}(m)`, in the three wild
+  families named by O-6.4 plus the known `(4,2,2)`.
+* **Part 6** certifies the headline codes by three independent methods (M1
+  complete enumeration, M2 support search, M3 ambient quantum search), carrying
+  the image basis so that the certified code is the reported one.
+* **Part 7** re-parses `phase6_quantum_parameter_log.txt` and re-checks every
+  Phase-6 obstruction statement, recording errata where they are due.
+* **Part 8** checks the EA Singleton and EA Hamming bounds on all 5055 codes and
+  compares the stabilizer codes with `codetables.de`.
+* **Part 9** runs three negative controls (N1–N3).
+
+### 17.2 Cost, and what limits it
+
+Part 1 ≈ 300 s (dominated by the Phase-3B cross-check at `(9,1,3)` and
+`(4,2,2)`), Part 2 ≈ 200 s (the `(9,1,6)`, `(9,3,1)`, `(9,3,2)` counts),
+Part 3 ≈ 700 s (dominated by `(4,1,6)`, `(4,2,3)`, `(9,1,4)` and the four
+sampled families), Parts 4–9 ≈ 60 s.  The binding limits are (i) the component
+BFS, `q^{2 dim S} ≤ 4·10^6`, which blocks 15 families including every `N = 32`
+family, and (ii) the 40000-cap on the product of the component lattices, above
+which a family is sampled (2000 codes, seeded) rather than enumerated.
+
+### 17.3 Results
+
+* New families: `(4,1,5)` `N = 20` 2527 codes, `(4,1,6)` `N = 24` 35937 codes,
+  `(8,1,3)` `N = 12` 737 codes; ten previously sampled families now exhaustive.
+* Best distances: EA `d = 10` (`[[20,2,10;18]]_4`, `[[24,2,10;18]]_9`);
+  **stabilizer `d = 4`** (`[[24,8,4]]_9` SO, `[[20,4,4]]_4` DC) — the first in
+  this framework; per `t`: stabilizer `4 / 2 / 1 / 1` and EA `10 / 6 / 4 / 2`
+  for `t = 1, 2, 3, 4`.
+* O-6.4: `µ_B(Hull_s) = 3` at `(9,2,3)` (`s = 0,1`, `Hull = W`) and `(4,2,4)`
+  (`s = 0,1`, `Hull ⊋ W`); **not** at `(8,2,2)`.
+* Bounds: 5055 codes, 0 EA-Singleton and 0 EA-Hamming violations.
+* Literature: only `GF(4)` is tabulated (`q = 8` returns "currently not
+  available for q=8", `q = 9` is not offered); 5 of 12 comparable stabilizer
+  entries meet the best known distance, 7 are 1–2 below.  **No record.**
+
+### 17.4 Three defects found and fixed in Phase 7's own verification
+
+1. The seeded sampling branch of the product enumeration yielded *indices*
+   where the exhaustive branch yields *submodules* — a `TypeError` on the
+   first family that is sampled rather than enumerated.  Fixed, and re-tested
+   on all four sampled families before the full run.
+2. `main()` was invoked before the parts it calls were defined (a splice had
+   moved the `if __name__ == "__main__"` block), so the first full run died
+   with `NameError` after Part 2.  Fixed by moving the invocation to the end
+   of the file; the module is now also imported and attribute-checked in a
+   smoke test.
+3. Per-family elapsed times were measured with `time.time()`; the sandbox
+   clock jumped by 63 hours mid-run and one row reported `[226891s]`.  Replaced
+   by `time.monotonic()`, and the reproducibility claim in the log was
+   corrected accordingly (two runs agree on every line except the wall-clock
+   annotations).
+
+Two dead and partly wrong helpers (`poly_pow_mod`, `is_irreducible`) were
+deleted rather than left in the file.
+
+### 17.5 Regression
+
+The Phase 0–6 scripts and logs are unchanged by Phase 7 (89-file baseline,
+re-checked at the end of the phase).  Phase 7 never writes to any file other
+than its own log, and imports Phases 2C/3B/4/5/6 read-only.
