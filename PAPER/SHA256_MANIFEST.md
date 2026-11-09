@@ -24,7 +24,7 @@ to regenerate this file and compare the table.
 | `NOVELTY_COMPARISON.md` | 9801 | `932755b346327e280903bd9fb1c640c5916011053acbd68d61579eefa990787a` |
 | `OPEN_ISSUES_AND_LIMITATIONS.md` | 5066 | `d81188818f7332cf509ce03bf61029b785632855fefaf0fcd19166cc69e44669` |
 | `PARAMETER_COMPARISON.md` | 11559 | `e5954f931dac15d51e7612df2133300dec8d595a8fbe56c6bbe0b3f5e20833f6` |
-| `README.md` | 6174 | `0f5078641a0abd2a98c3bb60860b64b05a32000a4265950f8a8d51f748c7e2ee` |
+| `README.md` | 6590 | `bd8c8f4bf7ce5aade65c50fb15c86d0b3587822c278567986b969adac43820ae` |
 | `main.tex` | 5723 | `3fbeb2153bbd92d39dd184a40d53aa6541c647ca94218929d99353427438389f` |
 | `references.bib` | 8079 | `4a2af91fa06b65e71e8e4f581dea2ff5e917449e642b6c4f1bec497ca35cbe88` |
 | `sections/01_introduction.tex` | 7924 | `e0962d19fcb645eba0fefe76678db13187285fcb7a9612bfcfa441433132760f` |
@@ -129,8 +129,8 @@ to regenerate this file and compare the table.
 | `tools/manuscript_stats.py` | 4693 | `33d74eddaee60b99d093321c8b1995a8683bce9867089db5de31d5d1a7ff430b` |
 | `tools/validate_latex.py` | 15992 | `25c41a5a66f23d4de889536f53cb71177ad374e42771e5cc27bdbeccd9635d2a` |
 
-Totals: 111 files, 2120514 bytes.
+Totals: 111 files, 2120930 bytes.
 
 
 Self-hash of this manifest (SHA-256 of everything above this
-line, UTF-8 encoded): `5afd5461aa62f89424c21f136b29b46d5987f1a3ec462ee7acf71fd838388510`
+line, UTF-8 encoded): `011a3cbcd70530aed64b70f83b300d623ffd2b27e38c7136c506f9335cff7f69`

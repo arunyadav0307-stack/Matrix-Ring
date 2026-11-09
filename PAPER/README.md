@@ -96,8 +96,8 @@ used and none is claimed.** Loaded packages: `geometry`, `fontenc`,
 | B | Appendix | reproducibility |
 
 Counts: **21 theorems, 9 propositions, 11 lemmas, 2 corollaries, 8 definitions,
-13 worked examples, 18 remarks**; ≈ 12 000 words of prose; 13 references, all
-cited.
+13 worked examples, 19 remarks**; ≈ 12 400 words of prose (2 957 lines of
+`.tex` over 13 files); 13 references, all cited.
 
 ---
 
