@@ -1,0 +1,137 @@
+% =====================================================================
+\section{Comparison with existing quantum codes}
+\label{sec:cmp}
+% =====================================================================
+
+\subsection{The terms of the comparison}
+
+The comparison is with the tables of \cite{GrasslCodetables}, retrieved
+2026-11-04 (page last changed 10.06.2024). Two limitations must be stated
+before any number is quoted, and we state them where they bite.
+
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=*]
+\item \textbf{The tables cover stabilizer codes only.} There is no
+  entanglement-assisted table: the corresponding endpoint returns HTTP 404.
+  Every entanglement-assisted code of this paper is therefore
+  \emph{unbenchmarked}. This is a substantial blind spot, since the
+  entanglement-assisted route is where the largest distances of this paper
+  occur.
+\item \textbf{Only $q=4$ and $q=9$ are tabulated.} For $q=8$ the site returns
+  ``currently not available for q=8''. Hence the $(8,\cdot,\cdot)$ codes of this
+  paper are unbenchmarked as well. (A third point of convention: the site prints
+  the \emph{prime} $p$ in its code labels, so that $q=4$ appears as
+  $[[N,K]]_2$ and $q=9$ as $[[N,K]]_3$, while the construction block says
+  ``over GF($p^2$)''. An earlier phase of this project misread this and
+  concluded, incorrectly, that $q=9$ was not covered; we record that as an
+  erratum in the supplementary material and the corrected comparison is the one
+  below.)
+\end{enumerate}
+
+\subsection{The comparison table}
+
+\begin{table}[t]
+\centering
+\caption{Every stabilizer code ($c=0$) produced by the framework, compared
+with \cite{GrasslCodetables}. ``Best known'' is the lower .. upper bound
+pair for $[[N,K]]_q$.}
+\label{tab:comparison}
+\begin{tabular}{@{}lllc@{}}
+\toprule
+code & family $(q,t,n)$ & route & best known $[[N,K]]_q$ / gap\\
+\midrule
+$[[16,12,2]]_4$ & $(4,1,4)$ & R2-SO & $2..2$ --- meets\\
+$[[16,12,2]]_4$ & $(4,1,4)$ & R2-DC & $2..2$ --- meets\\
+$[[20,16,2]]_4$ & $(4,1,5)$ & R2-SO & $2..2$ --- meets\\
+$[[20,16,2]]_4$ & $(4,1,5)$ & R2-DC & $2..2$ --- meets\\
+$[[24,20,2]]_4$ & $(4,1,6)$ & R2-DC & $2..2$ --- meets\\[2pt]
+$[[20,12,2]]_4$ & $(4,1,5)$ & R2-SO & $3..3$ --- 1 below\\
+$[[20,12,2]]_4$ & $(4,1,5)$ & R2-DC & $3..3$ --- 1 below\\
+$[[24,16,2]]_4$ & $(4,1,6)$ & R2-DC & $3..3$ --- 1 below\\[2pt]
+$[[16,4,3]]_4$  & $(4,1,4)$ & R2-SO & $5..5$ --- 2 below\\
+$[[16,4,3]]_4$  & $(4,1,4)$ & R2-DC & $5..5$ --- 2 below\\
+$[[20,4,4]]_4$  & $(4,1,5)$ & R2-SO & $6..6$ --- 2 below\\
+$[[20,4,4]]_4$  & $(4,1,5)$ & R2-DC & $6..6$ --- 2 below\\[2pt]
+$[[16,8,3]]_9$  & $(9,1,4)$ & R2-DC & $4..4$ --- 1 below\\
+$[[24,8,4]]_9$  & $(9,1,6)$ & R2-SO & $6..8$ --- 2 below (best known 6)\\
+$[[24,12,3]]_9$ & $(9,1,6)$ & R2-DC & $5..6$ --- 2 below (best known 5)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reading of the comparison}
+
+Every stabilizer code constructed here is at best \emph{equal} to the best known
+distance, and then only with $d=2$, where equality is uninformative. Every code
+with $d\ge3$ is one or two below the best known value. \textbf{No record
+parameter is claimed}, and none is implied: the codes are presented for their
+origin, not for their position in the tables.
+
+That said, the comparison does say something. The framework produces, at
+$N=24$ over $\F_9$, a stabilizer code of distance $4$ where the best known is
+$6$ (and where the upper bound is $8$): the construction is within a factor of
+$1.5$ of the best known code at that length and dimension, and it does so from a
+chain of entirely algebraic operations over a non-commutative ring. More
+importantly, the \emph{entanglement-assisted} codes --- where this framework's
+distances are largest ($d=10$ at $N=20$) --- cannot be compared at all, and the
+absence of an entanglement-assisted table is a limitation of the literature
+rather than of the construction.
+
+\subsection{Novelty}
+
+We do not claim that matrix rings, Galois hulls, Gray maps, quasi-cyclic images,
+stabilizer codes or entanglement-assisted codes are new; each is attributed in
+Section~\ref{sec:lit}. The novelty claim is the following, specific and proved.
+
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=*]
+\item \textbf{The duality.} Over the non-commutative ring $R=M_2(A_t)$, the
+  Galois twist must be $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, an
+  \emph{anti}-automorphism. Over a commutative ring this degenerates to
+  $\sigma_s$ and there is nothing to prove; here it is what makes the dual of a
+  \emph{right} module a right module with the correct size
+  (Theorems~\ref{thm:duality} and~\ref{lem:failure}).
+\item \textbf{Hulls without principality, and the refutation.} The entire hull
+  theory is developed for arbitrary right ideals, and the natural conjecture
+  that Galois hulls are principal is \textbf{false}
+  (Theorem~\ref{thm:nonprincipal}), with the phenomenon confined by the
+  structural condition $t\ge2$ and $p\mid n$. This has no commutative analogue.
+\item \textbf{The exact induced form.} The coefficient expansion transports the
+  Galois pairing to $u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}$
+  (Theorem~\ref{thm:gram}) --- a $\widehat\sigma_s$-Hermitian form with a
+  Hankel Gram matrix, not the Euclidean or plain Hermitian form unless $t=1$.
+  Duality and hulls are preserved including on the non-principal hulls
+  (Theorems~\ref{thm:grayduality} and~\ref{thm:grayhull}).
+\item \textbf{Self-orthogonality without reflexivity.}
+  Theorem~\ref{thm:hullso} is proved by a one-sided argument, so the whole
+  construction is available in the general Galois regime.
+\item \textbf{Two new bounds.} The coset-distance characterisation
+  (Theorem~\ref{thm:cosetdistance}) and the coset Singleton bound
+  (Theorem~\ref{thm:cosetsingleton}), the latter being neither the
+  entanglement-assisted Singleton bound nor implied by it
+  (Proposition~\ref{prop:newsbound}).
+\item \textbf{Quantum codes from non-principal hulls.} The codes
+  $[[24,6,2;2]]_9$ and $[[32,8,2;4]]_4$ of Table~\ref{tab:headline} come from
+  hulls with $\MU_{\Bq}=3$. Their parameters are weak; their existence is the
+  point, since it shows that no principality hypothesis is hidden anywhere in
+  the chain.
+\end{enumerate}
+
+Relative to the closest prior work \cite{ZhangKongZheng2026QuantumGaloisHulls}
+--- Galois hulls, a Gray map, and quantum codes over a finite non-chain ring ---
+the differences are: their ring is \emph{commutative}, so no anti-automorphism
+arises and no principality question can be asked; their Gray image has length
+$tn$, whereas ours has length $4tn$ (Theorem~\ref{thm:nphys}), because
+$\dim_{\F_q}M_2(A_t)=4t$; they determine hull \emph{dimensions}, whereas we
+construct codes from hulls that are not principal and classify when
+$\MU_{\Bq}\ge3$ can occur; and we prove the two bounds of item (5).
+
+\subsection{On the earlier tuple $[[24,4,5;12]]_4$}
+
+An earlier phase of this project reported $[[24,4,5;12]]_4$, obtained at
+$(q,t,n)=(4,2,3)$ from a $300$-code sample. Exhaustive enumeration of that
+family ($35\,937$ codes) shows that its best entanglement-assisted distance is
+$6$, attained by $[[24,4,6;20]]_4$ ($k=20$, $h_E=0$, $c=20$, $K=4$): the
+earlier value was a sampled lower bound, not an optimum. The tuple
+$[[24,4,5;12]]_4$ is not reproduced by the exhaustive search and is dominated
+(by $[[20,4,6;12]]_4$). We report this as a change of value obtained by a
+stronger method, not as a retraction: nothing in the earlier derivation was
+wrong, it was simply incomplete.

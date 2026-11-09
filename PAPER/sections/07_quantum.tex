@@ -1,0 +1,367 @@
+% =====================================================================
+\section{Quantum error-correcting code constructions}
+\label{sec:quantum}
+% =====================================================================
+
+Nothing in this section is imported: the stabilizer formalism is derived from
+the commutation relation for the $q$-ary Weyl operators, so that every
+hypothesis is visible where it is used.
+
+\subsection{The $q$-ary Weyl operators}
+
+Let $\Nlen\ge1$ and let $\mathcal H=(\mathbb C^q)^{\otimes\Nlen}$ with basis
+$\{|v\rangle:v\in\F_q^{\Nlen}\}$. For $a,b\in\F_q^{\Nlen}$ define
+\begin{equation}\label{eq:weyl}
+  X(a)|v\rangle=|v+a\rangle,\qquad
+  Z(b)|v\rangle=\chi\bigl(\Tr_{\F_q/\F_p}(b\cdot v)\bigr)|v\rangle,
+  \qquad \chi(x)=e^{2\pi i x/p},
+\end{equation}
+and $E(a|b)=X(a)Z(b)$. Write
+\begin{equation}\label{eq:omega}
+  \omega\bigl((a|b),(a'|b')\bigr)=a\cdot b'-a'\cdot b\ \in\F_q,
+  \qquad
+  \swt(a|b)=\#\{i:(a_i,b_i)\ne(0,0)\}.
+\end{equation}
+
+\begin{lemma}[commutation]\label{lem:Q1}
+$X(a)Z(b)=\chi(\Tr(a\cdot b))\,Z(b)X(a)$. Consequently two Weyl operators
+$E(a|b)$ and $E(a'|b')$ commute if and only if
+$\Tr_{\F_q/\F_p}\bigl(\omega((a|b),(a'|b'))\bigr)=0$.
+\end{lemma}
+
+\begin{proof}
+$Z(b)X(a)|v\rangle=Z(b)|v+a\rangle
+=\chi(\Tr(b\cdot(v+a)))|v+a\rangle
+=\chi(\Tr(b\cdot a))\,X(a)Z(b)|v\rangle$, which gives the first claim after
+swapping the roles. For the second, expand
+$E(a|b)E(a'|b')=\chi(\Tr(a'\cdot b))E(a+a'|b+b')$ and
+$E(a'|b')E(a|b)=\chi(\Tr(a\cdot b'))E(a+a'|b+b')$ and compare the phases.
+\end{proof}
+
+Lemma~\ref{lem:Q1} is the reason commutation is a condition over $\F_p$ (a
+trace), even though the code is defined over $\F_q$. This has a consequence that
+is easy to get wrong; see Theorem~\ref{thm:fpbasis}.
+
+\begin{lemma}[stabilizer lemma]\label{lem:Q2}
+Let $\mathcal C\subseteq\F_q^{2\Nlen}$ be an additive (that is, $\F_p$-linear)
+subgroup and let $S=\{E(v):v\in\mathcal C\}$ be the group it generates. Then:
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item $S$ is abelian iff $\Tr(\omega(x,y))=0$ for all $x,y\in\mathcal C$;
+\item the common eigenspace of $S$ has dimension $q^{\Nlen}/|\mathcal C|$;
+  writing $K=\log_q(q^{\Nlen}/|\mathcal C|)$ one has
+  $K=\Nlen-\log_q|\mathcal C|$;
+\item with $\mathcal C_0=\mathcal C\cap\mathcal C^{\perp_{\Tr\circ\omega}}$,
+  the code detects every error of symplectic weight $<d$ and corrects every
+  error of weight $\le\lfloor(d-1)/2\rfloor$, where
+  \[
+    d=\min\{\swt(v):v\in\mathcal C^{\perp_{\Tr\circ\omega}}\setminus
+    \mathcal C_0\};
+  \]
+\item (Knill--Laflamme, group form) the code corrects an error set
+  $\mathcal E$ iff for all $E,F\in\mathcal E$ either $E^\dagger F\in\pm S$ or
+  some element of $S$ anti-commutes with $E^\dagger F$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) is Lemma~\ref{lem:Q1}. (b) The operators $\{E(v)\}$ for $v$ ranging over a
+set of representatives of $\F_q^{2\Nlen}/\mathcal C$ are pairwise distinct and
+there are $q^{2\Nlen}/|\mathcal C|$ of them; the space decomposes into
+$|\mathcal C|$ joint eigenspaces permuted transitively, whence the dimension.
+(c) An error of symplectic weight $w$ is a linear combination of Weyl operators
+of symplectic weight $\le w$; such an operator is undetected iff it lies in the
+centralizer of $S$ and outside $S$ up to phases, i.e. iff its label lies in
+$\mathcal C^{\perp_{\Tr\circ\omega}}\setminus\mathcal C_0$. (d) is the standard
+translation of the Knill--Laflamme conditions into the group language.
+\end{proof}
+
+We write $[[\Nlen,K,d]]_q$ for a $q$-ary quantum code of length $\Nlen$,
+dimension $q^K$ and distance $d$, and $[[\Nlen,K,d;c]]_q$ for an
+\emph{entanglement-assisted} code consuming $c$ maximally entangled $q$-ary
+pairs.
+
+\begin{theorem}[commutation must be tested over $\F_p$]\label{thm:fpbasis}
+Let $\mathcal C$ be $\F_q$-linear. Then
+$\mathcal C^{\perp_{\Tr\circ\omega}}=\mathcal C^{\perp_\omega}$, where
+$\perp_\omega$ is the $\F_q$-symplectic orthogonal. However, testing
+commutation only on an $\F_q$-basis of $\mathcal C$ is \textbf{invalid}:
+there exists a code --- the $[[16,4,3]]_4$ code of
+Section~\ref{sec:cert} --- and a weight-one operator $(0|e_0)$ which commutes
+with all $12$ elements of an $\F_q$-generating set of the stabilizer yet not
+with all $24$ elements of an $\F_p$-basis, because
+$\Tr_{\F_4/\F_2}(1)=0$. The naive test reports $d=1$ instead of $d=3$.
+\end{theorem}
+
+\begin{proof}
+The equality of the two orthogonals is the non-degeneracy of the trace form: if
+$\Tr(\omega(x,c))=0$ for all $c\in\mathcal C$ then, by $\F_q$-linearity of
+$\mathcal C$ and non-degeneracy of $\Tr_{\F_q/\F_p}$, $\omega(x,c)=0$ as an
+element of $\F_q$.
+
+For the counterexample, let $\mathcal C$ be the stabilizer of the
+$[[16,4,3]]_4$ code and let $v=(0|e_0)$. Then
+$\omega(v,(a|b))=-a_0$, so $v$ commutes with $(a|b)$ iff
+$\Tr_{\F_4/\F_2}(a_0)=0$. The set of $a_0\in\F_4$ with zero absolute trace is
+$\{0,1\}$, a $1$-dimensional $\F_2$-subspace of $\F_4$ that is \emph{not} an
+$\F_4$-subspace. Hence commutation holds on an $\F_4$-generating set only if
+all their first-slot symbols happen to lie in $\{0,1\}$ --- which is the
+observed degeneracy --- but fails on a full $\F_2$-basis. The correct criterion
+is $\omega(v,c)=0$ as an element of $\F_q$ for all $c\in\mathcal C$,
+equivalently commutation with every element of an $\F_p$-basis.
+\end{proof}
+
+\subsection{Three routes}
+
+Throughout this subsection $D\subseteq\F_q^{\Nlen}$ is $\F_q$-linear of
+dimension $k$, $D^{\perp_E}$ is its Euclidean dual and
+$H_E=\Hull_E(D)=D\cap D^{\perp_E}$ with $h_E=\dim H_E$. We write
+\begin{equation}\label{eq:V}
+  V=D\oplus D=\{(a|b):a,b\in D\}\subseteq\F_q^{2\Nlen},
+  \qquad
+  V^{\omegaperp}=D^{\perp_E}\oplus D^{\perp_E},
+\end{equation}
+so that $\rad V=V\cap V^{\omegaperp}=H_E\oplus H_E$.
+
+\begin{theorem}[route R1: the Galois-native twisted embedding]
+\label{thm:R1}
+Let $D\subseteq\F_q^{\Nlen}$ and put $T_s(u)=(u^{[s]}J)^{\mathsf T}$ and
+\[
+  \mathcal C_T=\{(u|T_su):u\in D\}\subseteq\F_q^{2\Nlen}.
+\]
+Then for all $u,u'\in D$,
+\[
+  \omega\bigl((u|T_su),(u'|T_su')\bigr)
+  =\langle u',u\rangle^{\widehat{}}_s-\langle u,u'\rangle^{\widehat{}}_s .
+\]
+Consequently, if $D$ is self-orthogonal for the transported form then
+$\mathcal C_T$ is isotropic, the operators $E(u|T_su)$ pairwise commute, and
+each has order $p$, so that Lemma~\ref{lem:Q2} gives a quantum code
+\[
+  [[\Nlen,\Nlen-k,d]]_q,\qquad
+  d=\min\{\swt(v):v\in\mathcal C_T^{\perp_{\Tr\circ\omega}}\setminus
+  \mathcal C_T\}.
+\]
+No coordinate transformation and no reflexivity hypothesis is used.
+\end{theorem}
+
+\begin{proof}
+$(T_su)_i=\sum_j\sigma_s(u_j)J_{ji}$, hence
+$u\cdot(T_su')=\sum_{i,j}u_i\sigma_s(u'_j)J_{ji}
+=\langle u',u\rangle^{\widehat{}}_s$ after relabelling $i\leftrightarrow j$ and
+using that $J$ is symmetric; similarly
+$u'\cdot(T_su)=\langle u,u'\rangle^{\widehat{}}_s$. Subtracting gives the
+identity. If $D$ is self-orthogonal both terms vanish, so $\omega=0$ on
+$\mathcal C_T$ and Lemma~\ref{lem:Q2}(a) applies. Each operator has order $p$
+because $u\cdot(T_su)=\langle u,u\rangle^{\widehat{}}_s=0$. Finally
+$|\mathcal C_T|=|D|=q^k$, so $K=\Nlen-k$ by Lemma~\ref{lem:Q2}(b).
+\end{proof}
+
+\begin{theorem}[the R1 distance cap]\label{thm:R1cap}
+For every $b\in D^{\perp_E}$ the vector $(0|b)$ lies in
+$\mathcal C_T^{\perp_\omega}$. Consequently
+\[
+  d_{R1}\le\min\wt\bigl(D^{\perp_E}\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+$\omega((0|b),(u|T_su))=0\cdot(T_su)-u\cdot b=-u\cdot b$, which vanishes for
+all $u\in D$ exactly when $b\in D^{\perp_E}$. Hence
+$(0|b)\in\mathcal C_T^{\perp_\omega}$ and $\swt(0|b)=\wt(b)$.
+\end{proof}
+
+Theorem~\ref{thm:R1cap} is why R1 is never the route of choice for distance. It
+remains the only route attached to the Galois structure when the obstruction of
+Theorem~\ref{thm:obstruction} applies.
+
+\begin{theorem}[route R2: Euclidean/CSS]\label{thm:R2}
+Let $D'\subseteq\F_q^{\Nlen}$ be $\F_q$-linear of dimension $k$.
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item If $D'\subseteq D'^{\perp_E}$ (Euclidean self-orthogonal) then
+  $\mathcal C=D'\oplus D'$ is isotropic and yields
+  $[[\Nlen,\Nlen-2k,d]]_q$ with $d=\min\wt(D'^{\perp_E}\setminus D')$.
+\item If $D'^{\perp_E}\subseteq D'$ (dual-containing) then
+  $\mathcal C=D'^{\perp_E}\oplus D'^{\perp_E}$ is isotropic and yields
+  $[[\Nlen,2k-\Nlen,d]]_q$ with $d=\min\wt(D'\setminus D'^{\perp_E})$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Take $\mathcal C=A\oplus B$ with $A,B\subseteq\F_q^{\Nlen}$. Then
+$\omega((a|0),(0|b))=a\cdot b$, so $\mathcal C$ is isotropic iff
+$A\subseteq B^{\perp_E}$; moreover $\mathcal C^{\omegaperp}
+=B^{\perp_E}\oplus A^{\perp_E}$ and $\dim\mathcal C=\dim A+\dim B$, giving
+$K=\Nlen-\dim A-\dim B$ by Lemma~\ref{lem:Q2}(b). Taking $A=B=D'$ gives (a) and
+$A=B=D'^{\perp_E}$ gives (b).
+
+For the distance: a vector $(a|b)\in\mathcal C^{\omegaperp}\setminus\mathcal C$
+has $a\notin A$ or $b\notin B$, and
+$\swt(a|b)\ge\max(\wt a,\wt b)$; conversely $(a|0)$ realises $\wt(a)$ for
+$a\in A^{\perp_E}\setminus A$ and $(0|b)$ realises $\wt(b)$ for
+$b\in B^{\perp_E}\setminus B$. Hence the symplectic minimum equals the stated
+classical minimum.
+\end{proof}
+
+\begin{theorem}[route R3: entanglement-assisted]\label{thm:R3}
+Let $D\subseteq\F_q^{\Nlen}$ be \emph{any} $\F_q$-linear code of dimension $k$,
+and put $\mathcal C=V=D\oplus D$ as in \eqref{eq:V}. Then
+\[
+  [[\Nlen,\Nlen-k-h_E,\ d\ ;\ k-h_E]]_q,\qquad
+  d=\min\wt\bigl(D^{\perp_E}\setminus\Hull_E(D)\bigr).
+\]
+For $h_E=k$ (i.e. $D$ Euclidean self-orthogonal) this degenerates to $c=0$ and
+reproduces Theorem~\ref{thm:R2}(a).
+\end{theorem}
+
+\begin{proof}
+The isotropic part of $V$ is
+$\rad V=V\cap V^{\omegaperp}=H_E\oplus H_E$, of dimension $2h_E$. The
+commutativity defect is therefore
+$2c=\dim V-\dim\rad V=2k-2h_E$, i.e. $c=k-h_E$ maximally entangled $q$-ary
+pairs.
+
+With entanglement available, the \emph{whole} group $V$ becomes measurable.
+Decompose $\F_q^{2\Nlen}$ as $\rad V\oplus\bigoplus_i(\F_qe_i\oplus\F_qf_i)$
+with $\{e_i,f_i\}$ hyperbolic pairs and $V=\rad V\oplus\bigoplus_i\F_qe_i$.
+For $v=s+\sum_i(\alpha_ie_i+\beta_if_i)$ with $s\in\rad V$, the element $s$
+stabilizes the codespace outright, and each hyperbolic pair is measured with the
+help of one ebit: on the maximally entangled state $|\Phi\rangle$ one has
+$(A\otimes I)|\Phi\rangle=(I\otimes A^{\mathsf T})|\Phi\rangle$, so
+$E(e_i)\otimes I$ and $I\otimes E(f_i)^{\mathsf T}$ act identically and the
+pair is simultaneously measurable. Hence $v\otimes I$ fixes the codespace.
+
+Consequently an error $F$ is undetected exactly when it commutes with all of $V$
+\textbf{and} lies outside $V$ --- note: outside $V$, not merely outside
+$\rad V$ --- i.e. when its label lies in $V^{\omegaperp}\setminus V$. By
+\eqref{eq:V} and the argument of Theorem~\ref{thm:R2}, the symplectic minimum
+over $V^{\omegaperp}\setminus V$ equals
+$\min\wt(D^{\perp_E}\setminus\Hull_E(D))$. The dimension is
+$K=\Nlen-\dim V+c=\Nlen-2k+(k-h_E)=\Nlen-k-h_E$.
+
+For $h_E=k$ we get $c=0$, $K=\Nlen-2k$ and
+$D^{\perp_E}\setminus\Hull_E(D)=D^{\perp_E}\setminus D$, which is
+Theorem~\ref{thm:R2}(a).
+\end{proof}
+
+\begin{remark}[field discipline]
+$\mathcal C=D\oplus D$ is $\F_q$-linear, so by
+Theorem~\ref{thm:fpbasis} the trace-symplectic and the $\F_q$-symplectic
+orthogonals coincide and the entanglement count $c=k-h_E$ is an $\F_q$-quantity.
+For the \emph{semilinear} group $\mathcal C_T$ of R1 the standard $q$-ary
+entanglement formula does not apply unchanged, because $\mathcal C_T$ is only
+$\F_p$-linear; we do not use it.
+\end{remark}
+
+\subsection{The parameter theorem}
+
+\begin{theorem}[parameters]\label{thm:parameters}
+Let $C\le\Rn$, $D=\varphi_n(C)$, $\Nlen=4tn$, $k=\dim_{\F_q}D$ and
+$h_E=\dim(D\cap D^{\perp_E})$. Then:
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item \textbf{(R1)} if $D\subseteq D^{\hhatpers}$ then $[[\Nlen,\Nlen-k,d]]_q$
+  with $d\le\min\wt(D^{\perp_E})$;
+\item \textbf{(R2)} if $D'$ is Euclidean self-orthogonal of dimension $k$ then
+  $[[\Nlen,\Nlen-2k,d]]_q$, and if $D'$ is dual-containing then
+  $[[\Nlen,2k-\Nlen,d]]_q$; here $D'=D$ when $t=1$ and $r\mid s$, and
+  $D'=\Psi(D)$ when a congruence as in Proposition~\ref{prop:congruence}
+  exists;
+\item \textbf{(R3)} for arbitrary $D$,
+  $[[\Nlen,\Nlen-k-h_E,d;k-h_E]]_q$.
+\end{enumerate}
+In all cases, writing $G$ for the group ($\mathcal C_T$ for R1, $V$ for R2/R3),
+\[
+  d=\min\{\swt(v):v\in G^{\omegaperp}\setminus G\}.
+\]
+All dimensions are over $\F_q$, the length is $\Nlen=4tn$, and the alphabet is
+$\F_q$.
+\end{theorem}
+
+\begin{proof}
+Combine Theorem~\ref{thm:nphys} for the length, Theorems~\ref{thm:R1},
+\ref{thm:R2} and~\ref{thm:R3} for the three routes, and
+Lemma~\ref{lem:Q2}(c) for the distance formula. Note that the reduction of the
+symplectic minimum to a classical minimum is proved for R2 and R3 only; for R1
+only the upper bound of Theorem~\ref{thm:R1cap} is available, and we state it as
+such.
+\end{proof}
+
+\begin{remark}[which route to use]
+R2 is the primary route whenever the transported form is already Euclidean or a
+congruence exists: it is the only route whose distance is not capped by
+$\min\wt(D^{\perp_E})$, and it consumes no entanglement. R1 is the
+Galois-native route for $t\ge2$ when no congruence exists --- precisely the case
+of the non-principal hull witnesses --- accepting the cap of
+Theorem~\ref{thm:R1cap}. R3 converts \emph{any} image code, including an LCD one
+($h_E=0$), into a quantum code, at the price of entanglement.
+\end{remark}
+
+\subsection{Worked examples V: the $\F_p$-basis subtlety}
+
+\begin{example}[why commutation must be tested over $\F_p$]\label{ex:fpbasis}
+Let $q=4$, $\Nlen=16$, and consider the $[[16,4,3]]_4$ code produced at
+$(q,t,n)=(4,1,4)$ by the self-orthogonal route: the image code
+$D\subseteq\F_4^{16}$ has $k=6$, $h_E=6$, so $K=16-2\cdot6=4$. The stabilizer
+group is $\mathcal C=D\oplus D$, of $\F_4$-dimension $12$.
+
+Take the weight-one operator $E(0|e_0)$ labelled by $v=(0|e_0)$, where
+$e_0=(1,0,\dots,0)$. For $(a|b)\in\mathcal C$,
+\[
+  \omega\bigl(v,(a|b)\bigr)=0\cdot b-a\cdot e_0=-a_0 .
+\]
+So $E(v)$ commutes with $E(a|b)$ iff $\Tr_{\F_4/\F_2}(a_0)=0$. Now
+\[
+  \Tr_{\F_4/\F_2}(1)=1+1^2=0,\qquad \Tr_{\F_4/\F_2}(\omega)=\omega+\omega^2=1,
+\]
+so the set of $a_0\in\F_4$ with vanishing trace is $\{0,1\}$: a
+$1$-dimensional $\F_2$-subspace of $\F_4$ that is \emph{not} an
+$\F_4$-subspace. Consequently:
+\begin{itemize}[leftmargin=*]
+\item testing commutation on the $12$ elements of an $\F_4$-generating set of
+  $\mathcal C$ reports that $v$ commutes with everything, and the naive
+  distance comes out as $d=1$;
+\item testing it on the $24$ elements of an $\F_2$-basis detects that some
+  $(a|b)$ has $a_0=\omega$, so $v$ does \emph{not} commute, and the correct
+  distance $d=3$ is obtained.
+\end{itemize}
+By Theorem~\ref{thm:fpbasis} the two orthogonals
+$\mathcal C^{\perp_{\Tr\circ\omega}}$ and $\mathcal C^{\perp_\omega}$
+\emph{coincide} for an $\F_q$-linear $\mathcal C$; what fails is not the
+orthogonal but the \emph{test}. Every distance reported in this paper is
+computed with the $\F_p$-basis test.
+\end{example}
+
+\begin{example}[the three routes on one family]\label{ex:routes}
+Take $(q,t,n)=(9,1,6)$, so $\Nlen=24$. The search produces, among others, two
+image codes $D\subseteq\F_9^{24}$ with very different hulls.
+
+\emph{First,} $k=\dim D=8$ and $h_E=8$, i.e. $D\subseteq D^{\perp_E}$: the
+code is Euclidean self-orthogonal. Route R2(a)
+(Theorem~\ref{thm:R2}) applies with $A=B=D$ and gives
+\[
+  K=\Nlen-2k=24-16=8,\qquad
+  d=\min\wt\bigl(D^{\perp_E}\setminus D\bigr)=4,\qquad
+  [[24,8,4]]_9 .
+\]
+Feeding the same $D$ to route R3 instead gives $c=k-h_E=0$ and
+$K=\Nlen-k-h_E=8$: the same code, which is the degeneracy stated at the end of
+Theorem~\ref{thm:R3}. Note $D^{\perp_E}\setminus D=D^{\perp_E}\setminus
+\Hull_E(D)$ here, since $\Hull_E(D)=D$; so the coset-distance theorem
+(Theorem~\ref{thm:cosetdistance}) is the same statement for R2 and R3 in this
+case.
+
+\emph{Second,} $k=20$ and $h_E=2$, so $D$ is neither self-orthogonal nor
+dual-containing and R2 does not apply at all. Route R3 gives
+\[
+  c=k-h_E=18,\qquad K=\Nlen-k-h_E=24-20-2=2,\qquad
+  [[24,2,10;18]]_9 .
+\]
+This is the largest-distance code found anywhere in the search, and it costs
+$18$ ebits out of a length of $24$.
+
+The two rows are the two ends of the trade-off made explicit by
+Theorem~\ref{thm:feasibility}: with $d\ge4$ and $K\ge2$ one needs
+$2k\le\Nlen+c_0-K_0$, so a large $k$ (which is what makes $D^{\perp_E}$ small
+and hence $d$ large) forces a large entanglement budget $c_0$. The
+stabilizer code pays nothing and reaches $d=4$; the entanglement-assisted code
+reaches $d=10$ and pays $c=18$.
+\end{example}

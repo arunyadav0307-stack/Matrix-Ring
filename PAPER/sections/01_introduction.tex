@@ -1,0 +1,146 @@
+% =====================================================================
+\section{Introduction and research motivation}
+\label{sec:intro}
+% =====================================================================
+
+The construction of quantum error-correcting codes from classical codes over
+rings is by now a mature enterprise, and one of its most productive branches
+runs through the \emph{hull} of a code: for a code $C$ equipped with a pairing
+$\langle\cdot,\cdot\rangle$, the hull $C\cap C^{\perp}$ measures how far $C$ is
+from being self-orthogonal, and it is precisely the hull dimension that
+determines the parameters of the quantum code one can extract. Euclidean hulls
+give CSS codes, Hermitian hulls give $q$-ary stabilizer codes, and --- when the
+hull is small rather than large --- the entanglement-assisted formalism converts
+\emph{any} classical code into a quantum code at the price of shared
+entanglement.
+
+Parallel to this, the Galois (or $\ell$-Galois) hull has been introduced over
+finite fields \cite{FanZhang2017GaloisSelfDual,LiuPan2020GaloisHulls} and used
+to produce entanglement-assisted codes with good parameters
+\cite{Cao2021MDSGaloisHulls}. The Galois parameter $\ell$ interpolates between
+the Euclidean and the Hermitian inner product, and because it can be tuned it
+gives a strictly larger supply of codes with a prescribed hull dimension.
+
+What has been missing is the passage to a \emph{non-commutative} alphabet. There
+is a well-developed theory of cyclic codes over matrix rings
+\cite{Alahmadi2013CyclicM2F2,LuoParampalli2018M2F2uF2,Dinh2024CyclicRingsOfMatrices,
+JoshiPatelPrakash2026M4}, and there is a well-developed theory of quantum codes
+from Galois hulls over commutative rings, culminating in the recent
+constacyclic construction over a finite non-chain ring
+\cite{ZhangKongZheng2026QuantumGaloisHulls}. The two have not met, and they do
+not meet trivially: over a commutative ring the Galois twist is an
+automorphism applied to one argument of the inner product, whereas over a matrix
+ring the twist must be composed with the transpose to produce an
+\emph{anti}-automorphism, and only then does the resulting pairing give a
+perfect duality on \emph{right} modules. This paper builds that bridge and
+constructs quantum codes at the far end of it.
+
+\subsection{The chain of constructions}
+
+Throughout, $q=p^r$, and
+\[
+  A_t=\F_q[u]/\langle u^t\rangle,\qquad
+  R=M_2(A_t),\qquad
+  R_n=R[X]/\langle X^n-1\rangle,\qquad
+  \Nlen=4tn .
+\]
+A \emph{cyclic code of length $n$ over $R$} is a right ideal of $R_n$; this is
+the right-module convention fixed for this alphabet in
+\cite{Alahmadi2013CyclicM2F2}, and Lemma~\ref{lem:failure} below shows that it
+is not a cosmetic choice. Under the Morita identification $R_n\cong M_2(B)$ with
+$B=A_t[X]/\langle X^n-1\rangle$ \emph{commutative}, right ideals of $R_n$
+correspond to $B$-submodules of $B^2$.
+
+The contribution of this paper is the following chain, each link of which is
+proved here:
+\[
+  \boxed{\text{noncommutative matrix ring}}
+  \;\longrightarrow\;
+  \boxed{\text{cyclic codes}}
+  \;\longrightarrow\;
+  \boxed{\text{Galois duality and hulls}}
+  \;\longrightarrow\;
+  \boxed{\text{Gray map}}
+  \;\longrightarrow\;
+  \boxed{\text{quantum codes}} .
+\]
+In more detail:
+
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=*]
+\item \textbf{Galois duality on a non-commutative ring.} With
+  $\sigma_s(a)=a^{p^s}$ the coefficient Frobenius (fixing $u$ and $X$) and
+  $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, the pairing
+  $\bb_s(x,y)=\Lambda\bigl(\sum_i\theta_s(x_i)y_i\bigr)$, where
+  $\Lambda=\lambda\circ\tr$ and $\lambda$ extracts the coefficient of
+  $u^{t-1}$, is non-degenerate on right $R_n$-modules, and
+  $\dim C+\dim C^{\perp_s}=\Nlen$ for every code (Theorem~\ref{thm:duality}).
+  We give the dual explicitly for \emph{arbitrary} finitely generated right
+  ideals (Theorem~\ref{thm:dualformula}), including the reversal operator,
+  which is load-bearing exactly when $n\ge3$.
+
+\item \textbf{Hulls, with no principality hypothesis.} We prove the structural
+  properties of $\Hull_s(C)=C\cap C^{\perp_s}$ for arbitrary right ideals, and
+  we \emph{refute} the natural conjecture that a Galois hull is principal: hulls
+  with minimal generator number $\MU_B=3$ exist
+  (Theorem~\ref{thm:nonprincipal}). The phenomenon is confined:
+  $\MU_B\ge3$ forces $t\ge2$ and $p\mid n$.
+
+\item \textbf{The exact induced form.} The coefficient expansion
+  $\varphi_n:R^n\to\F_q^{\Nlen}$ is not an isometry in any interesting sense,
+  but it \emph{is} a form-isometry for exactly one form, and we identify that
+  form: $\langle u,v\rangle^{\widehat{}}_s=u^{[s]}Jv^{\mathsf T}$ with
+  $J=I_{4n}\otimes H_t$ and $H_t$ the Hankel reversal matrix
+  (Theorem~\ref{thm:gram}). Duality and hulls are transported exactly, and the
+  transport is valid on the non-principal hulls as well
+  (Theorem~\ref{thm:grayhull}).
+
+\item \textbf{Every Galois hull is self-orthogonal} for the transported form,
+  by a one-sided argument that uses neither reflexivity nor principality
+  (Theorem~\ref{thm:hullso}). This is the hinge of the whole construction: it
+  is what makes the quantum step available in the general Galois regime rather
+  than only in the reflexive one.
+
+\item \textbf{Quantum codes of length $\Nlen=4tn$.} Three routes are available
+  and all three are proved from scratch in symplectic language: a Galois-native
+  twisted stabilizer route R1, a Euclidean/CSS route R2 and an
+  entanglement-assisted route R3 giving
+  $[[\Nlen,\Nlen-k-h_E,d;k-h_E]]_q$ (Theorem~\ref{thm:parameters}).
+
+\item \textbf{A coset-distance theorem and a new bound.} The distance is the
+  minimum weight of the \emph{quotient} code
+  $D^{\perp_E}/\Hull_E(D)$, of dimension $K$ and length $\Nlen$
+  (Theorem~\ref{thm:cosetdistance}); puncturing $\Nlen-d+1$ coordinates is
+  injective on that quotient, which gives the \emph{coset Singleton bound}
+  $K+d\le \Nlen+1$ (Theorem~\ref{thm:cosetsingleton}). The latter is neither
+  the entanglement-assisted Singleton bound nor implied by it.
+\end{enumerate}
+
+\subsection{What the paper does and does not claim}
+
+The codes constructed here are new in \emph{origin}, not in parameters.
+Exhaustive computation over the accessible family list ($q\in\{4,8,9\}$,
+$tn\le8$) certifies $28$ codes by three independent methods, among them the
+first stabilizer distance $4$ produced by this framework, $[[24,8,4]]_9$ and
+$[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$. Every
+stabilizer code we construct whose parameters can be compared with
+\cite{GrasslCodetables} is at best equal to the best known distance --- and then
+only with $d=2$ --- and every code with $d\ge3$ is one or two below it. We claim
+no record. What we do claim is that the chain above is proved in the
+non-commutative setting, that it produces quantum codes from hulls that are
+\emph{not} principal, and that the two new bounds of item (6) hold.
+
+\subsection{Organisation}
+
+Section~\ref{sec:lit} reviews the literature and states the research gap.
+Section~\ref{sec:prelim} fixes the rings, the right-module convention and the
+anti-automorphism, and proves the failure lemma that motivates the convention.
+Section~\ref{sec:cyclic} develops cyclic codes and Galois duality.
+Section~\ref{sec:hulls} is the algebraic heart: hull structure, the
+non-principal counterexample and its confinement.
+Section~\ref{sec:gray} transports everything to $\F_q^{\Nlen}$ and identifies
+the induced form. Section~\ref{sec:quantum} builds the quantum codes.
+Section~\ref{sec:cert} proves the coset-distance theorem and the coset Singleton
+bound, describes the certification methodology and reports the parameter
+analysis. Section~\ref{sec:cmp} compares with the literature and states the
+novelty precisely. Section~\ref{sec:conclusion} collects open problems. Appendix~A
+contains the full parameter tables and Appendix~B the reproducibility package.

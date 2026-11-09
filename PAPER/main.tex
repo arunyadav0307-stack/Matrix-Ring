@@ -1,0 +1,140 @@
+% =====================================================================
+%  Quantum Error-Correcting Codes from Galois Hulls of Cyclic Codes
+%  over Noncommutative Matrix Rings
+%
+%  Phase 8 / Task I.  Compile with:
+%      pdflatex main.tex ; bibtex main ; pdflatex main.tex ; pdflatex main.tex
+%
+%  NOTE ON AUTHOR METADATA: no author names, affiliations, funding,
+%  acknowledgements or declarations have been supplied.  The three
+%  \AUTHORPLACEHOLDER marks below are the ONLY placeholders in this
+%  manuscript and are deliberately visible.  See PAPER/README.md.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array,booktabs,multirow,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=green!35!black,
+            urlcolor=blue!45!black,pdfauthor={\AUTHORPLACEHOLDER}}
+
+% ------------------------------ notation ------------------------------
+\newcommand{\F}{\mathbb F}
+\newcommand{\Fq}{\mathbb F_q}
+\newcommand{\At}{A_t}
+\newcommand{\Rring}{R}
+\newcommand{\Rn}{R_n}
+\newcommand{\Bq}{B}
+\newcommand{\bb}{\mathbf b}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ann}{\operatorname{ann}}
+\newcommand{\rev}{\operatorname{rev}}
+\newcommand{\Hull}{\operatorname{Hull}}
+\newcommand{\swt}{\operatorname{swt}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Nlen}{N}
+\newcommand{\MU}{\mu}
+\newcommand{\gperp}[1]{{}^{\perp_{#1}}}
+\newcommand{\hperp}{\,{}^{\perp_{\widehat{}}}}
+\newcommand{\hhatpers}{\,{}^{\perp^{\widehat{}}_s}}
+\newcommand{\omegaperp}{{}^{\perp_\omega}}
+\newcommand{\AUTHORPLACEHOLDER}{\textbf{[\,AUTHOR METADATA TO BE
+  SUPPLIED\,]}}
+\newcommand{\blanksymbol}{\textcolor{red}{\textbf{[TO BE SUPPLIED]}}}
+
+% ------------------------------ theorems ------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}[theorem]{Open Problem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% ------------------------------ metadata ------------------------------
+\title{Quantum Error-Correcting Codes from Galois Hulls of Cyclic
+       Codes over Noncommutative Matrix Rings}
+\author{\AUTHORPLACEHOLDER}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct $q$-ary quantum error-correcting codes from the Galois hulls of
+cyclic codes over the noncommutative matrix ring $R=M_2(A_t)$,
+$A_t=\F_q[u]/\langle u^t\rangle$.  The duality is driven by the
+anti-automorphism $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, where
+$\sigma_s$ is the coefficient Frobenius $a\mapsto a^{p^s}$; codes are right
+ideals of $R_n=R[X]/\langle X^n-1\rangle$.  We prove the duality and hull
+theory for arbitrary right ideals, with no principality hypothesis, and we
+refute the natural conjecture that Galois hulls are principal: hulls with
+minimal generator number $\MU_B=3$ exist, and we show that $\MU_B\ge3$ forces
+$t\ge2$ and $p\mid n$.  The coefficient-expansion map to $\F_q^{4tn}$ is shown
+to transport the Galois pairing to an explicitly identified
+$\widehat\sigma_s$-Hermitian form with Hankel Gram matrix $I_{4n}\otimes H_t$
+--- not the Euclidean form unless $t=1$ --- and to preserve both duality and
+hulls, including the non-principal ones.  Every Galois hull is self-orthogonal
+for the transported form, with no reflexivity hypothesis.  This yields three
+quantum routes of length $\Nlen=4tn$: a Galois-native twisted stabilizer route,
+a Euclidean/CSS route, and an entanglement-assisted route
+$[[N,N-k-h_E,d;k-h_E]]_q$.  We prove that the distance is the minimum weight of
+the quotient code $D^{\perp_E}/\Hull_E(D)$, and derive from it a coset
+Singleton bound $K+d\le N+1$ that is neither the entanglement-assisted
+Singleton bound nor implied by it.  Exhaustive computation over the enlarged
+family list certifies $28$ codes by three independent methods, including the
+first stabilizer distance $4$ in this framework, $[[24,8,4]]_9$ and
+$[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$.  No
+record parameters are claimed.
+
+\smallskip
+\noindent\textbf{Keywords.} cyclic codes over rings; matrix rings; Galois
+duality; Galois hulls; Gray map; quantum stabilizer codes;
+entanglement-assisted quantum codes.
+
+\smallskip
+\noindent\textbf{MSC 2020.} 94B05, 94B15, 94B60, 16S50, 11T71.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ------------------------------ sections ------------------------------
+\input{sections/01_introduction}
+\input{sections/02_literature}
+\input{sections/03_preliminaries}
+\input{sections/04_cyclic_galois}
+\input{sections/05_hulls}
+\input{sections/06_gray}
+\input{sections/07_quantum}
+\input{sections/08_certification}
+\input{sections/09_comparison}
+\input{sections/10_conclusion}
+
+\appendix
+\input{sections/appendix_tables}
+\input{sections/appendix_reproducibility}
+
+% ------------------------------ bibliography --------------------------
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

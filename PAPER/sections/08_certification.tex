@@ -1,0 +1,366 @@
+% =====================================================================
+\section{Distance certification and quantum parameter analysis}
+\label{sec:cert}
+% =====================================================================
+
+\subsection{The coset-distance theorem}
+
+The distance formulas of Theorems~\ref{thm:R2} and~\ref{thm:R3} look like
+minima over a set difference. The following theorem says that they are
+something better: the minimum weight of an ordinary linear code.
+
+\begin{theorem}[coset-distance characterisation]\label{thm:cosetdistance}
+Let $D\subseteq\F_q^{\Nlen}$ be $\F_q$-linear, $H_E=D\cap D^{\perp_E}$ and
+$K=\Nlen-k-h_E$. Then, for routes R2 and R3,
+\[
+  d=\min\bigl\{\wt(x):x\in D^{\perp_E}\setminus\Hull_E(D)\bigr\}
+\]
+is the \emph{minimum weight of the quotient code}
+\[
+  D^{\perp_E}/\Hull_E(D),
+\]
+a linear code of length $\Nlen$ and dimension
+$\dim D^{\perp_E}-\dim\Hull_E(D)=(\Nlen-k)-h_E=K$. Equivalently, $d$ is the
+minimum weight of the set of nonzero cosets of $\Hull_E(D)$ in $D^{\perp_E}$.
+In particular, for any integer $\delta\ge1$,
+\begin{equation}\label{eq:criterion}
+  d\ge\delta
+  \iff
+  \text{every }x\in D^{\perp_E}\text{ with }\wt(x)<\delta
+  \text{ lies in }\Hull_E(D).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:parameters}, for R2 and R3
+$d$ is the minimum of $\swt$ over $G^{\omegaperp}\setminus G$ with $G=V$.
+Since $\swt(a|b)\ge\max(\wt a,\wt b)$ and since
+$(a|0)\in V^{\omegaperp}\setminus V$ whenever $a\in D^{\perp_E}\setminus D$,
+that symplectic minimum equals
+$\min\{\wt(x):x\in D^{\perp_E}\setminus D\}$; and for $x\in D^{\perp_E}$ one
+has $x\in D$ iff $x\in D\cap D^{\perp_E}=H_E$, so
+$D^{\perp_E}\setminus D=D^{\perp_E}\setminus H_E$ as sets.
+
+Now, the quotient group $D^{\perp_E}/H_E$ is an $\F_q$-vector space of
+dimension $\dim D^{\perp_E}-\dim H_E=(\Nlen-k)-h_E=K$, and its nonzero elements
+are exactly the cosets $x+H_E$ with $x\in D^{\perp_E}\setminus H_E$. The weight
+of a coset is well defined as
+$\wt(x+H_E)=\min\{\wt(y):y\in x+H_E\}$, and its minimum over nonzero cosets is
+exactly $\min\{\wt(x):x\in D^{\perp_E}\setminus H_E\}$: indeed
+$\wt(x+H_E)\le\wt(x)$ gives one inequality, and conversely any $y\in x+H_E$
+with $y\ne0$ may be substituted for $x$. This is the assertion. The criterion
+\eqref{eq:criterion} is the contrapositive restatement.
+\end{proof}
+
+\begin{remark}
+For route R1 only the upper bound of Theorem~\ref{thm:R1cap} is available, and
+Theorem~\ref{thm:cosetdistance} is \emph{not} claimed for R1: the group
+$\mathcal C_T$ is semilinear, the set difference is not a quotient by an
+$\F_q$-subspace of the ambient space in the same way, and we do not use it.
+\end{remark}
+
+\subsection{The coset Singleton bound}
+
+\begin{theorem}[coset Singleton bound]\label{thm:cosetsingleton}
+Let $D\subseteq\F_q^{\Nlen}$ be $\F_q$-linear and let $K=\Nlen-k-h_E$ be the
+dimension of the quantum code produced by route R2 or R3. Then
+\begin{equation}\label{eq:cosetsingleton}
+  K+d\le \Nlen+1 .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Consider the quotient code $\mathcal Q=D^{\perp_E}/\Hull_E(D)$ of
+Theorem~\ref{thm:cosetdistance}: it has length $\Nlen$, dimension $K$ and
+minimum weight $d$. Let $S\subseteq\{1,\dots,\Nlen\}$ be any set of
+$\Nlen-d+1$ coordinates and let $\pi_S$ be the projection onto those
+coordinates. If $\pi_S$ were not injective on $\mathcal Q$, there would be a
+nonzero coset $x+H_E$ with $\pi_S(x+H_E)=0$, i.e. an element
+$y\in x+H_E$ supported outside $S$, i.e. supported on the remaining
+$d-1$ coordinates. Then $\wt(y)\le d-1<d$, contradicting the definition of $d$
+as the minimum weight of a nonzero element of $\mathcal Q$. Hence $\pi_S$ is
+injective, so $q^K=|\mathcal Q|\le q^{\Nlen-d+1}$ and therefore
+$K\le\Nlen-d+1$.
+\end{proof}
+
+\begin{proposition}[the coset Singleton bound is new]\label{prop:newsbound}
+The bound \eqref{eq:cosetsingleton} is not the entanglement-assisted Singleton
+bound, and neither implies the other.
+\end{proposition}
+
+\begin{proof}
+The entanglement-assisted Singleton bound reads
+$\Nlen-K+c\ge 2(d-1)$, i.e. $K\le\Nlen+c-2d+2$. For the code
+$[[20,2,10;18]]_4$ constructed in Section~\ref{sec:cmp} one has $\Nlen=20$,
+$K=2$, $d=10$, $c=18$: the coset Singleton bound gives $2\le 20-10+1=11$, which
+holds, while the EA Singleton bound gives
+$2\le 20+18-20+2=20$, which is much weaker. Conversely, for a code with small
+$c$ and small $d$, say $[[24,20,2;0]]_4$ ($\Nlen=24$, $K=20$, $d=2$, $c=0$), the
+coset Singleton bound gives $20\le 24-2+1=23$, while the EA Singleton bound
+gives $20\le 24+0-4+2=22$ --- the EA bound is now the stronger one. Hence
+neither implies the other.
+\end{proof}
+
+\subsection{The feasibility inequality}
+
+\begin{theorem}[feasibility inequality]\label{thm:feasibility}
+Suppose a code produced by route R3 from $D\subseteq\F_q^{\Nlen}$ has
+$d\ge4$, $c\le c_0$ and $K\ge K_0$. Then
+\begin{equation}\label{eq:feasibility}
+  2k\le \Nlen+c_0-K_0 .
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:R3}, $c=k-h_E$ and $K=\Nlen-k-h_E$. The hypotheses
+$c\le c_0$ and $K\ge K_0$ read $h_E\ge k-c_0$ and
+$h_E\le \Nlen-k-K_0$. Hence $k-c_0\le \Nlen-k-K_0$, i.e.
+$2k\le\Nlen+c_0-K_0$.
+\end{proof}
+
+\begin{remark}[what the inequality does and does not say]
+The hypothesis $d\ge4$ enters only through the \emph{motivation} for imposing
+the constraints, not through the algebra: the implication
+``$c\le c_0$ and $K\ge K_0$ $\Rightarrow$ \eqref{eq:feasibility}'' holds for
+every code, whatever its distance. Inequality \eqref{eq:feasibility} is one-way:
+it is a necessary condition, not a sufficient one, and no converse is claimed.
+
+Its content is the trade-off behind the entanglement budget: cheap entanglement
+means a large Euclidean hull, and a large Euclidean hull means few logical
+qudits. Combined with the criterion \eqref{eq:criterion}, it converts the
+question ``is there a family with $d\ge4$, bounded $c$ and $K\ge2$?'' into two
+explicit conditions on $D$: (i) $k$ must be close to $\Nlen/2$, and (ii) every
+vector of weight at most $3$ in $D^{\perp_E}$ must lie in $\Hull_E(D)$.
+\end{remark}
+
+\subsection{Bookkeeping identities, and an erratum}
+
+\begin{theorem}[bookkeeping]\label{thm:bookkeeping}
+For every code produced by any of the three routes from $C\le\Rn$ with
+$D=\varphi_n(C)$:
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item $k=\dim_{\F_q}D$ is even, and $\Nlen=4tn$ is divisible by $4$;
+\item $K-c=\Nlen-2k\equiv0\pmod4$; in particular $K\equiv c\pmod4$;
+\item $c+K=\Nlen-2h_E$;
+\item $c\ge 2k-\Nlen$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) Under the Morita correspondence \eqref{eq:morita}, $D$ is the image of
+$I_W$ with $W\le\Bq^2$, and $\dim_{\F_q}I_W=2\dim_{\F_q}W$; hence $k$ is even.
+(b) $K-c=(\Nlen-k-h_E)-(k-h_E)=\Nlen-2k$, which is divisible by $4$ by (a)
+and $\Nlen=4tn$. (c) is immediate from the two defining identities. (d) From
+$c=k-h_E$ and $h_E\le\min(k,\Nlen-k)$ (as $h_E$ is the dimension of a subspace
+of both $D$ and $D^{\perp_E}$) we get $c\ge k-(\Nlen-k)=2k-\Nlen$.
+\end{proof}
+
+\begin{remark}[erratum]
+An earlier version of this project stated the identity as $c+K=\Nlen-k$. That
+is wrong: it would force $h_E=k/2$, which is false in general, and it is
+contradicted by $23$ of the $25$ rows of the earlier paper's own parameter
+table. The correct identity is Theorem~\ref{thm:bookkeeping}(c). We record this
+as an erratum rather than repair it silently; no \emph{parameter} computed in
+the earlier work is affected, because $K$ and $c$ were always computed from
+$k$ and $h_E$ directly.
+\end{remark}
+
+\subsection{Certification methodology}
+
+Every distance reported in this paper is either \textbf{exact} or a
+\textbf{proved lower bound}, and the two are never conflated. Three
+independent methods are used, and every headline code is certified by all three.
+
+\begin{description}
+\item[M1 --- complete enumeration.] Enumerate the relevant classical difference
+  set (the coset code of Theorem~\ref{thm:cosetdistance}, or the classical
+  difference set of R2) completely and take the minimum weight. This is exact
+  and complete whenever $q^{\dim}\le3\cdot10^6$.
+\item[M2 --- increasing-weight support search.] A different algorithm: for each
+  support of size $w=1,2,3,\dots$ in increasing order, solve the left-kernel
+  problem asking whether the difference set contains a vector supported inside
+  it. The first $w$ at which a solution exists is the distance. Because the
+  algorithm differs structurally from M1, agreement of the two is a genuine
+  cross-check.
+\item[M3 --- ambient quantum search.] Search the ambient space
+  $\F_q^{2\Nlen}$ in increasing symplectic weight for a vector $v$ with
+  $v\in V^{\omegaperp}$ and $v\notin V$. This certifies the distance directly in
+  the quantum language, without passing through
+  Theorem~\ref{thm:cosetdistance}. It is complete only up to the weight reached,
+  and is reported as a lower bound otherwise.
+\end{description}
+
+In addition, for every certified code: the stabilizer group is verified abelian
+on an $\F_p$-basis (Theorem~\ref{thm:fpbasis}); $K$ and $c$ are recomputed from
+$k$ and $h_E$; and --- crucially --- \emph{the certified code is the exact code
+found by the search}, the image basis being carried through the whole pipeline.
+An earlier version of this project certified a re-selected code with the same
+invariants instead of the reported one; that defect was found and fixed, and the
+current pipeline cannot reproduce it.
+
+\subsection{Parameter analysis}
+
+The computation covers $q\in\{4,8,9\}$ with $tn\le8$ (42 families), of which
+$23$ are enumerated exhaustively, $4$ are counted but not enumerated, and $15$
+are blocked by the component enumeration. Ten families that earlier work could
+only sample are now exhaustive. In total $120\,721$ codes have computed
+invariants and $5\,055$ have a computed distance, of which $4\,418$ are exact
+and $637$ are proved lower bounds. Every one of the $5\,055$ satisfies the
+entanglement-assisted Singleton and Hamming bounds, and the coset Singleton
+bound \eqref{eq:cosetsingleton} (0 violations in each case).
+
+\begin{proposition}[frontier, computational]\label{prop:frontier}
+Among the $5\,055$ codes with a distance there are $368$ distinct tuples
+$(\Nlen,K,d,c)$; $88$ of them are non-dominated and $280$ are dominated, where
+$(N,K,d,c)$ dominates $(N',K',d',c')$ iff
+$N\le N'$, $K\ge K'$, $d\ge d'$, $c\le c'$ with at least one strict
+inequality, the comparison being made inside one alphabet.
+\end{proposition}
+
+\begin{remark}[what the frontier is and is not]
+Proposition~\ref{prop:frontier} is a statement about the codes \emph{scanned},
+not about all codes obtainable from the construction: the families that were
+counted but not enumerated, and the fifteen that were blocked, are excluded, and
+they are listed in the supplementary material. No tuple outside the scanned
+families is claimed to be dominated.
+\end{remark}
+
+Table~\ref{tab:headline} lists the headline codes, all certified by the three
+methods. Table~\ref{tab:cert} in Appendix~A lists the full certification table.
+
+\begin{table}[t]
+\centering
+\caption{Headline codes. $S$-def is the entanglement-assisted Singleton defect
+$\Nlen-K+c-2(d-1)$. All distances exact except the last row of the upper
+block, which is a proved lower bound.}
+\label{tab:headline}
+\small
+\begin{tabular}{@{}lllrrrrrr@{}}
+\toprule
+code & family $(q,t,n)$ & route & $k$ & $h_E$ & $K$ & $d$ & $c$ & $S$-def\\
+\midrule
+$[[24,8,4]]_9$     & $(9,1,6)$ & R2-SO & 8  & 8 & 8  & 4  & 0  & 10\\
+$[[20,4,4]]_4$     & $(4,1,5)$ & R2-SO & 8  & 8 & 4  & 4  & 0  & 10\\
+$[[20,4,4]]_4$     & $(4,1,5)$ & R2-DC & 12 & 8 & 4  & 4  & 0  & 10\\
+$[[16,4,3]]_4$     & $(4,1,4)$ & R2-SO & 6  & 6 & 4  & 3  & 0  & 8\\
+$[[16,4,3]]_4$     & $(4,1,4)$ & R2-DC & 10 & 10 & 4 & 3  & 0  & 8\\
+$[[20,2,10;18]]_4$ & $(4,1,5)$ & R3    & 18 & 0 & 2  & 10 & 18 & 18\\
+$[[24,2,10;18]]_9$ & $(9,1,6)$ & R3    & 20 & 2 & 2  & 10 & 18 & 22\\
+$[[20,4,9;16]]_9$  & $(9,1,5)$ & R3    & 16 & 0 & 4  & 9  & 16 & 16\\
+$[[24,4,9;20]]_4$  & $(4,1,6)$ & R3    & 20 & 0 & 4  & 9  & 20 & 24\\
+$[[16,2,8;14]]_9$  & $(9,1,4)$ & R3    & 14 & 0 & 2  & 8  & 14 & 14\\
+$[[16,2,7;10]]_9$  & $(9,1,4)$ & R3    & 12 & 2 & 2  & 7  & 10 & 12\\
+$[[12,2,6;10]]_4$  & $(4,1,3)$ & R3    & 10 & 0 & 2  & 6  & 10 & 10\\
+$[[24,4,6;20]]_4$  & $(4,2,3)$ & R3    & 20 & 0 & 4  & 6  & 20 & 30\\
+$[[16,4,5;8]]_4$   & $(4,1,4)$ & R3    & 10 & 2 & 4  & 5  & 8  & 12\\
+$[[24,10,4;2]]_9$  & $(9,1,6)$ & R3    & 8  & 6 & 10 & $\ge4$ & 2 & 10\\
+\midrule
+$[[24,6,2;2]]_9$   & $(9,2,3)$ & R3 & 10 & 8  & 6 & 2 & 2 & 18\\
+$[[24,14,2]]_9$    & $(9,2,3)$ & R1 & 10 & --- & 14 & 2 & 0 & 8\\
+$[[32,8,2;4]]_4$   & $(4,2,4)$ & R3 & 14 & 10 & 8 & 2 & 4 & 26\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The last three rows are the non-principal-hull witnesses of
+Theorem~\ref{thm:nonprincipal}: their hulls have $\MU_{\Bq}=3$. They are
+included for their structural significance, not for their parameters
+($d=2$). The middle one of the three is a \emph{stabilizer} code produced by
+route~R1, which is the only route available there because
+Theorem~\ref{thm:obstruction} blocks the Euclidean one at $(q,t)=(9,2)$.
+
+\subsection{Bounds satisfied}
+
+\begin{proposition}[bounds]\label{prop:bounds}
+All $5\,055$ codes with a computed distance satisfy
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item the entanglement-assisted Singleton bound $\Nlen-K+c\ge2(d-1)$;
+\item the entanglement-assisted Hamming bound with effective dimension $K-c$:
+  $\bigl(\sum_{i=0}^{t}\binom{\Nlen}{i}(q^2-1)^i\bigr)q^{K-c}\le q^{\Nlen}$
+  with $t=\lfloor(d-1)/2\rfloor$;
+\item the coset Singleton bound $K+d\le\Nlen+1$.
+\end{enumerate}
+A lower-bound distance is tested with its proved value.
+\end{proposition}
+
+\subsection{The entanglement budget}
+
+Table~\ref{tab:budget} is the measured answer to the question behind the
+criterion of Theorem~\ref{thm:feasibility}: what is the least entanglement at
+which a given distance becomes available.
+
+\begin{table}[t]
+\centering
+\caption{Minimum entanglement $c$ for each distance, over the whole search,
+with the attaining code.}
+\label{tab:budget}
+\begin{tabular}{@{}clll@{}}
+\toprule
+$d$ & minimal $c$ & attaining code & status of $d$\\
+\midrule
+2 & 0  & $[[24,20,2;0]]_4$  & exact\\
+3 & 0  & $[[24,12,3;0]]_9$  & exact\\
+4 & 0  & $[[24,8,4;0]]_9$   & exact\\
+5 & 2  & $[[24,6,5;2]]_9$   & proved lower bound\\
+6 & 10 & $[[12,2,6;10]]_4$  & exact\\
+7 & 10 & $[[16,2,7;10]]_9$  & exact\\
+8 & 14 & $[[16,2,8;14]]_9$  & exact\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Reading Table~\ref{tab:budget} with Theorem~\ref{thm:cosetdistance}: $d=4$ is
+available with \emph{no} entanglement at all ($[[24,8,4]]_9$, a stabilizer
+code), while $d\ge5$ costs entanglement, and the cost grows steeply. With the
+entanglement bounded by $c\le4$ the best attainable distance is $d=4$, attained
+with $K=10$ and $c=2$ by $[[24,10,4;2]]_9$ --- a proved lower bound, and the
+frontier point for the criterion.
+
+\subsection{Worked example VI: a full certification}
+
+\begin{example}[certifying $[[20,2,10;18]]_4$]\label{ex:certify}
+Take the family $(q,t,n)=(4,1,5)$, so $\Nlen=4\cdot1\cdot5=20$. The search
+finds a cyclic code $C\le\Rn$ whose Gray image $D=\varphi_5(C)\subseteq
+\F_4^{20}$ has
+\[
+  k=\dim_{\F_4}D=18,\qquad h_E=\dim\bigl(D\cap D^{\perp_E}\bigr)=0 .
+\]
+Route R3 (Theorem~\ref{thm:R3}) then gives
+\[
+  c=k-h_E=18,\qquad K=\Nlen-k-h_E=20-18-0=2,\qquad
+  [[20,2,d;18]]_4 .
+\]
+The distance. By Theorem~\ref{thm:cosetdistance}, $d$ is the minimum weight of
+the quotient code $\mathcal Q=D^{\perp_E}/\Hull_E(D)$; here $h_E=0$, so
+$\Hull_E(D)=\{0\}$ and $\mathcal Q=D^{\perp_E}$, a linear $[20,2]_4$ code. Its
+$4^2=16$ codewords are enumerated completely (method M1), and the minimum
+weight found is $10$; the independent support search (M2) and the ambient
+quantum search (M3, which certifies $d\ge3$ as a lower bound) agree with the
+reported value. Hence $d=10$ exactly and
+\[
+  [[20,2,10;18]]_4 .
+\]
+The three bound checks:
+\begin{enumerate}[label=\textnormal{(\roman*)},leftmargin=*]
+\item entanglement-assisted Singleton:
+  $\Nlen-K+c=20-2+18=36\ge2(d-1)=18$, with defect $18$;
+\item entanglement-assisted Hamming with effective dimension $K-c=-16$:
+  $\bigl(\sum_{i=0}^{4}\binom{20}{i}(4^2-1)^i\bigr)4^{-16}\le4^{20}$;
+\item coset Singleton (Theorem~\ref{thm:cosetsingleton}):
+  $K+d=2+10=12\le\Nlen+1=21$.
+\end{enumerate}
+For comparison, the entanglement-assisted Singleton bound alone only gives
+$K\le\Nlen+c-2d+2=20$, so the coset Singleton bound is the binding one here
+(Proposition~\ref{prop:newsbound}).
+
+Finally, the bookkeeping identities of Theorem~\ref{thm:bookkeeping}:
+$k=18$ is even; $K-c=2-18=-16=\Nlen-2k=20-36$ is divisible by $4$; and
+$c+K=20=\Nlen-2h_E$, in accordance with the corrected identity --- the
+earlier formula $c+K=\Nlen-k$ would give $20=2$, which is false.
+
+This code is the largest-distance code found anywhere in the search, and it is
+also the most entanglement-hungry ($c=18$ out of $\Nlen=20$). That trade-off is
+the content of Theorem~\ref{thm:feasibility}: $d\ge4$ together with
+$K\ge2$ forces $2k\le\Nlen+c_0-K_0$, i.e. large $d$ and moderate $K$ cannot
+both be had at small $c$.
+\end{example}
