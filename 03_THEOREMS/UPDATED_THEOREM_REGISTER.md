@@ -790,10 +790,15 @@ The best **stabilizer** code remains Phase 5's $[[16,4,3]]_4$.
 
 ## Phase 7 — extended search: optimal quantum parameters, entanglement efficiency, and the structure of the attainable frontier
 
-Source: `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`; script
+Source: `03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md`; script
 `04_COMPUTATION/phase7_extended_search.py`; log
-`04_COMPUTATION/phase7_extended_search_log.txt` (639 lines, **17 checks, 17 PASS, 0
-FAIL**, seed 20261210, $\approx1050$ s).  Phase 7 answers Tasks A–H of the Phase-7
+`04_COMPUTATION/phase7_extended_search_log.txt` (727 lines, **18 checks, 18 PASS, 0
+FAIL**, seed 20261210, $\approx517$ s, peak resident memory 367.3 MB).  The
+earlier Phase-7 draft `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` and the log of the
+earlier version of the script, `04_COMPUTATION/phase7_extended_search_log_v1.txt`
+(639 lines, 17 checks, 17 PASS, sha256 `634a63d3…c35eb`), are preserved
+unchanged; nothing in them is retracted, and every number they contain is
+reproduced by the new run.  Phase 7 answers Tasks A–H of the Phase-7
 brief: it replaces the ring-component routine by a general CRT decomposition
 (Task B), re-runs the whole search over the enlarged family list (Task C),
 measures the entanglement budget of the high-distance codes (Task A), settles the
@@ -819,7 +824,11 @@ Phase-6 sentence is **re-scoped**, and one Phase-6 sentence about the tables is
 | **T-226** | on all $8$ (family, route) pairs shared with Phase 6's Pareto frontier the new search never reports a smaller distance ($3$ improved: $(4,2,3)$ EA $5\to6$, $(4,1,4)$ DC $1\to3$, $(4,1,3)$ DC $1\to2$; $5$ equal). Phase 6's "no stabilizer point has $d\ge4$" is **re-scoped** to the families Phase 6 scanned ($N\le16$): $(4,1,5)$, $N=20$, contains stabilizer codes of distance $4$ | **COMPUTATIONALLY VERIFIED ONLY** |
 | **T-227** | all $5055$ codes with a computed distance satisfy the EA quantum Singleton bound $N-K+c\ge2(d-1)$ and the EA quantum Hamming bound with effective dimension $K-c$: $0$ violations of either | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
 | **T-228** | literature comparison: of the alphabets used here **only $\mathbb F_4$ is tabulated** (`codetables.de` returns "currently not available for q=8"; $q=9$ is not offered), so every $q=8$ and $q=9$ code of this search is unbenchmarked; of the $12$ comparable stabilizer entries, $5$ meet the best known distance (all with $d=2$: $[[24,20,2]]_4$, $[[20,16,2]]_4$, $[[16,12,2]]_4$) and $7$ are $1$–$2$ below. **No record is claimed.** No EA table exists at that site | **IMPORTED RESULT** + **COMPUTATIONALLY VERIFIED ONLY** |
-| **T-229** | the run is seeded ($\mathrm{SEED}=20261210$) and every random choice is drawn from `random.Random(SEED)` in a fixed order: two runs of the final script agree on every line except the per-family elapsed-time annotations, which are wall-clock readings | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-229** | the run is seeded ($\mathrm{SEED}=20261210$) and every random choice is drawn from `random.Random(SEED)` in a fixed order: two runs of the final script agree on every line except the per-family elapsed-time annotations and the peak-memory line, which are wall-clock and resource readings | **COMPUTATIONALLY VERIFIED ONLY** (`[EXH]`) |
+| **T-230** | for every route the distance is the **minimum weight of the quotient (coset) code** $D^{\\perp_E}/\\mathrm{Hull}_E(D)$, which has dimension $K=N-k-h_E$ and length $N$: $d=\\min\\{\\mathrm{wt}(x):x\\in D^{\\perp_E}\\\\setminus\\mathrm{Hull}_E(D)\\}$; hence $d\\ge4$ $\\iff$ every vector of weight $\\le3$ in $D^{\\perp_E}$ lies in $\\mathrm{Hull}_E(D)$ | **PROVED** |
+| **T-231** | the **non-dominated** parameter tuples of the whole search, where $(N,K,d,c)$ dominates $(N',K',d',c')$ iff $N\\le N'$, $K\\ge K'$, $d\\ge d'$, $c\\le c'$ with at least one strict, compared inside one alphabet | **COMPUTATIONALLY VERIFIED ONLY** |
+| **T-232** | **coset Singleton bound** $K+d\\le N+1$: puncturing $N-d+1$ coordinates is injective on the $q^K$-element quotient of T-230. It is neither the EA Singleton bound nor implied by it ($[[20,2,10;18]]_4$: it gives $K\\le11$ where EA-Singleton allows $K\\le20$); $0$ violations on $5055$ codes | **PROVED** + **COMPUTATIONALLY VERIFIED** (`[EXH]`) |
+| **T-233** | **feasibility inequality**: $d\\ge4$ together with $c\\le c_0$ and $K\\ge K_0$ forces $2k\\le N+c_0-K_0$ (from $c=k-h_E$, $K=N-k-h_E$) — the image dimension cannot exceed half the length by more than half the entanglement budget | **PROVED** |
 
 **New codes found in Phase 7 (best per distance; all entanglement-assisted unless
 marked, all certified as in T-225):** $[[20,2,10;18]]_4$, $[[24,2,10;18]]_9$,
@@ -846,6 +855,12 @@ $[[20,4,4]]_4$ (DC) — the first stabilizer distance $4$ in this framework.
 * **T-209** — **extended** by T-224: $(4,2,2)$ is *not* the only family with
   $\mu_B(\mathrm{Hull})\ge3$; the phenomenon is nonetheless confined to the wild
   regime, as T-222(v) proves.
+* **Phase 5 §4** ($\\mu_B=4$ at $(4,2,2,1)$) — **reconciled again, in
+  Phase 7's own data** (§4.4 of the Phase-7 deliverable): the value $4$ is
+  $\\mu_B$ of the **code** $W$; the O-3.1/T-173 quantity is $\\mu_B$ of the
+  **hull**, whose census is $\\{0,1,2,3\\}$.  Over the extended enumeration
+  every hull has $\\mu_B\\le3$, with $\\mu_B(\\mathrm{Hull}_s)=3$ at
+  $(4,2,2)$, $(9,2,3)$ and $(4,2,4)$ (T-222, T-224).
 * **O-6.1** — **resolved** (T-220).  **O-6.2** — **resolved** (T-221).
   **O-6.3** — **resolved** (T-216, T-217).  **O-6.4** — **resolved** (T-224),
   with the structural reason (T-222(v)).

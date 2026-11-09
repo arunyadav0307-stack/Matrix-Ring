@@ -319,14 +319,18 @@ whole search over the enlarged family list, and answers all four.  No
 manuscript text.
 
 ### Added
-* `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` — the Phase-7 deliverable (§0
-  conventions, §1 Task B + census, §2 Task C, §3 Task A and O-6.1, §4 Task D
-  and O-6.4, §5 Task E certification, §6 Task F recheck and errata, §7 Task G
-  bounds and literature, §8 Task H controls, §9 register rows, §10 resolution
-  of O-6.1 … O-6.6, §11 open problems O-7.1 … O-7.6, §12 completion report).
+* `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` — the **first** Phase-7 deliverable
+  (v1).  **Preserved unchanged**; superseded on the same day by
+  `PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md` (see the entry below),
+  which extends it to the full Task A–H specification.  Nothing in v1 is
+  retracted.
 * `04_COMPUTATION/phase7_extended_search.py` and its log
   `04_COMPUTATION/phase7_extended_search_log.txt` (639 lines, **17 checks, 17
-  PASS, 0 FAIL**, seed 20261210, ≈1050 s, SHA-256 `634a63d3…c35eb`).
+  PASS, 0 FAIL**, seed 20261210, ≈1050 s, SHA-256 `634a63d3…c35eb`).  The v1
+  log is preserved verbatim as
+  `04_COMPUTATION/phase7_extended_search_log_v1.txt` (SHA-256
+  `634a63d3…c35eb`); the canonical `…_log.txt` now holds the v2 run described
+  below.
 
 ### New register rows T-216 … T-229
 * **T-216/T-217** a general CRT decomposition
@@ -393,5 +397,85 @@ multiplicativity test; the chain-ring test separates `F_4[u]/(u^2)` from the
 wild `F_4[u,w]/(u^2,w^2)`; the product assembly is exactly the product of the
 component lattices.  Protected-file baseline (89 files, list SHA-256
 `60f654ba…4312a`): Phases 0–6 documents, scripts and logs verified unchanged.
+
+**Boundary honoured:** no manuscript text and no journal-submission material.
+
+---
+
+## 2026-11-04 — Phase 7 (v2): longer lengths, parameter optimization, and the proved criterion behind O-6.1 (Tasks A–H, full specification)
+
+**Scope.**  The Phase-7 brief was re-issued in an expanded form (Tasks A–H),
+requiring a single deliverable named
+`03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md`.  The v1
+deliverable `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` and the v1 log are
+**preserved unchanged** (see the entry above); v2 extends v1 rather than
+replacing it.  No manuscript text.
+
+### Added
+* `03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md` (1342 lines)
+  — the Phase-7 deliverable for Tasks A–H: §0 conventions, §1 Task B (general
+  CRT decomposition, census, `n = 5`/`n = 6` specifically, complexity and
+  memory), §2 Task C (systematic search, the four Phase-6 baselines compared,
+  the non-dominated set), §3 Task A (the *proved* criterion for O-6.1, the
+  entanglement budget, the coset Singleton bound), §4 Task D (O-6.4, and the
+  reconciliation of Phase 5's `µ_B = 4` with the Phase-3B hull census), §5
+  Task E (certification), §6 Task F (recheck of the Phase-6 obstructions and
+  errata), §7 Task G (bounds and literature), §8 Task H (negative controls),
+  §9 register rows T-216 … T-233, §10 resolution of O-6.1 … O-6.6, §11 open
+  problems O-7.1 … O-7.6, §12 completion report and §12.1 recommended
+  constructions.
+* `04_COMPUTATION/phase7_extended_search_log_v1.txt` — the v1 log, preserved
+  verbatim (639 lines, 17 checks, 17 PASS, SHA-256 `634a63d3…c35eb`).
+
+### Changed
+* `04_COMPUTATION/phase7_extended_search.py` gained four reporting/verification
+  sections — (f) the dominance / non-dominated table, (g) the coset Singleton
+  bound with the new check **H1**, (h) the comparison against the four
+  Phase-6 baselines — plus a peak-resident-memory line in the completion
+  report.  The **search itself is unchanged**: all v1 numbers (25 families,
+  120721 codes with invariants, 5055 with a distance, every table of v1) are
+  reproduced bit for bit.
+* `04_COMPUTATION/phase7_extended_search_log.txt` now holds the v2 run: 727
+  lines, **18 checks, 18 PASS, 0 FAIL**, seed 20261210, ≈517 s, peak resident
+  memory 367.3 MB.
+
+### New register rows T-230 … T-233
+* **T-230 (PROVED)** for every route the distance is the minimum weight of the
+  **quotient (coset) code** `D^{⊥_E}/Hull_E(D)`, of dimension `K = N − k − h_E`
+  and length `N`; equivalently `d = min wt(D^{⊥_E} \ D)`.  Hence `d ≥ 4` iff
+  every vector of weight `≤ 3` in `D^{⊥_E}` lies in `Hull_E(D)`.
+* **T-231 (COMPUTATIONALLY VERIFIED ONLY)** the non-dominated parameter tuples
+  of the whole search, where `(N,K,d,c)` dominates `(N',K',d',c')` iff
+  `N ≤ N'`, `K ≥ K'`, `d ≥ d'`, `c ≤ c'` with at least one strict, inside one
+  alphabet.  368 distinct tuples with a distance, 88 non-dominated, 280
+  dominated.  This — not the single best distance — is the optimisation
+  deliverable of Task C.
+* **T-232 (PROVED + `[EXH]`)** **coset Singleton bound** `K + d ≤ N + 1`, from
+  the injectivity of puncturing `N − d + 1` coordinates on the quotient of
+  T-230.  It is neither the EA Singleton bound nor implied by it (for
+  `[[20,2,10;18]]_4` it gives `K ≤ 11` where EA-Singleton allows `K ≤ 20`).
+  Check **H1**: 0 violations on 5055 codes.
+* **T-233 (PROVED)** **feasibility inequality**: `d ≥ 4` with `c ≤ c_0` and
+  `K ≥ K_0` forces `2k ≤ N + c_0 − K_0` — the image dimension cannot exceed
+  half the length by more than half the entanglement budget.
+
+### The four Phase-6 baselines (Task C)
+`[[16,4,3]]_4`, `[[12,2,6;10]]_4` and `[[16,4,5;8]]_4` are reproduced exactly
+and are **non-dominated** in the new search.  `[[24,4,5;12]]_4` is **not
+reproduced and is dominated**: Phase 6 obtained it at `(4,2,3)` from a 300-code
+sample, and the new search enumerates that family exhaustively (35937 codes) and
+finds `d = 6` there.  Phase 6's value was a sampled lower bound, not an
+optimum — the baseline is improved by this phase, not refuted.
+
+### Verification and safeguards
+18 checks, 18 PASS, 0 FAIL.  Three consecutive runs of the final script
+(519.9 s, 527.8 s, 516.6 s) agree on **every** line except the per-family
+elapsed-time annotations `[..s]` and the peak-memory line, which are wall-clock
+and resource readings; the committed log is the 516.6 s run, produced by the
+committed script (SHA-256 `682e2a36…d932a0`, 2020 lines).  Protected-file baseline (89 files): Phases
+0–6 documents, scripts and logs verified unchanged; the theorem register grows
+by insertion only (T-216 … T-233); no Phase 0–6 file was modified; no record is
+claimed; no distance is reported without an exhaustive or proved-lower-bound
+computation; no sample is presented as exhaustive.
 
 **Boundary honoured:** no manuscript text and no journal-submission material.

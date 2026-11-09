@@ -577,10 +577,28 @@ before being used.
 
 ## Phase 7 — extended search: optimal quantum parameters, entanglement efficiency and the structure of the attainable frontier
 
-**Deliverable:** `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`
-**Script:** `phase7_extended_search.py` → `phase7_extended_search_log.txt`
-(639 lines, **17 checks, 17 PASS, 0 FAIL**; seed `20261210`; runtime ≈ 18
-minutes; SHA-256 `634a63d3…c35eb`).
+**Deliverables:**
+
+* `03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md` — **v2**,
+  the full Task A–H specification (1342 lines).  This is the Phase-7
+  deliverable; read this one.
+* `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md` — **v1**, preserved unchanged.  v2
+  extends it and reproduces every number in it.
+* `04_COMPUTATION/phase7_extended_search_log_v1.txt` — the log of the v1 run,
+  preserved verbatim (639 lines, 17 checks, 17 PASS, SHA-256
+  `634a63d3…c35eb`), because the v2 run rewrites the canonical log path.
+
+**Script:** `phase7_extended_search.py` (2020 lines, SHA-256
+`682e2a36…d932a0`) → `phase7_extended_search_log.txt`
+(727 lines, **18 checks, 18 PASS, 0 FAIL**; seed `20261210`; runtime ≈ 9
+minutes; peak resident memory 367.3 MB).
+
+v2 changes only what the script *reports*: it adds the dominance frontier
+(Part 3f), the coset Singleton bound and its check **H1** (Part 3g), the
+comparison against the four Phase-6 baselines (Part 3h), and a
+`resource`-based peak-memory line.  The search itself is identical, so every
+number of v1 (25 families, 120721 codes with invariants, 5055 with a distance,
+all tables) recurs bit for bit.
 
 ### How to reproduce
 
@@ -596,7 +614,8 @@ Run it **from its own directory**: it imports `ring_structure_checks`,
 `phase6_quantum_parameter_log.txt`, and writes `phase7_extended_search_log.txt`
 to the current working directory.  Standard library only, no floating point.
 The run is seeded; two runs agree on every line except the per-family
-elapsed-time annotations `[..s]`, which are wall-clock readings.
+elapsed-time annotations `[..s]` and the peak-memory line, which are wall-clock
+and resource readings.
 
 ### What is computed, and how completely
 
@@ -647,3 +666,28 @@ elapsed-time annotations `[..s]`, which are wall-clock readings.
 * No record; the novelty claim is about the **origin** of the codes.
 * The failure of one coordinate transformation is **not** a statement about the
   whole characteristic-two regime.
+
+---
+
+## Phase 7 (v2) — what Task A–H added, and how to read it
+
+The v2 sections live in the same log, immediately after Part 3(e):
+
+| block | where in the log | what it answers |
+|---|---|---|
+| `(f)` | Part 3, after the Pareto frontier | the non-dominated parameter tuples (T-231): 368 distinct tuples with a distance, 88 non-dominated, 280 dominated; dominance is `N ≤ N'`, `K ≥ K'`, `d ≥ d'`, `c ≤ c'` with one strict, inside one alphabet |
+| `(g)` | Part 3, after `(f)` | the **coset Singleton bound** `K + d ≤ N + 1` (T-232) and check **H1** (0 violations on 5055 codes) |
+| `(h)` | Part 3, after `(g)` | the four Phase-6 baselines named in Task C: three reproduced and non-dominated; `[[24,4,5;12]]_4` not reproduced and dominated, because `(4,2,3)` is now exhaustive and reaches `d = 6` there |
+| `peak resident memory` | Part 9 completion report | `resource.getrusage(...).ru_maxrss`, printed alongside the wall-clock time |
+
+The proved statements behind Task A are in §3.0 of the deliverable: T-230 (the
+distance is the minimum weight of the coset code `D^{⊥_E}/Hull_E(D)`, of
+dimension `K` and length `N`), T-232 (coset Singleton) and T-233 (the
+feasibility inequality `2k ≤ N + c_0 − K_0`).  §12.1 ranks the non-dominated
+set by purpose.
+
+**Reproducing v2.**  Same command as v1 (`python3 phase7_extended_search.py`,
+run from this directory).  The expected result is 18 checks, 18 PASS, 0 FAIL in
+≈520 s and a 727-line log.  Three consecutive runs (516.6 s, 519.9 s, 527.8 s)
+differed only in the `[..s]` annotations and the peak-memory line; everything
+else matched byte for byte.

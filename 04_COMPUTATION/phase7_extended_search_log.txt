@@ -34,15 +34,15 @@ PART 1.  TASK B: THE GENERAL CRT DECOMPOSITION, AND ITS VALIDATION
    (q,t,n) | factorization of X^n-1 | comp dims | regime   | #CRT   | #3B-BFS | agree
   --------------------------------------------------------------------------
    (4,1,2)   | (deg 1)^2                | [2]       | RAMIFIED | 33     | 33      | YES  [0s]
-   (4,1,3)   | (deg 1)^1 (deg 1)^1 (deg | [1, 1, 1] | SEMISIMPLE | 343    | 343     | YES  [2s]
-   (4,1,4)   | (deg 1)^4                | [4]       | RAMIFIED | 565    | 565     | YES  [35s]
+   (4,1,3)   | (deg 1)^1 (deg 1)^1 (deg | [1, 1, 1] | SEMISIMPLE | 343    | 343     | YES  [1s]
+   (4,1,4)   | (deg 1)^4                | [4]       | RAMIFIED | 565    | 565     | YES  [17s]
    (8,1,2)   | (deg 1)^2                | [2]       | RAMIFIED | 93     | 93      | YES  [0s]
    (9,1,2)   | (deg 1)^1 (deg 1)^1      | [1, 1]    | SEMISIMPLE | 144    | 144     | YES  [0s]
-   (9,1,3)   | (deg 1)^3                | [3]       | RAMIFIED | 1024   | 1024    | YES  [106s]
-   (4,2,2)   | (deg 1)^2                | [4]       | WILD     | 1221   | 1221    | YES  [114s]
-   (9,2,1)   | (deg 1)^1                | [2]       | SEMISIMPLE | 113    | 113     | YES  [1s]
+   (9,1,3)   | (deg 1)^3                | [3]       | RAMIFIED | 1024   | 1024    | YES  [51s]
+   (4,2,2)   | (deg 1)^2                | [4]       | WILD     | 1221   | 1221    | YES  [52s]
+   (9,2,1)   | (deg 1)^1                | [2]       | SEMISIMPLE | 113    | 113     | YES  [0s]
    (4,3,1)   | (deg 1)^1                | [3]       | SEMISIMPLE | 139    | 139     | YES  [1s]
-   (4,4,1)   | (deg 1)^1                | [4]       | SEMISIMPLE | 565    | 565     | YES  [30s]
+   (4,4,1)   | (deg 1)^1                | [4]       | SEMISIMPLE | 565    | 565     | YES  [14s]
   [EXH] B1  the new CRT enumeration reproduces the Phase-3B exhaustive BFS exactly (as a set of submodules of B^2) on every family the old routine supported, and Psi is multiplicative PASS  [EXH] 10 families: split / chain / wild x q=4,8,9 x t=1..4
 
 ==============================================================================
@@ -80,7 +80,7 @@ PART 2.  CENSUS AFTER THE EXTENSION (Task B)
    (8,2,2) | 16 | (d1)^2             | [4]     | WILD        | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
    (8,2,3) | 24 | (d1)^1(d2)^1       | [2, 4]  | SEMISIMPLE  | 262144   | -        | NO  | component BFS too large (|S^2|=16777216)
    (8,2,4) | 32 | (d1)^4             | [8]     | WILD        | 16777216 | -        | yes | component BFS too large (|S^2|=281474976710656)
-   (8,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 512      | 751      | yes | EXHAUSTIVE  [24s]
+   (8,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 512      | 751      | yes | EXHAUSTIVE  [12s]
    (8,3,2) | 24 | (d1)^2             | [6]     | WILD        | 262144   | -        | yes | component BFS too large (|S^2|=68719476736)
    (8,4,1) | 16 | (d1)^1             | [4]     | SEMISIMPLE  | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
    (8,4,2) | 32 | (d1)^2             | [8]     | WILD        | 16777216 | -        | yes | component BFS too large (|S^2|=281474976710656)
@@ -89,13 +89,13 @@ PART 2.  CENSUS AFTER THE EXTENSION (Task B)
    (9,1,3) | 12 | (d1)^3             | [3]     | RAMIFIED    | 729      | 1024     | yes | EXHAUSTIVE  [0s]
    (9,1,4) | 16 | (d1)^1(d1)^1(d1)^1(d1)^1 | [1, 1, 1, 1] | SEMISIMPLE  | 6561     | 20736    | yes | EXHAUSTIVE  [0s]
    (9,1,5) | 20 | (d1)^1(d2)^1(d2)^1 | [1, 2, 2] | SEMISIMPLE  | 59049    | 84672    | NO  | COUNTED-ONLY  [0s]
-   (9,1,6) | 24 | (d1)^3(d1)^3       | [3, 3]  | RAMIFIED    | 531441   | 1048576  | NO  | COUNTED-ONLY  [56s]
+   (9,1,6) | 24 | (d1)^3(d1)^3       | [3, 3]  | RAMIFIED    | 531441   | 1048576  | NO  | COUNTED-ONLY  [25s]
    (9,2,1) |  8 | (d1)^1             | [2]     | SEMISIMPLE  | 81       | 113      | yes | EXHAUSTIVE  [0s]
    (9,2,2) | 16 | (d1)^1(d1)^1       | [2, 2]  | SEMISIMPLE  | 6561     | 12769    | yes | EXHAUSTIVE  [0s]
    (9,2,3) | 24 | (d1)^3             | [6]     | WILD        | 531441   | -        | yes | component BFS too large (|S^2|=282429536481)
-   (9,2,4) | 32 | (d1)^1(d1)^1(d1)^1(d1)^1 | [2, 2, 2, 2] | SEMISIMPLE  | 43046721 | 163047361 | yes | COUNTED-ONLY  [1s]
-   (9,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 729      | 1024     | yes | EXHAUSTIVE  [50s]
-   (9,3,2) | 24 | (d1)^1(d1)^1       | [3, 3]  | SEMISIMPLE  | 531441   | 1048576  | yes | COUNTED-ONLY  [50s]
+   (9,2,4) | 32 | (d1)^1(d1)^1(d1)^1(d1)^1 | [2, 2, 2, 2] | SEMISIMPLE  | 43046721 | 163047361 | yes | COUNTED-ONLY  [0s]
+   (9,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 729      | 1024     | yes | EXHAUSTIVE  [23s]
+   (9,3,2) | 24 | (d1)^1(d1)^1       | [3, 3]  | SEMISIMPLE  | 531441   | 1048576  | yes | COUNTED-ONLY  [23s]
    (9,4,1) | 16 | (d1)^1             | [4]     | SEMISIMPLE  | 6561     | -        | yes | component BFS too large (|S^2|=43046721)
    (9,4,2) | 32 | (d1)^1(d1)^1       | [4, 4]  | SEMISIMPLE  | 43046721 | -        | yes | component BFS too large (|S^2|=43046721)
   [EXH] B2  the extension makes NEW families exhaustively enumerable: (q,t,n) with N = 20 and 24 at t = 1 and N = 12 at q = 8, none of which the Phase-2C routine supported (Phase 6 O-6.3) PASS  [EXH] 3 new families: (4,1,5) N=20: 2527 codes, (4,1,6) N=24: 35937 codes, (8,1,3) N=12: 737 codes
@@ -122,29 +122,29 @@ PART 3.  TASK C: SYSTEMATIC SEARCH OVER THE EXTENDED FAMILY LIST
   ------------------------------------------------------------------------------------
    (4,1,1) |  4 | 7      (7       ) |   0   1 |       4 |    5 |    0 |      2 | 0s
    (4,1,2) |  8 | 33     (33      ) |   5   6 |      16 |   27 |    0 |      3 | 0s
-   (4,1,3) | 12 | 343    (343     ) |  28  29 |     278 |  242 |    0 |      6 | 1s
-   (4,1,4) | 16 | 565    (565     ) |  47  48 |     432 |  279 |    0 |      5 | 7s
-   (4,1,5) | 20 | 2527   (2527    ) |  46  47 |    2408 |  333 |   25 |     10 | 43s
-   (4,1,6) | 24 | 35937  (35937   ) | 1715 1716 |   32340 |  390 |    0 |      9 | 73s
+   (4,1,3) | 12 | 343    (343     ) |  28  29 |     278 |  242 |    0 |      6 | 0s
+   (4,1,4) | 16 | 565    (565     ) |  47  48 |     432 |  279 |    0 |      5 | 3s
+   (4,1,5) | 20 | 2527   (2527    ) |  46  47 |    2408 |  333 |   25 |     10 | 19s
+   (4,1,6) | 24 | 35937  (35937   ) | 1715 1716 |   32340 |  390 |    0 |      9 | 40s
    (4,2,1) |  8 | 33     (33      ) |   1   2 |      28 |   31 |    0 |      2 | 0s
    (4,2,2) | 16 | 1221   (1221    ) |  51  52 |    1112 |  343 |    0 |      4 | 2s
-   (4,2,3) | 24 | 35937  (35937   ) | 247 248 |   35434 |  390 |   14 |      6 | 59s
+   (4,2,3) | 24 | 35937  (35937   ) | 247 248 |   35434 |  390 |   14 |      6 | 32s
    (4,3,1) | 12 | 139    (139     ) |   2   3 |     132 |  137 |    0 |      2 | 0s
-   (4,4,1) | 16 | 565    (565     ) |   3   4 |     556 |  231 |    0 |      2 | 1s
+   (4,4,1) | 16 | 565    (565     ) |   3   4 |     556 |  231 |    0 |      2 | 0s
    (8,1,1) |  4 | 11     (11      ) |   0   1 |       8 |    9 |    0 |      2 | 0s
    (8,1,2) |  8 | 93     (93      ) |   9  10 |      64 |   83 |    0 |      3 | 0s
-   (8,1,3) | 12 | 737    (737     ) |  10  11 |     706 |  206 |    0 |      6 | 33s
+   (8,1,3) | 12 | 737    (737     ) |  10  11 |     706 |  206 |    0 |      6 | 16s
    (8,3,1) | 12 | 751    (751     ) |   2   3 |     744 |  205 |    0 |      2 | 0s
    (9,1,1) |  4 | 12     (12      ) |   0   1 |       8 |    9 |    0 |      2 | 0s
-   (9,1,2) |  8 | 144    (144     ) |   4   5 |     130 |  139 |    0 |      4 | 2s
-   (9,1,3) | 12 | 1024   (1024    ) |  29  30 |     944 |  251 |   25 |      5 | 8s
-   (9,1,4) | 16 | 20736  (20736   ) | 248 249 |   20190 |  390 |   25 |      8 | 39s
-   (9,1,5) | 20 | 2000   (84672   ) |   6   5 |    1986 |  251 |   25 |      9 | 59s
-   (9,1,6) | 24 | 2000   (1048576 ) |   6   5 |    1987 |  251 |   25 |     10 | 138s
+   (9,1,2) |  8 | 144    (144     ) |   4   5 |     130 |  139 |    0 |      4 | 1s
+   (9,1,3) | 12 | 1024   (1024    ) |  29  30 |     944 |  251 |   25 |      5 | 4s
+   (9,1,4) | 16 | 20736  (20736   ) | 248 249 |   20190 |  390 |   25 |      8 | 19s
+   (9,1,5) | 20 | 2000   (84672   ) |   6   5 |    1986 |  251 |   25 |      9 | 29s
+   (9,1,6) | 24 | 2000   (1048576 ) |   6   5 |    1987 |  251 |   25 |     10 | 72s
    (9,2,1) |  8 | 113    (113     ) |   2   3 |     105 |  110 |    0 |      2 | 0s
-   (9,2,2) | 16 | 12769  (12769   ) |  20  21 |   12723 |  281 |    0 |      4 | 16s
-   (9,3,1) | 12 | 1024   (1024    ) |   4   5 |    1012 |  226 |    0 |      2 | 1s
-   (9,3,2) | 24 | 2000   (1048576 ) |   0   0 |    2000 |  236 |    3 |      4 | 13s
+   (9,2,2) | 16 | 12769  (12769   ) |  20  21 |   12723 |  281 |    0 |      4 | 8s
+   (9,3,1) | 12 | 1024   (1024    ) |   4   5 |    1012 |  226 |    0 |      2 | 0s
+   (9,3,2) | 24 | 2000   (1048576 ) |   0   0 |    2000 |  236 |    3 |      4 | 6s
 
 ==============================================================================
 PART 4.  TASK A: ENTANGLEMENT-EFFICIENT HIGH-DISTANCE CODES (O-6.1)
@@ -246,6 +246,89 @@ PART 4.  TASK A: ENTANGLEMENT-EFFICIENT HIGH-DISTANCE CODES (O-6.1)
        2 | (4,1),(4,2),(4,3),(9, |                  2 | 6
        3 | (4,1),(8,1),(9,1),(9, |                  1 | 4
        4 | (4,1)                 |                  1 | 2
+
+(f) DOMINANCE: THE NON-DOMINATED CONSTRUCTIONS (Task C)
+-------------------------------------------------------
+  A search that optimises the distance alone hides the price it
+  pays in length, dimension and entanglement.  Dominance for
+  COMPLETE parameter tuples:  (N,K,d,c) dominates (N',K',d',c')
+  when   N <= N',  K >= K',  d >= d',  c <= c'   and at least one
+  of the four is strict.  Comparisons are made inside one alphabet
+  (a q=9 code does not dominate a q=4 code).  The non-dominated set
+  is the honest deliverable: a dominated tuple is never the right
+  choice, whatever weighting of N, K, d and c is preferred.
+
+   tuples compared (distinct, with a distance): 368 ; non-dominated: 88 ; dominated: 280
+
+    q  N  kind |  K   d   c | K/N    d/N   | exact
+   ----------------------------------------------------
+    4  4 DC   |  4   1   0 | 1.000  0.250  | yes
+    4  4 EA   |  2   2   2 | 0.500  0.500  | yes
+    4  8 DC   |  8   1   0 | 1.000  0.125  | yes
+    4  8 DC   |  4   2   0 | 0.500  0.250  | yes
+    4  8 EA   |  4   3   4 | 0.500  0.375  | yes
+    4  8 SO   |  4   2   0 | 0.500  0.250  | yes
+    4 12 DC   | 12   1   0 | 1.000  0.083  | yes
+    4 12 DC   |  8   2   0 | 0.667  0.167  | yes
+    4 12 EA   | 10   2   2 | 0.833  0.167  | yes
+    4 12 EA   |  4   4   4 | 0.333  0.333  | yes
+    4 12 EA   |  2   6  10 | 0.167  0.500  | yes
+    4 12 EA   |  2   5   6 | 0.167  0.417  | yes
+    4 12 EA   |  2   4   2 | 0.167  0.333  | yes
+    4 12 SO   |  8   2   0 | 0.667  0.167  | yes
+    4 16 DC   | 16   1   0 | 1.000  0.062  | yes
+    4 16 DC   | 12   2   0 | 0.750  0.125  | yes
+    4 16 DC   |  4   3   0 | 0.250  0.188  | yes
+    4 16 EA   |  8   3   4 | 0.500  0.188  | yes
+    4 16 EA   |  4   5   8 | 0.250  0.312  | yes
+    4 16 SO   | 12   2   0 | 0.750  0.125  | yes
+    4 16 SO   |  4   3   0 | 0.250  0.188  | yes
+    4 20 DC   | 20   1   0 | 1.000  0.050  | yes
+    4 20 DC   | 16   2   0 | 0.800  0.100  | yes
+    4 20 DC   |  4   4   0 | 0.200  0.200  | yes
+    4 20 EA   | 10   3   2 | 0.500  0.150  | yes
+    4 20 EA   |  6   5  14 | 0.300  0.250  | yes
+    4 20 EA   |  4   8  16 | 0.200  0.400  | yes
+    4 20 EA   |  4   6  12 | 0.200  0.300  | yes
+    4 20 EA   |  2  10  18 | 0.100  0.500  | yes
+    4 20 SO   | 16   2   0 | 0.800  0.100  | yes
+    4 20 SO   |  4   4   0 | 0.200  0.200  | yes
+    4 24 DC   | 24   1   0 | 1.000  0.042  | yes
+    4 24 DC   | 20   2   0 | 0.833  0.083  | yes
+    4 24 EA   |  4   9  20 | 0.167  0.375  | yes
+    8  4 DC   |  4   1   0 | 1.000  0.250  | yes
+    8  4 EA   |  2   2   2 | 0.500  0.500  | yes
+    8  8 DC   |  8   1   0 | 1.000  0.125  | yes
+    8  8 DC   |  4   2   0 | 0.500  0.250  | yes
+    8  8 EA   |  4   3   4 | 0.500  0.375  | yes
+    8  8 SO   |  4   2   0 | 0.500  0.250  | yes
+   ... (48 further non-dominated tuples omitted)
+
+
+(g) THE COSET SINGLETON BOUND, AND THE CRITERION OF O-6.1
+---------------------------------------------------------
+  The distance is the minimum weight of the QUOTIENT (coset) code
+  D^{perp_E} / Hull_E(D), which has dimension K = N - k - h_E and
+  length N: a nonzero coset of weight w is exactly a vector of
+  D^{perp_E} \ Hull_E(D) = D^{perp_E} \ D of weight w.  Puncturing
+  N - d + 1 coordinates must therefore be injective on that
+  quotient, whence
+          K + d <= N + 1        (COSET SINGLETON BOUND)
+  which is neither the EA Singleton bound nor implied by it.
+  [EXH] H1  every code of the search satisfies the coset Singleton bound K + d <= N + 1 (the distance is the minimum weight of the quotient code D^{perp_E}/Hull_E(D), of dimension K and length N, so puncturing N-d+1 coordinates is injective on it) PASS  [EXH] 5055 codes with a distance, 0 violations
+
+(h) THE FOUR PHASE-6 BASELINES, COMPARED (Task C)
+-------------------------------------------------
+  The Phase-6 constructions named in the Task-C brief, each one
+  (i) reproduced by the new search, and (ii) dominated or not, by
+  the rule of (f), inside its own alphabet.
+
+   baseline              | reproduced | status        | a dominator found in this search
+   ------------------------------------------------------------------------------------
+   [[16,4,3]]_4          | yes        | non-dominated | none
+   [[12,2,6;10]]_4       | yes        | non-dominated | none
+   [[16,4,5;8]]_4        | yes        | non-dominated | none
+   [[24,4,5;12]]_4       | no         | DOMINATED     | [[20,4,6;12]]_4
 
 ==============================================================================
 PART 5.  TASK D: NON-PRINCIPAL HULLS (O-6.4) AND THEIR STRUCTURE
@@ -628,13 +711,16 @@ COMPLETION REPORT FOR PHASE 7
   families scanned: 25 ; codes with computed invariants: 120721 ;
   codes with a computed distance: 5055 (of which 4418 exact and 637 a proved lower bound)
 
+  peak resident memory   : 367.3 MB
   SEED = 20261210 ; every random choice is drawn from random.Random(SEED)
   in a fixed order, so the run is reproducible: two runs of this
-  script produce byte-identical logs.
+  script agree on every line EXCEPT the per-family elapsed-time
+  annotations [..s] and the peak-memory line, which are wall-clock
+  and resource readings and take no part in any computation.
 
 ==============================================================================
 SUMMARY
 ==============================================================================
-  checks              : 17
-  PASS                : 17
+  checks              : 18
+  PASS                : 18
   FAIL                : 0

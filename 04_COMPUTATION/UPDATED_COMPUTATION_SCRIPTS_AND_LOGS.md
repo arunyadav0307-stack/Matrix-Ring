@@ -877,3 +877,73 @@ deleted rather than left in the file.
 The Phase 0–6 scripts and logs are unchanged by Phase 7 (89-file baseline,
 re-checked at the end of the phase).  Phase 7 never writes to any file other
 than its own log, and imports Phases 2C/3B/4/5/6 read-only.
+
+---
+
+## 18. Phase 7 (v2) — `phase7_extended_search.py`, Tasks A–H
+
+**Run:** `python3 phase7_extended_search.py` (≈517 s, `SEED = 20261210`, Python
+3.11.2, peak resident memory 367.3 MB).  Log:
+`phase7_extended_search_log.txt` (727 lines, **18 checks, 18 PASS, 0 FAIL**;
+script `682e2a36…d932a0`, 2020 lines).
+
+The v1 artefacts are preserved verbatim: `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`
+and `phase7_extended_search_log_v1.txt` (639 lines, 17 checks, 17 PASS, SHA-256
+`634a63d3…c35eb`).  **The search loop is unchanged**; v2 adds four reporting
+blocks and one new check, so every v1 number recurs bit for bit.
+
+### 18.1 What was added to the script
+
+* **Part 3(f)** the dominance frontier (T-231).  For complete parameter tuples,
+  `(N,K,d,c)` dominates `(N',K',d',c')` iff `N ≤ N'`, `K ≥ K'`, `d ≥ d'`,
+  `c ≤ c'` with at least one strict, compared inside one alphabet.  Result: 368
+  distinct tuples with a distance, **88 non-dominated**, 280 dominated.  The
+  first 40 non-dominated tuples are printed with `K/N` and `d/N` and an
+  exactness flag; the rest are counted.
+* **Part 3(g)** the coset Singleton bound (T-232) and check **H1** — the 18th
+  check, 0 violations on 5055 codes.  It is neither the EA Singleton bound nor
+  implied by it.
+* **Part 3(h)** the four Phase-6 baselines named in Task C
+  (`[[16,4,3]]_4`, `[[12,2,6;10]]_4`, `[[16,4,5;8]]_4`, `[[24,4,5;12]]_4`):
+  for each, whether the exact tuple occurs in the new search, and whether it is
+  dominated (with a dominator).  Three are reproduced and non-dominated;
+  `[[24,4,5;12]]_4` is dominated, because Phase 6 sampled `(4,2,3)` (300 codes,
+  `d = 5`) and the exhaustive enumeration of that family (35937 codes) gives
+  `d = 6`.
+* `import resource` and a `peak resident memory` line in the Part 9 completion
+  report; the reproducibility wording now also excludes that line.
+
+### 18.2 Reproducibility, measured
+
+Three consecutive runs of the final script (519.9 s, 527.8 s, 516.6 s) differ
+**only** in the per-family `[..s]` annotations; the peak-memory line read
+367.9 MB, 367.3 MB and 367.3 MB.  Every table, count, check verdict and
+parameter tuple is identical across the three.  The committed log is the
+516.6 s run, produced by the committed script (SHA-256 `682e2a36…d932a0`,
+2020 lines), so the committed log is byte-reproducible from the committed
+script up to those two lines.
+
+The v1 log is *not* byte-reproducible from the v1 script — the v1 script's
+reproducibility wording had been edited after that run — which is precisely why
+the v2 log was regenerated from the script as it now stands, and why a
+docstring touch-up after the v2 run was followed by a third run rather than
+left in place.
+
+### 18.3 New results (register rows T-230 … T-233)
+
+* **T-230 (PROVED)** for every route, `d = min wt(D^{⊥_E} \ Hull_E(D))` — the
+  minimum weight of the quotient (coset) code `D^{⊥_E}/Hull_E(D)`, of dimension
+  `K = N − k − h_E` and length `N`.  Hence `d ≥ 4` iff every vector of weight
+  `≤ 3` in `D^{⊥_E}` lies in `Hull_E(D)`.
+* **T-231** the non-dominated set above (COMPUTATIONALLY VERIFIED ONLY).
+* **T-232 (PROVED + `[EXH]`)** `K + d ≤ N + 1`.  Puncturing `N − d + 1`
+  coordinates is injective on the `q^K`-element quotient.  For
+  `[[20,2,10;18]]_4` it gives `K ≤ 11` where EA-Singleton allows `K ≤ 20`.
+* **T-233 (PROVED)** `d ≥ 4`, `c ≤ c_0`, `K ≥ K_0` ⟹ `2k ≤ N + c_0 − K_0`.
+
+### 18.4 Regression
+
+The Phase 0–6 scripts and logs are unchanged by Phase 7 (v1 and v2 alike;
+89-file baseline, re-checked at the end of the phase).  The v1 Phase-7
+deliverable and log are preserved rather than overwritten; the canonical log
+path now holds the v2 run.

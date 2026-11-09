@@ -659,3 +659,69 @@ only; no log overwritten; commits are normal fast-forwards on
 no journal-submission material has been produced; no further phase is begun
 without explicit approval.  Six open problems are carried forward: O-7.1 … O-7.6
 (the binding one is O-7.2: the component BFS blocks every `N = 32` family).
+
+---
+
+## D-029 — Phase 7 (v2): the full Task A–H specification, and the decision to report the non-dominated set rather than a single champion
+
+**Authorisation.**  The Phase-7 brief was re-issued in an expanded form
+(Tasks A–H) with a fixed deliverable filename,
+`03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md`.  This
+decision records how v2 relates to the v1 deliverable, and the three judgement
+calls that v2 adds on top of D-028.
+
+**1. v1 is preserved, not overwritten.**  `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`
+and the v1 log are kept verbatim in the repository — the log under the new name
+`04_COMPUTATION/phase7_extended_search_log_v1.txt` (SHA-256 `634a63d3…c35eb`,
+639 lines, 17 checks, 17 PASS), because the v2 run necessarily rewrites the
+canonical `phase7_extended_search_log.txt`.  Nothing in v1 is retracted; v2
+reproduces every v1 number bit for bit and adds to it.  The four additions to
+the script are **reporting and verification only** — (f) the dominance table,
+(g) the coset Singleton bound with check H1, (h) the four Phase-6 baselines —
+plus a `resource`-based peak-memory line; the search loop is untouched.
+
+**2. The optimisation deliverable is the non-dominated set, not one champion.**
+Task C asks for optimisation against four named baselines over
+`(N, K, d, K/N, d/N, c)`.  No tuple is best in all six coordinates, so
+reporting a single winner would be a choice the data does not support.  v2
+therefore computes the dominance frontier
+(`N ≤ N'`, `K ≥ K'`, `d ≥ d'`, `c ≤ c'`, one strict, inside one alphabet):
+368 distinct tuples with a distance, 88 non-dominated, 280 dominated.  A
+dominated tuple is never the right choice under any monotone weighting, so the
+frontier is the honest answer; §12.1 then ranks the frontier by *purpose*
+(largest distance / largest distance with bounded `c` / best stabilizer / best
+`d/N` / best rate / non-principal hull) instead of declaring a champion.
+
+**3. O-6.1 is answered by a *proof*, not only by a measurement.**  v1 measured
+the entanglement budget; v2 proves the criterion behind the question:
+T-230 (the distance is the minimum weight of the coset code
+`D^{⊥_E}/Hull_E(D)`, of dimension `K` and length `N`), T-232 (the resulting
+**coset Singleton bound** `K + d ≤ N + 1`, which is neither the EA Singleton
+bound nor implied by it — for `[[20,2,10;18]]_4` it gives `K ≤ 11` where
+EA-Singleton allows `K ≤ 20`) and T-233 (the feasibility inequality
+`2k ≤ N + c_0 − K_0`).  Check **H1** verifies T-232 exhaustively on all 5055
+codes (0 violations), which is the 18th check.
+
+**4. One baseline is reported as *not reproduced*, and that is a finding.**  Of
+the four Phase-6 baselines named in the brief, three are reproduced exactly and
+are non-dominated.  `[[24,4,5;12]]_4` is neither: Phase 6 obtained it at
+`(4,2,3)` from a 300-code **sample**, and v2 enumerates that family
+exhaustively (35937 codes) and finds `d = 6` there.  Phase 6's `5` was a
+sampled lower bound, not an optimum, so the correct statement is "improved by
+this phase", not "refuted" — and it is recorded that way, in §2.1, §6.3 and
+T-226, rather than being quietly re-derived.
+
+**Verification.**  18 checks, 18 PASS, 0 FAIL; 727-line log; ≈517 s; peak
+resident memory 367.3 MB.  Three consecutive runs of the final script (516.6 s,
+519.9 s, 527.8 s) agree on every line except the per-family `[..s]` annotations
+and the peak-memory line (367.3 MB, 367.9 MB, 367.3 MB); the committed log is
+the 516.6 s run, produced by the committed script (SHA-256
+`682e2a36…d932a0`, 2020 lines), so it is byte-reproducible from that script up
+to those two lines.
+Register grew by insertion only (+4 rows, T-230 … T-233, plus an annotation
+reconciling Phase 5's `µ_B = 4` with the Phase-3B hull census).
+
+**Stopping point.**  Phase 7 (v2) is complete as authorised.  No manuscript text
+and no journal-submission material has been produced; no further phase is begun
+without explicit approval.  Open problems carried forward: O-6.5, O-6.6 and
+O-7.1 … O-7.6.

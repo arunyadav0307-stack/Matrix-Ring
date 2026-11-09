@@ -6,7 +6,12 @@ EFFICIENCY, AND THE STRUCTURE OF THE ATTAINABLE FRONTIER
 ===========================================================================
 
 Independent computational corroboration of
-03_THEOREMS/PHASE7_EXTENDED_SEARCH.md
+03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md
+
+(The v1 deliverable 03_THEOREMS/PHASE7_EXTENDED_SEARCH.md and the v1 log,
+preserved as phase7_extended_search_log_v1.txt, are corroborated by the same
+script: the v2 run below reproduces every v1 number and adds Part 3(f)-(h)
+and check H1.)
 
 Built read-only on Phases 0-6.  Nothing in Phases 0-6 is modified: the whole
 of the new machinery lives in this file.  The quantum framework is the one
@@ -59,6 +64,7 @@ Labels: [EXH] exhaustive over the stated finite set, [SMP] seeded sample.
 """
 
 import sys, os, time, random, itertools
+import resource
 from math import comb as _comb
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -1168,6 +1174,105 @@ def part4_entanglement(all_rows, all_stats):
             % (tt, ",".join("(%d,%d)" % f for f in fams)[:21],
                max(stab) if stab else "no code",
                max(ea) if ea else "no code"))
+    # ---- (f) DOMINANCE: THE NON-DOMINATED CONSTRUCTIONS (Task C) --------
+    sub("(f) DOMINANCE: THE NON-DOMINATED CONSTRUCTIONS (Task C)")
+    say("  A search that optimises the distance alone hides the price it")
+    say("  pays in length, dimension and entanglement.  Dominance for")
+    say("  COMPLETE parameter tuples:  (N,K,d,c) dominates (N',K',d',c')")
+    say("  when   N <= N',  K >= K',  d >= d',  c <= c'   and at least one")
+    say("  of the four is strict.  Comparisons are made inside one alphabet")
+    say("  (a q=9 code does not dominate a q=4 code).  The non-dominated set")
+    say("  is the honest deliverable: a dominated tuple is never the right")
+    say("  choice, whatever weighting of N, K, d and c is preferred.")
+    rows = [r for r in all_rows if r["d"] is not None]
+    best = {}
+    for r in rows:
+        key = (r["q"], r["N"], r["K"], r["d"], r["c"], r["kind"])
+        if key not in best or (r["exact"] and not best[key]["exact"]):
+            best[key] = r
+    uniq = sorted(best.values(),
+                  key=lambda z: (z["q"], z["N"], z["kind"], -z["K"]))
+    nd = []
+    for r in uniq:
+        dom = None
+        for s in uniq:
+            if s is r or s["q"] != r["q"]:
+                continue
+            if (s["N"] <= r["N"] and s["K"] >= r["K"]
+                    and (s["d"] or 0) >= (r["d"] or 0) and s["c"] <= r["c"]
+                    and (s["N"] < r["N"] or s["K"] > r["K"]
+                         or (s["d"] or 0) > (r["d"] or 0) or s["c"] < r["c"])):
+                dom = s
+                break
+        if dom is None:
+            nd.append(r)
+    say("")
+    say("   tuples compared (distinct, with a distance): %d ; non-dominated:"
+        " %d ; dominated: %d" % (len(uniq), len(nd), len(uniq) - len(nd)))
+    say("")
+    say("    q  N  kind |  K   d   c | K/N    d/N   | exact")
+    say("   " + "-" * 52)
+    shown = 0
+    for r in nd:
+        say("   %2d %2d %-4s | %2d %3s %3d | %.3f  %.3f  | %s"
+            % (r["q"], r["N"], r["kind"], r["K"], r["d"], r["c"],
+               r["K"] / float(r["N"]), (r["d"] or 0) / float(r["N"]),
+               "yes" if r["exact"] else "lower bound"))
+        shown += 1
+        if shown >= 40:
+            say("   ... (%d further non-dominated tuples omitted)"
+                % (len(nd) - 40))
+            break
+    # ---- (g) THE COSET SINGLETON BOUND -----------------------------------
+    say("")
+    sub("(g) THE COSET SINGLETON BOUND, AND THE CRITERION OF O-6.1")
+    say("  The distance is the minimum weight of the QUOTIENT (coset) code")
+    say("  D^{perp_E} / Hull_E(D), which has dimension K = N - k - h_E and")
+    say("  length N: a nonzero coset of weight w is exactly a vector of")
+    say("  D^{perp_E} \\ Hull_E(D) = D^{perp_E} \\ D of weight w.  Puncturing")
+    say("  N - d + 1 coordinates must therefore be injective on that")
+    say("  quotient, whence")
+    say("          K + d <= N + 1        (COSET SINGLETON BOUND)")
+    say("  which is neither the EA Singleton bound nor implied by it.")
+    viol = [r for r in rows if r["K"] + (r["d"] or 0) > r["N"] + 1]
+    check("H1  every code of the search satisfies the coset Singleton bound "
+          "K + d <= N + 1 (the distance is the minimum weight of the "
+          "quotient code D^{perp_E}/Hull_E(D), of dimension K and length N, "
+          "so puncturing N-d+1 coordinates is injective on it)",
+          not viol,
+          "[EXH] %d codes with a distance, %d violations" % (len(rows),
+                                                             len(viol)))
+    # ---- (h) THE FOUR PHASE-6 BASELINES ----------------------------------
+    sub("(h) THE FOUR PHASE-6 BASELINES, COMPARED (Task C)")
+    say("  The Phase-6 constructions named in the Task-C brief, each one")
+    say("  (i) reproduced by the new search, and (ii) dominated or not, by")
+    say("  the rule of (f), inside its own alphabet.")
+    say("")
+    say("   baseline              | reproduced | status        | a dominator"
+        " found in this search")
+    say("   " + "-" * 84)
+    for (q, N, K, d, c) in [(4, 16, 4, 3, 0), (4, 12, 2, 6, 10),
+                            (4, 16, 4, 5, 8), (4, 24, 4, 5, 12)]:
+        same = [r for r in rows
+                if r["q"] == q and r["N"] == N and r["K"] == K
+                and r["d"] == d and r["c"] == c]
+        doms = [r for r in rows
+                if r["q"] == q and r["N"] <= N and r["K"] >= K
+                and (r["d"] or 0) >= d and r["c"] <= c
+                and (r["N"] < N or r["K"] > K or (r["d"] or 0) > d
+                     or r["c"] < c)]
+        tag = "[[%d,%d,%s%s]]_%d" % (N, K, d, (";%d" % c) if c else "", q)
+        if doms:
+            b = max(doms, key=lambda z: ((z["d"] or 0), z["K"], -z["c"],
+                                         -z["N"]))
+            domtxt = "[[%d,%d,%s%s]]_%d" % (
+                b["N"], b["K"], b["d"], (";%d" % b["c"]) if b["c"] else "", q)
+        else:
+            domtxt = "none"
+        say("   %-21s | %-10s | %-13s | %s"
+            % (tag, "yes" if same else "no",
+               "DOMINATED" if doms else "non-dominated", domtxt))
+
     return all_rows
 
 
@@ -1901,12 +2006,14 @@ def completion_report(all_rows, all_stats):
         % (len(all_rows), sum(1 for r in all_rows if r["exact"]),
            sum(1 for r in all_rows if not r["exact"])))
     say("")
+    say("  peak resident memory   : %.1f MB"
+        % (resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024.0))
     say("  SEED = %d ; every random choice is drawn from random.Random(SEED)"
         % SEED)
     say("  in a fixed order, so the run is reproducible: two runs of this")
     say("  script agree on every line EXCEPT the per-family elapsed-time")
-    say("  annotations [..s], which are wall-clock readings and take no")
-    say("  part in any computation.")
+    say("  annotations [..s] and the peak-memory line, which are wall-clock")
+    say("  and resource readings and take no part in any computation.")
 
 
 if __name__ == "__main__":
