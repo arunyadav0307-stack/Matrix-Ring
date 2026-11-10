@@ -174,10 +174,15 @@ is recorded per code, and no single code is certified by all three. Each
 headline code has its exact distance certified by exactly one of the two exact
 methods: M1 where the enumeration completes, and otherwise M2, which is run
 precisely when M1 cannot finish. Every headline code is additionally
-cross-checked by the ambient quantum search (M3), which for most codes yields
-a proved lower bound rather than an exact value (see
-Appendix~\ref{app:tables} and the supplementary certification data). No code
-is certified by all three.
+cross-checked by the ambient quantum search (M3), which runs for all $28$ codes.
+M3 searches in increasing symplectic weight from $1$, so a returned value is the
+true minimum and is an independent exact determination; this occurs for $11$ of
+the $28$ codes. For the remaining $17$ it finds no vector at or below the
+search weight and yields a proved lower bound only, consistent with the exact
+value from M1 or M2 (see Appendix~\ref{app:tables} and the supplementary
+certification data). No code is certified by all three, and the strength of the
+M3 cross-check is not uniform: it is exact for $11$ codes and a lower bound for
+$17$.
 
 \begin{description}
 \item[M1 --- complete enumeration.] Enumerate the relevant classical difference

@@ -1,0 +1,79 @@
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+
+We have given a complete and self-contained treatment of the chain
+\[
+  \begin{gathered}
+    \text{non-commutative matrix rings}
+    \;\longrightarrow\;
+    \text{cyclic codes}
+    \;\longrightarrow\;
+    \text{Galois duality and hulls}\\[3pt]
+    \longrightarrow\;
+    \text{Gray maps}
+    \;\longrightarrow\;
+    \text{quantum codes}.
+  \end{gathered}
+\]
+
+The algebraic core is that over $R=M_2(A_t)$ the Galois twist must be the
+anti-automorphism $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, so that the dual
+of a right ideal is a right ideal with the correct dimension
+(Theorems~\ref{thm:duality}, \ref{thm:dualformula}, \ref{lem:failure}). The hull
+theory is developed for arbitrary --- in particular non-principal --- right
+ideals, and the natural conjecture that Galois hulls are principal is false
+(Theorem~\ref{thm:nonprincipal}), with the phenomenon confined to $t\ge2$ and
+$p\mid n$.
+
+The coefficient expansion transports the Galois pairing to the form
+\[
+  u^{[s]}(I_{4n}\otimes H_t)v^{\mathsf T}
+\]
+(Theorem~\ref{thm:gram}); duality and hulls are transported exactly,
+non-principal hulls included; and the image of a Galois hull is
+self-orthogonal \emph{without} any reflexivity hypothesis
+(Theorem~\ref{thm:hullso}), which is what makes the whole chain work in the
+general Galois regime. A structural obstruction rules out the Euclidean
+coordinate change in characteristic two with $t$ even
+(Theorem~\ref{thm:obstruction}), and its hypotheses are exact.
+
+On the quantum side, three routes (R1--R3) are available, their parameters and
+distances are given with the hypotheses visible, and the distance is
+characterised as the minimum weight of a quotient code
+(Theorem~\ref{thm:cosetdistance}), yielding the coset Singleton bound
+$K+d\le\Nlen+1$ (Theorem~\ref{thm:cosetsingleton}). A feasibility inequality
+(Theorem~\ref{thm:feasibility}) describes the entanglement budget, and the
+measured frontier is reported (Proposition~\ref{prop:frontier},
+Table~\ref{tab:budget}).
+
+The best codes obtained are $[[24,8,4]]_9$ among stabilizer codes and
+$[[20,2,10;18]]_4$ and $[[24,2,10;18]]_9$ among entanglement-assisted codes.
+\textbf{No record parameter is claimed.} The stabilizer codes are one or two
+below the best known distances of \cite{GrasslCodetables}, and the
+entanglement-assisted codes cannot be compared at all, since no
+entanglement-assisted table exists. What is claimed is a new \emph{origin} for
+quantum codes: non-commutative Galois hulls, transported exactly, with
+non-principal hulls admitted and with two new bounds on the resulting
+parameters.
+
+\paragraph{Open problems.}
+(i) Determine the Galois hull \emph{dimension} distribution in the wild
+families, where the cyclic-code enumeration has resisted complete treatment for
+$15$ families.
+(ii) Find a closed or recursive description of the set of weights of the
+quotient code of Theorem~\ref{thm:cosetdistance} in terms of the CRT data of
+$C$.
+(iii) Prove or refute the two conjectures stated at the end of
+Section~\ref{sec:hulls}: $\Hull_s(C)\subseteq\sigma_{2s}(C)$, and
+$\dim\Hull_s(C)=\dim\Hull_s(C^{\perp_s})$.
+(vi) Decide the sharper form {\rm (O-3.1b)} of the refuted conjecture
+(Remark~\ref{rem:o31b}): every witness currently known is a code that is
+itself non-principal, so the question whether a \emph{principal} cyclic code
+can have a non-principal Galois hull in the wild regime is open.
+(iv) Determine whether the obstruction of Theorem~\ref{thm:obstruction} is the
+only one: we have not proved that a congruence exists for all $t$ odd in
+characteristic two, only that it exists for $t=1,3,5$ at $q=4,8$.
+(v) Extend the comparison to $q=8$ and to entanglement-assisted codes, neither
+of which is tabulated.

@@ -10,6 +10,48 @@ replace it: that package is the Phase 14 archive and is preserved unchanged.
 
 ---
 
+## Version 2.1 (Phase 16) — certification documentation alignment
+
+Phase 16 corrected the **supplementary** certification documentation and removed
+one residual inaccuracy in the manuscript. Nothing mathematical changed.
+
+* **New authoritative supplementary package: `PAPER/SUPPLEMENTARY_V2/`.**
+  `PAPER/supplementary/` is **preserved unchanged** as historical evidence; the
+  corrected package differs from it in exactly one file
+  (`CERTIFICATION_PROCEDURE.md`) out of 86. See `SUPPLEMENTARY.md`.
+* **The M3 cross-check is not uniform — now stated explicitly.** M3 scans
+  increasing symplectic weight and returns the first hit, so a returned value is
+  *exact*: this happens for **11** of the 28 codes. For the other **17** it finds
+  nothing below the search weight and yields a proved lower bound only.
+  Appendix A previously said "M3 is … rather than an exact method", which those
+  11 records contradict; both Appendix A and §8.5 now state the 11/17 split.
+* **Validator false positives resolved.** `tools/validate_latex_v2.py` reports
+  **13 PASS / 0 FAIL** with a 12-case self-test; the original
+  `tools/validate_latex.py` is preserved unchanged. See
+  `PHASE16_VALIDATOR_REVIEW.md`.
+* Full per-code reconstruction:
+  `corrected_appendix/PHASE16_28_CODE_APPLICABILITY_TABLE.csv` and
+  `corrections/PHASE16_RESEARCHER_DECISION_REPORT.md`.
+
+### Certification-method summary (all 28 codes, 0 discrepancies)
+
+| | M1 completes | M1 does not complete | total |
+|---|---|---|---|
+| codes | **24** | **4** | **28** |
+| exact-distance method | M1 | M2 | — |
+| M2 | conditionally skipped | run (exact) | — |
+| M3 | run | run | 28 |
+| **methods executed** | **M1 + M3** | **M2 + M3** | **2 per code** |
+
+**0 of 28 codes executed all three methods.** M3's cross-check is exact for 11
+codes and a lower bound for 17.
+
+---
+
+## What changed in Version 2
+
+---
+
 ## What changed in Version 2
 
 | ID | Correction | Where to look |
@@ -136,8 +178,8 @@ Expected: 85 entries, all `OK`.
 | duplicate labels | 0 (116 labels) |
 | pages | 42 |
 | page size | A4, 595.3 × 841.9 pt |
-| bytes | 579 531 |
-| **SHA-256** | `b619cf6cb0678ab15de54c5b61536840bdaf2951aa70292ffd741a2cd01859b7` |
+| bytes | 580 555 |
+| **SHA-256** | `9c23bd8cdb539f0ed53ef2ae949bd6db1326dfdccf7ebc70c2b395b965bb838a` |
 
 ---
 

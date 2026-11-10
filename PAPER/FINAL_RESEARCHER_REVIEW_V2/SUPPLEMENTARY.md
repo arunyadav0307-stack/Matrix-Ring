@@ -1,8 +1,16 @@
 # Supplementary data — reference (not duplicated here)
 
-The supplementary package is **not copied** into this review package. It lives in
-the repository at **`PAPER/supplementary/`** and is unchanged by Phase 15. This
-file records where each artefact is and how to verify it.
+There are **two** supplementary packages. Both are **not copied** into this
+review package; this file records where each is and how to verify it.
+
+| | path | role |
+|---|---|---|
+| **authoritative** | `PAPER/SUPPLEMENTARY_V2/` | corrected certification documentation (Phase 16). **Use this one.** |
+| historical | `PAPER/supplementary/` | preserved unchanged, as evidence of the earlier documentation state |
+
+They differ in **exactly one file out of 86** (`CERTIFICATION_PROCEDURE.md`);
+the other 85 are byte-for-byte identical. The historical package was created in
+Phase 15 and is unchanged by Phase 16.
 
 | Item | Location |
 |---|---|
@@ -40,16 +48,29 @@ Expected: 85 entries, all `OK`, 0 missing, 0 mismatches.
 * **Method definitions** — `PAPER/supplementary/CERTIFICATION_PROCEDURE.md`
   (M1/M2/M3 definitions; §5 re-certification commands).
 
-## Note on `CERTIFICATION_PROCEDURE.md`
+## Resolution in Phase 16
 
-`PAPER/supplementary/CERTIFICATION_PROCEDURE.md` §3 still contains the sentence
-*"Every headline code is certified by three structurally different methods."*
-This is **canonically wrong** for the same reason as CP-1. It was **not** edited,
-because it is part of the committed, hash-verified supplementary package that
-records what the computation actually did; silently rewriting it would break the
-`MANIFEST.sha256` verification above and would destroy the audit trail showing
-where the overclaim originated.
+Phase 15 flagged `CERTIFICATION_PROCEDURE.md` §3 (the sentence *"Every headline
+code is certified by three structurally different methods"*) as a known open
+documentation defect, left unfixed because the file sits inside the
+hash-verified historical package.
 
-**It is therefore a known open documentation defect** and is recorded as such.
-Correcting it is a one-line change that the researcher may authorise; doing so
-requires regenerating `MANIFEST.sha256`, which is why it was not done unilaterally.
+**Phase 16 resolved it without disturbing the historical package**, by the
+preserve-and-supersede route:
+
+* `PAPER/supplementary/` left **byte-for-byte unchanged**, manifest still 85/85.
+* `PAPER/SUPPLEMENTARY_V2/` created as a full copy, with
+  `CERTIFICATION_PROCEDURE.md` replaced and an append-only
+  `SUPPLEMENTARY_CORRECTION_NOTE.md` added.
+* New `SUPPLEMENTARY_V2/MANIFEST.sha256` — **86 entries, all verified**.
+
+Verify either package:
+
+```sh
+cd PAPER/supplementary     && sha256sum -c MANIFEST.sha256   # 85 entries, all OK
+cd PAPER/SUPPLEMENTARY_V2  && sha256sum -c MANIFEST.sha256   # 86 entries, all OK
+```
+
+The Phase 7 log line 478 (`[EXH] E1`) still carries the overclaim. It is a
+historical record of what the program printed and was **deliberately not
+rewritten**; the corrected documentation flags it as wrong.

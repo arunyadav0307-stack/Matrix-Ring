@@ -559,3 +559,114 @@ Deferred and still awaiting the researcher's separate decision: the
 generative-AI declaration (researcher says language-only vs records showing
 broader use), the data-availability statement (GitHub-only; supplementary data
 absent from `main`), and the licence (recommendation only; nothing applied).
+
+---
+
+## Phase 16 — Supplementary certification documentation correction, validator resolution and package reproducibility
+
+**Branch** `arena/59de606f-matrix-ring` · **Scope** certification documentation,
+validation tooling and package reproducibility only. No new mathematical
+research; no submission, no Elsevier upload, no release, no tag, no licence
+change.
+
+**Task A — method reconstruction (28 of 28, 0 discrepancies).** The
+certification logic was reconstructed from the committed source, not from
+summary descriptions. `phase7_extended_search.py::part6_certification`
+(lines 1670–1681) runs **M2 if and only if M1 did not complete**; M3 always
+runs. Every one of the 28 codes was checked against four independent sources —
+the source code, Part 6 of the Phase 7 log (lines 449–478),
+`parameter_tables/certified_codes.csv`, and the generator-matrix records — with
+**0 discrepancies**.
+
+| | M1 completes | M1 does not complete | total |
+|---|---|---|---|
+| codes | 24 | 4 | 28 |
+| exact-distance method | M1 | M2 | — |
+| M2 | conditionally skipped | run (exact) | — |
+| M3 | run | run | 28 |
+| methods executed | M1 + M3 | M2 + M3 | 2 per code |
+
+**0 of 28 codes executed all three methods.** M3's cross-check is exact for 11
+codes and a proved lower bound for 17. Applicability is **per code, not per
+route**: the four M2 codes are two SO, one DC and **one EA**
+(`[[24,6,4;18]]_9`), so "M2 is not applicable to the EA route" is false.
+Table: `PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_28_CODE_APPLICABILITY_TABLE.csv`.
+
+**Task B — `CERTIFICATION_PROCEDURE.md` corrected.** Its §3 asserted "Every
+headline code is certified by three structurally different methods", which is
+false. A **second, previously unrecorded defect** was also found in the same
+section: it claimed "agreement between them is a genuine cross-check", implying
+M1 and M2 both run — they never run on the same code. Both corrected. The
+rewritten section states what M1/M2/M3 do, quotes the conditional logic
+verbatim, explains that M2 is a **fallback for M1, not a third opinion**, gives
+which methods provide the exact distance and which provide cross-checks, adds a
+new section on how to determine the methods used for a particular code, and
+states explicitly that applicability is per code and not per route.
+
+**Task C — historical package preserved; new authoritative version created.**
+`PAPER/supplementary/` left **byte-for-byte unchanged** (manifest still 85/85).
+`PAPER/SUPPLEMENTARY_V2/` created as a full copy with **exactly one file
+replaced** (`CERTIFICATION_PROCEDURE.md`) plus an append-only
+`SUPPLEMENTARY_CORRECTION_NOTE.md`. The other **85 files are byte-identical**,
+verified by per-file SHA-256. New manifest: **86 entries, all verified**. The
+Phase 7 log line 478 (`[EXH] E1`), the origin of the overclaim, was deliberately
+**not** rewritten.
+
+**Task D — a genuine inconsistency found and fixed.** M3 scans increasing
+symplectic weight and returns the first hit, so a returned value is *exact*.
+Appendix A asserted the blanket claim "M3 is therefore a cross-check rather than
+an exact method", which **11 of the 28 records contradict**. Appendix A and
+§8.5 now state the split explicitly: M3 is an independent exact determination
+for 11 codes and a consistent proved lower bound for the other 17. The abstract
+("each by two applicable independent methods, one exact and one a cross-check")
+is accurate at the level of roles and was **left unchanged** at 235/250 words;
+the precise split is carried in §8.5 and Appendix A. **No distance value or
+quantum parameter changed** — all 34 parameter tuples in Appendix A are
+identical to Phase 15, and no data line was touched.
+
+**Task E — validator false positives resolved.** Both were diagnosed and both
+were fixable:
+* **V9** — `BUILTIN` is a hand-written closed whitelist, so format-provided
+  commands (`\penalty`, `\setcounter`, `\textsuperscript`) were reported
+  undefined. Fixed by adding `LATEX_KERNEL`, a bounded, named, auditable set of
+  93 TeX primitives and LaTeX kernel commands. No wildcards, no per-file
+  exemptions, no size-based suppression; everything else is still reported.
+* **V11** — the check was **stale**, asserting the obsolete
+  `\AUTHORPLACEHOLDER` regime and therefore firing on the researcher-confirmed
+  metadata installed in Phase 14. Fixed by testing **conformance to the
+  confirmed metadata** instead, which is **strictly stronger**: it now also
+  catches a wrong name, affiliation or e-mail.
+
+`tools/validate_latex_v2.py` was added, reporting **13 PASS / 0 FAIL**, with
+`--selftest` running **12 positive and negative cases, 0 failures**. The original
+`tools/validate_latex.py` is **preserved byte-for-byte** and still reports its
+historic 11/2, so no earlier report is invalidated. Two harness defects were
+found and fixed during this work (synthetic documents lacking `\documentclass`;
+and `main.tex` containing the string `\begin{document}` twice, once inside a
+comment, which truncated the preamble) — **neither affected the validator
+itself**.
+
+**Task F — final build.** `validate_latex_v2.py` **13/13 PASS**;
+`verify_examples.py` **56 checks, 0 mismatches**; four-pass TeX Live 2024 build
+with genuine `BibTeX 0.99d` / `plain.bst`: **0 errors, 0 undefined citations, 0
+undefined references, 0 overfull, 0 underfull, 0 missing glyphs, 0 duplicate
+labels, 42 pages**, 580 555 bytes,
+SHA-256 `9c23bd8cdb539f0ed53ef2ae949bd6db1326dfdccf7ebc70c2b395b965bb838a`.
+Appendix tables verified as **Table A.1 / A.2** with Tables 1–4 preserved;
+Example 13 verified on p. 33.
+
+**Deliverables.** `PHASE16_CERTIFICATION_DOCUMENTATION/` (8 files);
+`PAPER/SUPPLEMENTARY_V2/` (86 files + 86-entry manifest);
+`PAPER/tools/validate_latex_v2.py`; refreshed
+`PAPER/FINAL_RESEARCHER_REVIEW_V2/` (80-entry manifest, all verified).
+
+**Safeguards.** All Phase 0–15 files preserved; no computational log rewritten;
+no generator matrix, mathematical result, distance value or quantum parameter
+changed; no author metadata, funding or competing-interest declaration touched;
+the original 85-entry package not overwritten; historical validator outputs not
+deleted; all protected-file hashes verified before and after.
+
+**Stopping point.** Phase 16 is complete. No submission, no Elsevier upload, no
+cover letter, no repository release, no tag, no licence, no new research phase.
+Deferred items (generative-AI declaration, data availability, licence, four
+GitHub fixes) are carried forward with status unchanged.

@@ -15,10 +15,17 @@ a dash in the M1 column means M1 could not complete within its enumeration
 cap, in which case the support search M2 is run instead; ``n/a'' in the M2
 column means M2 was not run, because M1 had already finished and M2 is run
 only when M1 cannot. Thus exactly one of M1 and M2 carries the exact distance
-for each code. A ``$>2$'' entry means the ambient quantum search
-(M3) reached weight $2$ without finding a vector, i.e. it certifies $d\ge3$ as
-a \emph{lower} bound only; M3 is therefore a cross-check rather than an exact
-method. The column ``exact'' says yes when every method that completed agrees
+for each code. M3 runs for all $28$ codes and is read as follows. It searches
+in increasing symplectic weight from $1$, so a returned value is the true
+minimum: an entry $2$ or $3$ is therefore M3 \emph{independently determining}
+the distance exactly, and this happens for $11$ of the $28$ codes. A ``$>2$''
+(or ``$>3$'') entry means M3 reached weight $2$ (resp. $3$) without finding a
+vector, i.e. it certifies $d\ge3$ (resp. $d\ge4$) as a \emph{lower} bound
+only; this happens for the remaining $17$ codes. So the cross-check supplied by
+M3 is an exact independent determination for $11$ codes and a consistent proved
+lower bound for the other $17$ --- it is not uniform across the table, and the
+per-row entry, not a general rule, settles what M3 gave for a particular code.
+The column ``exact'' says yes when every method that completed agrees
 with the reported value, the stabilizer is $\F_p$-abelian, and $K$ and $c$
 recompute from $k$ and $h_E$.
 
