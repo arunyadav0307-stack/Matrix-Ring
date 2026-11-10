@@ -125,13 +125,22 @@ against the route identities, the CSV tables and a recomputed Singleton defect.
 **The one outstanding Phase 8A item is closed.** The manuscript has been
 rebuilt on a **current TeX Live with genuine BibTeX**, in an isolated copy, and
 the build is clean. Shipped as
-`MatrixRingManuscript_20261110_Phase8B.zip` — 44 entries, 696 599 B, SHA-256
-`468ab3861f2cf345a4d46eb34eda867cba859dc79d5201b359d967de122cbb1f` (sidecar `MatrixRingManuscript_20261110_Phase8B.zip.sha256`).
+`MatrixRingManuscript_20261110_Phase8B.zip` — 44 entries. **The archive's
+SHA-256 and size are in the sidecar
+`MatrixRingManuscript_20261110_Phase8B.zip.sha256`, deliberately outside the
+archive so that the hash is checkable against the file as shipped; quoting it
+here would change it.**
 
 **Clean rebuild verified.** The package was unpacked into an empty directory, a
 fresh TeX Live 2024 tree was bootstrapped from the packaged script, and the
 manuscript was rebuilt from `sources/`. The result is **byte-identical** to the
-shipped PDF (`69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd`); all 43 manifest entries verified.
+shipped PDF (`69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd`);
+all 43 manifest entries verified, 0 bad.
+
+Two earlier packagings of the same sources and scripts were verified the same
+way, with the same byte-identical result, and are superseded by this one: the
+first closed the build, the second added decision `D-1`. Their SHA-256 values
+are retained in the git history.
 
 ### 1. Tool chain
 
@@ -201,16 +210,45 @@ Recorded entry by entry in `compile/BUILD_CORRECTIONS.md` (append-only).
 sources.** No error appeared in the Phase 8A log for either: the manuscript was
 wrong on the page and the log did not say so.
 
-### 4. One open editorial decision
+### 4. The DOI question — DECIDED 2026-11-10: keep `plain`
 
 The Phase 8A PDF printed `doi:10.1016/…` for nine references. That was the
 pybtex substitute, not `plain.bst`: genuine BibTeX with the `plain` style that
 `main.tex` requests prints no DOI, and `FINAL_VALIDATION_REPORT.md` §5 already
 recorded this on 2026-11-09. The modern build therefore drops nine DOIs that
-appeared in the 8A PDF — the only Phase 8B change that removes information. It
-has been left alone rather than silently altered, because restoring the DOIs
-means departing from the declared bibliography style. See
-`FINAL_VALIDATION_REPORT.md` §0.7 for the two options.
+appeared in the 8A PDF — the only Phase 8B change that removes information.
+
+**Decision (author, 2026-11-10): keep `plain`.** Recorded as `D-1` in
+`compile/BUILD_CORRECTIONS.md` and in `FINAL_VALIDATION_REPORT.md` §0.7.
+
+1. `ibliographystyle{plain}` is retained. **No change made** — `main.tex:165`
+   is untouched by Phase 8B.
+2. No switch to `plainurl`, `plainnat` or any other DOI-aware style.
+3. `references.bib` is **unmodified** and byte-identical to the Phase 8A file;
+   all `doi` fields are preserved, so a journal style that prints them needs no
+   further editing.
+4. **DOI display is deferred to journal-specific formatting**: the target
+   venue's class or bibliography style governs how, and whether, DOIs appear.
+
+With this, Phase 8B has **no open items**.
+
+### 4b. Status
+
+**CLOSED 2026-11-10.** No open items.
+
+Final state:
+
+| | |
+|---|---|
+| corrections | 5 (C-1…C-5), none mathematical |
+| decisions | 1 (D-1: keep `plain`), **no file changed** |
+| modern PDF | 39 pages, 563 659 B, SHA-256 `69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd` |
+| final package | `MatrixRingManuscript_20261110_Phase8B.zip`, 44 entries — SHA-256 and size in its `.sha256` sidecar |
+| clean rebuild | **byte-identical**, 43/43 manifest entries verified |
+| validator / examples / inspection | 13/13 · 56/56 · 0 issues |
+
+Nothing further is authorised in this phase: no journal selection, no
+submission preparation, no further manuscript changes.
 
 ### 5. New files
 
@@ -225,7 +263,15 @@ means departing from the declared bibliography style. See
 
 `PAPER/build_modern/` is generated and is git-ignored.
 
-### 6. Not changed
+### 6. Decision register
+
+| # | decision | date | effect on the build |
+|---|---|---|---|
+| D-1 | keep `\bibliographystyle{plain}`; do not switch to a DOI-aware style; leave `references.bib` untouched; DOI display deferred to journal-specific formatting | 2026-11-10 | **none** — no file changed; the PDF SHA-256 is unchanged |
+
+Full text in `compile/BUILD_CORRECTIONS.md`.
+
+### 7. Not changed
 
 * No Phase 0–7 file was touched (94 files, verified byte-identical).
 * The Phase 8 archive `MatrixRingManuscript_20261109.zip`

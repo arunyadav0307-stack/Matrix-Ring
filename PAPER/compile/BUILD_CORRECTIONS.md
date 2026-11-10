@@ -342,3 +342,50 @@ and all four warnings are gone. No mathematics altered.
 `Warning` in any form (`LaTeX`, `Package`, `pdfTeX`, `Font`, `Class`). PDF:
 39 pages, 563 659 bytes, sha256
 `69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd`.
+
+---
+
+# DECISION REGISTER
+
+Decisions taken about the build that are **not** corrections: they change
+nothing, and are recorded so that the build can be reproduced without
+re-litigating them.
+
+## D-1 — bibliography style: keep `plain`; DOIs are not printed — **DECIDED 2026-11-10**
+
+**Context.** Genuine BibTeX with `plain.bst` — the style `main.tex` requests —
+prints no DOI. The Phase 8A PDF nevertheless showed `doi:10.1016/…` for nine of
+the thirteen references, because the pybtex substitute used in Phase 8A emitted
+a `\href{…}{doi:…}` block that `plain.bst` does not. The modern build therefore
+prints 9 fewer DOIs than the Phase 8A PDF. This was raised as the one open
+editorial question of Phase 8B (`FINAL_VALIDATION_REPORT.md` §0.7).
+
+**Decision (author, 2026-11-10).**
+
+1. Retain `\bibliographystyle{plain}`. **No change.**
+2. Do **not** switch to `plainurl`, `plainnat` or any other DOI-aware style.
+3. Leave `references.bib` and all of its DOI metadata **unmodified**.
+4. DOI display is **deferred to journal-specific formatting**: the target venue's
+   class or bibliography style governs how (and whether) DOIs appear.
+5. No change to mathematics, worked examples, references, or the frozen
+   Phase 0–7 files.
+
+**Consequences, stated plainly.**
+
+* The modern PDF's reference list shows **0 DOIs**; the Phase 8A PDF showed 9.
+  This is the only Phase 8B difference that removes information, and it is
+  retained deliberately.
+* The 13 entries, their order, and all bibliographic data are unchanged. The
+  `doi` fields remain in `references.bib`, so a journal style that prints them
+  will pick them up with no further editing.
+* The rest of the reference-list formatting difference from Phase 8A is
+  typographic only, and the modern rendering is the canonical `plain` one:
+  genuine `plain.bst` sets author names on the same line as the number and sets
+  journal titles in italic, where pybtex broke the line and used `\emph`.
+
+**Verification that the decision was implemented as stated.**
+`main.tex:165` is still `\bibliographystyle{plain}` (0 lines of `main.tex`
+touching the bibliography were changed in Phase 8B);
+`sha256(references.bib)` is identical to the Phase 8A file; the rebuilt PDF
+SHA-256 is unchanged at
+`69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd`.

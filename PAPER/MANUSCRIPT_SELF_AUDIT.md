@@ -252,16 +252,22 @@ source was modified.**
 hold `\textbf` or `\,`). The log now contains **zero** occurrences of the word
 `Warning`.
 
-**F-1. The bibliography no longer prints DOIs — OPEN, author's decision.**
+**F-1. The bibliography no longer prints DOIs — CLOSED 2026-11-10, decision:
+keep `plain`.**
 The 8A PDF printed `doi:10.1016/…` for nine references. That was the pybtex
 substitute, not `plain.bst`: genuine BibTeX with the `plain` style that
 `main.tex` requests prints no DOI, and §5 below already recorded on 2026-11-09
 that "the `plain` style prints no DOI". The modern build therefore drops nine
 DOIs present in the 8A PDF — the only Phase 8B change that *removes*
-information. It was left alone rather than silently altered, because restoring
-the DOIs means departing from the declared bibliography style. Options:
-keep `plain` (recommended, and what `main.tex` asks for), or move to a
-DOI-aware style such as `plainurl`. See `FINAL_VALIDATION_REPORT.md` §0.7.
+information. It was left alone pending a decision, because restoring the DOIs
+means departing from the declared bibliography style.
+
+**Decision (author, 2026-11-10): keep `plain`.** No change to `main.tex`, no
+change to `references.bib`; **DOI display is deferred to journal-specific
+formatting**, the target venue's style governing how and whether DOIs appear.
+The `doi` fields remain in `references.bib`, so a journal style that prints
+them needs no further editing. Recorded as decision `D-1` in
+`compile/BUILD_CORRECTIONS.md`; see also `FINAL_VALIDATION_REPORT.md` §0.7.
 
 *Also noted, not a defect.* The modern PDF's text layer writes `fi` as two
 characters where pdfTeX 1.40.11 wrote the single ligature glyph U+FB01; and it

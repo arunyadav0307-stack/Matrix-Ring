@@ -112,9 +112,9 @@ PDF printed DOIs that genuine `plain.bst` does not emit — they came from the
 pybtex substitute. The modern reference list is canonical `plain` and therefore
 has no DOIs; see `FINAL_VALIDATION_REPORT.md` §0.7.
 
-`MatrixRingManuscript_20261110_Phase8B.zip` (44 entries, 696 599 B,
-SHA-256 `468ab3861f2cf345a4d46eb34eda867cba859dc79d5201b359d967de122cbb1f`)
-rebuilds **byte-identically** from its own contents in a clean directory.
+`MatrixRingManuscript_20261110_Phase8B.zip` (44 entries; its SHA-256 and size
+are in the sidecar `.sha256` file, outside the archive) rebuilds
+**byte-identically** from its own contents in a clean directory.
 
 `python3 tools/validate_latex.py` performs 13 static structural checks and
 reports **13 PASS / 0 FAIL**; `python3 tools/check_log.py` analyses the modern

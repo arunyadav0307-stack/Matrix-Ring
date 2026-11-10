@@ -4,8 +4,10 @@
 fixed; two environment caveats left open.
 
 **Phase 8B, 2026-11-10.** Both caveats closed: the manuscript has been rebuilt
-on a current TeX Live with genuine BibTeX. **Status: every check passes; the
-build is clean and reproducible from committed sources.**
+on a current TeX Live with genuine BibTeX. **Status: CLOSED — every check
+passes, the build is byte-reproducible, and there are no open items.** The one
+editorial question (DOIs in the bibliography) was decided by the author on
+2026-11-10: keep `plain` (decision D-1, §0.7).
 
 This file is the record of *what was checked and what it returned*. §0 is
 Phase 8B; §§1–7 are the Phase 8A record, kept as written on 2026-11-09. The
@@ -55,7 +57,7 @@ provenance (`compile/build.sh`, `compile/fetch_texlive.sh`,
 | Final PDF | 563 659 B, 39 pages |
 | Final PDF SHA-256 | `69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd` |
 | Rebuild reproducibility | **byte-identical** across repeated runs |
-| Modern-build package | `MatrixRingManuscript_20261110_Phase8B.zip`, 44 entries, 696 599 B, SHA-256 `468ab3861f2cf345a4d46eb34eda867cba859dc79d5201b359d967de122cbb1f` |
+| Modern-build package | `MatrixRingManuscript_20261110_Phase8B.zip`, 44 entries — SHA-256 and size in its `.sha256` sidecar |
 
 ### 0.3 The three kinds of evidence, kept separate
 
@@ -188,7 +190,7 @@ A 63-occurrence `ϕ`/`φ` difference is **extraction-only, not visual**: the two
 glyphs sit at identical coordinates with identical advance widths, and the
 rendered pixels of the glyph are **byte-identical** at 1200 dpi.
 
-### 0.7 One open editorial decision: DOIs in the bibliography
+### 0.7 The DOI question — **CLOSED, decision: keep `plain`**
 
 The Phase 8A PDF printed `doi:10.1016/…` after nine of the thirteen references.
 That was **not** `plain.bst` behaviour: it was an artefact of the pybtex
@@ -200,14 +202,22 @@ substitute, which appends a `\href{…}{doi:…}` block. Genuine BibTeX with
 The modern build therefore **drops 9 DOIs** that appeared in the 8A PDF. This
 is a content difference, and it is the only one that removes information.
 
-It was left as-is rather than silently changed, because fixing it means
-departing from the declared bibliography style, which is the author's call:
+It was left as-is pending a decision, because changing it means departing from
+the declared bibliography style. **The author decided on 2026-11-10 to keep
+`plain`.** Recorded as `D-1` in `compile/BUILD_CORRECTIONS.md`:
 
-* **Keep as now (recommended for the declared style).** `plain` is what
-  `main.tex` asks for, and the DOIs are absent by design.
-* **Restore the DOIs.** Switch to a DOI-aware style (e.g. `plainurl` from
-  `urlbst`, or `natbib` + `plainnat`), which keeps `plain` ordering and adds
-  the DOI. This needs one new `.bst` and a one-line change to `main.tex`.
+1. Retain `\bibliographystyle{plain}`. **No change made.**
+2. Do not switch to `plainurl`, `plainnat` or any other DOI-aware style.
+3. `references.bib` and all of its DOI metadata are **unmodified** — verified
+   byte-identical to the Phase 8A file, so a journal style that prints DOIs
+   will pick them up with no further editing.
+4. **DOI display is deferred to journal-specific formatting**: the target
+   venue's class or bibliography style governs how, and whether, DOIs appear.
+
+Consequence, stated plainly: the modern PDF's reference list shows **0 DOIs**
+where the Phase 8A PDF showed 9. This is retained deliberately. The 13 entries,
+their order and all bibliographic data are unchanged; only the rendering of the
+DOI field differs.
 
 The remaining difference in the reference list is typographic only: genuine
 `plain.bst` sets the author names on the same line as the number and sets
