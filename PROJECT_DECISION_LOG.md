@@ -725,3 +725,123 @@ reconciling Phase 5's `µ_B = 4` with the Phase-3B hull census).
 and no journal-submission material has been produced; no further phase is begun
 without explicit approval.  Open problems carried forward: O-6.5, O-6.6 and
 O-7.1 … O-7.6.
+
+---
+
+## D-030 (2026-11-10) — Researcher decision: retain all existing GitHub materials publicly; no removal or privacy cleanup
+
+**DECISION: RETAIN ALL EXISTING GITHUB MATERIALS PUBLICLY. NO REMOVAL OR PRIVACY CLEANUP IS AUTHORIZED.**
+
+| # | Date | Phase | Decision | Rationale | Approver |
+|---|---|---|---|---|---|
+| **D-030** | 2026-11-10 | After Phase 23 — repository governance | All existing project materials remain on GitHub and publicly accessible. Nothing is removed, hidden, made private or rewritten. | Decision of the researcher. It overrides previous proposals to remove the uploaded patch or to hide internal project documentation. | **Researcher (Arun Kumar Yadav)** |
+
+**Source.**  Decided by the researcher on 2026-11-10, in the message headed
+"RESEARCHER DECISION — PRESERVE ALL GITHUB CONTENT PUBLICLY" (Arena session
+branch `arena/582e83ad-matrix-ring`; received at about 14:45 UTC).  The line in
+capitals above is the wording the researcher instructed this record to state,
+reproduced verbatim.  This entry records the decision.  It does not extend or
+qualify it.
+
+**Instructions given with the decision.**
+
+1. Keep the GitHub repository public.
+2. Preserve all existing files, including the uploaded patch.
+3. Preserve all Phase 0–23 research documents, audit reports, decision records
+   and historical packages.
+4. Preserve AI declaration discussions and unsent editorial correspondence.
+5. Preserve both `main` and the research branch.
+6. Do not delete any files.
+7. Do not rewrite Git history.
+8. Do not force-push.
+9. Do not change repository visibility.
+10. Do not delete branches, tags or commits.
+11. Do not remove the public `research-data` directory.
+12. Do not merge the local session branch into `main` without separate approval.
+
+The current repository state is to be preserved, and future work is to continue
+without deleting or hiding historical materials.
+
+**What the decision overrides.**  Previous proposals to remove the uploaded
+patch or to hide internal project documentation.  The proposal known to this
+record is the Arena agent's own: its first report in this session, earlier on
+2026-11-10, recommended taking `01a1a47c-f51d-7d7c-810c-207359de606f.patch` off
+`main` (by deleting it through the GitHub web interface, or by returning `main`
+to `3752a6c`).  **That recommendation is withdrawn and is not to be acted on.**
+The patch stays on `main`.  Any other proposal to the same effect, from whatever
+source, is overridden in the same way.
+
+**What the decision does not authorise.**  Journal submission, licence
+application, DOI creation, or any other external publication action beyond the
+GitHub content already approved.  Under instruction 12 it also does not
+authorise merging the session branch into `main`.
+
+**Effect on earlier records.**  None of them is edited.
+
+* `PHASE22_GITHUB_DATA_PUBLICATION/PHASE22_GITHUB_PUBLICATION_REPORT.md` §3
+  lists what was "deliberately NOT brought onto `main`" when `research-data/`
+  was published at `3752a6c`.  Since `b0c5fa7`, the upload of the patch, `main`
+  also carries much of that material as diff text inside the patch — for
+  example `PHASE13_FINAL_INTEGRATION/PHASE13_AI_DECLARATION_RECONCILIATION.md`,
+  `PHASE12_FFA_SUBMISSION_PREP/PHASE12_CONFIRMATION_REGISTER.md`,
+  `PHASE17_RESEARCHER_DECISION/PHASE17_RESEARCHER_DECISION_SHEET.md`, and the
+  unsent editorial email in Appendix E of
+  `PHASE23_FFA_FINALIZATION/PHASE23_FFA_OPTION_C_COMPLIANCE.md`.  By this
+  decision that state is accepted and retained.  The Phase 22 report stays as
+  written; it remains the record of `main` at `3752a6c`.
+* The Phase 22 rule against bringing the research branch onto `main` is **not**
+  lifted.  Instruction 12 keeps any merge into `main` subject to separate
+  approval.
+* The sixteen decisions in
+  `PHASE23_FFA_FINALIZATION/PHASE23_RESEARCHER_DECISION_SHEET.md` are **still
+  pending**.  This decision answers none of them; in particular it is not an
+  answer to decision 1 (generative-AI declaration), 10 (editorial email),
+  13a–e (licence) or 16 (DOI deposit).
+* Noted for the researcher, not decided here: one option under decision 12 is
+  to remove `research-data/quantum_code_records/comparison_grassl_q9.csv` from
+  the deposit.  That option would delete a published file, which instruction 6
+  forbids, so choosing it would need the researcher's separate and explicit
+  approval.
+* The Phase 23 documents state that `main` is at `3752a6c`.  That was the state
+  before the patch was uploaded; `main` is now at `b0c5fa7`.  The commit-pinned
+  data link used in the manuscript
+  (`…/tree/3752a6c0e921ab21a6f78877f154e7e959f4c418/research-data`) still
+  resolves and is unaffected.
+
+**Repository state at the time of the decision.**  Checked against GitHub on
+2026-11-10 at 14:50 UTC (authenticated API) and at 14:56 UTC (anonymously, with
+no credentials); the two checks agree.
+
+| item | state |
+|---|---|
+| repository | `https://github.com/arunyadav0307-stack/Matrix-Ring` |
+| visibility | **public**; not archived |
+| default branch | `main` |
+| `main` | `b0c5fa78c0c860487565c2c93662b6f72942e168` — 4 commits, 91 files: `README.md`, `Matrix Ring.zip`, `research-data/` (88 files) and the patch |
+| research branch `arena/59de606f-matrix-ring` | `a55e8e6e87cdf8cc8e0e33b2b3433d3044ec8fb0` — 51 commits, 1371 files (Phases 0–23) |
+| uploaded patch | `01a1a47c-f51d-7d7c-810c-207359de606f.patch`, on `main` only, added by `b0c5fa7`; 21,271,473 bytes; SHA-256 `342d1acec7c25b788e335c854f084788df7da96e75b205b7eca406efd5f57271` |
+| `research-data/` | 88 files on `main`, identical on the research branch; all 87 entries of `PUBLICATION_MANIFEST.sha256` verify |
+| tags / releases / pull requests | 0 / 0 / 0 |
+| licence | none |
+| branch protection | none on either branch |
+| session branch `arena/582e83ad-matrix-ring` | not on GitHub; it exists only in the Arena session workspace |
+
+**Action taken on GitHub: none.**  Nothing was deleted, moved, renamed,
+rewritten, pushed, force-pushed, merged, tagged, released or licensed, and no
+repository setting was changed.  The only change made on this decision is this
+entry, appended to this log on the session branch, which is local to the Arena
+workspace.
+
+**Note on this log.**  The previous entry, D-029, dates from Phase 7 (v2).
+Decisions taken in Phases 8–23 were recorded in the phase documents — among
+them the decision register in `PAPER/compile/BUILD_CORRECTIONS.md`,
+`PHASE12_FFA_SUBMISSION_PREP/PHASE12_CONFIRMATION_REGISTER.md`,
+`PHASE17_RESEARCHER_DECISION/PHASE17_RESEARCHER_DECISION_SHEET.md`,
+`PHASE18_ABSTRACT_OPTION_B_IMPLEMENTATION.md` and
+`PHASE23_FFA_FINALIZATION/PHASE23_RESEARCHER_DECISION_SHEET.md` — and are not
+back-filled here.  This entry was appended; every earlier line of the log is
+unchanged (its first 55,081 bytes still have SHA-256
+`1781f227396405e85281e1551bfd1ca2c4e102dd1043bae161396fa2defec63f`).
+
+**Stopping point.**  The decision is recorded and work has stopped, as
+instructed.  Nothing further is begun without explicit approval.
