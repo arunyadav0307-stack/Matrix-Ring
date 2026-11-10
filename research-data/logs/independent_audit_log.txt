@@ -1,0 +1,139 @@
+==============================================================================
+INDEPENDENT AUDIT CHECKS  (standalone implementation, no matrix_ring_lib)
+run: 2026-11-04 08:08:33   python: 3.11
+==============================================================================
+
+==============================================================================
+A.  sigma_s and theta_s
+==============================================================================
+
+q = 4 (p=2, r=2): |M_2(F_q)| = 256
+   sigma_1 : additive=True multiplicative=True  [EXHAUSTIVE over all 256^2 pairs]
+              nontrivial=True  witness ((0,), (0,), (0,), (2,)) -> ((0,), (0,), (0,), (3,))
+   theta_1 : anti-multiplicative=True  [EXHAUSTIVE over all 256^2 pairs]
+              theta^2 = sigma_{2s} on all 256 elements: True ; sigma_{2s}=id (r|2s): True
+
+q = 8 (p=2, r=3): |M_2(F_q)| = 4096
+   sigma_1 : additive=True multiplicative=True  [4000 random pairs (sampled)]
+              nontrivial=True  witness ((0,), (0,), (0,), (2,)) -> ((0,), (0,), (0,), (4,))
+   theta_1 : anti-multiplicative=True  [4000 random pairs (sampled)]
+              theta^2 = sigma_{2s} on all 4096 elements: True ; sigma_{2s}=id (r|2s): False
+   sigma_2 : additive=True multiplicative=True  [4000 random pairs (sampled)]
+              nontrivial=True  witness ((0,), (0,), (0,), (2,)) -> ((0,), (0,), (0,), (7,))
+   theta_2 : anti-multiplicative=True  [4000 random pairs (sampled)]
+              theta^2 = sigma_{2s} on all 4096 elements: True ; sigma_{2s}=id (r|2s): False
+
+q = 9 (p=3, r=2): |M_2(F_q)| = 6561
+   sigma_1 : additive=True multiplicative=True  [4000 random pairs (sampled)]
+              nontrivial=True  witness ((0,), (0,), (0,), (3,)) -> ((0,), (0,), (0,), (7,))
+   theta_1 : anti-multiplicative=True  [4000 random pairs (sampled)]
+              theta^2 = sigma_{2s} on all 6561 elements: True ; sigma_{2s}=id (r|2s): True
+
+==============================================================================
+B.  Lambda and pairing non-degeneracy (Gram rank, own elimination)
+==============================================================================
+   q=4 t=1 m=2 : Gram rank of (X,Y)->Lambda(XY) = 4 / 4
+      n=1 s=1 : Gram rank of Lambda(<x,y>_s) = 4 / 4  (non-degenerate: True)
+      n=2 s=1 : Gram rank of Lambda(<x,y>_s) = 8 / 8  (non-degenerate: True)
+      n=3 s=1 : Gram rank of Lambda(<x,y>_s) = 12 / 12  (non-degenerate: True)
+   q=8 t=1 m=2 : Gram rank of (X,Y)->Lambda(XY) = 4 / 4
+      n=1 s=1 : Gram rank of Lambda(<x,y>_s) = 4 / 4  (non-degenerate: True)
+      n=1 s=2 : Gram rank of Lambda(<x,y>_s) = 4 / 4  (non-degenerate: True)
+      n=2 s=1 : Gram rank of Lambda(<x,y>_s) = 8 / 8  (non-degenerate: True)
+      n=2 s=2 : Gram rank of Lambda(<x,y>_s) = 8 / 8  (non-degenerate: True)
+      n=3 s=1 : Gram rank of Lambda(<x,y>_s) = 12 / 12  (non-degenerate: True)
+      n=3 s=2 : Gram rank of Lambda(<x,y>_s) = 12 / 12  (non-degenerate: True)
+   q=9 t=1 m=2 : Gram rank of (X,Y)->Lambda(XY) = 4 / 4
+      n=1 s=1 : Gram rank of Lambda(<x,y>_s) = 4 / 4  (non-degenerate: True)
+      n=2 s=1 : Gram rank of Lambda(<x,y>_s) = 8 / 8  (non-degenerate: True)
+      n=3 s=1 : Gram rank of Lambda(<x,y>_s) = 12 / 12  (non-degenerate: True)
+   q=4 t=2 m=2 : Gram rank of (X,Y)->Lambda(XY) = 8 / 8
+      n=1 s=1 : Gram rank of Lambda(<x,y>_s) = 8 / 8  (non-degenerate: True)
+      n=2 s=1 : Gram rank of Lambda(<x,y>_s) = 16 / 16  (non-degenerate: True)
+      n=3 s=1 : Gram rank of Lambda(<x,y>_s) = 24 / 24  (non-degenerate: True)
+
+==============================================================================
+C.  INDEPENDENT enumeration of the cyclic codes
+==============================================================================
+
+-- C1: right ideals of M_2(F_q), found by brute-force subspace filtering --
+   (prediction from Morita: q + 3  =  1 + (q+1) + 1)
+   q= 2 : 67 subspaces scanned, 5 right ideals (predicted 5) OK ; dims [(0, 1), (2, 3), (4, 1)]
+   q= 4 : 529 subspaces scanned, 7 right ideals (predicted 7) OK ; dims [(0, 1), (2, 5), (4, 1)]
+   q= 8 : 5917 subspaces scanned, 11 right ideals (predicted 11) OK ; dims [(0, 1), (2, 9), (4, 1)]
+   q= 9 : 9104 subspaces scanned, 12 right ideals (predicted 12) OK ; dims [(0, 1), (2, 10), (4, 1)]
+
+-- C2: t = 2, submodules of A^2 over A = F_q[u]/<u^2> (brute force) --
+   q=4 t=2 m=2 : 33 A-submodules of A^2 (dims [(0, 1), (1, 5), (2, 21), (3, 5), (4, 1)])
+
+-- C3: q=2, n=3 -- DIRECT SCAN of all |R^n| = 4096 vectors --
+   #cyclic codes (right ideals) found by direct scan : 35
+
+-- C4/C5/C6: B-submodules of B^2, B = F_q[X]/<X^n-1> (BFS, no counting formula) --
+   q=4 n=3 : 343 submodules (predicted 343) OK   [squarefree (gcd(n,p)=1)]
+   q=9 n=2 : 144 submodules (predicted 144) OK   [squarefree (gcd(n,p)=1)]
+   q=4 n=2 : 33 submodules   [NOT squarefree: X^2-1=(X+1)^2]
+      naive 'product of subspace counts' formula would give 49  ->  the squarefree hypothesis is ESSENTIAL (33 != 49)
+
+==============================================================================
+D.  duality / hull / reflexivity on the independently enumerated codes
+==============================================================================
+
+-- D1: n = 1, codes from the brute-force enumeration (C1) --
+   prediction: #reflexive = 2 + (p^g + 1) with g = gcd(r, 2s)
+   q=4, n=1, s=1 : 7 codes
+      codes 7 | right module 7 | size formula 7 | dual right 7 | hull right 7
+      double dual = sigma_{2s}(C) : 7/7
+      REFLEXIVE (C^perp)^perp = C : 7/7
+      plain product size formula : 2/7
+   q=8, n=1, s=1 : 11 codes
+      codes 11 | right module 11 | size formula 11 | dual right 11 | hull right 11
+      double dual = sigma_{2s}(C) : 11/11
+      REFLEXIVE (C^perp)^perp = C : 5/11
+      plain product size formula : 2/11
+   q=8, n=1, s=2 : 11 codes
+      codes 11 | right module 11 | size formula 11 | dual right 11 | hull right 11
+      double dual = sigma_{2s}(C) : 11/11
+      REFLEXIVE (C^perp)^perp = C : 5/11
+      plain product size formula : 2/11
+   q=9, n=1, s=1 : 12 codes
+      codes 12 | right module 12 | size formula 12 | dual right 12 | hull right 12
+      double dual = sigma_{2s}(C) : 12/12
+      REFLEXIVE (C^perp)^perp = C : 12/12
+      plain product size formula : 2/12
+
+-- D2: t = 2 (q=4), codes from C2 --
+   q=4, t=2, n=1, s=1 : 33 codes
+      codes 33 | right module 33 | size formula 33 | dual right 33 | hull right 33
+      double dual = sigma_{2s}(C) : 33/33
+      REFLEXIVE (C^perp)^perp = C : 33/33
+      plain product size formula : 3/33
+
+-- D3: q=2, n=3, s=0 (validation only; sigma_0 = id) --
+   q=2, n=3, s=0 : 35 codes (direct scan)
+      codes 35 | right module 35 | size formula 35 | dual right 35 | hull right 35
+      double dual = sigma_{2s}(C) : 35/35
+      REFLEXIVE (C^perp)^perp = C : 35/35
+      plain product size formula : 4/35
+
+==============================================================================
+E.  predictions vs observations
+==============================================================================
+   q=2: #right ideals of M_2(F_q)                          predicted 5        observed 5        OK
+   q=4: #right ideals of M_2(F_q)                          predicted 7        observed 7        OK
+   q=8: #right ideals of M_2(F_q)                          predicted 11       observed 11       OK
+   q=9: #right ideals of M_2(F_q)                          predicted 12       observed 12       OK
+   q=4,t=2: #A-submodules of A^2 (= #right ideals of M_2(A)) predicted 33       observed 33       OK
+   q=2,n=3: #cyclic codes (direct scan)                    predicted 35       observed 35       OK
+   q=4,n=3: #B-submodules of B^2                           predicted 343      observed 343      OK
+   q=9,n=2: #B-submodules of B^2                           predicted 144      observed 144      OK
+   q=4,n=2: #B-submodules (non-squarefree)                 predicted 33       observed 33       OK
+   q=4,n=1,s=1: #reflexive                                 predicted 7        observed 7        OK
+   q=8,n=1,s=1: #reflexive                                 predicted 5        observed 5        OK
+   q=8,n=1,s=2: #reflexive                                 predicted 5        observed 5        OK
+   q=9,n=1,s=1: #reflexive                                 predicted 12       observed 12       OK
+   q=4,t=2,n=1: #reflexive (= all, r|2s)                   predicted 33       observed 33       OK
+
+   ALL PREDICTIONS CONFIRMED: True
+
+   [elapsed 12.0 s]
