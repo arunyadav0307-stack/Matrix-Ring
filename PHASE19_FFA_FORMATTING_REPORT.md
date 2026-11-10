@@ -156,7 +156,7 @@ results are programmatic.
 
 ## 7. Task G — package
 
-`PAPER/FFA_FORMATTED_SUBMISSION/`: `main.tex`, 13 section/appendix files,
+`PAPER/FFA_FORMATTED_SUBMISSION/`: `main.tex`, **12** section/appendix files,
 `references.bib`, compiled `main.pdf`, `COVER_LETTER_DRAFT.md`,
 `FINAL_SUBMISSION_CHECKLIST.md`, `FFA_GUIDELINE_VERIFICATION.md`,
 `FORMATTING_CHANGE_RECORD.md`, `main.log`, `SHA256_MANIFEST.txt`, `README.md`,

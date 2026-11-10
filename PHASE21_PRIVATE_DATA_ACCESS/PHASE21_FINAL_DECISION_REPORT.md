@@ -112,7 +112,7 @@ been granted.
 
 * **Canonical manuscript not modified.** No final statement inserted.
 * **Staging copy prepared** at `PHASE21_PRIVATE_DATA_ACCESS/staging/`: one
-  change only — the Data availability block. All 13 section files
+  change only — the Data availability block. All **12** section files
   byte-identical to the FFA copy. Built clean: 0 errors, 0 undefined citations
   or references, 0 missing glyphs, 0 overfull boxes, 42 pages, PDF SHA-256
   `7fd0896a2e715afd050f1fb1c84f00423d6b3bf64a51f93a007b4bbd37626ae3`.

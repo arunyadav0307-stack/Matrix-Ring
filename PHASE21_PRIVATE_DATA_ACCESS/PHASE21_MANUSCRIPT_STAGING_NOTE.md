@@ -53,7 +53,7 @@ in the staging copy only (§3).
 | base | `PAPER/FFA_FORMATTED_SUBMISSION/` (the FFA-formatted copy, Phase 19) |
 | files | `main.tex`, `sections/` (13 files), `references.bib`, `compile/` |
 | change | **one** — the `\section*{Data availability}` block in `main.tex` |
-| source diff vs the FFA copy | `main.tex` only; all 13 section files byte-identical |
+| source diff vs the FFA copy | `main.tex` only; all **12** section files byte-identical |
 | compiled | `staging/build/main.pdf`, 42 pages, 580,540 bytes |
 | PDF SHA-256 | `7fd0896a2e715afd050f1fb1c84f00423d6b3bf64a51f93a007b4bbd37626ae3` |
 
@@ -148,7 +148,7 @@ staged manuscript:
 
 **77 baseline hashes** were recorded before this phase. After all Phase 21
 work, **all 77 are unchanged** — including `PAPER/main.tex`,
-`PAPER/main.pdf`, all 13 section files, both supplementary manifests, the three
+`PAPER/main.pdf`, all **12** section files, both supplementary manifests, the three
 archive zips, and every Phase 10, 13, 17, 19 document and manifest.
 
 ## 7. What the researcher must do next

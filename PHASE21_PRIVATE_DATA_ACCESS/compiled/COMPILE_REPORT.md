@@ -30,7 +30,7 @@ proposed private-access statement.
 
 The staging sources were **not modified**. The build toolchain copies the
 sources into the build directory and compiles there, so
-`staging/main.tex`, `staging/references.bib` and the 13 files in
+`staging/main.tex`, `staging/references.bib` and the **12** files in
 `staging/sections/` are untouched — verified by hash before and after
 (25 files, **0 changed**).
 
