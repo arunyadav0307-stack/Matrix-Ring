@@ -1,0 +1,113 @@
+% =====================================================================
+\appendix
+\section{Certification table and comparison data}
+\label{app:tables}
+% =====================================================================
+
+\subsection{The certification table}
+
+Table~\ref{tab:cert} is the complete output of the certification stage: all
+$28$ certified codes, reproduced verbatim from the computation log
+(\filepath{04_COMPUTATION/phase7_extended_search_log.txt}, Part~6). The
+columns M1, M2, M3 record the three independent distance methods of
+Section~\ref{sec:cert}. At most two of the three are run for any one code:
+a dash in the M1 column means M1 could not complete within its enumeration
+cap, in which case the support search M2 is run instead; ``n/a'' in the M2
+column means M2 was not run, because M1 had already finished and M2 is run
+only when M1 cannot. Thus exactly one of M1 and M2 carries the exact distance
+for each code. A ``$>2$'' entry means the ambient quantum search
+(M3) reached weight $2$ without finding a vector, i.e. it certifies $d\ge3$ as
+a \emph{lower} bound only; M3 is therefore a cross-check rather than an exact
+method. The column ``exact'' says yes when every method that completed agrees
+with the reported value, the stabilizer is $\F_p$-abelian, and $K$ and $c$
+recompute from $k$ and $h_E$.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{All $28$ certified codes (Part~6 of the Phase-7 log, verbatim).
+$S$-def is the entanglement-assisted Singleton defect $N-K+c-2(d-1)$.}
+\label{tab:cert}
+\begin{tabular}{@{}llcrrrrrl@{}}
+\toprule
+code & family & route & $k$ & $K$ & $d$ & $c$
+ & $S$-def & M1 / M2 / M3\\
+\midrule
+$[[24,8,4]]_9$   & $(9,1,6)$ & SO & 8  & 8  & 4  & 0  & 10 & -- / 4 / $>2$\\
+$[[20,4,4]]_4$   & $(4,1,5)$ & SO & 8  & 4  & 4  & 0  & 10 & -- / 4 / $>2$\\
+$[[20,4,4]]_4$   & $(4,1,5)$ & DC & 12 & 4  & 4  & 0  & 10 & -- / 4 / $>2$\\
+$[[20,2,10;18]]_4$ & $(4,1,5)$ & EA & 18 & 2  & 10 & 18 & 18 & 10 / n/a / $>2$\\
+$[[24,2,10;18]]_9$ & $(9,1,6)$ & EA & 20 & 2  & 10 & 18 & 22 & 10 / n/a / $>2$\\
+$[[4,2,2;2]]_4$  & $(4,1,1)$ & EA & 2  & 2  & 2  & 2  & 2  & 2 / n/a / 2\\
+$[[8,4,3;4]]_4$  & $(4,1,2)$ & EA & 4  & 4  & 3  & 4  & 4  & 3 / n/a / 3\\
+$[[12,2,6;10]]_4$ & $(4,1,3)$ & EA & 10 & 2  & 6  & 10 & 10 & 6 / n/a / $>2$\\
+$[[16,4,5;8]]_4$ & $(4,1,4)$ & EA & 10 & 4  & 5  & 8  & 12 & 5 / n/a / $>2$\\
+$[[24,4,9;20]]_4$ & $(4,1,6)$ & EA & 20 & 4  & 9  & 20 & 24 & 9 / n/a / $>2$\\
+$[[8,4,2;4]]_4$  & $(4,2,1)$ & EA & 4  & 4  & 2  & 4  & 6  & 2 / n/a / 2\\
+$[[16,4,4;12]]_4$ & $(4,2,2)$ & EA & 12 & 4  & 4  & 12 & 18 & 4 / n/a / $>2$\\
+$[[24,4,6;20]]_4$ & $(4,2,3)$ & EA & 20 & 4  & 6  & 20 & 30 & 6 / n/a / $>2$\\
+$[[12,6,2;6]]_4$ & $(4,3,1)$ & EA & 6  & 6  & 2  & 6  & 10 & 2 / n/a / 2\\
+$[[16,6,2;10]]_4$ & $(4,4,1)$ & EA & 10 & 6  & 2  & 10 & 18 & 2 / n/a / 2\\
+$[[4,2,2;2]]_8$  & $(8,1,1)$ & EA & 2  & 2  & 2  & 2  & 2  & 2 / n/a / 2\\
+$[[8,4,3;4]]_8$  & $(8,1,2)$ & EA & 4  & 4  & 3  & 4  & 4  & 3 / n/a / 3\\
+$[[12,2,6;10]]_8$ & $(8,1,3)$ & EA & 10 & 2  & 6  & 10 & 10 & 6 / n/a / $>2$\\
+$[[12,4,2;8]]_8$ & $(8,3,1)$ & EA & 8  & 4  & 2  & 8  & 14 & 2 / n/a / 2\\
+$[[4,2,2;2]]_9$  & $(9,1,1)$ & EA & 2  & 2  & 2  & 2  & 2  & 2 / n/a / 2\\
+$[[8,2,4;6]]_9$  & $(9,1,2)$ & EA & 6  & 2  & 4  & 6  & 6  & 4 / n/a / $>3$\\
+$[[12,2,5;6]]_9$ & $(9,1,3)$ & EA & 8  & 2  & 5  & 6  & 8  & 5 / n/a / $>2$\\
+$[[16,2,8;14]]_9$ & $(9,1,4)$ & EA & 14 & 2  & 8  & 14 & 14 & 8 / n/a / $>2$\\
+$[[20,4,9;16]]_9$ & $(9,1,5)$ & EA & 16 & 4  & 9  & 16 & 16 & 9 / n/a / $>2$\\
+$[[8,4,2;4]]_9$  & $(9,2,1)$ & EA & 4  & 4  & 2  & 4  & 6  & 2 / n/a / 2\\
+$[[16,4,4;12]]_9$ & $(9,2,2)$ & EA & 12 & 4  & 4  & 12 & 18 & 4 / n/a / $>2$\\
+$[[12,4,2;8]]_9$ & $(9,3,1)$ & EA & 8  & 4  & 2  & 8  & 14 & 2 / n/a / 2\\
+$[[24,6,4;18]]_9$ & $(9,3,2)$ & EA & 18 & 6  & 4  & 18 & 30 & -- / 4 / $>2$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The non-principal witnesses}
+
+The witnesses to Theorem~\ref{thm:nonprincipal} and the quantum codes they
+produce, from Part~5 of the same log:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+witness & codes produced\\\midrule
+$(9,2,3)$, $s=0$ & R1: $[[24,14,2]]_9$ (abelian); R3: $[[24,6,2;2]]_9$\\
+$(9,2,3)$, $s=1$ & R1: $[[24,14,2]]_9$ (abelian); R3: $[[24,6,2;2]]_9$\\
+$(4,2,4)$, $s=0$ & R3: $[[32,8,2;4]]_4$\\
+$(4,2,4)$, $s=1$ & R3: $[[32,8,2;4]]_4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In all four cases $\MU_{\Bq}(W)=3$ and $\MU_{\Bq}(\Hull_s(W))=3$. The two
+$(9,2,3)$ witnesses additionally have $\Hull_s(W)=W$, i.e. the code equals its
+own Galois hull.
+
+\subsection{Best known distances used in Section~\ref{sec:cmp}}
+
+Table~\ref{tab:grassl} is the raw data retrieved from
+\cite{GrasslCodetables} on 2026-11-04, in the form lower..upper bound for
+$[[N,K]]_q$. The entry ``not available'' is the site's own response for
+$q=8$.
+
+\begin{table}[ht]
+\centering
+\caption{Best known stabilizer distances, codetables.de, retrieved
+2026-11-04. The site prints the \emph{prime} $p$ in its code labels, so
+$q=4$ appears as $[[N,K]]_2$ and $q=9$ as $[[N,K]]_3$.}
+\label{tab:grassl}
+\begin{tabular}{@{}cc@{\qquad}cc@{}}\toprule
+$[[N,K]]_q$ & lower..upper & $[[N,K]]_q$ & lower..upper\\\midrule
+$[[16,4]]_4$   & 5..5  & $[[8,4]]_9$   & 3..3\\
+$[[16,12]]_4$  & 2..2  & $[[16,8]]_9$  & 4..4\\
+$[[20,4]]_4$   & 6..6  & $[[24,8]]_9$  & 6..8\\
+$[[20,12]]_4$  & 3..3  & $[[24,10]]_9$ & 6..7\\
+$[[20,16]]_4$  & 2..2  & $[[24,12]]_9$ & 5..6\\
+$[[24,16]]_4$  & 3..3  & $[[8,4]]_8$   & not available\\
+$[[24,20]]_4$  & 2..2  & $[[12,2]]_8$  & not available\\
+\bottomrule
+\end{tabular}
+\end{table}

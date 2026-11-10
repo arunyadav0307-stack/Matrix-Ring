@@ -1,0 +1,374 @@
+% =====================================================================
+\section{Gray-map compatibility and finite-field representation}
+\label{sec:gray}
+% =====================================================================
+
+This section is the bridge from the ring $R$ to $\F_q$. The map is the
+coefficient expansion; the content is the identification of the form it
+transports.
+
+\subsection{The coefficient expansion}
+
+\begin{definition}[coefficient expansion]\label{def:gray}
+For $a=\sum_{a'=0}^{t-1}c_{a'}u^{a'}\in A_t$ put
+$\varphi_A(a)=(c_0,\dots,c_{t-1})\in\F_q^{\,t}$. For
+$X=(X_{kl})\in R=M_2(A_t)$ put
+$\varphi_R(X)=(\varphi_A(X_{00}),\varphi_A(X_{01}),\varphi_A(X_{10}),
+\varphi_A(X_{11}))\in\F_q^{\,4t}$, and for $x=(x_0,\dots,x_{n-1})\in R^n$,
+\[
+  \varphi_n(x)=\bigl(\varphi_R(x_0),\dots,\varphi_R(x_{n-1})\bigr)
+  \in\F_q^{\,\Nlen},\qquad \Nlen=4tn .
+\]
+The flat index is $\varphi_n(x)_{(e\cdot4+k)t+a}=
+\text{the $u^a$-coefficient of the $k$-th entry of }x_e$.
+\end{definition}
+
+\begin{lemma}\label{lem:philin}
+$\varphi_n:R^n\to\F_q^{\Nlen}$ is an $\F_q$-linear bijection; it is additive
+and satisfies $\varphi_nT=\widehat T\varphi_n$, where $T$ is the cyclic shift
+on $R^n$ and $\widehat T$ is the rotation by $4t$ on $\F_q^{\Nlen}$. It is
+\textbf{not} a ring homomorphism: $R$ is not commutative, and
+$\varphi_R(XY)\ne\varphi_R(YX)$ in general.
+\end{lemma}
+
+\begin{proof}
+$\varphi_A$ is a bijection $A_t\to\F_q^t$ by the uniqueness of the normal form;
+$\varphi_R$ and $\varphi_n$ are products of it, hence bijections, and they are
+$\F_q$-linear because taking the $u^a$-coefficient is. For the shift:
+$T$ sends $x_e$ to $x_{e-1}$, and $\widehat T$ rotates the flat index by $4t$,
+which is exactly one $R$-block; the two agree. Non-multiplicativity is the
+explicit computation $\varphi_R(XY)\ne\varphi_R(YX)$ on matrix units.
+\end{proof}
+
+\subsection{The exact induced form}\label{subsec:induced}
+
+Because $\varphi_n$ is an $\F_q$-linear bijection, there is exactly one form on
+$\F_q^{\Nlen}$ for which $\varphi_n$ is a form-isometry, namely the transport of
+$\bb_s$. The content of the following theorem is to identify it.
+
+\begin{theorem}[Gram matrix of the transported form]\label{thm:gram}
+Transport $\bb_s$ along $\varphi_n$:
+$\langle u,v\rangle^{\widehat{}}_s:=\bb_s(\varphi_n^{-1}u,\varphi_n^{-1}v)$.
+Then, writing $u^{[s]}=(\sigma_s(u_i))_i$,
+\[
+  \langle u,v\rangle^{\widehat{}}_s=u^{[s]}\,J\,v^{\mathsf T},
+  \qquad
+  J=I_{4n}\otimes H_t,\qquad
+  (H_t)_{ab}=\begin{cases}1,&a+b=t-1,\\0,&\text{else.}\end{cases}
+\]
+The matrix $J$ is non-singular, symmetric and Hankel, $J^2=I$,
+$J=I$ iff $t=1$, and $J$ is alternating iff $t$ is even.
+\end{theorem}
+
+\begin{proof}
+First, $\tr(\theta_s(X)Y)=\sum_{k,l}\sigma_s(X_{kl})Y_{kl}$: indeed
+$\theta_s(X)=\sigma_s(X^{\mathsf T})$ has $(k,l)$-entry
+$\sigma_s(X_{lk})$, so
+$\tr(\theta_s(X)Y)=\sum_{k,l}\sigma_s(X_{lk})Y_{lk}$, and
+$(k,l)\mapsto(l,k)$ is a bijection of the index set.
+
+Therefore
+\[
+  \bb_s(x,y)=\sum_e\sum_{k,l}
+  \lambda\bigl(\sigma_s((x_e)_{kl})(y_e)_{kl}\bigr)
+  =\sum_{e,k}\sum_{a=0}^{t-1}
+  \sigma_s\bigl((x_e)_{k,a}\bigr)\,(y_e)_{k,t-1-a},
+\]
+because $\lambda(u^{a+b})=1$ iff $a+b=t-1$ and $0$ otherwise, where
+$(x_e)_{k,a}$ denotes the $u^a$-coefficient of the $k$-th entry of $x_e$.
+
+Reading the right-hand side in the flat coordinates
+$u=\varphi_n(x)$, $v=\varphi_n(y)$, the summand pairs the coordinate
+$(e,k,a)$ of $u$ (with $\sigma_s$ applied) with the coordinate
+$(e,k,t-1-a)$ of $v$. In the ordering of Definition~\ref{def:gray} the
+$a$-index runs inside a fixed $(e,k)$ block, so the Gram matrix is the identity
+on the $(e,k)$-index tensored with $H_t$ on the $a$-index, i.e.
+$J=I_{4n}\otimes H_t$.
+
+The stated properties of $J$: $H_t$ is the reversal (Hankel) matrix, symmetric
+with $H_t^2=I_t$; hence $J$ is symmetric with $J^2=I_{4n}\otimes H_t^2=I$,
+non-singular. $J=I$ iff $H_t=I_t$, i.e. $t=1$. Finally $H_t$ is alternating
+(zero diagonal, since $2a=t-1$ has no solution when $t$ is even) exactly when
+$t$ is even, and $J$ inherits this.
+\end{proof}
+
+\begin{corollary}[the transported form is not Euclidean]\label{cor:noteuclid}
+The transported form is Euclidean ($\langle u,v\rangle^{\widehat{}}_s=u\cdot v$)
+if and only if $t=1$ and $r\mid s$; it is the plain
+$\widehat\sigma_s$-Hermitian form if and only if $t=1$.
+\end{corollary}
+
+\begin{proof}
+The Gram matrix of the Euclidean form is $I$; by
+Theorem~\ref{thm:gram} the Gram matrix is $I_{4n}\otimes H_t$ with the
+$\sigma_s$ twist, which equals $I$ iff $H_t=I_t$ (i.e. $t=1$) and
+$\sigma_s=\id$ (i.e. $r\mid s$). Dropping the $\sigma_s$ condition gives the
+plain Hermitian statement.
+\end{proof}
+
+\subsection{Duality and hull preservation}
+
+\begin{theorem}[duality preservation]\label{thm:grayduality}
+For every code $C\le\Rn$ and every $s$,
+\[
+  \varphi_n(C^{\perp_s})=\varphi_n(C)^{\hhatpers},
+\]
+where $D^{\hhatpers}=\{v:\langle u,v\rangle^{\widehat{}}_s=0\ \forall u\in D\}$.
+\end{theorem}
+
+\begin{proof}
+$\varphi_n$ is bijective and $\langle\cdot,\cdot\rangle^{\widehat{}}_s$ is
+defined as its transport, so for $y\in R^n$,
+\[
+  y\in C^{\perp_s}
+  \iff \bb_s(x,y)=0\ \forall x\in C
+  \iff \langle\varphi_nx,\varphi_ny\rangle^{\widehat{}}_s=0\ \forall x\in C
+  \iff \varphi_n(y)\in\varphi_n(C)^{\hhatpers}. \qedhere
+\]
+\end{proof}
+
+\begin{theorem}[hull preservation, with no principality hypothesis]
+\label{thm:grayhull}
+For every $C\le\Rn$ and every $s$,
+\[
+  \varphi_n\bigl(\Hull_s(C)\bigr)
+  =\varphi_n(C)\cap\varphi_n(C)^{\hhatpers}.
+\]
+In particular the identity holds for the non-principal hulls of
+Theorem~\ref{thm:nonprincipal}.
+\end{theorem}
+
+\begin{proof}
+$\varphi_n$ is injective, hence preserves intersections:
+$\varphi_n(C\cap C^{\perp_s})=\varphi_n(C)\cap\varphi_n(C^{\perp_s})$; now
+apply Theorem~\ref{thm:grayduality}. No principality hypothesis is used at any
+point: Definition~\ref{def:hull} is an intersection of $\F_q$-subspaces and
+Theorems~\ref{thm:hullstruct} and~\ref{thm:grayduality} hold for arbitrary right
+$\Rn$-submodules.
+\end{proof}
+
+\subsection{The image code}
+
+\begin{proposition}[quasi-cyclicity]\label{prop:qc}
+Let $D=\varphi_n(C)\subseteq\F_q^{\Nlen}$. Then $D$ is $\F_q$-linear of length
+$\Nlen$ and dimension $\dim_{\F_q}C$, and it is \emph{quasi-cyclic of index
+$4t$ and co-index $n$}: it is invariant under the rotation by $4t$
+positions. It is not cyclic in general.
+\end{proposition}
+
+\begin{proof}
+Linearity and dimension are Lemma~\ref{lem:philin}. Invariance under the
+rotation by $4t$ is the shift identity $\varphi_nT=\widehat T\varphi_n$
+together with $T$-invariance of the right ideal $C$. Non-cyclicity: the
+rotation by one position does not in general preserve $D$; this is a
+measurement on the enumerated families and we record it rather than claim it.
+\end{proof}
+
+\begin{remark}[what the map does to weights]\label{rem:weights}
+Let $w_{\rm H}$ denote the Hamming weight on $R^n$ (counting nonzero
+$R$-positions), $w_{\rm ent}$ the weight counting nonzero entries of the
+$2\times2$ matrices, and $w_{\rm coef}$ the number of nonzero $\F_q$-coefficients.
+Then
+\[
+  w_{\rm H}\le w_{\rm ent}\le w_{\rm coef}\le t\,w_{\rm ent},
+  \qquad
+  w_{\rm H}\le\wt_{\rm H}\varphi_n\le 4t\,w_{\rm H},
+\]
+and both bounds are sharp. In particular $\varphi_n$ \emph{is} an isometry from
+the coefficient metric $d_{\rm coef}$ to the Hamming metric on
+$\F_q^{\Nlen}$. The naive claim that $\varphi_n$ preserves the ring-Hamming
+weight is false: a nonzero matrix with a single nonzero entry has
+$w_{\rm H}=1$ but $\wt_{\rm H}\varphi_n\ge1$ with equality only in special
+cases, and in general the two differ.
+\end{remark}
+
+\begin{remark}[no homogeneous-weight isometry]\label{rem:noisometry}
+The homogeneous weight on $R=M_2(\F_q)$ takes the values $0$,
+$1+\frac1{q^2-1}$ (rank one) and $1-\frac1{(q-1)^2(q+1)}$ (units). Since these
+values are not integers, \emph{no} map into any Hamming space can be an isometry
+for it. The chain of rings for which such isometries do exist
+\cite{GreferathSchmidt1999GrayIsometry} consists of finite \emph{chain} rings,
+and $R$ is not one. This places a hard limit on what any Gray map can achieve
+here, and it is the reason Section~\ref{subsec:phys} recomputes distances in
+physical coordinates rather than transporting them.
+\end{remark}
+
+\subsection{Every Galois hull is self-orthogonal}
+
+This is the hinge of the paper. It holds in \emph{all three regimes} of
+Definition~\ref{def:regimes}, not only the reflexive one.
+
+\begin{theorem}[hull self-orthogonality]\label{thm:hullso}
+For every $C\le\Rn$ and every $s$,
+\[
+  \varphi_n\bigl(\Hull_s(C)\bigr)
+  \subseteq
+  \varphi_n\bigl(\Hull_s(C)\bigr)^{\hhatpers}.
+\]
+No reflexivity hypothesis ($r\mid 2s$) and no principality hypothesis is
+required.
+\end{theorem}
+
+\begin{proof}
+Let $H=\Hull_s(C)=C\cap C^{\perp_s}$ and let $x,y\in H$. Then $x\in C$ and
+$y\in C^{\perp_s}$. By the definition of $C^{\perp_s}$ we have
+$\bb_s(c,y)=0$ for every $c\in C$; taking $c=x$ gives $\bb_s(x,y)=0$.
+Transporting with $\varphi_n$ (Theorem~\ref{thm:gram}) gives
+$\langle\varphi_nx,\varphi_ny\rangle^{\widehat{}}_s=0$.
+
+Note what the argument uses and what it does not: it uses $x\in C$ and
+$y\in C^{\perp_s}$, and it never interchanges the two slots. It therefore does
+not need the orthogonality relation to be symmetric, which is exactly the
+property that holds only in the reflexive regime
+(Proposition~\ref{prop:regimes}). Nor does it use principality: $H$ is an
+intersection of $\F_q$-subspaces, and Theorems~\ref{thm:hullstruct}
+and~\ref{thm:grayduality} hold for arbitrary right $\Rn$-submodules.
+
+Finally, note the direction of the statement: a nonzero hull dimension never
+implies that $C$ itself is self-orthogonal.
+\end{proof}
+
+\subsection{Physical coordinates and the characteristic-two obstruction}
+\label{subsec:phys}
+
+For the Euclidean (CSS) route one wants the transported form to be the Euclidean
+form. Corollary~\ref{cor:noteuclid} says this happens only for $t=1$ with
+$r\mid s$; otherwise one looks for a linear change of coordinates.
+
+\begin{definition}\label{def:congruence}
+Assume $\sigma_s=\id$ (i.e. $r\mid s$), so that the transported form is the
+bilinear form with matrix $J$. A \emph{congruence} is a matrix $\mathcal T$
+with $\mathcal T\mathcal T^{\mathsf T}=J$; the associated coordinate map is
+$\Psi(u)=u\,\mathcal T$.
+\end{definition}
+
+\begin{proposition}[the congruence and its cost]\label{prop:congruence}
+Let $T$ be a $t\times t$ matrix with $T^{\mathsf T}H_tT=I_t$ and let
+$\mathcal T=I_{4n}\otimes T$. Then $\mathcal T\mathcal T^{\mathsf T}=J$ (using
+$J^2=I$ and $H_t^{\mathsf T}=H_t$), $\mathcal T$ is invertible, and $\Psi$
+transports the transported form to the Euclidean form:
+\[
+  \Psi(u)\cdot\Psi(v)=u\,\mathcal T\mathcal T^{\mathsf T}v^{\mathsf T}
+  =u\,J\,v^{\mathsf T}=\langle u,v\rangle^{\widehat{}}_s .
+\]
+Moreover $\mathcal T$ commutes with the block shift (so the quasi-cyclic
+structure of index $4t$ is preserved), and $\mathcal T$ is monomial iff $t=1$.
+\end{proposition}
+
+\begin{proof}
+Immediate from $J=I_{4n}\otimes H_t$, $H_t^{\mathsf T}=H_t$, $J^2=I$ and the
+definitions; $\mathcal T$ is block-diagonal in the flat ordering, hence commutes
+with the block shift. Monomiality: for $t=1$, $H_1=(1)$ and $T$ may be taken to
+be $(1)$; for $t\ge2$, $T^{\mathsf T}H_tT=I_t$ forces $T$ to have at least two
+nonzero entries in some row, so $\mathcal T$ is not monomial.
+\end{proof}
+
+\begin{theorem}[characteristic-two obstruction]\label{thm:obstruction}
+Let $p=2$ and let $t$ be even. Then no matrix $T$ with
+$T^{\mathsf T}H_tT=I_t$ exists. Consequently, for every such $(q,t)$ and
+\emph{every} code, the Euclidean/CSS route is not available: no linear change of
+coordinates converts the transported form into the Euclidean form.
+\end{theorem}
+
+\begin{proof}
+If $t$ is even then $H_t$ is alternating: its diagonal entries are
+$(H_t)_{aa}=1$ iff $2a=t-1$, which has no integer solution when $t$ is even;
+and $H_t$ is symmetric. A symmetric matrix congruent to the identity over a
+field of characteristic $2$ cannot be alternating, because an alternating
+matrix $M$ satisfies $x^{\mathsf T}Mx=0$ for all $x$ whereas
+$x^{\mathsf T}Ix=|x|^2$ is not identically zero. Hence no such $T$ exists.
+\end{proof}
+
+\begin{remark}[the hypotheses are exact]\label{rem:obstructionexact}
+Theorem~\ref{thm:obstruction} is stated for $p=2$ \emph{and} $t$ even, and it
+must not be extended. Congruences do exist for $t=1$, $t=3$ and $t=5$ at
+$q=4,8$, and one exists at $(q,t)=(9,2)$. What the obstruction forbids is
+exactly the pair ``characteristic two, $t$ even''; it is a statement about the
+form $J$, not about any code. Where a congruence exists but is non-monomial
+(Proposition~\ref{prop:congruence}), it must not be treated as an isometry:
+measured instances show that the minimum distance of a code \emph{does} change
+under $\Psi$ (3 of 5 codes at $(9,2,2)$), so every distance must be recomputed
+in physical coordinates.
+\end{remark}
+
+\begin{theorem}[number of physical coordinates]\label{thm:nphys}
+A quantum code produced from a code $C\le\Rn$ by any of the routes of
+Section~\ref{sec:quantum} has length $\Nlen=4tn$ over the alphabet $\F_q$.
+\end{theorem}
+
+\begin{proof}
+One qudit of dimension $q$ carries one $\F_q$-coordinate, so the number of
+physical qudits equals the $\F_q$-length of the classical code whose symplectic
+group lives over $\F_q^{2\Nlen}$: by Lemma~\ref{lem:basic}(c),
+$\dim_{\F_q}R^n=\Nlen=4tn$. There is no doubling to $2\Nlen$: $\F_q^{2\Nlen}$
+is the symplectic \emph{bookkeeping} space in which the stabilizer group sits,
+not a set of qudits. Nor is there a substitution of $\F_q$ by $\F_p$: the
+alphabet of the quantum code is $\F_q$ throughout.
+\end{proof}
+
+\subsection{Worked examples IV: the Gray map}
+
+\begin{example}[the coefficient expansion and the Gram matrix, at $t=2$]
+\label{ex:gray}
+Let $q=4$, $t=2$, $n=1$, so $\Nlen=4\cdot2\cdot1=8$. Take
+\[
+  X=\begin{pmatrix}1+\alpha u&\beta u\\ 0&1\end{pmatrix}\in R=M_2(A_2),
+  \qquad \alpha,\beta\in\F_4 .
+\]
+Then $\varphi_A(1+\alpha u)=(1,\alpha)$, $\varphi_A(\beta u)=(0,\beta)$,
+$\varphi_A(0)=(0,0)$, $\varphi_A(1)=(1,0)$, so
+\[
+  \varphi_R(X)=\bigl(1,\alpha,\;0,\beta,\;0,0,\;1,0\bigr)\in\F_4^8 ,
+\]
+in the flat ordering of Definition~\ref{def:gray}: the four $2\times2$ entries
+in reading order, each expanded into its $t=2$ coefficients.
+
+For $t=2$ the Hankel matrix is
+\[
+  H_2=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+  \qquad\text{so}\qquad
+  J=I_{4n}\otimes H_2=I_4\otimes H_2 ,
+\]
+an $8\times8$ matrix which is symmetric, satisfies $J^2=I_8$, is \emph{not}
+the identity (in accordance with Corollary~\ref{cor:noteuclid}, since
+$t\ne1$), and \emph{is} alternating, since $(H_2)_{aa}=1$ would require
+$2a=1$ and $p=2$. The transported form is therefore
+\[
+  \langle u,v\rangle^{\widehat{}}_s=u^{[s]}Jv^{\mathsf T}
+  =\sum_{i=0}^{3}\bigl(\sigma_s(u_{2i})v_{2i+1}
+    +\sigma_s(u_{2i+1})v_{2i}\bigr),
+\]
+which pairs the two $u$-coefficients inside each of the four matrix entries
+and nothing else. Note that it is not the dot product $u\cdot v$: the
+coordinate $u_0$ is paired with $v_1$, not with $v_0$.
+\end{example}
+
+\begin{example}[the characteristic-two obstruction, at $(q,t)=(4,2)$]
+\label{ex:obstruction}
+Let $q=4$ (so $p=2$) and $t=2$. Then $H_2=\begin{pmatrix}0&1\\1&0\end{pmatrix}$
+has zero diagonal, and for every $x=(x_0,x_1)^{\mathsf T}\in\F_4^2$,
+\[
+  x^{\mathsf T}H_2x=x_0x_1+x_1x_0=2x_0x_1=0
+\]
+in characteristic $2$: $H_2$ is alternating. For any $2\times2$ matrix $T$ over
+$\F_4$ and any $x$,
+\[
+  x^{\mathsf T}(T^{\mathsf T}H_2T)x=(Tx)^{\mathsf T}H_2(Tx)=0,
+\]
+so $T^{\mathsf T}H_2T$ is alternating for \emph{every} $T$. But $I_2$ is not
+alternating, since $e_1^{\mathsf T}I_2e_1=1\ne0$. Hence no $T$ with
+$T^{\mathsf T}H_2T=I_2$ exists; the search over all $4^4=256$ matrices
+$T\in M_2(\F_4)$ confirms this exhaustively, and Theorem~\ref{thm:obstruction}
+proves it for every even $t$ in characteristic $2$.
+
+The hypotheses are exact, and the neighbouring cases are different: for
+$t=1,3,5$ at $q=4,8$ a congruence is \emph{constructed} (symmetric elimination
+with Frobenius scaling, backtracking over pivots) and verified by direct
+multiplication, and one exists at $(q,t)=(9,2)$ as well --- there $p=3$ and the
+argument above breaks because $2x_0x_1$ need not vanish. Where a congruence
+exists but is non-monomial (Proposition~\ref{prop:congruence}), it must not
+be treated as an isometry: at $(9,2,2)$ the minimum distance changed under
+$\Psi$ for $4$ of the $7$ self-orthogonal codes transformed, so every
+distance in this paper is
+recomputed in physical coordinates.
+\end{example}

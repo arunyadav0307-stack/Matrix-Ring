@@ -1,0 +1,949 @@
+# Computation: updated scripts, logs and reproducibility notes
+## (Part 5 of the Phase-0 revision deliverables)
+
+Everything below is **runnable source code plus its exact output**. No computational
+result in this project is asserted without a script that produced it and a log that
+records it.
+
+**Environment.** Python **3.11.2**, standard library only (`itertools`, `random`).
+Exact integer/tuple arithmetic throughout — no floats, no external packages.
+All runs dated **2026-11-04**; timestamps are inside each log.
+
+---
+
+## 1. File inventory
+
+| File | Lines | Purpose | Run time |
+|---|---|---|---|
+| `matrix_ring_lib.py` | 716 | exact-arithmetic library: `FiniteField`, `LocalRing` ($A_t=\mathbb F_q[u]/\langle u^t\rangle$), `MatrixRing`, `Ambient` ($R^n$), pairings, duals, hulls, linear algebra over $\mathbb F_q$ | (library) |
+| `phase0_feasibility.py` | 605 | original Phase-0 driver, experiments **E1–E5** | 18.8 s |
+| `galois_duality_experiments.py` | ~700 | **Task 1**: nontrivial Galois automorphisms + pairing, 6 parameter sets | ≈ 4 s |
+| `galois_t2_check.py` | 262 | **Task 1 extension**: the same checks at $t=2$ (non-field local alphabet) | ≈ 1 s |
+| `alahmadi_reconciliation.py` | ~520 | **Task 3**: direct code verification of Alahmadi–Sboui–Solé–Yemen (A1) | ≈ 11 s |
+| `phase0_results.txt`, `phase0_stdout.txt` | 246 | log of E1–E5 (run 2026-11-04 03:52:42) | — |
+| `galois_experiments_log.txt` | ~246 | log of `galois_duality_experiments.py full` | — |
+| `galois_t2_log.txt` | ~35 | log of `galois_t2_check.py` | — |
+| `alahmadi_reconciliation_log.txt` | 487+ | log of the reconciliation script | — |
+| `README.md` | — | reproducibility notes for the original runs | — |
+| `phase2_stage2a_morita_checks.py` | 1566 | **Phase 2, Stage 2A**: the Morita correspondence (both directions, lattice operations, left/two-sided ideals, Stage-1 dictionary), the identity `μ_S(I_W) = ⌈μ_B(W)/2⌉` via L-2.3a/b/c, the individual principality criterion, and the projectivity counterexample (see §9) | ≈ 285 s |
+| `phase2_stage2a_morita_log.txt` | 699 | log of the Stage-2A script: **429 / 429 checks PASS** (391 `[EXH]`, 38 `[SMP]`) | — |
+| `phase2_stage1_shift_checks.py` | 1001 | **Phase 2, Stage 1**: definitions and shift structure — $\iota$, cyclic convolution, centrality of $X$, $T^n=1$, $T$ as left/right multiplication by $X$, $F_q$- vs $R$-linearity, right ideals $\leftrightarrow$ $T$-invariant right $R$-submodules, $\sigma_k$/$\theta_s$ compatibility (see §8) | ≈ 100 s |
+| `phase2_stage1_shift_log.txt` | 734 | log of the Stage-1 script: **553 / 553 checks PASS** (91 `[EXH]`, 462 `[SMP]`), 8 parameter sets | — |
+
+## 2. How to reproduce
+
+```bash
+cd 04_COMPUTATION
+python3 -u galois_duality_experiments.py full     # -> galois_experiments_log.txt
+python3 -u galois_t2_check.py                     # -> galois_t2_log.txt
+python3 -u alahmadi_reconciliation.py             # -> alahmadi_reconciliation_log.txt
+python3 -u phase0_feasibility.py                  # -> phase0_results.txt (original E1-E5)
+python3 -u phase2_stage2a_morita_checks.py        # -> phase2_stage2a_morita_log.txt (Stage 2A)
+python3 -u phase2_stage1_shift_checks.py          # -> phase2_stage1_shift_log.txt (Phase 2, Stage 1)
+```
+
+All four exit with status **0** and rewrite their own log files. `python3 -u` (unbuffered)
+is required to see progress; the scripts themselves are deterministic **except** for the
+parts explicitly labelled `[SMP]`, which use fixed seeds (see below).
+
+## 3. Determinism and randomness
+
+| script | deterministic parts | randomised parts (seeded) |
+|---|---|---|
+| `phase0_feasibility.py` | E2–E5 exhaustive | E1: 400 random trials, seed **12345** |
+| `galois_duality_experiments.py` | all enumerations, all per-code checks | `q=9,n=4` sampling: 1200 of 20736 codes, seed **13572468**; $\theta$-anti-multiplicativity sanity: 300 random matrices |
+| `galois_t2_check.py` | all 32 codes, all 65536 elements | 5000 random matrix pairs, seed **20261104** |
+| `alahmadi_reconciliation.py` | everything (exhaustive scans of 16 and 4096 ambient vectors, all 27 triples) | none |
+| `phase2_stage2a_morita_checks.py` | the whole submodule lattice of `B^2` and the whole right-ideal lattice of `S = M_2(B)` at the eleven parameter sets with `|B| ≤ 16` (every object, every statement); the submodule lattice at `(4,1,3)`; all `x ∈ S` for L-2.3a with `k = 1`; all `x ∈ I` for `μ_S = 1`; all pairs where the product is within budget; all 32 endomorphisms in the projectivity counterexample | L-2.3a with `k = 2` and L-2.3c at the largest rings; the Stage-1 dictionary where `|R^n|·#ideals` exceeds the budget (6 ideals); the `(x,a)` right-`R`-submodule pairs above budget; six targeted submodules at `(4,2,2)`; seed **20261105** |
+| `phase2_stage1_shift_checks.py` | all checks at $(q,t,n)=(4,1,1)$ and $(9,1,1)$ (incl. all $65\,536$ $(x,a)$ pairs at $(4,1,1)$); all $B$-pairs at $(4,1,2)$; all $65\,536$ vectors for $T=$ right multiplication by $X$ at $(4,1,2)$ and $(4,2,1)$; the whole subspace census at $(4,1,1)$ | everything else: 20 000 sampled $(x,a)$ pairs per parameter set, 500 sampled vectors, seed **20261104** |
+
+## 4. What each script verifies (at a glance)
+
+**`galois_duality_experiments.py`** — for each parameter set:
+(A) $\sigma_s$ additive / multiplicative / nontrivial / order;
+(B) $\theta_s$ additive / anti-multiplicative / $\theta_s^2=\sigma_{2s}$ / involution?;
+(C) $\Lambda$ non-degenerate (Gram rank), symmetric, ideal-catching;
+(D) enumeration of all cyclic codes by Morita+CRT, with an independent lattice-closure
+cross-check when affordable;
+(E) per-code: right module, shift-invariance, dual right module, dual shift-invariance,
+$|C||C^{\perp_s}|=|R|^n$, hull right module, hull shift-invariance, double dual
+$=\sigma_{2s}(C)$, reflexivity, and the same three checks for the plain product pairing.
+
+**`galois_t2_check.py`** — the same at $t=2$ ($A=\mathbb F_4[u]/\langle u^2\rangle$,
+$R=M_2(A)$, $n=1$, $s=1$): 32 right ideals, all properties, plus $\theta_1^2=\mathrm{id}$
+on all 65536 elements and the $\Lambda$ Gram rank $8/8$.
+
+**`alahmadi_reconciliation.py`** — (1) rebuilds $A=M_2(\mathbb F_2)$ from the paper's own
+$i,\omega,u$ and verifies $i^2=I$, $\omega^2+\omega+I=0$, $i\omega=\omega^2i$, $u^2=0$,
+$\omega u\ne u\omega$, and the $a+ub$ multiplication rule on all 256 quadruples;
+(2) exhaustive censuses at $n=1$ and $n=3$; (3) Lemma 2 at $n=1$; (4) Theorem 1 under
+three readings, with residue/torsion generators and dimension formulas, plus a
+Frobenius-invariance test; (5) Euclidean duality, Lemma 4, Theorem 2.
+
+## 5. Known limitations (stated so that nobody over-reads a log)
+
+1. `q=9, m=2, n=4` is **sampled** (1200 / 20736, `[SMP]`).
+2. `t=2` is covered only at $n=1$ (ambient $|R^n| = 65536$; the Morita enumeration stays
+   cheap but the number of codes grows fast).
+3. The independent lattice-closure cross-check is skipped when $|R_n|>20000$, so it runs
+   only for the two $q=2$ cases (where it agrees: 5 and 35).
+4. $\theta$-anti-multiplicativity is checked on random samples at $t=2$ ($|M_2(A)|=65536$
+   makes an all-pairs check $4\cdot10^9$ operations); $\theta^2$ **is** checked on all
+   elements.
+5. `LocalRing.elements()` and `MatrixRing.elements()` return `itertools.product`
+   **generators** — they are consumed by the first loop over them. (This cost us one
+   `StopIteration` during development; all current call sites wrap them in `list(...)`.)
+6. Dual bases must be **reduced** (`rref`) before being compared. Comparing a raw
+   `nullspace` basis against a reduced one produced a spurious "13/32 reflexivity
+   failures" at $t=2$; after reducing, the same run gives 32/32. The same class of bug was
+   found and fixed earlier in `galois_duality_experiments.py` (spurious 15/343
+   double-dual failures at $q=4$). **Any new script must reduce both sides before
+   comparing subspaces.**
+
+## 6. Development log of the correction work (audit trail)
+
+| date | issue | fix |
+|---|---|---|
+| 2026-11-04 | `FiniteField(2,2)`: "no primitive polynomial found" | off-by-one in `_is_primitive`; `r==1` special-cased |
+| 2026-11-04 | `test_frobenius_functional` hung ($|R|^2$ loop at $|R|=65536$) | replaced by a Gram-rank test |
+| 2026-11-04 | E5 aliasing bug `(f,g,h)[which] = tgt` | explicit `parts` list |
+| 2026-11-04 | non-canonical dual basis → spurious double-dual failures (15/343) | `dual_of` returns a reduced (rref) basis |
+| 2026-11-04 | $d=1$ $X$-multiplication bug in the $K$-subspace → $\mathbb F_q$-basis expansion | fixed |
+| 2026-11-04 | zero code missing from the lattice-closure enumeration (4 vs 5, 34 vs 35) | seed `seen = {key([]): []}` |
+| 2026-11-04 | `TypeError: unhashable type: 'list'` in the Lemma-4 lookup (`alahmadi_reconciliation.py`) | keys built with `key3(f,g,h)` of tuples |
+| 2026-11-04 | mis-indented `sig`/`store.append` block silently emptied two result tables (`#triples: 0`) | re-indented into the loop body; `#triples` sanity-checked after every run |
+| 2026-11-04 | $\sigma_s$ "nontrivial" flag computed from the order formula, printing `nontrivial=True (witness a=None)` at $q=2$ | flag now witness-based: `nontrivial = (wit is not None)` → prints `False` at $q=2$ |
+| 2026-11-04 | `A.frobenius(X, 2*s)` with $2s=r$ → `IndexError` | index reduced mod $r$ |
+| 2026-11-04 | $t=2$: spurious 13/32 reflexivity failures | reduce both sides before comparing (see §5.6) |
+| 2026-11-04 | over-claiming log line "Lemma 2 is FALSE as stated" | replaced by an explicit reading-convention caveat (standing rule: no claim that A1 is wrong) |
+| 2026-11-04 | mis-stated column spaces in the Lemma-2 comment (`⟨(1,1)⟩` vs `⟨(1,0)⟩`) | corrected: $uA=\{[[a,b],[a,b]]\}$ has column space $\langle(1,1)\rangle$; the two *missing* ideals have column spaces $\langle(0,1)\rangle,\langle(1,0)\rangle$ |
+
+## 7. Non-claims
+
+* No quantum code, Gray map, minimum distance, or hull-dimension formula is computed
+  anywhere in `04_COMPUTATION`.
+* The $q=2$ runs are **not** evidence about Galois duality ($\sigma_0=\mathrm{id}$); they
+  validate the enumerator only.
+* `computational only` results are evidence, not theorems. The theorems live in
+  `03_THEOREMS/PAIRING_COMPLETE_PROOFS.md` and are proved there for all parameters.
+
+---
+
+## 8. Phase 2 — Stage 1 (added 2026-11-04)
+
+Companion document: `03_THEOREMS/PHASE2_STAGE1_CYCLIC_SHIFT.md`.
+Delivered in commit **`bfb16d7`**; register rows **T-044 … T-068**.
+Scope: definitions, the cyclic shift, left/right action conventions, centrality of $X$,
+and $\sigma_k$/$\theta_s$ compatibility. **Out of scope (not attempted):** P-2.3
+(generator numbers), P-2.4 (CRT/Hensel), P-2.5/P-2.6 (principality), P-2.7/P-2.8 (duals
+and annihilators, hence **L-6.1**), P-2.1f (`rev`), C-2.1 (enumeration), manuscript.
+CT-0 … CT-6 were **not** run as a suite.
+
+### 8.1 Files
+
+| File | Role |
+|---|---|
+| `phase2_stage1_shift_checks.py` | 1001 lines. Builds $B=A_t[X]/\langle X^n-1\rangle$ and $M_2(B)$ from scratch, importing only `Field`, `Local`, `MatRing` and the $\mathbb F_q$-linear algebra (`rref`, `enumerate_subspaces`) from `ring_structure_checks.py`. Parts: **0** representation ($\iota$, convolution, $X^n=1$, centrality, $\iota$ bimodule-linearity, operator identities); **1** the shift ($T^n=1$, $T=$ right and left multiplication by $X$, Hamming isometry, $F_q$-linearity, right/left $R$-linearity, right/left $R_n$-linearity, non-central negative controls); **2** the equivalence (both directions, both round trips, three negative controls, exhaustive subspace census at $(4,1,1)$); **3** $\sigma_k$/$\theta_s$ (commutation with $T$, side preservation, side swapping, semilinearity, non-commutation and non-$F_q$-linearity controls, Phase-1 ring-level inputs on $R$); **4** the boundary case $n=1$. |
+| `phase2_stage1_shift_log.txt` | 734 lines, recorded output of the run of 2026-11-04. |
+
+### 8.2 Result
+
+**553 checks, 553 PASS, 0 FAIL** — 91 `[EXH]`, 462 `[SMP]`.
+
+### 8.3 Parameter coverage
+
+| $(q,t,n)$ | $\dim_{\mathbb F_q}R^n$ | coverage |
+|---|---|---|
+| $(4,1,1)$ | 4 | fully exhaustive (all vectors, all $a\in R$, all $Z\in R_n$, all 65 536 $(x,a)$ pairs) + census over all 529 $\mathbb F_q$-subspaces |
+| $(4,1,2)$ | 8 | all $B$-pairs; all 65 536 vectors for $T=$ right multiplication by $X$; pairs sampled |
+| $(4,1,3)$ | 12 | sampled |
+| $(9,1,1)$ | 4 | fully exhaustive |
+| $(9,1,2)$ | 8 | sampled |
+| $(4,2,1)$ | 8 | all 65 536 vectors for $T=$ right multiplication by $X$; rest sampled ($t=2$) |
+| $(4,2,2)$ | 16 | sampled — **wild case** ($p\mid n$, $t\ge2$); no structural claim is made there |
+| $(8,1,2)$ | 8 | sampled ($r=3$) |
+
+All $k,s\bmod r$ at every parameter set.
+
+### 8.4 Reproducibility
+
+```bash
+cd 04_COMPUTATION
+python3 phase2_stage1_shift_checks.py        # -> phase2_stage1_shift_log.txt
+```
+
+Run from its own directory (it imports `ring_structure_checks`, which must sit beside it,
+and writes its log to the current directory). Python 3.11.2, standard library only.
+Sampling seed **20261104**; runtime ≈ 100 s. **Two consecutive runs produced
+byte-identical logs**, SHA-256
+`98383c76c957b2f4b613d97b8889c4bb39eebecf2c616edf48bc1fb1d9c5c3ef`.
+Environment (Python version, dates) as in §"Environment" above.
+
+### 8.5 Proved results versus computationally verified observations
+
+The distinction is recorded per statement in the register (rows T-044 … T-068) and is
+binding for every later stage:
+
+* **Proved** (in `PHASE2_STAGE1_CYCLIC_SHIFT.md`, independently of any script): the
+  convolution formula; $\iota$ as an $(R,R)$-bimodule isomorphism; $T^n=1$ and the
+  elementary properties of $T$; **right and left $R$-linearity of $T$**; $T$ as right and
+  left multiplication by $X$; $T$ left $R_n$-linear for free and right $R_n$-linear iff
+  $X$ is central; **Theorem 4.1** (right ideals of $R_n$ ↔ $T$-invariant right
+  $R$-submodules of $R^n$, both directions, all boundary cases); the operator statement
+  $XT=TX$ and the equivalence "$L_X=R_X$ iff $X$ central"; the five failure modes without
+  centrality; $T\sigma_k=\sigma_kT$ and $T\theta_s=\theta_sT$; $\sigma_k$ preserving the
+  sides; **$\theta_s\rho_a=\lambda_{\theta_s(a)}\theta_s$** with an explicit witness that
+  it is **not** a commutation; semilinearity of $\sigma_k,\theta_s$ and $F_q$-linearity
+  of $T$; and two of the three negative controls (§4.3(a) and §4.3(c) of the document).
+* **`COMPUTATIONALLY VERIFIED ONLY`** (no theorem claimed): the negative control
+  §4.3(b) (T-056); the census at $(4,1,1)$ (T-064); the run record (T-065).
+* **Not attempted, status preserved:** `rev` / P-2.1f (T-066, `PROPOSED / UNPROVED`);
+  **L-6.1** (T-067, `PROPOSED / UNPROVED`); **T-021 principality** (unchanged,
+  `proved (conditional)`, open for $t\ge2$ or $p\mid n$).
+* **Open and carried forward per decision D3** (T-068): T-006, T-027 (the
+  skew-polynomial comparison in §5.3(1) of the Stage-1 document is exactly this gap),
+  T-011–T-014, warning B3.5, the Phase-1 enumeration coverage gaps ($q=9,n=3$; no
+  enumeration at $q=4,t=2,n=2$ — the wild case is tested by Stage 1 but not counted), and
+  the $n\ge2$ left-submodule gap. Pair tests are sampled outside $(4,1,1)$; the only
+  exhaustive subspace census is at $n=1$.
+
+**A passing script never promotes a statement.** Negative controls report mismatch counts
+(e.g. non-central $Y=E_{11}$: $59\,760/65\,536$ mismatches at $(4,1,1)$ versus $0/65\,536$
+for $Y=XI_2$; $\theta_s\rho_a\neq\rho_{\theta_s(a)}\theta_s$: $60\,480/65\,536$) so that a
+test comparing the wrong two quantities cannot pass silently.
+
+---
+
+## 9. Phase 2 — Stage 2A (added 2026-11-05)
+
+Companion document: `03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md`; register rows
+**T-069 … T-093**. Scope: the Morita correspondence, the generator-number identity, and
+the **individual** principality criterion. **Out of scope (not attempted):** P-2.4
+(CRT/Hensel), **P-2.6 (global principality)**, the wild-case classification,
+P-2.7/P-2.8, hulls, Gray maps, quantum constructions, C-2.1, manuscript. CT-0 … CT-6 were
+**not** run as a suite.
+
+### 9.1 Files
+
+| File | Role |
+|---|---|
+| `phase2_stage2a_morita_checks.py` | 1566 lines. Builds `B = A_t[X]/⟨X^n−1⟩`, `P = B^2` and `S = M_2(B)` from scratch. Parts: ring sanity and the Jacobson radical; the submodule lattice and `μ_B` (three methods); the right-ideal lattice and `μ_S` (three methods); the Morita dictionary (bijection, lattice operations, cardinality, left/two-sided ideals); the identity and L-2.3a/b/c; the principality criterion; the Stage-1 dictionary (`R_n ≅ M_2(B)`, `W(I) = ρ(C·P_A)`); the wild case `(4,2,2)`; the projectivity counterexample. |
+| `phase2_stage2a_morita_log.txt` | 699 lines, recorded output of 2026-11-05. |
+
+### 9.2 Result
+
+**429 checks, 429 PASS, 0 FAIL** — 391 `[EXH]`, 38 `[SMP]`.
+
+### 9.3 Headline numbers
+
+| `(q,t,n)` | `#submodules of B^2` = `#right ideals of S` | `#principal` | `μ_B` distribution | `μ_S` distribution |
+|---|---|---|---|---|
+| `(2,1,1)` | 5 | 5 | `0:1, 1:3, 2:1` | `0:1, 1:4` |
+| `(2,1,2)` | 15 | 15 | `0:1, 1:9, 2:5` | `0:1, 1:14` |
+| `(2,2,1)` | 15 | 15 | `0:1, 1:9, 2:5` | `0:1, 1:14` |
+| `(4,1,1)` | 7 | 7 | `0:1, 1:5, 2:1` | `0:1, 1:6` |
+| `(9,1,1)` | 12 | 12 | `0:1, 1:10, 2:1` | `0:1, 1:11` |
+| `(2,1,3)` | 35 | 35 | `0:1, 1:23, 2:11` | `0:1, 1:34` |
+| `(2,3,1)` | 37 | 37 | `0:1, 1:21, 2:15` | `0:1, 1:36` |
+| `(8,1,1)` | 11 | 11 | `0:1, 1:9, 2:1` | `0:1, 1:10` |
+| `(4,1,2)` | 33 | 33 | `0:1, 1:25, 2:7` | `0:1, 1:32` |
+| `(4,2,1)` | 33 | 33 | `0:1, 1:25, 2:7` | `0:1, 1:32` |
+| `(2,2,2)` (wild model) | **159** | **137** | `0:1, 1:51, 2:85, 3:21, 4:1` | `0:1, 1:136, 2:22` |
+| `(4,1,3)` | 343 (ideals targeted) | — | `0:1, 1:215, 2:127` | `0:1, 1:342` |
+
+The values 7, 12, 11, 33, 33, 343 and 35 reproduce the Phase-1 cyclic-code counts
+(T-041, T-020); 159 at `(2,2,2)` is new. At `(2,2,2)`: `1+51+85 = 137` = the number of
+principal right ideals = `#{W : μ_B(W) ≤ 2}`, and `21+1 = 22` = the number of right ideals
+needing two generators; the unique `μ_B = 4` submodule is `m ⊕ m`, whose ideal `M_2(m)` is
+**not principal** (certified by an exhaustive `x`-scan over all 4096 of its elements).
+
+### 9.4 Reproducibility
+
+```bash
+cd 04_COMPUTATION
+python3 phase2_stage2a_morita_checks.py        # -> phase2_stage2a_morita_log.txt
+```
+
+Python 3.11.2, standard library only; seed **20261105**; runtime ≈ 285 s. **Two
+consecutive runs produced byte-identical logs**, SHA-256
+`3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5` (699 lines).
+
+### 9.5 Proved versus computationally verified
+
+* **Proved** (in the companion document, independently of any script): the identification
+  `R_n ≅ M_2(B)`; the Morita correspondence with all its lattice properties; the left-ideal
+  and two-sided-ideal dictionaries; the agreement of the Stage-1 and Morita
+  correspondences; **L-2.3a** (by column packing, with no hypothesis — the lifting proof
+  that uses projectivity is recorded as a second route, and Proposition 3.3 shows the
+  projectivity hypothesis is not removable for a general module `P`); **L-2.3b**;
+  **L-2.3c**; the identity `μ_S(I_W) = ⌈μ_B(W)/2⌉`; the individual principality criterion;
+  the wild counterexample at `(4,2,2)`; and the reduction of the global question.
+* **`COMPUTATIONALLY VERIFIED ONLY`** (T-087 … T-092): the census tables, the agreement of
+  the three `μ` methods, the `(2,2,2)` wild census, the `(4,2,2)` targeted certificates, the
+  projectivity counterexample as computed, and the byte-identical reproducibility.
+* **Not attempted** (T-093): P-2.4, **P-2.6** (untouched), L-2.6.1–L-2.6.8, **T-021**
+  (unchanged), L-6.1, P-2.7/P-2.8, hulls, Gray maps, quantum, C-2.1; `O-2.2` remains open
+  (largest `μ_B` observed: 4).
+
+**A passing script never promotes a statement.** The right ideals `xS` are computed from
+the definition (`span_{F_q}{xN}`), never from `im x`, so that L-2.3a could have failed;
+it did not, anywhere.
+
+
+---
+
+## 10. Phase 2 — Stage 2B: `phase2_stage2b_crt_principality.py`
+
+**Purpose.** Independent verification of P-2.4 (CRT/Hensel with exact hypotheses) and
+P-2.6 (the global principality criterion), plus the Galois-compatibility question of
+Task D. Companion document: `03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md`.
+
+**Log.** `phase2_stage2b_crt_log.txt` — **460 checks, 460 PASS, 0 FAIL**, 434 `[EXH]` and
+26 `[SMP]`, seed `20261106`, 709 lines, 60 383 bytes, SHA-256
+`8db6fb5fd82bce710b792b74019e1e43b68b9232660215d55a559675b7ce0460`. Two consecutive runs
+(Python 3.11.2, ≈ 82 s each) produced **byte-identical** logs; the log carries no
+timestamp and no elapsed time, so the comparison is exact.
+
+### 10.1 Independence from Stage 2A
+
+Only `Field`, `Local`, `rref` and `nullspace_basis` are imported from
+`ring_structure_checks.py`. Everything else is written again here, with different
+representations: `B` is `A_t[X]/⟨h⟩` (coefficient lists) rather than the Stage-2A model;
+factorisation is by trial division with an irreducibility test and is cross-checked
+against the `q`-cyclotomic cosets; `μ` is computed by (i) a lattice BFS, (ii) brute-force
+`k`-tuples, (iii) Nakayama on components, (iv) an exhaustive single-generator scan for
+principality.
+
+### 10.2 Sections of the log
+
+| Section | Content | Tests |
+|---|---|---|
+| Hensel (per case) | lifts are monic, reduce to `f_j` mod `u`, product = `g`; non-vacuity `X²+X+u ↦ (X+u)(X+1+u)`; both routes (squarefree-only, repeated) agree | `[EXH]` |
+| CRT (per case) | additivity, multiplicativity, bijectivity of `B → ∏ B_j`; Bézout idempotent identities; `e_j ↦ (0,…,1,…,0)` | `[EXH]` |
+| local components | `ρ_j` a surjective homomorphism; `m_j = (u,f_j) = ker ρ_j`; `B_j/m_j` a field; nilpotency `t+p^v−1`; units = complement; `dim_{F_q}`, `|B_j|` | `[EXH]`/`[SMP]` |
+| invariant | `dim_{K_j}(m_j/m_j²)` vs. the 0/1/2 trichotomy (falsification test CT-2) | `[EXH]` |
+| ideals/submodules | ideal tuples; submodule tuples; reconstruction; `dim` additive, `|W|` multiplicative | `[EXH]` |
+| Galois (Task D) | `σ_k` permutation vs. `C ↦ p^kC`; `σ_k(e_j) = e_{perm(j)}`; equivariance; `m_j` preimages | `[EXH]` |
+| census | full submodule lattices (5 rings); `[EXH]` `μ` agreement; principality certificates | `[EXH]` |
+| CRT-built lattice | 35 937 = 33³ at `(4,2,3)`, closure / `μ` / principality sampled | `[EXH]` + `[SMP]` |
+| wild | `dim_K(m/m²) = 2`; `dim_{K}(W/mW) = 4`; `dim_{F_q}(I_W/I_WJ(S)) = 8 > 4`; exhaustive `x`-scan; two generators | `[EXH]` |
+| negative controls | neg-1 … neg-5 | `[EXH]` 5/5 |
+
+### 10.3 Proved versus computationally verified (Stage 2B)
+
+* **Proved** (in the companion document, independently of the script): the squarefree-part
+  lemma; **Hensel (L-2.4.1) from scratch**; `F_j = f_j`; the CRT decomposition (L-2.4.2);
+  locality, dimension and nilpotence of `B_j` (L-2.4.3/L-2.4.4); the ideal and submodule
+  correspondences; the trichotomy `dim_{K_j}(m_j/m_j²) ∈ {0,1,2}` (L-2.4.6 = L-2.6.6);
+  **Smith normal form over a finite chain ring (L-2.6.4), proved in full**; chain ring
+  `⟺ t = 1` or `p ∤ n` (L-2.6.3); `μ_B = max_j μ_{B_j}` (L-2.4.5 = L-2.6.5); **P-2.6 in
+  both directions**; the Galois permutation and its corollaries (Task D).
+* **`COMPUTATIONALLY VERIFIED ONLY`** (T-112, T-113): the census, the negative controls and
+  the byte-identical reproducibility.
+* **Not attempted** (T-114): P-2.7/P-2.8, hulls, Gray maps, quantum constructions,
+  C-2.1d/e/f/g; `O-2.2` remains open.
+
+**A passing script never promotes a statement.** Every principality certificate exhibits a
+generator `x` and checks both `x ∈ I_W` and `|xS| = |I_W|`; every non-principality
+certificate is backed by a dimension bound (and, at `(2,2,2)`, by an exhaustive scan of
+all 4096 elements of `I_W`).
+
+### 10.4 Regression
+
+`phase2_stage2a_morita_checks.py` was re-run unchanged in a scratch directory on the same
+Phase-1 library and produced its recorded log byte-for-byte
+(`3ef38b17b00ad765bdf1c77779a1481a4ae40951f28521ecb53967b90323abe5`, 429/429 PASS), so the
+Stage-2A results are unaffected by Stage 2B.
+
+---
+
+## 11. Phase 2 — Stage 2C: `phase2_stage2c_galois_duality.py`
+
+Stage 2C verifies **L-6.1** (`θ_s` is an anti-automorphism of `R_n`), the annihilator
+conventions, **P-2.7** (`C^{⊥_s} = rev(ann_r(θ_s(g)))`), **P-2.8** (reciprocal
+generators), and the cardinality / double-dual identities.
+Companion document: `03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md`.
+
+**Log.** `phase2_stage2c_galois_log.txt` — **596 checks, 596 PASS, 0 FAIL**, 101 `[EXH]`
+and 495 `[SMP]`, seed `20261107`, two consecutive runs byte-identical, SHA-256
+`00355e7f205de16cbe0a567881a978f326007e564a606663135a71f5103a30ed` (777 lines).
+
+**Cases** (each for every `s ∈ {0,…,r−1}`): `(4,1,1)` exhaustive over all 256 elements of
+`R_n`; `(4,1,2)`, `(4,2,1)`, `(9,1,2)`, `(8,1,2)`, `(4,1,3)`, `(4,2,3)` with 200 distinct
+random generators each (`[SMP]`); `(4,2,2)` sampled plus a fully `[EXH]` wild
+counterexample.
+
+### 11.1 Independence of the tests
+
+The dual `C^{⊥_s}` is computed **from the definition** by `F_q`-linear algebra
+(`{y : B_s(x,y) = 0 ∀ x ∈ C}`); every annihilator is computed as the **kernel of the
+multiplication map** `w ↦ vw` over the standard basis (brute force, never from `im`,
+never via Morita); `im` and `ker` are separate routines, and the Morita form
+`ann_r(v) = I_{ker v}` is therefore an independent statement. Two real bugs were caught
+this way during development and are recorded in T-132 (the SNF exponent `ω^{ℓ−a}` at
+`a = 0`) and in the negative controls (rows vs columns of `I_W`).
+
+### 11.2 Proved versus computationally verified (Stage 2C)
+
+* **Proved** (register rows T-115 … T-128, T-130, T-131, T-132): L-6.1 on `R[X]` and on
+  `R_n`; the descent to the quotient; additivity/bijectivity/inverse; `θ_s² = σ_{2s}` and
+  the order `2r/gcd(r,2s)`; the annihilator side laws; `ann_r(R_n g) = ann_r(g)` versus
+  the strict inclusion for right ideals; P-2.1f (`rev`); P-2.7 in three equivalent forms
+  and the Morita form, for principal **and** non-principal right ideals; L-6.5; P-2.8 in
+  its regime-free and Smith-normal-form versions; the wild counterexample.
+* **Computationally verified only** (T-129, T-133, T-134, T-135): the C1–C4 consistency
+  checks, the cardinality and double-dual checks (the identities themselves are Phase-1
+  theorems), the generator-orbit uniqueness statement, and the census/negative controls.
+* **Not attempted** (T-136): hulls, Gray maps, quantum constructions.
+
+### 11.3 Negative controls
+
+All seven **must** fail, and all seven do: neg-1 wrong multiplication order in `θ_s`;
+neg-2 `rev` treated as an anti-automorphism; neg-3 `ann_l` in place of `ann_r`; neg-4
+`rev` omitted (genuinely vacuous for `n ≤ 2`, and the log says so instead of emitting a
+tautological pass; it detects 19 of 40 codes at `(4,1,3)`); neg-5 `θ_s` omitted; neg-6
+`I_W` built from rows instead of columns; neg-7 the swapped pairing.
+
+### 11.4 Regression
+
+`phase2_stage2a_morita_checks.py` and `phase2_stage2b_crt_principality.py` were re-run
+unchanged on the same Phase-1 library and reproduced their recorded logs byte-for-byte
+(429/429 and 460/460), so the Stage-2A and Stage-2B results are unaffected by Stage 2C.
+
+## 12. Phase 3 — Stage 3A: `phase3_stage3a_hull_structure.py`
+
+Stage 3A defines and studies the **Galois hull** `Hull_s(C) = C ∩ C^{⊥_s}` of a cyclic
+code over `M_2(A_t)`: its structure (Task A), the hull formula in principal and
+non-principal cases (Task B), hull dimension theory by four independent routes
+(Task C), the general / reflexive / codewise Galois regimes (Task D), and the
+LCD / self-orthogonal / self-dual characterisations (Task E).
+Companion document: `03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md`.
+
+**Log.** `phase3_stage3a_hull_log.txt` — **583 checks, 583 PASS, 0 FAIL**, 117 `[EXH]`
+and 467 `[SMP]`, seed `20261108`, two consecutive runs byte-identical, SHA-256
+`478d62ff31f6d95d36731e4a25b8026f7d40bbf030ba39c6113b2427bd9acfe2` (792 lines, ~45 s
+per run).
+
+**Cases** (each for every `s ∈ {0,…,r−1}`): `(4,1,1)` exhaustive (all 256 elements of
+`R_n`) — the `O-2.7` anchor; `(4,1,2)`, `(4,2,1)`, `(9,1,2)`, `(8,1,2)`, `(4,1,3)`,
+`(4,2,3)` sampled; `(4,2,2)` sampled (wild) plus 120 dedicated wild probes; `(8,1,2)`
+additionally carries 600 dedicated non-reflexive probes (`r = 3`, `s = 1, 2`).
+
+### 12.1 Independence of the four routes
+
+| Route | How the hull is obtained | What it never touches |
+|---|---|---|
+| **D** (definition) | `C^{⊥_s}` by `F_q`-linear algebra on `b_s`; hull = intersection of two subspaces | `im`, `ker`, `ann_r`, `rev` |
+| **A** (annihilator) | `rev(ann_r(θ_s(C)))`, annihilators as **kernels of the multiplication maps** | the pairing |
+| **M** (Morita) | `Hull = I_{W∩W'}`, `W = Σ im gᵢ`, `W' = ⋂ ker θ_s(rev gᵢ)` | the pairing, `ann_r` |
+| **N** (numerical) | `dim = 4tn − dim(C+C^{⊥_s}) = dim C − rank ψ_C = 2 dim(W∩W')` | the hull itself |
+
+Route M never touches the pairing and route D never touches `im`/`ker`, so their
+agreement is meaningful. `dim_{F_p} = r·dim_{F_q}` is recomputed by a direct `F_p`-rank,
+and principality is decided by an **exhaustive generator search** inside the hull, not
+by `μ`.
+
+### 12.2 Proved versus computationally verified (Stage 3A)
+
+* **Proved** (register T-137, T-139, T-141, T-142, T-143, T-144, T-145, T-147, T-148,
+  T-149, T-151, T-152, T-153, T-154, T-155, T-157, T-158, T-161, T-162, T-163): the
+  `F_q`-subspace structure and the correct scalar field; the right-module (cyclic)
+  structure and the failure of left closure; `θ_s(ann_r I) = ann_l(θ_s I)` and the
+  `θ_s`/`rev` images of the hull; the principal and non-principal hull formulas; the
+  kernel, sum, Morita, matrix and Smith-normal-form dimension formulas; the CRT
+  permutation `τ` with the decomposition criterion `n ∣ p^s+1`; the absence of a
+  universal closed formula; the `(C+D)^{⊥_s}` identity; the reflexive and codewise
+  regime statements; and the LCD / SO / SD characterisations.
+* **Computationally verified only** (T-146, T-150, T-164, T-165, T-166): the
+  removal-sensitivity census, the generator search, the LCD/SO/SD census, the harness
+  itself and the negative controls.
+* **Conjectures** (T-159, T-160): `Hull_s(C) ⊆ σ_{2s}(C)` and
+  `dim Hull_s(C^{⊥_s}) = dim Hull_s(C)`. The second was **downgraded from a claimed
+  theorem** after the proof gap was found (it conflated `C^{⊥_s}` with
+  `(σ_{2s}C)^{⊥_s}`); the document records the gap.
+* **Not attempted** (T-168): hull enumeration, Gray maps, quantum constructions.
+
+### 12.3 Negative controls
+
+Seven controls must fail, and all seven do (counts in T-166): omitting `rev` (detected
+only at `n = 3`; provably vacuous for `n ≤ 2`, and the log says so instead of emitting a
+tautological pass), `ann_l` for `ann_r`, `I_W` from rows, "the hull is always
+two-sided", `Hull(σ_kC) = Hull(C)`, the Euclidean form `Σ x_e y_e`, and
+"`dim Hull_s(C)` is independent of `s`". A further contrast — the naive componentwise
+hull `Σ_j dim Hull_s(C_j)` — fails exactly when `τ ≠ id`. Three real bugs were caught by
+this discipline during development and are recorded in the document: row-vs-`R_n`
+coordinates in the restricted pairing matrix, list-vs-tuple basis comparison (three
+times), and a diagonal-only search for the Euclidean witness.
+
+### 12.4 Regression
+
+The Stage-2A, Stage-2B and Stage-2C scripts, their logs and the Phase-1 library are
+**unchanged** by Stage 3A; `phase3_stage3a_hull_structure.py` imports
+`phase2_stage2c_galois_duality.py` (and `ring_structure_checks.py`) read-only. The
+71-file start-of-stage baseline is re-checked at the end of the stage.
+
+---
+
+## 13. Phase 3 — Stage 3B: `phase3_stage3b_hull_enumeration.py`
+
+**Purpose.** Exhaustive enumeration of Galois hull dimensions, hull-dimension
+distributions, and LCD / SO / SD counts for **all** codes over
+$R_n=M_2(A_t)[X]/\langle X^n-1\rangle$ on the eight parameter sets
+$(4,1,1),(4,1,2),(4,2,1),(4,2,2),(4,1,3),(9,1,2),(8,1,2),(4,2,3)$, together with the
+four counting problems (right ideals / generator matrices / unit-equivalence classes /
+Morita classes), a closed form for the hull enumerator in the split regime, and the
+refutation of conjecture O-3.1.
+
+**Log.** `phase3_stage3b_hull_log.txt` — 696 lines, **206 checks, 206 PASS, 0 FAIL**
+(189 `[EXH]`, 19 `[SMP]`), seed $20261109$, Python 3.11.2, two consecutive runs
+**byte-identical**, SHA-256 `c8904a232faf25b550a9e7f84cc1ea7f41ed3921779ac2324bf6fa7887409814`.
+Wall-clock timings are printed to stdout only, never into the log, so that the
+byte-identity of consecutive runs is a meaningful reproducibility statement.
+
+**Structure of the script.**
+
+| § | content |
+|---|---|
+| 2 | the $B$-module $B^2$: coordinates, cyclic submodules, BFS over the submodule lattice, $\mu_B$ |
+| 3 | `Ring3B`: one parameter set, its rings, $\mu$, generators, $I_W$ |
+| 4 | $\mathbb F_q$-matrix helpers (transpose, matmul, rref key) |
+| 5 | **route 1**: ambient words, Gram matrix, restricted form $M=\sigma_s(A)GA^{\!\top}$, $\dim\operatorname{Hull}=\dim C-\operatorname{rank}M$, hull subspace, dual subspace |
+| 6 | **route 2**: $W'=\bigcap_i\ker\theta_s(\operatorname{rev}g_i)$ (Morita/annihilator), $\operatorname{Hull}=I_{W\cap W'}$, $\dim=2\dim(W\cap W')$ |
+| 7 | the local lattice $L(A_t^2)$, the local dual $\delta_s$ (pairing **and** Morita variants), the $\tau$-orbit transfer matrix, $\operatorname{Tr}(N^\ell)$ by exponent bookkeeping, $\tau$ from $\zeta_{\tau(j)}^{p^s}=\zeta_j^{-1}$ |
+| 8 | the case runner: enumeration, distributions, LCD/SO/SD by containment/equality, the trace identities, sampled verification for product-enumerated families |
+| 9 | the four counting problems: generating tuples by $f_k(V)=\lvert V\rvert^k-\sum_{U<V}f_k(U)$, $\mathrm{GL}_2(B)$-orbits (reduced and full generating sets), the SNF/valuation type invariant |
+| 10 | open questions and negative controls |
+| 11 | `main`, case list, reproducibility |
+| 12 | the O-3.1 exhaustive scan and the witness verification (two hull routes, Nakayama $\mu_B(V)=\dim_k(V/\operatorname{rad}V)$, randomised pair search) |
+
+**Main results recorded in the log.** Code-family counts $7,33,33,1221,343,144,93,35\,937$;
+hull-dimension distributions for every case and $s$; $N_{\mathrm{LCD}},N_{\mathrm{SO}},N_{\mathrm{SD}}$
+for every case and $s$; the four counting numbers per case; the $\tau$-orbit product
+formula $\prod_O\operatorname{Tr}(N^{|O|})$ verified exhaustively (univariate **and**
+bivariate) at $(4,1,3),(9,1,2),(4,2,3)$; and **four witnesses at $(4,2,2)$ whose Galois
+hull has $\mu_B=3$**, refuting O-3.1.
+
+### 13.1 Bugs caught by the negative-control discipline
+
+1. **$\mu$ from a generating set instead of a basis.** The Stage-2C helpers
+   `mu_local`/`mu_components` take $\dim W$ from the $\mathbb F_q$-rank of the list they
+   are given, so a $B$-generating set (whose $\mathbb F_q$-span can be smaller than $W$)
+   silently under-counts $\mu$ and desynchronises the two hull routes. Fixed by an
+   explicit `basis_pairs` and by documenting the precondition.
+2. **Missing factor 2 in the transfer matrix.** The local entry
+   $\dim_{\mathbb F_q}(V\cap\delta_s(W))$ contributes $2\dim_{\mathbb F_q}$ to the hull;
+   with the factor omitted the trace formula reproduced every **coefficient** and half of
+   every **exponent** — a warning that matching coefficients prove little.
+3. **Trivial "unit equivalence".** The scalar action $W\mapsto uW$, $u\in B^\times$, is
+   trivial ($uW=W$), and so is right multiplication on a right ideal; the meaningful
+   action is **left** multiplication by $\mathrm{GL}_2(B)=R_n^\times$, i.e. $W\mapsto UW$.
+4. **Structural edit hazard.** A slice-based rewrite of `run_case` deleted
+   `_run_case_bfs` (always re-list `def`s after a structural edit); the function was
+   reconstructed and re-verified.
+
+### 13.2 Regression
+
+The Stage-2A, Stage-2B, Stage-2C and Stage-3A scripts and logs are **unchanged** by
+Stage 3B; `phase3_stage3b_hull_enumeration.py` imports
+`phase2_stage2c_galois_duality.py` and `ring_structure_checks.py` read-only. Regression
+re-runs in this stage: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596,
+Stage 3A 583/583 — each reproducing its committed log byte-for-byte. The 77-file
+start-of-stage baseline was re-checked at the end of the stage: 77/77 identical.
+
+## 14. Phase 4 — Gray map compatibility: `phase4_gray_map_compatibility.py`
+
+**Run:** `python3 phase4_gray_map_compatibility.py` (≈135 s, seed 20261110).
+**Log:** `phase4_gray_map_log.txt` — 1106 lines, **463 checks, 463 PASS, 0 FAIL**
+(311 `[EXH]`, 152 `[SMP]`), two consecutive runs **byte-identical**, SHA-256
+`55656a9d…9a92`.  Python 3.11.2.
+
+**Dependencies (read-only).** `ring_structure_checks.py` (field, local ring, matrix ring,
+`rref`, `nullspace_basis`, `say`/`check`), `phase2_stage2c_galois_duality.py` (the Ctx:
+`bs`, `Bs`, `flat_word`/`unflat_word`, `flat_rn`/`unflat_rn`, `iota`/`iota_inv`,
+`sigma_word`, `theta_word`, `rev_word`), `phase3_stage3b_hull_enumeration.py`
+(`Ring3B`, `enumerate_submodules`, `code_basis`, `Wprime_ann`, `hull_by_morita`,
+`build_product_submodule`, `local_lattice`, `intersect_rows`, `mu`, `gens_of`).
+None of these is modified by Phase 4.
+
+**Parameter sets.** Part A/B: $(q,t,n)=(4,1,1),(4,1,2),(4,2,1),(8,1,2),(9,1,2),(4,1,3),(4,2,2)$.
+Part C/D/E/F: the same with $s=0,1$ (and $s=0,1,2$ at $q=8$), plus $(9,2,1)$ and
+$(4,2,3)$ (400 of $33^3=35\,937$ codes sampled, `[SMP]`), i.e. 18 (instance, $s$) pairs and
+$5\,140$ code/instance pairs.  The enumeration matches Phase 3B: 7, 33, 33, 93, 144, 343,
+1221 codes (113 at $(9,2,1)$, which Phase 3B did not run).
+
+**Sections.**
+
+| part | content | key functions |
+|---|---|---|
+| A | the maps $\varphi_A,\varphi_R,\varphi_n$; additivity, $\mathbb F_q$-linearity, bijectivity, the transported left regular representation $a\mapsto M_L(a)$, shift-compatibility $\varphi_nT=\widehat T\varphi_n$, the variants $P$, $\varphi^{\mathrm B}$ | `task_a_maps`, `phi_A/phi_R/phi_n`, `mat_of_left` |
+| B | the four weights, the inequality chain, and the homogeneous weight built from the generating character in exact integer arithmetic | `task_b_weights`, `hom_from_nonunits`, `w_Hamming/w_entry/w_coef/w_rank` |
+| C | the transported Gram matrix, the duality correspondence (two routes), the three symmetry notions, the congruence question | `gram_transported`, `predicted_gram`, `hat_form`, `orth_hat`, `dual_img`, `find_block_congruence` |
+| D | hull compatibility (Morita route vs. intersection in $\mathbb F_q^N$), the $\mu_B\ge3$ witnesses | `run_case_p4` |
+| E | length, dimension, quasi-cyclic index, cyclicity, minimum distances | `min_distances` |
+| F | counts of self-orthogonal / self-dual / LCD codes for three different forms | `run_case_p4` |
+| G | negative-control summary | `task_g_summary` |
+
+### 14.1 Independence of the routes
+
+| identity | route 1 | route 2 |
+|---|---|---|
+| $C^{\perp_s}$ | annihilator / $\operatorname{rev}$ (Stage 2C Thm 3.8) | nullspace of $\sigma_s(\text{basis})\;J$ in $\mathbb F_q^{N}$ |
+| $\operatorname{Hull}_s(C)$ | Morita intersection $I_{W\cap W'}$ | $\varphi_n(C)\cap\varphi_n(C)^{\perp^{\widehat{}}_s}$ |
+| Gram matrix | element-wise $b_s(\varepsilon_i,\varepsilon_j)$ | closed form $I_{4n}\otimes H_t$ |
+| $w_{\mathrm{hom}}$ | character sum over $R^\times$ | character orthogonality (non-units) + closed form |
+
+### 14.2 Bugs caught by the discipline
+
+1. **"Coefficient reversal makes the Gram the identity" is FALSE.** The reversal $P$ is
+   *equal* to $J$ ($P=I_{4n}\otimes H_t$), so $P^{\mathsf T}JP=J$; the check failed at
+   $t=2$ and the claim was withdrawn (§3.5 of the deliverable). The correct statement is
+   that the reversal cannot help and that one must solve a *congruence* problem instead.
+2. **Two different symmetry notions were conflated.** "$\langle v,u\rangle=\sigma_s\langle u,v\rangle$"
+   and "the orthogonality relation is symmetric" both need $r\mid2s$, but
+   "the form is symmetric as a value" needs $r\mid s$; the first code predicted all three
+   from the same condition and produced spurious failures at $(8,1,2,1)$ and $(4,1,3,1)$.
+   The three are now separate checks (T-186).
+3. **A wrong reflexivity predicate.** `r % gcd(r,2s) == 0` is always true; the correct test
+   is `(2*s) % r == 0`. Found because the `(8,1,2,1)` predictions disagreed with the data.
+4. **Sampled injectivity tests measured the sample, not the map.** Counting
+   `len(set(images)) == len(samples)` fails by the birthday paradox (4000 samples from
+   $|R|=65\,536$); the check now compares against `len(set(inputs))`.
+5. **Wrong ring size in the character orthogonality term.** In the sampled branch
+   `len(elems)` (the sample size) was used where $|R|$ was required, giving
+   $w_{\mathrm{hom}}(0)=10921/7680$; `hom_from_nonunits` now takes `sizeR` explicitly and
+   the check `w_hom(0)=0` is `[EXH]` for every ring tested.
+6. **Distance computations dominated the runtime** ($62$ M word-enumerations at
+   $(4,2,2)$); the distances are now computed for at most 120 sampled codes with
+   $|C|\le4100$ and labelled `[SMP]`.
+
+### 14.3 Negative controls
+
+See §7.2 of the deliverable. All of the following **fail**, as they must: the Euclidean
+orthogonal of the image equals $\varphi_n(C^{\perp_s})$ (fails unless $t=1$ and $r\mid s$);
+the plain $\widehat\sigma_s$-Hermitian orthogonal equals it (fails for $t\ge2$);
+$\varphi_n$ preserves the ring-Hamming weight; the image is cyclic; $\varphi_n$ is a ring
+homomorphism; a Hamming isometry exists for the homogeneous weight; the coefficient
+reversal makes the Gram the identity; the Bachoc-type map is a $w_{\mathrm{coef}}$-isometry.
+
+### 14.4 Regression
+
+The Phase-0/1/2/3A/3B scripts and logs are **unchanged** by Phase 4 (80-file
+start-of-stage baseline re-checked at the end of the phase). Regression re-runs in this
+phase: Stage 2A no failures, Stage 2B 460/460, Stage 2C 596/596, Stage 3A 583/583,
+Stage 3B 206/206, each reproducing its committed log byte-for-byte.
+
+---
+
+## 15. Phase 5 — quantum error-correcting code construction
+
+**Script:** `phase5_quantum_constructions.py` (SHA-256 `d18dc66d…9c64`, 1637 lines).
+**Log:** `phase5_quantum_log.txt` (491 lines, SHA-256 `dd4962cc…d03a0`).
+**Run:** `python3 phase5_quantum_constructions.py` (≈ 80 s, Python 3.11.2, seed `20261120`).
+**Result: 88 checks, 88 PASS, 0 FAIL; two consecutive runs byte-identical.**
+
+### 15.1 What the script does
+
+| part | content |
+|---|---|
+| A | the quantum framework built from scratch on a genuine Hilbert space ($q=4$, $N=2$, $\dim=16$): the Weyl relation `X(a)Z(b)=chi(Tr(a·b))Z(b)X(a)` `[EXH]` 256 pairs; commutation $\iff\operatorname{Tr}(\omega)=0$ `[SMP]`; $K=(1/\lvert S\rvert)\sum_g\operatorname{Tr}(g)=q^N/\lvert\mathcal C\rvert$ `[EXH]` ($K=8,4,2,1$); the Knill–Laflamme criterion and its group form |
+| B | Task B1: hull self-orthogonality (226 hulls, `[EXH]`); Route R1 (twisted embedding, abelian + order $p$ + distances); Route R2b: the entanglement-assisted route |
+| B3 | Route R2 (Euclidean/CSS) over 7 parameter sets |
+| C | Task C: $N_{\rm phys}=4tn$; the eight properties of $\Psi(u)=u(I_{4n}\otimes T)$; the weight-change measurement for non-monomial $\Psi$ |
+| D, D2 | explicit codes and their per-code verification (abelian on an $\mathbb F_p$-basis, $\lvert\mathcal C\rvert=q^{\dim\mathcal C}$, $K=N-\dim\mathcal C$, exhaustive distance, Knill–Laflamme) |
+| D3 | the O-3.1 witness family: quantum codes from **non-principal** Galois hulls ($\mu_B=4$) |
+| E | quantum Singleton and Hamming bounds for every constructed code |
+| F | negative controls N1a, N1b, N2, N3, N4, N5 (each must fail and does) |
+
+### 15.2 Main numeric outputs
+
+* Best stabilizer codes: $[[16,4,3]]_4$ (Knill–Laflamme with $t=1$ verified over
+  58 081 error pairs), $[[8,4,2]]_{4,8,9}$, $[[12,8,2]]_4$, $[[24,8,2]]_4$,
+  $[[24,16,2]]_4$.
+* Non-principal hulls ($\mu_B=4$, 66 codes at $(4,2,2)$, $s=1$):
+  $[[16,10,2]]_4$ and $[[16,8,2]]_4$ via the Galois-native route R1.
+* Entanglement-assisted: $[[8,4,3;4]]_4$ (from an LCD code, $h_E=0$),
+  $[[12,10,2;2]]_4$, $[[16,12,2;0]]_4$.
+* Obstruction: no congruence $T^{\mathsf T}H_2T=I_2$ exists over $\mathbb F_4$
+  (`[EXH]`, all $4\times4$ matrices), so the Euclidean route is impossible at
+  $(q,t)=(4,2)$.
+
+### 15.3 Negative controls (all must fail, all do)
+
+N1a (reflexive regime: $\mathcal C_T$ abelian for every code) ·
+N1b (non-reflexive: abelian $\iff$ self-orthogonal) ·
+N2 (transported-SO codes that are not Euclidean SO) ·
+N3 (no congruence at $(4,2)$) ·
+N4 (the twisted embedding has $d=1$, weight-1 witness exhibited) ·
+N5 (the $\mathbb F_q$-generator commutation test is insufficient:
+$\operatorname{Tr}_{\mathbb F_4/\mathbb F_2}(1)=0$) ·
+A4b (a distance-1 code fails Knill–Laflamme with $t=1$).
+
+### 15.4 Regression
+
+The Phase-0/1/2/3A/3B/4 scripts and logs are **unchanged** by Phase 5 (83-file
+start-of-stage baseline, SHA-256 list `4e3814b1…9b66`, re-checked at the end of the
+phase). Regression re-runs in this phase: Stage 2A no failures, Stage 2B 460/460,
+Stage 2C 596/596, Stage 3A 583/583, Stage 3B 206/206, Phase 4 463/463, each
+reproducing its committed log byte-for-byte.
+
+---
+
+## 16. Phase 6 — quantum parameter enhancement, exact distance certification and novel code construction
+
+**Deliverable:** `03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md`
+**Script:** `phase6_quantum_parameter_enhancement.py`.
+**Log:** `phase6_quantum_parameter_log.txt` (424 lines, **13 checks, 13 PASS, 0
+FAIL**; seed `20261130`; two runs byte-identical, SHA-256 `985a41b2…43ee`;
+runtime ≈ 3 minutes, Python 3.11.2, standard library only).
+
+Built **read-only** on Phases 0–5 (ring, Morita dictionary, Galois duality, Gray
+map, transported Hankel form, and the Phase-5 routes R1/R2/R3).
+
+### 16.1 What the script does (Parts 1–9, mirroring the deliverable)
+
+1. **Parameter census** — which `(q,t,n)` are enumerable exhaustively
+   (`q^{2tn} ≤ 200000`, BFS over the submodule lattice of `B^2`) and which only
+   samplable (CRT product lattice, seeded sample of 300). 13 families, 2 samples.
+2. **Task A** — the R1 cap `d_{R1} ≤ min wt(D^{⊥_E})`: the mechanism
+   `(0|b) ∈ C_T^{⊥_ω}` for every `b ∈ D^{⊥_E}` is verified exhaustively (99
+   codes); R2/R3 are shown to escape it; the computational boundary (no ring
+   routine for `n = 5,6` at `t = 1`, nor `n = 3` at `q = 8`) is recorded.
+3. **Task B** — systematic search (SO / DC / EA) over 3942 codes, with the
+   Pareto frontier, the best code per route, and the minimum entanglement per
+   distance.
+4. **Task C** — exact certification of 22 codes by three methods (below).
+5. **Task D** — the O-3.1 witnesses re-derived, `µ_B` by two implementations,
+   the `µ_B` census of the hull, and all three routes on each witness.
+6. **Task E** — the characteristic-two obstruction (E1 universal over linear
+   maps, E2 the constructive congruence for `t` odd, E3 the four bypasses).
+7. **Task G** — `K = N − dim S − c` recomputed from the stabilizer, with the
+   `F_p`-basis trace-symplectic commutation test.
+8. **Task H** — EA Singleton / EA Hamming bounds, and the comparison table
+   against Grassl's codetables.de.
+9. **Negative controls** — N1 (the R1 cap is real), N2 (abelian ⟺ SO outside
+   the reflexive regime), N3 (the `F_q`-generator commutation test is invalid).
+
+### 16.2 The exact-distance engine (why the reported distances are exact)
+
+`min wt(G \ E)` is computed in three passes, and the pass that decided each
+value is printed on every row of the log:
+
+1. increasing-weight support search up to weight 2 (cheap filter; a miss
+   **proves** `d > 2`);
+2. **complete enumeration** of `G` (every codeword) when `q^{dim G} ≤ 2·10^6`.
+   For `q = 2^r` this uses a reflected mod-`q` Gray code over the coefficients
+   of an rref basis: consecutive codewords differ by one basis vector, so the
+   codeword and its syndrome with respect to a parity-check matrix of `E` are
+   each updated by one big-integer XOR (addition in `F_{2^r}` is bitwise XOR in
+   the stored digit basis), and membership in `E` is the test `syndrome == 0`.
+   The Hamming weight is read by OR-ing the `r` bit-planes and counting set
+   bits. **Cross-checked against brute force on 110 instances, 0 disagreements.**
+3. otherwise a support search to weight 6 (`N ≤ 16`) or 4 (`N = 24`): exact if
+   it finds a codeword, else the proved lower bound `d > 6` resp. `d > 4`.
+
+The three certification methods are: **M1** complete enumeration (exact,
+complete); **M2** an independent algorithm (increasing-weight support search —
+a left-kernel problem per support); **M3** an exhaustive search of the ambient
+quantum space `F_q^{2N}` in increasing **symplectic** weight, testing
+`v ∈ V^{⊥_ω}` and `v ∉ V`, complete only up to the weight it reaches and
+reported as a bound otherwise. No random search is used as a certificate.
+
+### 16.3 Results
+
+* Best distances: **stabilizer `d = 3`** (`[[16,4,3]]_4`, SO `k = 6` and DC
+  `k = 10`), **R1 `d ≤ 2`** (the cap is attained), **EA `d = 6`**
+  (`[[12,2,6;10]]_4`, `k = 10`, `h_E = 0`), with `d = 5` at `[[16,4,5;8]]_4`
+  and `[[24,4,5;12]]_4`. Every `d ≥ 4` requires entanglement (`c + K = N − k`).
+* 22 codes certified by three methods with no disagreement; every stabilizer
+  group abelian on an `F_p`-basis.
+* `µ_B` census of the Galois hull: `{0: 258, 1: 522, 2: 440, 3: 1}` at
+  `(4,2,2,0)` and `{0: 130, 1: 538, 2: 550, 3: 3}` at `(4,2,2,1)` — reproducing
+  Stage 3B's four witnesses (1 at `s = 0`, 3 at `s = 1`), `µ_B = 3` by two
+  implementations.
+* Char-2 obstruction: alternatingness is preserved by every congruence
+  (200 invertible `S` at each of five parameter pairs); a congruence **is**
+  constructed for `t = 1,3,5` at `q = 4,8`; the J-frame CSS bypass gives `d = 2`
+  over 398 valid pairs.
+
+### 16.4 Two defects found and fixed in Phase 6's own verification
+
+1. The first version of the certification re-selected "a code with the same
+   invariants" instead of certifying the reported one, and therefore certified a
+   **different** code (2 failures). Fixed: the search now stores the image basis
+   of every reported code.
+2. The ambient quantum search tested commutation with `rad V` instead of `V`,
+   which understates the entanglement-assisted distance (it reported `d = 1`
+   for a code whose distance is 6). Fixed: with entanglement the whole group `V`
+   is measurable, so the correct set is `V^{⊥_ω} \ V`.
+
+Both are recorded in the deliverable's completion report; neither was patched
+silently.
+
+### 16.5 Regression
+
+The Phase 0–5 scripts and logs are unchanged by Phase 6 (86-file baseline,
+re-checked at the end of the phase). Regressions re-run in this phase: Stage 2A,
+2B (`460/460`), 2C (`596/596`), 3A (`583/583`), 3B (`206/206`), Phase 4
+(`463/463`), Phase 5 (`88/88`), each reproducing its committed log
+byte-for-byte.
+
+---
+
+## 17. Phase 7 — extended search: `phase7_extended_search.py`
+
+**Run:** `python3 phase7_extended_search.py` (≈1050 s, `SEED = 20261210`,
+Python 3.11.2).  Log: `phase7_extended_search_log.txt` (639 lines, **17 checks,
+17 PASS, 0 FAIL**, SHA-256 `634a63d3…c35eb`; script `0c9486a1…6e031`, 1911 lines).
+
+### 17.1 What the script does (Parts 1–9, mirroring the deliverable)
+
+* **Part 1** builds the CRT decomposition
+  `B = A_t[X]/(X^n−1) ≅ ∏_j A_t[X]/(g_j^{e_j})` (trial-division factorisation,
+  verified by re-multiplication; `Ψ` an `F_q`-linear ring isomorphism with
+  matrix and inverse) and compares its submodule list **as a set** with the
+  Phase-3B exhaustive BFS on every family the Phase-2C routine supports
+  (10/10 `YES`).  `Ψ` is checked multiplicative on all pairs of basis elements
+  and `Ψ ∘ Ψ^{-1} = id` on a basis.
+* **Part 2** re-runs the census over `q ∈ {4,8,9}`, `t ≥ 1`, `n ≥ 1`,
+  `tn ≤ 8` (42 families) and classifies each as EXHAUSTIVE / COUNTED-ONLY /
+  blocked, printing the blocking quantity `q^{2 dim S}` when it applies.
+* **Part 3** scans every enumerable family (25 families): cheap invariants for
+  every code, distances for a deterministic subset (all SO/DC up to 150 per
+  family; the 120 EA codes with the smallest dual; the 120 with the smallest
+  entanglement), then a staged exact/lower-bound distance pipeline and, for ≤ 25
+  survivors per family, a deep support search.
+* **Part 4** measures the entanglement budget (O-6.1): the attainable set with
+  `c` bounded, the minimum `c` per distance, the Pareto frontier, and the best
+  distance per route and per nilpotency index `t` (O-6.2).
+* **Part 5** proves and verifies the `µ_B` structure theorem and constructs the
+  O-6.4 witnesses `W = m^i e_1 ⊕ U`, `U ≤ ann_{B^2}(m)`, in the three wild
+  families named by O-6.4 plus the known `(4,2,2)`.
+* **Part 6** certifies the headline codes by three independent methods (M1
+  complete enumeration, M2 support search, M3 ambient quantum search), carrying
+  the image basis so that the certified code is the reported one.
+* **Part 7** re-parses `phase6_quantum_parameter_log.txt` and re-checks every
+  Phase-6 obstruction statement, recording errata where they are due.
+* **Part 8** checks the EA Singleton and EA Hamming bounds on all 5055 codes and
+  compares the stabilizer codes with `codetables.de`.
+* **Part 9** runs three negative controls (N1–N3).
+
+### 17.2 Cost, and what limits it
+
+Part 1 ≈ 300 s (dominated by the Phase-3B cross-check at `(9,1,3)` and
+`(4,2,2)`), Part 2 ≈ 200 s (the `(9,1,6)`, `(9,3,1)`, `(9,3,2)` counts),
+Part 3 ≈ 700 s (dominated by `(4,1,6)`, `(4,2,3)`, `(9,1,4)` and the four
+sampled families), Parts 4–9 ≈ 60 s.  The binding limits are (i) the component
+BFS, `q^{2 dim S} ≤ 4·10^6`, which blocks 15 families including every `N = 32`
+family, and (ii) the 40000-cap on the product of the component lattices, above
+which a family is sampled (2000 codes, seeded) rather than enumerated.
+
+### 17.3 Results
+
+* New families: `(4,1,5)` `N = 20` 2527 codes, `(4,1,6)` `N = 24` 35937 codes,
+  `(8,1,3)` `N = 12` 737 codes; ten previously sampled families now exhaustive.
+* Best distances: EA `d = 10` (`[[20,2,10;18]]_4`, `[[24,2,10;18]]_9`);
+  **stabilizer `d = 4`** (`[[24,8,4]]_9` SO, `[[20,4,4]]_4` DC) — the first in
+  this framework; per `t`: stabilizer `4 / 2 / 1 / 1` and EA `10 / 6 / 4 / 2`
+  for `t = 1, 2, 3, 4`.
+* O-6.4: `µ_B(Hull_s) = 3` at `(9,2,3)` (`s = 0,1`, `Hull = W`) and `(4,2,4)`
+  (`s = 0,1`, `Hull ⊋ W`); **not** at `(8,2,2)`.
+* Bounds: 5055 codes, 0 EA-Singleton and 0 EA-Hamming violations.
+* Literature: only `GF(4)` is tabulated (`q = 8` returns "currently not
+  available for q=8", `q = 9` is not offered); 5 of 12 comparable stabilizer
+  entries meet the best known distance, 7 are 1–2 below.  **No record.**
+
+### 17.4 Three defects found and fixed in Phase 7's own verification
+
+1. The seeded sampling branch of the product enumeration yielded *indices*
+   where the exhaustive branch yields *submodules* — a `TypeError` on the
+   first family that is sampled rather than enumerated.  Fixed, and re-tested
+   on all four sampled families before the full run.
+2. `main()` was invoked before the parts it calls were defined (a splice had
+   moved the `if __name__ == "__main__"` block), so the first full run died
+   with `NameError` after Part 2.  Fixed by moving the invocation to the end
+   of the file; the module is now also imported and attribute-checked in a
+   smoke test.
+3. Per-family elapsed times were measured with `time.time()`; the sandbox
+   clock jumped by 63 hours mid-run and one row reported `[226891s]`.  Replaced
+   by `time.monotonic()`, and the reproducibility claim in the log was
+   corrected accordingly (two runs agree on every line except the wall-clock
+   annotations).
+
+Two dead and partly wrong helpers (`poly_pow_mod`, `is_irreducible`) were
+deleted rather than left in the file.
+
+### 17.5 Regression
+
+The Phase 0–6 scripts and logs are unchanged by Phase 7 (89-file baseline,
+re-checked at the end of the phase).  Phase 7 never writes to any file other
+than its own log, and imports Phases 2C/3B/4/5/6 read-only.
+
+---
+
+## 18. Phase 7 (v2) — `phase7_extended_search.py`, Tasks A–H
+
+**Run:** `python3 phase7_extended_search.py` (≈517 s, `SEED = 20261210`, Python
+3.11.2, peak resident memory 367.3 MB).  Log:
+`phase7_extended_search_log.txt` (727 lines, **18 checks, 18 PASS, 0 FAIL**;
+script `682e2a36…d932a0`, 2020 lines).
+
+The v1 artefacts are preserved verbatim: `03_THEOREMS/PHASE7_EXTENDED_SEARCH.md`
+and `phase7_extended_search_log_v1.txt` (639 lines, 17 checks, 17 PASS, SHA-256
+`634a63d3…c35eb`).  **The search loop is unchanged**; v2 adds four reporting
+blocks and one new check, so every v1 number recurs bit for bit.
+
+### 18.1 What was added to the script
+
+* **Part 3(f)** the dominance frontier (T-231).  For complete parameter tuples,
+  `(N,K,d,c)` dominates `(N',K',d',c')` iff `N ≤ N'`, `K ≥ K'`, `d ≥ d'`,
+  `c ≤ c'` with at least one strict, compared inside one alphabet.  Result: 368
+  distinct tuples with a distance, **88 non-dominated**, 280 dominated.  The
+  first 40 non-dominated tuples are printed with `K/N` and `d/N` and an
+  exactness flag; the rest are counted.
+* **Part 3(g)** the coset Singleton bound (T-232) and check **H1** — the 18th
+  check, 0 violations on 5055 codes.  It is neither the EA Singleton bound nor
+  implied by it.
+* **Part 3(h)** the four Phase-6 baselines named in Task C
+  (`[[16,4,3]]_4`, `[[12,2,6;10]]_4`, `[[16,4,5;8]]_4`, `[[24,4,5;12]]_4`):
+  for each, whether the exact tuple occurs in the new search, and whether it is
+  dominated (with a dominator).  Three are reproduced and non-dominated;
+  `[[24,4,5;12]]_4` is dominated, because Phase 6 sampled `(4,2,3)` (300 codes,
+  `d = 5`) and the exhaustive enumeration of that family (35937 codes) gives
+  `d = 6`.
+* `import resource` and a `peak resident memory` line in the Part 9 completion
+  report; the reproducibility wording now also excludes that line.
+
+### 18.2 Reproducibility, measured
+
+Three consecutive runs of the final script (519.9 s, 527.8 s, 516.6 s) differ
+**only** in the per-family `[..s]` annotations; the peak-memory line read
+367.9 MB, 367.3 MB and 367.3 MB.  Every table, count, check verdict and
+parameter tuple is identical across the three.  The committed log is the
+516.6 s run, produced by the committed script (SHA-256 `682e2a36…d932a0`,
+2020 lines), so the committed log is byte-reproducible from the committed
+script up to those two lines.
+
+The v1 log is *not* byte-reproducible from the v1 script — the v1 script's
+reproducibility wording had been edited after that run — which is precisely why
+the v2 log was regenerated from the script as it now stands, and why a
+docstring touch-up after the v2 run was followed by a third run rather than
+left in place.
+
+### 18.3 New results (register rows T-230 … T-233)
+
+* **T-230 (PROVED)** for every route, `d = min wt(D^{⊥_E} \ Hull_E(D))` — the
+  minimum weight of the quotient (coset) code `D^{⊥_E}/Hull_E(D)`, of dimension
+  `K = N − k − h_E` and length `N`.  Hence `d ≥ 4` iff every vector of weight
+  `≤ 3` in `D^{⊥_E}` lies in `Hull_E(D)`.
+* **T-231** the non-dominated set above (COMPUTATIONALLY VERIFIED ONLY).
+* **T-232 (PROVED + `[EXH]`)** `K + d ≤ N + 1`.  Puncturing `N − d + 1`
+  coordinates is injective on the `q^K`-element quotient.  For
+  `[[20,2,10;18]]_4` it gives `K ≤ 11` where EA-Singleton allows `K ≤ 20`.
+* **T-233 (PROVED)** `d ≥ 4`, `c ≤ c_0`, `K ≥ K_0` ⟹ `2k ≤ N + c_0 − K_0`.
+
+### 18.4 Regression
+
+The Phase 0–6 scripts and logs are unchanged by Phase 7 (v1 and v2 alike;
+89-file baseline, re-checked at the end of the phase).  The v1 Phase-7
+deliverable and log are preserved rather than overwritten; the canonical log
+path now holds the v2 run.

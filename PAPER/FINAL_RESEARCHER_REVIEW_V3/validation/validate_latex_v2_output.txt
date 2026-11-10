@@ -1,0 +1,33 @@
+==============================================================================
+STATIC LaTeX VALIDATION  (source-level checks; not a substitute for a build)
+root: /home/user/Matrix-Ring/PAPER/FINAL_RESEARCHER_REVIEW_V3/source
+==============================================================================
+  V1   every \input resolves to an existing file         PASS
+       13 files
+  V2   braces are balanced in every file                 PASS
+       13 files checked
+  V3a  every \begin has a matching \end                  PASS
+       all matched
+  V3b  every environment is provided by a loaded package PASS
+       all known
+  V4   every \ref/\eqref has a matching \label           PASS
+       264 refs, 116 labels
+  V5   no \label is defined twice                        PASS
+       116 labels unique
+  V6   every \cite key has a bibliography entry          PASS
+       32 citations, 13 entries
+  V7   no bibliography entry is uncited                  PASS
+       13 entries all cited
+  V8   no key on the DO-NOT-CITE list is cited           PASS
+       clean
+  V9   every control sequence is defined (heuristic)     PASS
+       493 distinct macros, all known (384 from BUILTIN, 93 from LATEX_KERNEL, rest user-defined)
+  V10  verbatim blocks contain no active macros          PASS
+       clean
+  V11  author metadata conforms to the confirmed values  PASS
+       all author/affiliation metadata is researcher-confirmed (7 confirmed values)
+  V12  math delimiters $...$ are balanced per file       PASS
+       balanced
+------------------------------------------------------------------------------
+  checks: 13 ; PASS 13 ; FAIL 0
+==============================================================================

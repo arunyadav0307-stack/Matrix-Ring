@@ -1,0 +1,471 @@
+========================================================================================
+PHASE 1 -- RING AND GALOIS FOUNDATIONS: INDEPENDENT VERIFICATION
+ corroborates 03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md
+========================================================================================
+
+A.1  A_t = F_4[u]/<u^1>     q = 4,  t = 1,  |A_t| = 4
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  4 = 4^1
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  3 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 3, formula 3
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  2 u-stable subspaces, 2 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  2
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 1 = q^{t-1} = 1
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 4
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 2, formula 2, endomorphisms 2
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 2, sigma_s(u) = u for all s
+
+A.1  A_t = F_4[u]/<u^2>     q = 4,  t = 2,  |A_t| = 16
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  16 = 4^2
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  12 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 12, formula 12
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  7 u-stable subspaces, 3 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  3
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 4 = q^{t-1} = 4
+  [EXH] nilpotency index of Jac(A_t) is exactly t                    PASS  
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 4
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 6, formula 6, endomorphisms 8
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 2, sigma_s(u) = u for all s
+
+A.1  A_t = F_4[u]/<u^3>     q = 4,  t = 3,  |A_t| = 64
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  64 = 4^3
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  48 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 48, formula 48
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  44 u-stable subspaces, 4 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  4
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 16 = q^{t-1} = 16
+  [EXH] nilpotency index of Jac(A_t) is exactly t                    PASS  
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 4
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 24, formula 24, endomorphisms 32
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 2, sigma_s(u) = u for all s
+
+A.1  A_t = F_9[u]/<u^1>     q = 9,  t = 1,  |A_t| = 9
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  9 = 9^1
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  8 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 8, formula 8
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  2 u-stable subspaces, 2 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  2
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 1 = q^{t-1} = 1
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 9
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 2, formula 2, endomorphisms 2
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 2, sigma_s(u) = u for all s
+
+A.1  A_t = F_8[u]/<u^1>     q = 8,  t = 1,  |A_t| = 8
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  8 = 8^1
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  7 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 7, formula 7
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  2 u-stable subspaces, 2 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  2
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 1 = q^{t-1} = 1
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 8
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 3, formula 3, endomorphisms 3
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 3, sigma_s(u) = u for all s
+
+A.1  A_t = F_16[u]/<u^1>     q = 16,  t = 1,  |A_t| = 16
+  [EXH] normal form: |A_t| = q^t distinct representatives            PASS  16 = 16^1
+  [EXH] a is a unit  <=>  a_0 != 0                                   PASS  15 units
+  [EXH] |A_t^x| = (q-1) q^{t-1}                                      PASS  computed 15, formula 15
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] the ideals of A_t are exactly (u^0) > (u) > ... > (u^{t-1}) > 0 PASS  2 u-stable subspaces, 2 of them ideals
+  [EXH] #ideals(A_t) = t+1  (A_t is a chain ring)                    PASS  2
+  [EXH] the ideals form a chain: (u^i) subset (u^j) for i >= j       PASS  
+  [EXH] Jac(A_t) = {x : 1-xy unit for all y} = (u) = {x_0 = 0}       PASS  |Jac| = 1 = q^{t-1} = 1
+  [EXH] socle(A_t) = ann(Jac) = (u^{t-1}),  |socle| = q              PASS  |socle| = 16
+  [EXH] lambda(a) = coeff of u^{t-1}: non-degenerate, catches every nonzero ideal PASS  
+  [SMP] lambda is symmetric and associative                          PASS  
+  [EXH] |Aut(A_t)| = r (t=1) / r(q-1)q^{t-2} (t>=2)                  PASS  computed 4, formula 4, endomorphisms 4
+  [EXH] Convention 1.7: the sigma_s (fixing u) form a subgroup of order r PASS  order 4, sigma_s(u) = u for all s
+
+A.2  R = M_2(A_t)     q = 4,  t = 1,  |R| = q^{4t} = 256
+  [EXH] matrix units: E_ij E_kl = delta_jk E_il,  sum_i E_ii = 1     PASS  
+  [EXH] |R| = q^{4t}                                                 PASS  256
+  [SMP] associative and distributive (300 random triples)            PASS  
+  [EXH] R is non-commutative                                         PASS  
+  [EXH] Z(R) = {aI : a in A_t}  and  |Z(R)| = q^t                    PASS  computed 4, formula 4
+  [EXH] X in R^x  <=>  det X in A_t^x  <=>  det(X mod u) != 0        PASS  
+  [EXH] |GL_2(A_t)| = q^{4(t-1)}(q^2-1)(q^2-q)                       PASS  computed 180, formula 180
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] uR = M_2((u)) = {entries in (u)} has |uR| = q^{4(t-1)}       PASS  1 = 4^0
+  [EXH] uR is closed under left and right multiplication by R        PASS  
+  [EXH] 1 - XY is a unit for all X in uR, Y in R   (uR c Jac(R))     PASS  
+  [EXH] R/uR = M_2(F_q) is simple (every nonzero element generates all of it) PASS  255 elements checked
+  [EXH] each u^i R (i=0..t) is a two-sided ideal with dim 4(t-i)     PASS  dims [4, 0]
+  [EXH] the two-sided ideal generated by X is u^{val(X)} R           PASS  
+  [EXH] #two-sided ideals of R = t+1                                 PASS  2
+
+A.2  R = M_2(A_t)     q = 9,  t = 1,  |R| = q^{4t} = 6561
+  [EXH] matrix units: E_ij E_kl = delta_jk E_il,  sum_i E_ii = 1     PASS  
+  [EXH] |R| = q^{4t}                                                 PASS  6561
+  [SMP] associative and distributive (300 random triples)            PASS  
+  [EXH] R is non-commutative                                         PASS  
+  [EXH] Z(R) = {aI : a in A_t}  and  |Z(R)| = q^t                    PASS  computed 9, formula 9
+  [EXH] X in R^x  <=>  det X in A_t^x  <=>  det(X mod u) != 0        PASS  
+  [EXH] |GL_2(A_t)| = q^{4(t-1)}(q^2-1)(q^2-q)                       PASS  computed 5760, formula 5760
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] uR = M_2((u)) = {entries in (u)} has |uR| = q^{4(t-1)}       PASS  1 = 9^0
+  [SMP] uR is closed under left and right multiplication by R        PASS  
+  [SMP] 1 - XY is a unit for all X in uR, Y in R   (uR c Jac(R))     PASS  
+  [EXH] R/uR = M_2(F_q) is simple (every nonzero element generates all of it) PASS  6560 elements checked
+  [EXH] each u^i R (i=0..t) is a two-sided ideal with dim 4(t-i)     PASS  dims [4, 0]
+  [SMP] the two-sided ideal generated by X is u^{val(X)} R           PASS  
+  [EXH] #two-sided ideals of R = t+1                                 PASS  2
+
+A.2  R = M_2(A_t)     q = 8,  t = 1,  |R| = q^{4t} = 4096
+  [EXH] matrix units: E_ij E_kl = delta_jk E_il,  sum_i E_ii = 1     PASS  
+  [EXH] |R| = q^{4t}                                                 PASS  4096
+  [SMP] associative and distributive (300 random triples)            PASS  
+  [EXH] R is non-commutative                                         PASS  
+  [EXH] Z(R) = {aI : a in A_t}  and  |Z(R)| = q^t                    PASS  computed 8, formula 8
+  [EXH] X in R^x  <=>  det X in A_t^x  <=>  det(X mod u) != 0        PASS  
+  [EXH] |GL_2(A_t)| = q^{4(t-1)}(q^2-1)(q^2-q)                       PASS  computed 3528, formula 3528
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] uR = M_2((u)) = {entries in (u)} has |uR| = q^{4(t-1)}       PASS  1 = 8^0
+  [SMP] uR is closed under left and right multiplication by R        PASS  
+  [SMP] 1 - XY is a unit for all X in uR, Y in R   (uR c Jac(R))     PASS  
+  [EXH] R/uR = M_2(F_q) is simple (every nonzero element generates all of it) PASS  4095 elements checked
+  [EXH] each u^i R (i=0..t) is a two-sided ideal with dim 4(t-i)     PASS  dims [4, 0]
+  [SMP] the two-sided ideal generated by X is u^{val(X)} R           PASS  
+  [EXH] #two-sided ideals of R = t+1                                 PASS  2
+
+A.2  R = M_2(A_t)     q = 4,  t = 2,  |R| = q^{4t} = 65536
+  [EXH] matrix units: E_ij E_kl = delta_jk E_il,  sum_i E_ii = 1     PASS  
+  [EXH] |R| = q^{4t}                                                 PASS  65536
+  [SMP] associative and distributive (300 random triples)            PASS  
+  [EXH] R is non-commutative                                         PASS  
+  [EXH] Z(R) = {aI : a in A_t}  and  |Z(R)| = q^t                    PASS  computed 16, formula 16
+  [EXH] X in R^x  <=>  det X in A_t^x  <=>  det(X mod u) != 0        PASS  
+  [EXH] |GL_2(A_t)| = q^{4(t-1)}(q^2-1)(q^2-q)                       PASS  computed 46080, formula 46080
+  [EXH] every unit has a two-sided inverse                           PASS  
+  [EXH] uR = M_2((u)) = {entries in (u)} has |uR| = q^{4(t-1)}       PASS  256 = 4^4
+  [SMP] uR is closed under left and right multiplication by R        PASS  
+  [EXH] (uR)^t = 0  and  (uR)^{t-1} != 0                             PASS  
+  [SMP] 1 - XY is a unit for all X in uR, Y in R   (uR c Jac(R))     PASS  
+  [EXH] R/uR = M_2(F_q) is simple (every nonzero element generates all of it) PASS  255 elements checked
+  [EXH] each u^i R (i=0..t) is a two-sided ideal with dim 4(t-i)     PASS  dims [8, 4, 0]
+  [SMP] the two-sided ideal generated by X is u^{val(X)} R           PASS  
+  [EXH] #two-sided ideals of R = t+1                                 PASS  3
+
+A.3  Morita: right ideals of M_2(A_t) <-> A_t-submodules of A_t^2     q = 4, t = 1
+      7 F_q-subspaces of F_q^2, of which 7 are A_t-submodules
+  [EXH] W -> I_W := {X : columns of X in W} is a right ideal (all 7 submodules) PASS  
+  [EXH] dim_{F_q} I_W = 2 dim_{F_q} W  (Morita dimension formula)    PASS  
+  [EXH] W -> I_W injective,  and W = span of the columns of I_W      PASS  7 distinct right ideals
+  [EXH] the family {I_W} is closed under sums                        PASS  28 pairs
+  [EXH] every principal right ideal XR is one of the I_W             PASS  
+  [EXH] number of right ideals = q+3                                 PASS  computed 7, formula 7
+
+A.3  Morita: right ideals of M_2(A_t) <-> A_t-submodules of A_t^2     q = 9, t = 1
+      12 F_q-subspaces of F_q^2, of which 12 are A_t-submodules
+  [EXH] W -> I_W := {X : columns of X in W} is a right ideal (all 12 submodules) PASS  
+  [EXH] dim_{F_q} I_W = 2 dim_{F_q} W  (Morita dimension formula)    PASS  
+  [EXH] W -> I_W injective,  and W = span of the columns of I_W      PASS  12 distinct right ideals
+  [EXH] the family {I_W} is closed under sums                        PASS  78 pairs
+  [SMP] every principal right ideal XR is one of the I_W             PASS  
+  [EXH] number of right ideals = q+3                                 PASS  computed 12, formula 12
+
+A.3  Morita: right ideals of M_2(A_t) <-> A_t-submodules of A_t^2     q = 8, t = 1
+      11 F_q-subspaces of F_q^2, of which 11 are A_t-submodules
+  [EXH] W -> I_W := {X : columns of X in W} is a right ideal (all 11 submodules) PASS  
+  [EXH] dim_{F_q} I_W = 2 dim_{F_q} W  (Morita dimension formula)    PASS  
+  [EXH] W -> I_W injective,  and W = span of the columns of I_W      PASS  11 distinct right ideals
+  [EXH] the family {I_W} is closed under sums                        PASS  66 pairs
+  [EXH] every principal right ideal XR is one of the I_W             PASS  
+  [EXH] number of right ideals = q+3                                 PASS  computed 11, formula 11
+
+A.3  Morita: right ideals of M_2(A_t) <-> A_t-submodules of A_t^2     q = 4, t = 2
+      529 F_q-subspaces of F_q^4, of which 33 are A_t-submodules
+  [EXH] W -> I_W := {X : columns of X in W} is a right ideal (all 33 submodules) PASS  
+  [EXH] dim_{F_q} I_W = 2 dim_{F_q} W  (Morita dimension formula)    PASS  
+  [EXH] W -> I_W injective,  and W = span of the columns of I_W      PASS  33 distinct right ideals
+  [EXH] the family {I_W} is closed under sums                        PASS  561 pairs
+  [SMP] every principal right ideal XR is one of the I_W             PASS  
+  [EXH] number of right ideals = q^2+3q+5                            PASS  computed 33, formula 33
+
+B    sigma_s and theta_s      q = 4 = 2^2,  t = 1
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 2], predicted [1, 2]
+  [EXH] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 2 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [EXH] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 2]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0, 1], predicted [0, 1]
+  [EXH] r even: the reflexive s are exactly 0 and r/2                PASS  s in [0, 1]
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+B    sigma_s and theta_s      q = 9 = 3^2,  t = 1
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 2], predicted [1, 2]
+  [SMP] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 2 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [SMP] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 2]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0, 1], predicted [0, 1]
+  [EXH] r even: the reflexive s are exactly 0 and r/2                PASS  s in [0, 1]
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+B    sigma_s and theta_s      q = 8 = 2^3,  t = 1
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 3, 3], predicted [1, 3, 3]
+  [SMP] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 3 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [SMP] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 6, 6]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0], predicted [0]
+  [EXH] r odd: the only reflexive s is 0 (Corollary 4.6)             PASS  
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+B    sigma_s and theta_s      q = 27 = 3^3,  t = 1
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 3, 3], predicted [1, 3, 3]
+  [SMP] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 3 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [SMP] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 6, 6]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0], predicted [0]
+  [EXH] r odd: the only reflexive s is 0 (Corollary 4.6)             PASS  
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+B    sigma_s and theta_s      q = 16 = 2^4,  t = 1
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 4, 2, 4], predicted [1, 4, 2, 4]
+  [SMP] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 4 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [SMP] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 4, 2, 4]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0, 2], predicted [0, 2]
+  [EXH] r even: the reflexive s are exactly 0 and r/2                PASS  s in [0, 2]
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+B    sigma_s and theta_s      q = 4 = 2^2,  t = 2
+  [EXH] sigma_s is a ring automorphism of A_t                        PASS  
+  [EXH] sigma_s(a) = a^{p^s} on F_q                                  PASS  
+  [EXH] sigma_s(u) = u for every s                                   PASS  
+  [EXH] ord(sigma_s) = r / gcd(r,s)   (s = 0..r-1)                   PASS  measured [1, 2], predicted [1, 2]
+  [SMP] sigma_s = id  <=>  r | s                                     PASS  
+  [SMP] theta_s(XY) = theta_s(Y) theta_s(X)   (ANTI-automorphism)    PASS  1600 pairs x 2 values of s
+  [SMP] theta_s is additive                                          PASS  
+  [SMP] theta_s^2 = sigma_{2s}                                       PASS  
+  [SMP] theta_s^3 = theta_{3s}  (odd powers are anti, even powers are auto) PASS  
+  [EXH] theta_s is never the identity: theta_s(E_12) = E_21          PASS  
+  [SMP] theta_s = transpose  <=>  s = 0                              PASS  
+  [EXH] ord(theta_s) = 2r / gcd(r,2s)                                PASS  measured [2, 2]
+  [EXH] theta_s involutive  <=>  r | 2s                              PASS  involutive s = [0, 1], predicted [0, 1]
+  [EXH] r even: the reflexive s are exactly 0 and r/2                PASS  s in [0, 1]
+  [EXH] theta_s(aI) = sigma_s(a) I                                   PASS  
+  [EXH] theta_s fixes F_p elementwise                                PASS  
+  [EXH] sigma_k o theta_s = theta_{s+k} = theta_s o sigma_k          PASS  
+  [SMP] theta_s is bijective (theta_s o theta_{-s} = id on a sample) PASS  
+
+C    module conventions and the pairing      q = 4,  t = 1,  n = 1
+  [EXH] Lambda catches every nonzero left/right ideal of R           PASS  
+  [EXH] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=0) PASS  rank 4
+  [EXH] right radical of b_s is {0}  (s=0)                           PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=1) PASS  rank 4
+  [EXH] right radical of b_s is {0}  (s=1)                           PASS  
+      7 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  7 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  7 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 2, dim C_r^perp = 0, sum = 2 != dim R = 4
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 2, dim C_l^perp = 2, sum = 4 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 2, dim C_l^perp = 2
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  16 x 16 = 256
+
+C    module conventions and the pairing      q = 9,  t = 1,  n = 1
+  [SMP] Lambda catches every nonzero left/right ideal of R           PASS  
+  [SMP] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=0) PASS  rank 4
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=1) PASS  rank 4
+      12 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  12 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  12 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 2, dim C_r^perp = 0, sum = 2 != dim R = 4
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 2, dim C_l^perp = 2, sum = 4 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 2, dim C_l^perp = 2
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  81 x 81 = 6561
+
+C    module conventions and the pairing      q = 8,  t = 1,  n = 1
+  [SMP] Lambda catches every nonzero left/right ideal of R           PASS  
+  [SMP] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=0) PASS  rank 4
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=1) PASS  rank 4
+      11 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  11 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  11 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  non-reflexive regime: (C^perp)^perp = sigma_{2s}(C) != C for some codes PASS  6 of 11 codes are not sigma_{2s}-invariant
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 2, dim C_r^perp = 0, sum = 2 != dim R = 4
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 2, dim C_l^perp = 2, sum = 4 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 2, dim C_l^perp = 2
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  64 x 64 = 4096
+
+C    module conventions and the pairing      q = 27,  t = 1,  n = 1
+  [SMP] Lambda catches every nonzero left/right ideal of R           PASS  
+  [SMP] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=0) PASS  rank 4
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=1) PASS  rank 4
+      30 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  30 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  30 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  non-reflexive regime: (C^perp)^perp = sigma_{2s}(C) != C for some codes PASS  24 of 30 codes are not sigma_{2s}-invariant
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 2, dim C_r^perp = 0, sum = 2 != dim R = 4
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 2, dim C_l^perp = 2, sum = 4 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 2, dim C_l^perp = 2
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  729 x 729 = 531441
+
+C    module conventions and the pairing      q = 16,  t = 1,  n = 1
+  [SMP] Lambda catches every nonzero left/right ideal of R           PASS  
+  [SMP] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=0) PASS  rank 4
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 4  (s=1) PASS  rank 4
+      19 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  19 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  19 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  non-reflexive regime: (C^perp)^perp = sigma_{2s}(C) != C for some codes PASS  12 of 19 codes are not sigma_{2s}-invariant
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 2, dim C_r^perp = 0, sum = 2 != dim R = 4
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 2, dim C_l^perp = 2, sum = 4 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 2, dim C_l^perp = 2
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  256 x 256 = 65536
+
+C    module conventions and the pairing      q = 4,  t = 2,  n = 1
+  [SMP] Lambda catches every nonzero left/right ideal of R           PASS  
+  [SMP] explicit witness Y = u^{t-1-k} E_ji of Lemma 6.5 works for every X PASS  
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 8  (s=0) PASS  rank 8
+  [EXH] b_s non-degenerate: rank of the Gram matrix = dim R = 8  (s=1) PASS  rank 8
+      33 right ideals of R
+  [EXH] s=0  both orthogonals of a right module are right modules (Lemma 5.5) PASS  33 right ideals
+  [EXH] s=0  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=0  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=0  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=0  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=0  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] s=1  both orthogonals of a right module are right modules (Lemma 5.5) PASS  33 right ideals
+  [EXH] s=1  |C| |C^{perp_s}| = |R|   (size formula, Theorem 6.6)    PASS  
+  [EXH] s=1  the two orthogonals coincide as sets (Lemma 6.7)        PASS  
+  [EXH] s=1  ^{perp_s}C = (sigma_{-2s}C)^{perp_s} (Lemma 5.7)        PASS  
+  [EXH] s=1  (C^{perp_s})^{perp_s} = sigma_{2s}(C) (Theorem 6.8)     PASS  
+  [EXH] s=1  reflexive regime: the duality is an involution on codes PASS  
+  [EXH] side flip: plain MATRIX product FAILS on the right ideal E_11 R PASS  dim C_r = 4, dim C_r^perp = 0, sum = 4 != dim R = 8
+  [EXH] side flip: plain MATRIX product IS perfect on the left ideal R E_11 (code in slot 1) PASS  dim C_l = 4, dim C_l^perp = 4, sum = 8 = dim R
+  [EXH] side flip: for the SAME left ideal it degenerates to {0} when the code is put in slot 2 PASS  dim = 0
+  [EXH] entry-wise (Frobenius) form is perfect on BOTH at n=1 (T-006 needs n>1) PASS  dim C_r^perp = 4, dim C_l^perp = 4
+  [EXH] theta-pairing repairs the right side: |Cr| |Cr^{perp_s}| = |R| PASS  256 x 256 = 65536
+
+========================================================================================
+RESULT: all 401 checks PASSED.
+========================================================================================

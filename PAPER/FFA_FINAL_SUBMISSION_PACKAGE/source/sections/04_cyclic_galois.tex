@@ -1,0 +1,321 @@
+% =====================================================================
+\section{Cyclic codes and Galois duality}
+\label{sec:cyclic}
+% =====================================================================
+
+\subsection{The \texorpdfstring{$\theta_s$}{theta\_s}-pairing}%
+\label{subsec:pairing}
+
+\begin{definition}\label{def:pairing}
+For $x=(x_0,\dots,x_{n-1})$, $y=(y_0,\dots,y_{n-1})\in R^n$ put
+\[
+  B_s(x,y)=\sum_{e=0}^{n-1}\theta_s(x_e)y_e\;\in R,
+  \qquad
+  \bb_s(x,y)=\Lambda\bigl(B_s(x,y)\bigr)\;\in\F_q ,
+\]
+and for a code $C\le\Rn$ put
+\[
+  C^{\perp_s}=\{y\in R^n:\bb_s(x,y)=0\ \text{for all }x\in C\}.
+\]
+We call $C^{\perp_s}$ the \emph{$s$-Galois dual} of $C$.
+\end{definition}
+
+\begin{lemma}[sesquilinearity]\label{lem:sesqui}
+$\bb_s$ is additive in both arguments, $\F_p$-bilinear,
+$\F_q$-linear in the second argument and $\sigma_s$-semilinear in the first:
+\[
+  \bb_s(\alpha x,y)=\sigma_s(\alpha)\,\bb_s(x,y),\qquad
+  \bb_s(x,\alpha y)=\alpha\,\bb_s(x,y)\qquad(\alpha\in\F_q).
+\]
+\end{lemma}
+
+\begin{proof}
+$\theta_s$ is additive and $\sigma_s$-semilinear
+(Lemma~\ref{lem:theta}(d)); $B_s$ is therefore additive in each argument and
+satisfies $B_s(\alpha x,y)=\sigma_s(\alpha)B_s(x,y)$ (because $\alpha$ is
+scalar, so it commutes with the transpose and is then moved by $\sigma_s$) and
+$B_s(x,\alpha y)=B_s(x,y)\alpha$. Applying $\Lambda$, which is $\F_q$-linear,
+gives the claims; note that the second identity uses
+$\Lambda(z\alpha)=\alpha\Lambda(z)$, which holds because $\Lambda$ is
+$\F_q$-linear.
+\end{proof}
+
+The slot convention --- $\theta_s$ acting on the \emph{first} argument --- is
+immaterial for the resulting dual: placing $\theta_s$ on the second argument
+produces the same subspace, because the two pairings differ by the
+$\F_q$-semilinear involution $\sigma_s$ composed with transposition, which does
+not change vanishing. We fix the convention of
+Definition~\ref{def:pairing} throughout.
+
+\subsection{The duality theorem}
+
+\begin{theorem}[Galois duality on right modules]\label{thm:duality}
+Let $C\le\Rn$ be a right $\Rn$-submodule. Then:
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item $C^{\perp_s}$ is a right $\Rn$-submodule;
+\item $\dim_{\F_q}C+\dim_{\F_q}C^{\perp_s}=\Nlen$, equivalently
+  $|C|\cdot|C^{\perp_s}|=|R|^n$;
+\item $(C^{\perp_s})^{\perp_s}=\sigma_{2s}(C)$;
+\item if $C$ is cyclic (a principal right ideal) then so is $C^{\perp_s}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) Let $y\in C^{\perp_s}$ and $a\in\Rn$; we must show $ya\in C^{\perp_s}$.
+For $x\in C$ we have $xa\in C$ (as $C$ is a right ideal), hence
+\[
+  0=\bb_s(xa,y)=\Lambda\Bigl(\sum_e\theta_s\bigl((xa)_e\bigr)y_e\Bigr).
+\]
+We claim $\bb_s(x,ya)=\bb_s(xa,y)$. Indeed, writing
+$(xa)_e=\sum_{i+j=e}x_ia_j$ (indices modulo $n$),
+\[
+  B_s(xa,y)=\sum_e\theta_s\Bigl(\sum_{i+j=e}x_ia_j\Bigr)y_e
+  =\sum_{i,j}\theta_s(a_j)\theta_s(x_i)y_{i+j},
+\]
+while
+\[
+  B_s(x,ya)=\sum_i\theta_s(x_i)(ya)_i
+  =\sum_{i,j}\theta_s(x_i)y_{i+j}a_j .
+\]
+These are not literally equal in the non-commutative ring $R$, but their images
+under $\Lambda$ agree: by Lemma~\ref{lem:lambda}, $\Lambda$ is symmetric, so
+$\Lambda(\theta_s(a_j)\theta_s(x_i)y_{i+j})
+=\Lambda(\theta_s(x_i)y_{i+j}\theta_s(a_j))$, and summing over $i,j$ gives
+$\bb_s(xa,y)=\bb_s(x,ya)$ up to applying $\sigma_s$ to the entries of $a_j$
+inside a symmetric trace --- explicitly,
+\[
+  \bb_s(x,ya)=\sum_{i,j}\Lambda\bigl(\theta_s(x_i)y_{i+j}a_j\bigr)
+  =\sum_{i,j}\Lambda\bigl(a_j\theta_s(x_i)y_{i+j}\bigr)
+  =\sum_{i,j}\sigma_s\!\bigl(\Lambda(\theta_s(a_j)\theta_s(x_i)y_{i+j})\bigr),
+\]
+the last step because $\Lambda(\sigma_s(z))=\sigma_s(\Lambda(z))$ and
+$\Lambda$ is symmetric; since $\bb_s(xa,y)=0$ and $\sigma_s$ is injective,
+$\bb_s(x,ya)=0$. Hence $ya\in C^{\perp_s}$.
+
+(b) By Lemma~\ref{lem:sesqui} the map
+\[
+  \psi_C:R^n\longrightarrow C^{\vee},\qquad
+  y\longmapsto\bigl(x\mapsto\bb_s(x,y)\bigr),
+\]
+where $C^{\vee}$ denotes the $\F_q$-dual \emph{with the $\sigma_s$-semilinear
+action in the first slot}, is $\F_q$-linear and surjective
+(non-degeneracy of $\Lambda$, Lemma~\ref{lem:lambda}, applied coordinate-wise).
+Its kernel is $C^{\perp_s}$, so
+$\dim_{\F_q}C^{\perp_s}=\Nlen-\dim_{\F_q}C$.
+
+(c) By (b) applied twice,
+$\dim(C^{\perp_s})^{\perp_s}=\Nlen-\dim C^{\perp_s}=\dim C=\dim\sigma_{2s}(C)$,
+so it suffices to prove one inclusion. For $x\in C$ and $y\in C^{\perp_s}$ we
+have $\bb_s(y,\sigma_{2s}(x))=0$: indeed
+$\bb_s(y,\sigma_{2s}(x))=\sigma_s(\bb_s(x,y))$ by Lemma~\ref{lem:theta}(c) and
+Lemma~\ref{lem:sesqui}, and $\bb_s(x,y)=0$. Hence
+$\sigma_{2s}(C)\subseteq(C^{\perp_s})^{\perp_s}$ and dimensions agree.
+
+(d) If $C=g\Rn$ then $C^{\perp_s}$ is a right ideal by (a); its cyclicity
+follows from the explicit description of Theorem~\ref{thm:dualformula} below,
+which exhibits it as the annihilator of a single element.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:duality}(a) is the statement that fails for the plain product
+on right modules (Lemma~\ref{lem:failure}): the transpose in $\theta_s$ is
+exactly what converts the left action into a right action.
+\end{remark}
+
+\subsection{Explicit duals: annihilators and the reversal}
+
+For a subset $I\subseteq\Rn$ write
+$\ann_r(I)=\{a:xa=0\ \forall x\in I\}$ and
+$\ann_l(I)=\{a:ax=0\ \forall x\in I\}$.
+
+\begin{lemma}\label{lem:ann}
+$\ann_r(\sum_i\Rn x_i)=\bigcap_i\ann_r(x_i)$; for a right ideal
+$I$, $\ann_r(I)$ is determined by any generating set, whereas $\ann_l(I)$ is
+not. Moreover $\theta_s(\ann_r(I))=\ann_l(\theta_s(I))$.
+\end{lemma}
+
+\begin{proof}
+The first identity is the definition of an annihilator of a sum. The asymmetry
+between left and right is a right-ideal phenomenon: a right ideal is generated
+as a right ideal, and $\ann_r$ sees right multiplication, which is the side on
+which the generators act. The last identity: $a\in\ann_r(I)$ iff $xa=0$ for all
+$x\in I$; applying the anti-automorphism $\theta_s$ gives
+$\theta_s(a)\theta_s(x)=0$ for all $x\in I$, i.e.
+$\theta_s(a)\in\ann_l(\theta_s(I))$; conversely by applying $\theta_s^{-1}$.
+\end{proof}
+
+\begin{theorem}[dual formula]\label{thm:dualformula}
+Let $C\le\Rn$ be a right $\Rn$-submodule. Then
+\[
+  C^{\perp_s}=\rev\Bigl(\ann_r\bigl(\theta_s(C)\bigr)\Bigr).
+\]
+In particular, if $C=g\Rn$ is principal then
+$C^{\perp_s}=\rev(\ann_r(\theta_s(g)))$ and $C^{\perp_s}$ is cyclic.
+\end{theorem}
+
+\begin{proof}
+Write $x=\sum_ex_eX^e$, $y=\sum_ey_eX^e$. Then
+\[
+  B_s(x,y)=\sum_e\theta_s(x_e)y_e .
+\]
+On the other hand, the constant coefficient of the product
+$\theta_s(x)\cdot y$ (computed in $\Rn$) is
+\[
+  \bigl[\theta_s(x)y\bigr]_0
+  =\sum_{i+j\equiv0}\theta_s(x_i)y_j
+  =\sum_i\theta_s(x_i)y_{-i}
+  =\sum_e\theta_s(x_e)\,\bigl(\rev y\bigr)_e ,
+\]
+because $(\rev y)_i=y_{-i}$. Hence
+\[
+  \bb_s(x,y)=\Lambda\Bigl(\bigl[\theta_s(x)\,\rev y\bigr]_0\Bigr).
+\]
+Now $y\in C^{\perp_s}$ iff $\bb_s(x,y)=0$ for all $x\in C$, iff
+$\Lambda([\theta_s(x)v]_0)=0$ for all $x\in C$, where $v=\rev y$. Since the
+constant coefficient of $zv$ is $\F_q$-linear in $z$ and $\Lambda$ is
+non-degenerate, and since the set of $z$ arising is $\theta_s(C)$, this is
+equivalent to $\Lambda([zv]_0)=0$ for all $z\in\theta_s(C)$.
+
+It remains to identify this condition with $v\in\ann_r(\theta_s(C))$. Write
+$z=\sum_iz_iX^i$, $v=\sum_jv_jX^j$. Then
+$[zv]_0=\sum_{i+j\equiv0}z_iv_j=\sum_iz_iv_{-i}$, and, using the symmetry of
+$\Lambda$,
+\[
+  \Lambda([zv]_0)=\sum_i\Lambda(z_iv_{-i})
+  =\sum_i\Lambda(v_{-i}z_i).
+\]
+This vanishes for all $z\in\theta_s(C)$ exactly when $v$ right-annihilates
+$\theta_s(C)$: the coefficient extraction ``take the constant coefficient and
+apply $\Lambda$'' is the trace pairing that detects annihilation, and the index
+reversal is precisely $\rev$. Therefore $v\in\ann_r(\theta_s(C))$ and
+$y=\rev(v)$, which is the assertion.
+
+For the principal case, $\ann_r(\theta_s(C))=\ann_r(\theta_s(g)\Rn)
+=\ann_r(\theta_s(g))$ by Lemma~\ref{lem:ann}, and an annihilator of a single
+element is a right ideal generated by one element in this ring, so
+$C^{\perp_s}$ is cyclic.
+\end{proof}
+
+\begin{corollary}[the reversal is load-bearing exactly for $n\ge3$]
+\label{cor:rev}
+For $n\le2$ the operator $\rev$ is the identity, so
+$C^{\perp_s}=\ann_r(\theta_s(C))$; for $n\ge3$ dropping $\rev$ changes the dual.
+\end{corollary}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:rev} and Theorem~\ref{thm:dualformula}.
+\end{proof}
+
+\subsection{Equality of the two orthogonals}
+
+There are two natural duals of $C\le R^n$: the $R$-valued one,
+$C^{\perp,R}=\{y:B_s(x,y)=0\ \forall x\in C\}$, and the $\F_q$-valued one
+$C^{\perp_s}$ of Definition~\ref{def:pairing}.
+
+\begin{proposition}\label{prop:twoorth}
+$C^{\perp,R}=C^{\perp_s}$ for every $C$ and every $s$.
+\end{proposition}
+
+\begin{proof}
+The inclusion $C^{\perp,R}\subseteq C^{\perp_s}$ is immediate since
+$\bb_s=\Lambda\circ B_s$. For the converse, both are $\F_q$-subspaces of $R^n$;
+$\dim_{\F_q}C^{\perp_s}=\Nlen-\dim C$ by Theorem~\ref{thm:duality}(b), and the
+same dimension count applies to $C^{\perp,R}$: the map
+$y\mapsto(x\mapsto B_s(x,y))$ into $\Hom_{\F_q}(C,R)$ is $\F_q$-linear with
+kernel $C^{\perp,R}$, and it is surjective because $\Lambda$ is
+non-degenerate and $B_s$ is non-degenerate in $y$. Hence the two subspaces have
+the same dimension and the inclusion is an equality.
+\end{proof}
+
+\subsection{Three regimes}\label{subsec:regimes}
+
+The parameter $s$ produces three genuinely different situations.
+
+\begin{definition}\label{def:regimes}
+Let $q=p^r$.
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=*]
+\item The \emph{general Galois regime}: no condition on $s$.
+\item The \emph{reflexive regime}: $r\mid 2s$, i.e. $\sigma_{2s}=\id$.
+\item The \emph{per-code invariant regime}: the individual code $C$ satisfies
+  $\sigma_{2s}(C)=C$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}\label{prop:regimes}
+$(2)\Rightarrow(3)$, and the converse fails. In the reflexive regime
+$(C^{\perp_s})^{\perp_s}=C$ as subspaces; in general only
+$(C^{\perp_s})^{\perp_s}=\sigma_{2s}(C)$.
+\end{proposition}
+
+\begin{proof}
+The implication is clear. For the failure of the converse, take
+$q=8$ ($r=3$), $s=1$, so $2s=2$ and $r\nmid2$: at $(q,t,n)=(8,1,2)$ exactly
+$14$ of the $92$ codes satisfy $\sigma_2(C)=C$, a strict subset. The two
+displayed identities are Theorem~\ref{thm:duality}(c) together with
+$\sigma_{2s}=\id$.
+\end{proof}
+
+\begin{remark}
+The three regimes matter because the symmetry of the orthogonality
+\emph{relation} holds exactly in the reflexive regime, whereas --- as we show in
+Theorem~\ref{thm:hullso} --- the self-orthogonality of the hull holds in
+\emph{all} of them. This is the point at which the present treatment departs
+from treatments that assume reflexivity.
+\end{remark}
+
+\subsection{Worked examples II: duality in a reflexive and in a
+non-reflexive regime}
+
+\begin{example}[a Galois dual computed both ways, at $(q,t,n)=(4,1,1)$]
+\label{ex:dual}
+Here $A_1=\F_4$, $R=M_2(\F_4)$, $\Bq=\F_4[X]/\langle X-1\rangle\cong\F_4$, and
+$\Nlen=4tn=4$. By \eqref{eq:morita}, right ideals of $\Rn=M_2(\F_4)$
+correspond to $\F_4$-subspaces of $\F_4^2$; there are $7$ of them, which is
+the entry $7$ in the census table of Section~\ref{sec:cert}.
+
+Take $W=\F_4\cdot(1,0)^{\mathsf T}\le\F_4^2$. The corresponding right ideal is
+\[
+  C=I_W=\{M\in M_2(\F_4):\text{both columns of }M\text{ lie in }W\}
+  =\left\{\begin{pmatrix}a&b\\0&0\end{pmatrix}:a,b\in\F_4\right\},
+\]
+of $\F_4$-dimension $k=2$. Take $s=0$; then $\bb_0(X,Y)=\tr(X^{\mathsf T}Y)
+=\sum_{k,l}X_{kl}Y_{kl}$, i.e. the transported form is the componentwise dot
+product on $\F_4^2$, and $W^{\perp_0}=\F_4\cdot(0,1)^{\mathsf T}$. Hence
+\[
+  C^{\perp_0}=I_{W^{\perp_0}}
+  =\left\{\begin{pmatrix}0&0\\a&b\end{pmatrix}:a,b\in\F_4\right\},
+\]
+again of dimension $2$. Three checks:
+\begin{enumerate}[label=\textnormal{(\roman*)},leftmargin=*]
+\item $C\cap C^{\perp_0}=\{0\}$, so $C$ is LCD (Proposition~\ref{prop:lcdso});
+\item $\dim C+\dim C^{\perp_0}=2+2=4=\Nlen$, as
+  Theorem~\ref{thm:duality}(b) requires --- and $|C|\cdot|C^{\perp_0}|
+  =16\cdot16=256=|\Rn|$, which is exactly what fails for the plain product
+  (Lemma~\ref{lem:failure});
+\item $C\oplus C^{\perp_0}=\Rn$, so this is also the LCD direct-sum
+  splitting.
+\end{enumerate}
+Every step above is a $2\times2$ matrix computation over $\F_4$ and can be
+checked by hand; it is the smallest instance of the whole dictionary.
+\end{example}
+
+\begin{example}[a non-reflexive regime, where $(C^{\perp_s})^{\perp_s}\ne C$]
+\label{ex:nonreflexive}
+Take $q=8$, so $r=3$ and $\sigma_s(a)=a^{2^s}$ has order
+$3/\gcd(3,s)$. Take $s=1$. Then $2s=2$ and $r\nmid 2s$, so we are in the
+general Galois regime and not the reflexive one:
+$\sigma_2=\sigma_1^2\ne\id$. Consequently
+\[
+  (C^{\perp_1})^{\perp_1}=\sigma_2(C)\ne C
+\]
+for any code $C$ not invariant under $\sigma_2$. At $(q,t,n)=(8,1,2)$ there
+are $92$ nonzero cyclic codes with invariants computed, of which exactly $14$
+satisfy $\sigma_2(C)=C$; for those $14$ the per-code invariant regime holds
+even though the reflexive regime does not.
+
+This example is the reason Theorem~\ref{thm:hullso} is proved by a
+one-sided argument: in this regime the orthogonality \emph{relation} is not
+symmetric, so any argument that swaps the two slots of $\bb_s$ would be
+invalid here. For $q=4$ and $q=9$ one has $r=2$, so $r\mid 2s$ for every $s$
+and every regime is reflexive; the non-reflexive case arises first at $q=8$.
+\end{example}
