@@ -304,3 +304,30 @@ it matters most.
 5. submitting.
 
 No such step will be taken without explicit author instruction.
+
+---
+
+## Correction record — Phase 11 (2026-11-10), append-only
+
+**Nothing above is deleted or rewritten.** Points 2 and the Discrete
+Mathematics discussion above rest on venue attributions that were re-verified
+against official publisher records in Phase 11 and found to be **wrong**.
+
+* **Point 2 is withdrawn as stated.** The claim that *"two of the 13 cited
+  works are FFA papers: Fan–Zhang 2017 and Liu–Pan 2020"* is **false**. Both
+  are *Designs, Codes and Cryptography* papers:
+  Fan–Zhang, DCC **84(3), 473–492** (doi 10.1007/s10623-016-0282-8);
+  Liu–Pan, DCC **88(2), 241–255**. The correct count of FFA papers among the
+  13 cited works is **zero**.
+* **The Discrete Mathematics section above is withdrawn as stated.** It says
+  *"The manuscript also cites Cao 2021 (MDS Galois hulls) from this journal."*
+  Cao 2021 is **IEEE Transactions on Information Theory 67(12), 7964–7984**,
+  not Discrete Mathematics.
+
+Points 1, 3 and 4 above — FFA's scope text naming algebraic coding theory,
+the verified 2026 publication record in Vols 109–111, and FFA's tolerance for
+structural negative results — are unaffected and stand. **The recommendation
+of FFA is therefore not withdrawn**; the specific lineage argument is.
+
+Full corrected census and sources:
+`PHASE11_FFA_FINALIZATION/PHASE11_BIBLIOGRAPHIC_CORRECTIONS.md`.

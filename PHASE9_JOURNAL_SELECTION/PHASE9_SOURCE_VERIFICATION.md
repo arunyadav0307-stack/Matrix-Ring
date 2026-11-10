@@ -134,3 +134,48 @@ otherwise.
 * **SCIE (Web of Science) indexing** — not individually confirmed on Clarivate
   for any journal (paywalled). Scopus coverage is confirmed for all ten via
   SCImago; SCIE is quoted only where a publisher page asserts it (DCC).
+
+---
+
+## Correction record — Phase 11 (2026-11-10), append-only
+
+**Nothing above has been deleted or rewritten.** The four venue attributions
+listed above were re-verified against official publisher records during
+Phase 11, and **four were wrong**. The corrected values are recorded here.
+The manuscript's own bibliography, `PAPER/references.bib`, was checked at the
+same time and was **correct in every one of these four cases** — the errors
+existed only in the Phase 9 selection documents, never in the manuscript.
+
+| key | Phase 9 attribution (WRONG) | Correct venue (verified 2026-11-10) | Correction |
+|---|---|---|---|
+| `FanZhang2017GaloisSelfDual` | *Finite Fields Appl.* | **Designs, Codes and Cryptography** 84(3), 473–492, doi 10.1007/s10623-016-0282-8 | venue wrong |
+| `LiuPan2020GaloisHulls` | *Finite Fields Appl.* | **Designs, Codes and Cryptography** 88(2), 241–255 | venue wrong |
+| `Cao2021MDSGaloisHulls` | *Discrete Math.* | **IEEE Transactions on Information Theory** 67(12), 7964–7984 | venue wrong |
+| `Dinh2024CyclicRingsOfMatrices` | *J. Algebra Appl.* | **Advances in Mathematics of Communications** 18(4), 1100–1122, doi 10.3934/amc.2022073 | venue wrong |
+
+**Consequence for the journal-selection argument.** The Phase 9 claim that
+*"two of the 13 cited works are FFA papers"* is **false**. The correct census
+of the 13 cited works is:
+
+| venue | count | works |
+|---|---|---|
+| IEEE Trans. Inform. Theory | 3 | Greferath–Schmidt; Cao; Ketkar et al. |
+| Designs, Codes and Cryptography | 2 | Fan–Zhang; Liu–Pan |
+| Cryptography and Communications | 1 | Luo–Parampalli |
+| Advances in Mathematics of Communications | 1 | Dinh et al. |
+| Entropy | 1 | Zhang–Kong–Zheng |
+| J. Franklin Inst. | 1 | Alahmadi et al. |
+| J. Pure Appl. Algebra | 1 | Wood |
+| J. Appl. Math. Comput. | 1 | Si–Niu |
+| arXiv preprint | 1 | Joshi–Patel–Prakash |
+| online tables (misc) | 1 | Grassl |
+| **Finite Fields and their Applications** | **0** | — |
+
+The FFA recommendation itself is **not** withdrawn by this correction: FFA was
+recommended on scope fit, on its 2026 publication record in the area, and on
+its tolerance for structural negative results — all of which are independently
+verified and unaffected. What is withdrawn is the specific (and incorrect)
+argument that the manuscript's citation lineage already runs through FFA. That
+argument must not be repeated in a cover letter.
+
+Source: `PHASE11_FFA_FINALIZATION/PHASE11_BIBLIOGRAPHIC_CORRECTIONS.md`.

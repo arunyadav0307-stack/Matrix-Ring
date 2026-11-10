@@ -437,3 +437,24 @@ change.
 * It does not incorporate the author's own constraints (funder OA mandates,
   institutional agreements, indexing requirements for an evaluation exercise).
   Those can change the answer and should be applied on top of the table.
+
+---
+
+## Correction record — Phase 11 (2026-11-10), append-only
+
+**Nothing above is deleted or rewritten.** Three venue attributions in this
+comparison table were re-verified against official publisher records in
+Phase 11 and found to be **wrong**.
+
+| wrong attribution above | correct venue (verified 2026-11-10) |
+|---|---|
+| FFA — "the manuscript cites two FFA papers (Fan–Zhang 2017; Liu–Pan 2020)" | **Zero** FFA papers are cited. Fan–Zhang is **DCC 84(3), 473–492**; Liu–Pan is **DCC 88(2), 241–255**. |
+| Discrete Math. — "(Cao 2021, MDS Galois hulls)" | Cao 2021 is **IEEE Trans. Inform. Theory 67(12), 7964–7984**. |
+| J. Algebra Appl. — "we cite Dinh 2024 here" | Dinh et al. 2024 is **Adv. Math. Commun. 18(4), 1100–1122** (doi 10.3934/amc.2022073). |
+
+The FFA fit score of 5 for "scope names algebraic coding theory" **stands** —
+it rests on FFA's published aims-and-scope text, which was verified directly.
+The fit score for J. Algebra Appl. **drops**, because its cited-paper argument
+was the claim about Dinh 2024 and that claim is false.
+
+Source: `PHASE11_FFA_FINALIZATION/PHASE11_BIBLIOGRAPHIC_CORRECTIONS.md`.
