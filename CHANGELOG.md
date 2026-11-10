@@ -670,3 +670,105 @@ deleted; all protected-file hashes verified before and after.
 cover letter, no repository release, no tag, no licence, no new research phase.
 Deferred items (generative-AI declaration, data availability, licence, four
 GitHub fixes) are carried forward with status unchanged.
+
+---
+
+## Phase 17 — Final certification claim review and manuscript freeze
+
+**Branch** `arena/59de606f-matrix-ring` · decision-support and archival task
+only. **The canonical manuscript was not modified.** No submission, no
+publication, no release, no tag, no licence, no new research phase.
+
+**Task A — certification logic restated mathematically.** M1 (complete
+enumeration, `ENUM_CAP = 262144`, `slow_cap = 50000`); M2 (support search,
+`maxw = min(8, max(3, d+1))`, exhaustive, `None` = rigorous lower bound); M3
+(`w3 = 3 if N<=8 else 2`, scans symplectic weights in increasing order, so a
+returned value is the true minimum and `None` proves `d >= w3+1`). M2 executes
+**if and only if M1 did not complete**; M3 always executes. The distinction
+between **skipped** and **inapplicable** is stated explicitly: for the 24 codes
+where M1 completed, M2 is *skipped* (the branch is on `comp1`, not on the route,
+and one of the four M2 codes is EA), whereas for the 4 codes where M1 returned
+`(None, False)` it *did not complete* — a computational limit, not a routing
+decision. Distribution confirmed: **M1+M3 = 24, M2+M3 = 4, M3 exact = 11, M3
+lower bound = 17, three methods completed = 0.**
+
+**Task B — abstract wording options prepared, none applied.** The current
+sentence is accurate for all 28 records at the level of roles but silent on the
+11/17 split. Three options were costed under all three established word-count
+conventions (C1/C2/C3; C3 is strictest, limit 250):
+
+| | C1 | C2 | C3 | margin |
+|---|---|---|---|---|
+| A — retain current | 222 | 208 | 235 | 15 |
+| B — state 11/17 explicitly | 231 | 217 | 244 | 6 |
+| C — most conservative | 224 | 210 | 237 | 13 |
+
+**Material constraint found:** the natural, fuller phrasing of Option B
+("...one an ambient quantum search that is itself exact for $11$ codes and a
+proved lower bound for the other $17$...") measures **253 words under C3 — over
+the limit**. Option B as offered is a tightened variant that fits with 6 words
+to spare. **Recommendation: Option B**, because it is the only option that
+removes the ambiguity at abstract level, is the most accurate of the three, and
+costs 9 words. Selecting A requires **no edit at all**; B or C change **one
+sentence of the abstract** and nothing else.
+
+**Task C — consistency verified, no changes needed.** No statement anywhere
+implies all three methods ran: the only "all three" occurrences in a
+certification context are negations, and a rendered-PDF scan for the strings
+"certified by all three methods", "all three methods ran" and "every code is
+certified by three" returns **0**. M2 is described as conditionally skipped
+(`08_certification.tex:357`, `appendix_tables.tex:15-17`); M3 is described as
+exact for 11 and a lower bound for 17 (`08_certification.tex:179-184`,
+`appendix_tables.tex:19-26`). Section 7 makes **no** method claims, so there is
+nothing there to conflict. All 34 parameter tuples in Appendix A are identical to
+the Phase 14 canonical file.
+
+**Task D — referee-facing method note.** Explains why the three methods are not
+all run (M2 is a *fallback for M1*, not a third opinion — M1 is already
+exhaustive, so the compute is spent on M3, the only structurally independent
+check), why that is appropriate, how exact distance is distinguished from a
+lower bound, how the 28 records permit independent reproduction (four shipped
+sources plus step-by-step re-certification), and where every artefact lives. It
+states plainly what is **not** claimed, and flags that Phase 7 log line 478
+(`[EXH] E1`) is wrong and was deliberately not rewritten.
+
+**Task E — decision sheet** at
+`PHASE17_RESEARCHER_DECISION/PHASE17_RESEARCHER_DECISION_SHEET.md`, with the
+distribution, the three options, the recommendation and reasoning, the exact
+changes each option would entail, confirmation that all mathematical parameters
+are unchanged, and the remaining review items. **No option was applied
+automatically.**
+
+**Task F — visual review material preserved and indexed.** Verified that the
+Phase 15 visual package remains accessible, and **regenerated the page images
+from the Phase 16 build**, because Phase 16 added the 11/17 sentences to §8.5
+(p31) and Appendix A (pp38-39) — pagination did not shift (abstract p1,
+methodology p31, Example 13 p33, Appendix A pp38-39 in **both** builds), but
+those three pages changed content, so the Phase 15 images were stale there. The
+Phase 15 set was preserved alongside as `visual_review_phase15/`. Page index
+provided. **Arena has no vision capability and did not inspect any page**; the
+index is derived from text extraction, and the visual review is the
+researcher's to perform.
+
+**Deliverables.** `PHASE17_RESEARCHER_DECISION/` — 6 documents plus a SHA-256
+manifest (6 entries, all verified):
+`PHASE17_CERTIFICATION_LOGIC.md`,
+`PHASE17_ABSTRACT_WORDING_OPTIONS.md`,
+`PHASE17_REFEREE_METHOD_NOTE.md`,
+`PHASE17_MANUSCRIPT_CONSISTENCY_REPORT.md`,
+`PHASE17_VISUAL_REVIEW_INDEX.md`,
+`PHASE17_RESEARCHER_DECISION_SHEET.md`.
+`PAPER/FINAL_RESEARCHER_REVIEW_V2/` refreshed: 131-entry manifest, all verified.
+
+**Safeguards.** Canonical `PAPER/main.tex` and all 13 section files verified
+unchanged; `PAPER/supplementary/` (including `CERTIFICATION_PROCEDURE.md`, the
+Phase 7 log, the Phase 7 script and `certified_codes.csv`) unchanged; the
+original `tools/validate_latex.py` unchanged; the Phase 14 package unchanged;
+all Phase 16 documents unchanged. 41 protected hashes recorded before and after;
+the only change is the refreshed `FINAL_RESEARCHER_REVIEW_V2` manifest, which is
+expected because the visual set was regenerated.
+
+**Stopping point.** Awaiting the researcher's choice of abstract wording (A, B
+or C) before any manuscript edit. No rebuild was performed, since no manuscript
+change was made. Deferred items (generative-AI declaration, GitHub data access,
+licence) carried forward with status unchanged.
