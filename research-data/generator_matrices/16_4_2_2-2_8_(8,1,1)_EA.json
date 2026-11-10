@@ -1,0 +1,45 @@
+{
+ "index": 16,
+ "code": "[[4,2,2;2]]_8",
+ "q": 8,
+ "t": 1,
+ "n": 1,
+ "N": 4,
+ "route": "EA",
+ "k": 2,
+ "K": 2,
+ "d": 2,
+ "c": 2,
+ "h_E": 0,
+ "exact": true,
+ "distance_method": "support search w<=2",
+ "generator_matrix_A": [
+  [
+   1,
+   0,
+   2,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   2
+  ]
+ ],
+ "generator_matrix_Euclidean_dual": [
+  [
+   1,
+   0,
+   5,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   5
+  ]
+ ],
+ "notes": "rows of A span the Gray image D = phi_n(C) in F_q^N; rows of the second matrix span D^{perp_E}.  Field elements are integers 0..q-1 in the internal ordering of matrix_ring_lib.py."
+}

@@ -1,0 +1,30 @@
+t = 2 CHECK  (q = 4, A = F_4[u]/<u^2>, R = M_2(A), n = 1, s = 1)
+run: 2026-11-04 08:08:23
+
+q = 4, t = 2, m = 2, n = 1 ; N = dim_{F_q} R^n = 8 ; |R^n| = 65536
+
+-- sigma_1 (Frobenius on the F_4-coefficients, u fixed) --
+   additive = True ; multiplicative = True ; nontrivial: (0, 2) -> (0, 3)
+   (u is fixed: sigma_1(u) = u : True)
+-- theta_1 = sigma_1 o transpose  (|M_2(A)| = 65536) --
+   additivity: checked on all sums of basis elements
+      theta_1(X+Y) = theta_1(X) + theta_1(Y) : True
+   theta_1(AB) = theta_1(B) theta_1(A) : True  [5000 uniformly random pairs, seed 20261104 -- SAMPLED, not exhaustive]
+   theta_1^2 = identity on all 65536 matrices (2s = 2 = 0 mod r): True
+-- Lambda = lambda o tr, lambda = coefficient of u^{t-1} --
+   Gram matrix of (X,Y) -> Lambda(XY) on M_2(F_4[u]/<u^2>): rank 8 / 8
+   Lambda(XY) = Lambda(YX) for all pairs: True
+-- enumeration of the cyclic codes (right ideals of R) --
+   #A-submodules of A^2 = 33  (= #right ideals of M_2(A))
+   F_q-dimension distribution (dim W : #) : [(0, 1), (1, 5), (2, 21), (3, 5), (4, 1)]
+   #right ideals = 33 ; F_q-dim distribution : [(0, 1), (2, 5), (4, 21), (6, 5), (8, 1)]
+-- per-code checks, s = 1 (all 33 codes) --
+      C right R-submodule ................ 33/33
+      C^{perp_s} right R-submodule ....... 33/33
+      |C|.|C^{perp_s}| = |R|^n ........... 33/33
+      Hull_s(C) right R-submodule ........ 33/33
+      (C^{perp_s})^{perp_s} = sigma_{2s}(C) 33/33
+      (C^{perp_s})^{perp_s} = C .......... 33/33
+      PLAIN dual: right module 33/33 ; left module 33/33 ; size formula 3/33
+
+   [elapsed 0.7 s]
