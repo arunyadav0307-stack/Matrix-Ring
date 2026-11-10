@@ -479,3 +479,83 @@ claimed; no distance is reported without an exhaustive or proved-lower-bound
 computation; no sample is presented as exhaustive.
 
 **Boundary honoured:** no manuscript text and no journal-submission material.
+
+---
+
+## Phase 15 — Final manuscript corrections, certification-claim accuracy and visual review package
+
+**Branch** `arena/59de606f-matrix-ring` · **Scope** final correction phase only:
+no new mathematical research, no journal submission, no Elsevier upload, no cover
+letter, no repository release, no licence change.
+
+**Corrections applied** (in `PAPER/FINAL_RESEARCHER_REVIEW_V2/`, from the working
+copy `PAPER/PHASE15_WORKCOPY/`; canonical `PAPER/` untouched):
+
+* **CP-1 — three-method claim corrected.** The manuscript claimed the 28 certified
+  codes are certified by three independent methods. They are not.
+  `phase7_extended_search.py::part6_certification` (lines 1672–1679) runs M2
+  **only when M1 fails to complete**, so **0 of 28 codes have all three methods
+  and 28 of 28 have exactly two**: one exact method (M1, or M2 where M1 cannot
+  finish) plus the ambient quantum search M3 as a cross-check (a proved lower
+  bound for 17 of 28). Corrected in six locations — abstract, two places in the
+  Introduction, the certification methodology, the headline-table sentence and
+  Appendix A. Per-code table:
+  `PHASE15_FINAL_CORRECTIONS/CP1_method_applicability_table.csv`.
+  The overclaim originates in the historical log itself (line 478, check
+  `[EXH] E1`), which was deliberately **not** rewritten.
+* **CP-2 — Example 13 (`ex:certify`, rendered Example 8.12, p. 33).** It credited
+  the support search (M2), which was never run for that code (M1 completes; M2 is
+  `n/a`). Method attribution corrected only. Generator matrix, parameters and all
+  12 displayed numbers untouched and independently recomputed — including a
+  complete enumeration of the 16 codewords of `Q = D^{⊥_E}` reproducing
+  `d = 10` (weight distribution `{0:1, 10:6, 20:9}`).
+* **CP-3 — appendix table numbering.** The two appendix tables rendered as
+  `Table 5` / `Table 6`; per the FFA guide for authors they are now
+  `Table A.1` / `Table A.2`. Main-text Tables 1–4 unchanged; no duplicate
+  numbers; the appendices contain no figures and no numbered display equations,
+  so `\thefigure` and `\theequation` needed no change. **Table contents
+  unchanged.**
+* **CP-4 — DOIs not rendered: retained, not fixed.** 9 of 13 entries carry
+  `doi=`, but `plain.bst` has no `doi` field, so the PDF shows none. Retained
+  deliberately because FFA applies reference formatting at proof stage. Recorded
+  as a documented limitation in `OPEN_ISSUES_AND_LIMITATIONS.md` §5.1.
+
+**Defect found and fixed during Phase 15:** the first CP-2 correction gave the
+wrong reason for M2's absence ("not applicable to the entanglement-assisted
+route"). The source shows M2 is skipped because **M1 already completed**,
+regardless of route. The wording was corrected in three places before the final
+build.
+
+**Validation.** `tools/validate_latex.py`: 13 checks, 11 PASS / 2 FAIL — both
+FAILs (V9, V11) are **pre-existing Phase 14 heuristic false positives**, present
+identically before the Phase 15 edits. `tools/verify_examples.py`:
+**56 checks, 0 mismatches**.
+
+**Build** (TeX Live 2024, genuine `BibTeX 0.99d`, `plain.bst`): 0 errors, 0
+undefined citations, 0 undefined references, 0 overfull, 0 underfull, 0 missing
+glyphs, 0 duplicate labels (116 unique), **42 pages**, 579 531 bytes,
+SHA-256 `b619cf6cb0678ab15de54c5b61536840bdaf2951aa70292ffd741a2cd01859b7`.
+
+**Documentation.** `PHASE15_FINAL_CORRECTIONS_REPORT.md`; Phase 15 addenda
+appended (append-only) to `MANUSCRIPT_SELF_AUDIT.md` and
+`OPEN_ISSUES_AND_LIMITATIONS.md`; claim **T-225** corrected in place in
+`CLAIM_TRACEABILITY_MATRIX.md`.
+
+**Known open documentation defect (not fixed, deliberate).**
+`PAPER/supplementary/CERTIFICATION_PROCEDURE.md` §3 still states "Every headline
+code is certified by three structurally different methods." It was **not** edited
+because that file is part of the committed, hash-verified supplementary package
+(85-entry `MANIFEST.sha256`); rewriting it would break manifest verification and
+destroy the audit trail showing where the overclaim originated. Correcting it is
+a one-line change requiring a manifest regeneration, and awaits authorisation.
+
+**Safeguards.** Canonical `PAPER/` sources, historical logs and Phase 0–14
+documents untouched; `PAPER/FINAL_RESEARCHER_REVIEW_PACKAGE/` (114 files)
+preserved unchanged; all 23 protected baseline hashes re-verified identical.
+
+**Stopping point.** Phase 15 is complete. No submission, no Elsevier upload, no
+cover letter, no repository release, no licence change, no new research phase.
+Deferred and still awaiting the researcher's separate decision: the
+generative-AI declaration (researcher says language-only vs records showing
+broader use), the data-availability statement (GitHub-only; supplementary data
+absent from `main`), and the licence (recommendation only; nothing applied).
