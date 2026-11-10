@@ -1,6 +1,25 @@
 # Author metadata
 
-**STATUS: PENDING — blocking.**
+**STATUS: CONFIRMED by the researcher on 2026-11-10 and incorporated.**
+
+| field | value |
+|---|---|
+| Author count | **1** |
+| Full name | **Arun Kumar Yadav** |
+| School | School of Basic and Applied Sciences |
+| University | K.R. Mangalam University |
+| Address | Sohna Road, Gurugram, Haryana, 122103 |
+| Country | India |
+| Corresponding author | Arun Kumar Yadav |
+| Email | arunyadav0307@gmail.com |
+| ORCID | **not supplied — none invented** |
+
+This information is rendered on the title page of the compiled manuscript.
+See `PHASE13_TITLE_PAGE_VERIFICATION.md`.
+
+---
+
+## Historical record (Phase 12 status — superseded)
 
 ## What is confirmed
 

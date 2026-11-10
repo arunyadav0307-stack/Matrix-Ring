@@ -1,6 +1,28 @@
 # Declaration of generative AI and AI-assisted technologies
 
-**STATUS: PENDING — the researcher chose to leave this pending.**
+**STATUS: PENDING — UNRESOLVED DISCREPANCY. See
+`PHASE13_AI_DECLARATION_RECONCILIATION.md`.**
+
+**Update 2026-11-10 (Phase 13):** the researcher states that AI tools were used
+**only for language enhancement**. The project records document substantially
+broader AI assistance: manuscript drafting, LaTeX development, proof
+exposition, the 22 computational scripts, verification tooling, literature
+discovery (which produced four wrong venue attributions later corrected), and
+abstract revision.
+
+These two accounts are **not consistent**. The declaration has therefore
+**not** been finalised in either direction:
+
+* it has **not** been filled with a language-only statement, because the
+  project record contradicts it;
+* it has **not** been filled with the broader statement, because the
+  researcher has not confirmed it.
+
+Inserting either as final would be inserting an unconfirmed statement.
+
+---
+
+## Historical record (Phase 12 status — superseded)
 
 A declaration is **required**. The Elsevier exemption for "basic tools, such as
 tools used to check grammar, spelling, and references" does **not** cover the

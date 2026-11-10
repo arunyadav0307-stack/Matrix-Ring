@@ -99,31 +99,37 @@
 
 % ------------------------------ metadata ------------------------------
 
-% ---- Author metadata placeholders -----------------------------------------
-% CONFIRMED 2026-11-10: this is a SINGLE-AUTHOR paper (author count = 1).
-% PENDING: the author's name, affiliation and email. Nothing has been
-% inferred; do not submit with placeholders present.
-% The second-author block below is therefore disabled, not merely unfilled.
-\newcommand{\AUTHORONE}{[GIVEN NAME] [FAMILY NAME]}
-\newcommand{\AUTHORONEINST}{[DEPARTMENT OR SCHOOL]}
-\newcommand{\AUTHORONEORG}{[UNIVERSITY OR ORGANISATION]}
-\newcommand{\AUTHORONEADDR}{[FULL POSTAL ADDRESS]}
-\newcommand{\AUTHORONECOUNTRY}{[COUNTRY]}
-% Second-author block DISABLED: the author count is confirmed as 1.
-% Re-enable only on explicit instruction to add an author.
-\newcommand{\CORRESPONDINGEMAIL}{[CORRESPONDING AUTHOR EMAIL]}
+% ---- Author metadata (CONFIRMED by the researcher, 2026-11-10) ----------
+% Single author. Values supplied by the researcher and used verbatim:
+%   name        : Arun Kumar Yadav
+%   affiliation : School of Basic and Applied Sciences,
+%                 K.R. Mangalam University,
+%                 Sohna Road, Gurugram, Haryana, 122103, India
+%   email       : arunyadav0307@gmail.com
+% No ORCID was supplied; none has been invented.
+% Affiliations are typeset as a superscript-lettered block after \maketitle
+% (\thanks is avoided: it needs a TS1 footnote glyph at 6pt that the offline
+% font map cannot supply).
+\newcommand{\AUTHORONE}{Arun Kumar Yadav}
+\newcommand{\AUTHORONEINST}{School of Basic and Applied Sciences}
+\newcommand{\AUTHORONEORG}{K.R. Mangalam University}
+\newcommand{\AUTHORONEADDR}{Sohna Road, Gurugram, Haryana, 122103}
+\newcommand{\AUTHORONECOUNTRY}{India}
+\newcommand{\CORRESPONDINGEMAIL}{arunyadav0307@gmail.com}
 % --------------------------------------------------------------------------
 
 \title{Quantum Error-Correcting Codes from Galois Hulls of Cyclic
        Codes over Noncommutative Matrix Rings}
-% Author line: add co-authors with \and, each followed by its own \thanks.
-\author{\AUTHORONE}
-% Affiliations are set as a centred block immediately after \maketitle,
-% because \thanks would require footnote symbols from a TS1 font at 6pt
-% that this font map does not provide.
+% Author line. Single author: the affiliation is indicated by a lowercase
+% superscript letter immediately after the name and in front of the address,
+% exactly as the FFA guide for authors requires.
+\author{\AUTHORONE\textsuperscript{a}}
+% Present/permanent address would be a numbered footnote; none was supplied.
 \newcommand{\AFFILIATIONBLOCK}{%
   \begin{center}\small
-  \AUTHORONEINST, \AUTHORONEORG, \AUTHORONEADDR, \AUTHORONECOUNTRY
+  \textsuperscript{a}\,\AUTHORONEINST, \AUTHORONEORG,
+  \AUTHORONEADDR, \AUTHORONECOUNTRY.\\[2pt]
+  \textit{Corresponding author.} E-mail: \texttt{\CORRESPONDINGEMAIL}
   \end{center}}
 \date{}
 
@@ -197,9 +203,9 @@ list. If no individual or body is to be acknowledged, delete this section.
 \section*{Declaration of competing interests}
 \label{sec:competinginterests}
 
-The authors declare that they have no known competing financial interests or
-personal relationships that could have appeared to influence the work
-reported in this paper.
+The author declares no known competing financial interests or personal
+relationships that could have appeared to influence the work reported in
+this paper.
 
 \emph{Status: CONFIRMED by the researcher on 2026-11-10.} The declarations
 tool at \texttt{declarations.elsevier.com} must still be completed and the
@@ -227,14 +233,33 @@ confirmed.
 \section*{Data availability}
 \label{sec:dataavailability}
 
-[\emph{Researcher confirmation required --- mandatory.}] \emph{Finite Fields and Their
-Applications} applies Elsevier research-data \textbf{Option C}, which requires
-the authors either to deposit the research data in a relevant data repository
-and provide a link at submission, or to state why sharing is not possible (the
-statement is published). See \texttt{PHASE12\_RESEARCH\_DATA\_DEPOSIT\_PLAN.md} for the
-assessment of what is currently available and for the recommended route. No
-repository has yet been deposited with a persistent identifier, so neither
-wording can yet be given truthfully.
+[\emph{Researcher confirmation required --- mandatory.}] \emph{Finite Fields
+and Their Applications} applies Elsevier research-data \textbf{Option C},
+which requires the authors to deposit the research data in a relevant data
+repository and to provide a link to the dataset during the submission process.
+
+The researcher has elected to use the project's existing public GitHub
+repository \emph{instead of} a dedicated data repository such as Zenodo. The
+data are publicly readable at the commit-pinned address
+
+\begin{quote}\small\raggedright
+\texttt{https://github.com/}\penalty0
+\texttt{arunyadav0307-stack/}\penalty0
+\texttt{Matrix-Ring/tree/}\penalty0
+\texttt{e41c5713\penalty0 fec5cce1\penalty0 d7cb5110\penalty0 5f25d168\penalty0 dc05ebce}\penalty0
+\texttt{/PAPER/supplementary}
+\end{quote}
+
+which resolves to $86$ files: $22$ computational scripts, $23$ execution logs,
+$29$ generator matrices, $8$ parameter tables and $4$ documentation files,
+certified by a SHA-256 manifest.
+
+\textbf{This statement is not yet final.} Two material limitations must be
+resolved before it can be submitted: (i) the supplementary data are present
+only on the research branch and are \textbf{absent from the repository's
+default branch}, so the repository's plain landing page does not reach them;
+and (ii) that branch is unprotected, so its long-term availability is not
+assured. See \texttt{PHASE13\_GITHUB\_RESEARCH\_DATA\_ACCESS\_PLAN.md}.
 
 \section*{Declaration of generative AI and AI-assisted technologies in the
 manuscript preparation process}

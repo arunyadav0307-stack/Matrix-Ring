@@ -22,7 +22,7 @@ them.**
 | 1 | Author **name** |
 | 2 | Author **affiliation** (institution, dept, street, city, state, country) |
 | 3 | Corresponding-author **email** (publishable) |
-| 4 | **Data-availability statement** — needs a deposit and a DOI |
+| 4 | **Data-availability statement** — GitHub-only route chosen; needs the `main`-branch gap fixed |
 | 5 | **Generative-AI declaration** — needs the tool name(s) |
 | 6 | **Research-data accessibility** — follows from item 4 |
 
@@ -43,11 +43,11 @@ See `PHASE12_RESEARCHER_ACTION_ITEMS.md` at the repository root under
 | 6 | Computational logs | `supplementary/logs/` (23) |
 | 7 | Generator matrices | `supplementary/generator_matrices/` (29) |
 | 8 | Reproduction instructions | `supplementary/README.md`, `ENVIRONMENT.md`, `CERTIFICATION_PROCEDURE.md` |
-| 9 | Data-availability statement | `declarations/01_data_availability.md` — **PENDING** |
+| 9 | Data-availability statement | `declarations/01_data_availability.md` — **PENDING** (GitHub-only route chosen) |
 | 10 | Competing-interest declaration | `declarations/02_competing_interests.md` — **CONFIRMED** |
 | 11 | Funding declaration | `declarations/03_funding.md` — **CONFIRMED** |
-| 12 | Generative-AI declaration | `declarations/04_generative_ai.md` — **PENDING** |
-| 13 | Final author metadata | `declarations/05_author_metadata.md` — **PENDING** |
+| 12 | Generative-AI declaration | `declarations/04_generative_ai.md` — **PENDING — UNRESOLVED DISCREPANCY** |
+| 13 | Final author metadata | `declarations/05_author_metadata.md` — **CONFIRMED** |
 | 14 | Final compliance matrix | `PHASE12_FINAL_READINESS_AUDIT.md` (see below) |
 | 15 | SHA-256 manifest | `SHA256_MANIFEST.txt` |
 | 16 | This README | `README.md` |
@@ -65,7 +65,7 @@ plan, manuscript check, build report, action items and decision report, live in
 | Competing interests | ✅ **CONFIRMED** — "no known competing financial interests…" — already in the PDF |
 | Funding | ✅ **CONFIRMED** — "did not receive any specific grant…" — already in the PDF |
 | Data availability | ⏳ **PENDING** — no deposit exists |
-| Generative AI | ⏳ **PENDING** — required; tool name(s) not supplied |
+| Generative AI | ⏳ **PENDING — DISCREPANCY** — researcher says language-only; records show broader use |
 | Acknowledgements | ⏳ PENDING (optional) |
 | CRediT contributions | ⏳ PENDING (encouraged) |
 

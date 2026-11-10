@@ -1,9 +1,9 @@
 # FFA final submission package — SHA-256 manifest
 
-Generated: 2026-11-10T05:53:47Z
+Generated: 2026-11-10T06:15:46Z
 Package: PAPER/FFA_FINAL_SUBMISSION_PACKAGE/
-Branch: arena/59de606f-matrix-ring  ·  Commit: a731ac7
-Status: CONDITIONALLY READY — SPECIFIC CONFIRMATIONS PENDING
+Branch: arena/59de606f-matrix-ring  ·  Base commit: e41c571
+Phase: 13  ·  Status: CONDITIONALLY READY — 2 BLOCKING ITEMS
 
 One hash per file, computed on the file bytes. Paths relative to this
 directory. Verify with:
@@ -12,18 +12,18 @@ directory. Verify with:
 
 ---
 
-4d9722917514dd4658d40a39250f55e37062859199cc060106f4db8ed9d1febc  README.md  (4588 bytes)
+35fe4dfc1516a1cd6b974a78d585d946b7785020c81b18f9dd92ea76aff27596  README.md  (4714 bytes)
 46a8a6da12ccd374f0be5a260ee9e1862e5f214f7dcedf10d2beaf5fde313c97  build/main.bbl  (2921 bytes)
 ee765ce33eb7a40236b8dcd59d7c635ccdc4b7aca2fa79bc631b278ce43e53f2  build/main.blg  (891 bytes)
-a0302dd4f0380ea639ef7f784e08fb17b78a87664c8f9f25899a936079bbe084  build/main.log  (20134 bytes)
-72bfa79dd0f08d11dc559febd923ce4351993f6dfd4989ae80233845946d20e0  build/manuscript.pdf  (576194 bytes)
-29ca862fb20b1544e734da5ea513be99b68c81d64be5806b30a7d4120fd9c97e  declarations/01_data_availability.md  (2196 bytes)
+faecf4ba3a16925e8e687754bb404749d383d80eab3d7ba67e0c640c37d296d2  build/main.log  (20135 bytes)
+a0fea51c4054b89641b9b9cb2407bb7cbefb54aaba6b75d7302814efb8bdd509  build/manuscript.pdf  (578355 bytes)
+7269fc1843aeadea9aea68920bd87efb3ae8d622cb663f7ee8e76c4c6a41e988  declarations/01_data_availability.md  (3223 bytes)
 56228b44fc29ea62945d5b0fda863e9b6a9291d17ea578d52dd175094bc90219  declarations/02_competing_interests.md  (2373 bytes)
 a16741bb7992b441cdf43453c44d1b01aa7e1b4002fd26d228c7da6eb2e0e8e0  declarations/03_funding.md  (2268 bytes)
-4debdc5fa59360bedbf449f92a706a1c6a374582f07569fee068723d7c2f2d81  declarations/04_generative_ai.md  (3646 bytes)
-eb1295050209a14b22e6b29cf8101d0d94f599e69121a3db5eea91e2a6ceeff8  declarations/05_author_metadata.md  (3212 bytes)
+9413979be45e6827fc4c10ec648e44071b0b5e3fe279ca14bfc898cd1c1f8945  declarations/04_generative_ai.md  (4535 bytes)
+d904443fbd074fbed786584c29aecde09982e5f68e16a396ce71239976c43f61  declarations/05_author_metadata.md  (3810 bytes)
 23074d101b9171bdc3222c31eb70693caf699a2bcca5e6418bb4ceabb477b2d3  source/main.bbl  (3892 bytes)
-e4fc6737868d526ce14441aaba540b4cae85e349702ad7af7da8358d4eb44207  source/main.tex  (11866 bytes)
+7a89b18637222653c589c99bf70850e36384e89de9b12c3b6f80bb8bdf115be8  source/main.tex  (12968 bytes)
 73388338bb83adb695db32d2f69b3d2c8d7279647c546cf4da4b9dc5abd22feb  source/references.bib  (8074 bytes)
 e9b90badd56df8bde1af931de315cc6ff6f2ac731b5f7fd3d22d42b6399fc14d  source/sections/01_introduction.tex  (13205 bytes)
 d7b92a2ff1cedb6e325f5ce59fa72fb98d39ae7a8b8de02c03173c4b353de0c5  source/sections/02_literature.tex  (6164 bytes)
@@ -127,26 +127,27 @@ d18dc66d52cfa40be4e22b27d5f261372b1a28a9a1f5cd32f3293e347dec9c64  supplementary/
 ---
 
 files: 111
-total bytes: 2,640,659
+total bytes: 2,646,563
 
 ## Notes
 
-* `build/manuscript.pdf` is the compiled output of the final Phase 12 build:
-  `72bfa79dd0f08d11dc559febd923ce4351993f6dfd4989ae80233845946d20e0`.
+* `build/manuscript.pdf` is the Phase 13 build:
+  `a0fea51c4054b89641b9b9cb2407bb7cbefb54aaba6b75d7302814efb8bdd509`.
   Verify with `sha256sum build/manuscript.pdf`.
 
 * `supplementary/` holds the research data: **86 files** — 22 scripts, 23 logs,
   29 generator matrices (28 + INDEX), 8 parameter tables, 4 documents —
-  certified by `supplementary/MANIFEST.sha256` (85 lines, the manifest
-  excluding itself). Carried through unmodified from `PAPER/supplementary/`.
+  certified by `supplementary/MANIFEST.sha256` (85 lines).
 
-* **Correction C1:** earlier phases recorded "24 scripts, 24 logs". The correct
-  counts are **22** and **23**; the total of 86 was always right. See the
-  correction record in
-  `PHASE12_FFA_SUBMISSION_PREP/PHASE12_CONFIRMATION_REGISTER.md`.
+* Author metadata is CONFIRMED and rendered on the title page:
+  Arun Kumar Yadav; School of Basic and Applied Sciences, K.R. Mangalam
+  University, Sohna Road, Gurugram, Haryana, 122103, India;
+  arunyadav0307@gmail.com. No ORCID was supplied; none was invented.
+
+* **Two blocking items remain** — see
+  `PHASE13_FINAL_INTEGRATION/PHASE13_READINESS_AUDIT.md`:
+  1. data availability (chosen GitHub route does not resolve from `main`);
+  2. generative-AI declaration (researcher's account contradicts the record).
 
 * The canonical manuscript is NOT part of this package and was not modified.
-  Its hashes are in
-  `PHASE11_FFA_FINALIZATION/PHASE11_FINAL_COMPLIANCE_MATRIX.md`, section 7.
-
 * This manifest deliberately excludes itself.

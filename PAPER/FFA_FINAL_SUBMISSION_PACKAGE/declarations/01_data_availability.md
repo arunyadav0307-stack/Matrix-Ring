@@ -1,7 +1,35 @@
 # Data availability statement
 
-**STATUS: PENDING — cannot be finalized until a deposit exists with a
-persistent identifier.**
+**STATUS: PENDING — researcher has chosen GitHub-only; two material
+limitations remain before the statement can be final.**
+
+**Update 2026-11-10 (Phase 13):** the researcher has elected to use the
+existing public GitHub repository **instead of** a Zenodo deposit. That
+decision is respected; no Zenodo deposit, DOI, release or tag has been created.
+
+Proposed commit-pinned URL:
+
+```
+https://github.com/arunyadav0307-stack/Matrix-Ring/tree/e41c5713fec5cce1d7cb51105f25d168dc05ebce/PAPER/supplementary
+```
+
+Two limitations keep this PENDING:
+
+1. **The supplementary data are absent from the repository's default branch
+   `main`** (verified 404). A reader opening the repository landing page will
+   not find the data.
+2. **Both branches are unprotected**, so long-term availability is not
+   assured.
+
+Note that Elsevier's Option C does **not** explicitly mandate a DOI — it
+requires deposit in "a relevant data repository" plus a link. GitHub is
+therefore defensible, but the two limitations above are real.
+
+See `PHASE13_GITHUB_RESEARCH_DATA_ACCESS_PLAN.md`.
+
+---
+
+## Historical record (Phase 12 status — superseded)
 
 ## Official FFA requirement (Option C, verified 2026-11-10)
 
