@@ -3,3 +3,8 @@ __pycache__/
 
 # Phase 8B isolated build scratch (regenerate with PAPER/compile/build_modern.sh)
 PAPER/build_modern/
+
+# Phase 9 read-only inspection copy of the 8B package (regenerate with:
+#   mkdir -p PHASE9_JOURNAL_SELECTION/_inspection && unzip -q \
+#     PAPER/MatrixRingManuscript_20261110_Phase8B.zip -d PHASE9_JOURNAL_SELECTION/_inspection
+PHASE9_JOURNAL_SELECTION/_inspection/
