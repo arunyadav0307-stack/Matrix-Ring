@@ -1,0 +1,81 @@
+============================================================================================
+VERIFICATION OF THE WORKED EXAMPLES AND THE PARAMETER TABLES
+============================================================================================
+
+  ex:crt      B = F_4[u,w]/(u^2,w^2)   at (q,t,n)=(4,2,2)
+    components=1, dim B=4, is_chain=False, regime=WILD
+    ex:crt      B = F_4[u,w]/(u^2,w^2)  dim m, dim m^2, ... got [3, 1]                   want [3, 1]         OK
+    ex:crt      B = F_4[u,w]/(u^2,w^2)  dim ann_{B^2}(m) got 2                        want 2              OK
+
+  ex:witnessA B = F_9[u,w]/(u^2,w^3)   at (q,t,n)=(9,2,3)
+    components=1, dim B=6, is_chain=False, regime=WILD
+    ex:witnessA B = F_9[u,w]/(u^2,w^3)  dim m, dim m^2, ... got [5, 3, 1]                want [5, 3, 1]      OK
+    ex:witnessA B = F_9[u,w]/(u^2,w^3)  dim ann_{B^2}(m) got 2                        want 2              OK
+
+  ex:witnessB B = F_4[u,w]/(u^2,w^4)   at (q,t,n)=(4,2,4)
+    components=1, dim B=8, is_chain=False, regime=WILD
+    ex:witnessB B = F_4[u,w]/(u^2,w^4)  dim m, dim m^2, ... got [7, 5, 3, 1]             want [7, 5, 3, 1]   OK
+    ex:witnessB B = F_4[u,w]/(u^2,w^4)  dim ann_{B^2}(m) got 2                        want 2              OK
+
+  ex:crt  number of B-submodules of B^2 at (4,2,2)
+    ex:crt  # submodules (= # codes)               got 1221                     want 1221           OK
+
+  ex:nonreflexive  (8,1,2): codes and sigma_2-stable codes
+    # codes enumerated (zero included): 93
+    ex:nonreflexive  # nonzero codes               got 92                       want 92             OK
+    ex:nonreflexive  # with sigma_2(C)=C           got 14                       want 14             OK
+
+  tab:headline -- 18 rows
+    tab:headline [[24,8,4]]_9       (9,1,6)        got consistent               want consistent     OK
+    tab:headline [[20,4,4]]_4       (4,1,5)        got consistent               want consistent     OK
+    tab:headline [[20,4,4]]_4       (4,1,5)        got consistent               want consistent     OK
+    tab:headline [[16,4,3]]_4       (4,1,4)        got consistent               want consistent     OK
+    tab:headline [[16,4,3]]_4       (4,1,4)        got consistent               want consistent     OK
+    tab:headline [[20,2,10;18]]_4   (4,1,5)        got consistent               want consistent     OK
+    tab:headline [[24,2,10;18]]_9   (9,1,6)        got consistent               want consistent     OK
+    tab:headline [[20,4,9;16]]_9    (9,1,5)        got consistent               want consistent     OK
+    tab:headline [[24,4,9;20]]_4    (4,1,6)        got consistent               want consistent     OK
+    tab:headline [[16,2,8;14]]_9    (9,1,4)        got consistent               want consistent     OK
+    tab:headline [[16,2,7;10]]_9    (9,1,4)        got consistent               want consistent     OK
+    tab:headline [[12,2,6;10]]_4    (4,1,3)        got consistent               want consistent     OK
+    tab:headline [[24,4,6;20]]_4    (4,2,3)        got consistent               want consistent     OK
+    tab:headline [[16,4,5;8]]_4     (4,1,4)        got consistent               want consistent     OK
+    tab:headline [[24,10,4;2]]_9    (9,1,6)        got consistent               want consistent     OK
+    tab:headline [[24,6,2;2]]_9     (9,2,3)        got consistent               want consistent     OK
+    tab:headline [[24,14,2]]_9      (9,2,3)        got consistent               want consistent     OK
+    tab:headline [[32,8,2;4]]_4     (4,2,4)        got consistent               want consistent     OK
+
+  tab:cert -- 28 rows against certified_codes.csv
+    tab:cert  row count                            got 28                       want 28             OK
+    tab:cert [[24,8,4]]_9       (9,1,6)            got consistent               want consistent     OK
+    tab:cert [[20,4,4]]_4       (4,1,5)            got consistent               want consistent     OK
+    tab:cert [[20,4,4]]_4       (4,1,5)            got consistent               want consistent     OK
+    tab:cert [[20,2,10;18]]_4   (4,1,5)            got consistent               want consistent     OK
+    tab:cert [[24,2,10;18]]_9   (9,1,6)            got consistent               want consistent     OK
+    tab:cert [[4,2,2;2]]_4      (4,1,1)            got consistent               want consistent     OK
+    tab:cert [[8,4,3;4]]_4      (4,1,2)            got consistent               want consistent     OK
+    tab:cert [[12,2,6;10]]_4    (4,1,3)            got consistent               want consistent     OK
+    tab:cert [[16,4,5;8]]_4     (4,1,4)            got consistent               want consistent     OK
+    tab:cert [[24,4,9;20]]_4    (4,1,6)            got consistent               want consistent     OK
+    tab:cert [[8,4,2;4]]_4      (4,2,1)            got consistent               want consistent     OK
+    tab:cert [[16,4,4;12]]_4    (4,2,2)            got consistent               want consistent     OK
+    tab:cert [[24,4,6;20]]_4    (4,2,3)            got consistent               want consistent     OK
+    tab:cert [[12,6,2;6]]_4     (4,3,1)            got consistent               want consistent     OK
+    tab:cert [[16,6,2;10]]_4    (4,4,1)            got consistent               want consistent     OK
+    tab:cert [[4,2,2;2]]_8      (8,1,1)            got consistent               want consistent     OK
+    tab:cert [[8,4,3;4]]_8      (8,1,2)            got consistent               want consistent     OK
+    tab:cert [[12,2,6;10]]_8    (8,1,3)            got consistent               want consistent     OK
+    tab:cert [[12,4,2;8]]_8     (8,3,1)            got consistent               want consistent     OK
+    tab:cert [[4,2,2;2]]_9      (9,1,1)            got consistent               want consistent     OK
+    tab:cert [[8,2,4;6]]_9      (9,1,2)            got consistent               want consistent     OK
+    tab:cert [[12,2,5;6]]_9     (9,1,3)            got consistent               want consistent     OK
+    tab:cert [[16,2,8;14]]_9    (9,1,4)            got consistent               want consistent     OK
+    tab:cert [[20,4,9;16]]_9    (9,1,5)            got consistent               want consistent     OK
+    tab:cert [[8,4,2;4]]_9      (9,2,1)            got consistent               want consistent     OK
+    tab:cert [[16,4,4;12]]_9    (9,2,2)            got consistent               want consistent     OK
+    tab:cert [[12,4,2;8]]_9     (9,3,1)            got consistent               want consistent     OK
+    tab:cert [[24,6,4;18]]_9    (9,3,2)            got consistent               want consistent     OK
+
+============================================================================================
+CHECKS: 56     mismatches: 0
+============================================================================================

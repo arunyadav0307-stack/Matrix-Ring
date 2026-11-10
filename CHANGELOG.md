@@ -772,3 +772,87 @@ expected because the visual set was regenerated.
 or C) before any manuscript edit. No rebuild was performed, since no manuscript
 change was made. Deferred items (generative-AI declaration, GitHub data access,
 licence) carried forward with status unchanged.
+
+---
+
+## Phase 18 — Applied abstract Option B (researcher-approved) and final validation
+
+**Branch** `arena/59de606f-matrix-ring`. Scope: implement the researcher's
+approved Phase 17 abstract wording **Option B (B2 variant)**, validate, and
+package. One sentence of the abstract changed; nothing else.
+
+**Approval.** The researcher approved Phase 17 Option B, specifying the B2
+wording and **not** the earlier 253-word draft (which exceeds the 250 limit).
+Authorising document:
+`PHASE17_RESEARCHER_DECISION/PHASE17_ABSTRACT_WORDING_OPTIONS.md`.
+
+**Before:**
+
+> Exhaustive computation certifies $28$ codes, each by two applicable
+> independent methods, one exact and one a cross-check, among them this
+> framework's first distance-$4$ stabilizer codes, $[[24,8,4]]_9$ and
+> $[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$.
+
+**After:**
+
+> Exhaustive computation certifies $28$ codes, each by two independent
+> methods: one exact, and one quantum search exact for $11$ codes and a
+> lower bound for $17$, among them this framework's first distance-$4$
+> stabilizer codes, $[[24,8,4]]_9$ and $[[20,4,4]]_4$, and entanglement-assisted
+> codes up to $[[20,2,10;18]]_4$.
+
+**Word counts** (three established conventions; C3 strictest; limit 250):
+
+| | C1 | C2 | C3 | margin |
+|---|---|---|---|---|
+| before (Option A) | 222 | 208 | 235 | 15 |
+| **after (Option B2)** | **231** | **217** | **244** | **6** |
+
+The counts reproduce the approved Phase 17 baseline **exactly** (231/217/244).
+The delta is **+9 under all three conventions**, attributable solely to the
+replacement sentence — no other abstract word was altered. Title, keywords and
+MSC are byte-identical (hash-verified). A supplementary plain split of the
+rendered page-1 text gives 247, also under 250. The replacement was made under a
+single-occurrence assertion; `diff -rq` between `PHASE16_WORKCOPY/` and
+`PHASE18_WORKCOPY/` reports **exactly one differing file** (`main.tex`).
+
+**Certification facts re-verified** (all match): 28 codes · M1+M3 = 24 ·
+M2+M3 = 4 · M3 exact = 11 · M3 lower bound = 17 · three methods completed = **0**.
+The conditional logic was not reinterpreted: M2 runs iff M1 did not complete; M2
+is *skipped*, not route-inapplicable (one of the four M2 codes is EA).
+
+**Validation.** `validate_latex_v2.py`: **13 PASS / 0 FAIL**.
+`verify_examples.py`: **56 checks / 0 mismatches**. Four-pass TeX Live 2024 build
+with genuine `BibTeX 0.99d` / `plain.bst`: 0 errors, 0 undefined citations, 0
+undefined references, 0 overfull, 0 underfull, 0 missing glyphs, **42 pages**,
+580 584 bytes, SHA-256
+`c87381bc29a2955c2f5822cbbbae0e80a4226e3e44ed50e3d89d595a0d16ec0c`.
+Appendix tables confirmed as Table A.1 / A.2 (Tables 1–4 preserved); Example 13
+confirmed on p. 33; all 13 worked examples present; author metadata verified
+(Arun Kumar Yadav; K.R. Mangalam University; arunyadav0307@gmail.com); funding
+and competing-interest declarations unchanged. **No visual inspection was
+performed** — Arena has no vision capability; page images were regenerated for the
+researcher's own review.
+
+**Unchanged:** every theorem, proof, equation, example, distance value, quantum
+parameter (34 tuples), generator matrix, construction route, certification
+record, the 28-code applicability table, the Phase 7 log and script, both
+supplementary packages, all tools, and all Phase 0–17 documents. 49 protected
+hashes recorded before and after: **all hold, zero changes**.
+
+**Deliverables.** `PAPER/FINAL_RESEARCHER_REVIEW_V3/` (11 items; 72-entry
+manifest, all verified; 35 MB): revised source, updated abstract, bibliography,
+sections and appendices, compiled PDF, validation outputs, abstract word-count
+report, certification consistency report, supplementary reference, SHA-256
+manifest, README with reproducibility instructions, plus regenerated page images.
+`PHASE18_ABSTRACT_OPTION_B_IMPLEMENTATION.md` records the approval, the exact
+before/after sentences, the counts, the unchanged-content confirmation and the
+hashes. `PAPER/FINAL_RESEARCHER_REVIEW_V2/` preserved unchanged (131 entries, all
+OK).
+
+**Deferred, status unchanged:** generative-AI declaration, GitHub data access,
+licence, Zenodo deposit, release/tag, public publication, journal submission.
+
+**Stopping point.** Phase 18 is complete. No submission, no publication, no
+release, no tag, no licence, no new research. Awaiting explicit researcher
+approval.

@@ -1,0 +1,318 @@
+% =====================================================================
+\section[Preliminaries and the noncommutative matrix-ring framework]%
+  {Preliminaries and the noncommutative\\ matrix-ring framework}
+\label{sec:prelim}
+% =====================================================================
+
+\subsection{Standing hypotheses and notation}
+
+Throughout, $p$ is a prime, $q=p^r$, and $t,n\ge1$ are integers. We set
+\begin{equation}\label{eq:rings}
+  A_t=\F_q[u]/\langle u^t\rangle,\qquad
+  R=M_2(A_t),\qquad
+  \Bq=A_t[X]/\langle X^n-1\rangle,\qquad
+  \Rn=R[X]/\langle X^n-1\rangle ,
+\end{equation}
+and write $\Nlen=4tn$. Elements of $A_t$ are written $\sum_{a=0}^{t-1}c_au^a$.
+All dimensions and all cardinalities of codes are over $\F_q$ unless a different
+field is named explicitly; this is maintained without exception, and the only
+place where $\F_p$ enters is Theorem~\ref{thm:fpbasis}.
+
+\begin{definition}[cyclic code]\label{def:code}
+A \emph{cyclic code of length $n$ over $R$} is a right ideal of $\Rn$. We
+identify $\Rn$ with $R^n$ by $x=\sum_ex_eX^e\leftrightarrow(x_0,\dots,x_{n-1})$
+and write $C\le \Rn$ for a right $\Rn$-submodule.
+\end{definition}
+
+The choice of right ideals is forced, not conventional: see
+Lemma~\ref{lem:failure}. The ring $\Bq$ is commutative, being a quotient of the
+commutative ring $A_t[X]$, and there is a canonical isomorphism
+\begin{equation}\label{eq:morita}
+  \Rn \;\cong\; M_2(\Bq)
+\end{equation}
+because $X$ is central, so that a polynomial with matrix coefficients may be
+read as a matrix of polynomials. Under \eqref{eq:morita}, right ideals of
+$\Rn$ correspond to $\Bq$-submodules of $\Bq^2$; this is the Morita
+correspondence we use repeatedly and we do not reprove it.
+
+\begin{lemma}[basic structure]\label{lem:basic}
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item $A_t$ is a finite chain ring: its ideals are exactly
+  $u^iA_t$, $0\le i\le t$; $|A_t|=q^t$; its maximal ideal is $uA_t$ and its
+  residue field is $\F_q$.
+\item $R$ is a finite Frobenius ring with $|R|=q^{4t}$,
+  $\dim_{\F_q}R=4t$, $Z(R)=A_t\cdot I$, $\Jac(R)=M_2(uA_t)$, and exactly $t+1$
+  two-sided ideals, namely $u^iR$.
+\item $\dim_{\F_q}R^n=\Nlen=4tn$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Every element of $A_t$ has a unique form $c_{i}u^i+\text{(higher terms)}$
+with $c_i\ne0$, and then the element is $u^i$ times a unit; hence every ideal is
+of the stated form and they form a chain. (b) The stated descriptions of the
+centre and the Jacobson radical are immediate from the matrix-unit computation;
+the two-sided ideals of $M_2(S)$ are $M_2(I)$ for ideals $I\trianglelefteq S$,
+which gives $t+1$ of them. The Frobenius property is imported
+\cite{Wood1999Duality}; a direct Frobenius functional is exhibited in
+Lemma~\ref{lem:lambda} below. (c) is immediate from (b), since
+$\dim_{\F_q}A_t=t$ and $\dim_{\F_q}R=4\dim_{\F_q}A_t$.
+\end{proof}
+
+\subsection{The Frobenius functional}\label{subsec:lambda}
+
+Let $\lambda:A_t\to\F_q$ be the coefficient of $u^{t-1}$, and let
+$\tr$ denote the matrix trace. Put
+\begin{equation}\label{eq:Lambda}
+  \Lambda=\lambda\circ\tr:R\longrightarrow\F_q,\qquad
+  \Lambda(X)=\lambda(X_{11}+X_{22}) .
+\end{equation}
+
+\begin{lemma}\label{lem:lambda}
+$\Lambda$ is symmetric ($\Lambda(XY)=\Lambda(YX)$), associative (the kernel
+contains no nonzero left or right ideal), $\F_q$-linear, and non-degenerate:
+the bilinear form $(X,Y)\mapsto\Lambda(XY)$ on $R$ is non-degenerate.
+\end{lemma}
+
+\begin{proof}
+Symmetry: $\tr(XY)=\tr(YX)$ for matrices over any commutative ring, and $\lambda$
+is $\F_q$-linear, so $\Lambda(XY)=\Lambda(YX)$.
+
+Non-degeneracy: let $X=(X_{ij})\ne0$ and choose $(k,l)$ with $X_{kl}\ne0$;
+write $X_{kl}=\sum_ac_au^a$ and let $a_0$ be the least index with $c_{a_0}\ne0$.
+Take $Y$ to be the matrix whose $(l,k)$ entry is $u^{t-1-a_0}$ and whose other
+entries are $0$. Then $XY$ has trace
+$\sum_{i,j}X_{ij}Y_{ji}=X_{kl}u^{t-1-a_0}$, whose $u^{t-1}$-coefficient is
+$c_{a_0}\ne0$. Hence $\Lambda(XY)\ne0$, and the form is non-degenerate.
+
+Associativity (no nonzero one-sided ideal lies in $\ker\Lambda$): if
+$X\ne0$, the $Y$ constructed above already gives $\Lambda(XY)\ne0$ with $Y$
+arbitrary in $R$, so the right annihilator of $\Lambda$ in $R$ is zero; by
+symmetry the same holds on the left.
+\end{proof}
+
+Together with the import that $R$ is Frobenius, Lemma~\ref{lem:lambda} says that
+$(R,\Lambda)$ is a Frobenius algebra over $\F_q$, which is the setting we need.
+
+\subsection{The right-module convention and the failure lemma}
+
+\begin{lemma}[failure lemma]\label{lem:failure}
+Let $S$ be a finite Frobenius ring and let
+$C$ be a \textbf{left} ideal. Then the dual of $C$ with respect to the plain
+product $\sum_ix_iy_i$ satisfies $|C|\cdot|C^{\perp}|=|S|^n$. For a
+\textbf{right} ideal this fails in general. Concretely, for
+$S=R=M_2(\F_2)$, $C=uR$ (with $t=2$, $q=2$, $n=1$, so that $u$ denotes a
+nilpotent generator of $A_2$ embedded diagonally) one has
+$|C|\cdot|C^{\perp}|=4\ne16=|R|$.
+\end{lemma}
+
+\begin{proof}
+For a left ideal $C$, the map
+$\psi_C:C\to\Hom_{\F_q}(S/C^{\perp},\F_q)$, $c\mapsto(y\mapsto\Lambda(cy))$, is
+an $\F_q$-linear isomorphism by the non-degeneracy of $\Lambda$, and the
+standard dimension count gives the size formula.
+
+For right ideals the argument breaks: $\psi_C$ is no longer $\F_q$-balanced in
+the way required, because the plain product is not compatible with the
+right action. The stated counterexample is a direct computation: with
+$R=M_2(\F_2)$ and $C=uR$ one has $|C|=4$ while the plain-product dual
+$C^{\perp}=\{y:\tr(xy)=0\ \forall x\in C\}$ has size $1$, giving
+$|C||C^{\perp}|=4\ne 16$.
+\end{proof}
+
+\begin{remark}\label{rem:convention}
+Lemma~\ref{lem:failure} is the reason the pairing of
+Definition~\ref{def:pairing} below carries the transpose: only then does the
+dual of a right module come out as a right module with the correct size
+(Theorem~\ref{thm:duality}). This is not a matter of notation.
+\end{remark}
+
+\subsection{Automorphisms and the anti-automorphism}
+
+\begin{definition}\label{def:sigma}
+For $s\ge0$ let $\sigma_s:\F_q\to\F_q$, $a\mapsto a^{p^s}$. Extend $\sigma_s$
+to $A_t$, to $R$ and to $\Rn$ coefficient-wise, fixing $u$ and $X$. Define
+\begin{equation}\label{eq:theta}
+  \theta_s=\sigma_s\circ(\cdot)^{\mathsf T},
+\end{equation}
+the composite of the coefficient-wise $\sigma_s$ with the transpose.
+\end{definition}
+
+\begin{lemma}\label{lem:theta}
+\begin{enumerate}[label=\textnormal{(\alph*)},leftmargin=*]
+\item $\sigma_s\in\Aut(A_t)$ and its entrywise extension lies in $\Aut(R)$;
+  $\sigma_s$ is nontrivial iff $r\nmid s$, and its order is $r/\gcd(r,s)$.
+\item $\theta_s$ is an \textbf{anti}-automorphism of $R[X]$ and of $\Rn$:
+  $\theta_s(ab)=\theta_s(b)\theta_s(a)$.
+\item $\theta_s^2=\sigma_{2s}$; more generally $\theta_s^{2k}=\sigma_{2ks}$ and
+  $\theta_s^{2k-1}=\theta_{(2k-1)s}$. In particular $\theta_s$ is an involution
+  iff $r\mid 2s$.
+\item $\theta_s(X^n-1)=X^n-1$, so $\theta_s$ is well defined on $\Rn$; it is
+  additive, $\F_p$-linear and $\sigma_s$-semilinear over $\F_q$ (not
+  $\F_q$-linear unless $r\mid s$).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $a\mapsto a^{p^s}$ is a field automorphism of $\F_q$ of order
+$r/\gcd(r,s)$, and it fixes the coefficients of the relation $u^t=0$, so it
+extends to $A_t$ by fixing $u$; entrywise extension preserves matrix
+multiplication.
+
+(b) For matrices over any ring, $(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$,
+and $\sigma_s$ is a ring automorphism, hence
+$\theta_s(ab)=\sigma_s((ab)^{\mathsf T})
+=\sigma_s(b^{\mathsf T})\sigma_s(a^{\mathsf T})=\theta_s(b)\theta_s(a)$. The
+same computation works in $R[X]$; note that there the index of $X$ is swapped
+as well, which is why the statement is recorded separately for $R[X]$ and for
+$\Rn$.
+
+(c) $\theta_s^2(X)=\sigma_s(\sigma_s(X^{\mathsf T})^{\mathsf T})=\sigma_s^2(X)
+=\sigma_{2s}(X)$; the general powers follow by induction.
+
+(d) $\sigma_s$ fixes $X$ and the coefficients of $X^n-1$ are $0,\pm1\in\F_p$,
+which $\sigma_s$ fixes. Semilinearity is immediate from $\sigma_s$ being a field
+automorphism of order $>1$ in general.
+\end{proof}
+
+\begin{remark}
+We use only the coefficient-Frobenius subgroup of $\Aut(A_t)$: an automorphism
+of $A_t$ may move $u$, and we never use those. Everything in this paper
+generalises verbatim to $\tau\in\Aut(A_t)$ with $\theta_\tau=\tau\circ(\cdot)^{\mathsf T}$
+and $\theta_\tau^2=\tau^2$; we keep $\sigma_s$ for concreteness.
+\end{remark}
+
+\subsection{The CRT decomposition of \texorpdfstring{$\Bq$}{B}}%
+\label{subsec:crt}
+
+Let $X^n-1=\prod_{j}g_j^{e_j}$ be the factorisation into pairwise coprime
+monic irreducibles over $\F_q$. By the Chinese remainder theorem,
+\begin{equation}\label{eq:crt}
+  \Bq=A_t[X]/\langle X^n-1\rangle
+  \;\cong\;\prod_j \Bq_j,\qquad
+  \Bq_j=A_t[X]/\langle g_j^{e_j}\rangle ,
+\end{equation}
+and, writing $d_j=\deg g_j$, one has $\Bq_j\cong\F_{q^{d_j}}[u,w]/\langle u^t,w^{e_j}\rangle$.
+The isomorphism \eqref{eq:crt} is realised explicitly as an $\F_q$-linear ring
+isomorphism $\Psi$ (with matrix and inverse), so that it composes with the Gray
+map, the Morita identification and the quantum routes.
+
+\begin{lemma}[component generation]\label{lem:components}
+Let $W\le \Bq^2$. Under \eqref{eq:crt}, $W=\prod_jW_j$ with
+$W_j\le\Bq_j^2$, and
+\[
+  \MU_{\Bq}(W)=\max_j\MU_{\Bq_j}(W_j),
+\]
+where $\MU_S(W)$ is the minimal number of generators of $W$ as an
+$S$-module. Moreover $\Bq_j$ is a finite chain ring iff $t=1$ or $e_j=1$; in
+the remaining ``wild'' case ($t\ge2$ and $e_j\ge2$) the maximal ideal of
+$\Bq_j$ is $\mathfrak m_j=(u,w)$, which is not principal, and the bound
+$\MU_{\Bq_j}(W_j)\le2$ fails.
+\end{lemma}
+
+\begin{proof}
+Generation is componentwise because a generating set may be chosen
+componentwise and the idempotents of the product allow the components to be
+addressed independently; this gives the displayed formula.
+
+For the chain-ring criterion: $\Bq_j\cong\F_{q^{d_j}}[u,w]/\langle
+u^t,w^{e_j}\rangle$ is local with maximal ideal $(u,w)$ when $t\ge2$ and
+$e_j\ge2$; its maximal ideal then needs two generators, so the ring is not a
+chain ring. If $t=1$ the ring is $\F_{q^{d_j}}[w]/\langle w^{e_j}\rangle$, a
+chain ring; if $e_j=1$ it is $\F_{q^{d_j}}[u]/\langle u^t\rangle$, a chain
+ring. Finally, a finite local ring is a chain ring iff its maximal ideal is
+principal, which proves the converse.
+
+For the failure of $\MU\le2$: over the wild ring
+$\F_q[u,w]/\langle u^2,w^2\rangle$ the module $\mathfrak m\oplus\mathfrak
+m\subset \Bq_j^2$ requires more than two generators; explicit submodules
+with $\MU=3$ are constructed in Theorem~\ref{thm:nonprincipal}.
+\end{proof}
+
+\begin{remark}[the CRT step is what opens $n=5,6$]
+Earlier component routines for $\Bq$ covered only three regimes: split
+semisimple, $n=p^v$ with $t=1$, and ``wild'' $n=p^v$ with $t\ge2$. The general
+decomposition \eqref{eq:crt} removes that restriction, which is what makes the
+families $(q,t,n)=(4,1,5)$, $(4,1,6)$ and $(8,1,3)$ reachable; they are
+precisely the families from which two of the headline codes in
+Section~\ref{sec:cmp} come.
+\end{remark}
+
+\subsection{The reversal operator}
+
+\begin{definition}\label{def:rev}
+Let $\rev:\Rn\to\Rn$ be the $\F_q$-linear map
+$\rev\bigl(\sum_ex_eX^e\bigr)=\sum_ex_{-e}X^e$, the indices being read modulo
+$n$.
+\end{definition}
+
+\begin{lemma}\label{lem:rev}
+$\rev$ is a ring \textbf{automorphism} of $\Rn$ (not an anti-automorphism), and
+$\rev=\id$ on $\Rn$ if and only if $n\le2$.
+\end{lemma}
+
+\begin{proof}
+Multiplicativity is the computation
+\[
+  \rev(ab)=\sum_e\Bigl(\sum_{i+j=e}a_ib_j\Bigr)X^{-e}
+  =\sum_{i,j}a_ib_jX^{-i-j}=\rev(a)\rev(b) ,
+\]
+which uses commutativity of $X$ with the coefficients but no commutativity of
+the coefficients with each other; and $\rev$ is an automorphism because the
+index map $e\mapsto -e$ is an involution. If $n\le2$ then
+$-e\equiv e\pmod n$ for all $e$, so $\rev=\id$; conversely, if $n\ge3$ then
+$\rev(X)=X^{-1}\ne X$.
+\end{proof}
+
+\subsection{Worked examples I: the ring and the CRT decomposition}
+
+\begin{example}[the ring $R$ is not commutative, and $\theta_s$ is an
+anti-automorphism]\label{ex:ring}
+Take $q=4$, $t=2$, so that $A_2=\F_4[u]/\langle u^2\rangle$ and
+$R=M_2(A_2)$. By Lemma~\ref{lem:basic}(b),
+$|R|=q^{4t}=4^8=65536$ and $\dim_{\F_4}R=8$; the centre is $A_2\cdot I$ and
+the Jacobson radical is $M_2(uA_2)$, so $R$ has exactly $t+1=3$ two-sided
+ideals, namely $R$, $uR$ and $0$.
+
+Let $E_{kl}$ denote the matrix units and take $s=0$, so that
+$\theta_0(X)=X^{\mathsf T}$. Then
+\[
+  E_{12}E_{21}=E_{11},\qquad\text{so}\qquad
+  \theta_0(E_{12}E_{21})=E_{11},
+\]
+whereas
+\[
+  \theta_0(E_{12})\,\theta_0(E_{21})=E_{21}E_{12}=E_{22}\ne E_{11},\qquad
+  \theta_0(E_{21})\,\theta_0(E_{12})=E_{12}E_{21}=E_{11}.
+\]
+So $\theta_0(ab)=\theta_0(b)\theta_0(a)$ and $\theta_0$ is an
+\emph{anti}-automorphism, not an automorphism. Over a commutative base ring
+this distinction disappears entirely --- $\theta_s$ degenerates to $\sigma_s$
+--- which is why the whole of Section~\ref{sec:cyclic} has no commutative
+analogue.
+\end{example}
+
+\begin{example}[a wild CRT component]\label{ex:crt}
+Take $(q,t,n)=(4,2,2)$. In characteristic $2$,
+\[
+  X^2-1=(X-1)^2\quad\text{over }\F_4,
+\]
+so the factorisation \eqref{eq:crt} has a single factor $g_1=X-1$ of degree
+$d_1=1$ with multiplicity $e_1=2$. Hence
+\[
+  \Bq=A_2[X]/\langle (X-1)^2\rangle\;\cong\;\F_4[u,w]/\langle u^2,w^2\rangle,
+\]
+a local ring that is \textbf{not} a chain ring: its maximal ideal is
+$\mathfrak m=(u,w)$, which needs two generators, and
+\[
+  \mathfrak m^2=(uw),\qquad \mathfrak m^3=0,\qquad
+  \dim_{\F_4}\mathfrak m=3,\ \dim_{\F_4}\mathfrak m^2=1,\qquad
+  \dim_{\F_4}\ann_{\Bq^2}(\mathfrak m)=2 .
+\]
+This is the ring in which $\MU_{\Bq}(W)\le2$ fails
+(Lemma~\ref{lem:components}), and it is the source of all the witnesses of
+Theorem~\ref{thm:nonprincipal}. The whole family has $|\Bq|=4^4=256$ and
+exactly $1221$ $\Bq$-submodules of $\Bq^2$ --- the number $1221$ in the census
+of Section~\ref{sec:cert} --- each corresponding to one cyclic code of length
+$2$ over $M_2(A_2)$.
+\end{example}
