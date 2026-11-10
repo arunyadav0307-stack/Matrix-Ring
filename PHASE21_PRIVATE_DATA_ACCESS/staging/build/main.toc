@@ -1,0 +1,78 @@
+\contentsline {section}{\numberline {1}Introduction and research motivation}{3}{section.2}%
+\contentsline {subsection}{\numberline {1.1}The chain of constructions}{3}{subsection.3}%
+\contentsline {subsection}{\numberline {1.2}What the paper does and does not claim}{4}{subsection.10}%
+\contentsline {subsection}{\numberline {1.3}The role of the matrix-ring formulation, and what Morita equivalence does and does not settle}{5}{subsection.11}%
+\contentsline {subsection}{\numberline {1.4}Contributions, in order of emphasis}{5}{subsection.12}%
+\contentsline {subsection}{\numberline {1.5}On the parameters obtained}{6}{subsection.18}%
+\contentsline {subsection}{\numberline {1.6}Organisation}{6}{subsection.19}%
+\contentsline {section}{\numberline {2}Literature review and the research gap}{6}{section.20}%
+\contentsline {subsection}{\numberline {2.1}Cyclic codes over matrix rings}{6}{subsection.21}%
+\contentsline {subsection}{\numberline {2.2}Duality over finite rings}{7}{subsection.22}%
+\contentsline {subsection}{\numberline {2.3}Galois duality and Galois hulls}{7}{subsection.23}%
+\contentsline {subsection}{\numberline {2.4}The research gap}{7}{subsection.24}%
+\contentsline {subsection}{\numberline {2.5}Quantum codes from classical codes}{8}{subsection.28}%
+\contentsline {section}{\numberline {3}Preliminaries and the noncommutative matrix-ring framework}{8}{section.29}%
+\contentsline {subsection}{\numberline {3.1}Standing hypotheses and notation}{8}{subsection.30}%
+\contentsline {subsection}{\numberline {3.2}The Frobenius functional}{8}{subsection.38}%
+\contentsline {subsection}{\numberline {3.3}The right-module convention and the failure lemma}{9}{subsection.41}%
+\contentsline {subsection}{\numberline {3.4}Automorphisms and the anti-automorphism}{9}{subsection.44}%
+\contentsline {subsection}{\numberline {3.5}The CRT decomposition of $B$}{10}{subsection.53}%
+\contentsline {subsection}{\numberline {3.6}The reversal operator}{11}{subsection.57}%
+\contentsline {subsection}{\numberline {3.7}Worked examples I: the ring and the CRT decomposition}{11}{subsection.60}%
+\contentsline {section}{\numberline {4}Cyclic codes and Galois duality}{12}{section.63}%
+\contentsline {subsection}{\numberline {4.1}The $\theta _s$-pairing}{12}{subsection.64}%
+\contentsline {subsection}{\numberline {4.2}The duality theorem}{12}{subsection.67}%
+\contentsline {subsection}{\numberline {4.3}Explicit duals: annihilators and the reversal}{13}{subsection.74}%
+\contentsline {subsection}{\numberline {4.4}Equality of the two orthogonals}{14}{subsection.78}%
+\contentsline {subsection}{\numberline {4.5}Three regimes}{14}{subsection.80}%
+\contentsline {subsection}{\numberline {4.6}Worked examples II: duality in a reflexive and in a non-reflexive regime}{15}{subsection.87}%
+\contentsline {section}{\numberline {5}Galois hull structure and main algebraic results}{15}{section.93}%
+\contentsline {subsection}{\numberline {5.1}Structure of the hull}{16}{subsection.95}%
+\contentsline {subsection}{\numberline {5.2}Non-principal hulls: the conjecture O-3.1 is false}{17}{subsection.103}%
+\contentsline {subsection}{\numberline {5.3}The witnesses}{17}{subsection.109}%
+\contentsline {subsection}{\numberline {5.4}What does not exist}{18}{subsection.113}%
+\contentsline {subsection}{\numberline {5.5}LCD, self-orthogonal and self-dual codes}{18}{subsection.116}%
+\contentsline {subsection}{\numberline {5.6}Worked examples III: hulls}{19}{subsection.122}%
+\contentsline {section}{\numberline {6}Gray-map compatibility and finite-field representation}{20}{section.127}%
+\contentsline {subsection}{\numberline {6.1}The coefficient expansion}{20}{subsection.128}%
+\contentsline {subsection}{\numberline {6.2}The exact induced form}{21}{subsection.131}%
+\contentsline {subsection}{\numberline {6.3}Duality and hull preservation}{21}{subsection.134}%
+\contentsline {subsection}{\numberline {6.4}The image code}{22}{subsection.137}%
+\contentsline {subsection}{\numberline {6.5}Every Galois hull is self-orthogonal}{22}{subsection.141}%
+\contentsline {subsection}{\numberline {6.6}Physical coordinates and the characteristic-two obstruction}{23}{subsection.143}%
+\contentsline {subsection}{\numberline {6.7}Worked examples IV: the Gray map}{24}{subsection.149}%
+\contentsline {section}{\numberline {7}Quantum error-correcting code constructions}{25}{section.152}%
+\contentsline {subsection}{\numberline {7.1}The $q$-ary Weyl operators}{25}{subsection.153}%
+\contentsline {subsection}{\numberline {7.2}Three routes}{26}{subsection.163}%
+\contentsline {subsection}{\numberline {7.3}The parameter theorem}{27}{subsection.172}%
+\contentsline {subsection}{\numberline {7.4}Worked examples V: the $\mathbb F_p$-basis subtlety}{28}{subsection.178}%
+\contentsline {section}{\numberline {8}Distance certification and quantum parameter analysis}{29}{section.181}%
+\contentsline {subsection}{\numberline {8.1}The coset-distance theorem}{29}{subsection.182}%
+\contentsline {subsection}{\numberline {8.2}The coset Singleton bound}{30}{subsection.186}%
+\contentsline {subsection}{\numberline {8.3}The feasibility inequality}{30}{subsection.190}%
+\contentsline {subsection}{\numberline {8.4}Bookkeeping identities, and an erratum}{30}{subsection.194}%
+\contentsline {subsection}{\numberline {8.5}Certification methodology}{31}{subsection.201}%
+\contentsline {subsection}{\numberline {8.6}Parameter analysis}{32}{subsection.202}%
+\contentsline {subsection}{\numberline {8.7}Bounds satisfied}{32}{subsection.206}%
+\contentsline {subsection}{\numberline {8.8}The entanglement budget}{33}{subsection.211}%
+\contentsline {subsection}{\numberline {8.9}Worked example VI: a full certification}{33}{subsection.213}%
+\contentsline {section}{\numberline {9}Comparison with existing quantum codes}{34}{section.218}%
+\contentsline {subsection}{\numberline {9.1}The terms of the comparison}{34}{subsection.219}%
+\contentsline {subsection}{\numberline {9.2}The comparison table}{34}{subsection.222}%
+\contentsline {subsection}{\numberline {9.3}Reading of the comparison}{34}{subsection.224}%
+\contentsline {subsection}{\numberline {9.4}Novelty}{35}{subsection.225}%
+\contentsline {subsection}{\numberline {9.5}On the earlier tuple $[[24,4,5;12]]_4$}{36}{subsection.232}%
+\contentsline {section}{\numberline {10}Conclusion}{36}{section.233}%
+\contentsline {paragraph}{Open problems.}{37}{section*.234}%
+\contentsline {section}{\numberline {A}Certification table and comparison data}{38}{appendix.241}%
+\contentsline {subsection}{\numberline {A.1}The certification table}{38}{subsection.242}%
+\contentsline {subsection}{\numberline {A.2}The non-principal witnesses}{38}{subsection.244}%
+\contentsline {subsection}{\numberline {A.3}Best known distances used in Section~\ref {sec:cmp}}{39}{subsection.245}%
+\contentsline {section}{\numberline {B}Reproducibility}{39}{appendix.247}%
+\contentsline {subsection}{\numberline {B.1}Package layout}{40}{subsection.248}%
+\contentsline {subsection}{\numberline {B.2}Environment}{40}{subsection.249}%
+\contentsline {subsection}{\numberline {B.3}Randomness}{40}{subsection.250}%
+\contentsline {subsection}{\numberline {B.4}Where the numbers come from}{41}{subsection.251}%
+\contentsline {subsection}{\numberline {B.5}How to reproduce}{41}{subsection.252}%
+\contentsline {subsection}{\numberline {B.6}What is \emph {not} reproducible from the package}{41}{subsection.253}%
+\contentsline {subsection}{\numberline {B.7}Verification of the package itself}{41}{subsection.254}%
