@@ -12,3 +12,6 @@ PHASE9_JOURNAL_SELECTION/_inspection/
 # Phase 11 staging build output (regenerate with:
 #   cd PAPER/FFA_SUBMISSION_STAGING && TL=/home/user/texlive2024 sh compile/build_modern.sh)
 PAPER/FFA_SUBMISSION_STAGING/build_modern/
+
+# Phase 12 final submission package build dir is intentionally tracked;
+# only the staging build output is ignored (see entry above).

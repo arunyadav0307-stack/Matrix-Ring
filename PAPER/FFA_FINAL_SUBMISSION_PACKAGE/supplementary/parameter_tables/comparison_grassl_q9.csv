@@ -1,0 +1,4 @@
+our_code,route,best_known,bounds_lower_upper,gap,log_line
+"[[24,8,4]]_9",SO,"[[24,8]]_9",6..8,2 below,
+"[[24,12,3]]_9",DC,"[[24,12]]_9",5..6,2 below,
+"[[16,8,3]]_9",DC,"[[16,8]]_9",4..4,1 below,
