@@ -1,0 +1,78 @@
+\begin{thebibliography}{10}
+
+\bibitem{Alahmadi2013CyclicM2F2}
+Adel Alahmadi, Houda Sboui, Patrick Sol{\'e}, and Olfa Yemen.
+\newblock Cyclic codes over {$M_2(\mathbb{F}_2)$}.
+\newblock {\em Journal of the Franklin Institute}, 350(9):2837--2847, 2013.
+
+\bibitem{Cao2021MDSGaloisHulls}
+Meng Cao.
+\newblock {MDS} codes with {G}alois hulls of arbitrary dimensions and the
+  related entanglement-assisted quantum error correction.
+\newblock {\em IEEE Transactions on Information Theory}, 67(12):7964--7984,
+  2021.
+
+\bibitem{Dinh2024CyclicRingsOfMatrices}
+Hai~Q. Dinh, Atul Gaur, Pratyush Kumar, Manoj~Kumar Singh, and Abhay~Kumar
+  Singh.
+\newblock Cyclic codes over rings of matrices.
+\newblock {\em Advances in Mathematics of Communications}, 18(4):1100--1122,
+  2024.
+
+\bibitem{FanZhang2017GaloisSelfDual}
+Yun Fan and Liang Zhang.
+\newblock Galois self-dual constacyclic codes.
+\newblock {\em Designs, Codes and Cryptography}, 84(3):473--492, 2017.
+
+\bibitem{GrasslCodetables}
+Markus Grassl.
+\newblock Bounds on the minimum distance of linear codes and quantum codes.
+\newblock Online table, \url{http://www.codetables.de}, 2024.
+
+\bibitem{GreferathSchmidt1999GrayIsometry}
+Marcus Greferath and Sergio~R. Schmidt.
+\newblock Gray isometries for finite chain rings and a nonlinear ternary
+  {$(36,3^{12},15)$} code.
+\newblock {\em IEEE Transactions on Information Theory}, 45(7):2522--2524,
+  1999.
+
+\bibitem{JoshiPatelPrakash2026M4}
+Soham~Ravikant Joshi, Shikha Patel, and Om~Prakash.
+\newblock Construction of {C}yclic {C}odes over a {C}lass of {M}atrix {R}ings.
+\newblock {\em arXiv e-print 2602.18255 [cs.IT]}, 2026.
+
+\bibitem{KetkarEtAl2006NonbinaryStabilizer}
+Andreas Ketkar, Andreas Klappenecker, Santosh Kumar, and Pradeep~Kiran
+  Sarvepalli.
+\newblock Nonbinary stabilizer codes over finite fields.
+\newblock {\em IEEE Transactions on Information Theory}, 52(11):4892--4914,
+  2006.
+
+\bibitem{LiuPan2020GaloisHulls}
+Hongwei Liu and Xu~Pan.
+\newblock Galois hulls of linear codes over finite fields.
+\newblock {\em Designs, Codes and Cryptography}, 88(2):241--255, 2020.
+
+\bibitem{LuoParampalli2018M2F2uF2}
+Rong Luo and Udaya Parampalli.
+\newblock Cyclic codes over {$M_2(\mathbb{F}_2+u\mathbb{F}_2)$}.
+\newblock {\em Cryptography and Communications}, 10(6):1109--1117, 2018.
+
+\bibitem{SiNiu2023SkewM2F2}
+Xuesong Si and Chuanze Niu.
+\newblock On skew cyclic codes over {$M_2(\mathbb{F}_2)$}.
+\newblock {\em AIMS Mathematics}, 8(10):24434--24445, 2023.
+
+\bibitem{Wood1999Duality}
+Jay~A. Wood.
+\newblock Duality for modules over finite rings and applications to coding
+  theory.
+\newblock {\em American Journal of Mathematics}, 121(3):555--575, 1999.
+
+\bibitem{ZhangKongZheng2026QuantumGaloisHulls}
+Enbin Zhang, Bo~Kong, and Xiying Zheng.
+\newblock Quantum {C}odes from {G}alois {H}ulls of {C}onstacyclic {C}odes over
+  a {F}inite {N}on-{C}hain {R}ing.
+\newblock {\em Entropy}, 28(4):407, 2026.
+
+\end{thebibliography}

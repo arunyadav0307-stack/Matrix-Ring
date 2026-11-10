@@ -1,0 +1,491 @@
+##############################################################################
+#  PHASE 5 -- QUANTUM ERROR-CORRECTING CODE CONSTRUCTION
+#  script : phase5_quantum_constructions.py
+#  log    : phase5_quantum_log.txt
+#  seed   : 20261120        python 3.11.2
+##############################################################################
+
+==============================================================================
+PART A.  THE QUANTUM FRAMEWORK (error group, commutation, dimension, Knill-Laflamme)
+==============================================================================
+  working example for the Hilbert-space checks: q = 4, N_phys = 2, dim H = 16
+  [EXH] A1  X(a)Z(b) = chi(Tr_{F_q/F_p}(a.b)) Z(b)X(a)  (Weyl commutation relation) PASS  [EXH] all 256 pairs
+  [EXH] A2  E(a|b) and E(a'|b') commute  <=>  Tr_{F_q/F_p}(a.b' - a'.b) = 0 PASS  [SMP] 60 x 60 pairs
+  [EXH] A3  dim of the code space = (1/|S|) sum_g Tr(g) = q^N / |C|  PASS  [EXH] m=1 K=8.0 (predicted 8.0), m=2 K=4.0 (predicted 4.0), m=3 K=2.0 (predicted 2.0), m=4 K=1.0 (predicted 1.0)
+  [EXH] A4a the group {(0|b)} is abelian (isotropic)                 PASS  [EXH] 2 generators
+  [EXH] A4b Knill-Laflamme with t=1 FAILS for this (distance-1) code, as it must PASS  [EXH] 5 error pairs scanned
+       -> a weight-1 error E with E in C^{perp_omega} \ C is: [1, 0, 0, 0]
+  [EXH] A4c the 'diagonal' code {(u|u)} is isotropic (hence abelian) PASS  [EXH] 4 generators
+       -> |C| = 16, observed code-space dimension K = 1.0 (predicted 1.0)
+  [EXH] A3b the diagonal code gives K = q^N / |C| in the Hilbert space PASS  [EXH] |C| = 16
+  [EXH] A4d the diagonal code has no undetectable error of weight 1: every weight-1 element of C^{perp_omega} lies IN C (C is Lagrangian, C^{perp} = C) PASS  [EXH] 6 weight-1 elements of the orthogonal, 0 outside C
+       the untwisted diagonal embedding {(u|u)} is Lagrangian and carries
+       no undetectable weight-1 error; the distance-1 phenomenon is specific
+       to the TWISTED (Galois) embedding of Route R1 -- see Part B2 and N4.
+
+==============================================================================
+PART B.  THE THREE ROUTES: validity, parameters, distances
+==============================================================================
+
+B1.  Task B1: is the Galois hull self-orthogonal?
+-------------------------------------------------
+  Claim (proved in the deliverable):  for H = C cap C^{perp_s} and
+  x,y in H one has y in C^{perp_s} and x in C, hence b_s(x,y) = 0;
+  NO symmetry / reflexivity hypothesis is needed.
+    (q,t,n,s)=(4,1,2,0): 15 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(4,1,2,1): 23 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(4,2,1,0): 15 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(4,2,1,1): 23 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(9,2,1,0): 39 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(9,2,1,1): 57 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(8,1,2,0): 27 codes with nonzero hull, all self-orthogonal: True
+    (q,t,n,s)=(8,1,2,1): 27 codes with nonzero hull, all self-orthogonal: True
+  [EXH] B1  every Galois hull H_s(C) satisfies phi_n(H) subset phi_n(H)^{perp_hat_s} (self-orthogonal, no reflexivity hypothesis) PASS  [EXH] 226 hulls over 8 parameter sets
+
+B2.  Route R1 (Galois-native twisted embedding)
+-----------------------------------------------
+  C_T = {(u | T_s u)}, T_s(u) = (u^{[s]} J)^T;  omega((u|T_su),(u'|T_su'))
+  = <u',u> - <u,u'> = 0 when D is self-orthogonal;  |C_T| = q^k;
+  order-p condition: u.(T_s u) = <u,u> = 0.  => [[N, N-k, d]]_q.
+  The distance obeys d <= min wt(D^{perp_E}), because (0|b) lies in
+  C_T^{perp_omega} for every b in D^{perp_E}.
+  (q,t,n,s)=(4,1,2,1) N=8 : 10 full-support self-orthogonal codes
+    k=4 -> [[8,4,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  (q,t,n,s)=(4,2,1,1) N=8 : 6 full-support self-orthogonal codes
+    k=4 -> [[8,4,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  (q,t,n,s)=(9,2,1,1) N=8 : 12 full-support self-orthogonal codes
+    k=4 -> [[8,4,{2..2}]]_9  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{2..2}]]_9  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{2..2}]]_9  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  (q,t,n,s)=(8,1,2,1) N=8 : 10 full-support self-orthogonal codes
+    k=4 -> [[8,4,{1..1}]]_8  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{1..1}]]_8  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=4 -> [[8,4,{1..1}]]_8  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  (q,t,n,s)=(4,1,3,1) N=12 : 63 full-support self-orthogonal codes
+    k=6 -> [[12,6,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=6 -> [[12,6,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=6 -> [[12,6,{1..1}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  (q,t,n,s)=(4,2,2,0) N=16 : 252 full-support self-orthogonal codes
+    k=8 -> [[16,8,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=8 -> [[16,8,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+    k=8 -> [[16,8,{2..2}]]_4  abelian=True order-p=True  (weight<=2 exhaustive: True)
+  [EXH] R1  for every self-orthogonal image code the twisted embedding is abelian and its generators have order p PASS  [EXH] 18 codes
+  largest distance ATTAINABLE by R1 in this scan (upper bound): 2
+       R1 is valid for every t and every s and needs no coordinate
+       transformation, but its distance is capped by min wt(D^{perp_E}),
+       which is small for the large duals occurring here.
+
+B2b.  Route R3 (entanglement-assisted, C = D x D)
+-------------------------------------------------
+  For an arbitrary image code D (F_q-linear, dim k) the group
+  C = D x D is F_q-linear of dimension 2k; its isotropic part is
+  C_0 = Hull_E(D) x Hull_E(D), so the commutativity defect is
+  c = k - dim Hull_E(D) and
+      [[N, N - 2k + c, d ; c]]_q = [[N, N - k - h_E, d ; k - h_E]]_q,
+      d = min wt(D^{perp_E} \ Hull_E(D)).
+  (q,t,n,s)=(4,1,2,0) N=8 : best EA parameters [[8,4,3;4]]_4
+       (from k = 4, Euclidean hull dim h_E = 0, entanglement c = 4)
+  (q,t,n,s)=(4,1,3,0) N=12 : best EA parameters [[12,10,2;2]]_4
+       (from k = 2, Euclidean hull dim h_E = 0, entanglement c = 2)
+  (q,t,n,s)=(4,1,4,0) N=16 : best EA parameters [[16,12,2;0]]_4
+       (from k = 2, Euclidean hull dim h_E = 2, entanglement c = 0)
+
+B3.  Route R2 (Euclidean / CSS stabilizer)
+------------------------------------------
+  Applicable without any coordinate transformation iff the
+  transported form IS the Euclidean form, i.e. t = 1 and r | s.
+  (q,t,n,s)=(4,1,2,0) N= 8 euclid=True  transform=False SO= 10 DC=  6
+       best self-orthogonal  (d,k,K,hull,d(D)) = (2, 2, 4, 2, 4)
+       best dual-containing  (d,k,K,hull)      = (2, 6, 4, 2)
+  (q,t,n,s)=(4,1,3,0) N=12 euclid=True  transform=False SO= 35 DC= 29
+       best self-orthogonal  (d,k,K,hull,d(D)) = (2, 2, 8, 2, None)
+       best dual-containing  (d,k,K,hull)      = (2, 10, 8, 2)
+  (q,t,n,s)=(4,1,4,0) N=16 euclid=True  transform=False SO= 84 DC= 48
+       best self-orthogonal  (d,k,K,hull,d(D)) = (3, 6, 4, 6, 5)
+       best dual-containing  (d,k,K,hull)      = (3, 10, 4, 6)
+  (q,t,n,s)=(8,1,2,0) N= 8 euclid=True  transform=False SO= 18 DC= 10
+       best self-orthogonal  (d,k,K,hull,d(D)) = (2, 2, 4, 2, 4)
+       best dual-containing  (d,k,K,hull)      = (2, 6, 4, 2)
+  (q,t,n,s)=(9,1,2,0) N= 8 euclid=True  transform=False SO=  8 DC=  5
+       best self-orthogonal  (d,k,K,hull,d(D)) = (2, 2, 4, 2, 4)
+       best dual-containing  (d,k,K,hull)      = (2, 6, 4, 2)
+  (q,t,n,s)=(9,2,1,0) N= 8 euclid=False transform=True  SO= 13 DC= 11
+       best self-orthogonal  (d,k,K,hull,d(D)) = (2, 2, 4, 2, 4)
+       best dual-containing  (d,k,K,hull)      = (2, 6, 4, 2)
+  (q,t,n,s)=(4,2,1,0) N= 8 euclid=False transform=False SO= 10 DC=  6
+       best self-orthogonal  (d,k,K,hull,d(D)) = (1, 2, 4, 2, 2)
+       best dual-containing  (d,k,K,hull)      = (1, 8, 8, 0)
+  [EXH] R2  the transported form is Euclidean exactly when t = 1 and r | s PASS  [EXH] 7 parameter sets
+  [EXH] R2b a congruence transformation exists exactly when it is not the case that (p = 2 and t even) PASS  [EXH] 7 parameter sets
+
+==============================================================================
+PART C.  TASK C: the map from the Gray image to physical qudit coordinates
+==============================================================================
+
+C1.  how many physical coordinates?
+-----------------------------------
+  The Gray map phi_n : R^n -> F_q^{N} is an F_q-linear bijection with
+  N = dim_{F_q} R^n = (dim_{F_q} R) * n = 4tn  (dim R = 4t).
+  One qudit of dimension q carries one F_q coordinate, so
+      N_phys = N = 4tn,
+  DERIVED from dim_{F_q} R = 4 * dim_{F_q} A_t = 4t, not assumed.
+  [EXH] C1  (q,t,n)=(4,1,2): N_phys = 4tn = 8 (= dim_{F_q} R^n)      PASS  [EXH] dim_{F_q} A_t = 1, dim_{F_q} R = 4
+  [EXH] C1  (q,t,n)=(4,2,1): N_phys = 4tn = 8 (= dim_{F_q} R^n)      PASS  [EXH] dim_{F_q} A_t = 2, dim_{F_q} R = 8
+  [EXH] C1  (q,t,n)=(4,2,2): N_phys = 4tn = 16 (= dim_{F_q} R^n)     PASS  [EXH] dim_{F_q} A_t = 2, dim_{F_q} R = 8
+  [EXH] C1  (q,t,n)=(4,2,3): N_phys = 4tn = 24 (= dim_{F_q} R^n)     PASS  [EXH] dim_{F_q} A_t = 2, dim_{F_q} R = 8
+
+C2.  converting the Hankel form: Psi(u) = u * TT, TT = I_{4n} (x) T
+-------------------------------------------------------------------
+  With sigma_s = id the transported form is the bilinear form with
+  matrix J = I_{4n} (x) H_t.  Since J^2 = I, a block T with
+  T^T H_t T = I_t gives (u TT).(v TT) = u TT TT^T v^T = u J^{-1} v^T
+  = u J v^T = <u,v>, i.e. Psi turns the transported form into the
+  Euclidean form.  Eight properties are checked for each case.
+  (q,t,n,s)=(4,1,2,0) N=8 : congruence T with T^T H_t T = I_t : True
+    (1) T^T H_t T = I_t            : True
+    (2) TT TT^T = J                : True
+    (3) J^2 = I                    : True
+    (4) TT invertible              : True
+    (5) TT monomial                : True   (monomial <=> Hamming weights preserved)
+    (6) (u TT).(v TT) = u J v^T    : True
+    (7) TT commutes with the shift : True
+    (8) Psi is F_q-linear          : True
+  [EXH] C2  (q,t,n)=(4,1,2): the eight properties of the physical-coordinate map Psi PASS  [EXH] monomial=True, shift-commuting=True
+  (q,t,n,s)=(9,2,1,0) N=8 : congruence T with T^T H_t T = I_t : True
+    (1) T^T H_t T = I_t            : True
+    (2) TT TT^T = J                : True
+    (3) J^2 = I                    : True
+    (4) TT invertible              : True
+    (5) TT monomial                : False   (monomial <=> Hamming weights preserved)
+    (6) (u TT).(v TT) = u J v^T    : True
+    (7) TT commutes with the shift : True
+    (8) Psi is F_q-linear          : True
+  [EXH] C2  (q,t,n)=(9,2,1): the eight properties of the physical-coordinate map Psi PASS  [EXH] monomial=False, shift-commuting=True
+  (q,t,n,s)=(4,2,1,0) N=8 : congruence T with T^T H_t T = I_t : False
+       no such T exists (exhaustive): for p = 2 and t even the
+       matrix H_t is alternating, so H_t cannot be congruent to I_t.
+       => the Euclidean route R2 is BLOCKED for this parameter set;
+          only the Galois-native route R1 remains available.
+  (q,t,n,s)=(9,2,2,0) N=16 : congruence T with T^T H_t T = I_t : True
+    (1) T^T H_t T = I_t            : True
+    (2) TT TT^T = J                : True
+    (3) J^2 = I                    : True
+    (4) TT invertible              : True
+    (5) TT monomial                : False   (monomial <=> Hamming weights preserved)
+    (6) (u TT).(v TT) = u J v^T    : True
+    (7) TT commutes with the shift : True
+    (8) Psi is F_q-linear          : True
+  [EXH] C2  (q,t,n)=(9,2,2): the eight properties of the physical-coordinate map Psi PASS  [EXH] monomial=False, shift-commuting=True
+
+C3.  the cost of a non-monomial congruence: distances change
+------------------------------------------------------------
+  For p odd and t = 2 the congruence T is NOT monomial, so Psi does
+  not preserve Hamming weights and all distances must be recomputed
+  in the physical coordinates.  This is measured here.
+  (q,t,n,s)=(9,2,1,0) N=8 : 13 self-orthogonal codes transformed; 0 of them change their minimum distance under Psi
+       explicit weight-changing vector: wt(u) = 8 but wt(Psi u) = 6
+  [EXH] C3b (q,t,n)=(9,2,1): Psi is NOT a Hamming isometry (a non-monomial congruence changes weights) PASS  [SMP] witness found in 4000 samples
+    best [[8]]_9 from the transformed codes: (2, 2, 4)
+  [EXH] C3  (q,t,n)=(9,2,1): Psi(D) is Euclidean self-orthogonal whenever D is self-orthogonal for the transported form PASS  [EXH] 13 codes
+       the transformation is weight-changing: 0/13 codes have d(Psi D) != d(D)
+  (q,t,n,s)=(9,2,2,0) N=16 : 7 self-orthogonal codes transformed; 4 of them change their minimum distance under Psi
+       explicit weight-changing vector: wt(u) = 15 but wt(Psi u) = 16
+  [EXH] C3b (q,t,n)=(9,2,2): Psi is NOT a Hamming isometry (a non-monomial congruence changes weights) PASS  [SMP] witness found in 4000 samples
+    best [[16]]_9 from the transformed codes: (2, 2, 12)
+  [EXH] C3  (q,t,n)=(9,2,2): Psi(D) is Euclidean self-orthogonal whenever D is self-orthogonal for the transported form PASS  [EXH] 7 codes
+       the transformation is weight-changing: 4/7 codes have d(Psi D) != d(D)
+
+==============================================================================
+PART D.  TASK D: explicit codes with all the required data
+==============================================================================
+  For each parameter set the best self-orthogonal and dual-containing
+  image codes are listed with: the ring parameters; the enumeration;
+  the transported form; the hull data; the self-orthogonality status;
+  the route; the parameters [[N,K,d]]_q; the distance evidence; the
+  bounds; and the literature-comparison status.
+
+---- (q,t,n,s) = (4,1,2,0);  N = 4tn = 8;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^1)),  R^n of F_q-dimension 8
+     codes     : 32 nonzero image codes (exhaustive); #self-orthogonal = 10; #dual-containing = 6
+     form      : J = I ; sigma_s = id ; reflexive (r|2s) True ; Euclidean True
+     transform : none needed (the transported form is the Euclidean form)
+     SO  best : [[8, 4, 2]]_4  (k = 2, hull dim = 2, d(phi_n C) = 4)
+     DC  best : [[8, 4, 2]]_4  (k = 6, hull dim = 2)
+
+---- (q,t,n,s) = (4,1,3,0);  N = 4tn = 12;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^1)),  R^n of F_q-dimension 12
+     codes     : 342 nonzero image codes (exhaustive); #self-orthogonal = 35; #dual-containing = 29
+     form      : J = I ; sigma_s = id ; reflexive (r|2s) True ; Euclidean True
+     transform : none needed (the transported form is the Euclidean form)
+     SO  best : [[12, 8, 2]]_4  (k = 2, hull dim = 2, d(phi_n C) = None)
+     DC  best : [[12, 8, 2]]_4  (k = 10, hull dim = 2)
+
+---- (q,t,n,s) = (4,1,4,0);  N = 4tn = 16;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^1)),  R^n of F_q-dimension 16
+     codes     : 564 nonzero image codes (exhaustive); #self-orthogonal = 84; #dual-containing = 48
+     form      : J = I ; sigma_s = id ; reflexive (r|2s) True ; Euclidean True
+     transform : none needed (the transported form is the Euclidean form)
+     SO  best : [[16, 4, 3]]_4  (k = 6, hull dim = 6, d(phi_n C) = 5)
+     DC  best : [[16, 4, 3]]_4  (k = 10, hull dim = 6)
+
+---- (q,t,n,s) = (8,1,2,0);  N = 4tn = 8;  q = 8 = 2^3
+     ring      : R = M_2(F_8[u]/(u^1)),  R^n of F_q-dimension 8
+     codes     : 92 nonzero image codes (exhaustive); #self-orthogonal = 18; #dual-containing = 10
+     form      : J = I ; sigma_s = id ; reflexive (r|2s) True ; Euclidean True
+     transform : none needed (the transported form is the Euclidean form)
+     SO  best : [[8, 4, 2]]_8  (k = 2, hull dim = 2, d(phi_n C) = 4)
+     DC  best : [[8, 4, 2]]_8  (k = 6, hull dim = 2)
+
+---- (q,t,n,s) = (9,1,2,0);  N = 4tn = 8;  q = 9 = 3^2
+     ring      : R = M_2(F_9[u]/(u^1)),  R^n of F_q-dimension 8
+     codes     : 143 nonzero image codes (exhaustive); #self-orthogonal = 8; #dual-containing = 5
+     form      : J = I ; sigma_s = id ; reflexive (r|2s) True ; Euclidean True
+     transform : none needed (the transported form is the Euclidean form)
+     SO  best : [[8, 4, 2]]_9  (k = 2, hull dim = 2, d(phi_n C) = 4)
+     DC  best : [[8, 4, 2]]_9  (k = 6, hull dim = 2)
+
+---- (q,t,n,s) = (4,2,1,1);  N = 4tn = 8;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^2)),  R^n of F_q-dimension 8
+     codes     : 32 nonzero image codes (exhaustive); #self-orthogonal = 12; #dual-containing = 6
+     form      : J = I_{4n} (x) H_2 ; sigma_s != id ; reflexive (r|2s) True ; Euclidean False
+     transform : IMPOSSIBLE (no congruence)
+       no congruence exists here, so the Euclidean/CSS route can
+       only be applied to those image codes that happen to be
+       Euclidean self-orthogonal; the Galois form is NOT used.
+       The Galois-native route R1 is the one attached to this
+       parameter set (Part B2).
+     SO  best : [[8, 4, 1]]_4  (k = 2, hull dim = 2, d(phi_n C) = 2)
+     DC  best : [[8, 8, 1]]_4  (k = 8, hull dim = 0)
+
+---- (q,t,n,s) = (9,2,1,0);  N = 4tn = 8;  q = 9 = 3^2
+     ring      : R = M_2(F_9[u]/(u^2)),  R^n of F_q-dimension 8
+     codes     : 112 nonzero image codes (exhaustive); #self-orthogonal = 13; #dual-containing = 11
+     form      : J = I_{4n} (x) H_2 ; sigma_s = id ; reflexive (r|2s) True ; Euclidean False
+     transform : Psi(u) = u (I_{4n} (x) T), T = [[3, 2], [3, 1]]
+     SO  best : [[8, 4, 2]]_9  (k = 2, hull dim = 2, d(phi_n C) = 4)
+     DC  best : [[8, 4, 2]]_9  (k = 6, hull dim = 2)
+
+---- (q,t,n,s) = (4,2,2,0);  N = 4tn = 16;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^2)),  R^n of F_q-dimension 16
+     codes     : 1220 nonzero image codes (exhaustive); #self-orthogonal = 356; #dual-containing = 208
+     form      : J = I_{4n} (x) H_2 ; sigma_s = id ; reflexive (r|2s) True ; Euclidean False
+     transform : IMPOSSIBLE (no congruence)
+       no congruence exists here, so the Euclidean/CSS route can
+       only be applied to those image codes that happen to be
+       Euclidean self-orthogonal; the Galois form is NOT used.
+       The Galois-native route R1 is the one attached to this
+       parameter set (Part B2).
+     SO  best : [[16, 12, 1]]_4  (k = 2, hull dim = 2, d(phi_n C) = 2)
+     DC  best : [[16, 4, 2]]_4  (k = 10, hull dim = 6)
+
+---- (q,t,n,s) = (4,2,3,0);  N = 4tn = 24;  q = 4 = 2^2
+     ring      : R = M_2(F_4[u]/(u^2)),  R^n of F_q-dimension 24
+     codes     : 300 nonzero image codes (SAMPLE); #self-orthogonal = 12; #dual-containing = 12
+     form      : J = I_{4n} (x) H_2 ; sigma_s = id ; reflexive (r|2s) True ; Euclidean False
+     transform : IMPOSSIBLE (no congruence)
+       no congruence exists here, so the Euclidean/CSS route can
+       only be applied to those image codes that happen to be
+       Euclidean self-orthogonal; the Galois form is NOT used.
+       The Galois-native route R1 is the one attached to this
+       parameter set (Part B2).
+     SO  best : [[24, 16, 2]]_4  (k = 4, hull dim = 4, d(phi_n C) = None)
+     DC  best : [[24, 8, 2]]_4  (k = 16, hull dim = 8)
+
+==============================================================================
+PART D2.  PER-CODE VERIFICATION OF THE CONSTRUCTED QUANTUM CODES
+==============================================================================
+
+(4,1,2,0) SO : candidate [[8,4,2]]_4
+------------------------------------
+  [EXH] D2.(4,1,2,0)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,2,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(4,1,2,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,1,2,0) DC : candidate [[8,4,2]]_4
+------------------------------------
+  [EXH] D2.(4,1,2,0)DC  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,2,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(4,1,2,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,1,3,0) SO : candidate [[12,8,2]]_4
+-------------------------------------
+  [EXH] D2.(4,1,3,0)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,3,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 12, K = 8
+  [EXH] D2.(4,1,3,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,1,3,0) DC : candidate [[12,8,2]]_4
+-------------------------------------
+  [EXH] D2.(4,1,3,0)DC  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,3,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 12, K = 8
+  [EXH] D2.(4,1,3,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,1,4,0) SO : candidate [[16,4,3]]_4
+-------------------------------------
+  [EXH] D2.(4,1,4,0)SO  the stabilizer group is abelian: all 24 elements of an F_p-basis commute pairwise PASS  [EXH] 24 x 24 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,4,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 12, N = 16, K = 4
+  [EXH] D2.(4,1,4,0)SO  exhaustive symplectic-weight search returns d = 3 (claimed 3) PASS  [EXH] all operators of symplectic weight <= 3
+       Knill-Laflamme with t = 1 : True (58081 error pairs)
+
+(4,1,4,0) DC : candidate [[16,4,3]]_4
+-------------------------------------
+  [EXH] D2.(4,1,4,0)DC  the stabilizer group is abelian: all 24 elements of an F_p-basis commute pairwise PASS  [EXH] 24 x 24 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,1,4,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 12, N = 16, K = 4
+  [EXH] D2.(4,1,4,0)DC  exhaustive symplectic-weight search returns d = 3 (claimed 3) PASS  [EXH] all operators of symplectic weight <= 3
+       Knill-Laflamme with t = 1 : True (58081 error pairs)
+
+(8,1,2,0) SO : candidate [[8,4,2]]_8
+------------------------------------
+  [EXH] D2.(8,1,2,0)SO  the stabilizer group is abelian: all 12 elements of an F_p-basis commute pairwise PASS  [EXH] 12 x 12 pairs (F_q-generators alone: True)
+  [EXH] D2.(8,1,2,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(8,1,2,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(8,1,2,0) DC : candidate [[8,4,2]]_8
+------------------------------------
+  [EXH] D2.(8,1,2,0)DC  the stabilizer group is abelian: all 12 elements of an F_p-basis commute pairwise PASS  [EXH] 12 x 12 pairs (F_q-generators alone: True)
+  [EXH] D2.(8,1,2,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(8,1,2,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(9,1,2,0) SO : candidate [[8,4,2]]_9
+------------------------------------
+  [EXH] D2.(9,1,2,0)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(9,1,2,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(9,1,2,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(9,1,2,0) DC : candidate [[8,4,2]]_9
+------------------------------------
+  [EXH] D2.(9,1,2,0)DC  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(9,1,2,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(9,1,2,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,2,1,1) SO : candidate [[8,4,1]]_4
+------------------------------------
+  [EXH] D2.(4,2,1,1)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,1,1)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(4,2,1,1)SO  exhaustive symplectic-weight search returns d = 1 (claimed 1) PASS  [EXH] all operators of symplectic weight <= 1
+
+(4,2,1,1) DC : candidate [[8,8,1]]_4
+------------------------------------
+  [EXH] D2.(4,2,1,1)DC  the stabilizer group is abelian: all 0 elements of an F_p-basis commute pairwise PASS  [EXH] 0 x 0 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,1,1)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 0, N = 8, K = 8
+  [EXH] D2.(4,2,1,1)DC  exhaustive symplectic-weight search returns d = 1 (claimed 1) PASS  [EXH] all operators of symplectic weight <= 1
+
+(9,2,1,0) SO : candidate [[8,4,2]]_9
+------------------------------------
+  [EXH] D2.(9,2,1,0)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(9,2,1,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(9,2,1,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(9,2,1,0) DC : candidate [[8,4,2]]_9
+------------------------------------
+  [EXH] D2.(9,2,1,0)DC  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(9,2,1,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 8, K = 4
+  [EXH] D2.(9,2,1,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,2,2,0) SO : candidate [[16,12,1]]_4
+--------------------------------------
+  [EXH] D2.(4,2,2,0)SO  the stabilizer group is abelian: all 8 elements of an F_p-basis commute pairwise PASS  [EXH] 8 x 8 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,2,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 4, N = 16, K = 12
+  [EXH] D2.(4,2,2,0)SO  exhaustive symplectic-weight search returns d = 1 (claimed 1) PASS  [EXH] all operators of symplectic weight <= 1
+
+(4,2,2,0) DC : candidate [[16,4,2]]_4
+-------------------------------------
+  [EXH] D2.(4,2,2,0)DC  the stabilizer group is abelian: all 24 elements of an F_p-basis commute pairwise PASS  [EXH] 24 x 24 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,2,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 12, N = 16, K = 4
+  [EXH] D2.(4,2,2,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,2,3,0) SO : candidate [[24,16,2]]_4
+--------------------------------------
+  [EXH] D2.(4,2,3,0)SO  the stabilizer group is abelian: all 16 elements of an F_p-basis commute pairwise PASS  [EXH] 16 x 16 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,3,0)SO  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 8, N = 24, K = 16
+  [EXH] D2.(4,2,3,0)SO  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+(4,2,3,0) DC : candidate [[24,8,2]]_4
+-------------------------------------
+  [EXH] D2.(4,2,3,0)DC  the stabilizer group is abelian: all 32 elements of an F_p-basis commute pairwise PASS  [EXH] 32 x 32 pairs (F_q-generators alone: True)
+  [EXH] D2.(4,2,3,0)DC  |C| = q^{dim C} and K = N - dim C            PASS  [EXH] dim C = 16, N = 24, K = 8
+  [EXH] D2.(4,2,3,0)DC  exhaustive symplectic-weight search returns d = 2 (claimed 2) PASS  [EXH] all operators of symplectic weight <= 2
+
+==============================================================================
+PART D3.  QUANTUM CODES FROM NON-PRINCIPAL GALOIS HULLS (O-3.1 witness family)
+==============================================================================
+  (q,t,n,s)=(4,2,2,1) N=16 : 166 self-orthogonal codes with nonzero full-support hull
+     mu_B(Hull) distribution : {2: 100, 4: 66}
+     non-principal hulls (mu_B >= 3) : 66
+  [EXH] D3  (q,t,n,s)=(4,2,2,1): there exist self-orthogonal codes with NON-principal Galois hull (the O-3.1 witnesses) PASS  [EXH] 66 codes of 166
+     k=6 hull=6 mu_B=4 -> R1 [[16,10,{2..2}]]_4  abelian=True order-p=True
+  [EXH] D3.(4,2,2,1) k=6 mu_B=4 : the twisted group of a non-principal-hull code is abelian and has order p PASS  [EXH] 12 F_p-basis elements
+     k=8 hull=8 mu_B=4 -> R1 [[16,8,{2..2}]]_4  abelian=True order-p=True
+  [EXH] D3.(4,2,2,1) k=8 mu_B=4 : the twisted group of a non-principal-hull code is abelian and has order p PASS  [EXH] 16 F_p-basis elements
+
+==============================================================================
+PART E.  TASKS E AND F: parameters, bounds and comparison
+==============================================================================
+  Every row below is a code whose stabilizer group was verified to be
+  abelian and whose distance was computed by exhaustive search.
+
+   q   t  n  s |  N   k   K   d | N-K-2(d-1) | Hamming | status
+  ----------------------------------------------------------------------
+   4   1  2  0 |   8   2   4   2 |          2 |     yes | SO PROVED+VERIFIED
+   4   1  2  0 |   8   6   4   2 |          2 |     yes | DC PROVED+VERIFIED
+   4   1  3  0 |  12   2   8   2 |          2 |     yes | SO PROVED+VERIFIED
+   4   1  3  0 |  12  10   8   2 |          2 |     yes | DC PROVED+VERIFIED
+   4   1  4  0 |  16   6   4   3 |          8 |     yes | SO PROVED+VERIFIED
+   4   1  4  0 |  16  10   4   3 |          8 |     yes | DC PROVED+VERIFIED
+   8   1  2  0 |   8   2   4   2 |          2 |     yes | SO PROVED+VERIFIED
+   8   1  2  0 |   8   6   4   2 |          2 |     yes | DC PROVED+VERIFIED
+   9   1  2  0 |   8   2   4   2 |          2 |     yes | SO PROVED+VERIFIED
+   9   1  2  0 |   8   6   4   2 |          2 |     yes | DC PROVED+VERIFIED
+   4   2  1  1 |   8   2   4   1 |          4 |     yes | SO PROVED+VERIFIED
+   4   2  1  1 |   8   8   8   1 |          0 |     yes | DC PROVED+VERIFIED
+   9   2  1  0 |   8   2   4   2 |          2 |     yes | SO PROVED+VERIFIED
+   9   2  1  0 |   8   6   4   2 |          2 |     yes | DC PROVED+VERIFIED
+   4   2  2  0 |  16   2  12   1 |          4 |     yes | SO PROVED+VERIFIED
+   4   2  2  0 |  16  10   4   2 |         10 |     yes | DC PROVED+VERIFIED
+   4   2  3  0 |  24   4  16   2 |          6 |     yes | SO PROVED+VERIFIED
+   4   2  3  0 |  24  16   8   2 |         14 |     yes | DC PROVED+VERIFIED
+  [EXH] E1  the quantum Singleton bound N - K >= 2(d-1) holds for every code constructed PASS  [EXH] 18 codes
+  [EXH] E2  the quantum Hamming bound holds for every code constructed PASS  [EXH] 18 codes
+
+F.  comparison with the literature (offline, no code tables
+-----------------------------------------------------------
+  accessible from this environment)
+  - Quantum MDS: N - K = 2(d-1) is met by [[N,N-2,2]]_q for every N
+    (take k = 1).  Grassl-Beth-Roetteler-type tables are NOT
+    reachable here, so no claim of record parameters is made.
+  - The constructions are new only in their ORIGIN (Galois hulls of
+    cyclic codes over the non-commutative ring M_2(F_q[u]/u^t) via
+    the Gray map), not necessarily in their parameters.
+  - Structural comparison: Gray images of cyclic codes over
+    commutative chain rings are quasi-cyclic and duality is
+    preserved (Greferath-Schmidt 1999; arXiv 1712.02081, 0907.3397).
+    No source was found that treats a Galois (sigma_s) dual or a
+    Galois hull under a Gray map over a NON-COMMUTATIVE ring.
+
+==============================================================================
+PART F.  NEGATIVE CONTROLS (each must FAIL as predicted)
+==============================================================================
+  [EXH] N1a in the REFLEXIVE regime (r | 2s) the twisted group C_T is abelian for EVERY code, self-orthogonal or not (so self-orthogonality is NOT necessary there) PASS  [EXH] 32 codes, 32 abelian, 12 self-orthogonal
+       the abelian group still yields d = 1 for the non-self-orthogonal codes:
+       the distance of a reflexive-regime R1 code is governed by the
+       trace-symplectic orthogonal, which is much larger than the
+       F_q-symplectic one; the scan in Part B2 shows d <= 2 always.
+  [EXH] N1b OUTSIDE the reflexive regime (r does not divide 2s) the twisted group is abelian EXACTLY for the self-orthogonal codes PASS  [EXH] 92 codes: 12 abelian, 12 self-orthogonal
+  [EXH] N5  the naive test 'commutes with every F_q-generator' is NOT sufficient: the weight-1 operator (0|e_0) commutes with all 12 F_q-generators but not with all 24 F_p-basis elements (Tr_{F_4/F_2}(1) = 0) PASS  [EXH] F_p-basis of the group
+       consequence: the distance must be computed with the F_q-symplectic
+       orthogonal (equivalently commutation with an F_p-basis), not
+       with the F_q-generator test; doing the latter would report
+       d = 1 for the [[16,4,3]]_4 code instead of the correct d = 3.
+  [EXH] N2  at (q,t,n)=(4,2,1) there are codes self-orthogonal for the transported form that are NOT Euclidean self-orthogonal, so R2 cannot be applied without a transformation PASS  [EXH] 8 such codes
+  [EXH] N3  at (q,t)=(4,2) (p = 2, t even) NO congruence T with T^T H_t T = I_t exists, i.e. the Euclidean route is obstructed PASS  [EXH] exhaustive over all 4x4 matrices over F_4
+  [EXH] N4  the twisted (Galois) embedding of Route R1 admits a weight-1 operator that commutes with the whole group and does NOT lie in it, hence d = 1 PASS  [EXH] witness of symplectic weight 1 exhibited; k = 2
+
+==============================================================================
+SUMMARY
+==============================================================================
+  checks              : 88
+  PASS                : 88
+  FAIL                : 0
