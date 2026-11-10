@@ -7,7 +7,7 @@ dd9c2ac50ecd62ae040499c359ee0788ccf8402690be4d7735586c67388e4f44  ./README.md
 840b586410813e6e610aafec31a059f040944e7785ae3018f9451ec828de9f2c  ./build_modern/main.aux
 46a8a6da12ccd374f0be5a260ee9e1862e5f214f7dcedf10d2beaf5fde313c97  ./build_modern/main.bbl
 ee765ce33eb7a40236b8dcd59d7c635ccdc4b7aca2fa79bc631b278ce43e53f2  ./build_modern/main.blg
-cfa26ecc35d4b816480fea14bf074c140b492394b9e7d9df6e04cc3274823fb2  ./build_modern/main.log
+3cf7a1f6eb58b25390cf5ec79aacd7116aced1fbc029dc7ec208543f7ca476cd  ./build_modern/main.log
 9791390bde212bceec8a2c649c305191b35b7a2c5dc8d425ef5789e14dd44616  ./build_modern/main.out
 a87491e2ac5071a896b4fd29d25054dc3de9a51275bd2d9dda32975a7f1bff68  ./build_modern/main.pdf
 41b5683cef735f22a70af116f3ba331be86cb67fd0bfcb3dcbfe38db3dd258e1  ./build_modern/main.tex
@@ -37,7 +37,7 @@ a78544f3e2403e728ae712ac88a0b2baa4a62b11a9e476956299b489f7562453  ./compile/READ
 867a58244b390f5d504817352bb305d17b00bf3716d13675f1d8950c81bf72a4  ./compile/texenv.sh
 b7a1dc3cc6ae5a17246297134142973ec1ba866e3ae2e95744b7171107dc9993  ./compile/texmf-local/tex/latex/ts1-cmr-lm-subst/ts1cmr.fd
 46a8a6da12ccd374f0be5a260ee9e1862e5f214f7dcedf10d2beaf5fde313c97  ./main.bbl
-cfa26ecc35d4b816480fea14bf074c140b492394b9e7d9df6e04cc3274823fb2  ./main.log
+3cf7a1f6eb58b25390cf5ec79aacd7116aced1fbc029dc7ec208543f7ca476cd  ./main.log
 a87491e2ac5071a896b4fd29d25054dc3de9a51275bd2d9dda32975a7f1bff68  ./main.pdf
 41b5683cef735f22a70af116f3ba331be86cb67fd0bfcb3dcbfe38db3dd258e1  ./main.tex
 73388338bb83adb695db32d2f69b3d2c8d7279647c546cf4da4b9dc5abd22feb  ./references.bib
