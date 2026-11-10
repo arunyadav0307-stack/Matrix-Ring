@@ -34,7 +34,21 @@
 % pass) and is only used on lines that would otherwise be overfull; it never
 % loosens a line that sets correctly.
 \emergencystretch=2em
-\usepackage[hypertexnames=false]{hyperref}
+% Author metadata placeholder.  This must be defined BEFORE \hypersetup:
+% hyperref expands the PDF metadata strings (pdfauthor and friends) when
+% \hypersetup runs, not at \begin{document}, so a placeholder used in
+% pdfauthor but defined later in the preamble is an undefined control
+% sequence.  Older hyperref releases deferred the expansion; current ones
+% do not.  See compile/BUILD_CORRECTIONS.md, correction C-1.
+\newcommand{\AUTHORPLACEHOLDER}{%
+  \texorpdfstring{\textbf{[\,AUTHOR METADATA TO BE SUPPLIED\,]}}%
+                 {[AUTHOR METADATA TO BE SUPPLIED]}}
+% pdfusetitle makes hyperref copy \title and \author into the PDF document
+% information dictionary; without it the /Title field of the PDF is empty.
+% \texorpdfstring above supplies the plain-text form used there, because a
+% PDF string cannot carry \textbf or \, (a kern) -- hyperref silently strips
+% them and warns.  See compile/BUILD_CORRECTIONS.md, correction C-5.
+\usepackage[hypertexnames=false,pdfusetitle]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=green!35!black,
             urlcolor=blue!45!black,pdfauthor={\AUTHORPLACEHOLDER}}
 
@@ -49,6 +63,7 @@
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\ann}{\operatorname{ann}}
+\newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\rev}{\operatorname{rev}}
 \newcommand{\Hull}{\operatorname{Hull}}
 \newcommand{\swt}{\operatorname{swt}}
@@ -65,8 +80,6 @@
 \newcommand{\hperp}{\,{}^{\perp_{\widehat{}}}}
 \newcommand{\hhatpers}{\,{}^{\perp^{\widehat{}}_s}}
 \newcommand{\omegaperp}{{}^{\perp_\omega}}
-\newcommand{\AUTHORPLACEHOLDER}{\textbf{[\,AUTHOR METADATA TO BE
-  SUPPLIED\,]}}
 \newcommand{\blanksymbol}{\textbf{[TO BE SUPPLIED]}}
 
 % ------------------------------ theorems ------------------------------

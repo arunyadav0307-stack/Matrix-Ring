@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Phase 8B isolated build scratch (regenerate with PAPER/compile/build_modern.sh)
+PAPER/build_modern/

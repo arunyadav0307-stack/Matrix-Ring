@@ -71,23 +71,56 @@ used and none is claimed.** Loaded packages: `geometry`, `inputenc`, `amsmath`,
 `amssymb`, `amsthm`, `array`, `booktabs`, `longtable`, `enumitem`, `xcolor`,
 `url`, `hyperref`. Bibliography style: `plain`, 13 entries.
 
-The PDF shipped here was produced in an environment with **no TeX
-distribution**, by recovering a real engine and substituting for the missing
-`bibtex` binary. Read `compile/README.md` for exactly what was done, what is
-still a substitute, and why you should recompile on a current TeX Live before
-circulating it. In short:
+**Phase 8B (2026-11-10): the manuscript has been recompiled on a current TeX
+Live with genuine BibTeX, and both Phase 8A caveats are closed.**
 
-| missing piece | substitute used here |
+| | |
 |---|---|
-| a TeX engine | pdfTeX 1.40.11 recovered from npm `texlive@1.2.0` (a real x86-64 ELF binary shipped inside that archive), driven as `pdftex -fmt=latex -progname=pdflatex` with `\pdfoutput=1` on the first line |
-| `bibtex` | `tools/make_bbl.py`, which writes `main.bbl` with **pybtex**'s `plain` style — LaTeX only ever reads the `.bbl` |
-| `booktabs.sty`, `enumitem.sty`, `xcolor.sty` | absent from that tree; retrieved from GitHub mirrors of the CTAN sources, hashes recorded in `compile/README.md` |
-| `fontenc` | **not loaded**: the recovered tree has no EC/T1 font metrics, so `T1` would silently fall back to `nullfont`. All sources are pure ASCII, so OT1 is equivalent here. |
+| TeX Live | **2024** |
+| pdfTeX | **3.141592653-2.6-1.40.26** |
+| BibTeX | **0.99d** (genuine, `plain.bst`) |
+| result | 39 pages, A4; **0 errors, 0 warnings, 0 undefined references or citations, 0 missing glyphs, 0 overfull and 0 underfull boxes** |
+
+The build found five defects, **none of them mathematical**. Two of them were
+latent faults in the released Phase 8A PDF that no log-only check could have
+caught: `\Hom` was never defined, so the word "Hom" was silently missing from
+two sentences; and an unbraced `]]` in an optional argument made Example 8.12
+read "Example 8.12 (certifying [[20, 2, 10; 18). ]4]". Both are fixed. The
+per-entry record is `compile/BUILD_CORRECTIONS.md`.
+
+The environment has no TeX distribution and no package manager, and CTAN is not
+reachable, so the tool chain is assembled by
+`compile/bootstrap_texlive.sh` (~40 s, network once) and the four passes are
+run by `compile/build_modern.sh`. Every artefact the bootstrap downloads is
+verified by SHA-256, and `bibtex` is compiled from the TeX Live 2024 Pascal
+sources rather than substituted for. Full detail: `compile/README_BUILD.md`.
+
+```bash
+cd PAPER
+./compile/bootstrap_texlive.sh     # assemble TeX Live 2024
+./compile/build_modern.sh          # pdflatex -> bibtex -> pdflatex -> pdflatex
+```
+
+The Phase 8A build (pdfTeX 1.40.11 recovered from npm `texlive@1.2.0`, with
+`tools/make_bbl.py` standing in for `bibtex`) is preserved as historical
+provenance in `compile/README.md`, `compile/build.sh`,
+`compile/fetch_texlive.sh` and `compile/texenv.sh`, and the PDF it produced is
+still the one shipped as `main.pdf`. The modern PDF is shipped inside the
+Phase 8B package, `MatrixRingManuscript_20261110_Phase8B.zip`, rather than
+replacing `main.pdf`. One note on the bibliography: the Phase 8A
+PDF printed DOIs that genuine `plain.bst` does not emit — they came from the
+pybtex substitute. The modern reference list is canonical `plain` and therefore
+has no DOIs; see `FINAL_VALIDATION_REPORT.md` §0.7.
+
+`MatrixRingManuscript_20261110_Phase8B.zip` (44 entries, 696 599 B,
+SHA-256 `468ab3861f2cf345a4d46eb34eda867cba859dc79d5201b359d967de122cbb1f`)
+rebuilds **byte-identically** from its own contents in a clean directory.
 
 `python3 tools/validate_latex.py` performs 13 static structural checks and
-reports **13 PASS / 0 FAIL**; `python3 tools/check_log.py` analyses the TeX log
-and reports **0 errors, 0 missing characters, 0 undefined references or
-citations, 0 overfull boxes**.
+reports **13 PASS / 0 FAIL**; `python3 tools/check_log.py` analyses the modern
+TeX log and reports **0 errors, 0 missing characters, 0 undefined references or
+citations, 0 overfull and 0 underfull boxes, 0 warnings**; `python3
+tools/inspect_pdf.py` measures the PDF and reports **0 issues**.
 
 ---
 

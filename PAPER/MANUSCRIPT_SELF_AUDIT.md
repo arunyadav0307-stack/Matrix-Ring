@@ -199,6 +199,77 @@ were removed (`mathtools`, `multirow`); `xcolor`, used only by the
 `\blanksymbol` helper, was restored once `xcolor.sty` had been obtained. All
 of this is recorded in `compile/README.md` and `CHANGELOG.md`.
 
+### Phase 8B — issues found by compiling on a current TeX Live
+
+Recompiling on TeX Live 2024 with genuine BibTeX found five build defects and
+one editorial question. **None of the five touches the mathematics**; all are
+recorded entry by entry, with the evidence, in
+`compile/BUILD_CORRECTIONS.md`. Four of them were *latent* — the 2010 engine
+and the pybtex `.bbl` had swallowed them, and in two cases the Phase 8A PDF was
+simply wrong on the page.
+
+**C-1. `\AUTHORPLACEHOLDER` used before it was defined — FIXED.**
+`main.tex` consumed the macro in `\hypersetup{pdfauthor=…}` at line 39 but
+defined it at line 68. Current `hyperref` expands the PDF metadata strings when
+`\hypersetup` runs, so this is a hard error; the 2010 `hyperref` deferred the
+expansion and never noticed. Order-only fix.
+
+**C-2. `\Hom` was used but never defined — FIXED (and the 8A PDF was wrong).**
+Used in §3 and §4; `grep` finds no definition anywhere. The 2010 engine
+**silently dropped the operator name**: the shipped Phase 8A PDF contains the
+word "Hom" **zero** times, and the two sentences read `ψ_C : C → F_q(S/C^⊥,F_q)`
+and `… into F_q(C,R) …`, neither of which parses. No error appeared in the
+Phase 8A log. One line added: `\newcommand{\Hom}{\operatorname{Hom}}`, matching
+the file's existing convention for `\ann`, `\Tr`, `\Hull` and friends.
+
+**C-3. An unbraced `]]` broke an optional argument — FIXED (and the 8A PDF was
+wrong).** `\begin{example}[certifying $[[20,2,10;18]]_4$]` in §8: LaTeX's
+optional-argument scanner stops at the first unbraced `]`, so the 8A PDF reads
+
+> Example 8.12 (certifying [[20, 2, 10; 18). ]4]
+
+The argument is now braced. A sweep of every `\begin/\end{…}[…]` and
+`\section[…]` in all 13 sources found exactly this one site. The `[[n,k,d;c]]_q`
+notation makes this a standing hazard.
+
+**C-4. The TS1 text-companion fonts are missing — FIXED (distribution, not
+source).** Since kernel release 2020/02/02, `\textbullet` — hence every
+`itemize` bullet — is taken from **TS1**, not from the OMS maths font. The TS1
+shapes of Computer Modern are the `cm-super` collection, absent here, so the
+run died with `Font tcrm1095 at 600 not found`. cm-super cannot be fetched and
+Metafont is unavailable. The substitution is made in the pdfTeX font map
+(`compile/map_ts1_lm.py`): TS1 EC fonts are mapped to Latin Modern TS1
+outlines, which share Computer Modern's metrics. The map is patched rather than
+the format rebuilt, deliberately — rebuilding `pdflatex.fmt` would re-load the
+hyphenation patterns and could change the line and page breaking, which is
+exactly what this phase exists to confirm has *not* happened. **No manuscript
+source was modified.**
+
+**C-5. Empty PDF `/Title`; four `hyperref` PDF-string warnings — FIXED.**
+`hyperref` does not read `\title` unless given `pdfusetitle`, so the PDF's
+`/Title` was empty. Added `pdfusetitle`, and wrapped the author placeholder in
+`\texorpdfstring` so that the PDF string gets plain text (a PDF string cannot
+hold `\textbf` or `\,`). The log now contains **zero** occurrences of the word
+`Warning`.
+
+**F-1. The bibliography no longer prints DOIs — OPEN, author's decision.**
+The 8A PDF printed `doi:10.1016/…` for nine references. That was the pybtex
+substitute, not `plain.bst`: genuine BibTeX with the `plain` style that
+`main.tex` requests prints no DOI, and §5 below already recorded on 2026-11-09
+that "the `plain` style prints no DOI". The modern build therefore drops nine
+DOIs present in the 8A PDF — the only Phase 8B change that *removes*
+information. It was left alone rather than silently altered, because restoring
+the DOIs means departing from the declared bibliography style. Options:
+keep `plain` (recommended, and what `main.tex` asks for), or move to a
+DOI-aware style such as `plainurl`. See `FINAL_VALIDATION_REPORT.md` §0.7.
+
+*Also noted, not a defect.* The modern PDF's text layer writes `fi` as two
+characters where pdfTeX 1.40.11 wrote the single ligature glyph U+FB01; and it
+maps the `\varphi` glyph to U+03C6 where 1.40.11 mapped it to U+03D5. Both are
+extraction differences only — the `\varphi` glyph sits at identical
+coordinates with identical advance width in both PDFs, and its rendered pixels
+are byte-identical at 1200 dpi. Neither is visible on the page.
+
 ### MINOR
 
 **m-1. The earlier tuple $[[24,4,5;12]]_4$ changed value.**

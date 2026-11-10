@@ -321,7 +321,9 @@ frontier point for the criterion.
 
 \subsection{Worked example VI: a full certification}
 
-\begin{example}[certifying $[[20,2,10;18]]_4$]\label{ex:certify}
+% The optional argument is braced: LaTeX's [..] scanner stops at the first
+% unbraced ']', and the quantum-code tuple contains ']]'.
+\begin{example}[{certifying $[[20,2,10;18]]_4$}]\label{ex:certify}
 Take the family $(q,t,n)=(4,1,5)$, so $\Nlen=4\cdot1\cdot5=20$. The search
 finds a cyclic code $C\le\Rn$ whose Gray image $D=\varphi_5(C)\subseteq
 \F_4^{20}$ has

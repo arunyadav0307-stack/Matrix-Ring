@@ -1,12 +1,237 @@
-# Phase 8A — Final validation report
+# Phase 8A / Phase 8B — Final validation report
 
-**Date:** 2026-11-09. **Scope:** the Phase 8A revision of the manuscript in
-`PAPER/`. **Status: every check passes; two caveats remain, both about the
-environment and neither about the mathematics.**
+**Phase 8A, 2026-11-09.** The manuscript is compiled; six transcription defects
+fixed; two environment caveats left open.
 
-This file is the record of *what was checked and what it returned*. The
-corrections it led to are listed in `CHANGELOG.md`; the issues themselves are
-classified in `MANUSCRIPT_SELF_AUDIT.md`.
+**Phase 8B, 2026-11-10.** Both caveats closed: the manuscript has been rebuilt
+on a current TeX Live with genuine BibTeX. **Status: every check passes; the
+build is clean and reproducible from committed sources.**
+
+This file is the record of *what was checked and what it returned*. §0 is
+Phase 8B; §§1–7 are the Phase 8A record, kept as written on 2026-11-09. The
+corrections are listed in `CHANGELOG.md` and, for Phase 8B, entry by entry in
+`compile/BUILD_CORRECTIONS.md`; the issues themselves are classified in
+`MANUSCRIPT_SELF_AUDIT.md`.
+
+---
+
+## 0. Phase 8B — modern compilation (2026-11-10)
+
+### 0.1 The two Phase 8A caveats are closed
+
+| Phase 8A caveat | Phase 8B status |
+|---|---|
+| Built only with a 2010-vintage pdfTeX 1.40.11 | **Closed.** Rebuilt with pdfTeX **1.40.26**, TeX Live 2024. |
+| `bibtex` replaced by pybtex | **Closed.** Rebuilt with genuine **BibTeX 0.99d**, `plain.bst`. |
+
+The 2010 engine and the pybtex `.bbl` are preserved untouched as Phase 8A
+provenance (`compile/build.sh`, `compile/fetch_texlive.sh`,
+`compile/README.md`, `tools/make_bbl.py`, `PAPER/main.bbl`).
+
+### 0.2 Headline
+
+| | |
+|---|---|
+| Modern compilation | **success** — 39 pages, A4 595 × 842 pt |
+| TeX Live | **2024** (`release-texlive.txt`, TinyTeX-based tree) |
+| pdfTeX | **3.141592653-2.6-1.40.26** |
+| BibTeX | **0.99d (TeX Live 2024)** |
+| kpathsea | 6.3.6/dev (`kpsewhich`, built from source) |
+| Host | Linux 6.1.158 x86_64, gcc 12.2.0, CPython 3.11.2 |
+| Errors | **0** |
+| Undefined references | **0** |
+| Undefined citations | **0** |
+| Missing glyphs | **0** |
+| Overfull boxes | **0** |
+| Underfull boxes | **0** (Phase 8A: 4) |
+| Warnings of any kind | **0** |
+| Static validator | **13 PASS / 0 FAIL** |
+| Log analysis (`check_log.py`) | **clean** |
+| Example re-derivation | **56 checks / 0 mismatches** |
+| PDF inspection | **0 issues** (geometry, overlap, fonts, glyphs) |
+| Corrections needed to build | **5** (C-1…C-5), none mathematical |
+| Phase 0–7 files altered | **0 of 94** (byte-verified) |
+| Phase 8 / 8A archives altered | **no** — both published SHA-256s still verify |
+| Final PDF | 563 659 B, 39 pages |
+| Final PDF SHA-256 | `69265efb21a4c01d4e6b74bcac5e19f954a11e013aaa0eef7856b089ebe522fd` |
+| Rebuild reproducibility | **byte-identical** across repeated runs |
+| Modern-build package | `MatrixRingManuscript_20261110_Phase8B.zip`, 44 entries, 696 599 B, SHA-256 `468ab3861f2cf345a4d46eb34eda867cba859dc79d5201b359d967de122cbb1f` |
+
+### 0.3 The three kinds of evidence, kept separate
+
+**Static validation (source-level, no build).** `tools/validate_latex.py`
+reads the `.tex` files.
+
+```
+checks: 13 ; PASS 13 ; FAIL 0
+  V1   every \input resolves ................ PASS   13 files
+  V2   braces balanced ...................... PASS   13 files
+  V3a  every egin has a matching \end ...... PASS
+  V3b  every environment is provided ......... PASS
+  V4   every 
+ef/\eqref has a \label ........ PASS   246 refs, 107 labels
+  V5   no duplicate \label ................... PASS   107 labels unique
+  V6   every \cite key has an entry .......... PASS   32 citations, 13 entries
+  V7   no entry is uncited ................... PASS   13 entries all cited
+  V8   no DO-NOT-CITE key is cited ........... PASS
+  V9   every control sequence is defined ..... PASS   422 distinct macros
+  V10  verbatim blocks carry no macros ....... PASS
+  V11  no invented author metadata ........... PASS   only \AUTHORPLACEHOLDER
+  V12  math delimiters balanced .............. PASS
+```
+
+**Modern compilation (what the 2024 engine actually reported).**
+`tools/check_log.py` on `build_modern/main.log`: 0 errors, 0 missing
+characters, 0 overfull, 0 underfull, 0 package/LaTeX warnings. `bibtex`
+reported `The style file: plain.bst`, 13 entries, 0 warnings. The full
+per-line record of every change made to reach this state is
+`compile/BUILD_CORRECTIONS.md`.
+
+**Visual inspection.** The PDF was inspected by measurement, not by eye, with
+`tools/inspect_pdf.py` (§0.6).
+
+### 0.4 The five corrections
+
+Phase 8B needed five corrections. **None of them changes a mathematical
+statement or a numerical result.** Four of the five are defects that the 2010
+engine and the pybtex `.bbl` had *silently swallowed* — the modern build found
+real pre-existing faults in the released Phase 8A PDF.
+
+| # | defect | where | manifest in the 8A PDF |
+|---|---|---|---|
+| C-1 | `\AUTHORPLACEHOLDER` used at line 39, defined at line 68 | `main.tex` | build failed (hard error) |
+| C-2 | `\Hom` **never defined**, used twice | `main.tex`, §3, §4 | the word "Hom" was **silently dropped** from two sentences |
+| C-3 | unbraced `]]` in an optional argument | `08_certification.tex:324` | heading read "Example 8.12 (certifying [[20, 2, 10; 18). ]4]" |
+| C-4 | TS1 `cm-super` fonts absent | distribution | build failed: `Font tcrm1095 at 600 not found` |
+| C-5 | empty PDF `/Title`; 4 hyperref PDF-string warnings | `main.tex` | `/Title` empty, 4 warnings |
+
+C-2 and C-3 are the important ones: **the Phase 8A PDF was wrong on the page
+in two places and the Phase 8A log did not say so.** A log-only check is not
+sufficient for this manuscript.
+
+The build is **byte-reproducible**: `build_modern.sh` pins
+`SOURCE_DATE_EPOCH`, because pdfTeX stamps `/CreationDate` and `/ModDate` from
+the clock and derives the trailer `/ID` from them. Three consecutive builds
+returned the same SHA-256, so the value quoted above is checkable rather than
+merely recorded.
+
+### 0.5 Reproducing the tool chain
+
+The sandbox is wiped between sessions, so the tool chain has to be
+reconstructible from committed sources rather than left on disk.
+`compile/bootstrap_texlive.sh` (~40 s, network needed once) rebuilds the whole
+tree and verifies every artefact by SHA-256; `compile/build_modern.sh` runs the
+four passes. Full instructions and the provenance of each component are in
+`compile/README_BUILD.md`.
+
+Getting a current distribution was the gating step. CTAN and tug.org are not
+reachable from this environment, so `install-tl`/`tlmgr` were impossible; the
+tree was assembled from a PyPI wheel bundling a real TeX Live 2024 release, an
+npm TeX Live 2015 texmf for the version-stable files, a GitHub blob for
+`booktabs.sty`, and `tex-mirror/tex-live` for `kpathsea` and `bibtex.web`.
+`bibtex` is compiled from the TeX Live 2024 Pascal source with `tangle` and
+`web2c` — deliberately, because substituting pybtex again is exactly what
+Phase 8B forbids.
+
+### 0.5b Clean rebuild from the shipped package
+
+The package was unpacked into an empty directory, a **fresh** TeX Live 2024
+tree was bootstrapped from the packaged script, and the manuscript was rebuilt
+from `sources/` into a separate output directory — nothing from the original
+build was reused.
+
+| check | result |
+|---|---|
+| `MANIFEST.sha256` of the unpacked archive | **43 files verified, 0 bad** |
+| bootstrap from the packaged script | pdfTeX 1.40.26, BibTeX 0.99d |
+| four-pass build from `sources/` | 0 errors, 0 warnings, 39 pages |
+| rebuilt PDF SHA-256 | `%s` |
+| shipped PDF SHA-256 | `%s` |
+| verdict | **byte-identical** |
+
+The evidence file is `verification/clean_rebuild.txt` inside the package. It
+necessarily records the package as it was before that file was added, so the
+archive's own hash is in its sidecar.
+
+### 0.6 Visual inspection (by measurement)
+
+`tools/inspect_pdf.py` — 0 issues.
+
+| check | result |
+|---|---|
+| page geometry | 595 × 842 pt (A4) on all 39 pages; **0** ink outside an 8 pt bleed |
+| overlapping text | **0** meaningful overlaps (maths glyph stacking excluded) |
+| fonts | 29 distinct fonts, **all Type 1 and all embedded** |
+| unresolved glyphs | **0** pages contain U+FFFD |
+| numbered environments | 83, all present: 21 Theorems, 11 Lemmas, 9 Propositions, 2 Corollaries, 8 Definitions, 19 Remarks, **13 Examples**, 0 Conjectures |
+| quantum-code tuples | 28 distinct `[[n,k,d;c]]` and 11 distinct `[[n,k,d]]` — **identical sets** to Phase 8A |
+| bibliography | 13 entries rendered, all cited |
+| landmarks | title, abstract, key words, contents, references all present |
+| tables | 1–6 all rendered; column starts consistent |
+| figures | none (the manuscript is text and mathematics only) |
+
+**All 13 worked examples were compared sentence by sentence against the Phase
+8A PDF.** All 13 are present and agree; the only differences are the two
+corrections above. Example 7.11 (`ex:fpbasis`, the `F_p`-basis subtlety — the
+example flagged for special attention) is complete and correct.
+
+**Comparison with the Phase 8A PDF.** Both are **39 pages**: no page-count
+delta. Text was compared after folding presentation ligatures (pdfTeX 1.40.11
+wrote `fi` as the single glyph U+FB01, 1.40.26 writes two characters). Every
+remaining difference is one of:
+
+1. the two corrections C-2 (`Hom` restored ×2) and C-3 (Example 8.12 heading);
+2. pagination: three short passages moved one page (§8, §9);
+3. **the bibliography no longer prints DOIs** — see §0.7.
+
+A 63-occurrence `ϕ`/`φ` difference is **extraction-only, not visual**: the two
+glyphs sit at identical coordinates with identical advance widths, and the
+rendered pixels of the glyph are **byte-identical** at 1200 dpi.
+
+### 0.7 One open editorial decision: DOIs in the bibliography
+
+The Phase 8A PDF printed `doi:10.1016/…` after nine of the thirteen references.
+That was **not** `plain.bst` behaviour: it was an artefact of the pybtex
+substitute, which appends a `\href{…}{doi:…}` block. Genuine BibTeX with
+`plain.bst` — the style `main.tex` requests — prints no DOI, and
+`FINAL_VALIDATION_REPORT.md` §5 already recorded on 2026-11-09 that "the
+`plain` style prints no DOI".
+
+The modern build therefore **drops 9 DOIs** that appeared in the 8A PDF. This
+is a content difference, and it is the only one that removes information.
+
+It was left as-is rather than silently changed, because fixing it means
+departing from the declared bibliography style, which is the author's call:
+
+* **Keep as now (recommended for the declared style).** `plain` is what
+  `main.tex` asks for, and the DOIs are absent by design.
+* **Restore the DOIs.** Switch to a DOI-aware style (e.g. `plainurl` from
+  `urlbst`, or `natbib` + `plainnat`), which keeps `plain` ordering and adds
+  the DOI. This needs one new `.bst` and a one-line change to `main.tex`.
+
+The remaining difference in the reference list is typographic only: genuine
+`plain.bst` sets the author names on the same line as the number and sets
+journal titles in italic, where pybtex broke the line and used `\emph`. Both
+are correct `plain` style; the modern rendering is the canonical one.
+
+### 0.8 Repository safeguards
+
+* 94 protected Phase 0–7 files: **0 altered** (hashed before and after).
+* Phase 8 archive `MatrixRingManuscript_20261109.zip`,
+  `d1ba4c821b1af01b8105eff702315957e692cfcaed21d5491a8ea03e4b29a80d`,
+  543 086 B — verifies against its sidecar.
+* Phase 8A archive `MatrixRingManuscript_20261109_Phase8A.zip`,
+  `14ecac0e8649009ef535f63bc128734335c88ac3c1bbc6ef4e05a5a868342910`,
+  1 096 851 B — verifies against its sidecar.
+* Phase 8A `main.pdf` (`b2ba1fee72b6e70ae18f3f043c10ac3390673281e1d0ccd35da3f863d8641a03`)
+  and its provenance (`compile/build.sh`, `compile/fetch_texlive.sh`,
+  `compile/texenv.sh`, `compile/README.md`) are byte-identical. One file,
+  `compile/build.sh`, was inadvertently overwritten early in Phase 8B and was
+  restored from the Phase 8A commit before the Phase 8B commit was made; the
+  Phase 8B script is `compile/build_modern.sh`.
+* No historical log overwritten. The build scratch directory
+  `PAPER/build_modern/` is generated and is not tracked.
+* Corrections are recorded append-only in `compile/BUILD_CORRECTIONS.md`.
 
 ---
 
@@ -227,4 +452,9 @@ manuscript, so the question is moot here, but it is recorded.
 
 ## 7. The one outstanding item
 
-Recompile on a current TeX Live. Everything else on the Phase 8A list is done.
+**Closed by Phase 8B (2026-11-10), see §0.** The manuscript has been
+recompiled on TeX Live 2024 with genuine BibTeX 0.99d; the build is clean and
+every check passes. The recompile found that the Phase 8A PDF had silently
+dropped the word "Hom" twice and mangled one example heading, both now
+corrected (§0.4). One editorial decision remains open — whether to keep the
+`plain` bibliography style, which prints no DOI (§0.7).
