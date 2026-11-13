@@ -1,0 +1,119 @@
+% =====================================================================
+\section{Reproducibility}
+\label{app:repro}
+% =====================================================================
+
+Every number in this paper that is not proved in the text is produced by a
+script in the accompanying supplementary package, and every such number is
+attributable to a line of a committed log. This appendix records what the
+package contains, how to run it, and which numbers come from where.
+
+\subsection{Package layout}
+
+\begin{verbatim}
+PAPER/supplementary/
+  README.md                  index of the package
+  ENVIRONMENT.md             exact environment used
+  MANIFEST.sha256            SHA-256 of every file in the package
+  scripts/                   the computation scripts (copies of the
+                             committed 04_COMPUTATION/ scripts)
+  logs/                      the committed logs the numbers are read from
+  generator_matrices/        generator matrices of the headline codes,
+                             one .json per code
+  parameter_tables/          machine-readable versions of the tables of
+                             this paper (CSV)
+  CERTIFICATION_PROCEDURE.md what "certified" means here, and how to
+                             re-certify a code from scratch
+\end{verbatim}
+
+The scripts are byte-identical copies of the scripts committed in
+\filepath{04_COMPUTATION/} of the project repository; the logs are the
+committed logs. Nothing was re-run to produce the package, so no script hash
+is invalidated.
+
+\subsection{Environment}
+
+The computation is pure Python~3 standard library. No third-party package
+(numpy, sympy, GAP, Magma) is used or required; arithmetic in $\F_q$ and in
+$A_t$, $R$, $\Rn$ is implemented in \filepath{matrix_ring_lib.py} and is
+elementary by design, so that every step can be inspected. See
+\texttt{ENVIRONMENT.md} for the interpreter version and platform of the
+recorded run.
+
+\subsection{Randomness}
+
+The search uses pseudo-random sampling for the families that are too large to
+enumerate. The seed is fixed (\filepath{SEED = 20261210}) and every random
+choice is drawn from a single \filepath{random.Random(SEED)} instance, in a
+fixed order of families, so a re-run reproduces every line of the log except
+the per-family elapsed-time annotations and the peak-memory line, which are
+wall-clock and resource readings and take no part in any computation.
+
+The principal results of this paper do not depend on the sampling: the
+theorems are proved, and the headline codes come from families that are
+enumerated exhaustively.
+
+\subsection{Where the numbers come from}
+
+\begin{itemize}[leftmargin=*]
+\item Theorems~\ref{thm:duality}--\ref{thm:parameters},
+  \ref{thm:cosetdistance}, \ref{thm:cosetsingleton},
+  \ref{thm:feasibility}, \ref{thm:bookkeeping}, \ref{thm:gram},
+  \ref{thm:obstruction}, \ref{thm:hullso}, \ref{thm:fpbasis},
+  \ref{thm:nonprincipal}: proved in the text; no computation enters.
+\item Table~\ref{tab:witnesses} (the $\MU_{\Bq}=3$ witnesses) and the four
+  witness codes of Appendix~\ref{app:tables}: Part~5 of
+  \filepath{phase7_extended_search_log.txt}, produced by
+  \filepath{phase7_extended_search.py}.
+\item Table~\ref{tab:cert} (all 28 certified codes): Part~6 of the same log.
+\item Table~\ref{tab:headline}: Part~4(d) (Pareto frontier), Part~4(e) (best
+  per route) and Part~6 of the same log.
+\item Table~\ref{tab:budget} (minimum entanglement per distance): Part~4(c)
+  of the same log.
+\item Table~\ref{tab:comparison} and Table~\ref{tab:grassl}: Part~8 of the
+  same log for the $q=4$ rows, and the pages of \cite{GrasslCodetables}
+  retrieved on 2026-11-04 for the $q=9$ rows and for the bounds themselves.
+\item The counts $120\,721$, $5\,055$, $4\,418$, $637$, $368$, $88$, $280$,
+  $25$ families scanned, $42$ families in the census ($23$ exhaustive, $4$
+  counted-only, $15$ blocked): the completion report and Part~2 of the same
+  log.
+\item The bookkeeping identities of Theorem~\ref{thm:bookkeeping} are
+  proved, and check A1 of the log verifies them on all $5\,055$ codes
+  ($0$ violations). The coset Singleton bound is check H1 ($0$ violations).
+  The Singleton and Hamming bounds are check G1 ($0$ violations).
+\end{itemize}
+
+\subsection{How to reproduce}
+
+\begin{verbatim}
+  cd PAPER/supplementary/scripts
+  python3 phase7_extended_search.py > out.txt 2>&1
+  diff <(grep -v '\[[0-9]*s\]' out.txt) \
+       <(grep -v '\[[0-9]*s\]' ../logs/phase7_extended_search_log.txt)
+\end{verbatim}
+
+The run takes about $9$ minutes and about $370$~MB of resident memory on the
+recorded platform. The \texttt{grep -v} filter removes the elapsed-time
+annotations; the peak-memory line is the only other difference.
+
+The earlier phases are reproduced the same way from their own scripts; see
+\filepath{04_COMPUTATION/README.md} in the repository for the dependency
+order (\filepath{matrix_ring_lib.py} first, then the phase scripts).
+
+\subsection{What is \emph{not} reproducible from the package}
+
+The $q=9$ bounds of Table~\ref{tab:grassl} were read from a web page that
+changes; the retrieved values are dated 2026-11-04 and are quoted verbatim,
+and the page reported ``Last change: 10.06.2024''. They are external data,
+not an output of this computation.
+
+\subsection{Verification of the package itself}
+
+\begin{verbatim}
+  cd PAPER/supplementary
+  sha256sum -c MANIFEST.sha256
+\end{verbatim}
+
+Every file listed in the manifest is checked against its recorded hash; see
+\filepath{PAPER/SHA256_MANIFEST.md} for the same check over the manuscript and
+the whole package.

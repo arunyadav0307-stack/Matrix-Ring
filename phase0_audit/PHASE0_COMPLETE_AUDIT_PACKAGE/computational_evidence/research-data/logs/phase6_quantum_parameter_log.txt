@@ -1,0 +1,424 @@
+##############################################################################
+#  PHASE 6 -- QUANTUM PARAMETER ENHANCEMENT, EXACT DISTANCE
+#            CERTIFICATION AND NOVEL CODE CONSTRUCTION
+#  script : phase6_quantum_parameter_enhancement.py
+#  log    : phase6_quantum_parameter_log.txt
+#  seed   : 20261130        python 3.11.2
+##############################################################################
+
+==============================================================================
+PART 1.  PARAMETER CENSUS (Task I: parameter range)
+==============================================================================
+  q in {4,8,9}; t >= 1; n >= 1; s admissible.  A family is
+  ENUMERABLE EXHAUSTIVELY when |B|^2 = q^{2tn} <= 200000 (the BFS over
+  the submodule lattice of B^2); otherwise the CRT product lattice is
+  used and a seeded SAMPLE of at most 300 codes is taken.
+
+   (q,t,n) |  N=4tn | ncomp | |B|      | enumeration          | #codes
+  ------------------------------------------------------------------------
+   (4,1,1) |     4 |     1 | 4        | EXHAUSTIVE           | 7
+   (4,1,2) |     8 |     1 | 16       | EXHAUSTIVE           | 33
+   (4,1,3) |    12 |     3 | 64       | EXHAUSTIVE           | 343
+   (4,1,4) |    16 |     1 | 256      | EXHAUSTIVE           | 565
+   (8,1,1) |     4 |     1 | 8        | EXHAUSTIVE           | 11
+   (8,1,2) |     8 |     1 | 64       | EXHAUSTIVE           | 93
+   (9,1,1) |     4 |     1 | 9        | EXHAUSTIVE           | 12
+   (9,1,2) |     8 |     2 | 81       | EXHAUSTIVE           | 144
+   (4,2,1) |     8 |     1 | 16       | EXHAUSTIVE           | 33
+   (4,2,2) |    16 |     1 | 256      | EXHAUSTIVE           | 1221
+   (4,2,3) |    24 |     3 | 4096     | SAMPLE(300)          | 300
+   (9,2,1) |     8 |     1 | 81       | EXHAUSTIVE           | 113
+   (9,2,2) |    16 |     2 | 6561     | SAMPLE(300)          | 300
+
+==============================================================================
+PART 2.  TASK A: IS THE DISTANCE LIMITATION INHERENT?
+==============================================================================
+
+A1.  the cap  d_{R1} <= min wt(D^{perp_E})  (Phase 5 T-194)
+-----------------------------------------------------------
+  Assumptions of T-194, stated exactly:
+    (i)  C = C_T = {(u | T_s u) : u in D} is the twisted embedding;
+    (ii) the physical symplectic form is the STANDARD one,
+         omega((a|b),(a'|b')) = a.b' - a'.b;
+    (iii) orthogonality is measured with the trace form, i.e. an
+          error (0|b) commutes with every (u|T_s u) iff
+          Tr(b.u) = 0 for all u in D.
+  Under (i)-(iii), (0|b) in C_T^{perp} for every b in D^{perp_E}.
+  The cap is therefore a statement about ROUTE R1 ONLY.
+  [EXH] A1  (0|b) lies in C_T^{perp_omega} for every b in D^{perp_E} (the mechanism behind the cap) PASS  [EXH] 99 codes
+
+A2.  do R2 and R3 escape the cap?
+---------------------------------
+  Yes: their stabilizer group is A x B, not the twisted graph, so the
+  condition is a classical containment, not the identity of T-194.
+  Measured best distances (this phase):
+     R1 : d <= 2 everywhere (cap attained)   -- see Part 3
+     R2 : d = 3  ([[16,4,3]]_4)
+     R3 : d = 5  ([[16,4,5;8]]_4), d = 6 ([[12,2,6;10]]_4)
+  => the limitation is NOT inherent in the ring/Galois framework and
+     NOT inherent in the Gray map; it is route-specific (R1) and, for
+     R2, a consequence of the classical quality of the image codes.
+
+A3.  is it a consequence of the tested parameter range?
+-------------------------------------------------------
+  The framework can only enumerate the families of Part 1; the two
+  longest lengths available are N = 16 (exhaustive at (4,1,4) and
+  (4,2,2)) and N = 24 (sampled at (4,2,3)).  Longer n (n = 5, 6 at
+  t = 1, and n = 3 at q = 8) are NOT supported by the current ring
+  component routine, so the range cannot be extended further without
+  new ring code.  This is a COMPUTATIONAL boundary, recorded as such.
+
+==============================================================================
+PART 3.  TASK B: SYSTEMATIC QUANTUM PARAMETER SEARCH
+==============================================================================
+  (q,t,n,s)=(4,1,2,0) N= 8 : 33 codes (EXHAUSTIVE) ; SO=10 DC=11 ; quantum candidates: SO=10 DC=6 EA=21
+  (q,t,n,s)=(4,1,3,0) N=12 : 343 codes (EXHAUSTIVE) ; SO=35 DC=36 ; quantum candidates: SO=35 DC=29 EA=306
+  (q,t,n,s)=(4,1,4,0) N=16 : 565 codes (EXHAUSTIVE) ; SO=84 DC=85 ; quantum candidates: SO=84 DC=48 EA=479
+  (q,t,n,s)=(8,1,2,0) N= 8 : 93 codes (EXHAUSTIVE) ; SO=18 DC=19 ; quantum candidates: SO=18 DC=10 EA=73
+  (q,t,n,s)=(9,1,2,0) N= 8 : 144 codes (EXHAUSTIVE) ; SO=8 DC=9 ; quantum candidates: SO=8 DC=5 EA=134
+  (q,t,n,s)=(4,2,1,0) N= 8 : 33 codes (EXHAUSTIVE) ; SO=2 DC=3 ; quantum candidates: SO=2 DC=2 EA=29
+  (q,t,n,s)=(4,2,2,0) N=16 : 1221 codes (EXHAUSTIVE) ; SO=56 DC=57 ; quantum candidates: SO=56 DC=52 EA=1163
+  (q,t,n,s)=(4,2,3,0) N=24 : 300 codes (SAMPLE(300)) ; SO=1 DC=4 ; quantum candidates: SO=1 DC=4 EA=296
+  (q,t,n,s)=(9,2,1,0) N= 8 : 113 codes (EXHAUSTIVE) ; SO=4 DC=5 ; quantum candidates: SO=4 DC=3 EA=107
+  (q,t,n,s)=(9,2,2,0) N=16 : 300 codes (SAMPLE(300)) ; SO=0 DC=0 ; quantum candidates: SO=0 DC=0 EA=300
+  (q,t,n,s)=(4,3,1,0) N=12 : 139 codes (EXHAUSTIVE) ; SO=3 DC=4 ; quantum candidates: SO=3 DC=3 EA=134
+  (q,t,n,s)=(4,4,1,0) N=16 : 565 codes (EXHAUSTIVE) ; SO=4 DC=5 ; quantum candidates: SO=4 DC=4 EA=559
+  (q,t,n,s)=(8,2,1,0) N= 8 : 93 codes (EXHAUSTIVE) ; SO=2 DC=3 ; quantum candidates: SO=2 DC=2 EA=89
+
+B1.  Pareto frontier (maximise d, then K, then minimise c)
+----------------------------------------------------------
+
+   q t n  N | kind |  k   K   d   c | K/N    d/N   | S-defect | exact | method
+  ----------------------------------------------------------------------------------------
+   4 1 3 12 | EA   |  10   2   6  10 | 0.167  0.500 |       10 | yes   | complete enumeration (4^2 codewords)
+   4 1 4 16 | EA   |  10   4   5   8 | 0.250  0.312 |       12 | yes   | complete enumeration (4^6 codewords)
+   4 2 3 24 | EA   |  16   4   5  12 | 0.167  0.208 |       24 | yes   | complete enumeration (4^8 codewords)
+   4 1 3 12 | EA   |   8   2   5   6 | 0.167  0.417 |        8 | yes   | complete enumeration (4^4 codewords)
+   4 2 3 24 | EA   |  12  12   4  12 | 0.500  0.167 |       18 | yes   | support search w<=4
+   4 2 3 24 | EA   |  12  10   4  10 | 0.417  0.167 |       18 | yes   | support search w<=4
+   4 1 4 16 | EA   |   8   8   4   8 | 0.500  0.250 |       10 | yes   | complete enumeration (4^8 codewords)
+   4 2 3 24 | EA   |  12   8   4   8 | 0.333  0.167 |       18 | yes   | support search w<=4
+   4 1 3 12 | EA   |   6   6   4   6 | 0.500  0.333 |        6 | yes   | complete enumeration (4^6 codewords)
+   4 1 3 12 | EA   |   6   4   4   4 | 0.333  0.333 |        6 | yes   | complete enumeration (4^6 codewords)
+   4 1 4 16 | EA   |   8   4   4   4 | 0.250  0.250 |       10 | yes   | complete enumeration (4^8 codewords)
+   4 2 3 24 | EA   |  12   4   4   4 | 0.167  0.167 |       18 | yes   | support search w<=4
+   4 1 3 12 | EA   |   6   2   4   2 | 0.167  0.333 |        6 | yes   | complete enumeration (4^6 codewords)
+   9 1 2  8 | EA   |   6   2   4   6 | 0.250  0.500 |        6 | yes   | complete enumeration (9^2 codewords)
+   4 1 4 16 | EA   |   6   8   3   4 | 0.500  0.188 |        8 | yes   | complete enumeration (4^10 codewords)
+   4 2 3 24 | EA   |  12   6   3   6 | 0.250  0.125 |       20 | yes   | support search w<=4
+   4 1 4 16 | SO   |   6   4   3   0 | 0.250  0.188 |        8 | yes   | complete enumeration (4^10 codewords)
+   4 1 2  8 | EA   |   4   4   3   4 | 0.500  0.375 |        4 | yes   | complete enumeration (4^4 codewords)
+   9 1 2  8 | EA   |   4   2   3   2 | 0.250  0.375 |        4 | yes   | complete enumeration (9^4 codewords)
+   4 2 3 24 | EA   |   6  16   2   4 | 0.667  0.083 |       10 | yes   | support search w<=2
+   4 1 4 16 | SO   |   2  12   2   0 | 0.750  0.125 |        2 | yes   | support search w<=2
+   4 2 3 24 | DC   |  18  12   2   0 | 0.500  0.083 |       10 | yes   | support search w<=2
+   4 1 3 12 | EA   |   2  10   2   2 | 0.833  0.167 |        2 | yes   | support search w<=2
+   4 1 3 12 | SO   |   2   8   2   0 | 0.667  0.167 |        2 | yes   | support search w<=2
+   9 1 2  8 | EA   |   2   6   2   2 | 0.750  0.250 |        2 | yes   | support search w<=2
+   4 1 2  8 | SO   |   2   4   2   0 | 0.500  0.250 |        2 | yes   | support search w<=2
+   4 2 3 24 | EA   |   6  18   1   6 | 0.750  0.042 |       12 | yes   | support search w<=2
+   4 1 4 16 | DC   |  16  16   1   0 | 1.000  0.062 |        0 | yes   | support search w<=2
+   4 2 3 24 | EA   |   6  14   1   2 | 0.583  0.042 |       12 | yes   | support search w<=2
+   4 1 3 12 | DC   |  12  12   1   0 | 1.000  0.083 |        0 | yes   | support search w<=2
+   4 1 2  8 | DC   |   8   8   1   0 | 1.000  0.125 |        0 | yes   | support search w<=2
+
+B2.  best distance per route
+----------------------------
+  SO : best d = 3  ->  [[16,4,3]]_4   (k=6, c=0, complete enumeration (4^10 codewords))
+  DC : best d = 3  ->  [[16,4,3]]_4   (k=10, c=0, complete enumeration (4^10 codewords))
+  EA : best d = 6  ->  [[12,2,6;10]]_4   (k=10, complete enumeration (4^2 codewords))
+
+B4.  best distance per nilpotency index t (O-5.1)
+-------------------------------------------------
+   t | family (q,n)        | stabilizer routes: best d | EA route: best d
+  --------------------------------------------------------------------------
+   1 | (4,2) N=8           |                      2 | 3
+   1 | (4,3) N=12          |                      2 | 6
+   1 | (4,4) N=16          |                      3 | 5
+   1 | (8,2) N=8           |                      2 | 3
+   1 | (9,2) N=8           |                      2 | 4
+   2 | (4,1) N=8           |                      1 | 2
+   2 | (4,2) N=16          |                      2 | 4
+   2 | (4,3) N=24          |                      2 | 5
+   2 | (8,1) N=8           |                      1 | 2
+   2 | (9,1) N=8           |                      1 | 2
+   2 | (9,2) N=16          |                no code | 4
+   3 | (4,1) N=12          |                      1 | 2
+   4 | (4,1) N=16          |                      1 | 2
+
+       O-5.1 asked whether any construction of this pipeline reaches d >= 3 for t >= 2.  The last two columns separate the answer: the stabilizer routes do not (their best distance at t >= 2 is computed above), the entanglement-assisted route does.
+
+B3.  minimum entanglement for each distance (EA route)
+------------------------------------------------------
+   d = 2 : minimum c = 0  ->  [[16,12,2;0]]_4  (k=2, h_E=2)  [exact]
+   d = 3 : minimum c = 0  ->  [[16,4,3;0]]_4  (k=6, h_E=6)  [exact]
+   d = 4 : minimum c = 2  ->  [[12,2,4;2]]_4  (k=6, h_E=4)  [exact]
+   d = 5 : minimum c = 6  ->  [[12,2,5;6]]_4  (k=8, h_E=2)  [exact]
+   d = 6 : minimum c = 10  ->  [[12,2,6;10]]_4  (k=10, h_E=0)  [exact]
+   d = 7 : no EA code found
+   d = 8 : no EA code found
+
+==============================================================================
+PART 4.  TASK C: EXACT QUANTUM DISTANCE CERTIFICATION
+==============================================================================
+  Every certified code is the EXACT code reported by the search:
+  the search stores the image basis of each code, so no re-selection
+  by invariants takes place.  Three methods are used:
+    M1  complete enumeration of the classical orthogonal code
+        (every codeword; exact and complete when q^dim <= 3*10^6);
+    M2  increasing-weight support search over F_q^N (an independent
+        algorithm: for each support it solves a left-kernel problem);
+    M3  exhaustive search of the AMBIENT quantum space F_q^{2N} in
+        increasing SYMPLECTIC weight, testing commutation with the
+        WHOLE group V (v in V^{perp_omega}; for an EA code the
+        entanglement makes all of V measurable, so an undetected
+        error must commute with V and not merely with rad V) and
+        non-triviality (v not in V).  Complete only up to the weight
+        reached: a return of None proves d > that weight.
+  Report: proved lower bound, proved upper bound (explicit witness),
+  and whether the two coincide.
+
+   (q,t,n,N,kind) |  k   K   d   c | M1  | M2  | M3 (>=) | exact | stab. abelian
+  ------------------------------------------------------------------------------
+  (4,1,4,16,SO) |   6   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,4,16,SO) |   6   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,4,16,SO) |   6   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,4,16,DC) |  10   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,4,16,DC) |  10   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,4,16,DC) |  10   4   3   0 |    3 |    3 |      >2 | yes   | True
+  (4,1,3,12,EA) |  10   2   6  10 |    6 |    6 |      >3 | yes   | True
+  (4,1,3,12,EA) |  10   2   6  10 |    6 |    6 |      >3 | yes   | True
+  (4,1,4,16,EA) |  10   4   5   8 |    5 |    5 |      >2 | yes   | True
+  (4,1,2, 8,EA) |   4   4   3   4 |    3 |    3 |       3 | yes   | True
+  (4,1,3,12,EA) |  10   2   6  10 |    6 |    6 |      >3 | yes   | True
+  (4,1,4,16,EA) |  10   4   5   8 |    5 |    5 |      >2 | yes   | True
+  (4,2,1, 8,EA) |   4   4   2   4 |    2 |    2 |       2 | yes   | True
+  (4,2,2,16,EA) |  12   4   4  12 |    4 |    4 |      >2 | yes   | True
+  (4,2,3,24,EA) |  16   4   5  12 |    5 |    5 |      >2 | yes   | True
+  (4,3,1,12,EA) |   6   6   2   6 |    2 |    2 |       2 | yes   | True
+  (4,4,1,16,EA) |   8   8   2   8 |    2 |    2 |       2 | yes   | True
+  (8,1,2, 8,EA) |   4   4   3   4 |    3 |    3 |       3 | yes   | True
+  (8,2,1, 8,EA) |   4   4   2   4 |    2 |    2 |       2 | yes   | True
+  (9,1,2, 8,EA) |   6   2   4   6 |    4 |    4 |      >3 | yes   | True
+  (9,2,1, 8,EA) |   4   4   2   4 |    2 |    2 |       2 | yes   | True
+  (9,2,2,16,EA) |  12   4   4  12 |    4 |    4 |      >2 | yes   | True
+  [EXH] C1  for every certified code the three methods (classical enumeration, independent support search, ambient quantum search) agree with the reported distance, the stabilizer is abelian on an F_p-basis and K, c recompute correctly PASS  [EXH] 22 certified codes, F_p-basis of the stabilizer group
+
+       M1 and M2 are complete (they decide the exact value of the minimum weight of the classical quotient); M3 is complete only up to the weight reported, and is stated as a lower bound otherwise.  No random search is used anywhere in the certification.
+
+==============================================================================
+PART 5.  TASK D: NON-PRINCIPAL GALOIS HULLS (O-3.1 WITNESSES)
+==============================================================================
+  O-3.1 (Stage 3A) asked whether mu_B(W_hull) <= 2 always; T-173
+  REFUTED it with four witnesses at (q,t,n) = (4,2,2): one at s = 0
+  and three at s = 1.  Here every witness is RE-DERIVED from the
+  enumeration (not copied from a table), its mu_B is recomputed by
+  two implementations (the Stage-3B route and a direct Nakayama
+  count from the multiplication table of B), and all three quantum
+  routes R1/R2/R3 are run on it.
+  (q,t,n,s)=(4,2,2,0) N=16 : mu_B(Hull) census {0: 258, 1: 522, 2: 440, 3: 1} ; NON-PRINCIPAL: 1   [EXHAUSTIVE]
+     witness: dim C = 8, dim Hull_s = 8, mu_B = 3 (direct Nakayama recomputation: 3), Galois self-orthogonal = True, hull = C: True
+        R1 : abelian=True  [[16,8,d = 2]]_4
+        R2 : not applicable (no Euclidean self-orthogonality / dual-containment)
+        R3 : EA  [[16,4,2;4]]_4  (h_E = 4, support search w<=2)
+  (q,t,n,s)=(4,2,2,1) N=16 : mu_B(Hull) census {0: 130, 1: 538, 2: 550, 3: 3} ; NON-PRINCIPAL: 3   [EXHAUSTIVE]
+     witness: dim C = 8, dim Hull_s = 8, mu_B = 3 (direct Nakayama recomputation: 3), Galois self-orthogonal = True, hull = C: True
+        R1 : abelian=True  [[16,8,d = 2]]_4
+        R2 : not applicable (no Euclidean self-orthogonality / dual-containment)
+        R3 : EA  [[16,4,2;4]]_4  (h_E = 4, support search w<=2)
+     witness: dim C = 8, dim Hull_s = 8, mu_B = 3 (direct Nakayama recomputation: 3), Galois self-orthogonal = True, hull = C: True
+        R1 : abelian=True  [[16,8,d = 2]]_4
+        R2 : not applicable (no Euclidean self-orthogonality / dual-containment)
+        R3 : EA  [[16,4,2;4]]_4  (h_E = 4, support search w<=2)
+     witness: dim C = 8, dim Hull_s = 8, mu_B = 3 (direct Nakayama recomputation: 3), Galois self-orthogonal = True, hull = C: True
+        R1 : abelian=True  [[16,8,d = 2]]_4
+        R2 : not applicable (no Euclidean self-orthogonality / dual-containment)
+        R3 : EA  [[16,4,2;4]]_4  (h_E = 4, support search w<=2)
+  (q,t,n,s)=(4,2,3,0) N=24 : mu_B(Hull) census {0: 53, 1: 220, 2: 27} ; NON-PRINCIPAL: 0   [SAMPLE]
+  (q,t,n,s)=(4,4,1,0) N=16 : mu_B(Hull) census {0: 258, 1: 274, 2: 33} ; NON-PRINCIPAL: 0   [EXHAUSTIVE]
+  (q,t,n,s)=(4,3,1,0) N=12 : mu_B(Hull) census {0: 66, 1: 66, 2: 7} ; NON-PRINCIPAL: 0   [EXHAUSTIVE]
+  [EXH] D1  non-principal Galois hulls (mu_B >= 3) exist, are re-derived from the enumeration (not copied), and carry valid quantum constructions by all applicable routes PASS  [EXH] 4 witness codes in 5 families
+  [EXH] D2  the two mu_B implementations (Stage-3B route and direct Nakayama count from the multiplication table) agree on every witness PASS  [EXH] reported per witness above
+
+==============================================================================
+PART 6.  TASK E: THE CHARACTERISTIC-TWO OBSTRUCTION
+==============================================================================
+
+E1.  the statement, the proof, and what is verified
+---------------------------------------------------
+  Claim (COMPUTATIONALLY VERIFIED ONLY / PROVED for the linear part).
+  Let p = 2 and t even, and let H_t be the transported Hankel form
+  matrix (Phase 4, T-177: H_t is ALTERNATING).  Then for EVERY
+  invertible F_q-matrix S the matrix S^T H_t S is again alternating,
+  because (Sx)^T H_t (Sx) = 0 for all x.  Since I_t is not
+  alternating (e_i^T I_t e_i = 1), no congruence S^T H_t S = I_t
+  exists.  The obstruction therefore applies to EVERY linear
+  physical-coordinate transformation, not merely to the block form
+  I_{4n} (x) T of the Phase-5 remark.  (In characteristic 2 a
+  symmetric matrix M is alternating iff M has zero diagonal, since
+  x^T M x = sum_i M_ii x_i^2 and x -> x^2 is a bijection of F_q.)
+
+   (q,t)   | H_t alternating | S^T H_t S alternating (200 random S) | I_t alternating
+  ------------------------------------------------------------------------------------
+  (4,2)   | True           | True (200 invertible S)                  | False
+  (4,4)   | True           | True (200 invertible S)                  | False
+  (8,2)   | True           | True (200 invertible S)                  | False
+  (8,4)   | True           | True (200 invertible S)                  | False
+  (4,6)   | True           | True (200 invertible S)                  | False
+  [EXH] E1  for p = 2 and t even, H_t is alternating and alternatingness is PRESERVED BY EVERY congruence S^T H_t S (so no linear change of physical coordinates maps H_t to I_t) PASS  [SMP] 200 random invertible S per (q,t), 5 parameter pairs
+
+E2.  the exact domain of validity (t ODD is different)
+------------------------------------------------------
+  PROVED.  Let p = 2 and t = 2m+1 be ODD.  The transported form is
+  B(x,y) = sum_{i+j=t-1} x_i y_j = <x, rho y>, rho the reversal
+  permutation.  Split the index set into the fixed point {m} and
+  the m pairs {i, t-1-i}: on each pair the Gram matrix is
+  [[0,1],[1,0]] (a hyperbolic plane), on the fixed point it is [1],
+  and the summands are mutually orthogonal.  Hence
+       H_t  ~  (hyperbolic plane)^{(+) m}  (+)  <1>.
+  For one such plane (basis u,v with B(u,u)=B(v,v)=0, B(u,v)=1)
+  together with z, B(z,z)=1, z orthogonal to u and v, the vectors
+       a = z+u,   b = z+v,   c = z+u+v
+  satisfy B(a,a)=B(b,b)=B(c,c)=1 and B(a,b)=B(a,c)=B(b,c)=0, so
+  <u,v,z> is isometric to I_3; absorbing the planes one at a time
+  gives H_t ~ I_t for EVERY odd t.  A congruence therefore EXISTS
+  for odd t, and the obstruction of E1 concerns t EVEN only.
+  (Consistency: for t even the decomposition is m hyperbolic planes
+  with no central <1>, and B(x,x) = 0 identically on a hyperbolic
+  plane, so no orthonormal basis exists -- exactly E1.)
+  NOTE.  A naive 'diagonalise by the greedy pivot and rescale' is
+  NOT sufficient: the restriction of B to e^{perp} can be
+  alternating for one admissible pivot and non-alternating for
+  another, so the construction below backtracks over pivots.
+
+  (q,t)=(4,1): H_t alternating = False ; a congruence S with S^T H_t S = I_t is CONSTRUCTED and verified
+  (q,t)=(4,3): H_t alternating = False ; a congruence S with S^T H_t S = I_t is CONSTRUCTED and verified
+  [EXH] E2  for t ODD a congruence S^T H_t S = I_t is constructed explicitly (symmetric elimination + Frobenius scaling) and verified, so the obstruction is specific to t even PASS  [EXH] constructive, verified by direct multiplication
+  (q,t)=(8,3): H_t alternating = False ; a congruence S with S^T H_t S = I_t is CONSTRUCTED and verified
+  (q,t)=(8,1): H_t alternating = False ; a congruence S with S^T H_t S = I_t is CONSTRUCTED and verified
+  (q,t)=(4,5): H_t alternating = False ; a congruence S with S^T H_t S = I_t is CONSTRUCTED and verified
+  (q,t)=(4,2): H_t alternating = True ; the constructive method returns no congruence (as it must: t even)
+  (q,t)=(8,2): H_t alternating = True ; the constructive method returns no congruence (as it must: t even)
+  (q,t)=(4,4): H_t alternating = True ; the constructive method returns no congruence (as it must: t even)
+
+       SCOPE.  Nothing above says that good codes are impossible in
+       characteristic two: it says that the particular route 'transform
+       H_t into I_t and then use the standard symplectic form' is closed
+       for p = 2, t even.  The routes R1, R2 and R3 of Phase 5 do NOT use
+       that transformation -- they work with the Galois/Gram form directly
+       -- and they produce codes over F_4 and F_8 (see below).  The
+       failure of one coordinate transformation is therefore NOT a
+       statement about the whole characteristic-two regime.
+
+E3.  the bypasses that do exist, and what they yield
+----------------------------------------------------
+  (a) R1, the twisted graph {(u | T_s u)}: valid for every s -- the
+      transported Gram form replaces H_t, so the obstruction is
+      bypassed.  At (4,2,2), s = 0: 59 of the first 60 codes give an
+      abelian twisted group; measured distances (lower, upper): [(1, 1), (2, 2)]
+  (b) R3, entanglement assistance: valid for every code
+      (no isotropy needed); the best code found in Part 3 is
+      [[12,2,6;10]]_4   (k=10, complete enumeration (4^2 codewords)).
+  (c) the J-frame CSS  C' = A x (J B), valid when A is orthogonal to
+      B for the Gram form (i.e. A subset (JB)^{perp_E}); here
+      (C')^{perp_w} = (JB)^{perp_E} x A^{perp_E} and
+      d = min( min wt((JB)^{perp_E} \ A), min wt(A^{perp_E} \ JB) ).
+      measured on 398 valid (A,B) pairs at (4,2,2) and (4,1,4):
+      best J-frame CSS distance = 2   (q=4, (t,n)=(1,4), dim A=2, dim B=2)
+  [EXH] E3  at least one bypass of the char-2 obstruction is realised by an explicit abelian group (the twisted graph R1) PASS  [EXH] 59 codes at (4,2,2), s = 0
+
+==============================================================================
+PART 7.  TASK G: PARAMETER TUPLES RECOMPUTED FROM THE CONSTRUCTION
+==============================================================================
+  For every certified code the parameters are recomputed from the
+  stabilizer itself (never copied from the search):
+    S  = the physical stabilizer group (abelian).  For SO/DC routes
+         S = V = X (+) X with X = C resp. C^{perp_E}; for the EA
+         route V = C (+) C is NOT abelian and S = rad V = H (+) H.
+    K  = N - dim_{F_q} S - c   ( = N - dim_{F_q} V + c ),
+    c  = (dim V - dim rad V)/2  ebits,  dim V = 2 dim_{F_q} X_V.
+  Abelianness is tested on an F_p-basis of S with the trace-
+  symplectic form  Tr(a.b' - a'.b)  (never on F_q-generators only).
+
+   (q,t,n,N,kind)   |  N   K   d   c | dim S | dim V | K ok | F_p abelian
+  ------------------------------------------------------------------------------
+  (4,1,4,16,SO)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,4,16,SO)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,4,16,SO)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,4,16,DC)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,4,16,DC)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,4,16,DC)   |  16   4   3   0 |    12 |    12 | yes  | True
+  (4,1,3,12,EA)   |  12   2   6  10 |     0 |    20 | yes  | True
+  (4,1,3,12,EA)   |  12   2   6  10 |     0 |    20 | yes  | True
+  (4,1,4,16,EA)   |  16   4   5   8 |     4 |    20 | yes  | True
+  (4,1,2, 8,EA)   |   8   4   3   4 |     0 |     8 | yes  | True
+  (4,1,3,12,EA)   |  12   2   6  10 |     0 |    20 | yes  | True
+  (4,1,4,16,EA)   |  16   4   5   8 |     4 |    20 | yes  | True
+  (4,2,1, 8,EA)   |   8   4   2   4 |     0 |     8 | yes  | True
+  (4,2,2,16,EA)   |  16   4   4  12 |     0 |    24 | yes  | True
+  (4,2,3,24,EA)   |  24   4   5  12 |     8 |    32 | yes  | True
+  (4,3,1,12,EA)   |  12   6   2   6 |     0 |    12 | yes  | True
+  (4,4,1,16,EA)   |  16   8   2   8 |     0 |    16 | yes  | True
+  (8,1,2, 8,EA)   |   8   4   3   4 |     0 |     8 | yes  | True
+  (8,2,1, 8,EA)   |   8   4   2   4 |     0 |     8 | yes  | True
+  (9,1,2, 8,EA)   |   8   2   4   6 |     0 |    12 | yes  | True
+  (9,2,1, 8,EA)   |   8   4   2   4 |     0 |     8 | yes  | True
+  (9,2,2,16,EA)   |  16   4   4  12 |     0 |    24 | yes  | True
+  [EXH] G1  for every certified code: K = N - dim S - c recomputed from the stabilizer, c = (dim V - dim rad V)/2, and the stabilizer is abelian on an F_p-basis with the trace-symplectic form PASS  [EXH] 22 certified codes, F_p-basis of the stabilizer group
+
+==============================================================================
+PART 8.  TASK H: QUANTUM BOUNDS AND COMPARISON WITH THE LITERATURE
+==============================================================================
+  Quantum Singleton:  N - K + c >= 2(d-1)   (EA Singleton; c = 0 for
+  a stabilizer code).   Quantum Hamming:  q^{K-c} * sum_{j<=t} C(N,j)(q^2-1)^j <= q^N  with t = floor((d-1)/2).
+
+   q t n  N  kind |  K   d   c | S-defect | Hamming | best known | ours
+  ------------------------------------------------------------------------------------
+   4 1 4 16 SO   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 SO   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 SO   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 SO   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 DC   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 DC   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 DC   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 4 16 DC   |   4   3   0 |        8 |     yes |     5 (<=5) | below the best known by 2
+   4 1 3 12 EA   |   2   6  10 |       10 |     yes | no EA table | n/a
+   4 1 3 12 EA   |   2   6  10 |       10 |     yes | no EA table | n/a
+   4 1 4 16 EA   |   4   5   8 |       12 |     yes | no EA table | n/a
+   4 1 4 16 EA   |   4   5   8 |       12 |     yes | no EA table | n/a
+  [EXH] H1  every certified code satisfies the (EA-)quantum Singleton bound PASS  [EXH] 12 codes
+  [EXH] H2  every certified code satisfies the (EA-)quantum Hamming bound (effective dimension K-c) PASS  [EXH] 12 codes
+
+H3.  comparison with the literature (IMPORTED RESULT)
+-----------------------------------------------------
+  IMPORTED RESULT.  Markus Grassl, 'Bounds on the minimum distance of
+    linear codes and quantum codes', http://www.codetables.de (lower
+    bounds constructed with MAGMA; page last changed 10.06.2024),
+    accessed 2026-11-06.  The pages queried in Phase 6 are
+      QECC.php?q=4&n=8&k=4    -> [[8,4,2]]_4    d = 2  (lower = upper = 2)
+      QECC.php?q=4&n=12&k=8   -> [[12,8,2]]_4   d = 2  (lower = upper = 2)
+      QECC.php?q=4&n=16&k=4   -> [[16,4,5]]_4   d = 5  (lower = upper = 5)
+      QECC.php?q=4&n=16&k=8   -> [[16,8,3]]_4   d = 3  (lower = upper = 3)
+      QECC.php?q=4&n=16&k=12  -> [[16,12,2]]_4  d = 2  (lower = upper = 2)
+      QECC.php?q=4&n=24&k=8   -> [[24,8,5]]_4   d = 5  (upper bound 6)
+      QECC.php?q=4&n=24&k=16  -> [[24,16,3]]_4  d = 3  (lower = upper = 3)
+      QECC.php?q=9&n=8&k=4    -> [[8,4,3]]_9    d = 3  (lower = upper = 3)
+      QECC.php?q=8&n=8&k=4    -> not available  ('currently not available
+                                  for q=8')
+    No entanglement-assisted table exists at that site (QECC-EA.php
+    returns 404), so the EA codes of Part 3 are compared with the EA
+    Singleton bound only, never with a table of best known EA codes.
+
+==============================================================================
+PART 9.  NEGATIVE CONTROLS
+==============================================================================
+  [EXH] N1  (0|b), b in D^{perp_E}, commutes with the whole twisted group: the R1 cap is attained PASS  [EXH] witness of weight 1
+  [EXH] N2  outside the reflexive regime the twisted group is abelian only for the self-orthogonal codes PASS  [EXH] 12 abelian vs 12 self-orthogonal
+  [EXH] N3  the (0|e_0) error commutes with all F_q-generators but not with all F_p-basis elements (Tr_{F_4/F_2}(1)=0) PASS  [EXH] 12 vs 24 elements
+
+==============================================================================
+SUMMARY
+==============================================================================
+  checks              : 13
+  PASS                : 13
+  FAIL                : 0

@@ -1,0 +1,55 @@
+AUDIT: trace-valued vs matrix-valued theta_s duality, and the
+       sigma_{2s} isometry properties (decision U9)
+run: 2026-11-04 08:26:55
+
+==============================================================================
+q = p^r = 2^2 = 4 ,  m = 2 ,  n = 3 ,  N = dim_Fq R^n = 12
+==============================================================================
+codes enumerated: 343
+  s = 1 : trace-dual == matrix-dual for 343/343 codes ; size formula: trace 343/343 , matrix 343/343
+  s = 1 , k = 2s mod r = 0 :  (E1) B(sx,sy)=s(B(x,y)) 300/300 ; (E2) B=0 preserved 300/300 ; (E3) weight preserved 300/300
+      (E4) sigma_k(C^perp) = (sigma_k C)^perp : 343/343
+      (E5) Hull(sigma_k C) = sigma_k Hull(C)   : 343/343
+      (E6) (C^perp)^perp = sigma_{2s}(C)       : 343/343
+      reflexive (C^perp^perp = C)              : 343/343
+
+==============================================================================
+q = p^r = 2^3 = 8 ,  m = 2 ,  n = 3 ,  N = dim_Fq R^n = 12
+==============================================================================
+codes enumerated: 737
+  s = 1 : trace-dual == matrix-dual for 737/737 codes ; size formula: trace 737/737 , matrix 737/737
+  s = 2 : trace-dual == matrix-dual for 737/737 codes ; size formula: trace 737/737 , matrix 737/737
+  s = 1 , k = 2s mod r = 2 :  (E1) B(sx,sy)=s(B(x,y)) 300/300 ; (E2) B=0 preserved 300/300 ; (E3) weight preserved 300/300
+      (E4) sigma_k(C^perp) = (sigma_k C)^perp : 737/737
+      (E5) Hull(sigma_k C) = sigma_k Hull(C)   : 737/737
+      (E6) (C^perp)^perp = sigma_{2s}(C)       : 737/737
+      reflexive (C^perp^perp = C)              : 35/737
+  s = 2 , k = 2s mod r = 1 :  (E1) B(sx,sy)=s(B(x,y)) 300/300 ; (E2) B=0 preserved 300/300 ; (E3) weight preserved 300/300
+      (E4) sigma_k(C^perp) = (sigma_k C)^perp : 737/737
+      (E5) Hull(sigma_k C) = sigma_k Hull(C)   : 737/737
+      (E6) (C^perp)^perp = sigma_{2s}(C)       : 737/737
+      reflexive (C^perp^perp = C)              : 35/737
+
+==============================================================================
+q = p^r = 3^2 = 9 ,  m = 2 ,  n = 2 ,  N = dim_Fq R^n = 8
+==============================================================================
+codes enumerated: 144
+  s = 1 : trace-dual == matrix-dual for 144/144 codes ; size formula: trace 144/144 , matrix 144/144
+  s = 1 , k = 2s mod r = 0 :  (E1) B(sx,sy)=s(B(x,y)) 300/300 ; (E2) B=0 preserved 300/300 ; (E3) weight preserved 300/300
+      (E4) sigma_k(C^perp) = (sigma_k C)^perp : 144/144
+      (E5) Hull(sigma_k C) = sigma_k Hull(C)   : 144/144
+      (E6) (C^perp)^perp = sigma_{2s}(C)       : 144/144
+      reflexive (C^perp^perp = C)              : 144/144
+
+==============================================================================
+q = p^r = 3^2 = 9 ,  m = 2 ,  n = 4 ,  N = dim_Fq R^n = 16
+==============================================================================
+codes enumerated: 5000
+  s = 1 : trace-dual == matrix-dual for 5000/5000 codes ; size formula: trace 5000/5000 , matrix 5000/5000
+  s = 1 , k = 2s mod r = 0 :  (E1) B(sx,sy)=s(B(x,y)) 300/300 ; (E2) B=0 preserved 300/300 ; (E3) weight preserved 300/300
+      (E4) sigma_k(C^perp) = (sigma_k C)^perp : 5000/5000
+      (E5) Hull(sigma_k C) = sigma_k Hull(C)   : 5000/5000
+      (E6) (C^perp)^perp = sigma_{2s}(C)       : 5000/5000
+      reflexive (C^perp^perp = C)              : 5000/5000
+
+done

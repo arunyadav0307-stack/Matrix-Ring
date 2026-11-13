@@ -1,0 +1,101 @@
+{
+ "index": 25,
+ "code": "[[8,4,2;4]]_9",
+ "q": 9,
+ "t": 2,
+ "n": 1,
+ "N": 8,
+ "route": "EA",
+ "k": 4,
+ "K": 4,
+ "d": 2,
+ "c": 4,
+ "h_E": 0,
+ "exact": true,
+ "distance_method": "support search w<=2",
+ "generator_matrix_A": [
+  [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "generator_matrix_Euclidean_dual": [
+  [
+   1,
+   0,
+   0,
+   0,
+   2,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   2,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   2,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   2
+  ]
+ ],
+ "notes": "rows of A span the Gray image D = phi_n(C) in F_q^N; rows of the second matrix span D^{perp_E}.  Field elements are integers 0..q-1 in the internal ordering of matrix_ring_lib.py."
+}

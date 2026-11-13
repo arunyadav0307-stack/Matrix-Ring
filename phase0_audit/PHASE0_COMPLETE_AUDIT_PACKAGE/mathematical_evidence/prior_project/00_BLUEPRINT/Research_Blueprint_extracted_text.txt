@@ -1,0 +1,418 @@
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+RESEARCH BLUEPRINT 
+Quantum Error-Correcting Codes from Galois Hulls 
+of Cyclic Codes over Noncommutative Matrix Rings 
+A phase-by-phase research plan and collaboration protocol for Arena AI and ChatGPT 
+ 
+CORE WORKFLOW 
+Arena AI develops the research artefacts phase by phase. ChatGPT independently audits the mathematics, literature, 
+proofs, computations and writing, then prepares the next precise Arena prompt. The researcher (Arun) approves every 
+phase gate. No phase is treated as complete merely because an AI system says it is complete. 
+  
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+How to use this file 
+Is file ko Arena AI aur ChatGPT dono ko dena hai. Dono systems ko isi document ko single source of project instructions 
+maana hai. Arena ka kaam develop karna hai; ChatGPT ka kaam verify, challenge, improve aur next phase ke liye exact 
+prompt banana hai. Researcher final mathematical decisions aur phase approvals dega. 
+1. Pehle poora blueprint dono systems ko upload karein. 
+2. Arena ko sirf Phase 0 ka prompt dein. Ek hi baar mein complete paper likhne ko na kahein. 
+3. Arena ke outputs aur files ChatGPT ko dein. ChatGPT se audit aur next Arena prompt banwayein. 
+4. ChatGPT ka approved prompt Arena ko dein. Arena agla phase execute kare. 
+5. Har phase ke baad GO / REVISE / STOP decision lein. Approval ke bina next phase par na jaayein. 
+6. Final manuscript tabhi assemble karein jab all mathematical claims, references and computational results 
+independently checked hon. 
+1. Project identity and research objective 
+Working title: Quantum Error-Correcting Codes from Galois Hulls of Cyclic Codes over Noncommutative Matrix Rings. 
+Research area: Algebraic Coding Theory; finite rings and matrix rings; cyclic codes; Galois duality and hulls; Gray maps; 
+quantum error-correcting codes. 
+Central objective: Develop a mathematically valid framework for cyclic codes over a carefully selected noncommutative 
+matrix ring, define an appropriate Galois duality and hull theory, characterize the resulting hulls, and use rigorously 
+justified classical-to-quantum constructions to obtain quantum code families. 
+The title and scope are provisional. Phase 0 must establish whether the exact intersection is genuinely new and whether 
+the proposed algebraic framework is feasible. 
+2. Proposed mathematical setting — not yet fixed 
+Candidate coefficient ring: 
+A_t = F_q[u]/<u^t>,     u^t = 0.  
+Candidate matrix ring: 
+R = M_m(A_t), 
+with candidate values m = 2, 3 or 4 and q = p^r. These are alternatives to investigate, not assumptions to impose. Arena 
+must compare them and recommend a setting only after checking the literature, module structure, automorphisms, inner 
+products and quantum-code route. 
+Notation rule: use t for the nilpotency exponent and s (or ell) for the Galois automorphism parameter. Do not use k for 
+both. 
+Potential field automorphism: 
+sigma_s(a) = a^(p^s),     a in F_q. 
+Its extension to matrices may be entrywise, but Arena must prove that the extension is compatible with matrix 
+multiplication and specify its action on the full coefficient ring. If q = p, the field automorphism may be trivial; this case 
+must not be presented as a nontrivial Galois setting. 
+Critical issue: the inner product on a noncommutative matrix ring cannot be assumed. Any proposed pairing must specify 
+its domain and codomain, left/right module convention, additivity, non-degeneracy, automorphism behaviour and 
+compatibility with the code operations. Candidate formulas are hypotheses to test, not established definitions. 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+3. Research questions 
+7. Which finite noncommutative matrix-ring family supports a useful and mathematically consistent cyclic-code theory 
+for this project? 
+8. Can a nontrivial Galois automorphism be defined on the selected ring, and what are its fixed elements and algebraic 
+properties? 
+9. What inner product or pairing gives a valid Galois dual for the chosen left/right module structure? 
+10. Under what conditions is the Galois dual of a cyclic code again cyclic? 
+11. Can Galois hulls be structurally characterized using generator data, parity-check data or suitable matrices? 
+12. Can exact hull-dimension formulas be derived for meaningful code families? 
+13. Does a suitable Gray map exist, and what precisely does it preserve: linearity, distance, duality, hulls, or only a weaker 
+relation? 
+14. Which classical-to-quantum construction is valid under the proved hypotheses, and what new quantum parameters 
+can be obtained? 
+4. Proposed section-wise manuscript structure 
+Section 1. Introduction 
+ 1.1 Background of algebraic coding theory 
+ 1.2 Quantum error-correcting codes and classical-to-quantum connections 
+ 1.3 Galois duality and hulls: motivation and known developments 
+ 1.4 Cyclic codes over noncommutative matrix rings 
+ 1.5 Critical literature review and research gap 
+ 1.6 Main contributions and organization of the paper 
+Research control: State only contributions actually proved in the paper. Do not announce hoped-for results as completed 
+contributions. 
+Section 2. Preliminaries and Algebraic Foundations 
+ 2.1 Finite fields and the selected coefficient ring 
+ 2.2 Structure of the selected matrix ring 
+ 2.3 Left/right modules and code conventions 
+ 2.4 Ring automorphisms and their extensions 
+ 2.5 Linear codes and cyclic shifts over the selected ring 
+ 2.6 Inner products, duals and required algebraic lemmas 
+Research control: Define the polynomial variable convention, centrality, cyclic-shift action and left/right ideal or module 
+structure precisely. 
+Section 3. Galois Duality for Cyclic Codes over Matrix Rings 
+ 3.1 Galois automorphism on the selected matrix ring 
+ 3.2 Definition and validation of the Galois pairing 
+ 3.3 Galois dual codes 
+ 3.4 Duality properties and cyclicity conditions 
+ 3.5 Generator/parity-check descriptions and main theorems 
+Research control: Prove well-definedness and non-degeneracy before using the pairing to define dual codes. 
+Section 4. Structural Characterization of Galois Hulls 
+ 4.1 Definition of the Galois hull 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+ 4.2 Algebraic characterization of the hull 
+ 4.3 Generator and parity-check descriptions 
+ 4.4 Hull-dimension formulae 
+ 4.5 Special cases: trivial, nontrivial, self-orthogonal and self-dual cases 
+Research control: A proposed rank formula is only a target until derived under explicit hypotheses. Do not transfer field 
+formulas to matrix rings without proof. 
+Section 5. Construction and Classification of Cyclic Codes 
+ 5.1 Polynomial/module representation 
+ 5.2 Factorization and generator structure 
+ 5.3 Construction of cyclic codes over the selected matrix ring 
+ 5.4 Classification by relevant algebraic parameters 
+ 5.5 Galois hull dimensions and worked examples 
+Research control: If a commutative polynomial quotient is not appropriate, replace it with a rigorously defined skew or 
+module-theoretic formulation. 
+Section 6. Gray Maps and Classical Image Codes 
+ 6.1 Construction and definition of a Gray map 
+ 6.2 Additivity/linearity and image alphabet 
+ 6.3 Weight relationship 
+ 6.4 Images of cyclic codes 
+ 6.5 Relationship between ring hulls and image-code duals/hulls 
+Research control: State exactly what the map preserves. Do not claim hull preservation unless it is proved. 
+Section 7. Quantum Error-Correcting Code Constructions 
+ 7.1 Quantum-code preliminaries and notation 
+ 7.2 CSS construction and its hypotheses 
+ 7.3 Galois-hull-based construction theorem(s) 
+ 7.4 Parameter derivation: length, dimension and distance 
+ 7.5 New quantum code families and explicit examples 
+ 7.6 Quantum Singleton bound and defect analysis 
+Research control: A Galois hull alone does not automatically produce a quantum code. Prove field-linearity of the image 
+and the required orthogonality/containment conditions. 
+Section 8. Computational Results and Verification 
+ 8.1 Reproducible computational framework 
+ 8.2 Ring, automorphism and pairing checks 
+ 8.3 Code, dual and hull computations 
+ 8.4 Minimum-distance computation and completeness limits 
+ 8.5 Quantum parameters and comparison tables 
+Research control: Distinguish exhaustive computation from heuristic search. Include scripts, versions, seeds and exact 
+input parameters. 
+Section 9. Comparative Discussion and Novelty Analysis 
+ 9.1 Comparison with matrix-ring cyclic-code literature 
+ 9.2 Comparison with Galois-hull literature 
+ 9.3 Comparison with existing quantum constructions 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+ 9.4 New theoretical results and parameter improvements 
+ 9.5 Limitations and scope 
+Research control: Use verified references and comparable parameter conventions. Do not claim novelty solely because a 
+different ring size or notation is used. 
+Section 10. Conclusion and Future Research 
+ 10.1 Summary of proved results 
+ 10.2 Quantum-code outcomes 
+ 10.3 Limitations 
+ 10.4 Future directions 
+Research control: The conclusion must report only results established in Sections 2–8. 
+5. Phase-by-phase execution plan 
+Phase 0 — Literature review, novelty and feasibility 
+Objective: Build a verified literature map covering (i) cyclic codes over matrix rings, (ii) Galois duals/hulls over rings and 
+code families, (iii) quantum codes from matrix rings, and (iv) quantum codes from Galois hulls. 
+Required deliverables: Annotated bibliography; comparison matrix; exact definitions used in prior work; candidate 
+research gaps; feasibility report; GO/REVISE/STOP recommendation. 
+Exit gate: No novelty claim without primary-source verification. Identify the closest papers and explain precisely what 
+they already prove. 
+Phase 1 — Select ring and establish algebraic foundations 
+Objective: Compare candidate rings and fix one only after checking automorphisms, ideals/modules, left/right 
+conventions and viable inner products. 
+Required deliverables: Ring specification; notation sheet; lemmas on automorphism; module conventions; validated 
+pairing or proof that the candidate fails. 
+Exit gate: Do not proceed if the Galois automorphism is trivial or the pairing cannot be made valid for the intended 
+construction. 
+Phase 2 — Cyclic-code framework 
+Objective: Define cyclic codes rigorously over the selected structure and derive useful generator or module descriptions. 
+Required deliverables: Definitions; structural propositions; examples; explicit small cases; computational checks. 
+Exit gate: Resolve central variable/polynomial quotient issues and left/right closure. 
+Phase 3 — Galois duality 
+Objective: Define and study the selected Galois dual; prove its basic properties and determine when duals are cyclic. 
+Required deliverables: Duality theorems; proofs; generator/parity-check characterization; counterexamples where 
+expected properties fail. 
+Exit gate: Every theorem must list assumptions and prove both directions when an equivalence is claimed. 
+Phase 4 — Galois hull theory 
+Objective: Characterize C intersect C-perp_s and derive dimension/generator results. 
+Required deliverables: Hull theorems; dimension formulae; special cases; worked examples; independent proof audit. 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+Exit gate: This is a central novelty gate. Compare every result with existing hull papers. 
+Phase 5 — Gray maps 
+Objective: Construct a suitable map to a finite-field alphabet and determine its exact algebraic and metric properties. 
+Required deliverables: Map definition; proof of additivity/linearity as applicable; weight results; dual/hull relationship 
+theorem or explicit non-preservation result. 
+Exit gate: Do not assume Gray maps preserve duals or hulls. 
+Phase 6 — Quantum constructions 
+Objective: Select a valid quantum construction (CSS or another justified route) and prove all inclusion/orthogonality and 
+parameter claims. 
+Required deliverables: Construction theorem(s); full parameter derivations; explicit quantum examples; bound analysis. 
+Exit gate: Do not infer quantum-code existence from hull dimensions alone. 
+Phase 7 — Computation and reproducibility 
+Objective: Implement exact arithmetic and independently verify the algebraic, coding and quantum results. 
+Required deliverables: Magma/Python source; test logs; parameter tables; distance certificates or stated search limits; 
+reproducibility instructions. 
+Exit gate: No fabricated outputs. Label exhaustive, bounded and heuristic calculations distinctly. 
+Phase 8 — Manuscript and submission package 
+Objective: Write the paper using the approved section structure and only validated results. 
+Required deliverables: LaTeX source; bibliography; figures/tables; compiled PDF if compiler is available; reproducibility 
+package; final audit report. 
+Exit gate: No fabricated citations, theorem claims, proofs, numerical results or compilation claims. 
+6. Collaboration protocol: Arena AI × ChatGPT × Researcher 
+Participant Primary responsibility Must not do 
+Arena AI 
+Execute the currently authorized phase; 
+inspect supplied papers/repositories; derive 
+definitions, proofs, examples, code and files; 
+maintain a decision and change log.  
+Must not skip phases, invent 
+references/results, silently change the ring 
+or notation, or declare unverified claims 
+proved. 
+ChatGPT 
+Audit Arena outputs independently; check 
+definitions, assumptions, proof steps, 
+literature overlap, code logic and writing; 
+identify errors; prepare the next phase -
+specific Arena prompt. 
+Must not rubber-stamp Arena output, 
+assume tool output is correct, or silently fi ll 
+missing mathematical arguments.  
+Researcher (Arun) 
+Choose research scope; provide source 
+papers; resolve mathematical choices; 
+approve phase gates; decide final claims and 
+authorship/submission decisions.  
+Must not treat AI-generated novelty or 
+proof claims as verified without review.  
+7. The mandatory hand-off loop 
+15. Researcher gives Arena the master blueprint and the prompt for the current phase only. 
+16. Arena returns its report, source files, proof details, citations, code and unresolved questions. It must list assumptions 
+and any failed attempts. 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+17. Researcher uploads the complete Arena output to ChatGPT and uses the ChatGPT Audit Prompt in Section 8. 
+18. ChatGPT returns: (a) verdict, (b) mathematical errors/gaps, (c) literature/novelty concerns, (d) corrections required, 
+(e) exact next Arena prompt. If the phase is not sound, ChatGPT must not advance the project. 
+19. Researcher sends the audit and approved next prompt to Arena. Arena revises the current phase or begins the next 
+one as authorized. 
+20. Repeat until Phase 8. Researcher makes the final GO decision for manuscript assembly. 
+8. Copy-paste master instructions 
+8A. Master instruction for Arena AI 
+You are the research-development agent for the project described in the uploaded  
+Research Blueprint. Read the entire blueprint before acting. 
+ 
+PROJECT: 
+“Quantum Error-Correcting Codes from Galois Hulls of Cyclic Codes over  
+Noncommutative Matrix Rings.” 
+ 
+WORKING RULES: 
+1. Execute ONLY the phase explicitly assigned in the current prompt.  
+2. Do not write the complete paper prematurely. 
+3. Treat the ring, automorphism, inner product and construction as provisional  
+   until proved mathematically valid. 
+4. Verify primary literature and provide complete bibliographic details,  
+   DOI/URL where available, and the exact result relevan t to this project. 
+5. Never invent citations, theorem statements, proofs, computations or files.  
+6. For every theorem, state all assumptions, give a complete proof, and identify  
+   dependencies on earlier lemmas. 
+7. Explicitly distinguish established facts, your proposed definitions, 
+   conjectures, computational observations and unresolved questions.  
+8. Maintain consistent notation: t = nilpotency exponent; s or ell =  
+   Galois parameter. Do not overload k. 
+9. Explain left/right module conventions, polynom ial variable centrality, 
+   and the exact code/dual definitions. 
+10. A Gray map or Galois hull does not automatically yield a quantum code.  
+    Prove the required field-linearity, orthogonality/containment and parameter  
+    formula before claiming a quantum construction. 
+11. For computation, provide runnable source code, input parameters,  
+    software/version information and honest completeness limits.  
+12. Do not claim a PDF was compiled unless compilation actually succeeded.  
+ 
+PHASE CONTROL: 
+At the end, provide (i) deliverables, (ii) theorem/proof status, (iii) unresolved  
+issues, (iv) files created, (v) risks, (vi) a GO/REVISE/STOP recommendation.  
+Stop and wait for the researcher/ChatGPT audit. Do not begin the next phase  
+unless explicitly instructed.  
+8B. Master audit prompt for ChatGPT 
+I am providing the project blueprint and Arena AI's complete output for  
+the current phase. Act as an independent mathematical referee and research  
+auditor, not as a supportive proofreader. 
+ 
+TASK: 
+1. Read the blueprint and all supplied Arena outputs/files. 
+2. Check every definition, assumption, theorem, proof step, equation,  
+   parameter formula and computational claim.  
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+3. Identify invalid reasoning, hidden assumptions, notation conflicts,  
+   left/right module errors, noncommutative multiplication issues, 
+   invalid inner products, incorrect duality claims and unsupported  
+   Gray-map/quantum-code implications. 
+4. Check the closest literature and distinguish what is already known  
+   from what may be new. Never call a result novel without evidence. 
+5. Re-derive important claims independently where possible. If a proof  
+   is incomplete, say exactly what is missing; do not repair it silently.  
+6. For code, inspect algorithms and test cases. Distinguish exhaustive  
+   verification from sampling or heuristic search. 
+7. Return a structured audit: 
+   A. Overall verdict: ACCEPT / ACCEPT WITH MINOR REVISIONS /  
+      MAJOR REVISION / REJECT / INSUFFICIENT EVIDENCE.  
+   B. Correct results. 
+   C. Critical mathematical errors. 
+   D. Missing lemmas/proofs. 
+   E. Literature and novelty concerns. 
+   F. Required corrections, prioritized. 
+   G. Questions requiring the researcher’s decision.  
+   H. GO / REVISE / STOP phase-gate recommendation. 
+   I. The exact next Arena prompt, but only if progression is j ustified. 
+ 
+Do not advance to the next phase if foundational assumptions or proofs fail.  
+Explain the audit in accessible Hindi/Hinglish, but write replacement  
+mathematics and paper-ready text in formal academic English/LaTeX.  
+8C. Prompt for the researcher to request the next Arena phase 
+Using the approved audit of the previous phase and the master Research  
+Blueprint, execute ONLY Phase [INSERT PHASE NUMBER AND TITLE].  
+First list the accepted assumptions and corrections from the audit.  
+Do not reopen settled choices unless you find a concrete mathematical  
+contradiction. Produce every deliverable and proof required by that phase.  
+At the end, list unresolved issues and stop for independent ChatGPT review.  
+Do not start the following phase.  
+8D. First Arena prompt — Phase 0 only 
+Read the complete Research Blueprint. Execute PHASE 0 ONLY:  
+literature review, novelty assessment and mathematical feasibility.  
+ 
+Search and verify primary sources on: 
+(i) cyclic codes over noncommutative matrix rings;  
+(ii) Galois duals and Galois hulls over finite rings and relevant code families;  
+(iii) quantum codes constructed from matrix-ring codes; and 
+(iv) quantum codes constructed using Galois hulls.  
+ 
+Deliver: 
+1. Verified annotated bibliography with full metadata and DOI/URLs.  
+2. Literature comparison table: ring, code family, duality/hull, construction,  
+   main theorem/result, limitations and relation to this project.  
+3. Identify the closest existing papers and state exactly what they already prove.  
+4. Compare plausible candidate rings M_m(F_q[u]/<u^t>) rather than assuming 
+   one is best. 
+5. Assess whether a nontrivial Galois automorphism and a valid non -degenerate 
+   pairing can exist for each candidate. 
+6. List mathematical obstacles, especially noncommutativity, left/right  
+   modules, polynomial centrality, duality and quantum inclusion conditions.  
+7. Give 2–3 sharply stated candidate research gaps, each with evidence and  
+   a falsifiable novelty test. 
+8. Recommend GO / MODIFY / STOP with reasons.  
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+ 
+Do NOT prove later-phase theorems, construct quantum codes, or write the paper.  
+Do NOT claim novelty based on a title search alone. Stop after Phase 0.  
+9. Required project folder and file discipline 
+Arena should maintain a clear project folder. File names should be stable and versioned; never overwrite the only copy of 
+an approved result. 
+ 00_BLUEPRINT/Research_Blueprint.docx — this controlling document. 
+ 01_LITERATURE/ — verified bibliography, paper notes and comparison matrix. 
+ 02_PHASE_REPORTS/Phase_0/ ... Phase_8/ — one folder per phase. 
+ 03_THEOREMS/ — theorem register, proof dependencies and proof status. 
+ 04_COMPUTATION/ — source code, input data, logs and reproducibility notes. 
+ 05_MANUSCRIPT/ — LaTeX source, bibliography, figures and compiled PDF. 
+ 06_AUDIT/ — ChatGPT audit reports, corrections and researcher decisions. 
+ PROJECT_DECISION_LOG.md — date, phase, decision, rationale and approver. 
+ CHANGELOG.md — every material change in scope, notation, assumptions or results. 
+10. Mandatory theorem and claim register 
+For every proposed result, Arena must create a row with: ID; exact statement; assumptions; proof location; 
+dependencies; status (proved / conditional / conjectural / computational only / false); independent audit status; and 
+manuscript section. 
+ID Claim / theorem Assumptions Proof / file Dependencies Status Audit 
+To be filled To be filled To be filled To be filled To be filled To be filled To be filled 
+To be filled To be filled To be filled To be filled To be filled To be filled To be filled 
+To be filled To be filled To be filled To be filled To be filled To be filled To be filled 
+11. Quality-control checklist before manuscript submission 
+ ☐ Every definition is unambiguous and consistent with the left/right module convention. 
+ ☐ The chosen matrix ring and coefficient ring are fully specified. 
+ ☐ The Galois automorphism is well-defined and nontrivial where claimed. 
+ ☐ The inner product is well-defined and has the claimed algebraic properties. 
+ ☐ Every duality and hull theorem has a complete proof under stated assumptions. 
+ ☐ Every cyclic-code representation is valid for the chosen noncommutative setting. 
+ ☐ Gray-map properties are proved rather than assumed. 
+ ☐ Quantum construction hypotheses, field-linearity and orthogonality/containment are verified. 
+ ☐ Quantum dimension and distance formulas use consistent notation and conventions. 
+ ☐ Minimum-distance computations are exact or their limitations are explicitly stated. 
+ ☐ All references are real, relevant and bibliographically verified. 
+ ☐ Novelty is supported by comparison with the closest existing results. 
+ ☐ All tables and examples can be reproduced from supplied data/code. 
+ ☐ The final PDF is genuinely compiled and checked if a PDF is supplied. 
+RESEARCH BLUEPRINT  |  ARENA AI × CHATGPT COLLABORATIVE WORKFLOW  
+Working blueprint — provisional until mathematical feasibility and novelty are verified  
+12. Important mathematical safeguards 
+ A matrix ring M_m(A_t) is generally noncommutative for m greater than 1. Do not import commutative-ring cyclic-
+code results without proving they apply. 
+ An entrywise field automorphism on matrices must be checked against multiplication; an arbitrary matrix operation is 
+not automatically a ring automorphism. 
+ Do not confuse an additive subgroup, a left module, a right module, a two-sided ideal and a field-linear code. 
+ Do not assume a standard dot product is suitable for matrix-valued coordinates. Specify a scalar-valued form or an 
+appropriate module-valued orthogonality theory. 
+ A Galois hull is an intersection C ∩ C-perp_s; its dimension and usefulness depend on the exact ambient module and 
+pairing. 
+ A Gray map may preserve some properties but not all. State and prove the exact result. 
+ CSS construction requires appropriate classical linear codes and orthogonality/containment. A hull formula alone is 
+insufficient. 
+ Check the Quantum Singleton bound 2d ≤ n − K + 2 only after the quantum parameters and distance are correctly 
+established. The defect is δ = n + 2 − K − 2d. 
+ Do not present computational examples as general theorems. State the tested parameter range and whether 
+enumeration was exhaustive. 
+13. Final intended outcome 
+The desired outcome is not simply a long manuscript. It is a defensible mathematical paper containing (i) a genuinely new 
+and correctly defined algebraic framework, (ii) complete structural theorems on Galois duals/hulls, (iii) a valid route to 
+quantum code construction, (iv) reproducible examples and parameter improvements, and (v) a literature-supported 
+novelty claim. 
+The project may need to change its title, ring, code family or quantum construction after Phase 0/1. Such a change is a 
+sign of rigorous research, not failure. The quality of the final paper takes priority over preserving the initial title. 
+14. Quick operating instruction 
+ONE PHASE AT A TIME: 
+Blueprint → Arena executes one phase → Researcher sends outputs to ChatGPT → ChatGPT audits and 
+writes the next Arena prompt → Researcher approves → Arena continues. 
+ 
+Arena develops. ChatGPT challenges and verifies. Researcher decides. 
+ 

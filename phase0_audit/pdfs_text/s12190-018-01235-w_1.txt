@@ -1,0 +1,306 @@
+Journal of Applied Mathematics and Computing (2019) 60:749–756
+https://doi.org/10.1007/s12190-018-01235-w
+ORIGINAL RESEARCH
+Cyclic codes over M4(F2)
+Joydeb Pal 1 · Sanjit Bhowmick 1 · Satya Bagchi 1
+Received: 6 October 2018 / Published online: 3 January 2019
+© Korean Society for Computational and Applied Mathematics 2019
+Abstract
+In this article, keeping the huge research prospective of the study in mind, we consider
+the non-commutative ring M4(F2),t h es e to fa l l4× 4 matrices over the ﬁeld F2 and
+conﬁrm that this ring is isomorphic with the ring F16 + uF16 + u2F16 + u3F16, where
+u4 = 0. Besides, we develop the structure of cyclic codes and their generators over
+the ring. Also, making use of Gray map from M4(F2) to F4 16, we infer that the image
+of a cyclic code is a linear code. Finally, our ﬁndings are authenticated by suitable
+non-trivial examples.
+Keywords Matrix ring · Modules · Cyclic codes · Quaternary codes
+Mathematics Subject Classiﬁcation 94B05 · 94B15
+1 Introduction
+Cyclic codes over ﬁnite rings have been extensively studied due to their vast signif-
+icance in the theory of error correcting codes. Besides, codes over ﬁnite rings have
+experienced a remarkable growth after the development of linear codes over the ring
+of integers modulo 4 obtained in [7]. In that article, the authors gave a new wing to the
+topic by employing Gray map from Z4 to F2 2 which relates some illustrious non-linear
+codes to some linear codes. Since then, codes have been thoroughly studied over ﬁnite
+commutative rings by several mathematicians and consequently plenty of interesting
+results on codes over ﬁnite commutative rings are there in the literature, among those
+some of are related to chain [ 1,4,6,10] and some others are non-chain [ 13,14]. A very
+B Joydeb Pal
+joydebpal77@gmail.com
+Sanjit Bhowmick
+sanjitbhowmick392@gmail.com
+Satya Bagchi
+satya.bagchi@maths.nitdgp.ac.in
+1 Department of Mathematics, National Institute of Technology Durgapur, Burdwan, India
+123
+
+750 J. Pal et al.
+few authors work on non-commutative rings to explore a new direction in coding the-
+ory. However, structure of cyclic codes and their duals over non-commutative ﬁnite
+rings are new in coding theory [ 2,3,5,8,9,11].
+In 2013, Alahmadi et al. [ 2] characterized cyclic codes and their duals over the
+matrix ring, namely M2(F2). The Bachoc maps from the ring to F2 4, two copies of
+Galois ﬁeld F4 gives formally self-dual F4-codes. On the other hand, in their research
+article, Luo and Udaya [ 8] derived the structure of cyclic codes over the matrix ring
+M2(F2 + uF2) and established an isometric map from M2(F2 + uF2) to F4 + uF4 +
+vF4 + uvF4 to show some optimal cyclic codes of even length over F4. Recently,
+Bhowmick et al. [ 5] proposed a matrix ring over the ring of characteristic 4, namely
+M2(Z4). The authors further achieved that M2(Z4) ∼= Z4[ω]+ U Z4[ω], where ω is
+a root of the polynomial x2 + x + 1, and U ≡
+[11
+11
+]
+∈ M2(Z4). Finally, the structure
+of cyclic codes and their self-duals have also been investigated over this ring.
+In this manuscript, we consider the non-commutative ring M4(F2),t h es e to fa l l
+4 × 4 matrices over the ﬁeld F2 in [9] and concentrate only on the structure of cyclic
+codes over such ring. It has been shown that M4(F2) ∼= F16 + eF16 + e2F16 + e3F16,
+where F16 is a ﬁeld isomorphic to F2[ω], ω is a root of the equation x4 + x + 1 = 0
+and e is an indeterminate with(1+ e)4 = 0. Moreover, an isometic map fromM4(F2)
+to F4 16 is deﬁned which preserves minimum weight.
+To keep the article self-contained, we put down a brief description of the ring
+M4(F2) in Sect. 2. Further, Sect. 3 deals with the structure of cyclic codes over the
+ring described above and also offers a Gray map to demonstrate a correspondence
+between M4(F2) and F4 16.
+2 Preliminaries
+Throughout this article, we denote the ring alphabet M4(F2) by A. To begin with,
+we consider the ring F16 + eF16 + e2F16 + e3F16, where e is an indeterminate and
+F16 is isomorphic to F2[ω], where w satisﬁes the biquadratic irreducible polynomial
+x4 + x + 1 over F2.A si n[ 9], if we consider
+e =
+⎡
+⎢⎢⎣
+1000
+0010
+1100
+0011
+⎤
+⎥⎥⎦ and ω =
+⎡
+⎢⎢⎣
+0100
+0010
+0001
+1100
+⎤
+⎥⎥⎦,
+the ring A is isomorphic to the non-commutative ring F16 + eF16 + e2F16 + e3F16,
+where the indeterminate e satisﬁes the relation (1 + e)4 = 0. Moreover, the ring
+F16 + eF16 + e2F16 + e3F16 can be alternatively represented as F16 + uF16 + u2F16 +
+u3F16 with u4 = (1 + e)4 = 0, i.e., u is a nilpotent element of nilpotency 4. To be
+a ring, we deﬁne the addition on the ring as usual component-wise addition and the
+multiplication operation on F16 + uF16 + u2F16 + u3F16 is given in Table 1.
+Thus we can conclude that A ∼= F16 + uF16 + u2F16 + u3F16.
+123
+
+Cyclic codes over M4(F2) 751
+Table 1 Multiplication table · 1 uu 2 u3
+11 uu 2 u3
+uuu 2 u3 0
+u2 u2 u3 00
+u3 u3 000
+A linear code C of length n over the ring A is a right A-submodule of An . A code
+C is called cyclic if for every codeword x = (x0, x1,..., xn−1) ∈ C, its cyclic shift
+(xn−1, x0, x1,..., xn−2) is also in C.
+Let Rn = A[x] ⟨xn−1⟩ . Then any right A[x]-submodule of Rn represents a cyclic code
+of length n.
+Let us consider a mapping,
+μ : A[x]→ F16[x] such that
+n−1∑
+i=0
+ai xi ↦→
+n−1∑
+i=0
+¯μ(ai)xi,
+where ¯μ(ai) is denoted by reduction to modulo u of ai .
+A polynomial is called basic irreducible overA if it is irreducible overF16. Consider
+xn − 1 = ∏m r=1 fr , where fr ’s are irreducible polynomials over F16 and n is always odd. Then the above polynomial can be uniquely factorized into pairwise coprime
+polynomials over F16.
+3 Main results
+Theorem 1 Let n be an odd positive integer and x n − 1 = ∏m r=1 fr , where f r ’s are basic irreducible polynomials in A[x]. Then
+Rn = A[x] ⟨xn − 1⟩ = m⨁ r=1 A[x] ⟨ fr ⟩ .
+Proof Proof of the theorem is an immediate consequence of [ 9] and [12]. ⊓⊔
+This theorem is entitled as non-commutative analogue of Chinese Remainder Theo-
+rem. Since, ⟨ fr ⟩ is not a two sided ideal, we call A[x] ⟨ fr ⟩ as a right A-module.
+Theorem 2 Let f be a basic irreducible polynomial in A[x]. Then the right A-
+submodules of R f = A[x] ⟨ f ⟩ are ⟨0⟩, ⟨1⟩, ⟨u⟩, ⟨u2⟩, and ⟨u3⟩.
+Proof Let I be a non-zero right A-submodule of R f and g(x) be a non-zero element
+in I . Consider g(x) = g1(x) + ug2(x) + u2 g3(x) + u3g4(x), where gi(x) ∈ F16[x],
+123
+
+752 J. Pal et al.
+for i = 1, 2, 3, 4. Since, according to our assumption f (x) is irreducible over F16,
+we have gcd ( f (x), g1(x)) = 1o r f (x). If gcd ( f (x), g1(x)) = 1, then there exists
+h1(x) ∈ F16[x] such that g1(x)h1(x) = 1m o d f (x), i.e., g1(x) is a unit in I . So, I =
+⟨1+⟨ f (x)⟩⟩. If gcd( f (x), g1(x)) = f (x), then g(x)+⟨ f (x)⟩= ug2(x)+ u2 g3(x)+
+u3g4(x)+⟨ f (x)⟩, which implies I =⟨ u+⟨ f (x)⟩⟩. If gcd( f (x), g2(x)) = f (x), then
+g(x) +⟨ f (x)⟩= u2g3(x) + u3g4(x) +⟨ f (x)⟩, which shows that I =⟨ u2 +⟨ f (x)⟩⟩.
+If gcd( f (x), g2(x)) = 1, then g(x) ∈⟨ u +⟨ f (x)⟩⟩.N o w ,g c d( f (x), g3(x)) = f (x)
+implies g(x) +⟨ f (x)⟩= u3g4(x) +⟨ f (x)⟩ which shows that g(x) ∈⟨ u3 +⟨ f (x)⟩⟩.
+Again if gcd( f (x), g3(x)) = 1, then g(x) ∈⟨ u2 +⟨ f (x)⟩⟩.
+Therefore, combining all cases, we see that ⟨0⟩, ⟨1⟩, ⟨u⟩, ⟨u2⟩, and ⟨u3⟩ are only
+the right A-submodules of R f = A[x] ⟨ f ⟩ . ⊓⊔
+The above theorem shows that right A-submodules of R f = A[x] ⟨ f ⟩ form a chain.
+Theorem 3 Let x n − 1 = ∏m r=1 fr , where f r ’s are monic basic irreducible pairwise
+coprime polynomials in A[x]. Let ˆfi = xn−1 fi . Then any right A-module in A[x] ⟨xn−1⟩
+is the sum of the ideals ⟨ ˆfi +⟨ xn − 1⟩⟩, ⟨u ˆfi +⟨ xn − 1⟩⟩, ⟨u2 ˆfi +⟨ xn − 1⟩⟩, and
+⟨u3 ˆfi +⟨ xn − 1⟩⟩.
+Proof Follows easily by using Theorem 1 and modules of A[x] ⟨ fi ⟩ . ⊓⊔
+Theorem 4 Let C be a cyclic code of length n over A. Then there exists a fam-
+ily of pairwise monic coprime polynomials F 0,F 1,F 2,F 3,F 4 in F16[x] such that
+F0 F1 F2 F3 F4 = xn − 1 and C =⟨ ˆF1⟩⊕⟨ u ˆF2⟩⊕⟨ u2 ˆF3⟩⊕⟨ u3 ˆF4⟩. Moreover ,
+|C|= 16
+∑3
+i=0(4−i) deg(Fi+1).
+Proof Since C be a cyclic code of lengthn over A, it can be written as a direct sum of ide-
+als ⟨u j ˆfi +⟨ xn − 1⟩⟩ by Theorem 3, where 0 ≤ j ≤ 4 and 1 ≤ i ≤ m. Without loss of
+generality, let C =⟨ ˆfm1+1⟩⊕··· ⊕ ⟨ ˆfm1+m2 ⟩⊕⟨ u ˆfm1+m2+1⟩⊕···⊕⟨ u ˆfm1+m2+m3 ⟩
+⊕⟨u2 ˆfm1+m2+m3+1⟩ ⊕ ··· ⊕ ⟨ u2 ˆfm1+m2+m3+m4 ⟩⊕⟨ u3 ˆfm1+m2+m3+m4+1⟩ ⊕···
+⊕⟨u3 ˆfm1+m2+m3+m4+m5 ⟩, where, m1, m2,..., m5 ≥ 0 and m1 +m2 +m3 +m4 +1 ≤
+m. Consider m0 = 0 and m1 + m2 + m3 + m4 + m5 = m.
+Now we deﬁne Fi = fm0+···+mi +1 ··· fm0+···+mi+1 , i = 0, 1,..., 4. These con-
+structed Fi ’s are pairwise coprime and xn − 1 = F0 F1 F2 F3 F4. So, C =⟨ ˆF1⟩⊕
+⟨u ˆF2⟩⊕⟨ u2 ˆF3⟩⊕⟨ u3 ˆF4⟩.
+To ﬁnd the cardinality of C, we see that C =⟨ ˆF1⟩⊕⟨ u ˆF2⟩⊕⟨ u2 ˆF3⟩⊕
+⟨u3 ˆF4⟩. So, |C|=| ⟨ ˆF1⟩||⟨u ˆF2⟩||⟨u2 ˆF3⟩|⟨u3 ˆF4⟩|. One can easily verify that
+|⟨ui Fi+1⟩| = 16(4−i) deg(Fi+1),f o r i = 0, 1, 2, 3. Which sufﬁces to show that
+|C|= 16
+∑3
+i=0(4−i) deg(Fi+1). ⊓⊔
+Theorem 5 Let C be a cyclic code of length n over A. Then there exist polynomials
+h0(x), h1(x), h2(x), h3(x) in F16[x] such that C =⟨ h0(x)⟩⊕⟨ uh 1(x)⟩⊕⟨ u2h2(x)⟩⊕
+⟨u3h3(x)⟩ and h 3(x)|h2(x)|h1(x)|h0(x)|xn − 1 in F16[x].
+Proof By applying the previous theorem, we attain a family of monic pairwise coprime
+polynomials F0, F1, F2, F3, F4 in F16[x] such that F0 F1 F2 F3 F4 = xn − 1 and
+C =⟨ ˆF1, u ˆF2, u2 ˆF3, u3 ˆF4⟩. Now we deﬁne a new family of polynomials as
+123
+
+Cyclic codes over M4(F2) 753
+hi(x) =
+{ F0 Fi+2 ... F4, 0 ≤ i ≤ 2,
+F0, i = 3.
+It is clear that h3(x)|h2(x)|h1(x)|h0(x)|xn − 1i n F16[x]. Now see that ui ˆFi+1 =
+ui F0 ... Fi Fi+2 ... F4 = ui hi F1 ... Fi ,f o r0 ≤ i ≤ 3. So, C ⊂⟨ h0(x)⟩⊕⟨ uh 1(x)⟩⊕
+⟨u2h2(x)⟩⊕⟨ u3h3(x)⟩.
+Conversely, we have to show that⟨h0(x)⟩⊕⟨ uh 1(x)⟩⊕⟨ u2h2(x)⟩⊕⟨ u3h3(x)⟩⊂ C.
+We see that h0(x) ∈ C. Since, F1 and F2 are coprime in F16[x], there exist a(x) and
+b(x) in F16[x] such that a(x)F1 + b(x)F2 = 1.
+So,
+uh 1(x) = uF0 F3 F4
+= u(a(x)F1 + b(x)F2)F0 F3 F4
+= ua(x)F0 F1 F3 F4 + ub(x)F0 F2 F3 F4
+= ua(x) ˆF2 + ub(x)h0(x) ∈ C.
+Similarly, we can show that ui hi(x) ∈ C for i = 2 and 3. Thus, we have ⟨h0(x)⟩⊕
+⟨uh 1(x)⟩⊕⟨ u2h2(x)⟩⊕⟨ u3h3(x)⟩⊂ C.
+Hence the theorem is proved. ⊓⊔
+Theorem 6 Let C be a cyclic code of length n over A. Then C is generated by F, where
+F = ˆF1 + u ˆF2 + u2 ˆF3 + u3 ˆF4.
+Proof From Theorem 4, we have a family of pairwise monic coprime polynomials F0,
+F1, F2, F3, F4 in F16[x] such that F0 F1 F2 F3 F4 = xn − 1 and C =⟨ ˆF1⟩⊕⟨ u ˆF2⟩⊕
+⟨u2 ˆF3⟩⊕⟨ u3 ˆF4⟩.
+Now, for i, j ∈{ 0, 1, 2, 3, 4} and i ⁄= j,
+ˆFi ˆFj ≡ 0m o d xn − 1.
+It is clear that Fi and ˆFi are coprime for each i = 1, 2, 3, 4i n F16[x]. Thus, there exist
+gi(x) and hi(x) in F16[x] such that for i ∈{ 1, 2, 3, 4},
+gi(x)Fi + hi(x) ˆFi = 1( 1 )
+⇒
+k∏
+i=1
+(gi(x)Fi + hi(x) ˆFi) = 1, where k ∈{ 1, 2, 3, 4} (2)
+⇒ ak0 F1 F2 ... Fk + ak1 ˆF1 F2 ... Fk + ak2 F1 ˆF2 ··· Fk +···+ akk F1 F2 ··· ˆFk = 1.
+(3)
+Putting k = 3i nE q .( 3) and multiplying it by u3 ˆF4, we get,
+u3 ˆF4a30 F1 F2 F3 = u3 ˆF4
+⇒ u3a30 F1 F2 F3 ˆF4 = u3 ˆF4.
+123
+
+754 J. Pal et al.
+Now according to our assumption,
+F = ˆF1 + u ˆF2 + u2 ˆF3 + u3 ˆF4
+⇒ FF 1 F2 F3 = u3 ˆF4 F1 F2 F3
+⇒ FF 1 F2 F3a30 = u3 ˆF4 F1 F2 F3a30 = u3a30 ˆF4 F1 F2 F3 = u3 ˆF4
+⇒ u3 ˆF4 ∈⟨ F⟩.
+Similarly, we can show that u2 ˆF3, u ˆF2, ˆF1 ∈⟨ F⟩. Hence C =⟨ F⟩. ⊓⊔
+3.1 Gray map
+In [4], for the case of the ring F2 + uF2, the isometry map from a + ub to (b, a + b)
+helps us to extend the Gray map Φ from A to F4 16 such that,
+Φ(a + ub + u2c + u3d) ↦→ (d, c + d, b + c + d, a + b + c + d)
+preserves Lee weight and Hamming weight.
+Thus for any element x = a + ub + u2b+ u3b in A, extended Lee weight is deﬁned
+as
+wL(x) = wH (d) + wH (c + d) + wH (b + c + d) + wH (a + b + c + d),
+where wL(·) and wH (·) stand for Lee weight and Hamming weight respectively. If
+¯x = (x0, x1, x2,... xn−1) ∈ An , then Lee weight of ¯x is deﬁned as,
+wL(¯x) = wL(x0) + wL(x1) + wL(x2) +···+ wL(xn−1).
+Now if C is a linear code over A, then the Lee distance of the code is deﬁned by
+dL = min{wL(¯x)|¯x ∈ C}.
+Theorem 7 Let n be odd and C be a linear code over A of length n with size M and
+minimum Lee distance d. Then Φ(C) is a code of length 4n with size M and minimum
+Hamming distance d.
+Now, we show some cyclic codes of length 3 and 7 and their Gray maps described
+in the following examples. We have found that the image of a cyclic code over A is a
+linear code over F16.
+Example 1 Consider the factorization x3 − 1 = (x + 1)(x +w2 +w)(x +w2 +w+ 1)
+over F16.L e t f1 = x + 1, f2 = x + w2 + w and f3 = x + w2 + w + 1. Images of
+some cyclic codes of length 3 over A under the Gray map are given below.
+123
+
+Cyclic codes over M4(F2) 755
+Generators of cyclic codes Images under Φ
+⟨ f1, uf 2⟩ [12, 11, 2]
+⟨u3 f2, f2 f3⟩[ 12, 6, 3]
+⟨ f1, uf 1, u2 f2 f3⟩[ 12, 10, 2]
+⟨uf 2, u2 f2, u3 f3⟩[ 12, 8, 2]
+Example 2 Consider the factorization x7 − 1 = (x + 1)(x3 + x + 1)(x3 + x2 + 1)
+over F16.L e t f1 = x + 1, f2 = x3 + x + 1 and f3 = x3 + x2 + 1. Images of some
+cyclic codes of length 7 over A under the Gray map are given below.
+Generators of cyclic codes Images under Φ
+⟨uf 2, u2 f2 f3⟩[ 28, 14, 3]
+⟨u2 f1, uf 2, u3 f2 f3⟩[ 28, 25, 2]
+⟨u3 f2, u2 f3, f2 f3⟩[ 28, 16, 3]
+4 Conclusion
+In this paper, we have furnished cyclic codes over a non-commutative matrix ring
+and exhibited that the right- A modules form a chain. Thus, the structure of the cyclic
+codes over A follows from the structure of the cyclic codes over the ﬁnite chain rings.
+Moreover, we have deﬁned a Gray map which outlines a correspondence between
+M4(F2) to the ﬁeld of order 16. However, a purposeful research venture can be carried
+forward on the self-dual codes over M4(F2). Further, the structure of the cyclic codes
+over M3(F2) due to [ 9] are yet to be dealt with and can be thought of a challenging
+open problem.
+Acknowledgements The authors are thankful to the editor and the anonymous referees for their valu-
+able comments and suggestions. The ﬁrst named author Joydeb Pal would like to convey cordial thanks
+to DST-INSPIRE, and the second named author Sanjit Bhowmick is thankful to MHRD for ﬁnancial
+supports to pursue their research works. This work was also supported by DST-SERB, India (Grant No.
+EEQ/2016/000140).
+References
+1. Abualrub, T., Siap, I.: Cyclic codes over the rings Z2 + uZ2 and Z2 + uZ2 + u2Z2. Des. Codes
+Cryptogr. 42(3), 273–287 (2007)
+2. Alahmadi, A., Sboui, H., Solé, P ., Y emen, O.: Cyclic codes over M2(F2). J. Frankl. Inst. 350(9),
+2837–2847 (2013)
+3. Bachoc, C.: Applications of coding theory to the construction of modular lattices. J. Comb. Theory A
+78(1), 92–119 (1997)
+4. Bonnecaze, A., Udaya, P .: Cyclic codes and self-dual codes over F2 + uF2. IEEE Trans. Inf. Theory
+45(4), 1250–1255 (1999)
+5. Bhowmick, S., Bagchi, S., Bandi, R.K.: Self-dual cyclic codes over M2(Z4), arXiv:1807.04913 (2018)
+123
+
+756 J. Pal et al.
+6. Dinh, H.Q., López-Permouth, S.R.: Cyclic and negacyclic codes over ﬁnite chain rings. IEEE Trans.
+Inf. Theory 50(8), 1728–1744 (2004)
+7. Hammons, A.R., Kumar, P .V ., Calderbank, A.R., Sloane, N.J.A., Solé, P .: TheZ4-linearity of Kerdock,
+preparata, goethals and related codes. IEEE Trans. Inf. Theory 40(2), 301–319 (1994)
+8. Luo, R., Udaya, P .: Cyclic codes over M2(F2 + uF2). Cryptogr. Commun. 10(6), 1109–1117 (2018)
+9. Oggier, F., Solé, P ., Belﬁore, J.C.: Codes over matrix rings for space-time coded modulations. IEEE
+Trans. Inf. Theory 58(2), 734–746 (2012)
+10. Pless, V ., Qian, Z.: Cyclic codes and quadratic residue codes over Z4. IEEE Trans. Inf. Theory 42(5),
+1594–1600 (1996)
+11. Sobhani, R.: Cyclic codes over a non-commutative ﬁnite chain ring. Cryptogr. Commun. 10(3), 519–
+530 (2018)
+12. Wisbauer, R.: Foundations of Module and Ring Theory. Gordon and Breach, NY (1991)
+13. Yildiz, B., Karadeniz, S.: Linear codes over F2 + uF2 + vF2 + uvF2. Des. Codes Cryptogr. 54(1),
+61–81 (2010)
+14. Zhu, S., Wang, Y ., Shi, M.: Some results on cyclic codes over F2 + vF2. IEEE Trans. Inf. Theory
+56(4), 1680–1684 (2010)
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional afﬁliations.
+123

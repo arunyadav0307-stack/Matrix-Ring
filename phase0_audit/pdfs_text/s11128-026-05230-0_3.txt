@@ -1,0 +1,1669 @@
+Quantum Information Processing (2026) 25:207
+https://doi.org/10.1007/s11128-026-05230-0
+Quantum codes construction from cyclic codes over matrix
+rings
+Soham Ravikant Joshi 1 · Shikha Patel 2 · Om Prakash 1
+Received: 31 December 2025 / Accepted: 22 May 2026 / Published online: 9 June 2026
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature
+2026
+Abstract
+Let Fp be the ﬁnite ﬁeld with p elements where p is a prime, and R b ea3 ×3 matrices
+over Fp[u]/⟨uk⟩, i.e., R = M3(Fp + uFp +···+ uk−1Fp) with uk = 0. First, we
+study the structure of cyclic codes over R as the direct sum of submodules of R, along
+with the Euclidean and Hermitian dual for the ringS = M3(F3 +uF3 +···+ uk−1F3).
+Later, to show that the structure is suitable for the construction of good linear codes,
+we provide many AMDS (almost maximum-distance-separable) and best-known lin-
+ear codes over F125, F27, and F8. Further, we study dual-containing codes over S
+using a new non-degenerate inner product and provide a new approach to constructing
+quantum codes over matrix rings via the CSS (Calderbank-Shor-Steane) construction.
+Finally, we construct several quantum codes with small quantum Singleton defects
+using a suitable Gray map.
+Keywords Modules · Matrix rings · Cyclic codes · Gray map · CSS construction ·
+Quantum codes
+Mathematics Subject Classiﬁcation 12E20 · 94B05 · 94B15 · 81P45 · 81P70
+1 Introduction
+Cyclic codes are a special class of linear codes used for error detection and correc-
+tion. They rely on polynomial representations over ﬁnite ﬁelds and rings, enabling
+B Om Prakash
+om@iitp.ac.in
+Soham Ravikant Joshi
+soham_2421ma14@iitp.ac.in
+Shikha Patel
+shikha_1821ma05@iitp.ac.in
+1 Department of Mathematics, Indian Institute of Technology Patna, Bihta, Patna 801 106, India
+2 Department of Mathematics, Indian Institute of Information Technology Bhopal, Bhopal 462003,
+India
+123
+
+207 Page 2 of 30 S.R. Joshi et al.
+efﬁcient shift-register implementation and effective burst-error detection. Because of
+these advantages, cyclic codes have been widely studied in coding theory. Since 1994,
+codes over ﬁnite rings, including cyclic codes, have attracted considerable attention
+from researchers [ 4, 13, 14] and led to the construction of improved linear codes.
+Further, cyclic codes have been extensively investigated over both ﬁnite commutative
+and noncommutative rings. For instance, cyclic codes over ﬁnite commutative rings
+have been studied in [ 15, 27] to obtain distinct classes of codes. Meantime, several
+works have also explored these codes over matrix rings, see [ 17, 24, 26]. In fact,
+like skew polynomial rings, matrix rings also generate new and good linear codes.
+Towards this, Alahmadi et al. [2] obtained various self-dual F4-codes and cyclic codes
+over M2(F2) under Euclidean inner product. Later, the algebraic properties of cyclic
+codes over a more extended ring M2(Fp) where p ≡ 2o r3 (mod 5), were stud-
+ied by Falcunit & Sison [ 9] in 2014. Additionally, in 2018, cyclic codes over the
+matrix ring M2(F2[u]/⟨u2⟩) were studied by Luo & Udaya [ 21], in which an isome-
+try between M2(F2 + uF2) and F4[u,v ]/⟨u2,v 2, uv − vu⟩ has been used to obtain
+various quaternary optimal codes. In 2024, Islam et al. [ 17] studied the cyclic codes
+over M3(Fp), where they found many good cyclic codes over F8. In 2022, Patel et
+al. [ 26] studied cyclic codes over M4(F2 + uF2) and recently in 2025, Joshi et al.
+[19] extended this work to the construction of new codes over F16 from cyclic codes
+over M4(F2 + uF2 + u2F2), whereas Patel et al. [ 25] extended the work of [ 17]t o
+the construction of codes over Fp3 from cyclic codes over M3(Fp + uFp + u2Fp).
+Motivated by these works, we extend the work of [ 17] to the more general structure
+M3(Fp + uFp +···+ uk−1Fp) to see whether the structure is suitable for the con-
+struction of linear codes over F125 and F27, along with F8 for more generalized length
+3kn . These studies not only deepen the understanding of cyclic codes over the matrix
+rings but also indicate potential applications beyond classical coding theory, including
+quantum error correction, where dual-containing cyclic codes play an important role.
+In classical information theory, error correction occurs in bits, whereas in quan-
+tum information theory, error correction occurs in quantum states (qubits). Both are
+concerned with the fundamental problem of reliable transmission of information over
+a noisy channel. However, quantum error-correcting codes (QECCs) protect quan-
+tum information from errors caused by decoherence and other types of quantum
+noise. Shor [31] in 1995, and Steane [32] in 1996 independently constructed quantum
+error-correcting codes from classical ones. In 1998, Calderbank et al. [ 6] proposed a
+systematic method to obtain quantum codes from classical ones, popularly known as
+the CSS (Calderbank-Shor-Steane) construction. In recent years, the construction of
+quantum codes via the CSS method has continued to beneﬁt from advances in dual-
+containing classical codes. In particular, researchers have used cyclic, quasi-cyclic,
+skew-cyclic, and constacyclic codes and their dual-containing properties to construct
+quantum codes with improved or competitive parameters via the CSS construction.
+In 2009, Qian et al. [30] provided a construction for quantum error-correcting codes
+from cyclic codes over the ﬁnite ring R = F2 + uF2 and obtained inﬁnite families
+of quantum error-correcting codes. In 2011, Kai and Zhu [ 20] studied quantum codes
+from cyclic codes over R = F4 + uF4, where u2 = 0. Dertli et al. [ 8] in 2015 studied
+the quantum codes obtained from cyclic codes overA2 = F2+uF2+vF2+uvF2, u2 =
+u,v 2 = v, uv = vu. Later, in 2020, Islam et al. [ 18] studied the quantum codes from
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 3 of 30 207
+constacyclic and additive constacyclic codes, and in 2021, Alahmadi et al. [ 1] studied
+the constacyclic codes over a non-chain ring Rm = Fp + uFp +···+ um−1Fp.I n
+2022, Islam et al. [16] studied a family of constacyclic codes over a class of non-chain
+rings Aq,r and and new quantum codes, whereas in 2023, Zau et al. [ 28] derived
+new quantum codes from images of cyclic codes. Recently, Prakash et al. [29] in 2023
+studied quantum and LCD codes from skew constacyclic codes over a ﬁnite non-chain
+ring, whereas in 2025, Prakash et al. [ 34] studied quantum codes from skew cyclic
+codes over mixed alphabets. Following a similar framework, our two main objectives
+for this work are as follows.
+(1) In [ 17], authors have studied the cyclic codes over M3(Fp) and found many good
+linear codes over F8 with length 3 n such that p ∤ n. In this paper, we extend this
+work to the study of cyclic codes over R = M3(Fp + uFp +···+ uk−1Fp) to
+get linear codes over more generalized length, which is 3 kn where p ∤ n and also
+study whether this structure is capable of producing good linear codes over F125
+for p = 5, F27 for p = 3, along with F8 for p = 2.
+(2) We propose a novel approach for constructing quantum codes using the CSS con-
+struction, leveraging cyclic codes over non-chain, noncommutative matrix rings.
+To the best of our knowledge, this is the ﬁrst study in the literature that explores
+quantum code construction from such matrix rings. Speciﬁcally, we investigate
+dual-containing codes over the ring S = M3(F3 + uF3 +···+ uk−1F3), and
+utilize a suitable Gray map to obtain dual-containing linear codes over F27. These
+linear codes are then employed in the CSS framework to construct quantum codes
+with desirable parameters.
+Moreover, an advantage of having length 3kn over 3n is that it is not possible to get
+cyclic codes of some lengths using the ring M3(Fp). For example, p = 3, cyclic codes
+of length 18 over F27 cannot be found by [ 17], as 3 n = 18 implies n = 6, which is
+not possible. However, we can obtain cyclic codes of length 18 by setting 3 kn where
+n = 2 and k = 3. Concrete examples of these cyclic codes of length 18 over F27 are
+given in Sect. 5.2.
+The rest of the paper is organized as follows: Sect. 2 provides the construction of
+R = M3(Fp +uFp +···+ uk−1Fp) and deﬁnes the Gray map for the correspondence
+between Fp3 and R. Section 3 studies the cyclic code over R as the direct sum of
+submodules of R, while Sect. 4 discusses the Euclidean and Hermitian duals of the
+ring S = M3(F3 + uF3 +···+···+ uk−1F3). Section 5 includes some examples of
+non-trivial linear codes over F125, F27, and F8, whereas Sect. 6 studies the quantum
+codes via the CSS construction, including the CSS code framework and deﬁnes a
+new associated Gray map. Section 7 provides many new quantum codes with better
+parameters, while Sect. 8 concludes the paper.
+2 Construction of R = M3(Fp + uFp +···+ uk−1Fp)
+For a prime p ≤ 100, let Fp be the ﬁnite ﬁeld of p elements, and f (x) ∈ Fp[x],a n
+irreducible polynomial of degree 3. For instance, f (x) = x3 − x − 1 is irreducible
+in Fp[x] for p ∈{ 2, 3, 13, 29, 31, 41, 47, 71, 73} as it has no roots in Fp. Similarly,
+123
+
+207 Page 4 of 30 S.R. Joshi et al.
+g(x) = x3 + x + 1 is irreducible in Fp[x] for p ∈{ 2, 5, 7, 19, 41, 59, 71, 97} and
+h(x) = x3 + 3x + 2 is irreducible in Fp[x] for p ∈{ 5, 7, 11, 31, 53, 73, 83, 97}.W e
+can choose any of f (x), g(x),o r h(x) depending on appropriate primes to construct
+Fp3 = Fp[ω] which is a Galois ﬁeld where f (ω) = 0o r g(ω) = 0o r h(ω) = 0.
+The Galois group G = Gal(Fp3 /Fp) is cyclic generated by Frobenius automorphism
+σ : Fp3 −→Fp3 deﬁned byσ( a) = a p. Using the construction given in the [17, 24]w e
+have a cyclic algebra A = (Fp3 /Fp,σ, 1) = Fp3 + eFp3 + e2Fp3 where ae = eσ( a),
+and e3 = 1 for all a ∈ Fp3 . Here, A is a central simple algebra with dim (A) =
+9 and therefore, A ∼= M3(Fp). It is easy to check that R = M3(Fp[u]/⟨uk⟩) ∼=
+M3(Fp)[u]/⟨uk⟩. Hence,
+R = (Fp3 + eFp3 + e2Fp3 ) + u(Fp3 + eFp3 + e2Fp3 )
++u2(Fp3 + eFp3 + e2Fp3 ) +···+ uk−1(Fp3 + eFp3 + e2Fp3 ),
+where e3 = 1, uk = 0, ui e j = e j ui for i ={ 1,..., k − 1}, and j ={ 1, 2, 3}. (1)
+2.1 Gray map for linear codes
+In the case of ring F2 + uF2, we recall from [4] that Lee weight is deﬁned by ωL(0) =
+0,ω L(1) = ωL(1 + u) = 1,ω L(u) = 2, and the Gray map from (F2 + uF2)n to F2n 2
+sends (a + ub) to (b, a + b) for a, b ∈ Fn 2 . Now, we will extend this Gray map θ from
+R to F3k p3 by
+θ
+[
+(d1 + ed2 + e2d3) + u(d4 + ed5 + e2d6) + u2(d7 + ed8 + e2d9)
++···+ uk−1(d3k−2 + ed3k−1 + e2d3k) ]
+= (d3k, d3k−1 + d3k, d3k−2 + d3k,..., d2 + d3k, d1 + d2 + d3 +···+ d3k),
+where di ∈ Fp3 for i ={ 1,..., 3k} and θ is also distance preserving. Hence, for any
+element g = (d1 + ed2 + e2d3) + u(d4 + ed5 + e2d6) + u2(d7 + ed8 + e2d9) +···+
+uk−1(d3k−2 + ed3k−1 + e2d3k) in R, the extended Lee weight is deﬁned as:
+ωL(g) = (ωH (d3k) + ωH (d3k−1 + d3k) + ωH (d3k−2 + d3k)
++···+ ωH (d2 + d3k) + ωH (d1 + d2 + d3 +···+ d3k))
+where ωH (.) denotes the Hamming weight in Fp3 . Later, we extend this Gray map
+φ : R → F3k p3 componentwise to Rn .I fw et a k ec = (c0, c1,..., cn−1) in Rn , then the
+Lee weight in c is ωL(c) = ωL(c0)+ωL(c1)+···+ ωL(cn−1). The Hamming weight
+of a codeword ωH (c) is the number of non-zero components. Hamming distance for
+any two codewords c and c′ is deﬁned as dH (c, c′) = ωH (c − c′). The Hamming
+distance for the code C is dL(C) = min {dL(c, c′) | c ⁄= c′ ∀ c, c′ ∈ C}.
+Theorem 1 Let C be a cyclic code over R of length n, size M, and Lee distance d.
+Then θ( C) is a linear code over Fp3 of length 3kn, size M, and Hamming distance d.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 5 of 30 207
+3 Cyclic codes over M3(Fp + uFp + u2Fp +···+ uk−1Fp)
+A linear code C of length n over R is an R-submodule of Rn , and is said to be cyclic if
+for each codeword c = (c0, c1,..., cn−1) ∈ C, its cyclic shift (cn−1, c0,..., cn−2) ∈
+C. A cyclic code of lengthn over R is also an ideal of Rn = R[x]/⟨xn −1⟩ where each
+codeword (c0, c1,..., cn−1) corresponds to a polynomial c0 + c1x +···+ cn−1xn−1.
+We restrict ourselves to cyclic codes of length n which satisfy gcd (n, p) = 1, i.e.,
+p ∤ n.
+Let R[x] be the ring of polynomials over R. For any a ∈ R, −→a be the polynomial
+reduction of a modulo u and e as deﬁned in Equation ( 1). We consider a polynomial
+reduction mapping /Delta1 : R[x]→ Fp3 [x] deﬁned by
+n−1∑
+i=0
+ai xi ↦→
+n−1∑
+i=0
+−→ai xi.
+Then a polynomial f (x) is called basic irreducible over R if /Delta1( f (x)) is irreducible
+over Fp3 .I f n is such that p ∤ n and xn − 1 = ∏m r=1 fr , where fr ’s are irreducible
+polynomials in indeterminate x over Fp3 , then the polynomial xn − 1 can be uniquely
+factorized into pairwise coprime polynomials over Fp3 .
+Theorem 2 Let n be such that p ∤ n and x n − 1 = ∏m r=1 fr , where f r ’s are basic
+irreducible polynomials over R. Then
+Rn = R[x]/⟨xn − 1⟩=
+m⨁
+r=1
+R[x]/⟨ fr ⟩.
+Proof It follows by applying the Chinese Remainder Theorem on the rightR - module
+R[x]/⟨xn − 1⟩ [24, 33]. ⊓⊔
+Since ⟨ fr ⟩ is not a two-sided ideal, we consider R[x]/⟨ fr ⟩ as a right R-module.
+Now, we ﬁnd all the possible forms of the submodules of R[x]/⟨ fr ⟩.
+Theorem 3 Let f be a basic irreducible polynomial over R. Then following is the
+complete set of right R-submodules of R f = R[x]/⟨ f ⟩.
+1. {0},⟨ui e j⟩ for i ={ 0, 1, 2,..., k − 1},j ={ 0, 1, 2}.
+2. ⟨ui + eη2i + e2η3i⟩ and ⟨ui, e, e2⟩ for i ={ 1, 2,..., k − 1},
+where ηmn are units in Fp3 [x].
+Proof Let g +⟨ f ⟩ be a non-zero element of the R-submodule I of R f . Then g /∈⟨ f ⟩
+and there exist gij for i ={ 1,..., k} and j ={ 1, 2, 3} in Fp3 such that
+g =
+k∑
+i=1
+ui−1g1i + e
+k∑
+i=1
+ui−1g2i + e2
+k∑
+i=1
+ui−1g3i.
+Now, we consider the following two cases.
+123
+
+207 Page 6 of 30 S.R. Joshi et al.
+(i) If we consider gcd (g11, f ) = 1, then there existsg−1 11 ∈ Fp3 [x] such that g11g−1 11 +
+⟨ f ⟩= 1 +⟨ f ⟩. Thus, I = R f .
+(ii) If we consider gcd (g11, f ) = f , then
+g +⟨ f ⟩=
+k∑
+i=2
+ui−1g1i + e
+k∑
+i=1
+ui−1g2i + e2
+k∑
+i=1
+ui−1g3i.
+From case (ii), if we consider gcd (g1l, f ) = gcd(g2l, f ) = gcd(g3l, f ) =
+f for l ={ 1,..., i}, and gcd (g1(i+1), f ) = 1, we have g−1 1(i+1) such that
+g1(i+1)g−1 1(i+1) = 1, and we have I =⟨ ui⟩ for i ={ 1,..., k − 1}. If we consider
+gcd(g1l, f ) = f for l ={ 1,..., k}, gcd (g2 j, f ) = gcd(g3 j, f ) = f for j =
+{1...., i}, and gcd(g2(i+1), f ) = 1, then there exists g−1 2(i+1) such that f2(i+1) f −1 2(i+1)
+= 1 and we have I =⟨ eui⟩. Following the similar process, we can show that
+I =⟨ e2ui⟩ for i ={ 1,..., k − 1}. If we consider gcd (g1l, f ) = f for l =
+{1...., k}, and gcd (g21, f ) = 1, there exist g−1 21 such that g21g−1 21 = 1 and we
+have I =⟨ e⟩. Similarly, we can show that I =⟨ e2⟩.
+Now, let gcd (g1 j, f ) = f for j ∈{ 2,..., i, i + 2,..., k}, and gcd (g2 j, f ) =
+gcd(g3 j, f ) = f for j ∈{ 2,..., k}. If we consider gcd (gl1, f ) = 1f o r l ∈{ 2, 3}
+with gcd(g1(i+1), f ) = 1, then there exists g−1 1(i+1) such that g1(i+1)g−1 1(i+1) = 1 which
+provides
+(I) ⟨ui + eη2i + e2η3i⟩= I .
+(II) ⟨ui + eη2i + e2η3i⟩ ≨ I .
+Here, η2i = g21g−1 1(i+1), and η3i = g31g−1 1(i+1). Now in case (II), consider the
+following subcases.
+(i) If ui + eη′ 2i + e2η3i ∈ I where η′ 2i ∈ F16[x] such that it does not belong to
+⟨ui + eη2i + e2η3i⟩. This implies that e(η2i − η′ 2i) ∈ I .B u t (η2i − η′ 2i)/∈ I .
+Hence, e ∈ I . Thus, I =⟨ ui, e⟩.
+(ii) If there exists ui + eη2i + e2η′ 3i ∈ I where η′ 3i ∈ F16[x] such that it does not
+belong to ⟨ui + eη2i + e2η3i⟩, then e2(η3i −η′ 3i) ∈ I .B u t(η3i −η′ 3i)/∈ I . Hence,
+e2 ∈ I , and I =⟨ ui, e2⟩.
+Thus, from subcases (i) and (ii), I =⟨ ui, e, e2⟩. ⊓⊔
+Consider ˆgi = xn−1 gi where gi is a factor of xn − 1. Now, we have the following
+result for R-modules in R[x] ⟨xn−1⟩ .
+Corollary 1 Any right R-module in R[x] ⟨xn−1⟩ is sum of the following R-submodules for
+xn − 1 = g1g2 ··· gm, where gj(1 ≤ j ≤ m) are irreducible pairwise coprime monic
+polynomials in Fp3 [x].
+1. ⟨ui−1el ˆgj +⟨ xn − 1⟩⟩ for i ={ 1,..., k}, and l ={ 0, 1, 2}.
+2. ⟨(ui + eη1i + e2η2i) ˆgj +⟨ xn − 1⟩⟩ for i ={ 1,..., k}.
+3. (⟨ui ˆgj +⟨ xn − 1⟩⟩ + ⟨e ˆgj +⟨ xn − 1⟩⟩ + ⟨e2 ˆgj +⟨ xn − 1⟩⟩) for i ={ 1,..., k}.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 7 of 30 207
+Proof This follows from Theorem 2 and Theorem 3. ⊓⊔
+For the ring R[x] ⟨xn−1⟩ ,w eu s ea0 + a1x +···+ an−1xn−1 for the corresponding coset
+a0 + a1x +···+ an−1xn−1 +⟨ xn − 1⟩.
+Theorem 4 Let P be a family of irreducible pairwise coprime monic polynomials Pi
+( 0 ≤ i ≤ 4k − 1) in Fp3 [x] such that ∏4k−1 i=0 Pi = xn − 1. Then a cyclic code C over
+R can be written as
+C =
+k⨁
+i=1
+⟨ui−1 ˆPi⟩
+k⨁
+i=1
+⟨ui−1e ˆPk+i⟩
+k⨁
+i=1
+⟨ui−1e2 ˆP2k+i⟩
+k−1⨁
+i=1
+⟨(ui + eη1i + e2η2i) ˆP3k+i⟩.
+Moreover,|C|= p3γ where
+γ =
+( k∑
+i=1
+(3k − 3(i − 1)) deg(Pi ) + (2k − 2(i − 1)) deg(Pk+i ) + (k − (i − 1)) deg(P2k+i )
+)
++
+(k−1∑
+i=1
+(3k − i) deg(P3k+i )
+)
+.
+Proof Let G be a family of irreducible pairwise coprime monic polynomials gi in
+Fp3 [x] such that ∏m i=1 gi = xn − 1. Then from the Corollary 1, any right R-module
+in R[x] ⟨xn−1⟩ is sum of the following R-submodules.
+1. ⟨ui−1el ˆgj +⟨ xn − 1⟩⟩ for i ={ 1,..., k}, and l ={ 0, 1, 2}.
+2. ⟨(ui + eη1i + e2η2i) ˆgj +⟨ xn − 1⟩⟩ for i ={ 1,..., k}.
+Without loss of generality, we can assume that
+C =
+k⨁
+i=1
+⟨ui−1 ˆfm1+···+mi +1⟩⊕···⊕⟨ ui−1 ˆfm1+···+mi +mi+1 ⟩
+k⨁
+i=1
+⟨ui−1e ˆfm1+···+mk+i +1⟩⊕···⊕⟨ ui−1e ˆfm1+···+mk+(i+1)⟩
+k⨁
+i=1
+⟨ui−1e2 ˆfm1+···+m2k+i +1⟩⊕···⊕⟨ ui−1e2 ˆfm1+···+m2k+i+1 ⟩
+k−2⨁
+i=1
+⟨(ui + eη1i + e2η2i) ˆfm1+···+m3k+i +1⟩ ⨁ ··· ⨁ ⟨(ui + eη1i + e2η2i) ˆfm1+···+m3k+i+1⟩
+123
+
+207 Page 8 of 30 S.R. Joshi et al.
+⨁
+⟨(uk−1 + eη1(k−1) + e2η2(k−1)) ˆfm1+···+m4k−1+1⟩ ⨁
+···
+⨁
+⟨(uk−1 + eη1(k−1) + e2η2(k−1)) ˆfm⟩
+where integers m1, m2, m3,..., m4k−1 ≥ 0 and m1 + m2 +···+ m4k−1 + 1 ≤ m.
+Let m0 = 0 and m4k be the integer such that m1 + m2 +···+ m4k = m.N o w ,w e
+deﬁne
+P0 = fm0+1 ··· fm0+m1 , P1 = fm0+m1+1 ··· fm0+m1+m2 ,
+P2 = fm0+m1+m2+1 ··· fm0+m1+m2+m3 , P3 = fm0+···+m3+1 ··· fm0+···+m4 ,
+..., P4k−1 = fm0+···+m4k−1+1 ··· fm.
+From the construction above, we can see that P0, P1,..., P4k−1 are pairwise coprime
+and∏4k−1
+i=0 Pi = xn − 1. Hence,
+C =
+k⨁
+i=1
+⟨ui−1 ˆPi⟩
+k⨁
+i=1
+⟨ui−1e ˆPk+i⟩
+k⨁
+i=1
+⟨ui−1e2 ˆP2k+i⟩
+k−1⨁
+i=1
+⟨(ui + eη1i + e2η2i) ˆP3k+i⟩.
+Furthermore,
+|⟨ui−1 ˆPi⟩| = p3(3k−3(i−1)) deg(Pi ),|⟨ui−1e ˆPk+i⟩| = p3(2k−2(i−1)) deg(Pk+i ),
+|⟨ui−1e2 ˆP2k+i⟩| = p3(k−(i−1)) deg(P2k+i ), for i ={ 1,..., k}.
+|⟨(ui + eη1i + e2η2i) ˆP3k+i⟩| = p3(3k−i) deg(P3k+i ), for i ={ 1,..., k − 1}.
+Thus, |C|= p3γ where
+γ =
+⎛
+⎝
+k∑
+i=1
+(3k − 3(i − 1)) deg(Pi) + (2k − 2(i − 1)) deg(Pk+i) + (k − (i − 1)) deg(P2k+i)
+⎞
+⎠
++
+(k−1∑
+i=1
+(3k − i) deg(P3k+i)
+)
+.
+⊓⊔
+Now, let ⟨xn − 1⟩Fp3 [x] be an ideal of Fp3 [x] generated by xn − 1. We consider
+R′ = Fp3 [x] ⟨xn−1⟩Fp3 [x] , and we have the following theorem.
+Theorem 5 For a cyclic code C of a length n over R, there exist polynomials
+C1, C2, C3,..., C4k−1 in Fp3 [x] which are factors of xn − 1 such that
+C =
+k⨁
+i=1
+ui−1⟨Ci ⟩R′
+k⨁
+i=1
+ui−1e⟨Ck+i ⟩R′
+k⨁
+i=1
+ui−1e2⟨C2k+i ⟩R′
+k−1⨁
+i=1
+(ui + eη1i + e2η2i )⟨C3k+i ⟩R′
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 9 of 30 207
+where ηmn are units in Fp3 [x] and ⟨−⟩R′ is an ideal of R′ generated by −.A l s o ,
+|C|= p3((4k−1)n−(deg C1+deg C2+··· deg C4k−1)).
+Proof From Theorem 4,w eh a v e
+C =
+k⨁
+i=1
+⟨ui−1 ˆPi⟩
+k⨁
+i=1
+⟨ui−1e ˆPk+i⟩
+k⨁
+i=1
+⟨ui−1e2 ˆP2k+i⟩
+k−1⨁
+i=1
+⟨(ui + eη1i + e2η2i) ˆP3k+i⟩.
+We can easily show that
+⟨ ˆPi⟩=
+k⨁
+j=1
+u j−1⟨ ˆPi⟩R′
+k⨁
+j=1
+u j−1e⟨ ˆPi⟩R′
+k⨁
+j=1
+u j−1e2⟨ ˆPi⟩R′ .
+For 0 ≤ i ≤ 4k − 1, we have
+C =
+k⨁
+i=1
+ui−1
+⎛
+⎝
+(k−1)−(i−2)⨁
+j=1
+u j−1⟨ ˆPi⟩R′ ⊕ u j−1e⟨ ˆPi⟩R′ ⊕ u j−1e2⟨ ˆPi⟩R′
+⎞
+⎠
+k⨁
+i=1
+ui−1e
+⎛
+⎝
+(k−1)−(i−2)⨁
+j=1
+u j−1⟨ ˆPk+i⟩R′ ⊕ u j−1e⟨ ˆPk+i⟩R′
+⎞
+⎠
+k⨁
+i=1
+ui−1e2
+⎛
+⎝
+(k−1)−(i−2)⨁
+j=1
+u j−1⟨ ˆP2k+i⟩R′
+⎞
+⎠
+k−1⨁
+i=1
+(ui + eη1i + e2η2i )
+⎛
+⎝
+(k−1)−(i−2)⨁
+j=1
+u j−1⟨ ˆP3k+i ⟩R′ ⊕ u j−1e⟨ ˆP3k+i ⟩R′ ⊕ u j−1e2⟨ ˆP3k+i ⟩R′
+⎞
+⎠.
+=⟨ ˆP1⟩R′
+k−1⨁
+j=1
+u j
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi ⟩R′
+j⨁
+i=1
+⟨ ˆP3k+i ⟩R′
+⎞
+⎠
+2⨁
+j=1
+e j
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆPik+1⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i ⟩R′
+⨁
+⟨ ˆP1⟩R′
+⎞
+⎠
+k−1⨁
+j=1
+u j e
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠
+k−1⨁
+j=1
+u j e2
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i⟩R′
+j+1⨁
+i=1
+⟨ ˆP2k+i⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠
+123
+
+207 Page 10 of 30 S.R. Joshi et al.
+k−1⨁
+j=1
+(ui + eη1i +2 η2i)
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ .
+We consider
+C1 = ˆP1, C j+1 =
+⎛
+⎝
+j+1⨁
+i=1
+ˆPi
+j⨁
+i=1
+ˆP3k+i
+⎞
+⎠ for j ={ 1, k − 1}. Ck+1 =
+(
+ˆPk+1
+k−1⨁
+i=1
+ˆP3k+i
+⨁ ˆP1
+)
+,
+Ck+1+ j =
+⎛
+⎝
+j+1⨁
+i=1
+ˆPi
+j+1⨁
+i=1
+ˆPk+i
+k−1⨁
+i=1
+ˆP3k+i
+⎞
+⎠ for j ={ 1, k − 1}.
+C2k+1 =
+⎛
+⎝
+j⨁
+i=1
+ˆPik+1
+k−1⨁
+i=1
+ˆP3k+i
+⨁ ˆP1
+⎞
+⎠ for j = 2.
+C2k+1+ j =
+⎛
+⎝
+j+1⨁
+i=1
+ˆPi
+j+1⨁
+i=1
+ˆPk+i
+j+1⨁
+i=1
+ˆP2k+i
+k−1⨁
+i=1
+ˆP3k+i
+⎞
+⎠ for j ={ 1, k − 1}.
+C3k+ j =
+⎛
+⎝
+j⨁
+i=1
+ˆP3k+i
+⎞
+⎠ for j ={ 1, k − 1}.
+Now, we have to prove
+⟨C1⟩R′ =⟨ ˆP1⟩R′ , ⟨C j+1⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+⟨Ck+1⟩R′ =
+(
+⟨ ˆPk+1⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⨁
+⟨ ˆP1⟩R′
+)
+,
+⟨Ck+1+ j⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+⟨C2k+1⟩R′ =
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆPik+1⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⨁
+⟨ ˆP1⟩R′
+⎞
+⎠ for j = 2.
+⟨C2k+1+ j ⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi ⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i ⟩R′
+j+1⨁
+i=1
+⟨ ˆP2k+i ⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i ⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 11 of 30 207
+⟨C3k+ j⟩R′ =
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+Now, from the hypothesis, we havexn−1| ˆPi ˆPj , and ˆPi ˆPj = 0i n R[x] ⟨xn−1⟩ for any distinct
+i, j ∈{ 1,..., 4k−1}.A s{Pj, ˆPj} are pairwise coprime, there existy0 j, y1 j ∈ Fp3 [x]
+such that y0 j Pj + y1 j ˆPj = 1f o r j ={ 1,..., 4k − 1}. Further, if we consider
+y0 j Pj + y1 j ˆPj = 1f o rj ={ 2,..., 4k−1}, there exist polynomialsu1, u2,..., u4k−1
+in Fp3 [x] such that
+u1 P2 ··· P4k−1 + u2 ˆP2 P3 ··· P4k−1 +···+ u4k−1 P2 P3 ··· P4k−2 ˆP4k−1 = 1.
+If we multiply the above equation by ˆP1,w eh a v e ˆP1 = u1 ˆP1 P2 ··· P4k−1.F r o mt h e
+above construction, we can conclude that u1C1 P2 ··· P4k−1 = ˆP1 and this implies
+that ⟨C1⟩R′ =⟨ ˆP1⟩.N o w ,C2 = ˆP1 + ˆP2 + ˆP3k+1. Hence, u1C2 P2 ··· P4k−1 = ˆP1
+which implies that ˆP1 ∈⟨ C2⟩R′ . If we continue this process, we get ˆP2 ∈⟨ C2⟩R′ ,
+ˆP3k+1 ∈⟨ C2⟩R′ . Hence, we can conclude that
+⟨C2⟩R′ =⟨ ˆP1⟩R′ +⟨ ˆP2⟩R′ +⟨ ˆP3k+1⟩R′ .
+Similarly, we can show that
+⟨C1⟩R′ =⟨ ˆP1⟩R′ ,⟨C j+1⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 2, k − 1}.
+⟨Ck+1⟩R′ =
+(
+⟨ ˆPk+1⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⨁
+⟨ ˆP1⟩R′
+)
+,
+⟨Ck+1+ j⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+⟨C2k+1⟩R′ =
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆPik+1⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⨁
+⟨ ˆP1⟩R′
+⎞
+⎠ for j = 2.
+⟨C2k+1+ j ⟩R′ =
+⎛
+⎝
+j+1⨁
+i=1
+⟨ ˆPi ⟩R′
+j+1⨁
+i=1
+⟨ ˆPk+i ⟩R′
+j+1⨁
+i=1
+⟨ ˆP2k+i ⟩R′
+k−1⨁
+i=1
+⟨ ˆP3k+i ⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+⟨C3k+ j⟩R′ =
+⎛
+⎝
+j⨁
+i=1
+⟨ ˆP3k+i⟩R′
+⎞
+⎠ for j ={ 1, k − 1}.
+123
+
+207 Page 12 of 30 S.R. Joshi et al.
+Since |Fp3 |= p3, |⟨C j⟩R′ |= p3(n−deg C j ) and hence, |C|= p3((4k−1)n−(∑4k−1 j=1 deg C j )).
+⊓⊔
+4 Dual of cyclic codes over M3(F3 + uF3 + u2F3 +···+ uk−1F3)
+In the study of linear codes over ﬁnite rings or ﬁelds with a chosen inner product,
+we deﬁne important structural properties such as self-orthogonality, dual-containing,
+and self-duality. A code C is said to be self-orthogonal if C ⊆ C⊥, dual-containing
+if C⊥ ⊆ C, and self-dual if C = C⊥, where C⊥ denotes the dual of C. Studying
+these duals is particularly important because codes that are self-orthogonal or dual-
+containing play a fundamental role in constructing quantum error-correcting codes. In
+our case, we are studying the structure of such duals for the ring S = M3(F3 + uF3 +
+u2F3 +···+ uk−1F3).
+4.1 Structure of the ring S
+From the Equation ( 1), we have
+R = M3(Fp + uFp +···+ uk−1Fp) ∼= (Fp3 + eFp3 + e2Fp3 ) + u(Fp3 + eFp3 + e2Fp3 )
++ u2(Fp3 + eFp3 + e2Fp3 ) +···+ uk−1(Fp3 + eFp3 + e2Fp3 ),
+where e3 = 1, uk = 0, ui e j = e j ui for i ={ 1,..., k − 1}, and j ={ 1, 2, 3}.
+For p = 3, we have (e − 1)3 = e3 − 1 = 0. Hence, if we put v = e − 1, we have
+S = M3(F3 + uF3 +···+ uk−1F3) ∼= (F27 + vF27 + v2F27) + u(F27 + vF27 + v2F27)
++ u2(F27 + vF27 + v2F27) +···+ uk−1(F27 + vF27 + v2F27),
+where v3 = 0, uk = 0, uiv j = v j ui for i ={ 1,..., k − 1}, and j ={ 1, 2, 3}. (2)
+Remark 1 Note that studying dual codes is not always feasible in the general setting of
+cyclic codes over the ring R. However, in the special caseS, the ring admits nontrivial
+nilpotent elements u and v. These nilpotent elements provide the necessary algebraic
+structure to investigate the duals of cyclic codes. In this direction, we ﬁrst study the
+structure of S separately, followed by the construction of the dual over it.
+Let S[x] be the ring of polynomials over S. For any a ∈ S, −→a is the polyno-
+mial reduction of a modulo u and v as deﬁned in Equation ( 2). Then similar to the
+polynomial reduction mapping /Delta1 deﬁned in Sect. 3, a polynomial f (x) is called basic
+irreducible over S if /Delta1( f (x)) is irreducible over F27.I f n is such that 3 ∤ n and
+xn − 1 = ∏m r=1 fr where fr ’s are irreducible polynomials in indeterminate x over
+F27, then the polynomial xn − 1 can be uniquely factorized into pairwise coprime
+polynomials over F27. Also, it follows from Theorem 2 that if n is such that 3 ∤ n and
+xn − 1 = ∏m r=1 fr where fr ’s are basic irreducible polynomials over S, then
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 13 of 30 207
+Sn = S[x]/⟨xn − 1⟩=
+m⨁
+r=1
+S[x]/⟨ fr ⟩.
+Since ⟨ fr ⟩ is not a two-sided ideal, we consider S[x]/⟨ fr ⟩ as a right S-module.
+Now, we ﬁnd all the possible forms of the submodules of S[x]/⟨ fr ⟩.
+Theorem 6 Let f be a basic irreducible polynomial over S. Then the following is the
+complete set of right S-submodules of S f = S[x]/⟨ f ⟩.
+1. {0},⟨uiv j⟩ for i ={ 0, 1, 2,..., k − 1},j ={ 0, 1, 2}.
+2. ⟨ui + vη2i + v2η3i⟩ and ⟨ui,v,v 2⟩ for i ={ 1, 2,..., k − 1}.
+3. ⟨u + ∑k i=3 ui−1β1i + v ∑k i=1 ui−1β2i + v2 ∑k−1 i=1 ui−1β3i⟩.
+4. ⟨uv + v ∑k i=3 ui−1β1i + v2 ∑k−1 i=1 ui−1β2i⟩.
+5. ⟨uv2 + v2 ∑k−1 i=3 ui−1β1i⟩.
+where βij and ηmn are units in F27[x].
+Proof Let g +⟨ f ⟩ be a non-zero element of the S-submodule I of S f . Then g /∈⟨ f ⟩
+and there exists gij for i ={ 1,..., k} and j ={ 1, 2, 3} in F27 such that
+g =
+k∑
+i=1
+ui−1g1i + v
+k∑
+i=1
+ui−1g2i + v2
+k∑
+i=1
+ui−1g3i.
+Now, we consider the following two cases.
+(i) If we take gcd (g11, f ) = 1, then there exists g−1 11 ∈ F27[x] such that g11g−1 11 +
+⟨ f ⟩= 1 +⟨ f ⟩. Thus, I = S f .
+(ii) If we take gcd (g11, f ) = f , then
+g +⟨ f ⟩=
+k∑
+i=2
+ui−1g1i + v
+k∑
+i=1
+ui−1g2i + v2
+k∑
+i=1
+ui−1g3i.
+Construction of right S-submodules listed in 1., and 2. follows similar to the con-
+struction of the right R-submodules 1, and 2 in the Theorem 3.
+Now, from case (ii), if we consider gcd (g12, f ) = 1, we have g−1 12 such that
+uk−1v2 = guk−2v2g−1 12 ∈ I , and
+k∑
+i=2
+ui−1g1i + v
+k∑
+i=1
+ui−1g2i + v2
+k−1∑
+i=1
+ui−1g3i = g − v2uk−1g3k.
+If we consider gcd (g1l, f ) = 1f o r l ={ 3,..., k}, gcd (g2 j, f ) = 1f o r j =
+{1,..., k}, and gcd (g3m, f ) = 1f o r m ={ 1,..., k − 1}, we have the following
+cases:
+1. ⟨u + ∑k i=3 ui−1β1i + v ∑k i=1 ui−1β2i + v2 ∑k−1 i=1 ui−1β3i⟩= I .
+2. ⟨u + ∑k i=3 ui−1β1i + v ∑k i=1 ui−1β2i + v2 ∑k−1 i=1 ui−1β3i⟩ ≨ I .
+123
+
+207 Page 14 of 30 S.R. Joshi et al.
+Here, βlm = glm g−1 12 where m ={ 3,..., k} for l = 1, m ={ 1,..., k} for l = 2,
+and m ={ 1,..., k − 1} for l = 3. Now, similar to cases 1 and 2, we have
+gv = v
+k∑
+i=2
+ui−1g1i + v2
+k∑
+i=1
+ui−1g2i.
+Hence,
+gv − v2uk−1g2k = v
+k∑
+i=2
+ui−1g1i + v2
+k−1∑
+i=1
+ui−1g2i ∈ I
+and further, we have following cases:
+3. ⟨uv + v ∑k i=3 ui−1β1i + v2 ∑k−1 i=1 ui−1β2i⟩= I .
+4. ⟨uv + v ∑k i=3 ui−1β1i + v2 ∑k−1 i=1 ui−1β2i⟩ ≨ I .
+Here, βlm = glm g−1 12 where m ={ 3,..., k} for l = 1, m ={ 1,..., k − 1} for l = 2.
+Now, similar to cases 1-4 above, we have
+gv2 = v2
+k∑
+i=2
+ui−1g1i.
+Hence,
+gv2 − v2uk−1 f1k = v2
+k−1∑
+i=2
+ui−1g1i ∈ I
+and we have
+5. ⟨uv2 + v2 ∑k−1 i=3 ui−1β1i⟩= I .
+where βlm = glm g−1 12 for m ={ 3,..., k − 1} and l = 1. ⊓⊔
+Now, similar to Theorem 4,w eh a v e
+Theorem 7 Let P be a family of irreducible pairwise coprime monic polynomials Pi
+( 0 ≤ i ≤ 4k + 2) in Fp3 [x] such that ∏4k+2 i=0 Pi = xn − 1, β11 = 0, and β21 = 1.
+Then a cyclic code C over S can be written as
+C =
+k⨁
+i=1
+⟨ui−1 ˆPi⟩
+k⨁
+i=1
+⟨ui−1v ˆPk+i⟩
+k⨁
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+k−1⨁
+i=1
+⟨(ui + vη1i + v2η2i) ˆP3k+i⟩
+⨁
+⟨(u +
+k∑
+i=3
+ui−1β1i + v
+k∑
+i=1
+ui−1β2i + v2
+k−1∑
+i=1
+ui−1β3i) ˆP4k⟩
+⨁
+⟨(uv+v
+k∑
+i=3
+ui−1β1i +v2
+k−1∑
+i=1
+ui−1β2i) ˆP4k+1⟩ ⨁ ⟨(uv2 +v2 k−1∑
+i=3
+ui−1β1i) ˆP4k+2⟩.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 15 of 30 207
+Moreover,|C|= p3γ where
+γ =
+( k∑
+i=1
+(3k − 3(i − 1)) deg(Pi ) + (2k − 2(i − 1)) deg(Pk+i ) + (k − (i − 1)) deg(P2k+i )
+)
++
+(k−1∑
+i=1
+(3k − i) deg(P3k+i )
+)
++ (3k − 1) deg(P4k)
++(2k − 1) deg(P4k+1) + (k − 1) deg(P4k+2).
+Proof Follows similar to Theorem 4. ⊓⊔
+From now onward, we will use the structure of C deﬁned in Theorem 7 above
+whenever we suppose that C is a cyclic code of length n over S.
+4.2 Euclidean dual of cyclic codes over S
+Euclidean inner product of a = (a0, a1,..., an−1), b = (b0, b1,..., bn−1) ∈ Sn
+is deﬁned by ⟨a, b⟩= a0b0 + a1b1 +···+ an−1bn−1.I f ⟨a, b⟩= 0, then a and
+b are considered orthogonal. Recall that the Euclidean dual of a linear code C is
+deﬁned as C⊥ ={ b ∈ Sn |⟨ a, b⟩= 0, ∀ a ∈ C}. For a polynomial f (x) =
+f0 + f1x + f2x2 +···+ fn−1xn−1 with fn−1 ⁄= 0, its reciprocal is deﬁned by
+f ∗(x) = xn−1 f (1/x) = fn−1 + fn−2x +···+ f0xn−1. Note that deg f ∗(x) ≤
+deg f (x).I f f0 ⁄= 0, deg f ∗(x) = deg f (x).
+Theorem 8 Let C be the cyclic code of length n over S. Then
+C⊥ =⟨ ˆP∗ 0 ⟩
+k⨁
+i=2
+⟨uk−(i−1) ˆP∗ i ⟩
+k⨁
+i=1
+⟨v2 ˆP∗ k+i ⟩+⟨ uk−(i−1) ˆP∗ k+i ⟩
+k⨁
+i=1
+⟨v ˆP∗ 2k+i ⟩+⟨ uk−(i−1) ˆP∗ 2k+i ⟩
+k−1⨁
+i=1
+⟨uk−i v2 ˆP∗ 3k+i ⟩ ⨁ ⟨v2uk−1 ˆP∗ 4k⟩ ⨁ ⟨v2 ˆP∗ 4k+1⟩+⟨ vuk−1 ˆP∗ 4k+1⟩ ⨁ ⟨v ˆP∗ 4k+2⟩+⟨ uk−1 ˆP∗ 4k+2⟩.
+Thus, |C⊥| =p 3δ where
+δ = (3k) deg P0 +
+k∑
+i=2
+3(i − 1) deg(Pi )+
+k∑
+i=1
+(k+ 2(i − 1)) deg(Pk+i )+
+k∑
+i=1
+(2k+(i − 1)) deg(P2k+i )
++
+k−1∑
+i=1
+i deg(P3k+i) + deg(P4k) + (k + 1) deg(P4k+1) + (2k + 1) deg(P4k+2).
+Proof Let C be the cyclic code of length n over S. Then, from Theorem 3,w eh a v e
+|C|= p3γ where
+γ =
+( k∑
+i=1
+(3k − 3(i − 1)) deg(Pi ) + (2k − 2(i − 1)) deg(Pk+i ) + (k − (i − 1)) deg(P2k+i )
+)
+123
+
+207 Page 16 of 30 S.R. Joshi et al.
++
+(k−1∑
+i=1
+(3k − i) deg(P43+i )
+)
++ (3k − 1) deg(P4k) + (2k − 1) deg(P4k+1) + (k − 1) deg(P4k+2).
+Now, we know that |C||C⊥|= p3(3kn) where n = ∑4k+2 i=1 deg(Pi). Hence, |C⊥| = p3δ
+where
+δ = (3k) deg P0 +
+k∑
+i=2
+3(i − 1) deg(Pi )+
+k∑
+i=1
+(k+ 2(i − 1)) deg(Pk+i )+
+k∑
+i=1
+(2k+(i − 1)) deg(P2k+i )
++
+k−1∑
+i=1
+i deg(P3k+i) + deg(P4k) + (k + 1) deg(P4k+1) + (2k + 1) deg(P4k+2).
+Now, consider
+C∗ =⟨ ˆP∗ 0 ⟩
+k⨁
+i=2
+⟨uk−(i−1) ˆP∗ i ⟩
+k⨁
+i=1
+⟨v2 ˆP∗ k+i ⟩+⟨ uk−(i−1) ˆP∗ k+i ⟩
+k⨁
+i=1
+⟨v ˆP∗ 2k+i ⟩+⟨ uk−(i−1) ˆP∗ 2k+i ⟩
+k−1⨁
+i=1
+⟨uk−i v2 ˆP∗ 3k+i ⟩ ⨁ ⟨v2uk−1 ˆP∗ 4k⟩ ⨁ ⟨v2 ˆP∗ 4k+1⟩+⟨ vuk−1 ˆP∗ 4k+1⟩ ⨁ ⟨v ˆP∗ 4k+2⟩+⟨ uk−1 ˆP∗ 4k+2⟩.
+We can see that
+ui−1uk−(i−1) ˆPi ˆP∗ i = 0f o ri ={ 2,..., k}.
+ui−1v(⟨v2⟩+⟨ uk−(i−1)⟩) ˆPk+i ˆP∗ k+i = 0f o ri ={ 1,..., k}.
+ui−1v2(⟨v⟩+⟨ uk−(i−1)⟩) ˆP2k+i ˆP∗ 2k+i = 0f o ri ={ 1,..., k}.
+(ui + vη1i + v2η2i)uk−iv2 ˆP3k+i ˆP∗ 3k+i = 0f o ri ={ 1,..., k − 1}.
+⟨(u +
+k∑
+i=3
+ui−1β1i + v
+k∑
+i=1
+ui−1β2i + v2
+k−1∑
+i=1
+ui−1β3i)⟩v2uk−1 ˆP4k ˆP4k ∗ = 0.
+⟨(uv + v
+k∑
+i=3
+ui−1β1i + v2
+k−1∑
+i=1
+ui−1β2i)⟩(⟨v2⟩+⟨ vuk−1⟩) ˆP4k+1 ˆP∗ 4k+1 = 0.
+⟨(uv2 + v2
+k−1∑
+i=3
+ui−1β1i)⟩(⟨v⟩+⟨ uk−1⟩) ˆP4k+2 ˆP∗ 4k+2 = 0.
+Hence, C∗ ⊆ C.
+Now,
+| ˆP0 ∗ |= p3((3k) deg P0). |uk−(i−1) ˆP∗ i |= p3(3(i−1) deg(Pi )) for i ={ 2,..., k}.
+| ˆP∗ k+i|= p3((k+2(i−1)) deg(Pk+i )),| ˆP∗ 2k+i|= p3((2k+(i−1)) deg(P2k+i )) for i ={ 1,..., k}.
+| ˆP∗ 3k+i|= p3((i) deg(P3k+i )) for i ={ 1,..., k − 1}.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 17 of 30 207
+| ˆP∗ 4k|= p3(deg(P4k)), | ˆP∗ 4k+1|= p3((k+1) deg(P4k+1)), | ˆP∗ 4k+2|= p3((2k+1) deg(P4k+2)).
+Thus, |c∗| = p3δ where
+δ = (3k) deg P0 +
+k∑
+i=2
+3(i − 1) deg(Pi) +
+k∑
+i=1
+(k + 2(i − 1)) deg(Pk+i)
++
+k∑
+i=1
+(2k + (i − 1)) deg(P2k+i) +
+k−1∑
+i=1
+i deg(P3k+i)
++ deg(P4k) + (k + 1) deg(P4k+1) + (2k + 1) deg(P4k+2).
+Consequently, we get |C∗| = |C⊥|.
+Theorem 9 Let C be a cyclic code of length n over S. Then there exist polynomials
+B∗ 1 ,B ∗ 2 ,..., B∗ 4k+2 in F27, which are factors of xn − 1 such that
+C⊥ =
+k⨁
+i=1
+ui−1⟨B∗ i ⟩R′
+k⨁
+i=1
+ui−1v⟨B∗ k+i ⟩R′
+k⨁
+i=1
+ui−1v2⟨B∗ 2k+i ⟩R′
+k−1⨁
+i=1
+(ui + vη1i + v2η2i )⟨B∗ 3k+i ⟩R′
+⨁
+(u +
+k∑
+i=3
+ui−1β1i + v
+k∑
+i=1
+ui−1β2i + v2
+k−1∑
+i=1
+ui−1β3i)⟨B∗ 4k⟩R′
+⨁
+(uv +v
+k∑
+i=3
+ui−1β1i +v2
+k−1∑
+i=1
+ui−1β2i)⟨B∗ 4k+1⟩R′
+⨁
+(uv2 +v2
+k−1∑
+i=3
+ui−1β1i)⟨B∗ 4k+2⟩R′
+where βij and ηmn are units inF27[x] and ⟨−⟩ is the ideal ofR′ generated by−.A l s o ,
+we have |C⊥|= p3((4k+2)n−(deg(A∗ 1)+deg(A∗ 2)+···+deg(A∗ 4k+2))).
+Proof It follows from Theorem 5 and Theorem 8. ⊓⊔
+4.3 Hermitian dual of cyclic codes over S
+The Hermitian inner product of a = (a0, a1,..., an−1) and b = (b0, b1,..., bn−1) ∈
+Sn is deﬁned by ⟨a, b⟩H = a0b0 + a1b1 +···+ an−1bn−1 where “−" stands for
+conjugation and bi = b4 i . For a code C, its Hermitian dual C⊥ is deﬁned as C⊥H =
+{b ∈ Sn |⟨ a, b⟩H = 0 ∀ a ∈ C}. For a polynomial f (x) = f0 + f1x + f2x2 +
+···+ fn−1xn−1 with fn−1 ⁄= 0, its reciprocal is deﬁned as f ∗(x) = xn−1 f (1/x) =
+fn−1 + fn−2x +···+ f0xn−1. It can be seen that deg f ∗(x) ≤ deg f (x).I f f0 ⁄=
+0, then deg f ∗(x) = deg f (x). We denote f (x) = f 4 0 + f 4 1 x+ f 4 2 x2+···+ f 4 n−1xn−1.
+Theorem 10 Let C be the cyclic code of length n over S. Then
+C⊥H =⟨ ˆ¯P∗ 0 ⟩
+k⨁
+i=2
+⟨uk−(i−1) ˆ¯P∗ i ⟩
+k⨁
+i=1
+⟨v2 ˆ¯P∗ k+i ⟩+⟨ uk−(i−1) ˆ¯P∗ k+i ⟩
+k⨁
+i=1
+⟨v ˆ¯P∗ 2k+i ⟩+⟨ uk−(i−1) ˆ¯P∗ 2k+i ⟩
+123
+
+207 Page 18 of 30 S.R. Joshi et al.
+k−1⨁
+i=1
+⟨uk−i v2 ˆ¯P∗ 3k+i ⟩ ⨁ ⟨v2uk−1 ˆ¯P∗ 4k⟩ ⨁ ⟨v2 ˆ¯P∗ 4k+1⟩+⟨ vuk−1 ˆ¯P∗ 4k+1⟩ ⨁ ⟨v ˆ¯P∗ 4k+2⟩+⟨ uk−1 ˆ¯P∗ 4k+2⟩.
+Thus, |C⊥H| =p 3/Delta1 where
+/Delta1 = (3k) deg P0 +
+k∑
+i=2
+3(i −1) deg(Pi )+
+k∑
+i=1
+(k+2(i −1)) deg(Pk+i )+
+k∑
+i=1
+(2k+(i −1)) deg(P2k+i )
++
+k−1∑
+i=1
+i deg(P3k+i) + deg(P4k) + (k + 1) deg(P4k+1) + (2k + 1) deg(P4k+2).
+Proof It follows the same procedure as the proof of Theorem 8.
+Theorem 11 Let C be a cyclic code of length n over S. Then there exist polynomials
+¯B∗ 1 , ¯B∗ 2 ,..., ¯B∗ 4k+2 in F27, which are factors of xn − 1 such that
+C⊥H =
+k⨁
+i=1
+ui−1 ⟨ ¯B∗ i ⟩ R′ k⨁
+i=1
+ui−1v ⟨ ¯B∗ k+i ⟩ R′ k⨁
+i=1
+ui−1v2 ⟨ ¯B∗ 2k+i ⟩ R′ k−1⨁
+i=1
+(
+ui + vη1i + v2η2i
+)⟨ ¯B∗ 3k+i ⟩ R′
+⨁
+(u +
+k∑
+i=3
+ui−1β1i + v
+k∑
+i=1
+ui−1β2i + v2
+k−1∑
+i=1
+ui−1β3i)⟨ ¯B∗ 4k⟩R′
+⨁
+(uv + v
+k∑
+i=3
+ui−1β1i + v2
+k−1∑
+i=1
+ui−1β2i )⟨ ¯B∗ 4k+1⟩R′ ⨁ (uv2 + v2 k−1∑
+i=3
+ui−1β1i )⟨ ¯B∗ 4k+2⟩R′
+where βij and ηmn are units inF27[x] and ⟨−⟩ is the ideal of R′ generated by −.A l s o
+we have, |C⊥H|= p3((4k+2)n−(deg(A∗ 1)+deg(A∗ 2)+···+deg(A∗ 4k+2))).
+Proof It follows from Theorem 5 and Theorem 10. ⊓⊔
+5 Examples
+5.1 Cyclic codes over R = M3(F5 + uF5 +···+ uk−1F5)
+Recall that a linear q-ary [n, K, d] code is said to be MDS (maximum distance separa-
+ble) if d = n− K +1, and AMDS (almost maximum distance separable) ifd = n− K .
+One of the fundamental problems for a linear code [n, K] is to optimize d and obtain
+dMDS = n− K + 1. In the following examples, we obtained linear codes overF125 for
+p = 5. Moreover, the codes we obtain over F125 are AMDS, and we use the Magma
+software [5] to carry out the computations for these examples.
+Example 1 For n = 2, we have x2 − 1 = (x + 1)(x + 4) in F125[x].L e t f1 =
+x + 1, f2 = x + 4. For p = 5, k = 2, and n = 2, we obtain some cyclic codes of
+length 2 over R and their Gray images in the Table 1.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 19 of 30 207
+Example 2 For n = 3, we have x3 −1 = (x +4)(x2 +x +1) in F125[x].L e t f1 = x +4
+and f2 = x2 + x + 1. We obtain cyclic codes of length 3 over R for p = 5, k = 1, 2,
+and n = 3, along with their Gray images as shown in the Table 1.
+Example 3 For n = 7, we have x7 − 1 = (x + 4)(x2 +w42x + 1)(x2 +w58x + 1)(x2 +
+w86x+1) in F125[x].L e t f1 = x+4, f2 = x2+w42x+1, f3 = x2+w58x+1, f4 =
+x2 + w86x + 1. In the Table 1, we obtain cyclic codes of length 7 over R together
+with their Gray images for p = 5, k = 1, and n = 7.
+5.2 Cyclic codes over R = M3(F3 + uF3 +···+ uk−1F3)
+There is a well-known online database, MinT [ 22], which provides bounds on the
+parameters of several linear codes overFq where q = pn . It is one of the most popular
+and reliable platforms to judge whether a linear code is better. Here, based on the
+optimal, best-known linear codes (brieﬂy, BKLC) in the database [ 22], we construct
+many near optimal or near BKLC (NBKLC) codes over F27 such that d − d′ ≤ 2. We
+use the Magma software [ 5] to carry out the computation for these examples.
+Example 4 For n = 2, we havex2−1 = (x+1)(x+2) in F27[x].L e t f1 = x+1, f2 =
+x + 2. For p = 3, k = 2, 3, and n = 2, we obtain some cyclic codes of length 2 over
+R and their Gray images in the Table 2.
+Example 5 For n = 5, we have x5 − 1 = (x + 2)(x4 + x3 + x2 + x + 1) in F27[x].
+Let f1 = x + 2, f2 = x4 + x3 + x2 + x + 1. In the Table 2,f o r p = 3, k = 1, and
+n = 5, we obtain some cyclic codes of length 5 over R along with their Gray images.
+Example 6 For n = 7, we have x7 − 1 = (x + 2)(x2 +w5x + 1)(x2 +w15x + 1)(x2 +
+w19x + 1) in F27[x].L e t f1 = x + 2, f2 = x2 +w5x + 1, f3 = x2 +w15x + 1, f4 =
+x2 + w19x + 1. We obtain some cyclic codes of length 7 over R for p = 3, k = 1,
+and n = 7 along with their Gray images in the Table 2.
+Example 7 For n = 4, we have x4 − 1 = (x + 1)(x + 2)(x2 + 1) in F27[x].L e t
+f1 = x + 1, f2 = x + 2, f3 = x2 + 1. For p = 3, k = 2, 3, and n = 4, we obtain
+some cyclic codes of length 4 over R and their Gray images in the Table 2.
+5.3 Cyclic codes over R = M3(F2 + uF2 +···+ uk−1F2)
+There is a well-known online database [ 11] that provides bounds on the parameters
+of several linear codes over Fq , where q = pn ≤ 9. Here, based on the optimal, best-
+known (brieﬂy, BKLC) codes in the database [ 11], we construct many near optimal
+or near BKLC codes over F8 such that d − d′ ≤ 2. We use the Magma software [5]t o
+carry out the computation for these examples.
+Example 8 For n = 3, we have x3 − 1 = (x + 1)(x2 + x + 1).L e t g1 = x + 1,
+g2 = x2 + x + 1i n F8[x].F o rn = 7, we have x7 − 1 = (x + 1)(x +w)(x +w2)(x +
+123
+
+207 Page 20 of 30 S.R. Joshi et al.
+Table 1 Gray images of cyclic codes over R = M3(F5 + uF5 +···+ uk−1F5)
+k n Generators of cyclic codes Images under θ Remark
+13 ⟨(w2e2 + we + 2w10) f1⟩[ 9, 4, 5]125 AMDS
+13 ⟨(w2e2 + we + 2w10) f1,( w5e2 + w7e + w) f2⟩[ 9, 5, 4]125 AMDS
+13 ⟨(w2e2 + we + 2w10) f1,( w5e2 + w7e + 4w76) f2⟩[ 9, 6, 3]125 AMDS
+22 ⟨(w3v + w5u + w2v2) f1,( w6v + w9u + w11v2) f2⟩[ 12, 6, 6]125 AMDS
+22 ⟨(w3v + wv2) f1,( w11v + w5v2) f2⟩[ 12, 8, 4]125 AMDS
+22 ⟨(w3v + wv2) f1,( w11v) f2⟩[ 12, 9, 3]125 AMDS
+22 ⟨(wv + w2v2) f1,( w3u + w5v2) f2⟩[ 12, 7, 5]125 AMDS
+23 ⟨(w3ue2 + w5ue + w23u + 4w3e2 + 4w3e + 4w13) f1, [18, 14, 4]125 AMDS
+(w23ue2 + 4ew23 + 4e2w23 + uw31 + 4w7) f2⟩
+23 ⟨(w3ue2 + w5ue + w23u + 4w3e2 + 4w3e + 4w13) f1, [18, 15, 3]125 AMDS
+(w23ue2 + 4ew23 + 4e2w23 + 4uw23 + 4w116) f2⟩
+17 ⟨(w13e2 + w17e + w19) f1 f3 f4, [21, 17, 4]125 AMDS
+(w5e2 + w7e + w11) f2⟩
+17 ⟨(w13e2 + w17e + 4w99) f2 f3 f4, [21, 18, 3]125 AMDS
+(w5e2 + w7e + w11) f1⟩
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 21 of 30 207
+Table 2 Gray images of cyclic codes over R = M3(F3 + uF3 +···+ uk−1F3)
+k n Generators of cyclic codes Images under θ Remark
+22 ⟨w5ef 1,( u + we + w2e2) f2⟩[ 12, 8, 4]27 AMDS
+22 ⟨w5ef 2,( u + we + 2(1 + w)e2) f1⟩[ 12, 9, 3]27 AMDS
+15 ⟨(w2e2 + we + 2w10) f1,( w5e2 + w7e + w) f2⟩[ 15, 12, 3]27 AMDS
+32 ⟨(w7ue + wu + w4e + w2e2) f1,( w3e + w5e2) f2⟩[ 18, 12, 6]27 AMDS
+32 ⟨(wu + w4e + w2e2) f1,( w3e + w5e2) f2⟩[ 18, 13, 5]27 AMDS
+32 ⟨(w4e) f1,( w3e + w5e2) f2⟩[ 18, 15, 3]27 AMDS
+17 ⟨(w17e2 + w19e + w21) f2 + (w11e2 + w3e + w5) f1⟩[ 21, 13, 7]27 NBKLC
+17 ⟨(w17e2 + w19e + w21) f2 + (w11e2 + w3e + w5) f1, [21, 14, 6]27 NBKLC
+(w17e2 + w16e + w15) f2 f3 f4⟩
+17 ⟨(w17e2 + w19e + w21) f2,( w5e2 + w7e + w) f3 f4 f1⟩[ 21, 17, 4]27 AMDS
+17 (w17e2 + w19e + w21) f2,( w5e2 + w7e + 2) f3 f4 f1⟩[ 21, 18, 3]27 AMDS
+24 ⟨(wu + w2e2) f1,( w7ue + w5u + w3e + w4e2) f3⟩[ 24, 21, 3]27 AMDS
+34 ⟨(wue + w2u + 2w10) f1 f2,( w3e2 + w5e) f3⟩[ 36, 33, 3]27 AMDS
+123
+
+207 Page 22 of 30 S.R. Joshi et al.
+Table 3 Gray images of cyclic codes over R = M3(F2 + uF2 +···+ uk−1F2)
+k n Generators of cyclic codes Images under θ
+33 ⟨(wu2e2 + w5u2e + w2e2 + w3e + w4)g1, [27, 12, 10]8
+(w2u2e2 + wue2 + w4ue + w5u + w5e2 + w6e + w6)g2⟩
+33 ⟨(wu2e2 + w5u2e + w2e2 + w3e + w4)g1, [27, 14, 8]8
+(w2u2e2 + wue2 + w5ue + w5u + w2e2 + w2e + w4)g2
++(wu2e2 + w5u2e + w2e2 + w3e + w4)g1⟩
+27 ⟨(w2ue2 + w7e2 + w5e + w) f6 f4 f1, [42, 28, 7]8
+(w2ue2 + w3e2 + w5) f7 f2 f5 f3 f4⟩
+27 (w2ue2 + w7e2 + w5e) f6 f4,( w2ue2 + w3e2) f7 f2⟩[ 42, 40, 2]8
+29 ⟨(w2ue2 + w7e2 + w5e + w5)h2, [54, 45, 5]8
+(wue2 + w4ue + w5u + w2e2 + w6e + w)h5h3h4h1
+w3)(x + w4)(x + w5)(x + w6).L e t f1 = x + 1, f2 = x + w, f3 = x + w2, f4 =
+x + w3, f5 = x + w4, f6 = x + w5, f7 = x + w6 in F8[x].F o r n = 9, we have
+x9 − 1 = (x + 1)(x2 + x + 1)(x2 + wx + 1)(x2 + w2x + 1)(x2 + w4x + 1).L e t
+h1 = x+1, h2 = x2+x+1, h3 = x2+wx+1, h4 = x2+w2x+1, h5 = x2+w4x+1
+in F8[x].F o r p = 2, k = 2, 3, and n = 3, 7, 9, we derive some near-optimal or near-
+BKLC cyclic codes of length 3, 7, and 9 over R and their Gray images in the Table
+3.
+6 Quantum codes
+Recall that the set of n-fold tensor product (Cq)⊗n = Cq ⊗ Cq ⊗···⊗ Cq /bracehtipupleft /bracehtipdownright/bracehtipdownleft /bracehtipupright
+n times
+is a qn -
+dimensional Hilbert space where Cq is a q-dimensional complex Hilbert space. Also,
+a q-ary quantum code of length n, dimension K and minimum distance d, denoted
+by [[n, K, d]]q ,i sa qK -dimensional subspace of (Cq)⊗n for which, the quantum
+Singleton defect [ 3] that measures how far a quantum code is from attaining the
+quantum Singleton bound (2 d ≤ n − K + 2) is deﬁned as δ = n − K − 2d + 2.
+Constructions in this paper yield n − K to be even, making the defect δ also even.
+Hence, the smallest possible nonzero defects arising from our constructions are 0 , 2
+and 4. Quantum codes with δ = 0 are quantum MDS codes. Motivated by this, we
+denote quantum MDS codes with δ = 0b y [[n, K, d]]∗ q , quantum codes with δ = 2
+by [[n, K, d]]∗∗ q , and quantum codes with δ = 4b y [[n, K, d]]∗∗∗ q . Also, a quantum
+code [[n, K, d]]q is said to be better than [[n′, K′, d′]]q if any one of the following or
+both hold:
+1. d > d′ when the code rate K n = K′ n′ (Larger distance with same code rate).
+2. K n > K′ n′ when the distance d = d′ (Larger code rate with same distance).
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 23 of 30 207
+6.1 CSS code framework
+Calderbank, Shor, and Steane [7, 32] proposed a framework for constructing quantum
+error correction codes over qubits from two classical binary codesC1 and C2 satisfying
+C⊥ 1 ⊆ C2. This class of codes are called the Calderbank-Shor-Steane (CSS) codes.
+The condition C⊥ 1 ⊆ C2 is called the dual-containing condition of CSS codes. By
+considering the two codes C1 and C2 to be the same code, i.e., C1 = C2, we can
+construct quantum codes from dual-containing classical codes as C⊥ 1 ⊆ C2 = C1.
+The CSS codes form a class of stabilizer codes. Let H1 and H2 be the parity
+check matrices of the classical codes C1[n, K1, d1] and C2[n, K2, d2], respectively.
+As C⊥ 1 ⊆ C2, the elements of C⊥ 1 are codewords of C2; hence, H2 H T 1 = 0.
+The CSS code is deﬁned in the following two equivalent ways:
+1) The coset-based deﬁnition: As C⊥ 1 ⊆ C2, cosets of C⊥ 1 are formed in C2.T h e
+basis codewords of the CSS code QCSS are the normalized superposition of all the
+elements in a particular coset of C⊥ 1 in C2.A s C⊥ 1 has 2(n−K1) elements and C2
+has 2K2 elements, we obtain C2 to contain (2K2 )/(2(n−K1)) = 2(K1+K2−n) cosets
+of C⊥ 1 . Also, each coset corresponds to a basis codeword, QCSS with dimension
+2(K1+K2−n).
+Let ω0, ω1, ... , ωg−1 be the cosets of C⊥ 1 in C2 where g = 2(K1+K2−n).L e t
+w0, ... , wg−1 be the coset representatives of the cosets ω0, ... , ωg−1. The basis
+codeword of the CSS code corresponding to the coset ωi (i ∈{ 0, 1,..., g − 1})i s
+|ψi⟩= 1 2((n−K1)/2) ∑
+l∈C⊥ 1
+|l + wi⟩. (3)
+The basis states in the superposition help to detect/correct the bit ﬂip errors, while
+the superposition helps to detect/correct the phase ﬂip errors.
+2) The check matrix based deﬁnition: The check matrix of the CSS code [ 23]i s
+HCSS =
+[ H1 0
+0 H2
+]
+. (4)
+The quantum codes obtained from both these deﬁnitions are the same for qubits.
+Let ρ1 = (n − K1) and ρ2 = (n − K2). From equation ( 4), the ﬁrst ρ1 stabilizer
+generators that correspond to [H1|0] operate only the bit ﬂip operator on a few qubits.
+They do not operate phase ﬂip operators. As the bit ﬂip and phase ﬂip operators do
+not commute with each other, these stabilizers are used to detect and correct the phase
+ﬂip errors. Similarly, the stabilizers that correspond to [0|H2] detect and correct the
+bit ﬂip errors.
+As the stabilizer code [ 10] corrects bit ﬂip errors and phase ﬂip errors based on the
+stabilizers in[0|H2] and [H1|0], their bit ﬂip and phase ﬂip error correction capabilities
+are based on the error correction capabilities ofH2 and H1, respectively. The minimum
+distance of the code is obtained to be d′ ≥ min(d1, d2) [23].
+We assume that the parity check matrices H1 and H2 are full rank matrices. The
+check matrix in equation ( 4)i sa ((ρ1 + ρ2) × 2n) matrix. As H1 and H2 are full rank
+123
+
+207 Page 24 of 30 S.R. Joshi et al.
+matrices, the CSS code has (ρ1 + ρ2) minimal stabilizer generators. Thus, the size
+of the CSS code is 2 (n−(ρ1+ρ2)) = 2(K1+K2−n). Hence, the CSS code is an [[n, K1 +
+K2 − n, d′ ≥ min(d1, d2)]] stabilizer code.
+Remark 2 Using Euclidean or Hermitian inner product, we can study dual-containing
+codes over S, but using the Gray map θ deﬁned above, we cannot construct dual-
+containing codes over F27 which are necessary for constructing quantum codes via
+CSS construction. Hence, Similar to Euclidean dot product, we deﬁne ⟨a, b⟩R =∑n−1
+i=0 ai bn−1−i for a, b ∈ Sn which is a non-degenerate inner product. If⟨a·b⟩R = 0,
+then a and b are considered orthogonal with respect to this inner product. We deﬁne
+the dual of a linear code C over ⟨·⟩R as CR⊥ ={ b ∈ Sn |⟨ a, b⟩R = 0, ∀ a ∈ C}.
+Lemma 1 ∀x, y ∈ Sn, ⟨x, y⟩R = ∑n−1 i=0 xi yn−1−i is a non-degenerate inner product.
+Proof Let x = (x0, x1,..., xn−1) ∈ Sn be a non-zero vector. Then there exists
+an index i such that xi ⁄= 0. As S contains 1, deﬁne y = (y0, y1,..., yn−1) ∈
+Sn by setting yn−1−i = 1 and yj = 0 for all j ⁄= n − 1 − i. Then ⟨x, y⟩R =∑n−1
+k=0 xk yn−1−k = xi · 1 = xi ⁄= 0. Hence, for every non-zero x ∈ Sn , there exists
+y ∈ Sn such that ⟨x, y⟩R ⁄= 0. Thus, ⟨x, y⟩R is a non-degenerate inner product.
+We introduce a new inner product to construct quantum codes with the help of matrix
+rings. This approach is novel in the literature, and we subsequently provided some
+better quantum codes that validate our approach.
+Theorem 12 Let C be the cyclic code of length n over S. Then
+CR⊥ =⟨ ˆI∗ 0 ⟩
+k⨁
+i=2
+⟨uk−(i−1) ˆI∗ i ⟩
+k⨁
+i=1
+⟨v2 ˆI∗ k+i⟩+⟨uk−(i−1) ˆI∗ k+i⟩
+k⨁
+i=1
+⟨v ˆI∗ 2k+i⟩+⟨uk−(i−1) ˆI∗ 2k+i⟩
+k−1⨁
+i=1
+⟨uk−i v2 ˆI∗ 3k+i ⟩ ⨁ ⟨v2uk−1 ˆI∗ 4k⟩ ⨁ ⟨v2 ˆI∗ 4k+1⟩+⟨ vuk−1 ˆI∗ 4k+1⟩ ⨁ ⟨v ˆI∗ 4k+2⟩+⟨ uk−1 ˆI∗ 4k+2⟩.
+Thus, |C⊥| =p 3δ where
+δ = (3k) deg I0+
+k∑
+i=2
+3(i−1) deg(Ii)+
+k∑
+i=1
+(k+2(i−1)) deg(Ik+i)+
+k∑
+i=1
+(2k+(i−1)) deg(I2k+i)
++
+k−1∑
+i=1
+i deg(I3k+i) + deg(I4k) + (k + 1) deg(I4k+1) + (2k + 1) deg(I4k+2).
+Proof Follows from Theorem 8 by reversing the index of ˆP∗ i , and then replacing ˆP∗ i
+with ˆI∗ 4k+2−i . ⊓⊔
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 25 of 30 207
+Now, we provide the conditions under which C becomes the dual-containing code.
+We will consider a polynomial overF27 to be self-reciprocal if f (x) = α f ∗(x) where
+α is a unit in F27.
+Theorem 13 If x n − 1 = f1 f2 ··· fm where f i ’s are irreducible and self-reciprocal
+polynomials overF27, then a cyclic code of length n overS = M3(F3 +uF3 +u2F3 +
+···+ uk−1F3) generated by ideals ⟨u⟩ fi , ⟨v⟩ f j , and ⟨(u + vη1 + v2η2⟩ fk , where
+η1,η 2 ∈ F27 is a dual-containing code.
+Proof From the Theorem 9, dual correspond to ⟨u⟩ fi is ⟨uk−1⟩ f ∗ i . Similarly, dual
+correspond to⟨v⟩ f j , and⟨(u+vη1+v2η2⟩ fk are⟨v2⟩ f ∗ j and⟨uk−1v2⟩ f ∗ k , respectively.
+From the given condition, fi = f ∗ i , f j = f ∗ j , and fk = f ∗ k . Also, it is easy to show
+that ⟨uk−1⟩⊆⟨ u⟩, ⟨v2⟩⊆⟨ v⟩, and ⟨uk−1v2⟩⊆⟨ u + vη1 + v2η2⟩. Hence, over S,w e
+have C⊥ ⊆ C. Similarly, we can show that C R⊥ ⊆ C. ⊓⊔
+6.2 Gray map for quantum codes
+Construction of quantum codes from classical linear codes requires a dual-containing
+condition, i.e., C⊥ ⊆ C over S. In our case, we use S = M3(F3 + uF3 + u2F3 +···+
+uk−1F3), structure of C and CR⊥ over S which we have studied above, and will show
+that φ(CR⊥) = φ(C)R⊥ where φ = φ1 is a Gray map from S to F9 27 for k = 3 and
+φ = φ2 is a Gray map from S to F6 27 for k = 2 deﬁned by
+φ1[(d1 + vd2 + v2d3) + u(d4 + vd5 + v2d6) + u2(d7 + vd8 + v2d9)]
+= (d9, d8 + d7, d7, d6, d5, d4, d3 + d2, d2, d1),
+φ2[(d1 + vd2 + v2d3) + u(d4 + vd5 + v2d6)]
+= (d6, d5 + d4, d4, d3 + d2, d2, d1),
+where di ∈ F27 for all i. We then extend these Gray maps φ1 and φ2 componen-
+twise to Sn , where both φ1 and φ2 are distance preserving. The deﬁnition of Lee
+weight will follow a similar case to the case of the Gray map θ deﬁned in Sect. 2.W e
+choose different Gray map for quantum codes because θ does not follow the condition
+θ( CR⊥) = θ( C)R⊥.
+Theorem 14 Let C be a cyclic code over S of length n, size M, and Lee distance d.
+Then φ(C) is a linear code overF27 of length 3kn for k = 2, 3, size M, and Hamming
+distance d.
+Now, we ﬁrst show that above φ satisﬁes φ(CR⊥) = φ(C)R⊥.
+Theorem 15 Let C be a cyclic code over S and CR⊥ be its dual. Then the Gray map
+φ satisﬁes φ(CR⊥) = φ(C)R⊥.
+Proof First, we prove the theorem fork = 2. Let a = (a0, a1,..., an) ∈ C where each
+ai = (d1 +vd2 +v2d3)+u(d4 +vd5 +v2d6) and di ∈ F27.L e tb = (b0, b1,..., bn) ∈
+123
+
+207 Page 26 of 30 S.R. Joshi et al.
+C⊥ where each bi = (c1+vc2 +v2c3)+u(c4 +vc5 +v2c6) and ci ∈ F27. By assuming
+ab = 0, we prove ⟨φ(a)φ(b)⟩R = 0.
+Now, from the Gray map deﬁned above, ⟨φ(a), φ(b)⟩R = d6c1 + (d5 + d4)c2 +
+d4(c3+c2)+(d3+d2)c4+d2(c5+c4)+d1c6. So,⟨φ(a), φ(b)⟩R ⁄= 0 when there exists
+some di cj from the sum above such thatdi cj ⁄= 0, which means thatri diw j cj = 0b u t
+di cj ⁄= 0 where ri and w j are corresponding component of the ring before applying
+a Gray map. This means that riw j = 0f o rs o m edi cj .B u t ,riw j = uv2 for d6c1,
+(uv + u)v for (d5 + d4)c2, u(v + v2) for d4(c3 + c2), (v + v2)u for (d3 + d2)c4,
+v(uv + u) for d2(c5 + c4), and uv2 for d1c6. Hence, riw j ⁄= 0 for all di cj in the
+summand. Thus, ⟨φ(a), φ(b)⟩R = 0. Similarly, we prove the theorem for k = 3. ⊓⊔
+Under the Gray maps φ1 and φ2 deﬁned above, cyclic codes over S become linear
+codes over F27. Consequently, the newly deﬁned inner product takes the form
+⟨a, b⟩R =
+n−1∑
+i=0
+ai bn−1−i, ∀a, b ∈ Fn 27.
+Let R denote the coordinate reversal map, which maps bi to bn−1−i. Then ⟨a, b⟩R =
+⟨a, R(b)⟩, where ⟨a, R(b)⟩ is the standard Euclidean inner product. Towards quantum
+codes, this permutation corresponds to a relabeling of qubits (i ↦→ n − 1 − i), which
+does not change the error-correcting properties of the code or the underlying quantum
+channel. In the stabilizer formalism (as we discussed in the Sect.6.1(2)), commutation
+between Z-type operators (Z(a)) and X-type operators (X(b)) is determined by the
+symplectic inner product [ 23, Secs. 10.4.2 and 10.5], which in this setting reduces to
+(R(b)|0) ⊙ (0|a) =⟨ R(b), a⟩=⟨ a, R(b)⟩.
+Thus, the condition (⟨a, b⟩R = 0) ensures that all corresponding stabilizer generators
+commute. Hence, the construction is fully compatible with the CSS framework, and
+is equivalent to a standard CSS code up to a relabeling of qubits.
+Lemma 2 [7]A n [[n, K, d]]q quantum code satisﬁes the bound2d ≤ n − K + 2, and
+is said to MDS (maximum-distance-separable) when n + 2 = K + 2d. This bound is
+known as the quantum Singleton Bound (QSB).
+Presently, the CSS construction (Lemma3) is one of the widely used techniques for
+obtaining quantum codes from classical linear codes, in which dual-containing linear
+codes play an instrumental role.
+Lemma 3 [12, Theorem 3] Let C1 =[ n, K1, d1]q and C2 =[ n, K2, d2]q be two linear
+codes over G F(q) with C⊥ 2 ⊆ C1. Then there exists a quantum error-correcting code
+C =[ [ n, K1 + K2 − n, d]] where d = min{w(v) : v ∈ (C1\C⊥ 2 ) ∪ (C2\C⊥ 1 )}≥
+min{d1, d2}. Further, if C⊥ 1 ⊆ C1, then there exists a quantum error-correcting code
+C =[ [n, 2K1 − n, d1]] where d1 = min{w(v) : v ∈ C1\C⊥ 1 }.
+Theorem 16 Let xn − 1 = f1 f2 ··· fm where f i ’s are irreducible and self-reciprocal
+polynomials over F27. Let C be a cyclic code of length of n overS generated by ideals
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 27 of 30 207
+Table 4 Obtained quantum codes via the CSS construction
+k n Generators of cyclic codes Images under θ Quantum codes
+22 ⟨w5v f2,( u + w7v + wv2) f1⟩[ 12, 8, 4]27 [[12, 4, 4]]∗∗ 27
+22 ⟨uf 2,w 2v f1⟩[ 12, 10, 2]27 [[12, 8, 2]]∗∗ 27
+32 ⟨(u + 2v + w5v2) f1,w 7v f2⟩[ 18, 15, 3]27 [[18, 12, 3]]∗∗ 27
+32 ⟨(u + w3v + w5v2) f2,( u + w7v + w4v2) f1⟩[ 18, 14, 4]27 [[18, 10, 4]]∗∗ 27
+24 ⟨w2uf 3 f2,( u + w17v + wv2) f3 f1, [24, 17, 6]27 [[24, 10, 6]]∗∗∗ 27
+(u + w7v + w11v2) f2 f1⟩
+24 ⟨w2uf 3 f2,w 17v f3 f1, [24, 19, 4]27 [[24, 14, 4]]∗∗∗ 27
+(u + w7v + w11v2) f2 f1⟩
+24 ⟨w2v f3,w 17v f2 f1, [24, 23, 2]27 [[24, 22, 2]]∗ 27
+(u + w7v + w11v2) f3 f1⟩
+34 ⟨w2v f2 f3, uw6 f3 f1,w 3uf 2 f1⟩[ 36, 35, 2]27 [[36, 34, 2]]∗ 27
+34 ⟨w5v f2 f3,( u + w4v + w2v2) f3 f1, [36, 31, 4]27 [[36, 26, 4]]∗∗∗ 27
+(u + w3v + w7v2) f2 f1⟩
+34 ⟨w2v f2 f3, uw6 f3 f1, [36, 33, 3]27 [[36, 30, 3]]∗∗ 27
+(u + w3v + w7v2) f2 f1⟩
+123
+
+207 Page 28 of 30 S.R. Joshi et al.
+⟨u⟩ fi , ⟨v⟩ f j , and⟨(u+vη1+v2η2⟩ fk , whereη1, η2 ∈ F27. Then there exists a quantum
+code with parameters [[3kn, 2K − 3kn, dH ]]27 for k = 2, 3.
+Proof By Theorem 13,w eh a v eCR⊥ ⊆ C. Also, by Theorem 15,w eh a v eϕ(CR⊥) =
+φ(C)R⊥. Therefore, ϕ(C)R⊥ ⊆ ϕ(C). Hence, ϕ(C) is a dual-containing linear code
+with parameters [3kn, K, dH ] over F27. By Lemma 3, we conclude that there exists a
+quantum code with parameters [[3kn, 2K − 3kn, dH ]]27. ⊓⊔
+7 Numerical illustrations
+In this section, we construct quantum codes with the help of matrix rings. We use the
+factorization of xn −1f o rn = 2 and 4 as given in the examples 4 and 7. Here, f ∗ 1 = f1
+and f ∗ 2 = f2 for the factorization of x2 − 1, and f ∗ 1 = f1, f ∗ 2 = f2, and f ∗ 3 = f3
+for the factorization of x4 − 1, where f ∗ i represents the reciprocal of fi deﬁned in the
+Sect. 4.2. First, we work over k = 2, with conditions u2 = v3 = 0.
+Example 9 Consider a code C generated by ⟨w5v f2,( u + w7v + wv2) f1⟩.F r o m
+Theorem 16, C is a dual-containing code with parameters [12, 8, 4]27. Hence, quan-
+tum code has parameters [[12, 4, 4]]27. For this code, quantum Singleton defect
+δ = n − K − 2d + 2 = 12 − 4 − 2(4) + 2 = 2. Therefore, we denote this code
+by [[12, 4, 4]]∗∗ 27 . Similarly, we obtain other examples for k = 2 in the Table 4.
+Now, we work over k = 3 and with the conditions u3 = v3 = 0.
+Example 10 Consider a code C generated by ⟨(u + 2v + w5v2) f1,w 7v f2⟩.F r o m
+Theorem 16, C is a dual-containing code with parameters [18, 15, 3]27. Hence, quan-
+tum code has parameters [[18, 12, 3]]27. For this code, quantum Singleton defect
+δ = n − K − 2d + 2 = 18 − 12 − 2(3) + 2 = 2. Therefore, we denote this code by
+[[18, 12, 3]]∗∗ 27 . Similarly, we obtain other examples for k = 3 in the Table 4.
+8 Conclusion
+In 2024, Islam et al. [17] discussed the structure of cyclic codes overM3(Fp), in which
+they provided many good linear codes over F8 with length 3 n where p ∤ n. Initially,
+we have extended their work and studied the structure of cyclic codes over the ring R
+along with the Gray map, which takes our cyclic code over R to Fp3 , with length 3kn ,
+where p ∤ n. We have shown that our structure is suitable for the construction of linear
+codes overF125, F27,a sw e l la sF8. Further, along with Euclidean and Hermitian duals,
+we have studied the dual-containing codes over the ring S. Using a suitable Gray map,
+we have provided a novel method to study quantum codes over matrix rings via the
+CSS construction. Finally, we have provided many better quantum codes to validate
+our results. Here, the construction of self-dual and quantum codes over all possible
+primes remains open and presents an interesting problem for further study.
+Acknowledgements The ﬁrst and third authors are thankful to the Indian Institute of Technology Patna
+(India) for providing research facilities.
+123
+
+Quantum codes construction from cyclic codes over matrix rings Page 29 of 30 207
+Author Contributions SRJ and SP initiated the work under the guidance of OP . Draft prepared by SRJ and
+reviewed by all authors. Finally submitted by OP .
+Data Availability The authors declare that [the/all other] data supporting the ﬁndings of this study are
+available within the article. Any clariﬁcation may be requested from corresponding author provided it is
+essential.
+Declarations
+Conﬂict of interest The authors declare no conﬂict of interest.
+References
+1. Alahmadi, A., Islam, H., Prakash, O., Solé, P ., Alkenani, A., Muthana, N., Hijazi, R.: New quantum
+codes from constacyclic codes over a non-chain ring. Quantum Inf. Process. 20(2), 60 (2021)
+2. Alahmadi, A., Sboui, H., Solé, P ., Y emen, O.: Cyclic codes over M2(F2). J. Franklin Inst. 350(9),
+2837–2847 (2013)
+3. Barbero-Lucas, B., Hernando, F., Martín-Cruz, H., McGuire, G.: MDS, Hermitian almost MDS, and
+Gilbert-V arshamov quantum codes from generalized monomial-Cartesian codes. Quantum Inf. Process.
+23(3), 86 (2024)
+4. Bonnecaze, A., Udaya, P .: Cyclic codes and self-dual codes overF2+uF2. IEEE Trans. Inform. Theory
+45(4), 1250–1255 (1999)
+5. Bosma, W., Cannon, J.: Handbook of Magma Functions. Univ. of Sydney, Sydney (1995)
+6. Calderbank, A.R., Rains, E.M., Shor, P .W., Sloane, N.J.A.: Quantum error correction via codes over
+GF(4). IEEE Trans. Inf. Theory 44(4), 1369–1387 (1998)
+7. Calderbank, A.R., Shor, P .W.: Good quantum error-correcting codes exist. Phys. Rev. A54, 1098–1105
+(1996)
+8. Dertli, A., Cengellenmis, Y ., Eren, S.: On quantum codes obtained from cyclic codes over A2.I n t .J .
+Quantum Inf. 13(3), 1550031 (2015)
+9. Falcunit, D. F., Sison, V . P .: Cyclic codes over matrix ring M2(Fp) and their isometric images over
+Fp2 + uFp2 . Int. Zurich Seminar Commun. (IZS), 26-28 (2014)
+10. Gottesman, D.: Stabilizer codes and quantum error correction, Pasadena (1997). (Ph.D. thesis)
+11. Grassl, M.: Bounds on the minimum distance of linear codes and quantum codes, (2007). (Online
+available at) http://www.codetables.de. Accessed 20 Aug 2025
+12. Grassl, M., Beth, T., Roetteler, M.: On optimal quantum codes. Int. J. Quantum Inf. 2(1), 55–64 (2004)
+13. Greferath, M.: Cyclic codes over ﬁnite rings. Discrete Math. 177(1–3), 273–277 (1997)
+14. Hammons, A.R., Kumar, P .V ., Calderbank, A.R., Sloane, N.J.A., Solé, P .: TheZ4-linearity of Kerdock,
+Preparata, Goethals, and related codes. IEEE Trans. Inform. Theory 40(2), 301–319 (1994)
+15. Islam, H., Martínez-Moro, E., Prakash, O.: Cyclic codes over a non-chain ringRe,q and their application
+to LCD codes. Discrete Math. 344(10), 112545 (2021)
+16. Islam, H., Patel, S., Prakash, O.: A family of constacyclic codes over a class of non-chain rings Aq,r
+and new quantum codes. J. Appl. Math. Comput. 68, 2493–2514 (2022)
+17. Islam, H., Prakash, O., Bhunia, D.K.: Algebraic structure of cyclic codes over M3(Fp). J. Discret.
+Math. Sci. Cryptogr. 27, 189–201 (2024)
+18. Islam, H., Prakash, O.: New quantum codes from constacyclic and additive constacyclic codes. Quan-
+tum Inf. Process. 19(9), 319 (2020)
+19. Joshi, S.R., Patel, S., Prakash, O.: Construction of new codes overF16 from cyclic codes overM4(F2+
+uF2 + u2F2). In: Proc. IEEE Int. Symp. Inf. Theory (ISIT), Ann Arbor, MI, USA, 1–5 (2025)
+20. Kai, X., Zhu, S.: Quaternary construction of quantum codes from cyclic codes over F4 + uF4.I n t .J .
+Quantum Inf. 9(2), 689–700 (2011)
+21. Luo, R., Udaya, P .: Cyclic codes over M2(F2 + uF2). Cryptogr. Commun. 10(6), 1109–1117 (2018)
+22. MinT - A Database for Optimal Net, Sequence, Array, and Code Parameters. Austria (). (MinT Project)
+7https://mint.sbg.ac.at/, last accessed 13 Aug 2025
+23. Nielsen, M.A., Chuang, I.L.: Quantum Computation and Quantum Information, 10th edn. Cambridge
+University Press, Cambridge (2011)
+123
+
+207 Page 30 of 30 S.R. Joshi et al.
+24. Oggier, F., Solé, P ., Belﬁore, J.C.: Codes over matrix rings for space-time coded modulations. IEEE
+Trans. Inform. Theory 58(2), 734–746 (2012)
+25. Patel, S., Joshi, S.R., Prakash, O.: Construction of codes over Fp3 from cyclic codes over M3(Fp +
+uFp + u2Fp). In: Proc. 2025 11th International Workshop on Signal Design and Its Applications in
+Communications (IWSDA), 1-5 (2025)
+26. Patel, S., Prakash, O., Islam, H.: Cyclic codes over M4(F2 + uF2). Cryptogr. Commun. 14(5), 1021–
+1034 (2022)
+27. Pless, V ., Qian, Z.: Cyclic codes and quadratic residue codes over Z4. IEEE Trans. Inform. Theory
+42(5), 1594–1600 (1996)
+28. Prakash, O., Patel, S., Islam, H.: Quantum codes from skew cyclic codes over mixed alphabets. Comp.
+Appl. Math. 44(8), 384 (2025)
+29. Prakash, O., V erma, R.K., Singh, A.: Quantum and LCD codes from skew constacyclic codes over a
+ﬁnite non-chain ring. Quantum Inf. Process. 22(5), 25 (2023)
+30. Qian, J., Ma, W., Gou, W.: Quantum codes from cyclic codes over ﬁnite ring. Int. J. Quantum Inf. 7(6),
+1277–1283 (2009)
+31. Shor, P .W.: Scheme for reducing decoherence in quantum computer memory. Phys. Rev. A 52(4),
+R2493 (1995)
+32. Steane, A.M.: Simple quantum error-correcting codes. Phys. Rev. A 54, 4741–4751 (1996)
+33. Wisbauer, R.: Foundations of Module and Ring Theory, Gordon and Breach (1991)
+34. Zhu, S., Guo, H., Kai, X., Sun, Z.: New quantum codes derived from images of cyclic codes. Quantum
+Inf. Process. 21(7), 254 (2022)
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional afﬁliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and applicable
+law.
+123

@@ -1,0 +1,696 @@
+
+####################################################################################################
+  PHASE 3 -- STAGE 3B: enumeration of Galois hull dimensions for codes over R = M_2(A_t)
+####################################################################################################
+  seed 20261109 ;  [EXH] = exhaustive over the stated family, [SMP] = sampled
+  conventions: A_t = F_q[u]/<u^t>,  R = M_2(A_t),  R_n = R[X]/<X^n-1>,
+               B = A_t[X]/<X^n-1>;  codes = right ideals of R_n =
+               B-submodules W of B^2 (Morita);  Hull_s(C) = C cap C^perp_s.
+
+####################################################################################################
+  TASK A -- the four counting problems, separately for each parameter set
+####################################################################################################
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2
+  (2) distinct generator matrices  = generating tuples of the submodule
+  (3) unit-equivalence classes     = orbits of R_n^x = GL_2(B) acting by
+                                     LEFT multiplication on right ideals
+                                     (i.e. W -> U W under Morita)
+  (4) Morita-equivalent submodules = isomorphism classes of the B-modules
+  These four numbers are NEVER mixed: (1) != (2) != (3) != (4) in general.
+
+---- counting problems for (q,t,n)=(4,1,1) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 7
+  [EXH] (4,1,1): the numbers of generating 1-tuples sum to |B^2|^1   PASS  16 vs 16
+      per-module counts range 0..3 ; #modules with a generating 1-tuple: 6
+      #cyclic (1-generated) modules: 6
+  [EXH] (4,1,1): the numbers of generating 2-tuples sum to |B^2|^2   PASS  256 vs 256
+      per-module counts range 1..180 ; #modules with a generating 2-tuple: 7
+      #cyclic (1-generated) modules: 6
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 10 generators, |B^x| = 3) : 3
+  [EXH] (4,1,1): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  3 vs 3
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 3
+  [EXH] (4,1,1): the type invariant separates the lattice at least as finely as the dimension PASS  3 >= 3
+  [EXH] (4,1,1): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  3 >= 3
+  NB: 7 (right ideals), 3 (unit classes), 3 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(4,1,2) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 33
+  [EXH] (4,1,2): the numbers of generating 1-tuples sum to |B^2|^1   PASS  256 vs 256
+      per-module counts range 0..12 ; #modules with a generating 1-tuple: 26
+      #cyclic (1-generated) modules: 26
+  [EXH] (4,1,2): the numbers of generating 2-tuples sum to |B^2|^2   PASS  65536 vs 65536
+      per-module counts range 1..46080 ; #modules with a generating 2-tuple: 33
+      #cyclic (1-generated) modules: 26
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 22 generators, |B^x| = 12) : 6
+  [EXH] (4,1,2): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  6 vs 6
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 6
+  [EXH] (4,1,2): the type invariant separates the lattice at least as finely as the dimension PASS  6 >= 5
+  [EXH] (4,1,2): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  6 >= 6
+  NB: 33 (right ideals), 6 (unit classes), 6 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(4,2,1) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 33
+  [EXH] (4,2,1): the numbers of generating 1-tuples sum to |B^2|^1   PASS  256 vs 256
+      per-module counts range 0..12 ; #modules with a generating 1-tuple: 26
+      #cyclic (1-generated) modules: 26
+  [EXH] (4,2,1): the numbers of generating 2-tuples sum to |B^2|^2   PASS  65536 vs 65536
+      per-module counts range 1..46080 ; #modules with a generating 2-tuple: 33
+      #cyclic (1-generated) modules: 26
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 22 generators, |B^x| = 12) : 6
+  [EXH] (4,2,1): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  6 vs 6
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 6
+  [EXH] (4,2,1): the type invariant separates the lattice at least as finely as the dimension PASS  6 >= 5
+  [EXH] (4,2,1): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  6 >= 6
+  NB: 33 (right ideals), 6 (unit classes), 6 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(4,2,2) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 1221
+  (2) generating 1-tuples: NOT COMPUTED (sum |W| = 915621 > cap 400000)
+  (2) generating 2-tuples: NOT COMPUTED (sum |W| = 915621 > cap 400000)
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 46 generators, |B^x| = 192) : 58
+  [EXH] (4,2,2): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  58 vs 58
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) Morita classes: NOT COMPUTED in the wild regime (no SNF for B);
+      partial invariant dim W gives the upper bound 9
+  NB: 1221 (right ideals), 58 (unit classes), None (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(4,1,3) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 343
+  [EXH] (4,1,3): the numbers of generating 1-tuples sum to |B^2|^1   PASS  4096 vs 4096
+      per-module counts range 0..27 ; #modules with a generating 1-tuple: 216
+      #cyclic (1-generated) modules: 216
+  [EXH] (4,1,3): the numbers of generating 2-tuples sum to |B^2|^2   PASS  16777216 vs 16777216
+      per-module counts range 1..5832000 ; #modules with a generating 2-tuple: 343
+      #cyclic (1-generated) modules: 216
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 30 generators, |B^x| = 27) : 27
+  [EXH] (4,1,3): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  27 vs 27
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 27
+  [EXH] (4,1,3): the type invariant separates the lattice at least as finely as the dimension PASS  27 >= 7
+  [EXH] (4,1,3): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  27 >= 27
+  NB: 343 (right ideals), 27 (unit classes), 27 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(9,1,2) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 144
+  [EXH] (9,1,2): the numbers of generating 1-tuples sum to |B^2|^1   PASS  6561 vs 6561
+      per-module counts range 0..64 ; #modules with a generating 1-tuple: 121
+      #cyclic (1-generated) modules: 121
+  [EXH] (9,1,2): the numbers of generating 2-tuples sum to |B^2|^2   PASS  43046721 vs 43046721
+      per-module counts range 1..33177600 ; #modules with a generating 2-tuple: 144
+      #cyclic (1-generated) modules: 121
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 48 generators, |B^x| = 64) : 9
+  [EXH] (9,1,2): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  9 vs 9
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 9
+  [EXH] (9,1,2): the type invariant separates the lattice at least as finely as the dimension PASS  9 >= 5
+  [EXH] (9,1,2): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  9 >= 9
+  NB: 144 (right ideals), 9 (unit classes), 9 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(8,1,2) ---------------------------------------------------------
+  (1) distinct right ideals of R_n = distinct B-submodules of B^2 : 93
+  [EXH] (8,1,2): the numbers of generating 1-tuples sum to |B^2|^1   PASS  4096 vs 4096
+      per-module counts range 0..56 ; #modules with a generating 1-tuple: 82
+      #cyclic (1-generated) modules: 82
+  [EXH] (8,1,2): the numbers of generating 2-tuples sum to |B^2|^2   PASS  16777216 vs 16777216
+      per-module counts range 1..14450688 ; #modules with a generating 2-tuple: 93
+      #cyclic (1-generated) modules: 82
+  (3) #unit-equivalence classes (orbits of R_n^x = GL_2(B) acting by LEFT multiplication; 40 generators, |B^x| = 56) : 6
+  [EXH] (8,1,2): the reduced generating set of GL_2(B) gives the same orbit count as the full one PASS  6 vs 6
+      NB the 'scalar' action u*W (u in B^x) is TRIVIAL: W is a B-module, so uW = W for every unit u
+  (4) #Morita-equivalence classes (isomorphism classes of the B-modules W) : 6
+  [EXH] (8,1,2): the type invariant separates the lattice at least as finely as the dimension PASS  6 >= 5
+  [EXH] (8,1,2): #unit-equivalence classes >= #Morita classes (unit equivalence implies B-module isomorphism) PASS  6 >= 6
+  NB: 93 (right ideals), 6 (unit classes), 6 (Morita classes) are three DIFFERENT counting problems; none is derived from another.
+
+---- counting problems for (q,t,n)=(4,2,3)   [CRT product] -----------------------------------------
+  local ring A_t: |L(A_t^2)| = 33, |A_t^x| = 12, #unit classes = 6, #Morita classes = 6
+  (1) distinct right ideals of R_n : 35937  (= 33^3)
+  [EXH] (4,2,3): the CRT product of the local generating-1-tuple counts sums to |B^2|^1 PASS  16777216 vs 16777216
+      #codes with a generating 1-tuple (i.e. cyclic): 17576
+  [EXH] (4,2,3): the CRT product of the local generating-2-tuple counts sums to |B^2|^2 PASS  281474976710656 vs 281474976710656
+      #codes with a generating 2-tuple: 35937
+  (3) #unit-equivalence classes : 216  (= 6^3)
+  (4) #Morita-equivalence classes : 216  (= 6^3)
+  NB: 35937, 216, 216 are three DIFFERENT counting problems.
+
+####################################################################################################
+  TASKS B-E -- exhaustive hull-dimension enumeration, distributions, and the split-regime closed form
+####################################################################################################
+
+####################################################################################################
+  (q,t,n) = (4,1,1)   kind = split   |B| = 4   |R_n| = 256   dim_{F_q} R_n = 4
+####################################################################################################
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes             : 7
+     note: n = 1: the CRT has one component, so the transfer-matrix route below is the 1x1 (tautological) case
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,1,1) s=0: the two hull routes agree in DIMENSION on every code PASS  0 of 7 disagree
+  [EXH] (4,1,1) s=0: the two hull routes agree as SUBSPACES on every code PASS  0 of 7 disagree
+  [EXH] (4,1,1) s=0: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,1,1) s=0: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  2 of 2 verified by containment
+  [EXH] (4,1,1) s=0: every self-dual code really satisfies C = C^{perp_s} PASS  1 of 1 verified by equality
+
+  #codes 7 | #principal 7 | #non-principal 0 | #distinct hulls 2
+  mu_B(W) distribution : {0: 1, 1: 5, 2: 1}
+  hull-dimension distribution  H(Z) : 6*Z^0  1*Z^2
+  N_LCD = 6   N_SO = 2   N_SD = 1
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 4, (2, 2): 1, (4, 0): 1}
+  [EXH] (4,1,1) s=0: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 2
+  [EXH] (4,1,1) s=0: hull-principality scan completed over 7 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 6, 1: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,1), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 5 codes have dim C = 2, only 1 of them are self-dual PASS  5 vs 1
+  #principal 7 of 7 ; mu distribution {0: 1, 1: 5, 2: 1}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,1,1) s=1: the two hull routes agree in DIMENSION on every code PASS  0 of 7 disagree
+  [EXH] (4,1,1) s=1: the two hull routes agree as SUBSPACES on every code PASS  0 of 7 disagree
+  [EXH] (4,1,1) s=1: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,1,1) s=1: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  4 of 4 verified by containment
+  [EXH] (4,1,1) s=1: every self-dual code really satisfies C = C^{perp_s} PASS  3 of 3 verified by equality
+
+  #codes 7 | #principal 7 | #non-principal 0 | #distinct hulls 4
+  mu_B(W) distribution : {0: 1, 1: 5, 2: 1}
+  hull-dimension distribution  H(Z) : 4*Z^0  3*Z^2
+  N_LCD = 4   N_SO = 4   N_SD = 3
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 2, (2, 2): 3, (4, 0): 1}
+  [EXH] (4,1,1) s=1: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 2
+  [EXH] (4,1,1) s=1: hull-principality scan completed over 7 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 4, 1: 3} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,1), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 5 codes have dim C = 2, only 3 of them are self-dual PASS  5 vs 3
+  #principal 7 of 7 ; mu distribution {0: 1, 1: 5, 2: 1}
+
+
+####################################################################################################
+  (q,t,n) = (4,1,2)   kind = chain   |B| = 16   |R_n| = 65536   dim_{F_q} R_n = 8
+####################################################################################################
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes             : 33
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,1,2) s=0: the two hull routes agree in DIMENSION on every code PASS  0 of 33 disagree
+  [EXH] (4,1,2) s=0: the two hull routes agree as SUBSPACES on every code PASS  0 of 33 disagree
+  [EXH] (4,1,2) s=0: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,1,2) s=0: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  11 of 11 verified by containment
+  [EXH] (4,1,2) s=0: every self-dual code really satisfies C = C^{perp_s} PASS  5 of 5 verified by equality
+
+  #codes 33 | #principal 33 | #non-principal 0 | #distinct hulls 11
+  mu_B(W) distribution : {0: 1, 1: 25, 2: 7}
+  hull-dimension distribution  H(Z) : 18*Z^0  10*Z^2  5*Z^4
+  N_LCD = 18   N_SO = 11   N_SD = 5
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 0): 16, (4, 4): 5, (6, 2): 5, (8, 0): 1}
+  [EXH] (4,1,2) s=0: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (4,1,2) s=0: hull-principality scan completed over 33 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 18, 1: 14, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,2), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 21 codes have dim C = 4, only 5 of them are self-dual PASS  21 vs 5
+  #principal 33 of 33 ; mu distribution {0: 1, 1: 25, 2: 7}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,1,2) s=1: the two hull routes agree in DIMENSION on every code PASS  0 of 33 disagree
+  [EXH] (4,1,2) s=1: the two hull routes agree as SUBSPACES on every code PASS  0 of 33 disagree
+  [EXH] (4,1,2) s=1: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,1,2) s=1: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  13 of 13 verified by containment
+  [EXH] (4,1,2) s=1: every self-dual code really satisfies C = C^{perp_s} PASS  7 of 7 verified by equality
+
+  #codes 33 | #principal 33 | #non-principal 0 | #distinct hulls 13
+  mu_B(W) distribution : {0: 1, 1: 25, 2: 7}
+  hull-dimension distribution  H(Z) : 10*Z^0  16*Z^2  7*Z^4
+  N_LCD = 10   N_SO = 13   N_SD = 7
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 0): 8, (4, 2): 6, (4, 4): 7, (6, 2): 5, (8, 0): 1}
+  [EXH] (4,1,2) s=1: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (4,1,2) s=1: hull-principality scan completed over 33 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 10, 1: 22, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,2), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 21 codes have dim C = 4, only 7 of them are self-dual PASS  21 vs 7
+  #principal 33 of 33 ; mu distribution {0: 1, 1: 25, 2: 7}
+
+
+####################################################################################################
+  (q,t,n) = (4,2,1)   kind = split   |B| = 16   |R_n| = 65536   dim_{F_q} R_n = 8
+####################################################################################################
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes             : 33
+     note: n = 1: the CRT has one component, so the transfer-matrix route below is the 1x1 (tautological) case
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,2,1) s=0: the two hull routes agree in DIMENSION on every code PASS  0 of 33 disagree
+  [EXH] (4,2,1) s=0: the two hull routes agree as SUBSPACES on every code PASS  0 of 33 disagree
+  [EXH] (4,2,1) s=0: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,2,1) s=0: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  11 of 11 verified by containment
+  [EXH] (4,2,1) s=0: every self-dual code really satisfies C = C^{perp_s} PASS  5 of 5 verified by equality
+
+  #codes 33 | #principal 33 | #non-principal 0 | #distinct hulls 11
+  mu_B(W) distribution : {0: 1, 1: 25, 2: 7}
+  hull-dimension distribution  H(Z) : 18*Z^0  10*Z^2  5*Z^4
+  N_LCD = 18   N_SO = 11   N_SD = 5
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 0): 16, (4, 4): 5, (6, 2): 5, (8, 0): 1}
+  [EXH] (4,2,1) s=0: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (4,2,1) s=0: hull-principality scan completed over 33 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 18, 1: 14, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,2,1), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 21 codes have dim C = 4, only 5 of them are self-dual PASS  21 vs 5
+  #principal 33 of 33 ; mu distribution {0: 1, 1: 25, 2: 7}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,2,1) s=1: the two hull routes agree in DIMENSION on every code PASS  0 of 33 disagree
+  [EXH] (4,2,1) s=1: the two hull routes agree as SUBSPACES on every code PASS  0 of 33 disagree
+  [EXH] (4,2,1) s=1: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,2,1) s=1: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  13 of 13 verified by containment
+  [EXH] (4,2,1) s=1: every self-dual code really satisfies C = C^{perp_s} PASS  7 of 7 verified by equality
+
+  #codes 33 | #principal 33 | #non-principal 0 | #distinct hulls 13
+  mu_B(W) distribution : {0: 1, 1: 25, 2: 7}
+  hull-dimension distribution  H(Z) : 10*Z^0  16*Z^2  7*Z^4
+  N_LCD = 10   N_SO = 13   N_SD = 7
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 0): 8, (4, 2): 6, (4, 4): 7, (6, 2): 5, (8, 0): 1}
+  [EXH] (4,2,1) s=1: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (4,2,1) s=1: hull-principality scan completed over 33 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 10, 1: 22, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,2,1), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 21 codes have dim C = 4, only 7 of them are self-dual PASS  21 vs 7
+  #principal 33 of 33 ; mu distribution {0: 1, 1: 25, 2: 7}
+
+
+####################################################################################################
+  (q,t,n) = (4,2,2)   kind = wild   |B| = 256   |R_n| = 4294967296   dim_{F_q} R_n = 16
+####################################################################################################
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes             : 1221
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,2,2) s=0: the two hull routes agree in DIMENSION on every code PASS  0 of 1221 disagree
+  [EXH] (4,2,2) s=0: the two hull routes agree as SUBSPACES on every code PASS  0 of 1221 disagree
+  [EXH] (4,2,2) s=0: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,2,2) s=0: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  357 of 357 verified by containment
+  [EXH] (4,2,2) s=0: every self-dual code really satisfies C = C^{perp_s} PASS  149 of 149 verified by equality
+
+  #codes 1221 | #principal 1125 | #non-principal 96 | #distinct hulls 357
+  mu_B(W) distribution : {0: 1, 1: 485, 2: 639, 3: 95, 4: 1}
+  hull-dimension distribution  H(Z) : 258*Z^0  138*Z^2  474*Z^4  202*Z^6  149*Z^8
+  N_LCD = 258   N_SO = 357   N_SD = 149
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 4): 101, (6, 2): 64, (6, 6): 101, (8, 0): 256, (8, 4): 272, (8, 8): 149, (10, 2): 64, (10, 6): 101, (12, 4): 101, (14, 2): 5, (16, 0): 1}
+  [EXH] (4,2,2) s=0: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 8
+     note: the hull-principality test below runs on 500 sampled codes (the full family has 1221)
+  [SMP] (4,2,2) s=0: hull-principality scan completed over 500 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 105, 1: 225, 2: 170} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,2,2), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: the split product count |L(A_t^2)|^{1} = 33 is NOT the number of codes in the WILD case (1221) PASS  33 vs 1221
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 677 codes have dim C = 8, only 149 of them are self-dual PASS  677 vs 149
+  #principal 1125 of 1221 ; mu distribution {0: 1, 1: 485, 2: 639, 3: 95, 4: 1}
+  [EXH] NEGATIVE CONTROL: the split/chain pattern 'every code is principal' FAILS in the wild regime PASS  1125 of 1221 are principal
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (4,2,2) s=1: the two hull routes agree in DIMENSION on every code PASS  0 of 1221 disagree
+  [EXH] (4,2,2) s=1: the two hull routes agree as SUBSPACES on every code PASS  0 of 1221 disagree
+  [EXH] (4,2,2) s=1: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (4,2,2) s=1: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  235 of 235 verified by containment
+  [EXH] (4,2,2) s=1: every self-dual code really satisfies C = C^{perp_s} PASS  51 of 51 verified by equality
+
+  #codes 1221 | #principal 1125 | #non-principal 96 | #distinct hulls 235
+  mu_B(W) distribution : {0: 1, 1: 485, 2: 639, 3: 95, 4: 1}
+  hull-dimension distribution  H(Z) : 130*Z^0  106*Z^2  634*Z^4  300*Z^6  51*Z^8
+  N_LCD = 130   N_SO = 235   N_SD = 51
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 5, (4, 2): 16, (4, 4): 85, (6, 2): 32, (6, 4): 40, (6, 6): 93, (8, 0): 128, (8, 4): 384, (8, 6): 114, (8, 8): 51, (10, 2): 32, (10, 4): 40, (10, 6): 93, (12, 2): 16, (12, 4): 85, (14, 2): 5, (16, 0): 1}
+  [EXH] (4,2,2) s=1: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 8
+     note: the hull-principality test below runs on 500 sampled codes (the full family has 1221)
+  [SMP] (4,2,2) s=1: hull-principality scan completed over 500 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 52, 1: 225, 2: 222, 3: 1} ; 1 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: REFUTED -- see the witness below / in Task F
+      witness: W generated by [((1, 1, 0, 0), (2, 2, 0, 0)), ((0, 0, 1, 0), (0, 0, 0, 2)), ((0, 0, 0, 1), (0, 0, 0, 2))] ; its hull has mu_B = 3
+
+---- negative controls for (q,t,n)=(4,2,2), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: the split product count |L(A_t^2)|^{1} = 33 is NOT the number of codes in the WILD case (1221) PASS  33 vs 1221
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 677 codes have dim C = 8, only 51 of them are self-dual PASS  677 vs 51
+  #principal 1125 of 1221 ; mu distribution {0: 1, 1: 485, 2: 639, 3: 95, 4: 1}
+  [EXH] NEGATIVE CONTROL: the split/chain pattern 'every code is principal' FAILS in the wild regime PASS  1125 of 1221 are principal
+
+
+####################################################################################################
+  (q,t,n) = (4,1,3)   kind = split   |B| = 64   |R_n| = 16777216   dim_{F_q} R_n = 12
+####################################################################################################
+  enumeration method : CRT product  L(A_t^2)^{3},  |L| = 7
+  #codes             : 343  (= 7^3)
+  [EXH] (4,1,3): CRT product count = exhaustive BFS submodule count  PASS  343 vs 7^3
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 2, 1]   (NOT id)   orbits = ['len 1', 'len 2']
+  n | p^s+1  <=>  3 | 2  :  False
+  [EXH] (4,1,3) s=0: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 343 codes PASS  univariate
+  [EXH] (4,1,3) s=0: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 343 | #principal 343 | #non-principal 0 | #distinct hulls 12
+  mu_B(W) distribution : {0: 1, 1: 215, 2: 127}
+  hull-dimension distribution  H(Z) : 132*Z^0  142*Z^2  62*Z^4  7*Z^6
+  N_LCD = 132   N_SO = 36   N_SD = 7
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 4, (2, 2): 11, (4, 0): 21, (4, 2): 40, (4, 4): 17, (6, 0): 80, (6, 2): 40, (6, 4): 28, (6, 6): 7, (8, 0): 21, (8, 2): 40, (8, 4): 17, (10, 0): 4, (10, 2): 11, (12, 0): 1}
+  [SMP] (4,1,3) s=0: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+  [EXH] (4,1,3) s=0: hull-principality scan completed over 343 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 132, 1: 197, 2: 14} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,3), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: the enumerator computed with tau = id does NOT match the truth when tau is not the identity PASS  tau=[0, 2, 1]
+      tau=id gives 216*Z^0  108*Z^2  18*Z^4  1*Z^6
+      truth        132*Z^0  142*Z^2  62*Z^4  7*Z^6
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 155 codes have dim C = 6, only 7 of them are self-dual PASS  155 vs 7
+  [EXH] NEGATIVE CONTROL: the hull dimension is NOT the sum of the component hull dimensions: 210 of 343 codes disagree PASS  sum_j dim Hull(C_j) vs dim Hull(C)
+      example: dim Hull(C) = 2 but sum_j dim Hull(C_j) = 0
+  #principal 343 of 343 ; mu distribution {0: 1, 1: 215, 2: 127}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 1, 2]   (id)   orbits = ['len 1', 'len 1', 'len 1']
+  n | p^s+1  <=>  3 | 3  :  True
+  [EXH] (4,1,3) s=1: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 343 codes PASS  univariate
+  [EXH] (4,1,3) s=1: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 343 | #principal 343 | #non-principal 0 | #distinct hulls 8
+  mu_B(W) distribution : {0: 1, 1: 215, 2: 127}
+  hull-dimension distribution  H(Z) : 64*Z^0  144*Z^2  108*Z^4  27*Z^6
+  N_LCD = 64   N_SO = 64   N_SD = 27
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 6, (2, 2): 9, (4, 0): 15, (4, 2): 36, (4, 4): 27, (6, 0): 20, (6, 2): 54, (6, 4): 54, (6, 6): 27, (8, 0): 15, (8, 2): 36, (8, 4): 27, (10, 0): 6, (10, 2): 9, (12, 0): 1}
+  [SMP] (4,1,3) s=1: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+  [EXH] (4,1,3) s=1: hull-principality scan completed over 343 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 64, 1: 279} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,1,3), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 155 codes have dim C = 6, only 27 of them are self-dual PASS  155 vs 27
+  #principal 343 of 343 ; mu distribution {0: 1, 1: 215, 2: 127}
+
+
+####################################################################################################
+  (q,t,n) = (9,1,2)   kind = split   |B| = 81   |R_n| = 43046721   dim_{F_q} R_n = 8
+####################################################################################################
+  enumeration method : CRT product  L(A_t^2)^{2},  |L| = 12
+  #codes             : 144  (= 12^2)
+  [EXH] (9,1,2): CRT product count = exhaustive BFS submodule count  PASS  144 vs 12^2
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 1]   (id)   orbits = ['len 1', 'len 1']
+  n | p^s+1  <=>  2 | 2  :  True
+  [EXH] (9,1,2) s=0: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 144 codes PASS  univariate
+  [EXH] (9,1,2) s=0: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 144 | #principal 144 | #non-principal 0 | #distinct hulls 4
+  mu_B(W) distribution : {0: 1, 1: 120, 2: 23}
+  hull-dimension distribution  H(Z) : 100*Z^0  40*Z^2  4*Z^4
+  N_LCD = 100   N_SO = 9   N_SD = 4
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 16, (2, 2): 4, (4, 0): 66, (4, 2): 32, (4, 4): 4, (6, 0): 16, (6, 2): 4, (8, 0): 1}
+  [SMP] (9,1,2) s=0: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+  [EXH] (9,1,2) s=0: hull-principality scan completed over 144 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 100, 1: 44} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(9,1,2), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 102 codes have dim C = 4, only 4 of them are self-dual PASS  102 vs 4
+  #principal 144 of 144 ; mu distribution {0: 1, 1: 120, 2: 23}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 1]   (id)   orbits = ['len 1', 'len 1']
+  n | p^s+1  <=>  2 | 4  :  True
+  [EXH] (9,1,2) s=1: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 144 codes PASS  univariate
+  [EXH] (9,1,2) s=1: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 144 | #principal 144 | #non-principal 0 | #distinct hulls 4
+  mu_B(W) distribution : {0: 1, 1: 120, 2: 23}
+  hull-dimension distribution  H(Z) : 64*Z^0  64*Z^2  16*Z^4
+  N_LCD = 64   N_SO = 25   N_SD = 16
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 0): 12, (2, 2): 8, (4, 0): 38, (4, 2): 48, (4, 4): 16, (6, 0): 12, (6, 2): 8, (8, 0): 1}
+  [SMP] (9,1,2) s=1: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+  [EXH] (9,1,2) s=1: hull-principality scan completed over 144 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 64, 1: 80} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(9,1,2), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 102 codes have dim C = 4, only 16 of them are self-dual PASS  102 vs 16
+  #principal 144 of 144 ; mu distribution {0: 1, 1: 120, 2: 23}
+
+
+####################################################################################################
+  (q,t,n) = (8,1,2)   kind = chain   |B| = 64   |R_n| = 16777216   dim_{F_q} R_n = 8
+####################################################################################################
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes             : 93
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  [EXH] (8,1,2) s=0: the two hull routes agree in DIMENSION on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=0: the two hull routes agree as SUBSPACES on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=0: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (8,1,2) s=0: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  19 of 19 verified by containment
+  [EXH] (8,1,2) s=0: every self-dual code really satisfies C = C^{perp_s} PASS  9 of 9 verified by equality
+
+  #codes 93 | #principal 93 | #non-principal 0 | #distinct hulls 19
+  mu_B(W) distribution : {0: 1, 1: 81, 2: 11}
+  hull-dimension distribution  H(Z) : 66*Z^0  18*Z^2  9*Z^4
+  N_LCD = 66   N_SO = 19   N_SD = 9
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 9, (4, 0): 64, (4, 4): 9, (6, 2): 9, (8, 0): 1}
+  [EXH] (8,1,2) s=0: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (8,1,2) s=0: hull-principality scan completed over 93 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(8,1,2), s=0 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 73 codes have dim C = 4, only 9 of them are self-dual PASS  73 vs 9
+  #principal 93 of 93 ; mu distribution {0: 1, 1: 81, 2: 11}
+
+---- s = 1 -----------------------------------------------------------------------------------------
+  [EXH] (8,1,2) s=1: the two hull routes agree in DIMENSION on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=1: the two hull routes agree as SUBSPACES on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=1: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (8,1,2) s=1: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  13 of 13 verified by containment
+  [EXH] (8,1,2) s=1: every self-dual code really satisfies C = C^{perp_s} PASS  3 of 3 verified by equality
+
+  #codes 93 | #principal 93 | #non-principal 0 | #distinct hulls 13
+  mu_B(W) distribution : {0: 1, 1: 81, 2: 11}
+  hull-dimension distribution  H(Z) : 66*Z^0  24*Z^2  3*Z^4
+  N_LCD = 66   N_SO = 13   N_SD = 3
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 9, (4, 0): 64, (4, 2): 6, (4, 4): 3, (6, 2): 9, (8, 0): 1}
+  [EXH] (8,1,2) s=1: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (8,1,2) s=1: hull-principality scan completed over 93 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(8,1,2), s=1 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 73 codes have dim C = 4, only 3 of them are self-dual PASS  73 vs 3
+  #principal 93 of 93 ; mu distribution {0: 1, 1: 81, 2: 11}
+
+---- s = 2 -----------------------------------------------------------------------------------------
+  [EXH] (8,1,2) s=2: the two hull routes agree in DIMENSION on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=2: the two hull routes agree as SUBSPACES on every code PASS  0 of 93 disagree
+  [EXH] (8,1,2) s=2: dim C + dim C^{perp_s} = 4tn for every code     PASS  0 violations
+  [EXH] (8,1,2) s=2: every self-orthogonal code really satisfies C subset C^{perp_s} PASS  13 of 13 verified by containment
+  [EXH] (8,1,2) s=2: every self-dual code really satisfies C = C^{perp_s} PASS  3 of 3 verified by equality
+
+  #codes 93 | #principal 93 | #non-principal 0 | #distinct hulls 13
+  mu_B(W) distribution : {0: 1, 1: 81, 2: 11}
+  hull-dimension distribution  H(Z) : 66*Z^0  24*Z^2  3*Z^4
+  N_LCD = 66   N_SO = 13   N_SD = 3
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 9, (4, 0): 64, (4, 2): 6, (4, 4): 3, (6, 2): 9, (8, 0): 1}
+  [EXH] (8,1,2) s=2: W -> W(C^{perp_s}) is dim-complementing on the lattice PASS  dim W + dim W' = 4
+  [EXH] (8,1,2) s=2: hull-principality scan completed over 93 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(8,1,2), s=2 ----------------------------------------------------
+  [EXH] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 73 codes have dim C = 4, only 3 of them are self-dual PASS  73 vs 3
+  #principal 93 of 93 ; mu distribution {0: 1, 1: 81, 2: 11}
+
+
+####################################################################################################
+  (q,t,n) = (4,2,3)   kind = split   |B| = 4096   |R_n| = 281474976710656   dim_{F_q} R_n = 24
+####################################################################################################
+  enumeration method : CRT product  L(A_t^2)^{3},  |L| = 33
+  #codes             : 35937  (= 33^3)
+     note: direct BFS over B^2 is infeasible here (|B^2| = 16777216); the product enumeration is used and is verified below against BOTH direct routes on 60 sampled codes
+
+---- s = 0   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 2, 1]   (NOT id)   orbits = ['len 1', 'len 2']
+  n | p^s+1  <=>  3 | 2  :  False
+  [EXH] (4,2,3) s=0: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 35937 codes PASS  univariate
+  [EXH] (4,2,3) s=0: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 35937 | #principal 35937 | #non-principal 0 | #distinct hulls 45
+  mu_B(W) distribution : {0: 1, 1: 17575, 2: 18361}
+  hull-dimension distribution  H(Z) : 5796*Z^0  9340*Z^2  9942*Z^4  6600*Z^6  3164*Z^8  930*Z^10  165*Z^12
+  N_LCD = 5796   N_SO = 1881   N_SD = 165
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 15, (4, 0): 16, (4, 4): 122, (6, 2): 325, (6, 6): 445, (8, 0): 321, (8, 4): 2062, (8, 8): 668, (10, 2): 4330, (10, 6): 2855, (10, 10): 465, (12, 0): 5120, (12, 4): 5574, (12, 8): 1828, (12, 12): 165, (14, 2): 4330, (14, 6): 2855, (14, 10): 465, (16, 0): 321, (16, 4): 2062, (16, 8): 668, (18, 2): 325, (18, 6): 445, (20, 0): 16, (20, 4): 122, (22, 2): 15, (24, 0): 1}
+  [SMP] (4,2,3) s=0: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+     note: the open-question and negative-control tests below run on 200 sampled codes (the full family has 35937)
+  [SMP] (4,2,3) s=0: hull-principality scan completed over 200 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 38, 1: 143, 2: 19} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,2,3), s=0 ----------------------------------------------------
+  [SMP] NEGATIVE CONTROL: the enumerator computed with tau = id does NOT match the truth when tau is not the identity PASS  tau=[0, 2, 1]
+      tau=id gives 5832*Z^0  9720*Z^2  10260*Z^4  6400*Z^6  2850*Z^8  750*Z^10  125*Z^12
+      truth        5796*Z^0  9340*Z^2  9942*Z^4  6600*Z^6  3164*Z^8  930*Z^10  165*Z^12
+  [SMP] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 69 codes have dim C = 12, only 2 of them are self-dual PASS  69 vs 2
+  [SMP] NEGATIVE CONTROL: the hull dimension is NOT the sum of the component hull dimensions: 76 of 200 codes disagree PASS  sum_j dim Hull(C_j) vs dim Hull(C)
+      example: dim Hull(C) = 12 but sum_j dim Hull(C_j) = 4
+  #principal 200 of 200 ; mu distribution {1: 114, 2: 86}
+
+---- s = 1   (reflexive: r | 2s) -------------------------------------------------------------------
+  tau = [0, 1, 2]   (id)   orbits = ['len 1', 'len 1', 'len 1']
+  n | p^s+1  <=>  3 | 3  :  True
+  [EXH] (4,2,3) s=1: the tau-orbit trace formula prod_O Tr(N^{|O|}) equals the brute-force sum over all 35937 codes PASS  univariate
+  [EXH] (4,2,3) s=1: the bivariate trace formula equals the brute-force sum PASS  bivariate
+
+  #codes 35937 | #principal 35937 | #non-principal 0 | #distinct hulls 27
+  mu_B(W) distribution : {0: 1, 1: 17575, 2: 18361}
+  hull-dimension distribution  H(Z) : 1000*Z^0  4800*Z^2  9780*Z^4  10816*Z^6  6846*Z^8  2352*Z^10  343*Z^12
+  N_LCD = 1000   N_SO = 2197   N_SD = 343
+  bivariate counts (dim C, dim Hull) : {(0, 0): 1, (2, 2): 15, (4, 0): 24, (4, 2): 18, (4, 4): 96, (6, 2): 255, (6, 4): 180, (6, 6): 335, (8, 0): 195, (8, 2): 288, (8, 4): 1194, (8, 6): 702, (8, 8): 672, (10, 2): 1230, (10, 4): 1620, (10, 6): 2805, (10, 8): 1260, (10, 10): 735, (12, 0): 560, (12, 2): 1188, (12, 4): 3600, (12, 6): 3132, (12, 8): 2982, (12, 10): 882, (12, 12): 343, (14, 2): 1230, (14, 4): 1620, (14, 6): 2805, (14, 8): 1260, (14, 10): 735, (16, 0): 195, (16, 2): 288, (16, 4): 1194, (16, 6): 702, (16, 8): 672, (18, 2): 255, (18, 4): 180, (18, 6): 335, (20, 0): 24, (20, 2): 18, (20, 4): 96, (22, 2): 15, (24, 0): 1}
+  [SMP] (4,2,3) s=1: on 60 sampled codes the componentwise hull dimension equals BOTH direct routes PASS  0 of 60 disagree
+     note: the open-question and negative-control tests below run on 200 sampled codes (the full family has 35937)
+  [SMP] (4,2,3) s=1: hull-principality scan completed over 200 codes and every hull with mu_B >= 3 is confirmed by the Nakayama dimension dim_k(V/rad V) PASS  mu distribution of hulls {0: 9, 1: 177, 2: 14} ; 0 hulls with mu >= 3
+      O-3.1 ('every hull is principal') on this family: not refuted (every scanned hull has mu_B <= 2)
+
+---- negative controls for (q,t,n)=(4,2,3), s=1 ----------------------------------------------------
+  [SMP] NEGATIVE CONTROL: dim C = 2tn does NOT imply self-dual: 69 codes have dim C = 12, only 1 of them are self-dual PASS  69 vs 1
+  #principal 200 of 200 ; mu distribution {1: 114, 2: 86}
+
+
+####################################################################################################
+  TASK F -- open questions: what the data does and does not settle
+####################################################################################################
+  F1  is every hull principal?  (O-3.1, carried from Stage 3A)
+      -> the exhaustive scan is Task F (continued), below
+
+---- F2  is the hull (a right ideal of R_n) a left ideal? ------------------------------------------
+  left-ideal test on hulls (s=0): 24 (hull, multiplier) pairs tested, 18 hulls NOT closed under left multiplication
+  [EXH] (4,1,2) s=0: the hull right ideal is not in general a left ideal (n >= 2 gap) -- 18/24 failures observed PASS  informational: the expectation is failures when n >= 2
+  left-ideal test on hulls (s=0): 24 (hull, multiplier) pairs tested, 17 hulls NOT closed under left multiplication
+  [EXH] (4,1,3) s=0: the hull right ideal is not in general a left ideal (n >= 2 gap) -- 17/24 failures observed PASS  informational: the expectation is failures when n >= 2
+
+---- F3  is dim Hull additive over the CRT components? ---------------------------------------------
+  NO in general: see the negative control (G4) above -- with tau != id the correct statement is  dim Hull(C) = sum_j dim( C_j cap C_{tau(j)}^perp ),
+  not  sum_j dim Hull(C_j).  (Stage 3A witness: (4,1,3), s=0, a code with
+  dim Hull = 2 while every component hull is 0.)
+
+---- F4  does the hull dimension determine the hull? -----------------------------------------------
+  (4,1,3) s=0: 343 codes, 4 distinct hull dimensions, 36 distinct hull subspaces
+  (4,1,3) s=1: 343 codes, 4 distinct hull dimensions, 64 distinct hull subspaces
+  (4,2,2) s=0: 1221 codes, 5 distinct hull dimensions, 357 distinct hull subspaces
+  (4,2,2) s=1: 1221 codes, 5 distinct hull dimensions, 235 distinct hull subspaces
+
+####################################################################################################
+  TASK F (continued) -- O-3.1: is every Galois hull principal?  exhaustive scan
+####################################################################################################
+  O-3.1 (Stage 3A): mu_B(W_hull) <= 2 for every code and every s.
+  Recall: a right ideal I_W of R_n = M_2(B) is principal iff W is generated by <= 2 elements as a B-module (im h = W, T-077).
+  [EXH] (4,1,1) s=0: exhaustive hull-principality scan over all 7 codes PASS  mu distribution of hulls {0: 6, 1: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (4,1,1) s=1: exhaustive hull-principality scan over all 7 codes PASS  mu distribution of hulls {0: 4, 1: 3} ; 0 hulls with mu_B >= 3
+  [EXH] (4,1,2) s=0: exhaustive hull-principality scan over all 33 codes PASS  mu distribution of hulls {0: 18, 1: 14, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (4,1,2) s=1: exhaustive hull-principality scan over all 33 codes PASS  mu distribution of hulls {0: 10, 1: 22, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (4,2,1) s=0: exhaustive hull-principality scan over all 33 codes PASS  mu distribution of hulls {0: 18, 1: 14, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (4,2,1) s=1: exhaustive hull-principality scan over all 33 codes PASS  mu distribution of hulls {0: 10, 1: 22, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (4,2,2) s=0: exhaustive hull-principality scan over all 1221 codes PASS  mu distribution of hulls {0: 258, 1: 522, 2: 440, 3: 1} ; 1 hulls with mu_B >= 3
+
+  ---- WITNESS: a code whose Galois hull is NOT principal ----
+      (q,t,n) = (4,2,2),  s = 0,  kind = wild
+      code C = I_W with W generated over B by:
+          ((1, 1, 0, 0), (1, 1, 0, 0))
+          ((0, 0, 1, 0), (0, 0, 0, 1))
+          ((0, 0, 0, 1), (0, 0, 0, 1))
+      dim_{F_q} W = 4,  mu_B(W) = 3  (so C is NOT principal)
+      dim C = 8,  dim Hull = 8 (Morita route) / 8 (pairing route)
+  [EXH] (4,2,2) s=0 WITNESS: the two hull routes agree on the witness code PASS  8 vs 8, 2*dim(W cap W') = 8
+      hull submodule: dim_{F_q} = 4,  mu_B = 3
+      Nakayama check: mu = dim_k(V/rad V) = 3  (dim V = 4, dim rad V = 1, |k| = 4)
+  [EXH] (4,2,2) s=0 WITNESS: the Nakayama dimension dim_k(V/rad V) agrees with the computed mu_B PASS  3 vs 3
+  [SMP] (4,2,2) s=0 WITNESS: none of 500 randomly drawn pairs of elements of the hull generates it PASS  0 pairs did generate
+      => the hull right ideal Hull_s(C) = I_{W cap W'} is GENERATED BY NO SINGLE ELEMENT: mu_B = 3 > 2.
+      => O-3.1 ('mu_B(W_hull) <= 2 for every code') is FALSE in general.
+  [EXH] (4,2,2) s=1: exhaustive hull-principality scan over all 1221 codes PASS  mu distribution of hulls {0: 130, 1: 538, 2: 550, 3: 3} ; 3 hulls with mu_B >= 3
+
+  ---- WITNESS: a code whose Galois hull is NOT principal ----
+      (q,t,n) = (4,2,2),  s = 1,  kind = wild
+      code C = I_W with W generated over B by:
+          ((1, 1, 0, 0), (1, 1, 0, 0))
+          ((0, 0, 1, 0), (0, 0, 0, 1))
+          ((0, 0, 0, 1), (0, 0, 0, 1))
+      dim_{F_q} W = 4,  mu_B(W) = 3  (so C is NOT principal)
+      dim C = 8,  dim Hull = 8 (Morita route) / 8 (pairing route)
+  [EXH] (4,2,2) s=1 WITNESS: the two hull routes agree on the witness code PASS  8 vs 8, 2*dim(W cap W') = 8
+      hull submodule: dim_{F_q} = 4,  mu_B = 3
+      Nakayama check: mu = dim_k(V/rad V) = 3  (dim V = 4, dim rad V = 1, |k| = 4)
+  [EXH] (4,2,2) s=1 WITNESS: the Nakayama dimension dim_k(V/rad V) agrees with the computed mu_B PASS  3 vs 3
+  [SMP] (4,2,2) s=1 WITNESS: none of 500 randomly drawn pairs of elements of the hull generates it PASS  0 pairs did generate
+      => the hull right ideal Hull_s(C) = I_{W cap W'} is GENERATED BY NO SINGLE ELEMENT: mu_B = 3 > 2.
+      => O-3.1 ('mu_B(W_hull) <= 2 for every code') is FALSE in general.
+
+  ---- WITNESS: a code whose Galois hull is NOT principal ----
+      (q,t,n) = (4,2,2),  s = 1,  kind = wild
+      code C = I_W with W generated over B by:
+          ((1, 1, 0, 0), (2, 2, 0, 0))
+          ((0, 0, 1, 0), (0, 0, 0, 2))
+          ((0, 0, 0, 1), (0, 0, 0, 2))
+      dim_{F_q} W = 4,  mu_B(W) = 3  (so C is NOT principal)
+      dim C = 8,  dim Hull = 8 (Morita route) / 8 (pairing route)
+  [EXH] (4,2,2) s=1 WITNESS: the two hull routes agree on the witness code PASS  8 vs 8, 2*dim(W cap W') = 8
+      hull submodule: dim_{F_q} = 4,  mu_B = 3
+      Nakayama check: mu = dim_k(V/rad V) = 3  (dim V = 4, dim rad V = 1, |k| = 4)
+  [EXH] (4,2,2) s=1 WITNESS: the Nakayama dimension dim_k(V/rad V) agrees with the computed mu_B PASS  3 vs 3
+  [SMP] (4,2,2) s=1 WITNESS: none of 500 randomly drawn pairs of elements of the hull generates it PASS  0 pairs did generate
+      => the hull right ideal Hull_s(C) = I_{W cap W'} is GENERATED BY NO SINGLE ELEMENT: mu_B = 3 > 2.
+      => O-3.1 ('mu_B(W_hull) <= 2 for every code') is FALSE in general.
+
+  ---- WITNESS: a code whose Galois hull is NOT principal ----
+      (q,t,n) = (4,2,2),  s = 1,  kind = wild
+      code C = I_W with W generated over B by:
+          ((1, 1, 0, 0), (3, 3, 0, 0))
+          ((0, 0, 1, 0), (0, 0, 0, 3))
+          ((0, 0, 0, 1), (0, 0, 0, 3))
+      dim_{F_q} W = 4,  mu_B(W) = 3  (so C is NOT principal)
+      dim C = 8,  dim Hull = 8 (Morita route) / 8 (pairing route)
+  [EXH] (4,2,2) s=1 WITNESS: the two hull routes agree on the witness code PASS  8 vs 8, 2*dim(W cap W') = 8
+      hull submodule: dim_{F_q} = 4,  mu_B = 3
+      Nakayama check: mu = dim_k(V/rad V) = 3  (dim V = 4, dim rad V = 1, |k| = 4)
+  [EXH] (4,2,2) s=1 WITNESS: the Nakayama dimension dim_k(V/rad V) agrees with the computed mu_B PASS  3 vs 3
+  [SMP] (4,2,2) s=1 WITNESS: none of 500 randomly drawn pairs of elements of the hull generates it PASS  0 pairs did generate
+      => the hull right ideal Hull_s(C) = I_{W cap W'} is GENERATED BY NO SINGLE ELEMENT: mu_B = 3 > 2.
+      => O-3.1 ('mu_B(W_hull) <= 2 for every code') is FALSE in general.
+  [EXH] (4,1,3) s=0: exhaustive hull-principality scan over all 343 codes PASS  mu distribution of hulls {0: 132, 1: 197, 2: 14} ; 0 hulls with mu_B >= 3
+  [EXH] (4,1,3) s=1: exhaustive hull-principality scan over all 343 codes PASS  mu distribution of hulls {0: 64, 1: 279} ; 0 hulls with mu_B >= 3
+  [EXH] (9,1,2) s=0: exhaustive hull-principality scan over all 144 codes PASS  mu distribution of hulls {0: 100, 1: 44} ; 0 hulls with mu_B >= 3
+  [EXH] (9,1,2) s=1: exhaustive hull-principality scan over all 144 codes PASS  mu distribution of hulls {0: 64, 1: 80} ; 0 hulls with mu_B >= 3
+  [EXH] (8,1,2) s=0: exhaustive hull-principality scan over all 93 codes PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (8,1,2) s=1: exhaustive hull-principality scan over all 93 codes PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu_B >= 3
+  [EXH] (8,1,2) s=2: exhaustive hull-principality scan over all 93 codes PASS  mu distribution of hulls {0: 66, 1: 26, 2: 1} ; 0 hulls with mu_B >= 3
+
+  RESULT: O-3.1 is REFUTED.  It fails in the WILD regime (q,t,n) = (4,2,2); the witness above is verified by two independent
+          hull routes, by the Nakayama dimension dim_k(V/rad V), and by a randomised search for a 2-element generating set.
+          In every SPLIT and CHAIN family scanned exhaustively, every hull was principal (see the per-case scans above).
+
+####################################################################################################
+  TASK G -- boundary cases
+####################################################################################################
+
+---- boundary cases --------------------------------------------------------------------------------
+  [EXH] (4,1,1) s=0: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,1,1) s=0: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 4, dim Hull = 0
+  [EXH] (4,1,1) s=1: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,1,1) s=1: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 4, dim Hull = 0
+  [EXH] (4,1,2) s=0: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,1,2) s=0: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 8, dim Hull = 0
+  [EXH] (4,1,2) s=1: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,1,2) s=1: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 8, dim Hull = 0
+  [EXH] (4,2,1) s=0: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,2,1) s=0: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 8, dim Hull = 0
+  [EXH] (4,2,1) s=1: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,2,1) s=1: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 8, dim Hull = 0
+  [EXH] (4,2,2) s=0: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,2,2) s=0: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 16, dim Hull = 0
+  [EXH] (4,2,2) s=1: the ZERO code has dim Hull = 0                  PASS  dim C = 0, dim Hull = 0
+  [EXH] (4,2,2) s=1: the AMBIENT code R_n has dim C = 4tn and dim Hull = 0 (the Galois form is non-degenerate) PASS  dim C = 16, dim Hull = 0
+
+####################################################################################################
+  summary
+####################################################################################################
+  206 checks, 206 PASS, 0 FAIL
+  no failures
+  end of log

@@ -1,0 +1,49 @@
+%%
+%% This is file `ts1cmr.fd',
+%%                   *** LOCAL INSTALLATION SUBSTITUTION ***
+%%
+%% Purpose
+%% -------
+%% Since the LaTeX kernel release 2020/02/02 the text-companion symbols are
+%% declared with TS1 as their default encoding:
+%%
+%%     \DeclareTextSymbolDefault{\textbullet}{TS1}
+%%
+%% (previously \textbullet came from the OMS maths symbol font).  The TS1
+%% shapes of the Computer Modern family live in the `cm-super' collection,
+%% which is *not* part of this TeX tree.  Without them every `\begin{itemize}'
+%% aborts the run with
+%%
+%%     !pdfTeX error: pdflatex (file tcrm1095): Font tcrm1095 at 600 not found
+%%
+%% This file replaces the `ec' package's `ts1cmr.fd'.  It silently substitutes
+%% every TS1/cmr shape with the corresponding TS1/lmr (Latin Modern Roman)
+%% shape.  Latin Modern is the direct outline successor of Computer Modern and
+%% shares its metrics, so the substitution is visually invisible.
+%%
+%% Scope: TS1 only.  The body font of the manuscript remains OT1/cmr, so the
+%% main text, headings and all mathematics are untouched.  This is a property
+%% of the *distribution*, not of the manuscript; no manuscript source is
+%% modified.
+%%
+%% Placement: $TEXMFLOCAL/tex/latex/ts1-cmr-lm-subst/, which kpathsea searches
+%% before $TEXMFDIST, so it wins over `ec/ts1cmr.fd'.
+%%
+\ProvidesFile{ts1cmr.fd}%
+  [2026/11/04 v1.0 TS1/cmr -> TS1/lmr silent substitution]
+\DeclareFontFamily{TS1}{cmr}{}
+\DeclareFontShape{TS1}{cmr}{m}{n}{<->ssub * lmr/m/n}{}
+\DeclareFontShape{TS1}{cmr}{m}{sl}{<->ssub * lmr/m/sl}{}
+\DeclareFontShape{TS1}{cmr}{m}{it}{<->ssub * lmr/m/it}{}
+\DeclareFontShape{TS1}{cmr}{m}{sc}{<->ssub * lmr/m/sc}{}
+\DeclareFontShape{TS1}{cmr}{m}{ui}{<->ssub * lmr/m/ui}{}
+\DeclareFontShape{TS1}{cmr}{m}{scsl}{<->ssub * lmr/m/scsl}{}
+\DeclareFontShape{TS1}{cmr}{b}{n}{<->ssub * lmr/b/n}{}
+\DeclareFontShape{TS1}{cmr}{b}{sl}{<->ssub * lmr/b/sl}{}
+\DeclareFontShape{TS1}{cmr}{b}{it}{<->ssub * lmr/b/it}{}
+\DeclareFontShape{TS1}{cmr}{bx}{n}{<->ssub * lmr/bx/n}{}
+\DeclareFontShape{TS1}{cmr}{bx}{sl}{<->ssub * lmr/bx/sl}{}
+\DeclareFontShape{TS1}{cmr}{bx}{it}{<->ssub * lmr/bx/it}{}
+\endinput
+%%
+%% End of file `ts1cmr.fd'.

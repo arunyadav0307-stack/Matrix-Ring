@@ -1,0 +1,12 @@
+6c6
+< run date: 2026-11-12 19:23:41
+---
+> run date: 2026-11-04 03:52:42
+243c243
+< END OF EXPERIMENTS   (15.9 s)
+---
+> END OF EXPERIMENTS   (18.8 s)
+246c246
+< [log written to /home/user/Matrix-Ring/research-data/scripts/phase0_results.txt]
+---
+> [log written to /home/user/Matrix-Ring/04_COMPUTATION/phase0_results.txt]

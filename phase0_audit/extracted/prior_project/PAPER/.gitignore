@@ -1,0 +1,12 @@
+# LaTeX build artefacts -- reproducible from main.tex by compile/build.sh.
+main.aux
+main.log
+main.out
+main.toc
+main.lof
+main.lot
+main.blg
+missfont.log
+build_pass3.log
+.build_main.tex
+__pycache__/

@@ -1,0 +1,201 @@
+% =====================================================================
+%  references.bib for the Phase-8 manuscript.
+%
+%  EVERY entry below was verified on 2026-11-04 against the publisher,
+%  arXiv or MDPI record page; see PAPER/LITERATURE_VERIFICATION.md for
+%  the evidence for each entry.  Entries that could NOT be verified were
+%  REMOVED from the manuscript bibliography (they remain in
+%  01_LITERATURE/references.bib, the repository bibliography, and are
+%  listed in PAPER/LITERATURE_VERIFICATION.md section 4).
+%
+%  Entries that are standard references but whose bibliographic details
+%  were not re-retrieved (Calderbank--Shor, Steane, Gottesman,
+%  Knill--Laflamme, Rains, Brun--Devetak--Hsieh) are NOT cited: the
+%  manuscript re-derives the stabilizer and entanglement-assisted
+%  formalism from scratch (Section 7), so nothing is imported from them.
+% =====================================================================
+
+% ---------------- Cluster A: cyclic codes over matrix rings ----------
+
+@article{Alahmadi2013CyclicM2F2,
+  author  = {Alahmadi, Adel and Sboui, Houda and Sol{\'e}, Patrick and Yemen, Olfa},
+  title   = {Cyclic codes over {$M_2(\mathbb{F}_2)$}},
+  journal = {Journal of the Franklin Institute},
+  volume  = {350},
+  number  = {9},
+  pages   = {2837--2847},
+  year    = {2013},
+  doi     = {10.1016/j.jfranklin.2013.06.008},
+  annote  = {Verified 2026-11-04: journal, volume, number, pages and year
+             confirmed by three independent reference lists; MR 3146951}
+}
+
+@article{LuoParampalli2018M2F2uF2,
+  author  = {Luo, Rong and Parampalli, Udaya},
+  title   = {Cyclic codes over {$M_2(\mathbb{F}_2+u\mathbb{F}_2)$}},
+  journal = {Cryptography and Communications},
+  volume  = {10},
+  number  = {6},
+  pages   = {1109--1117},
+  year    = {2018},
+  doi     = {10.1007/s12095-017-0266-1},
+  annote  = {Verified 2026-11-04 against the Springer record. Volume,
+             number and pages resolved in Phase 8}
+}
+
+@article{Dinh2024CyclicRingsOfMatrices,
+  author  = {Dinh, Hai Q. and Gaur, Atul and Kumar, Pratyush and Singh, Manoj Kumar
+             and Singh, Abhay Kumar},
+  title   = {Cyclic codes over rings of matrices},
+  journal = {Advances in Mathematics of Communications},
+  volume  = {18},
+  number  = {4},
+  pages   = {1100--1122},
+  year    = {2024},
+  doi     = {10.3934/amc.2022073},
+  annote  = {Verified 2026-11-04 against the AIMS record. Same ring family
+             $M_2(\F_2[u]/\langle u^k\rangle)$ as the present work}
+}
+
+@article{JoshiPatelPrakash2026M4,
+  author  = {Joshi, Soham Ravikant and Patel, Shikha and Prakash, Om},
+  title   = {Construction of {C}yclic {C}odes over a {C}lass of {M}atrix {R}ings},
+  journal = {arXiv e-print 2602.18255 [cs.IT]},
+  year    = {2026},
+  doi     = {10.48550/arXiv.2602.18255},
+  annote  = {Verified 2026-11-04 against the arXiv record page; submitted
+             20 February 2026. Ring $M_4(\F_2[u]/\langle u^k\rangle)$;
+             Euclidean and Hermitian duals; Bachoc and Gray maps to
+             $\F_{16}$; no Galois duality, no hulls, no quantum codes}
+}
+
+@article{SiNiu2023SkewM2F2,
+  author  = {Si, Xuesong and Niu, Chuanze},
+  title   = {On skew cyclic codes over {$M_2(\mathbb{F}_2)$}},
+  journal = {AIMS Mathematics},
+  volume  = {8},
+  number  = {10},
+  pages   = {24434--24445},
+  year    = {2023},
+  doi     = {10.3934/math.20231246},
+  annote  = {Verified in Phase 0 against the AIMS record. The skew route,
+             contrasted with the $\theta_s$-duality route of Section 4}
+}
+
+% ---------------- Cluster B: duality over finite rings ----------------
+
+@article{Wood1999Duality,
+  author  = {Wood, Jay A.},
+  title   = {Duality for modules over finite rings and applications to coding theory},
+  journal = {American Journal of Mathematics},
+  volume  = {121},
+  number  = {3},
+  pages   = {555--575},
+  year    = {1999},
+  doi     = {10.1353/ajm.1999.0024},
+  annote  = {Verified 2026-11-04. Imported: the Frobenius property of
+             $R=M_m(A_t)$ (Lemma 1.4 of the present paper proves the
+             Frobenius functional directly)}
+}
+
+@article{GreferathSchmidt1999GrayIsometry,
+  author  = {Greferath, Marcus and Schmidt, Sergio R.},
+  title   = {Gray isometries for finite chain rings and a nonlinear ternary
+             {$(36,3^{12},15)$} code},
+  journal = {IEEE Transactions on Information Theory},
+  volume  = {45},
+  number  = {7},
+  pages   = {2522--2524},
+  year    = {1999},
+  doi     = {10.1109/18.796395},
+  annote  = {Verified 2026-11-04; the second half of the title was recovered
+             in Phase 8. The result concerns finite CHAIN rings and does not
+             apply to $R=M_2(A_t)$}
+}
+
+% ---------------- Cluster C: Galois duality, hulls, quantum -----------
+
+@article{FanZhang2017GaloisSelfDual,
+  author  = {Fan, Yun and Zhang, Liang},
+  title   = {Galois self-dual constacyclic codes},
+  journal = {Designs, Codes and Cryptography},
+  volume  = {84},
+  number  = {3},
+  pages   = {473--492},
+  year    = {2017},
+  doi     = {10.1007/s10623-016-0282-8},
+  annote  = {Verified 2026-11-04. Origin of the $\ell$-Galois inner product
+             over a finite field}
+}
+
+@article{LiuPan2020GaloisHulls,
+  author  = {Liu, Hongwei and Pan, Xu},
+  title   = {Galois hulls of linear codes over finite fields},
+  journal = {Designs, Codes and Cryptography},
+  volume  = {88},
+  number  = {2},
+  pages   = {241--255},
+  year    = {2020},
+  annote  = {Verified 2026-11-04}
+}
+
+@article{Cao2021MDSGaloisHulls,
+  author  = {Cao, Meng},
+  title   = {{MDS} codes with {G}alois hulls of arbitrary dimensions and the
+             related entanglement-assisted quantum error correction},
+  journal = {IEEE Transactions on Information Theory},
+  volume  = {67},
+  number  = {12},
+  pages   = {7964--7984},
+  year    = {2021},
+  annote  = {Verified 2026-11-04 against the author's publication list and
+             three independent reference lists}
+}
+
+@article{ZhangKongZheng2026QuantumGaloisHulls,
+  author  = {Zhang, Enbin and Kong, Bo and Zheng, Xiying},
+  title   = {Quantum {C}odes from {G}alois {H}ulls of {C}onstacyclic {C}odes
+             over a {F}inite {N}on-{C}hain {R}ing},
+  journal = {Entropy},
+  volume  = {28},
+  number  = {4},
+  pages   = {407},
+  year    = {2026},
+  doi     = {10.3390/e28040407},
+  annote  = {Verified 2026-11-04 against the MDPI record; published 3 April
+             2026, 19 pp.; PMCID PMC13115228. THE CLOSEST PRIOR WORK: Galois
+             hulls + Gray map + quantum codes over a finite non-chain ring,
+             but a COMMUTATIVE one}
+}
+
+@article{KetkarEtAl2006NonbinaryStabilizer,
+  author  = {Ketkar, Andreas and Klappenecker, Andreas and Kumar, Santosh
+             and Sarvepalli, Pradeep Kiran},
+  title   = {Nonbinary stabilizer codes over finite fields},
+  journal = {IEEE Transactions on Information Theory},
+  volume  = {52},
+  number  = {11},
+  pages   = {4892--4914},
+  year    = {2006},
+  annote  = {Verified 2026-11-04 against the IEEE TIT volume index and the
+             authors' publication list. The stabilizer formalism of Section 7
+             is re-derived from scratch rather than imported}
+}
+
+% ---------------- the comparison tables -------------------------------
+
+@misc{GrasslCodetables,
+  author       = {Grassl, Markus},
+  title        = {Bounds on the minimum distance of linear codes and quantum codes},
+  howpublished = {Online table, \url{http://www.codetables.de}},
+  year         = {2024},
+  annote  = {Retrieved 2026-11-04. Query pattern
+                  \texttt{http://www.codetables.de/QECC.php?q=$Q$\&n=$N$\&k=$K$};
+                  page last changed 10.06.2024. IMPORTANT CONVENTION: the page
+                  header prints the PRIME $p$ in the code label $[[N,K]]_p$
+                  while the construction block says ``over GF($p^2$)''; thus
+                  $q=4$ appears as $[[N,K]]_2$ and $q=9$ as $[[N,K]]_3$.
+                  $q=4$ and $q=9$ are tabulated; $q=8$ returns ``currently
+                  not available for q=8''. There is NO entanglement-assisted
+                  table: \texttt{QECC-EA.php} returns HTTP 404}
+}

@@ -1,0 +1,709 @@
+================================================================================================
+PHASE 2 - STAGE 2B:  CRT/Hensel decomposition and global principality
+================================================================================================
+  seed = 20261106 ; every check is labelled [EXH] (exhaustive) or [SMP] (sampled)
+
+################################################################################################
+#  (q,t,n) = (4,2,1)   q = 4 = 2^2,  t = 2,  n = 1
+#  n = p^v n' : v = 0, n' = 1, e = p^v = 1 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 16,  |B^2| = 256,  |M_2(B)| = 65536
+#  components J = 1, degrees d_j = [1], |B_j| = [16]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (4,2,1): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 1
+  [EXH] (4,2,1): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (4,2,1): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (4,2,1): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (4,2,1): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (4,2,1): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (4,2,1): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (4,2,1): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (4,2,1): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (4,2,1): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (4,2,1): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (4,2,1): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (4,2,1): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (4,2,1): |B| = q^{tn} = prod_j |B_j|                               PASS  16 = 16
+  [EXH] (4,2,1): the CRT map is additive                                   PASS  all 16^2 pairs
+  [EXH] (4,2,1): the CRT map is multiplicative                             PASS  all 16^2 pairs
+  [EXH] (4,2,1): the CRT map is bijective (round trip on every element)    PASS  16 elements
+  [EXH] (4,2,1): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (4,2,1): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- ideals under the CRT (Task A.5) -----------------------------------------------------
+  [EXH] (4,2,1): #{ideals of B} = prod_j #{ideals of B_j}                  PASS  3 = 3
+  [EXH] (4,2,1): every ideal of B splits into a tuple of ideals of the B_j PASS  
+  [EXH] (4,2,1): the ideal correspondence is a bijection                   PASS  3 tuples
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (4,2,1), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 2.1.1
+  [EXH] (4,2,1), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (4,2,1), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (4,2,1), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,2,1), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (4,2,1), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,2,1), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (4,2,1), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (4,2,1), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (4,2,1), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (4,2,1), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+
+-- submodules of B^2, mu, and principality (Tasks B, C) ---------------------------------
+  [EXH] (4,2,1): #{submodules of B^2} = prod_j #{submodules of B_j^2}      PASS  33 = 33
+  [EXH] (4,2,1): the count agrees with the Phase-1/Stage-2A value          PASS  33 vs 33
+     mu_B distribution: [(0, 1), (1, 25), (2, 7)]
+     mu per component:  [[(0, 1), (1, 25), (2, 7)]]
+  [EXH] (4,2,1): W |-> (W_1,..,W_J) maps submodules to tuples of submodules PASS  33 submodules
+  [EXH] (4,2,1): the correspondence is a bijection onto the product        PASS  33 tuples
+  [EXH] (4,2,1): the CRT reconstruction recovers W                         PASS  
+  [EXH] (4,2,1): mu_B(W) = max_j mu_{B_j}(W_j)  (L-2.4.5)                  PASS  all 33 submodules
+  [SMP] (4,2,1): mu from the brute-force scan agrees with the lattice BFS  PASS  32 of 33 submodules, |W| <= 4096
+  [EXH] (4,2,1): every W with mu_B <= 2 gives a PRINCIPAL I_W (certificate) PASS  33 ideals certified by |x*M_2(B)| = |I_W|
+     principal: 33 ; not principal: 0 ; total 33
+  [EXH] (4,2,1): P-2.6 prediction for this ring: all right ideals principal = True PASS  principal 33, not principal 0
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [EXH] (4,2,1): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  all 16^2 pairs
+  [EXH] (4,2,1): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0,)
+  [EXH] (4,2,1): sigma_0(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [EXH] (4,2,1): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,2,1): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_0: 1 of 1 components are fixed (stability: p^0 C_j = C_j)
+  [EXH] (4,2,1): sigma_1 permutes the factors as p^1 does on the cosets    PASS  sigma_1: (0,)
+  [EXH] (4,2,1): sigma_1(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [EXH] (4,2,1): split(sigma_1(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,2,1): sigma_1 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_1: 1 of 1 components are fixed (stability: p^1 C_j = C_j)
+     the permutation is non-trivial for k in no k (every q-cyclotomic coset is p-stable)
+  [EXH] (4,2,1): mu_B(sigma_k W) = mu_B(W) for every submodule and every k PASS  33 submodules x 2 automorphisms
+     (principality of I_W depends on W only through mu_B(W), so it is
+      Galois-invariant as well: T-083 of Stage 2A)
+
+################################################################################################
+#  (q,t,n) = (4,1,2)   q = 4 = 2^2,  t = 1,  n = 2
+#  n = p^v n' : v = 1, n' = 1, e = p^v = 2 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 16,  |B^2| = 256,  |M_2(B)| = 65536
+#  components J = 1, degrees d_j = [1], |B_j| = [16]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (4,1,2): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 2
+  [EXH] (4,1,2): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (4,1,2): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (4,1,2): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (4,1,2): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (4,1,2): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (4,1,2): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (4,1,2): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (4,1,2): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (4,1,2): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (4,1,2): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (4,1,2): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (4,1,2): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (4,1,2): |B| = q^{tn} = prod_j |B_j|                               PASS  16 = 16
+  [EXH] (4,1,2): the CRT map is additive                                   PASS  all 16^2 pairs
+  [EXH] (4,1,2): the CRT map is multiplicative                             PASS  all 16^2 pairs
+  [EXH] (4,1,2): the CRT map is bijective (round trip on every element)    PASS  16 elements
+  [EXH] (4,1,2): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (4,1,2): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- ideals under the CRT (Task A.5) -----------------------------------------------------
+  [EXH] (4,1,2): #{ideals of B} = prod_j #{ideals of B_j}                  PASS  3 = 3
+  [EXH] (4,1,2): every ideal of B splits into a tuple of ideals of the B_j PASS  
+  [EXH] (4,1,2): the ideal correspondence is a bijection                   PASS  3 tuples
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (4,1,2), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 1.1.2
+  [EXH] (4,1,2), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (4,1,2), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (4,1,2), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,1,2), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (4,1,2), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,1,2), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (4,1,2), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (4,1,2), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (4,1,2), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (4,1,2), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+
+-- submodules of B^2, mu, and principality (Tasks B, C) ---------------------------------
+  [EXH] (4,1,2): #{submodules of B^2} = prod_j #{submodules of B_j^2}      PASS  33 = 33
+  [EXH] (4,1,2): the count agrees with the Phase-1/Stage-2A value          PASS  33 vs 33
+     mu_B distribution: [(0, 1), (1, 25), (2, 7)]
+     mu per component:  [[(0, 1), (1, 25), (2, 7)]]
+  [EXH] (4,1,2): W |-> (W_1,..,W_J) maps submodules to tuples of submodules PASS  33 submodules
+  [EXH] (4,1,2): the correspondence is a bijection onto the product        PASS  33 tuples
+  [EXH] (4,1,2): the CRT reconstruction recovers W                         PASS  
+  [EXH] (4,1,2): mu_B(W) = max_j mu_{B_j}(W_j)  (L-2.4.5)                  PASS  all 33 submodules
+  [SMP] (4,1,2): mu from the brute-force scan agrees with the lattice BFS  PASS  32 of 33 submodules, |W| <= 4096
+  [EXH] (4,1,2): every W with mu_B <= 2 gives a PRINCIPAL I_W (certificate) PASS  33 ideals certified by |x*M_2(B)| = |I_W|
+     principal: 33 ; not principal: 0 ; total 33
+  [EXH] (4,1,2): P-2.6 prediction for this ring: all right ideals principal = True PASS  principal 33, not principal 0
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [EXH] (4,1,2): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  all 16^2 pairs
+  [EXH] (4,1,2): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0,)
+  [EXH] (4,1,2): sigma_0(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [EXH] (4,1,2): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,1,2): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_0: 1 of 1 components are fixed (stability: p^0 C_j = C_j)
+  [EXH] (4,1,2): sigma_1 permutes the factors as p^1 does on the cosets    PASS  sigma_1: (0,)
+  [EXH] (4,1,2): sigma_1(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [EXH] (4,1,2): split(sigma_1(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,1,2): sigma_1 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_1: 1 of 1 components are fixed (stability: p^1 C_j = C_j)
+     the permutation is non-trivial for k in no k (every q-cyclotomic coset is p-stable)
+  [EXH] (4,1,2): mu_B(sigma_k W) = mu_B(W) for every submodule and every k PASS  33 submodules x 2 automorphisms
+     (principality of I_W depends on W only through mu_B(W), so it is
+      Galois-invariant as well: T-083 of Stage 2A)
+
+################################################################################################
+#  (q,t,n) = (2,1,3)   q = 2 = 2^1,  t = 1,  n = 3
+#  n = p^v n' : v = 0, n' = 3, e = p^v = 1 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 8,  |B^2| = 64,  |M_2(B)| = 4096
+#  components J = 2, degrees d_j = [1, 2], |B_j| = [2, 4]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (2,1,3): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 3
+  [EXH] (2,1,3): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 3
+  [EXH] (2,1,3): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  2 factors, degrees [1, 2]
+  [EXH] (2,1,3): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (2,1,3): the f_j are pairwise coprime                              PASS  1 pairs
+  [EXH] (2,1,3): #factors = #q-cyclotomic cosets mod n'                    PASS  2 = 2
+  [EXH] (2,1,3): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1, 2], coset sizes [1, 2]
+  [EXH] (2,1,3): sum_j d_j = n'                                            PASS  3 = 3
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (2,1,3): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  2 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (2,1,3): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (2,1,3): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (2,1,3): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (2,1,3): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (2,1,3): |B| = q^{tn} = prod_j |B_j|                               PASS  8 = 8
+  [EXH] (2,1,3): the CRT map is additive                                   PASS  all 8^2 pairs
+  [EXH] (2,1,3): the CRT map is multiplicative                             PASS  all 8^2 pairs
+  [EXH] (2,1,3): the CRT map is bijective (round trip on every element)    PASS  8 elements
+  [EXH] (2,1,3): the e_j are pairwise orthogonal idempotents summing to 1  PASS  2 idempotents
+  [EXH] (2,1,3): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- ideals under the CRT (Task A.5) -----------------------------------------------------
+  [EXH] (2,1,3): #{ideals of B} = prod_j #{ideals of B_j}                  PASS  4 = 4
+  [EXH] (2,1,3): every ideal of B splits into a tuple of ideals of the B_j PASS  
+  [EXH] (2,1,3): the ideal correspondence is a bijection                   PASS  4 tuples
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (2,1,3), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  1 = 1.1.1
+  [EXH] (2,1,3), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  2
+  [EXH] (2,1,3), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 2^2 pairs
+  [EXH] (2,1,3), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 2
+  [EXH] (2,1,3), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 0
+  [EXH] (2,1,3), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (2,1,3), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^1 = 0, m_j^0 != 0
+  [EXH] (2,1,3), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 2 elements
+  [EXH] (2,1,3), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 0 (three-case prediction) PASS  dim = 0 ; dim_Fq m = 0, dim_Fq m^2 = 0
+  [EXH] (2,1,3), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (2,1,3), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  2 ideals, nilpotency 1
+  [EXH] (2,1,3), component 1 (d_j = 2): dim_{F_q} B_j = t d_j p^v          PASS  2 = 1.2.1
+  [EXH] (2,1,3), component 1 (d_j = 2): |B_j| = q^{t d_j p^v}              PASS  4
+  [EXH] (2,1,3), component 1 (d_j = 2): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 4^2 pairs
+  [EXH] (2,1,3), component 1 (d_j = 2): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (2,1,3), component 1 (d_j = 2): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 0
+  [EXH] (2,1,3), component 1 (d_j = 2): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 2
+  [EXH] (2,1,3), component 1 (d_j = 2): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^1 = 0, m_j^0 != 0
+  [EXH] (2,1,3), component 1 (d_j = 2): the units are exactly B_j \ m_j (B_j is local) PASS  all 4 elements
+  [EXH] (2,1,3), component 1 (d_j = 2): dim_{K_j}(m_j/m_j^2) = 0 (three-case prediction) PASS  dim = 0 ; dim_Fq m = 0, dim_Fq m^2 = 0
+  [EXH] (2,1,3), component 1 (d_j = 2): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (2,1,3), component 1 (d_j = 2): #{ideals} = nilpotency + 1 iff chain ring PASS  2 ideals, nilpotency 1
+
+-- submodules of B^2, mu, and principality (Tasks B, C) ---------------------------------
+  [EXH] (2,1,3): #{submodules of B^2} = prod_j #{submodules of B_j^2}      PASS  35 = 35
+  [EXH] (2,1,3): the count agrees with the Phase-1/Stage-2A value          PASS  35 vs 35
+     mu_B distribution: [(0, 1), (1, 23), (2, 11)]
+     mu per component:  [[(0, 1), (1, 3), (2, 1)], [(0, 1), (1, 5), (2, 1)]]
+  [EXH] (2,1,3): W |-> (W_1,..,W_J) maps submodules to tuples of submodules PASS  35 submodules
+  [EXH] (2,1,3): the correspondence is a bijection onto the product        PASS  35 tuples
+  [EXH] (2,1,3): the CRT reconstruction recovers W                         PASS  
+  [EXH] (2,1,3): mu_B(W) = max_j mu_{B_j}(W_j)  (L-2.4.5)                  PASS  all 35 submodules
+  [SMP] (2,1,3): mu from the brute-force scan agrees with the lattice BFS  PASS  34 of 35 submodules, |W| <= 4096
+  [EXH] (2,1,3): every W with mu_B <= 2 gives a PRINCIPAL I_W (certificate) PASS  35 ideals certified by |x*M_2(B)| = |I_W|
+     principal: 35 ; not principal: 0 ; total 35
+  [EXH] (2,1,3): P-2.6 prediction for this ring: all right ideals principal = True PASS  principal 35, not principal 0
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [EXH] (2,1,3): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  all 8^2 pairs
+  [EXH] (2,1,3): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0, 1)
+  [EXH] (2,1,3): sigma_0(e_j) = e_{perm(j)}                                PASS  2 idempotents
+  [EXH] (2,1,3): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (2,1,3): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  2 components
+     sigma_0: 2 of 2 components are fixed (stability: p^0 C_j = C_j)
+     the permutation is non-trivial for k in no k (every q-cyclotomic coset is p-stable)
+  [EXH] (2,1,3): mu_B(sigma_k W) = mu_B(W) for every submodule and every k PASS  35 submodules x 1 automorphisms
+     (principality of I_W depends on W only through mu_B(W), so it is
+      Galois-invariant as well: T-083 of Stage 2A)
+
+################################################################################################
+#  (q,t,n) = (9,1,2)   q = 9 = 3^2,  t = 1,  n = 2
+#  n = p^v n' : v = 0, n' = 2, e = p^v = 1 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 81,  |B^2| = 6561,  |M_2(B)| = 43046721
+#  components J = 2, degrees d_j = [1, 1], |B_j| = [9, 9]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (9,1,2): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 2
+  [EXH] (9,1,2): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 2
+  [EXH] (9,1,2): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  2 factors, degrees [1, 1]
+  [EXH] (9,1,2): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (9,1,2): the f_j are pairwise coprime                              PASS  1 pairs
+  [EXH] (9,1,2): #factors = #q-cyclotomic cosets mod n'                    PASS  2 = 2
+  [EXH] (9,1,2): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1, 1], coset sizes [1, 1]
+  [EXH] (9,1,2): sum_j d_j = n'                                            PASS  2 = 2
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (9,1,2): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  2 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (9,1,2): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (9,1,2): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (9,1,2): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (9,1,2): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (9,1,2): |B| = q^{tn} = prod_j |B_j|                               PASS  81 = 81
+  [EXH] (9,1,2): the CRT map is additive                                   PASS  all 81^2 pairs
+  [EXH] (9,1,2): the CRT map is multiplicative                             PASS  all 81^2 pairs
+  [EXH] (9,1,2): the CRT map is bijective (round trip on every element)    PASS  81 elements
+  [EXH] (9,1,2): the e_j are pairwise orthogonal idempotents summing to 1  PASS  2 idempotents
+  [EXH] (9,1,2): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- ideals under the CRT (Task A.5) -----------------------------------------------------
+  [EXH] (9,1,2): #{ideals of B} = prod_j #{ideals of B_j}                  PASS  4 = 4
+  [EXH] (9,1,2): every ideal of B splits into a tuple of ideals of the B_j PASS  
+  [EXH] (9,1,2): the ideal correspondence is a bijection                   PASS  4 tuples
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (9,1,2), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  1 = 1.1.1
+  [EXH] (9,1,2), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  9
+  [EXH] (9,1,2), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 9^2 pairs
+  [EXH] (9,1,2), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 9
+  [EXH] (9,1,2), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 0
+  [EXH] (9,1,2), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (9,1,2), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^1 = 0, m_j^0 != 0
+  [EXH] (9,1,2), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 9 elements
+  [EXH] (9,1,2), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 0 (three-case prediction) PASS  dim = 0 ; dim_Fq m = 0, dim_Fq m^2 = 0
+  [EXH] (9,1,2), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (9,1,2), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  2 ideals, nilpotency 1
+  [EXH] (9,1,2), component 1 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  1 = 1.1.1
+  [EXH] (9,1,2), component 1 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  9
+  [EXH] (9,1,2), component 1 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 9^2 pairs
+  [EXH] (9,1,2), component 1 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 9
+  [EXH] (9,1,2), component 1 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 0
+  [EXH] (9,1,2), component 1 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (9,1,2), component 1 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^1 = 0, m_j^0 != 0
+  [EXH] (9,1,2), component 1 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 9 elements
+  [EXH] (9,1,2), component 1 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 0 (three-case prediction) PASS  dim = 0 ; dim_Fq m = 0, dim_Fq m^2 = 0
+  [EXH] (9,1,2), component 1 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (9,1,2), component 1 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  2 ideals, nilpotency 1
+
+-- submodules of B^2, mu, and principality (Tasks B, C) ---------------------------------
+  [EXH] (9,1,2): #{submodules of B^2} = prod_j #{submodules of B_j^2}      PASS  144 = 144
+  [EXH] (9,1,2): the count agrees with the Phase-1/Stage-2A value          PASS  144 vs 144
+     mu_B distribution: [(0, 1), (1, 120), (2, 23)]
+     mu per component:  [[(0, 1), (1, 10), (2, 1)], [(0, 1), (1, 10), (2, 1)]]
+  [EXH] (9,1,2): W |-> (W_1,..,W_J) maps submodules to tuples of submodules PASS  144 submodules
+  [EXH] (9,1,2): the correspondence is a bijection onto the product        PASS  144 tuples
+  [EXH] (9,1,2): the CRT reconstruction recovers W                         PASS  
+  [EXH] (9,1,2): mu_B(W) = max_j mu_{B_j}(W_j)  (L-2.4.5)                  PASS  all 144 submodules
+  [SMP] (9,1,2): mu from the brute-force scan agrees with the lattice BFS  PASS  40 of 144 submodules, |W| <= 4096
+  [EXH] (9,1,2): every W with mu_B <= 2 gives a PRINCIPAL I_W (certificate) PASS  144 ideals certified by |x*M_2(B)| = |I_W|
+     principal: 144 ; not principal: 0 ; total 144
+  [EXH] (9,1,2): P-2.6 prediction for this ring: all right ideals principal = True PASS  principal 144, not principal 0
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [EXH] (9,1,2): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  all 81^2 pairs
+  [EXH] (9,1,2): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0, 1)
+  [EXH] (9,1,2): sigma_0(e_j) = e_{perm(j)}                                PASS  2 idempotents
+  [SMP] (9,1,2): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (9,1,2): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  2 components
+     sigma_0: 2 of 2 components are fixed (stability: p^0 C_j = C_j)
+  [EXH] (9,1,2): sigma_1 permutes the factors as p^1 does on the cosets    PASS  sigma_1: (0, 1)
+  [EXH] (9,1,2): sigma_1(e_j) = e_{perm(j)}                                PASS  2 idempotents
+  [SMP] (9,1,2): split(sigma_1(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (9,1,2): sigma_1 maps the preimage of m_j onto that of m_{perm(j)} PASS  2 components
+     sigma_1: 2 of 2 components are fixed (stability: p^1 C_j = C_j)
+     the permutation is non-trivial for k in no k (every q-cyclotomic coset is p-stable)
+  [EXH] (9,1,2): mu_B(sigma_k W) = mu_B(W) for every submodule and every k PASS  144 submodules x 2 automorphisms
+     (principality of I_W depends on W only through mu_B(W), so it is
+      Galois-invariant as well: T-083 of Stage 2A)
+
+################################################################################################
+#  (q,t,n) = (8,1,2)   q = 8 = 2^3,  t = 1,  n = 2
+#  n = p^v n' : v = 1, n' = 1, e = p^v = 2 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 64,  |B^2| = 4096,  |M_2(B)| = 16777216
+#  components J = 1, degrees d_j = [1], |B_j| = [64]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (8,1,2): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 2
+  [EXH] (8,1,2): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (8,1,2): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (8,1,2): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (8,1,2): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (8,1,2): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (8,1,2): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (8,1,2): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (8,1,2): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (8,1,2): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (8,1,2): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (8,1,2): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (8,1,2): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (8,1,2): |B| = q^{tn} = prod_j |B_j|                               PASS  64 = 64
+  [EXH] (8,1,2): the CRT map is additive                                   PASS  all 64^2 pairs
+  [EXH] (8,1,2): the CRT map is multiplicative                             PASS  all 64^2 pairs
+  [EXH] (8,1,2): the CRT map is bijective (round trip on every element)    PASS  64 elements
+  [EXH] (8,1,2): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (8,1,2): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- ideals under the CRT (Task A.5) -----------------------------------------------------
+  [EXH] (8,1,2): #{ideals of B} = prod_j #{ideals of B_j}                  PASS  3 = 3
+  [EXH] (8,1,2): every ideal of B splits into a tuple of ideals of the B_j PASS  
+  [EXH] (8,1,2): the ideal correspondence is a bijection                   PASS  3 tuples
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (8,1,2), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 1.1.2
+  [EXH] (8,1,2), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  64
+  [EXH] (8,1,2), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 64^2 pairs
+  [EXH] (8,1,2), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 8
+  [EXH] (8,1,2), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (8,1,2), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (8,1,2), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (8,1,2), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 64 elements
+  [EXH] (8,1,2), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (8,1,2), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (8,1,2), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+
+-- submodules of B^2, mu, and principality (Tasks B, C) ---------------------------------
+  [EXH] (8,1,2): #{submodules of B^2} = prod_j #{submodules of B_j^2}      PASS  93 = 93
+  [EXH] (8,1,2): the count agrees with the Phase-1/Stage-2A value          PASS  93 vs 93
+     mu_B distribution: [(0, 1), (1, 81), (2, 11)]
+     mu per component:  [[(0, 1), (1, 81), (2, 11)]]
+  [EXH] (8,1,2): W |-> (W_1,..,W_J) maps submodules to tuples of submodules PASS  93 submodules
+  [EXH] (8,1,2): the correspondence is a bijection onto the product        PASS  93 tuples
+  [EXH] (8,1,2): the CRT reconstruction recovers W                         PASS  
+  [EXH] (8,1,2): mu_B(W) = max_j mu_{B_j}(W_j)  (L-2.4.5)                  PASS  all 93 submodules
+  [SMP] (8,1,2): mu from the brute-force scan agrees with the lattice BFS  PASS  40 of 93 submodules, |W| <= 4096
+  [EXH] (8,1,2): every W with mu_B <= 2 gives a PRINCIPAL I_W (certificate) PASS  93 ideals certified by |x*M_2(B)| = |I_W|
+     principal: 93 ; not principal: 0 ; total 93
+  [EXH] (8,1,2): P-2.6 prediction for this ring: all right ideals principal = True PASS  principal 93, not principal 0
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [EXH] (8,1,2): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  all 64^2 pairs
+  [EXH] (8,1,2): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0,)
+  [EXH] (8,1,2): sigma_0(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [SMP] (8,1,2): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (8,1,2): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_0: 1 of 1 components are fixed (stability: p^0 C_j = C_j)
+  [EXH] (8,1,2): sigma_1 permutes the factors as p^1 does on the cosets    PASS  sigma_1: (0,)
+  [EXH] (8,1,2): sigma_1(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [SMP] (8,1,2): split(sigma_1(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (8,1,2): sigma_1 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_1: 1 of 1 components are fixed (stability: p^1 C_j = C_j)
+  [EXH] (8,1,2): sigma_2 permutes the factors as p^2 does on the cosets    PASS  sigma_2: (0,)
+  [EXH] (8,1,2): sigma_2(e_j) = e_{perm(j)}                                PASS  1 idempotents
+  [SMP] (8,1,2): split(sigma_2(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (8,1,2): sigma_2 maps the preimage of m_j onto that of m_{perm(j)} PASS  1 components
+     sigma_2: 1 of 1 components are fixed (stability: p^2 C_j = C_j)
+     the permutation is non-trivial for k in no k (every q-cyclotomic coset is p-stable)
+  [EXH] (8,1,2): mu_B(sigma_k W) = mu_B(W) for every submodule and every k PASS  93 submodules x 3 automorphisms
+     (principality of I_W depends on W only through mu_B(W), so it is
+      Galois-invariant as well: T-083 of Stage 2A)
+
+################################################################################################
+#  (q,t,n) = (4,2,3)   q = 4 = 2^2,  t = 2,  n = 3
+#  n = p^v n' : v = 0, n' = 3, e = p^v = 1 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 4096,  |B^2| = 16777216,  |M_2(B)| = 281474976710656
+#  components J = 3, degrees d_j = [1, 1, 1], |B_j| = [16, 16, 16]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (4,2,3): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 3
+  [EXH] (4,2,3): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 3
+  [EXH] (4,2,3): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  3 factors, degrees [1, 1, 1]
+  [EXH] (4,2,3): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (4,2,3): the f_j are pairwise coprime                              PASS  3 pairs
+  [EXH] (4,2,3): #factors = #q-cyclotomic cosets mod n'                    PASS  3 = 3
+  [EXH] (4,2,3): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1, 1, 1], coset sizes [1, 1, 1]
+  [EXH] (4,2,3): sum_j d_j = n'                                            PASS  3 = 3
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (4,2,3): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  3 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (4,2,3): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (4,2,3): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (4,2,3): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (4,2,3): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (4,2,3): |B| = q^{tn} = prod_j |B_j|                               PASS  4096 = 4096
+  [SMP] (4,2,3): the CRT map is additive                                   PASS  600^2 pairs (sampled)
+  [SMP] (4,2,3): the CRT map is multiplicative                             PASS  600^2 pairs (sampled)
+  [SMP] (4,2,3): the CRT map is injective on the tested elements           PASS  600 elements (sampled)
+  [EXH] (4,2,3): the e_j are pairwise orthogonal idempotents summing to 1  PASS  3 idempotents
+  [EXH] (4,2,3): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (4,2,3), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 2.1.1
+  [EXH] (4,2,3), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (4,2,3), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (4,2,3), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,2,3), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (4,2,3), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,2,3), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (4,2,3), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (4,2,3), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (4,2,3), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (4,2,3), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+  [EXH] (4,2,3), component 1 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 2.1.1
+  [EXH] (4,2,3), component 1 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (4,2,3), component 1 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (4,2,3), component 1 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,2,3), component 1 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (4,2,3), component 1 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,2,3), component 1 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (4,2,3), component 1 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (4,2,3), component 1 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (4,2,3), component 1 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (4,2,3), component 1 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+  [EXH] (4,2,3), component 2 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  2 = 2.1.1
+  [EXH] (4,2,3), component 2 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (4,2,3), component 2 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (4,2,3), component 2 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,2,3), component 2 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 1
+  [EXH] (4,2,3), component 2 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,2,3), component 2 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^2 = 0, m_j^1 != 0
+  [EXH] (4,2,3), component 2 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (4,2,3), component 2 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 1 (three-case prediction) PASS  dim = 1 ; dim_Fq m = 1, dim_Fq m^2 = 0
+  [EXH] (4,2,3), component 2 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: True (predicted True)
+  [EXH] (4,2,3), component 2 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  3 ideals, nilpotency 2
+
+-- submodules of B^2 built componentwise (Tasks B, C) -----------------------------------
+     component lattices: [33, 33, 33]  -> product 35937
+     predicted total (C-2.1g): 35937
+  [SMP] (4,2,3): the CRT-built submodules are B-submodules of B^2          PASS  200 of 35937 built (sampled)
+  [EXH] (4,2,3): #built = prod_j #{submodules of B_j^2}                    PASS  35937 = 35937
+  [EXH] (4,2,3): the CRT-built count matches the prediction                PASS  35937 vs 35937
+  [SMP] (4,2,3): mu_B(W) <= max_j mu_{B_j}(W_j) (exhibited generators)     PASS  399 submodules (sampled)
+  [SMP] (4,2,3): every sampled W with mu <= 2 gives a principal I_W        PASS  399 certificates |x*M_2(B)| = |I_W|
+  [SMP] (4,2,3): random submodules of B^2 all lie in the CRT-built list    PASS  180 random submodules (sampled)
+  [EXH] (4,2,3): P-2.6 prediction: all right ideals principal = True       PASS  every component is a chain ring
+
+-- Task D: sigma_k on the CRT components ------------------------------------------------
+  [SMP] (4,2,3): sigma_1 is a ring endomorphism of B (fixes u and X)       PASS  200^2 pairs (sampled)
+  [EXH] (4,2,3): sigma_0 permutes the factors as p^0 does on the cosets    PASS  sigma_0: (0, 1, 2)
+  [EXH] (4,2,3): sigma_0(e_j) = e_{perm(j)}                                PASS  3 idempotents
+  [SMP] (4,2,3): split(sigma_0(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,2,3): sigma_0 maps the preimage of m_j onto that of m_{perm(j)} PASS  3 components
+     sigma_0: 3 of 3 components are fixed (stability: p^0 C_j = C_j)
+  [EXH] (4,2,3): sigma_1 permutes the factors as p^1 does on the cosets    PASS  sigma_1: (0, 2, 1)
+  [EXH] (4,2,3): sigma_1(e_j) = e_{perm(j)}                                PASS  3 idempotents
+  [SMP] (4,2,3): split(sigma_1(b)) = perm . split(b)                       PASS  60 elements
+  [EXH] (4,2,3): sigma_1 maps the preimage of m_j onto that of m_{perm(j)} PASS  3 components
+     sigma_1: 1 of 3 components are fixed (stability: p^1 C_j = C_j)
+     the permutation is non-trivial for k in [1]
+
+################################################################################################
+#  (q,t,n) = (2,2,2)   q = 2 = 2^1,  t = 2,  n = 2
+#  n = p^v n' : v = 1, n' = 1, e = p^v = 2 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 16,  |B^2| = 256,  |M_2(B)| = 65536
+#  components J = 1, degrees d_j = [1], |B_j| = [16]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (2,2,2): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 2
+  [EXH] (2,2,2): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (2,2,2): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (2,2,2): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (2,2,2): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (2,2,2): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (2,2,2): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (2,2,2): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (2,2,2): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (2,2,2): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (2,2,2): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (2,2,2): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (2,2,2): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (2,2,2): |B| = q^{tn} = prod_j |B_j|                               PASS  16 = 16
+  [EXH] (2,2,2): the CRT map is additive                                   PASS  all 16^2 pairs
+  [EXH] (2,2,2): the CRT map is multiplicative                             PASS  all 16^2 pairs
+  [EXH] (2,2,2): the CRT map is bijective (round trip on every element)    PASS  16 elements
+  [EXH] (2,2,2): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (2,2,2): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (2,2,2), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  4 = 2.1.2
+  [EXH] (2,2,2), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  16
+  [EXH] (2,2,2), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 16^2 pairs
+  [EXH] (2,2,2), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 2
+  [EXH] (2,2,2), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 3
+  [EXH] (2,2,2), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (2,2,2), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^3 = 0, m_j^2 != 0
+  [EXH] (2,2,2), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 16 elements
+  [EXH] (2,2,2), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 2 (three-case prediction) PASS  dim = 2 ; dim_Fq m = 3, dim_Fq m^2 = 1
+  [EXH] (2,2,2), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: False (predicted False)
+  [EXH] (2,2,2), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  7 ideals, nilpotency 3
+
+-- wild case: the counterexample W = m_j + m_j (Task B.4-B.6) ---------------------------
+     component 0: |m_j| = 8, |W| = 64, dim_Fq W = 6
+  [EXH] (2,2,2) comp 0: dim_{K_j}(W/m_j W) = 4  (Nakayama lower bound mu >= 4) PASS  dim = 4
+  [EXH] (2,2,2) comp 0: four exhibited generators do generate W  (mu <= 4) PASS  u and f_j in each coordinate
+  [EXH] (2,2,2) comp 0: dim_{F_q}(I_W / I_W J(S)) = 8 > 4 = the principal bound PASS  so I_W = M_2(m_j) is NOT principal
+  [EXH] (2,2,2): no x in I_W generates I_W (exhaustive x-scan)             PASS  4096 elements scanned
+  [EXH] (2,2,2): two explicit generators do generate I_W  (mu_S = 2)       PASS  |I_W| = 4096
+  [EXH] (2,2,2): P-2.6 => not all right ideals are principal               PASS  t >= 2 and p | n, and 1 non-principal right ideal(s) certified
+
+################################################################################################
+#  (q,t,n) = (4,2,2)   q = 4 = 2^2,  t = 2,  n = 2
+#  n = p^v n' : v = 1, n' = 1, e = p^v = 2 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 256,  |B^2| = 65536,  |M_2(B)| = 4294967296
+#  components J = 1, degrees d_j = [1], |B_j| = [256]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (4,2,2): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 2
+  [EXH] (4,2,2): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (4,2,2): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (4,2,2): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (4,2,2): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (4,2,2): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (4,2,2): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (4,2,2): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (4,2,2): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (4,2,2): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (4,2,2): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (4,2,2): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (4,2,2): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (4,2,2): |B| = q^{tn} = prod_j |B_j|                               PASS  256 = 256
+  [EXH] (4,2,2): the CRT map is additive                                   PASS  all 256^2 pairs
+  [EXH] (4,2,2): the CRT map is multiplicative                             PASS  all 256^2 pairs
+  [EXH] (4,2,2): the CRT map is bijective (round trip on every element)    PASS  256 elements
+  [EXH] (4,2,2): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (4,2,2): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (4,2,2), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  4 = 2.1.2
+  [EXH] (4,2,2), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  256
+  [EXH] (4,2,2), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [EXH] all 256^2 pairs
+  [EXH] (4,2,2), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 4
+  [EXH] (4,2,2), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 3
+  [EXH] (4,2,2), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (4,2,2), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^3 = 0, m_j^2 != 0
+  [EXH] (4,2,2), component 0 (d_j = 1): the units are exactly B_j \ m_j (B_j is local) PASS  all 256 elements
+  [EXH] (4,2,2), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 2 (three-case prediction) PASS  dim = 2 ; dim_Fq m = 3, dim_Fq m^2 = 1
+  [EXH] (4,2,2), component 0 (d_j = 1): B_j is a chain ring (ideals totally ordered) PASS  chain ring: False (predicted False)
+  [EXH] (4,2,2), component 0 (d_j = 1): #{ideals} = nilpotency + 1 iff chain ring PASS  9 ideals, nilpotency 3
+
+-- wild case: the counterexample W = m_j + m_j (Task B.4-B.6) ---------------------------
+     component 0: |m_j| = 64, |W| = 4096, dim_Fq W = 6
+  [EXH] (4,2,2) comp 0: dim_{K_j}(W/m_j W) = 4  (Nakayama lower bound mu >= 4) PASS  dim = 4
+  [EXH] (4,2,2) comp 0: four exhibited generators do generate W  (mu <= 4) PASS  u and f_j in each coordinate
+  [EXH] (4,2,2) comp 0: dim_{F_q}(I_W / I_W J(S)) = 8 > 4 = the principal bound PASS  so I_W = M_2(m_j) is NOT principal
+  [EXH] (4,2,2): two explicit generators do generate I_W  (mu_S = 2)       PASS  |I_W| = 16777216
+  [EXH] (4,2,2): P-2.6 => not all right ideals are principal               PASS  t >= 2 and p | n, and 1 non-principal right ideal(s) certified
+
+################################################################################################
+#  (q,t,n) = (9,2,3)   q = 9 = 3^2,  t = 2,  n = 3
+#  n = p^v n' : v = 1, n' = 1, e = p^v = 3 ;  X^n-1 = (X^{n'}-1)^{p^v}
+#  |B| = 531441,  |B^2| = 282429536481,  |M_2(B)| = 79766443076872509863361
+#  components J = 1, degrees d_j = [1], |B_j| = [531441]
+################################################################################################
+
+-- factorisation of the squarefree part (Task A.1) ------------------------------------------
+  [EXH] (9,2,3): X^n - 1 = (X^{n'}-1)^{p^v} in F_q[X]                      PASS  deg 3
+  [EXH] (9,2,3): X^{n'}-1 is squarefree (gcd with the derivative is 1)     PASS  gcd degree 0, n' = 1
+  [EXH] (9,2,3): X^{n'}-1 = prod_j f_j with monic irreducibles             PASS  1 factors, degrees [1]
+  [EXH] (9,2,3): every f_j is irreducible (trial division)                 PASS  
+  [EXH] (9,2,3): the f_j are pairwise coprime                              PASS  0 pairs
+  [EXH] (9,2,3): #factors = #q-cyclotomic cosets mod n'                    PASS  1 = 1
+  [EXH] (9,2,3): the degrees d_j are the coset sizes (independent route)   PASS  degrees [1], coset sizes [1]
+  [EXH] (9,2,3): sum_j d_j = n'                                            PASS  1 = 1
+
+-- Hensel lifting (Task A.2) ----------------------------------------------------------
+  [EXH] (9,2,3): the Hensel lifts F_j are monic, reduce to f_j mod u, and prod = X^{n'}-1 PASS  1 factors
+     => the unique Hensel lifts are the base-field factors themselves: True
+  [EXH] (9,2,3): the Hensel lift is trivial here (F_j = f_j in F_q[X])     PASS  consequence of X^{n'}-1 having coefficients in F_q
+  [EXH] (9,2,3): the lift is the UNIQUE monic lift with F_j = f_j mod u    PASS  exhaustive over 1 candidate tuples
+  [EXH] (9,2,3): non-vacuity - a genuinely non-trivial Hensel lift         PASS  X^2+X+u lifts to (X+u)(X+1+u), not to X(X+1)
+  [EXH] (9,2,3): lifting the repeated factorisation gives f_j^{p^v} too    PASS  the two Hensel routes agree here (both are trivial)
+
+-- CRT decomposition (Task A.3, A.5) ---------------------------------------------------
+  [EXH] (9,2,3): |B| = q^{tn} = prod_j |B_j|                               PASS  531441 = 531441
+  [SMP] (9,2,3): the CRT map is additive                                   PASS  600^2 pairs (sampled)
+  [SMP] (9,2,3): the CRT map is multiplicative                             PASS  600^2 pairs (sampled)
+  [SMP] (9,2,3): the CRT map is injective on the tested elements           PASS  600 elements (sampled)
+  [EXH] (9,2,3): the e_j are pairwise orthogonal idempotents summing to 1  PASS  1 idempotents
+  [EXH] (9,2,3): e_j maps to (0,..,1,..,0) under the CRT map               PASS  
+
+-- local component structure (Task A.4, falsification test CT-2) --------------------------
+  [EXH] (9,2,3), component 0 (d_j = 1): dim_{F_q} B_j = t d_j p^v          PASS  6 = 2.1.3
+  [EXH] (9,2,3), component 0 (d_j = 1): |B_j| = q^{t d_j p^v}              PASS  531441
+  [SMP] (9,2,3), component 0 (d_j = 1): rho_j : B_j -> K_j is a ring homomorphism PASS  [SMP] 300^2 pairs
+  [SMP] (9,2,3), component 0 (d_j = 1): rho_j is surjective onto K_j = F_{q^{d_j}} PASS  |K_j| = 9
+  [EXH] (9,2,3), component 0 (d_j = 1): m_j := (u, f_j) equals ker(rho_j)  PASS  dim m_j = 5
+  [EXH] (9,2,3), component 0 (d_j = 1): B_j/m_j is the field K_j (so m_j is maximal) PASS  dim B_j/m_j = 1
+  [EXH] (9,2,3), component 0 (d_j = 1): m_j^{t+p^v-1} = 0 (m_j is nilpotent) PASS  m_j^4 = 0, m_j^3 != 0
+  [SMP] (9,2,3), component 0 (d_j = 1): units = complement of m_j          PASS  300 random elements (sampled)
+  [EXH] (9,2,3), component 0 (d_j = 1): dim_{K_j}(m_j/m_j^2) = 2 (three-case prediction) PASS  dim = 2 ; dim_Fq m = 5, dim_Fq m^2 = 3
+  [EXH] (9,2,3), component 0 (d_j = 1): chain ring <=> dim_K(m/m^2) <= 1 (Nakayama) PASS  dim = 2, chain predicted False
+
+-- wild case: the counterexample W = m_j + m_j (Task B.4-B.6) ---------------------------
+     component 0: |m_j| = 59049, |W| = 3486784401, dim_Fq W = 10
+  [EXH] (9,2,3) comp 0: dim_{K_j}(W/m_j W) = 4  (Nakayama lower bound mu >= 4) PASS  dim = 4
+  [EXH] (9,2,3) comp 0: four exhibited generators do generate W  (mu <= 4) PASS  u and f_j in each coordinate
+  [EXH] (9,2,3) comp 0: dim_{F_q}(I_W / I_W J(S)) = 8 > 4 = the principal bound PASS  so I_W = M_2(m_j) is NOT principal
+  [EXH] (9,2,3): two explicit generators do generate I_W  (mu_S = 2)       PASS  |I_W| = 12157665459056928801
+  [EXH] (9,2,3): P-2.6 => not all right ideals are principal               PASS  t >= 2 and p | n, and 1 non-principal right ideal(s) certified
+
+################################################################################################
+#  negative controls and non-vacuity
+################################################################################################
+
+-- negative controls (wrong conventions must FAIL) -----------------------------------------
+  [EXH] neg-1: the map to prod A_t[X]/<f_j> kills X^{n'}-1 != 0            PASS  so the reduced modulus does NOT give an isomorphism
+  [EXH] neg-2: {M : rows of M in W} is NOT a right ideal                   PASS  counterexample found by exhaustive search
+  [EXH] neg-3: the SET {M : im M superset of W} is NOT a right ideal       PASS  counterexample found; 0 is not even in the set
+  [EXH] neg-4: the naive claim 'sigma_1 fixes every CRT component' is FALSE PASS  at (4,2,3) the permutation is (0, 2, 1)
+  [EXH] neg-5: non-vacuity - a 'chain' ring still has ideals needing 2 generators PASS  33 submodules, max mu = 2
+
+================================================================================================
+SUMMARY
+================================================================================================
+  460 checks, 460 PASS, 0 FAIL
+  no failures
+  end of log

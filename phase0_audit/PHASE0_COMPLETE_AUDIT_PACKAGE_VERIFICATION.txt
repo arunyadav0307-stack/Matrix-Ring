@@ -1,0 +1,503 @@
+{
+  "archive": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE.zip",
+  "ZIP_regular_file_count": 211,
+  "ZIP_bytes": 5208317,
+  "ZIP_MiB": 4.967038,
+  "uncompressed_bytes": 11137023,
+  "zip_SHA256": "350e5b9e4796d6b7798c17ce8ef047ee032e50cc4e49df0ef6e8d28ea5538c4e",
+  "SHA256SUMS_entries": 210,
+  "mandatory_reports": "6/6 present and byte-identical to originals",
+  "original_file_preservation": {
+    "status": "PASS",
+    "preexisting_entries_checked": 1267,
+    "changed_or_missing_entries": [],
+    "head": "12db091726835cc6f264fb0f679afc759610c89a",
+    "branch": "arena/7d88376d-matrix-ring",
+    "tracked_diff": "",
+    "staged_diff": ""
+  },
+  "tracked_files_match_HEAD": 94,
+  "sha256sum_test": "PASS",
+  "zip_testzip_CRC": "PASS",
+  "unzip_test_exit_code": 0,
+  "standalone_ZIP_verifier": "PASS",
+  "source_alias_rows": 239,
+  "deduplicated_source_copies": 54,
+  "reference_status_counts": {
+    "INVENTORY_ONLY": 11,
+    "PACKAGED": 619,
+    "PACKAGED_MULTIPLE": 41,
+    "PACKAGED_ALIAS": 226,
+    "UNAVAILABLE_VALID_BINARY": 14,
+    "OMITTED_HISTORICAL": 69,
+    "UNAVAILABLE_HISTORICAL_CONTAINER": 15,
+    "UNRESOLVED_HISTORICAL": 11,
+    "EXTERNAL_HISTORICAL_URL": 4
+  },
+  "research_scripts_executed_during_packaging": 0,
+  "limitations": "See repository_integrity/EVIDENCE_LIMITATIONS.md; file integrity is not mathematical/novelty certification."
+}
+
+--- standalone extracted-package verifier ---
+{
+  "status": "PASS",
+  "required_reports_present": 6,
+  "regular_file_count_including_SHA256SUMS": 211,
+  "uncompressed_bytes": 11137023,
+  "sha256_manifest_entries": 210,
+  "source_provenance_rows_checked": 239,
+  "reference_targets_checked": 1017,
+  "inherited_reference_exceptions_by_status": {
+    "INVENTORY_ONLY": 11,
+    "UNAVAILABLE_VALID_BINARY": 14,
+    "OMITTED_HISTORICAL": 69,
+    "UNAVAILABLE_HISTORICAL_CONTAINER": 15,
+    "UNRESOLVED_HISTORICAL": 11,
+    "EXTERNAL_HISTORICAL_URL": 4
+  },
+  "publication_manifest_entries_verified": 87,
+  "research_scripts_parsed_not_executed": 22,
+  "local_import_edges_present": 34,
+  "errors": [],
+  "scope": "File/structure/checksum verification only; not a mathematical or novelty certification."
+}
+
+--- standalone ZIP verifier ---
+{
+  "status": "PASS",
+  "zip_regular_file_count": 211,
+  "zip_bytes": 5208317,
+  "zip_sha256": "350e5b9e4796d6b7798c17ce8ef047ee032e50cc4e49df0ef6e8d28ea5538c4e",
+  "uncompressed_bytes": 11137023,
+  "CRC_integrity": "PASS",
+  "sha256_manifest_entries": 210,
+  "errors": [],
+  "scope": "File integrity only; no research computations execute."
+}
+
+--- sha256sum -c SHA256SUMS.txt ---
+PACKAGE_MANIFEST.md: OK
+README.md: OK
+computational_evidence/README.md: OK
+computational_evidence/SCRIPT_DEPENDENCIES.csv: OK
+computational_evidence/current_phase0/RERUN_COMPARISON.json: OK
+computational_evidence/current_phase0/phase0_feasibility_rerun_2026-11-12.txt: OK
+computational_evidence/current_phase0/phase0_rerun_diff_vs_recorded_log.txt: OK
+computational_evidence/prior_project/04_COMPUTATION/README.md: OK
+computational_evidence/prior_project/04_COMPUTATION/UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md: OK
+computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_28_CODE_APPLICABILITY_TABLE.csv: OK
+computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_CERTIFICATION_METHOD_AUDIT.md: OK
+computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_CERTIFICATION_LOGIC.md: OK
+computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_REFEREE_METHOD_NOTE.md: OK
+computational_evidence/research-data/PUBLICATION_MANIFEST.sha256: OK
+computational_evidence/research-data/README.md: OK
+computational_evidence/research-data/distance_certificates/certified_codes.csv: OK
+computational_evidence/research-data/documentation/MANIFEST.sha256: OK
+computational_evidence/research-data/documentation/SUPPLEMENTARY_PACKAGE_README.md: OK
+computational_evidence/research-data/generator_matrices/01_24_8_4_9_(9,1,6)_SO.json: OK
+computational_evidence/research-data/generator_matrices/02_20_4_4_4_(4,1,5)_SO.json: OK
+computational_evidence/research-data/generator_matrices/03_20_4_4_4_(4,1,5)_DC.json: OK
+computational_evidence/research-data/generator_matrices/04_20_2_10-18_4_(4,1,5)_EA.json: OK
+computational_evidence/research-data/generator_matrices/05_24_2_10-18_9_(9,1,6)_EA.json: OK
+computational_evidence/research-data/generator_matrices/06_4_2_2-2_4_(4,1,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/07_8_4_3-4_4_(4,1,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/08_12_2_6-10_4_(4,1,3)_EA.json: OK
+computational_evidence/research-data/generator_matrices/09_16_4_5-8_4_(4,1,4)_EA.json: OK
+computational_evidence/research-data/generator_matrices/10_24_4_9-20_4_(4,1,6)_EA.json: OK
+computational_evidence/research-data/generator_matrices/11_8_4_2-4_4_(4,2,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/12_16_4_4-12_4_(4,2,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/13_24_4_6-20_4_(4,2,3)_EA.json: OK
+computational_evidence/research-data/generator_matrices/14_12_6_2-6_4_(4,3,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/15_16_6_2-10_4_(4,4,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/16_4_2_2-2_8_(8,1,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/17_8_4_3-4_8_(8,1,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/18_12_2_6-10_8_(8,1,3)_EA.json: OK
+computational_evidence/research-data/generator_matrices/19_12_4_2-8_8_(8,3,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/20_4_2_2-2_9_(9,1,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/21_8_2_4-6_9_(9,1,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/22_12_2_5-6_9_(9,1,3)_EA.json: OK
+computational_evidence/research-data/generator_matrices/23_16_2_8-14_9_(9,1,4)_EA.json: OK
+computational_evidence/research-data/generator_matrices/24_20_4_9-16_9_(9,1,5)_EA.json: OK
+computational_evidence/research-data/generator_matrices/25_8_4_2-4_9_(9,2,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/26_16_4_4-12_9_(9,2,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/27_12_4_2-8_9_(9,3,1)_EA.json: OK
+computational_evidence/research-data/generator_matrices/28_24_6_4-18_9_(9,3,2)_EA.json: OK
+computational_evidence/research-data/generator_matrices/INDEX.json: OK
+computational_evidence/research-data/logs/alahmadi_reconciliation_log.txt: OK
+computational_evidence/research-data/logs/audit_pairing_equivalence_log.txt: OK
+computational_evidence/research-data/logs/decision_support_log.txt: OK
+computational_evidence/research-data/logs/extract_certified_generators_run.txt: OK
+computational_evidence/research-data/logs/galois_experiments_log.txt: OK
+computational_evidence/research-data/logs/galois_t2_log.txt: OK
+computational_evidence/research-data/logs/independent_audit_log.txt: OK
+computational_evidence/research-data/logs/module_actions_log.txt: OK
+computational_evidence/research-data/logs/phase0_results.txt: OK
+computational_evidence/research-data/logs/phase0_stdout.txt: OK
+computational_evidence/research-data/logs/phase2_stage1_shift_log.txt: OK
+computational_evidence/research-data/logs/phase2_stage2a_morita_log.txt: OK
+computational_evidence/research-data/logs/phase2_stage2b_crt_log.txt: OK
+computational_evidence/research-data/logs/phase2_stage2c_galois_log.txt: OK
+computational_evidence/research-data/logs/phase3_stage3a_hull_log.txt: OK
+computational_evidence/research-data/logs/phase3_stage3b_hull_log.txt: OK
+computational_evidence/research-data/logs/phase4_gray_map_log.txt: OK
+computational_evidence/research-data/logs/phase5_quantum_log.txt: OK
+computational_evidence/research-data/logs/phase6_quantum_parameter_log.txt: OK
+computational_evidence/research-data/logs/phase7_extended_search_log.txt: OK
+computational_evidence/research-data/logs/phase7_extended_search_log_v1.txt: OK
+computational_evidence/research-data/logs/ring_structure_log.txt: OK
+computational_evidence/research-data/logs/u8_n3_selfdual_log.txt: OK
+computational_evidence/research-data/quantum_code_records/comparison_grassl_q4.csv: OK
+computational_evidence/research-data/quantum_code_records/comparison_grassl_q9.csv: OK
+computational_evidence/research-data/quantum_code_records/entanglement_budget.csv: OK
+computational_evidence/research-data/quantum_code_records/family_census.csv: OK
+computational_evidence/research-data/quantum_code_records/family_scan.csv: OK
+computational_evidence/research-data/quantum_code_records/nonprincipal_witnesses.csv: OK
+computational_evidence/research-data/quantum_code_records/pareto_frontier.csv: OK
+computational_evidence/research-data/scripts/alahmadi_reconciliation.py: OK
+computational_evidence/research-data/scripts/audit_pairing_equivalence.py: OK
+computational_evidence/research-data/scripts/decision_support_checks.py: OK
+computational_evidence/research-data/scripts/extract_certified_generators.py: OK
+computational_evidence/research-data/scripts/galois_duality_experiments.py: OK
+computational_evidence/research-data/scripts/galois_t2_check.py: OK
+computational_evidence/research-data/scripts/independent_audit_checks.py: OK
+computational_evidence/research-data/scripts/matrix_ring_lib.py: OK
+computational_evidence/research-data/scripts/module_actions_checks.py: OK
+computational_evidence/research-data/scripts/phase0_feasibility.py: OK
+computational_evidence/research-data/scripts/phase2_stage1_shift_checks.py: OK
+computational_evidence/research-data/scripts/phase2_stage2a_morita_checks.py: OK
+computational_evidence/research-data/scripts/phase2_stage2b_crt_principality.py: OK
+computational_evidence/research-data/scripts/phase2_stage2c_galois_duality.py: OK
+computational_evidence/research-data/scripts/phase3_stage3a_hull_structure.py: OK
+computational_evidence/research-data/scripts/phase3_stage3b_hull_enumeration.py: OK
+computational_evidence/research-data/scripts/phase4_gray_map_compatibility.py: OK
+computational_evidence/research-data/scripts/phase5_quantum_constructions.py: OK
+computational_evidence/research-data/scripts/phase6_quantum_parameter_enhancement.py: OK
+computational_evidence/research-data/scripts/phase7_extended_search.py: OK
+computational_evidence/research-data/scripts/ring_structure_checks.py: OK
+computational_evidence/research-data/scripts/u8_n3_selfdual_check.py: OK
+computational_evidence/research-data/verification_procedures/CERTIFICATION_PROCEDURE.md: OK
+computational_evidence/research-data/verification_procedures/ENVIRONMENT.md: OK
+literature_evidence/PDF_FRONT_MATTER_EXCERPTS.md: OK
+literature_evidence/SEARCH_EVIDENCE_TRANSCRIPTION.md: OK
+literature_evidence/SUPPLIED_PDF_METADATA.csv: OK
+literature_evidence/prior_project/01_LITERATURE/annotated_bibliography.md: OK
+literature_evidence/prior_project/01_LITERATURE/comparison_matrix.md: OK
+literature_evidence/prior_project/01_LITERATURE/references.bib: OK
+literature_evidence/prior_project/PAPER/LITERATURE_VERIFICATION.md: OK
+literature_evidence/prior_project/PAPER/NOVELTY_COMPARISON.md: OK
+literature_evidence/supplied_pdfs/2602.18255v1 (1).pdf: OK
+literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf: OK
+literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf: OK
+literature_evidence/supplied_pdfs/s11128-026-05230-0 (3).pdf: OK
+literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf: OK
+literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf: OK
+literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf: OK
+mathematical_evidence/COUNTEREXAMPLES_AND_FAILURES_INDEX.md: OK
+mathematical_evidence/prior_project/00_BLUEPRINT/Research_Blueprint_extracted_text.txt: OK
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/ALAHMADI_THEOREM_RECONCILIATION.md: OK
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/NONTRIVIAL_GALOIS_EXPERIMENTS.md: OK
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/PHASE0_REVISION_REPORT.md: OK
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/Phase_0_Report.md: OK
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/UPDATED_PHASE0_FINAL_RECOMMENDATION.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PAIRING_COMPLETE_PROOFS.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE1_CYCLIC_SHIFT.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE7_EXTENDED_SEARCH.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/UPDATED_THEOREM_REGISTER.md: OK
+mathematical_evidence/prior_project/03_THEOREMS/theorem_register.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_COMPUTATIONAL_AUDIT.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_DECISION_FORM.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_GO_MODIFY_STOP.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_NOVELTY_STATEMENT.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_INDEPENDENT_AUDIT_REPORT.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_NOVELTY_REASSESSMENT.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_PARAMETER_SELECTION_RECOMMENDATION.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_PROOF_VERIFICATION.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_RESEARCHER_DECISION_SHEET.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_U8_U9_DECISIONS.md: OK
+mathematical_evidence/prior_project/06_AUDIT/PHASE1_FINAL_AUDIT_MANIFEST.md: OK
+mathematical_evidence/prior_project/PHASE1_COMPLETION_AND_APPROVAL_GATE.md: OK
+mathematical_evidence/prior_project/PHASE2_PROPOSAL.md: OK
+mathematical_evidence/prior_project/PHASE2_PROPOSAL_v2.md: OK
+mathematical_evidence/prior_project/PROJECT_DECISION_LOG.md: OK
+reports/PHASE0_DECISION_REPORT.md: OK
+reports/PHASE0_LITERATURE_REVIEW.md: OK
+reports/PHASE0_PAIRING_OPTIONS.md: OK
+reports/PHASE0_REPOSITORY_AUDIT.md: OK
+reports/PHASE0_RESEARCH_GAP.md: OK
+reports/PHASE0_RING_FEASIBILITY.md: OK
+repository_integrity/EVIDENCE_LIMITATIONS.md: OK
+repository_integrity/PACKAGING_VERIFICATION.json: OK
+repository_integrity/REFERENCE_CHECK_SUMMARY.md: OK
+repository_integrity/duplicate_aliases.csv: OK
+repository_integrity/git_status_before.txt: OK
+repository_integrity/inherited_manifest_verification.csv: OK
+repository_integrity/manuscript_input_resolution.csv: OK
+repository_integrity/original_files_inventory.csv: OK
+repository_integrity/original_zip_inventories.csv: OK
+repository_integrity/package_tools/build_package.py: OK
+repository_integrity/package_tools/verify_package.py: OK
+repository_integrity/patch_binary_files.txt: OK
+repository_integrity/patch_diff_inventory.csv: OK
+repository_integrity/preexisting_snapshot.json: OK
+repository_integrity/prior_work/PAPER/CLAIM_TRACEABILITY_MATRIX.md: OK
+repository_integrity/prior_work/PAPER/CONTRIBUTION_MAP.md: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/SOURCE_REUSE.md: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex: OK
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex: OK
+repository_integrity/prior_work/PAPER/FINAL_VALIDATION_REPORT.md: OK
+repository_integrity/prior_work/PAPER/MANUSCRIPT_SELF_AUDIT.md: OK
+repository_integrity/prior_work/PAPER/OPEN_ISSUES_AND_LIMITATIONS.md: OK
+repository_integrity/prior_work/PAPER/PARAMETER_COMPARISON.md: OK
+repository_integrity/prior_work/PAPER/README.md: OK
+repository_integrity/prior_work/PAPER/SUPPLEMENTARY_V2/SUPPLEMENTARY_CORRECTION_NOTE.md: OK
+repository_integrity/prior_work/PAPER/main.tex: OK
+repository_integrity/prior_work/PAPER/references.bib: OK
+repository_integrity/prior_work/PAPER/sections/01_introduction.tex: OK
+repository_integrity/prior_work/PAPER/sections/02_literature.tex: OK
+repository_integrity/prior_work/PAPER/sections/03_preliminaries.tex: OK
+repository_integrity/prior_work/PAPER/sections/04_cyclic_galois.tex: OK
+repository_integrity/prior_work/PAPER/sections/05_hulls.tex: OK
+repository_integrity/prior_work/PAPER/sections/06_gray.tex: OK
+repository_integrity/prior_work/PAPER/sections/07_quantum.tex: OK
+repository_integrity/prior_work/PAPER/sections/08_certification.tex: OK
+repository_integrity/prior_work/PAPER/sections/09_comparison.tex: OK
+repository_integrity/prior_work/PAPER/sections/10_conclusion.tex: OK
+repository_integrity/prior_work/PAPER/sections/appendix_reproducibility.tex: OK
+repository_integrity/prior_work/PAPER/sections/appendix_tables.tex: OK
+repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_DATA_AVAILABILITY_STATEMENT.md: OK
+repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_FFA_OPTION_C_COMPLIANCE.md: OK
+repository_integrity/prior_work/README.md: OK
+repository_integrity/reference_resolution.csv: OK
+repository_integrity/selected_patch_reconstruction_checks.csv: OK
+repository_integrity/source_identity/root_README.md: OK
+repository_integrity/source_provenance.csv: OK
+repository_integrity/supplied_pdf_source_comparison.csv: OK
+repository_integrity/tracked_files_vs_HEAD.csv: OK
+
+--- unzip -t ---
+Archive:  /home/user/Matrix-Ring/phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE.zip
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/PACKAGE_MANIFEST.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/SHA256SUMS.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/SCRIPT_DEPENDENCIES.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/current_phase0/RERUN_COMPARISON.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/current_phase0/phase0_feasibility_rerun_2026-11-12.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/current_phase0/phase0_rerun_diff_vs_recorded_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/04_COMPUTATION/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/04_COMPUTATION/UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_28_CODE_APPLICABILITY_TABLE.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_CERTIFICATION_METHOD_AUDIT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_CERTIFICATION_LOGIC.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_REFEREE_METHOD_NOTE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/PUBLICATION_MANIFEST.sha256   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/distance_certificates/certified_codes.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/documentation/MANIFEST.sha256   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/documentation/SUPPLEMENTARY_PACKAGE_README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/01_24_8_4_9_(9,1,6)_SO.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/02_20_4_4_4_(4,1,5)_SO.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/03_20_4_4_4_(4,1,5)_DC.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/04_20_2_10-18_4_(4,1,5)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/05_24_2_10-18_9_(9,1,6)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/06_4_2_2-2_4_(4,1,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/07_8_4_3-4_4_(4,1,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/08_12_2_6-10_4_(4,1,3)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/09_16_4_5-8_4_(4,1,4)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/10_24_4_9-20_4_(4,1,6)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/11_8_4_2-4_4_(4,2,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/12_16_4_4-12_4_(4,2,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/13_24_4_6-20_4_(4,2,3)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/14_12_6_2-6_4_(4,3,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/15_16_6_2-10_4_(4,4,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/16_4_2_2-2_8_(8,1,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/17_8_4_3-4_8_(8,1,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/18_12_2_6-10_8_(8,1,3)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/19_12_4_2-8_8_(8,3,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/20_4_2_2-2_9_(9,1,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/21_8_2_4-6_9_(9,1,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/22_12_2_5-6_9_(9,1,3)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/23_16_2_8-14_9_(9,1,4)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/24_20_4_9-16_9_(9,1,5)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/25_8_4_2-4_9_(9,2,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/26_16_4_4-12_9_(9,2,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/27_12_4_2-8_9_(9,3,1)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/28_24_6_4-18_9_(9,3,2)_EA.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/generator_matrices/INDEX.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/alahmadi_reconciliation_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/audit_pairing_equivalence_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/decision_support_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/extract_certified_generators_run.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/galois_experiments_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/galois_t2_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/independent_audit_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/module_actions_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase0_results.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase0_stdout.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase2_stage1_shift_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase2_stage2a_morita_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase2_stage2b_crt_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase2_stage2c_galois_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase3_stage3a_hull_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase3_stage3b_hull_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase4_gray_map_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase5_quantum_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase6_quantum_parameter_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase7_extended_search_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/phase7_extended_search_log_v1.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/ring_structure_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/logs/u8_n3_selfdual_log.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/comparison_grassl_q4.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/comparison_grassl_q9.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/entanglement_budget.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/family_census.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/family_scan.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/nonprincipal_witnesses.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/quantum_code_records/pareto_frontier.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/alahmadi_reconciliation.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/audit_pairing_equivalence.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/decision_support_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/extract_certified_generators.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/galois_duality_experiments.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/galois_t2_check.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/independent_audit_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/matrix_ring_lib.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/module_actions_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase0_feasibility.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase2_stage1_shift_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase2_stage2a_morita_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase2_stage2b_crt_principality.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase2_stage2c_galois_duality.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase3_stage3a_hull_structure.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase3_stage3b_hull_enumeration.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase4_gray_map_compatibility.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase5_quantum_constructions.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase6_quantum_parameter_enhancement.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/phase7_extended_search.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/ring_structure_checks.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/scripts/u8_n3_selfdual_check.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/verification_procedures/CERTIFICATION_PROCEDURE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/computational_evidence/research-data/verification_procedures/ENVIRONMENT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/PDF_FRONT_MATTER_EXCERPTS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/SEARCH_EVIDENCE_TRANSCRIPTION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/SUPPLIED_PDF_METADATA.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/prior_project/01_LITERATURE/annotated_bibliography.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/prior_project/01_LITERATURE/comparison_matrix.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/prior_project/01_LITERATURE/references.bib   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/prior_project/PAPER/LITERATURE_VERIFICATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/prior_project/PAPER/NOVELTY_COMPARISON.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/2602.18255v1 (1).pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s11128-026-05230-0 (3).pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/COUNTEREXAMPLES_AND_FAILURES_INDEX.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/00_BLUEPRINT/Research_Blueprint_extracted_text.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/ALAHMADI_THEOREM_RECONCILIATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/NONTRIVIAL_GALOIS_EXPERIMENTS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/PHASE0_REVISION_REPORT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/Phase_0_Report.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/UPDATED_PHASE0_FINAL_RECOMMENDATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PAIRING_COMPLETE_PROOFS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE1_CYCLIC_SHIFT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE7_EXTENDED_SEARCH.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/UPDATED_THEOREM_REGISTER.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/03_THEOREMS/theorem_register.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_COMPUTATIONAL_AUDIT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_DECISION_FORM.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_GO_MODIFY_STOP.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_NOVELTY_STATEMENT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_INDEPENDENT_AUDIT_REPORT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_NOVELTY_REASSESSMENT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_PARAMETER_SELECTION_RECOMMENDATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_PROOF_VERIFICATION.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_RESEARCHER_DECISION_SHEET.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE0_U8_U9_DECISIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/06_AUDIT/PHASE1_FINAL_AUDIT_MANIFEST.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/PHASE1_COMPLETION_AND_APPROVAL_GATE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/PHASE2_PROPOSAL.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/PHASE2_PROPOSAL_v2.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/mathematical_evidence/prior_project/PROJECT_DECISION_LOG.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_DECISION_REPORT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_LITERATURE_REVIEW.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_PAIRING_OPTIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_REPOSITORY_AUDIT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_RESEARCH_GAP.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/reports/PHASE0_RING_FEASIBILITY.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/EVIDENCE_LIMITATIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/PACKAGING_VERIFICATION.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/REFERENCE_CHECK_SUMMARY.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/duplicate_aliases.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/git_status_before.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/inherited_manifest_verification.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/manuscript_input_resolution.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/original_files_inventory.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/original_zip_inventories.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/package_tools/build_package.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/package_tools/verify_package.py   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/patch_binary_files.txt   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/patch_diff_inventory.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/preexisting_snapshot.json   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/CLAIM_TRACEABILITY_MATRIX.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/CONTRIBUTION_MAP.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/SOURCE_REUSE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/FINAL_VALIDATION_REPORT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/MANUSCRIPT_SELF_AUDIT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/OPEN_ISSUES_AND_LIMITATIONS.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/PARAMETER_COMPARISON.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/SUPPLEMENTARY_V2/SUPPLEMENTARY_CORRECTION_NOTE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/main.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/references.bib   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/01_introduction.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/02_literature.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/03_preliminaries.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/04_cyclic_galois.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/05_hulls.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/06_gray.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/07_quantum.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/08_certification.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/09_comparison.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/10_conclusion.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/appendix_reproducibility.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PAPER/sections/appendix_tables.tex   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_DATA_AVAILABILITY_STATEMENT.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_FFA_OPTION_C_COMPLIANCE.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/prior_work/README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/reference_resolution.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/selected_patch_reconstruction_checks.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/source_identity/root_README.md   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/source_provenance.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/supplied_pdf_source_comparison.csv   OK
+    testing: PHASE0_COMPLETE_AUDIT_PACKAGE/repository_integrity/tracked_files_vs_HEAD.csv   OK
+No errors detected in compressed data of /home/user/Matrix-Ring/phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE.zip.

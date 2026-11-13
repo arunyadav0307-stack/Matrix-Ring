@@ -1,0 +1,110 @@
+DECISION SUPPORT (B3): reflexive (r | 2s) vs general Galois regime
+run: 2026-11-04 08:48:05
+NOTE: the Morita enumerator needs X^n - 1 squarefree; in char 2 this
+      forces n odd.
+
+==============================================================================
+q = 2^2 = 4 ,  m = 2 ,  n = 3 ,  N = 12
+==============================================================================
+cyclic codes enumerated: 343
+
+  s = 1 :  2s mod r = 0   ->   r | 2s : True
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     : 300/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   : 300/300
+      H5  Gram matrix of C is sigma_s-Hermitian      : 343/343 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            : 343/343 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=343, |R|=343, |H n R|=343)
+      L1  LCD (Hull = 0)                            :  64/343
+      L2  LCD whose dual is LCD                     :  64/64
+      L3  self-orthogonal / self-dual               :  64 /  27
+      L4  reflexive (C^{perp perp} = C)             : 343/343
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 343 codes)
+
+==============================================================================
+q = 3^2 = 9 ,  m = 2 ,  n = 2 ,  N = 8
+==============================================================================
+cyclic codes enumerated: 144
+
+  s = 1 :  2s mod r = 0   ->   r | 2s : True
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     : 300/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   : 300/300
+      H5  Gram matrix of C is sigma_s-Hermitian      : 144/144 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            : 144/144 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=144, |R|=144, |H n R|=144)
+      L1  LCD (Hull = 0)                            :  64/144
+      L2  LCD whose dual is LCD                     :  64/64
+      L3  self-orthogonal / self-dual               :  25 /  16
+      L4  reflexive (C^{perp perp} = C)             : 144/144
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 144 codes)
+
+==============================================================================
+q = 2^3 = 8 ,  m = 2 ,  n = 3 ,  N = 12
+==============================================================================
+cyclic codes enumerated: 737
+
+  s = 1 :  2s mod r = 2   ->   r | 2s : False
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     :  30/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   : 138/300
+      H5  Gram matrix of C is sigma_s-Hermitian      :  35/737 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            : 737/737 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=35, |R|=35, |H n R|=35)
+      L1  LCD (Hull = 0)                            : 640/737
+      L2  LCD whose dual is LCD                     : 640/640
+      L3  self-orthogonal / self-dual               :   8 /   3
+      L4  reflexive (C^{perp perp} = C)             :  35/737
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 737 codes)
+
+  s = 2 :  2s mod r = 1   ->   r | 2s : False
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     :  38/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   : 158/300
+      H5  Gram matrix of C is sigma_s-Hermitian      :  35/737 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            : 737/737 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=35, |R|=35, |H n R|=35)
+      L1  LCD (Hull = 0)                            : 640/737
+      L2  LCD whose dual is LCD                     : 640/640
+      L3  self-orthogonal / self-dual               :   8 /   3
+      L4  reflexive (C^{perp perp} = C)             :  35/737
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 737 codes)
+
+==============================================================================
+q = 3^3 = 27 ,  m = 2 ,  n = 1 ,  N = 4
+==============================================================================
+cyclic codes enumerated: 30
+
+  s = 1 :  2s mod r = 2   ->   r | 2s : False
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     :  13/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   : 100/300
+      H5  Gram matrix of C is sigma_s-Hermitian      :   6/30 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            :  30/30 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=6, |R|=6, |H n R|=6)
+      L1  LCD (Hull = 0)                            :  30/30
+      L2  LCD whose dual is LCD                     :  30/30
+      L3  self-orthogonal / self-dual               :   1 /   0
+      L4  reflexive (C^{perp perp} = C)             :   6/30
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 30 codes)
+
+  s = 2 :  2s mod r = 1   ->   r | 2s : False
+      H1  sigma_s(b(x,y)) = b(y, sigma_{2s}x)        : 300/300
+      H2  b(y,x) = sigma_s(b(x,y))   [Hermitian]     :  13/300
+      H3  b(y,x) = sigma_s(b(sigma_{-2s}x, y))       : 300/300
+      H4  Tr(b(y,x)) = Tr(b(x,y))  [F_p-symmetric]   :  96/300
+      H5  Gram matrix of C is sigma_s-Hermitian      :   6/30 codes
+      L5  dim Hull(C^perp) = dim Hull(C)            :  30/30 codes   (max |diff| = 0)
+      L6  {Hermitian Gram} = {reflexive}            : True   (|H|=6, |R|=6, |H n R|=6)
+      L1  LCD (Hull = 0)                            :  30/30
+      L2  LCD whose dual is LCD                     :  30/30
+      L3  self-orthogonal / self-dual               :   1 /   0
+      L4  reflexive (C^{perp perp} = C)             :   6/30
+      (assertion '(C^perp)^perp = sigma_{2s}(C)' held for all 30 codes)
+
+done

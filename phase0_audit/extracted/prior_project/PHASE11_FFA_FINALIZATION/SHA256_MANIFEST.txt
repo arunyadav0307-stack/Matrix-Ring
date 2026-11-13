@@ -1,0 +1,49 @@
+# Phase 11 deliverables — SHA-256 manifest
+
+Generated: 2026-11-10T05:30:24Z
+Phase: Phase 11 — FFA finalization and submission-package preparation
+Branch: arena/59de606f-matrix-ring
+
+Scope: every Phase 11 deliverable in `PHASE11_FFA_FINALIZATION/`, plus the
+Phase 9A README written under Task F. Paths are relative to this directory.
+
+Verify with:
+
+    cd PHASE11_FFA_FINALIZATION && sha256sum -c <(grep -E '^[0-9a-f]{64}' SHA256_MANIFEST.txt)
+
+or compare the byte counts in parentheses.
+
+---
+
+b6526c7d37e75540294f03af65c4c03a625b480fc270d26e7ffa474427422d9c  PHASE11_ABSTRACT_REVISION.md  (9636 bytes)
+5a1671349529f3085b683edb4c43a40455a874c0fc94c5a5852594dc6c0aa100  PHASE11_AUTHOR_INFORMATION_CONFIRMATION.md  (4212 bytes)
+dbb7a6fe04d8701b4aae7a3a08ada581f400e433648fcb09a6213c438c929f01  PHASE11_BIBLIOGRAPHIC_CORRECTIONS.md  (5273 bytes)
+27d7bda91264e796b7e4ca2d1bc6fdce928a63bb567b84139c758008c8c90b0d  PHASE11_COMPETING_INTEREST_CONFIRMATION.md  (2599 bytes)
+5f35a213eab9673ed385b19ba4d86bf768c043037eb7f2dc033aa41c65564b3f  PHASE11_FINAL_COMPLIANCE_MATRIX.md  (11584 bytes)
+934d0cf3fa0ae6c9f672dc016a2daf698600cdb1de155e1def520aa810ce6b28  PHASE11_FINAL_RECOMMENDATION.md  (7068 bytes)
+81c2e29265b9a546bf7fd3c182c315b340aa1a7573cfaae22cb5b9c19b24bd88  PHASE11_FUNDING_CONFIRMATION.md  (3031 bytes)
+6516df0f502c7147a94213df11f05d55b81921e7db63486b5e941c60c9ae71b1  PHASE11_GENERATIVE_AI_DECLARATION.md  (5370 bytes)
+5ae87ede66707e8a009399a790cca3129e3f9f6bbd63a670845f6855e7a9bc5b  PHASE11_LATEX_BUILD_REPORT.md  (5196 bytes)
+b2f7d7eb48d028b4af2689fbe7c9bf6d5fd4dc403598025239320cfd78da7b14  PHASE11_MANUSCRIPT_POSITIONING.md  (8475 bytes)
+7f4ecd9435379072ea2fb1f7ae822a547373ae5cba55f6e36e0d95e225d17dff  PHASE11_RESEARCHER_ACTION_ITEMS.md  (5268 bytes)
+b78251fce0dd4319e7f0b1680cdfdb6131c70697c724914ddaa1ed17bd0ad9c3  PHASE11_RESEARCH_DATA_PLAN.md  (6185 bytes)
+8a33a19bb4a6b239bed261472c5a0f90189ff5af3685a513bba452fd76020c55  README.md  (1885 bytes)
+b49ae5075fd063f2a1b97e125af7948936100a869051a5c817d2114faed1451d  ../PHASE9A_JOURNAL_AUDIT/README.md  (2303 bytes)
+
+---
+
+files: 14
+total bytes: 78,085
+
+## Note on what is deliberately NOT hashed here
+
+The canonical manuscript (`PAPER/main.tex`, `PAPER/references.bib`,
+`PAPER/main.pdf`, `PAPER/main.bbl`, `PAPER/sections/*.tex`) and the three
+protected archives are **excluded**, because Phase 11 left every one of them
+byte-identical and their pre-Phase-11 hashes are recorded in
+`PHASE11_FINAL_COMPLIANCE_MATRIX.md` section 7.
+
+The staging copy under `PAPER/FFA_SUBMISSION_STAGING/` is also excluded: it is
+an editable working copy that is regenerated on each compile. The PDF it
+produced is identified separately in `PHASE11_LATEX_BUILD_REPORT.md`:
+`519513ba620660a5f673a52b562fe03caaa511b877a7330d1c8307c0ec07583c`.

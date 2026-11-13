@@ -1,0 +1,298 @@
+% =====================================================================
+%  Quantum Error-Correcting Codes from Galois Hulls of Cyclic Codes
+%  over Noncommutative Matrix Rings
+%
+%  Phase 8 / Task I.  Compile with:
+%      pdflatex main.tex ; bibtex main ; pdflatex main.tex ; pdflatex main.tex
+%
+%  NOTE ON AUTHOR METADATA: no author names, affiliations, funding,
+%  acknowledgements or declarations have been supplied.  The three
+%  PHASE 14: \AUTHORPLACEHOLDER is no longer used for PDF metadata; the
+%  confirmed author name is now written into the PDF document information
+%  dictionary.  The macro is retained only for historical compatibility.
+%  \AUTHORPLACEHOLDER marks below are the ONLY placeholders in this
+%  manuscript and are deliberately visible.  See PAPER/README.md.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.6cm]{geometry}
+% NOTE: \usepackage[T1]{fontenc} is intentionally NOT used.  See
+% compile/README.md: the recovered engine's texmf tree has no EC (T1)
+% font metrics, so T1 silently falls back to nullfont.  OT1 (the
+% article-class default) renders this manuscript identically: the .tex
+% sources contain no non-ASCII characters.  On a current TeX Live,
+% either setting compiles.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array,booktabs,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{url}
+% File and directory names are long and contain underscores, so they are set
+% with url.sty's \path, which may break at '_', '/' and '.'.  A plain
+% \texttt{...} cannot break there and pushes into the margin.
+\newcommand{\filepath}{\path}
+% Typesetting: allow extra interword stretch on lines that would otherwise be
+% pushed into the right margin.  This is a last-resort stretch (TeX's third
+% pass) and is only used on lines that would otherwise be overfull; it never
+% loosens a line that sets correctly.
+\emergencystretch=2em
+% Author metadata placeholder.  This must be defined BEFORE \hypersetup:
+% hyperref expands the PDF metadata strings (pdfauthor and friends) when
+% \hypersetup runs, not at \begin{document}, so a placeholder used in
+% pdfauthor but defined later in the preamble is an undefined control
+% sequence.  Older hyperref releases deferred the expansion; current ones
+% do not.  See compile/BUILD_CORRECTIONS.md, correction C-1.
+\newcommand{\AUTHORPLACEHOLDER}{%
+  \texorpdfstring{\textbf{[\,AUTHOR METADATA TO BE SUPPLIED\,]}}%
+                 {[AUTHOR METADATA TO BE SUPPLIED]}}
+% pdfusetitle makes hyperref copy \title and \author into the PDF document
+% information dictionary; without it the /Title field of the PDF is empty.
+% \texorpdfstring above supplies the plain-text form used there, because a
+% PDF string cannot carry \textbf or \, (a kern) -- hyperref silently strips
+% them and warns.  See compile/BUILD_CORRECTIONS.md, correction C-5.
+\usepackage[hypertexnames=false,pdfusetitle]{hyperref}
+% ---- Author metadata (CONFIRMED by the researcher, 2026-11-10) ----------
+% Single author. Values supplied by the researcher and used verbatim:
+%   name        : Arun Kumar Yadav
+%   affiliation : School of Basic and Applied Sciences,
+%                 K.R. Mangalam University,
+%                 Sohna Road, Gurugram, Haryana, 122103, India
+%   email       : arunyadav0307@gmail.com
+% No ORCID was supplied; none has been invented.
+% Affiliations are typeset as a superscript-lettered block after \maketitle
+% (\thanks is avoided: it needs a TS1 footnote glyph at 6pt that the offline
+% font map cannot supply).
+\newcommand{\AUTHORONE}{Arun Kumar Yadav}
+\newcommand{\AUTHORONEINST}{School of Basic and Applied Sciences}
+\newcommand{\AUTHORONEORG}{K.R. Mangalam University}
+\newcommand{\AUTHORONEADDR}{Sohna Road, Gurugram, Haryana, 122103}
+\newcommand{\AUTHORONECOUNTRY}{India}
+\newcommand{\CORRESPONDINGEMAIL}{arunyadav0307@gmail.com}
+% --------------------------------------------------------------------------
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=green!35!black,
+            urlcolor=blue!45!black,pdfauthor={\AUTHORONE}}
+
+% ------------------------------ notation ------------------------------
+\newcommand{\F}{\mathbb F}
+\newcommand{\Fq}{\mathbb F_q}
+\newcommand{\At}{A_t}
+\newcommand{\Rring}{R}
+\newcommand{\Rn}{R_n}
+\newcommand{\Bq}{B}
+\newcommand{\bb}{\mathbf b}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\ann}{\operatorname{ann}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\rev}{\operatorname{rev}}
+\newcommand{\Hull}{\operatorname{Hull}}
+\newcommand{\swt}{\operatorname{swt}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\Nlen}{N}
+\newcommand{\MU}{\mu}
+\newcommand{\gperp}[1]{{}^{\perp_{#1}}}
+\newcommand{\hperp}{\,{}^{\perp_{\widehat{}}}}
+\newcommand{\hhatpers}{\,{}^{\perp^{\widehat{}}_s}}
+\newcommand{\omegaperp}{{}^{\perp_\omega}}
+\newcommand{\blanksymbol}{\textbf{[TO BE SUPPLIED]}}
+
+% ------------------------------ theorems ------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}[theorem]{Open Problem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% ------------------------------ metadata ------------------------------
+
+
+\title{Quantum Error-Correcting Codes from Galois Hulls of Cyclic
+       Codes over Noncommutative Matrix Rings}
+% Author line. Single author: the affiliation is indicated by a lowercase
+% superscript letter immediately after the name and in front of the address,
+% exactly as the FFA guide for authors requires.
+\author{\AUTHORONE\textsuperscript{a}}
+% Present/permanent address would be a numbered footnote; none was supplied.
+\newcommand{\AFFILIATIONBLOCK}{%
+  \begin{center}\small
+  \textsuperscript{a}\,\AUTHORONEINST, \AUTHORONEORG,
+  \AUTHORONEADDR, \AUTHORONECOUNTRY.\\[2pt]
+  \textit{Corresponding author.} E-mail: \texttt{\CORRESPONDINGEMAIL}
+  \end{center}}
+\date{}
+
+\begin{document}
+\maketitle
+\AFFILIATIONBLOCK
+
+\begin{abstract}
+We construct $q$-ary quantum codes from the Galois hulls of cyclic codes over
+the noncommutative matrix ring $R=M_2(A_t)$,
+$A_t=\F_q[u]/\langle u^t\rangle$; codes are right ideals of
+$R_n=R[X]/\langle X^n-1\rangle$.  Duality is driven by the anti-automorphism
+$\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, $\sigma_s$ the coefficient
+Frobenius.  We prove the duality and hull theory for arbitrary right ideals,
+with no principality hypothesis, and refute the conjecture that Galois hulls
+are principal: hulls with minimal generator number $\MU_B=3$ exist, and
+$\MU_B\ge3$ forces $t\ge2$ and $p\mid n$.  The coefficient-expansion map to
+$\F_q^{4tn}$ transports the Galois pairing to an explicit
+$\widehat\sigma_s$-Hermitian form with Hankel Gram matrix
+$I_{4n}\otimes H_t$ --- not the Euclidean form unless $t=1$ --- and preserves
+duality and hulls, including the non-principal ones.  Every Galois hull is
+self-orthogonal for the transported form, with no reflexivity hypothesis.
+Three quantum routes of length $N=4tn$ follow: a twisted stabilizer route, a
+Euclidean/CSS route, and an entanglement-assisted route
+$[[N,N-k-h_E,d;k-h_E]]_q$.  We show that the distance is the minimum weight of
+the quotient $D^{\perp_E}/\Hull_E(D)$, and derive a coset Singleton bound
+$K+d\le N+1$ not implied by the entanglement-assisted Singleton bound.
+Exhaustive computation certifies $28$ codes, each by two independent
+methods: one exact, and one quantum search exact for $11$ codes and a
+lower bound for $17$, among them this framework's first distance-$4$
+stabilizer codes, $[[24,8,4]]_9$ and $[[20,4,4]]_4$, and entanglement-assisted
+codes up to $[[20,2,10;18]]_4$.  No record parameters are claimed.
+
+\smallskip
+\noindent\textbf{Keywords.} cyclic codes over rings; matrix rings; Galois
+duality; Galois hulls; Gray map; quantum stabilizer codes;
+entanglement-assisted quantum codes.
+
+\smallskip
+\noindent\textbf{MSC 2020.} 94B05, 94B15, 94B60, 16S50, 11T71.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ------------------------------ sections ------------------------------
+\input{sections/01_introduction}
+\input{sections/02_literature}
+\input{sections/03_preliminaries}
+\input{sections/04_cyclic_galois}
+\input{sections/05_hulls}
+\input{sections/06_gray}
+\input{sections/07_quantum}
+\input{sections/08_certification}
+\input{sections/09_comparison}
+\input{sections/10_conclusion}
+
+% =====================================================================
+%  DECLARATIONS -- ALL ENTRIES REQUIRE RESEARCHER CONFIRMATION.
+%  Nothing below is confirmed. Bracketed fields are placeholders and
+%  must be replaced by the authors before submission. See
+%  PHASE11_FFA_FINALIZATION/ for the confirmation documents.
+% =====================================================================
+
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+
+[\emph{Researcher confirmation required --- optional.}] Elsevier requires
+acknowledgements to appear in a separate section directly before the reference
+list. If no individual or body is to be acknowledged, delete this section.
+
+\section*{Declaration of competing interests}
+\label{sec:competinginterests}
+
+The author declares no known competing financial interests or personal
+relationships that could have appeared to influence the work reported in
+this paper.
+
+\emph{Status: CONFIRMED by the researcher on 2026-11-10.} The declarations
+tool at \texttt{declarations.elsevier.com} must still be completed and the
+generated statement uploaded at the submission step; see
+\texttt{PHASE12\_CONFIRMATION\_REGISTER.md}, category A6.
+
+\section*{Funding}
+\label{sec:funding}
+
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
+
+\emph{Status: CONFIRMED by the researcher on 2026-11-10.} The funded
+alternative was not used; see
+\texttt{PHASE12\_CONFIRMATION\_REGISTER.md}, category A7.
+
+\section*{Author contributions (CRediT)}
+\label{sec:credit}
+
+[\emph{Researcher confirmation required --- encouraged, not mandatory.}] Elsevier
+encourages the corresponding author to acknowledge co-author contributions
+using CRediT roles. This section cannot be completed until the author list is
+confirmed.
+
+\section*{Data availability}
+\label{sec:dataavailability}
+
+[\emph{Researcher confirmation required --- mandatory.}] \emph{Finite Fields
+and Their Applications} applies Elsevier research-data \textbf{Option C},
+which requires the authors to deposit the research data in a relevant data
+repository and to provide a link to the dataset during the submission process.
+
+The researcher has elected to use the project's existing public GitHub
+repository \emph{instead of} a dedicated data repository such as Zenodo. The
+data are publicly readable at the commit-pinned address
+
+\begin{quote}\small\raggedright
+\texttt{https://github.com/}\penalty0
+\texttt{arunyadav0307-stack/}\penalty0
+\texttt{Matrix-Ring/tree/}\penalty0
+\texttt{e41c5713\penalty0 fec5cce1\penalty0 d7cb5110\penalty0 5f25d168\penalty0 dc05ebce}\penalty0
+\texttt{/PAPER/supplementary}
+\end{quote}
+
+which resolves to $86$ files: $22$ computational scripts, $23$ execution logs,
+$29$ generator matrices, $8$ parameter tables and $4$ documentation files,
+certified by a SHA-256 manifest.
+
+\textbf{This statement is not yet final.} Two material limitations must be
+resolved before it can be submitted: (i) the supplementary data are present
+only on the research branch and are \textbf{absent from the repository's
+default branch}, so the repository's plain landing page does not reach them;
+and (ii) that branch is unprotected, so its long-term availability is not
+assured. See \texttt{PHASE13\_GITHUB\_RESEARCH\_DATA\_ACCESS\_PLAN.md}.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the
+manuscript preparation process}
+\label{sec:genai}
+
+[\emph{Researcher confirmation required --- mandatory where applicable.}] Elsevier
+requires authors to declare the use of generative AI and AI-assisted
+technologies in the manuscript preparation process, in a new section placed
+before the reference list. AI assistance \textbf{was} used extensively in the
+preparation of this manuscript and therefore a declaration is required; the
+exemption for basic grammar, spelling and reference checking does not cover
+this use. The exact wording, the tools to be named and the scope of the
+disclosure are set out in
+\texttt{PHASE12\_CONFIRMATION\_REGISTER.md} (category A8) and must be confirmed by
+the author before submission.
+
+
+\appendix
+% Appendix table numbering: Elsevier (Finite Fields and Their Applications)
+% convention numbers appendix tables as Table A.1, A.2, ... (guide for authors).
+% Applicable to tables only; the appendices contain no figures and no numbered
+% display equations, so \thefigure and \theequation need no corresponding change.
+\setcounter{table}{0}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\input{sections/appendix_tables}
+\input{sections/appendix_reproducibility}
+
+% ------------------------------ bibliography --------------------------
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

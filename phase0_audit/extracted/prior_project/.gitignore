@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+
+# Phase 8B isolated build scratch (regenerate with PAPER/compile/build_modern.sh)
+PAPER/build_modern/
+
+# Phase 9 read-only inspection copy of the 8B package (regenerate with:
+#   mkdir -p PHASE9_JOURNAL_SELECTION/_inspection && unzip -q \
+#     PAPER/MatrixRingManuscript_20261110_Phase8B.zip -d PHASE9_JOURNAL_SELECTION/_inspection
+PHASE9_JOURNAL_SELECTION/_inspection/
+
+# Phase 11 staging build output (regenerate with:
+#   cd PAPER/FFA_SUBMISSION_STAGING && TL=/home/user/texlive2024 sh compile/build_modern.sh)
+PAPER/FFA_SUBMISSION_STAGING/build_modern/
+
+# Phase 12 final submission package build dir is intentionally tracked;
+# only the staging build output is ignored (see entry above).

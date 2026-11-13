@@ -1,0 +1,2077 @@
+CONSTRUCTION OF CYCLIC CODES OVER A CLASS OF
+MA TRIX RINGS
+SOHAM RA VIKANT JOSHI, SHIKHA PATEL, AND OM PRAKASH⋆
+Abstract.LetF 2[u]/⟨uk⟩=F 2 +uF 2 +u 2F2 +· · ·+uk−1F2,whereu k = 0 for
+a positive integerk, andR=M 4(F2(u)/⟨uk⟩) be the finite noncommutative
+non-chain matrix ring of order 4×4. This paper presents the construction of
+cyclic codes over the finite fieldF 16 via the considered matrix ringR. In this
+connection, first, we discuss the structure of the ringRand show thatRis
+isomorphic to the ring (F 16 +vF 16 +v 2F16 +v 3F16) +u(F16 +vF 16 +v 2F16 +
+v3F16)+u 2(F16 +vF 16 +v 2F16 +v 3F16)+· · ·+uk−1(F16 +vF 16 +v 2F16 +v 3F16)
+wherev 4 = 0, uk = 0, uivj =v j ui fori∈ {1, . . . , k−1}andj∈ {1,2,3}. Then,
+we establish the form of ideals of the ringRand related cyclic codes overR.
+Further, we show that these cyclic codes can be written as the direct sums
+ofR-submodules of R[x] <xn−1> , and derive the formula for the cardinality of
+cyclic codes overR. Then, we consider the Euclidean and Hermitian duals
+of the derived cyclic codes overR. Under the module isometry forR, we
+use the Bachoc map and the Gray map, which takes derived cyclic code over
+RtoF 16. Finally, we provide some non-trivial examples of linear codes over
+F16 with good parameters that support our derived results and compare a few
+codes with existing codes in the literature.
+1.Introduction
+Prange [16] introduced cyclic codes in 1957 and has attracted the attention
+of several researchers since their elaboration. It is an important class of linear
+codes and plays a vital role in developing error-correcting codes. Researchers have
+done numerous revolutionary works on cyclic codes over finite fields and finite
+commutative rings. Furthermore, many well-known codes, such as BCH, Kerdock,
+Golay, Reed-Muller, Preparata, Justesen, and binary Hamming codes, are cyclic
+or derived from it. A cyclic code of lengthnover a finite fieldFis the ideal of
+the quotient ringF[x]/⟨x n −1⟩. Being rich with algebraic properties and ease
+of implementation, researchers prefer this class of codes for encoding and decoding
+over traditional linear codes. In 1994, Hammons et al. [10] provided a new direction
+for linear codes overZ 4 and produced several good nonlinear binary codes as Gray
+images of linear codes. Subsequently, researchers have shown interest in studying
+linear codes over finite rings.
+Aside from some notable works on finite commutative rings, codes on non-
+commutative rings have lately drawn the attention of many researchers; we refer
+[2, 8, 12, 13, 14, 18]. In fact, in algebraic constructions of modular lattices [3],
+the first concrete set of alphabetsA=M 2(F2) appeared in 1997. Later, Oggier
+2010Mathematics Subject Classification.12E20, 94B05, 94B15.
+Key words and phrases.Finite field and cyclic codes and matrix rings and Gray map and
+optimal codes.
+* Corresponding author.
+1
+arXiv:2602.18255v1  [cs.IT]  20 Feb 2026
+
+2
+et al. [13] extended the theory for the noncommutative ringM 2(F2) in the setting
+of space-time codes in 2012. Alahmadi et al. [2] investigated cyclic codes over
+the same ringM 2(F2) in 2013. Similarly, Falcunit and Sison [7] investigated the
+structure of cyclic codes onM 2(Fp) in 2014 and acquired isometric pictures of these
+codes over the ringF p2 +uF p2 . Furthermore, Luo and Udaya [12] described the
+structure of cyclic codes over the matrix ringM 2(F2 +uF 2) in 2018 and derived sev-
+eral optimal codes with even lengths overF 4, while Bhowmick et al. [4] addressed
+cyclic codes and their dual over a matrix ringM 2(Z4) in 2018. In addition, Pal et
+al. [14] investigated cyclic codes over the matrix ringM 4(F2) in 2019. Recently,
+Islam et al. [11] in 2022 extended the previous work to the ringM 2(Fp +uF p),
+wherep≡2 or 3 mod 5 and explored cyclic codes of lengthn. Then Patel et al.
+[15] extended this work to cyclic codes overM 4(F2 +uF 2) in 2022 itself.
+2.Motivation and Background
+Motivated by [13], here we consider an extension of this setting by studying
+cyclic codes over the matrix ringR. In the context of slow fading MIMO (Multi-
+ple Input Multiple Output) channels, as considered in the [13] on space-time coded
+modulations, robust code design is essential for reliable communication. Such chan-
+nels benefit significantly from codes that ensure full diversity and a non-vanishing
+determinant. Paper demonstrated that when the inner code has a cyclic algebra
+structure over a number field, as for perfect space-time codes, an outer code can be
+designed via coset coding, more precisely, by taking the quotient of the algebra by
+a two-sided ideal, which leads to matrices over finite alphabets for the outer code.
+Hence, codes over the matrix ringM 4(F2), when properly structured, offer strong
+candidates for space-time code design. Specifically, they exploited the cyclic alge-
+braic structure ofM 4(F2), using the isomorphism withF 16 +eF 16 +e 2F16 +e 3F16,
+wheree 4 = 1, to define an outer code structure.
+On the other hand, our considered ringRinherits a similar algebraic structure
+but enriches the space with additional nilpotent elements, offering a larger alphabet
+and potential for increased flexibility in code design. Our structure can similarly
+be viewed as a module over a non-commutative ring with a cyclic base, as used
+in the case ofM 4(F2). We propose that analogous determinant conditions can be
+developed for codes overM 4(F2[u]/⟨uk⟩), though this remains an open problem.
+The study of such codes thus aims not only to generalize the known results over
+F16, but also to potentially uncover new families of codes suitable for space-time
+coded modulation in slow fading MIMO channels.
+From [13], if we consider
+e=
+
+
+1 0 0 0
+0 0 1 0
+1 1 0 0
+0 0 1 1
+
+ , ω=
+
+
+0 1 0 0
+0 0 1 0
+0 0 0 1
+1 1 0 0
+
+ ,
+thenM 4(F2) is isomorphic to the ringF 16 +eF 16 +e 2F16 +e 3F16, where (1 +e)4 = 0
+andF 16 is isomorphic toF 2[ω]. Also,F 16 +eF 16 +e 2F16 +e 3F16 can be written as
+
+3
+F16 +vF 16 +v 2F16 +v 3F16 withv 4 = (1 +e) 4 = 0. Hence,
+R=
+kX
+i=1
+ui−1(F16 +vF 16 +v 2F16 +v 3F16)
+wherev 4 = 0, uk = 0, uivj =v jui fori∈ {1, . . . , k−1}andj∈ {1,2,3}.(2.1)
+Our contributions in this paper are as follows:
+(1) We first establish the ring structure ofM 4(F2[u]/⟨uk⟩) and characterize
+the cyclic codes over it. Then we propose the structure of Euclidean and
+Hermitian dual of the derived cyclic codes overR.
+(2) We construct the Gray map and the Bachoc map for the correspondence
+betweenF 4kn 16 andM 4(F2[u]/⟨uk⟩). Also, we provide some non-trivial exam-
+ples of linear codes overF 16 with good parameters that support our derived
+results and compare a few codes with existing codes in the literature.
+The remainder of the paper is organized as follows: Section 3 establishes the ring
+structure ofM 4(F2[u]/⟨uk⟩) and discuss the construction of cyclic codes over it.
+Section 4 discusses the Euclidean dual and the Hermitian dual, respectively, of the
+derived cyclic codes overR. Section 5 defines the Gray map and the Bachoc map
+for the correspondence betweenF 4kn p3 andM 3(Fp +uF p +u 2Fp +· · ·+uk−1Fp).
+Section 6 includes some examples of non-trivial codes to support our obtained
+results. Finally, Section 7 concludes the paper.
+3.Cyclic codes overR
+A cyclic code of lengthnoverRis also an ideal ofR n =R[x]/⟨x n−1⟩where each
+codeword (c0, c1, . . . , cn−1) corresponds to a polynomialc 0 +c 1x+· · ·+cn−1xn−1.
+LetR[x] be the ring of polynomials overR. For anya∈ R, − →abe the polynomial
+reduction ofamodulouandvas defined in Equation (2). We consider a polynomial
+reduction mapping ∆ :R[x]→F 16[x] defined by
+n−1X
+i=0
+aixi 7→
+n−1X
+i=0
+− →ai xi.
+Then a polynomialf(x) is called basic irreducible overRif ∆(f(x)) is irreducible
+overF 16. Ifnis odd andx n −1 = Qm r=1 fr, wheref r’s are irreducible polynomials
+in indeterminatexoverF 16, then the polynomialx n −1 can be uniquely factorized
+into pairwise coprime polynomials overF 16.
+Theorem 3.1.Letnbe an odd positive integer andx n −1 = Qm r=1 fr, wheref r’s
+are basic irreducible polynomials overR. Then
+Rn =R[x]/⟨x n −1⟩=
+mM
+r=1
+R[x]/⟨fr⟩.
+Proof.It follows by applying the Chinese Remainder Theorem on the rightR-
+module
+R[x]/⟨xn −1⟩[13, 17].
+□
+Since⟨f r⟩is not a two-sided ideal, we considerR[x]/⟨f r⟩as a rightR-module.
+Now, we find all the possible forms of the submodules ofR[x]/⟨f r⟩.
+
+4
+Theorem 3.2.Iffis a basic irreducible polynomial overR, then the rightR-
+submodules ofR f =R[x]/⟨f⟩are
+(1){0},⟨u ivj⟩fori={0,1,2, . . . , k−1},j={0,1,2,3};
+(2)⟨u i +vβ 2i +v 2β3i +v 3β4i⟩and⟨u i, v, v2, v3⟩fori={1,2, . . . , k−1};
+(3)⟨(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+
+uk−1α2k)
++v 2(α31 +uα 32 +u 2α33 +· · ·+uk−1α3k) +v 3(α41 +uα 42 +u 2α43 +· · ·+
+uk−2α4(k−1))⟩;
+(4)⟨v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 2(α21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−1α2k)
++v 3(α31 +uα 32 +u 2α33 +u 3α34 +· · ·+uk−2α3(k−1))⟩;
+(5)⟨v 2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 3(α21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−2α2(k−1))⟩;
+(6)⟨v 3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))⟩,
+whereα ij, andβ mn are units inF16[x].
+Proof.LetIbe a nonzero rightR-submodule ofR f andg+⟨f⟩be a nonzero
+element ofI. Theng /∈ ⟨f⟩and there existf ij ∈F 16[x] fori= 1 to 4 andj= 1 to
+ksuch that
+g= (f 11 +uf 12 +u 2f13 +· · ·+uk−1f1k) +v(f 21 +uf 22 +u 2f23 +· · ·+uk−1f2k)
++v2(f31 +uf 32 +u 2f33 +· · ·+uk−1f3k) +v 3(f41 +uf 42 +u 2f43 +· · ·+uk−1f4k).
+Now, we have two cases.
+(I) If gcd(f 11, f) = 1, then there existsf −1 11 ∈F 16[x] such thatf 11f −1 11 +⟨f⟩=
+1 +⟨f⟩. This implies thatI=R f .
+(II) If gcd(f 11, f) =f, theng+⟨f⟩= (uf 12 +u 2f13 +u 3f14 +· · ·+uk−1f1k) +
+v(f21 +uf 22 +u 2f23 +u 3f24 +· · ·+uk−1f2k) +v 2(f31 +uf 32 +u 2f33 +
+u3f34 +· · ·+uk−1f3k) +v 3(f41 +uf 42 +u 2f43 +u 3f44 +· · ·+uk−1f4k).
+Let gcd(f 1j, f) = gcd(f2j, f) = gcd(f3j, f) = gcd(f4j, f) =fforj∈ {1, . . . , i},
+and gcd(f 1(i+1), f) = 1. Then, there existsf −1 1(i+1) such thatf 1(i+1)f −1 1(i+1) = 1.
+Hence,I=⟨u i⟩for i = 1 to k-1.
+If gcd(f 1j, f) =fforj∈ {1, . . . , k}, gcd(f2l, f) = gcd(f3l, f) = gcd(f4l, f) =
+fforl∈ {1, . . . , i}and gcd(f2(i+1), f) = 1, then there existsf −1 2(i+1) such that
+f2(i+1)f −1 2(i+1) = 1 andI=⟨vu i⟩. Similarly, we have⟨v 2ui⟩and⟨v 3ui⟩fori= 1 to
+k−1.
+Following the above process, if gcd(f1j, f) =fforj∈ {1, . . . , k}, and gcd(f21, f)
+= 1, thenI=⟨v⟩. If gcd(f 1j, f) = gcd(f 2j, f) =fforj∈ {1, . . . , k}, and
+gcd(f31, f) = 1, thenI=⟨v 2⟩. Also, if gcd(f 1j, f) = gcd(f2j, f) = gcd(f3j, f) =f
+forj∈ {1, . . . , k}, and gcd(f41, f) = 1, thenI=⟨v 3⟩.
+Again, if gcd(f12, f) = 1, there existsf−1 12 such thatf 12f −1 12 = 1. Now, from case
+(II) we haveu k−1v3 =gu k−2v3f −1 12 ∈I, therefore,uf 12 +· · ·+v3uk−2f4(k−1) =g−
+v3uk−1f4k ∈I. If gcd(f 1j, f) = 1 forj∈ {3, . . . , k}, gcd(f2j, f) = gcd(f3j, f) = 1
+forj∈ {1, . . . , k}, and gcd(f4j, f) = 1 forj∈ {1, . . . , k−1}, we have the following
+cases:
+(i)⟨(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v(α 21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−1α2k) +v2(α31 +uα 32 +u 2α33 +u 3α34 +· · ·+uk−1α3k) +v3(α41 +
+uα42 +u 2α43 +u 3α44 +· · ·+uk−2α4(k−1))⟩=I.
+
+5
+(ii)⟨(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v(α 21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−1α2k) +v2(α31 +uα 32 +u 2α33 +u 3α34 +· · ·+uk−1α3k) +v3(α41 +
+uα42 +u 2α43 +u 3α44 +· · ·+uk−2α4(k−1))⟩≨I.
+Here,α jl =f jlf −1 12 are units inF 16[x], wherel∈ {3, . . . , k}forj= 1,l∈
+{1, . . . , k}forj∈ {2,3}, andl∈ {1, . . . , k−1}forj= 4. Now, from case (II), we
+have
+gv=v(uf 12 +u 2f13 +u 3f14 +· · ·+uk−1f1k) +v 2(f21 +uf 22 +u 2f23
++u 3f24 +· · ·+uk−1f2k) +v 3(f31 +uf 32 +u 2f33 +u 3f34 +· · ·+uk−1f3k).
+Similar to cases (i) - (ii), we havegv−v 3uk−1f3k =v(uf 12 +u 2f13 +u 3f14 +
+· · ·+uk−1f1k) +v 2(f21 +uf 22 +u 2f23 +u 3f24 +· · ·+uk−1f2k) +v 3(f31 +uf 32 +
+u2f33 +u 3f34 +· · ·+uk−2f3(k−1))∈I, and we have the following cases:
+(iii)⟨v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 2(α21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−1α2k)
++v 3(α31 +uα 32 +u 2α33 +u 3α34 +· · ·+uk−2α3(k−1))⟩=I.
+(iv)⟨v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 2(α21 +uα 22 +u 2α23 +u 3α24 +
+· · ·+uk−1α2k)
++v 3(α31 +uα 32 +u 2α33 +u 3α34 +· · ·+uk−2α3(k−1))⟩≨I.
+Here,α jl =f jlf −1 12 are units inF 16[x], wherel∈ {3, . . . , k}forj= 1,l∈
+{1, . . . , k}forj= 2, andl∈ {1, . . . , k−1}forj= 3. Now, from case (II), we have
+gv 2 =v 2(uf12 +u 2f13 +u 3f14 +· · ·+uk−1f1k) +v 3(f21 +uf 22 +u 2f23 +u 3f24
++· · ·+uk−1f2k).
+Similar to cases (i) - (iv), we havegv 2 −v 3uk−1f2k =v 2(uf12 +u 2f13 +u 3f14 +
+· · ·+uk−1f1k) +v3(f21 +uf 22 +u 2f23 +u 3f24 +· · ·+uk−2f2(k−1))∈I, and further
+we have the following cases.
+(v)⟨v 2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 3(α21 +uα 22 +u 2α23 +· · ·+
+uk−2α2(k−1))⟩=I.
+(vi)⟨v 2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k) +v 3(α21 +uα 22 +u 2α23 +· · ·+
+uk−2α2(k−1))⟩≨I.
+Here,α jl =f jlf −1 12 are units inF 16[x], wherel∈ {3, . . . , k}forj= 1, and
+l∈ {1, . . . , k−1}forj= 2. Now, from case (II), we have
+gv 3 =v 3(uf12 +u 2f13 +u 3f14 +· · ·+uk−1f1k).
+Similarly to cases (i) - (vi), we havegv 2 −v 3uk−1f1k =v 3(uf12 +u 2f13 +u 3f14 +
+· · ·+uk−2f1(k−1))∈I, and further we have the following cases.
+(vii)⟨v 3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))⟩=I.
+(viii)⟨v 3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))⟩≨I.
+Here,α jl =f jlf −1 12 are units inF 16[x], wherel∈ {3, . . . , k−1}forj= 1. Next,
+let gcd(f 1j, f) =fforj∈ {2, . . . , i, i+ 2, . . . , k}, and gcd(f2j, f) = gcd(f3j, f) =
+gcd(f4j, f) =fforj∈ {2, . . . , k}. If we consider gcd(fl1, f) = 1 forl∈ {2,3,4}
+with gcd(f1(i+1), f) = 1. Then there existf −1 1(i+1) such thatf 1(i+1)f −1 1(i+1) = 1. This
+provides,
+C1.⟨u i +vβ 2i +v 2β3i +v 3β4i⟩=I.
+C2.⟨u i +vβ 2i +v 2β3i +v 3β4i⟩≨I.
+
+6
+Here,β 2i =f 21f −1 1(i+1),β 3i =f 31f −1 1(i+1), andβ 4i =f 41f −1 1(i+1) are units inF 16[x].
+Now, from case C2., we have the following subcases.
+(i) There existsu i +vβ ′ 2i +v 2β3i +v 3β4i whereβ ′ 2i ∈F 16[x] such that it does
+not belong to⟨u i +vβ 2i +v 2β3i +v 3β4i⟩.This implies thatv(β 2i −β ′ 2i)∈I.
+But (β2i −β ′ 2i)/∈I, therefore,v∈I, andI=⟨u i, v⟩.
+(ii) There existsu i +vβ 2i +v 2β′ 3i +v 3β4i whereβ ′ 3i ∈F 16[x] such that it does
+not belong to⟨u i +vβ 2i +v 2β3i +v 3β4i⟩.This implies thatv(β 3i −β ′ 3i)∈I.
+But (β3i −β ′ 3i)/∈I, therefore,v 2 ∈I, andI=⟨u i, v2⟩.
+(iii) There existsu i +vβ 2i +v 2β3i +v 3β′ 4i whereβ ′ 4i ∈F 16[x] such that it does
+not belong to⟨u i +vβ 2i +v 2β3i +v 3β4i⟩.This impliesv(β 4i −β ′ 4i)∈I. But
+(β4i −β ′ 4i)/∈I, therefore,v 3 ∈IandI=⟨u i, v3⟩.
+Finally, from the above subcases (i), (ii) and (iii), we haveI=⟨u i, v, v2, v3⟩.□
+Letf i be a factor ofx n −1 and consider ˆfi = xn−1 fi . Then we have the following
+result forR-modules in R[x] ⟨xn−1⟩ .
+Corollary 3.3.Letx n −1 =f 1f2 · · ·fm wheref j(1≤j≤m)are irreducible
+pairwise coprime monic polynomials inF16[x]. Then any rightR- module in R[x] ⟨xn−1⟩
+is the sum of theR-submodules
+⟨ui−1 ˆfj +⟨x n −1⟩⟩,⟨u i−1v ˆfj +⟨x n −1⟩⟩,⟨u i−1v2 ˆfj +⟨x n −1⟩⟩,
+⟨ui−1v3 ˆfj +⟨x n −1⟩⟩,⟨(u i +vβ 1i +v 2β2i +v 3β3i) ˆfj +⟨x n −1⟩⟩,
+(⟨ui ˆfj +⟨x n −1⟩⟩+⟨v ˆfj +⟨x n −1⟩⟩+⟨v 2 ˆfj +⟨x n −1⟩⟩+⟨v 3 ˆfj +⟨x n −1⟩⟩)
+fori={1, . . . , k}.
+⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +· · ·+uk−1α(i+1)k)) ˆfj +⟨x n −1⟩⟩,
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆfj +⟨x n −1⟩⟩,
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1))) ˆfj +⟨x n −1⟩⟩,
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆfj +⟨x n −1⟩⟩.
+Proof.Follows from Theorem 3.1 and Theorem 3.2.
+□
+Throughout the paper, we usec 0 +c 1x+· · ·+cn−1xn−1 for the corresponding
+cosetc 0 +c 1x+· · ·+cn−1xn−1 +⟨x n −1⟩in the ring R[x] ⟨xn−1⟩ . Now, we provide the
+main result of this section.
+Theorem 3.4.LetCbe a cyclic code of odd lengthnoverR. Then there exist
+unitsα ij andβ mn inF 16[x]and a family of irreducible pairwise coprime monic
+polynomialsP i, for0≤i≤5k+ 3,inF 16[x]such that Q5k+3 i=0 Pi =x n −1,α 11 = 0,
+
+7
+α12 = 1and
+C=
+kM
+i=1
+⟨ui−1 ˆPi⟩
+kM
+i=1
+⟨ui−1v ˆPk+i⟩
+kM
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+kM
+i=1
+⟨ui−1v3 ˆP3k+i⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩ M ⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k)) ˆP5k⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆP5k+1⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩ M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩.
+Moreover,|C|= 16 ξ where
+ξ= (
+kX
+i=1
+(4k−4(i−1)) deg(P i) + (3k−3(i−1)) deg(P k+i)
++(2k−2(i−1)) deg(P 2k+i) + (
+kX
+i=1
+(k−(i−1)) deg(P 3k+i)
++
+k−1X
+i=1
+(4k−i) deg(P 4k+i)) + (4k−1) deg(P 5k) + (3k−3) deg(P 5k+1)
++(2k−2) deg(P 5k+2) + (k−1) deg(P 5k+3).
+Proof.Letx n −1 =f 1f2 · · ·fm wheref j (1≤i≤m) are irreducible, pairwise co-
+prime monic polynomials inF 16[x]. Then from Corollary 3.3, any rightRmodule
+in R[x] ⟨xn−1⟩ is the sum of theR-submodules
+⟨ui−1 ˆfj +⟨x n −1⟩⟩,⟨u i−1v ˆfj +⟨x n −1⟩⟩,⟨u i−1v2 ˆfj +⟨x n −1⟩⟩,
+⟨ui−1v3 ˆfj +⟨x n −1⟩⟩,⟨(u i +vβ 1i +v 2β2i +v 3β3i) ˆfj +⟨x n −1⟩⟩
+fori={1, . . . , k}.
+⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +· · ·+uk−1α(i+1)k)) ˆfj +⟨x n −1⟩⟩,
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆfj +⟨x n −1⟩⟩,
+
+8
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1))) ˆfj +⟨x n −1⟩⟩,
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆfj +⟨x n −1⟩⟩.
+Now, as we have assumed that all thef j (1≤i≤m) are irreducible, pairwise
+co-prime monic polynomials inF 16[x], we utilize them to construct the code in the
+form of direct sums. To do so, without loss of generality, we assume that
+C=
+kM
+i=1
+⟨ui−1 ˆfm1+···+mi+1⟩ ⊕ · · · ⊕ ⟨ui−1 ˆfm1+···+mi+mi+1 ⟩
+kM
+i=1
+⟨ui−1v ˆfm1+···+mk+i+1⟩ ⊕ · · · ⊕ ⟨ui−1v ˆfm1+···+mk+(i+1) ⟩
+kM
+i=1
+⟨ui−1v2 ˆfm1+···+m2k+i+1⟩ ⊕ · · · ⊕ ⟨ui−1v2 ˆfm1+···+m2k+i+1 ⟩
+kM
+i=1
+⟨ui−1v3 ˆfm1+···+m3k+i+1⟩ ⊕ · · · ⊕ ⟨ui−1v3 ˆfm1+···+m3k+i+1 ⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆfm1+···+m4k+i+1⟩
+M
+· · ·
+M
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆfm1+···+m4k+i+1 ⟩ M
+⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +· · ·+uk−1α(i+1)k)) ˆfm1+···+m5k+1⟩
+M
+· · ·
+M
+⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +· · ·+uk−1α(i+1)k)) ˆfm1+···+m5k+1 ⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +u 3αi4 +· · ·+uk−1αik)) ˆfm1+···+m5k+1+1⟩
+M
+· · ·
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +u 3αi4 +· · ·+uk−1αik)) ˆfm1+···+m5k+2 ⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1)) ˆfm1+···+m5k+2+1⟩ M
+· · ·
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1)) ˆfm1+···+m5k+3 ⟩
+
+9
+M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)) ˆfm1+···+m5k+3+1⟩ M
+· · ·
+M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)) ˆfm⟩,
+where integersm 1, m2, m3, . . . , m5k+3 ≥0 andm 1 +m 2 +· · ·+m5k+3 + 1≤m.
+Letm 0 = 0 andm 5k+4 be the integer such thatm 1 +m 2 +· · ·+m5k+4 =m. Now,
+we define
+P0 =f m0+1 · · ·fm0+m1 , P1 =f m0+m1+1 · · ·fm0+m1+m2 ,
+P2 =f m0+m1+m2+1 · · ·fm0+m1+m2+m3 , P3 =f m0+···+m3+1 · · ·fm0+···+m4 ,
+. . . , P5k+3 =f m0+···+m5k+3+1 · · ·fm.
+Then, from the above construction,P 0, P1, . . . , P5k+3 are pairwise coprime andQ5k+3
+i=0 Pi =x n −1. Hence,
+C=
+kM
+i=1
+⟨ui−1 ˆPi⟩
+kM
+i=1
+⟨ui−1v ˆPk+i⟩
+kM
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+kM
+i=1
+⟨ui−1v3 ˆP3k+i⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩ M ⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k)) ˆP5k⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆP5k+1⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩ M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩.
+Furthermore, the cardinalities of the individual direct sum components are as fol-
+lows: We will add all the cardinalities when we write the cardinality of a whole
+code in the form of direct sums.
+|⟨ui−1 ˆPi⟩|= 16 (4k−4(i−1)) deg(Pi),|⟨u i−1v ˆPk+i⟩|= 16 (3k−3(i−1)) deg(Pk+i),
+|⟨ui−1v2 ˆP2k+i⟩|= 16 (2k−2(i−1)) deg(P2k+i),|⟨u i−1v3 ˆP3k+i⟩|= 16 (k−(i−1)) deg(P3k+i),
+|⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩|= 16 (4k−i) deg(P4k+i) Fori={1,2, . . . , k}.
+|⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +· · ·+uk−1α(i+1)k)) ˆP5k⟩|
+= 16(4k−1) deg(P5k),
+|⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
+
+10
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +u 3αi4 +· · ·+uk−1αik)) ˆP5k+1⟩|
+= 16(3k−3) deg(P5k+1),
+|⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩|
+= 16(2k−2) deg(P5k+2),
+|⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩|= 16 (k−1) deg(P5k+3).
+Thus,|C|= 16 ξ, where
+ξ= (
+kX
+i=1
+(4k−4(i−1)) deg(P i) + (3k−3(i−1)) deg(P k+i)
++(2k−2(i−1)) deg(P 2k+i) + (
+kX
+i=1
+(k−(i−1)) deg(P 3k+i)
++
+k−1X
+i=1
+(4k−i) deg(P 4k+i)) + (4k−1) deg(P 5k) + (3k−3) deg(P 5k+1)
++(2k−2) deg(P 5k+2) + (k−1) deg(P 5k+3).
+□
+Now, we considerR ′ = F16[x] ⟨xn−1⟩F16 [x] where⟨x n −1⟩ F16[x] is an ideal ofF 16[x] generated byx n −1.
+Theorem 3.5.LetCbe a cyclic code of odd lengthnoverR. Then there exist
+polynomialsA 1, A2, A3,
+. . . , A5k+3 inF 16[x]which are factors ofx n −1such that
+C=
+kM
+i=1
+ui−1⟨Ai⟩R′
+kM
+i=1
+ui−1v⟨Ak+i⟩R′
+kM
+i=1
+ui−1v2⟨A2k+i⟩R′
+kM
+i=1
+ui−1v3⟨A3k+i⟩R′
+k−1M
+i=1
+(ui +vβ 1i +v 2β2i +v 3β3i)⟨A4k+i⟩R′
+M
+((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k))⟨A5k⟩R′
+M
+(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik))⟨A5k+1⟩R′
+M
+(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1)))⟨A5k+2⟩R′
+M
+(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))⟨A5k+3⟩R′,
+
+11
+whereα ij are units inF16[x]and⟨−⟩ R′ is an ideal ofR′ generated by−. Also,
+|C|= 16 (5k+3)n−(degA 1+degA 2+···degA 5k+3 ).
+Proof.From Theorem 3.4, we have
+C=
+kM
+i=1
+⟨ui−1 ˆPi⟩
+kM
+i=1
+⟨ui−1v ˆPk+i⟩
+kM
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+kM
+i=1
+⟨ui−1v3 ˆP3k+i⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩ M ⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k)) ˆP5k⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆP5k+1⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩ M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩.
+Now, to write the code in turms ofR ′, We can easily prove that
+⟨ ˆPi⟩=
+kM
+j=1
+uj−1⟨ ˆPi⟩R′
+kM
+j=1
+uj−1v⟨ ˆPi⟩R′
+kM
+j=1
+uj−1v2⟨ ˆPi⟩R′
+kM
+j=1
+uj−1v3⟨ ˆPi⟩R′
+for 0≤i≤5k+ 3.(3.1)
+Now, we substitute the value of each ˆPi as given in the Equation (3) in theC.
+C=
+kM
+i=1
+ui−1(
+(k−1)−(i−2)M
+j=1
+uj−1⟨ ˆPi⟩R′ ⊕u j−1v⟨ ˆPi⟩R′
+⊕uj−1v2⟨ ˆPi⟩R′ ⊕u j−1v3⟨ ˆPi⟩R′)
+kM
+i=1
+ui−1v
+
+
+(k−1)−(i−2)M
+j=1
+uj−1⟨ ˆPk+i⟩R′ ⊕u j−1v⟨ ˆPk+i⟩R′ ⊕u j−1v2⟨ ˆPk+i⟩R′
+
+
+kM
+i=1
+ui−1v2
+
+
+(k−1)−(i−2)M
+j=1
+uj−1⟨ ˆP2k+i⟩R′ ⊕u j−1v⟨ ˆP2k+i⟩R′
+
+
+kM
+i=1
+ui−1v3
+
+
+(k−1)−(i−2)M
+j=1
+uj−1⟨ ˆP3k+i⟩R′
+
+
+k−1M
+i=1
+(ui +vβ 1i +v 2β2i +v 3β3i)
+(
+(k−1)−(i−2)M
+j=1
+uj−1⟨ ˆP4k+i⟩R′ ⊕u j−1v⟨ ˆP4k+i⟩R′
+⊕u j−1v2⟨ ˆP4k+i⟩R′ ⊕u j−1v3⟨ ˆP4k+i⟩R′)
+
+12
+M
+((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k))
+
+
+kM
+j=1
+uj−1⟨ ˆP5k⟩R′ ⊕u j−1v⟨ ˆP5k⟩R′ ⊕u j−1v2⟨ ˆP5k⟩R′ ⊕u j−1v3⟨ ˆP5k⟩R′
+
+
+M
+(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +u 3αi4 +· · ·+uk−1αik))
+
+
+kM
+j=1
+uj−1⟨ ˆP5k+1⟩R′ ⊕u j−1v⟨ ˆP5k+1⟩R′ ⊕u j−1v2⟨ ˆP5k+1⟩R′
+
+
+M
+(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) 
+
+kM
+j=1
+uj−1⟨ ˆP5k+2⟩R′ ⊕u j−1v⟨ ˆP5k+2⟩R′
+
+
+M
+(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))
+
+
+kM
+j=1
+uj−1⟨ ˆP5k+3⟩R′
+
+
+Now, we multiply and rearrange the terms in the form of componants ofCmulti-
+plied by associated direct sum of ˆP ′ i sto write the codeCin the form ofR ′.After
+rearranging, we get
+C=⟨ ˆP1⟩R′
+k−1M
+j=1
+uj
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+jM
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+!
+3M
+j=1
+vj
+ jM
+i=1
+⟨ ˆPik+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+j−1M
+i=0
+⟨ ˆP5k+i⟩R′
+M
+⟨ ˆP1⟩R′
+!
+k−1M
+j=1
+ujv
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+M
+⟨ ˆP5k+1⟩R′
+!
+k−1M
+j=1
+ujv2
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+2M
+t=0
+⟨ ˆP5k+t⟩R′
+!
+k−1M
+j=1
+ujv3(
+j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+j+1M
+i=1
+⟨ ˆP3k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+3M
+t=0
+⟨ ˆP5k+t⟩R′)
+
+13
+k−1M
+j=1
+(uj +vβ 1i +v 2β2i +v 3β3i)
+ jM
+i=1
+⟨ ˆP4k+i⟩R′
+!
+M
+((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k⟨ ˆP5k⟩R′
+M
+(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik))⟨ ˆP5k+1⟩R′
+M
+(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1)))⟨ ˆP5k+2⟩R′
+M
+(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))⟨ ˆP5k+3⟩R′.
+Now, we assume that
+A1 = ˆP1, Aj+1 =
+ j+1M
+i=1
+ˆPi
+jM
+i=1
+ˆP4k+i
+M ˆP5k
+!
+forj={1, . . . , k−1}.
+Ak+1 =
+ M ˆPk+1 k−1M
+i=1
+ˆP4k+i
+M ˆP5k M ˆP1
+!
+,
+Ak+1+j =
+ j+1M
+i=1
+ˆPi
+j+1M
+i=1
+ˆPk+i
+k−1M
+i=1
+ˆP4k+i
+M ˆP5k M ˆP5k+1
+!
+forj={1, . . . , k−1}.
+A2k+1 =
+ jM
+i=1
+ˆPik+1
+k−1M
+i=1
+ˆP4k+i
+j−1M
+i=0
+ˆP5k+i
+M ˆP1
+!
+forj= 2.
+A2k+1+j =
+ j+1M
+i=1
+ˆPi
+j+1M
+i=1
+ˆPk+i
+j+1M
+i=1
+ˆP2k+i
+k−1M
+i=1
+ˆP4k+i
+2M
+t=0
+ˆP5k+t
+!
+forj={1, . . . , k−1}.
+A3k+1 =
+ jM
+i=1
+ˆPik+1
+k−1M
+i=1
+ˆP4k+i
+j−1M
+i=0
+ˆP5k+i
+M ˆP1
+!
+forj= 3.
+A3k+1+j =
+ j+1M
+i=1
+ˆPi
+j+1M
+i=1
+ˆPk+i
+j+1M
+i=1
+ˆP2k+i
+j+1M
+i=1
+ˆP3k+i
+k−1M
+i=1
+ˆP4k+i
+3M
+t=0
+ˆP5k+t
+!
+forj={1, . . . , k−1}.
+A4k+j =
+ jM
+i=1
+ˆP4k+i
+!
+forj={1, . . . , k−1}. A5k = ˆP5k, A5k+1 = ˆP5k+1,
+A5k+2 = ˆP5k+2, A5k+3 = ˆP5k+3.
+Now, it is left to prove that
+⟨A1⟩R′ =⟨ ˆP1⟩R′,⟨A j+1⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+jM
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+!
+
+14
+forj={1, . . . , k−1}.
+⟨Ak+1⟩R′ =
+ M
+⟨ ˆPk+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+M
+⟨ ˆP1⟩R′
+!
+,
+⟨Ak+1+j ⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+M
+⟨ ˆP5k+1⟩R′
+!
+forj={1, . . . , k−1}.
+⟨A2k+1⟩R′ =
+ jM
+i=1
+⟨ ˆPik+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+j−1M
+i=0
+⟨ ˆP5k+i⟩R′
+M
+⟨ ˆP1⟩R′
+!
+forj= 2.
+⟨A2k+1+j ⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+2M
+t=0
+⟨ ˆP5k+t⟩R′
+!
+forj={1, . . . , k−1}.
+⟨A3k+1⟩R′ =
+ jM
+i=1
+⟨ ˆPik+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+j−1M
+i=0
+⟨ ˆP5k+i⟩R′
+M
+⟨ ˆP1⟩R′
+!
+forj= 3.
+⟨A3k+1+j ⟩R′ = (
+j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+j+1M
+i=1
+⟨ ˆP3k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+3M
+t=0
+⟨ ˆP5k+t⟩R′)
+forj={1, . . . , k−1}.
+⟨A4k+j ⟩R′ =
+ jM
+i=1
+⟨ ˆP4k+i⟩R′
+!
+forj={1, . . . , k−1}.⟨A5k⟩R′ =⟨ ˆP5k⟩R′,
+⟨A5k+1⟩R′ =⟨ ˆP5k+1⟩R′,⟨A 5k+2⟩R′ =⟨ ˆP5k+2⟩R′,⟨A 5k+3⟩R′ =⟨ ˆP5k+3⟩R′.
+For any distincti, j∈ {1, . . . ,5k+ 3},xn −1| ˆPi ˆPj andP iPj = 0 in R[x] ⟨xn−1⟩ .
+As{P j, ˆPj}are coprime pairs forj= 1, . . . ,5k+ 3, there existh 0j, h1j ∈F 16[x]
+such thath 0jPj +h 1j ˆPj = 1. Further, if we considerh 0jPj +h 1j ˆPj = 1 for
+j= 2, . . . ,5k+ 3, then there exist polynomialsw 1, w2, . . . , w5k+3 inF 16[x] such
+that
+w1P2 · · ·P5k+3 +w 2 ˆP2P3 · · ·P5k+3 +· · ·+w5k+3P2P3 · · ·P5k+2 ˆP5k+3 = 1.
+Multiplying the above equation by ˆP1, we get ˆP1 =w 1 ˆP1P2 · · ·P5k+3.Also, by
+the above construction,w 1A1P2 · · ·P5k+3 = ˆP1 which implies that⟨A 1⟩R′ =⟨ ˆP1⟩.
+Now,A 2 = ˆP1 + ˆP2 + ˆP4k+1 + ˆP5k. Hence,w 1A2P2 · · ·P5k+3 = ˆP1 and implies that
+ˆP1 ∈ ⟨A2⟩R′. If we continue this process, we get ˆP2 ∈ ⟨A2⟩R′, ˆP4k+1 ∈ ⟨A2⟩R′,
+ˆP5k ∈ ⟨A2⟩R′. Thus,⟨A 2⟩R′ =⟨ ˆP1⟩R′ +⟨ ˆP2⟩R′ +⟨ ˆP4k+1⟩R′ +⟨ ˆP5k⟩R′. Following
+the same procedure, we have
+⟨A1⟩R′ =⟨ ˆP1⟩R′,⟨A j+1⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+jM
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+!
+forj={2, . . . , k−1}.
+
+15
+⟨Ak+1⟩R′ =
+ M
+⟨ ˆPk+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+M
+⟨ ˆP1⟩R′
+!
+,
+⟨Ak+1+j ⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+M
+⟨ ˆP5k⟩R′
+M
+⟨ ˆP5k+1⟩R′
+!
+forj={1, . . . , k−1}.
+⟨A2k+1⟩R′ =
+ jM
+i=1
+⟨ ˆPik+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+j−1M
+i=0
+⟨ ˆP5k+i⟩R′
+M
+⟨ ˆP1⟩R′
+!
+forj= 2.
+⟨A2k+1+j ⟩R′ =
+ j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+2M
+t=0
+⟨ ˆP5k+t⟩R′
+!
+forj={1, . . . , k−1}.
+⟨A3k+1⟩R′ =
+ jM
+i=1
+⟨ ˆPik+1⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+j−1M
+i=0
+⟨ ˆP5k+i⟩R′
+M
+⟨ ˆP1⟩R′
+!
+forj= 3.
+⟨A3k+1+j ⟩R′ = (
+j+1M
+i=1
+⟨ ˆPi⟩R′
+j+1M
+i=1
+⟨ ˆPk+i⟩R′
+j+1M
+i=1
+⟨ ˆP2k+i⟩R′
+j+1M
+i=1
+⟨ ˆP3k+i⟩R′
+k−1M
+i=1
+⟨ ˆP4k+i⟩R′
+3M
+t=0
+⟨ ˆP5k+t⟩R′)
+forj={1, . . . , k−1}.
+⟨A4k+j ⟩R′ =
+ jM
+i=1
+⟨ ˆP4k+i⟩R′
+!
+forj={1, . . . , k−1}.⟨A5k⟩R′ =⟨ ˆP5k⟩R′,
+⟨A5k+1⟩R′ =⟨ ˆP5k+1⟩R′,⟨A 5k+2⟩R′ =⟨ ˆP5k+2⟩R′,⟨A 5k+3⟩R′ =⟨ ˆP5k+3⟩R′.
+Since|F 16|= 16,|⟨A j⟩R′|= 16 n−degA j and hence|C|= 16 (5k+3)n−(P5k+3 j=1 degA j ).
+□
+4.Dual of Cyclic Codes overR
+In the study of linear codes over finite rings or fields, we define important struc-
+tural properties such as self-orthogonality, dual-containing, and self-duality for a
+chosen inner product. A codeCis said to be self-orthogonal ifC ⊆ C ⊥, dual-
+containing ifC ⊥ ⊆ C, and self-dual ifC=C ⊥, whereC ⊥ denotes the dual ofC.
+These notions depend on the type of dual being considered. Studying these duals
+is particularly important because codes that are self-orthogonal or dual-containing
+with respect to these inner products play a fundamental role in constructing quan-
+tum error-correcting codes. Specifically, in the Calderbank-Shor-Steane (CSS) and
+Hermitian constructions of quantum codes, one typically starts with a classical code
+satisfying these inclusion properties, which ensures that the resulting quantum code
+has the necessary orthogonality conditions for error correction in quantum chan-
+nels. In our case, we are studying the structure of such duals. However, the precise
+characterization of self-orthogonal, dual-containing, and self-dual codes remains an
+open problem over the considered algebraic structure.
+
+16
+4.1.Euclidean Dual of Cyclic Codes overR.Euclidean inner product ofa=
+(a0, a1, . . . , an−1) andb= (b 0, b1, . . . , bn−1)∈ Rn is defined bya·b=a 0b0 +a 1b1 +
+· · ·+an−1bn−1. Ifa·b= 0, thenaandbare considered orthogonal. Recall that
+the dual of a linear codeCis defined asC ⊥ ={b∈ R n |a·b= 0,∀a∈ C}.
+For a polynomialf(x) =f 0 +f 1x+f 2x2 +· · ·+fn−1xn−1 withf n−1 ̸= 0, its
+reciprocal is defined byf ∗(x) =x n−1f(x) =f n−1 +f n−2x+· · ·+f0xn−1. Note
+that degf ∗(x)≤degf(x). Iff 0 ̸= 0,degf ∗(x) = degf(x).
+Theorem 4.1.LetCbe the cyclic code of odd lengthnoverRwith
+C=
+kM
+i=1
+⟨ui−1 ˆPi⟩
+kM
+i=1
+⟨ui−1v ˆPk+i⟩
+kM
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+kM
+i=1
+⟨ui−1v3 ˆP3k+i⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩ M ⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k)) ˆP5k⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆP5k+1⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩ M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩.
+Then
+C⊥ =⟨ ˆP ∗ 0 ⟩
+kM
+i=2
+⟨uk−(i−1) ˆP ∗ i ⟩
+kM
+i=1
+⟨v3 ˆP ∗ k+i⟩+⟨u k−(i−1) ˆP ∗ k+i⟩
+kM
+i=1
+⟨v2 ˆP ∗ 2k+i⟩+⟨u k−(i−1) ˆP ∗ 2k+i⟩
+kM
+i=1
+⟨v ˆP ∗ 3k+i⟩+⟨u k−(i−1) ˆP ∗ 3k+i⟩
+k−1M
+i=1
+⟨uk−iv3 ˆP ∗ 4k+i⟩ M ⟨uk−1v3 ˆP ∗ 5k⟩
+M
+⟨v3 ˆP ∗ 5k+1⟩+⟨u k−1 ˆP ∗ 5k+1⟩
+M
+⟨v2 ˆP ∗ 5k+2⟩+⟨u k−1 ˆP ∗ 5k+2⟩ M ⟨v ˆP ∗ 5k+3⟩+⟨u k−1 ˆP ∗ 5k+3⟩.
+Moreover,|C ⊥|= 16 η where
+η= (4k) degP 0 +
+kX
+i=2
+4(i−1) deg(P i) +
+kX
+i=1
+(k+ 3(i−1)) deg(P k+i)
++
+kX
+i=1
+(2k+ 2(i−1)) deg(P 2k+i) +
+kX
+i=1
+(3k+ (i−1)) deg(P 3k+i) +
+k−1X
+i=1
+ideg(P 4k+i)
++ deg(P5k) + (k+ 3) deg(P5k+1) + (2k+ 2) deg(P5k+2) + (3k+ 1) deg(P5k+3).
+
+17
+Proof.LetCbe the cyclic code of odd lengthnoverR. Then from Theorem 3.4,
+|C|= 16 ξ where
+ξ= (
+kX
+i=1
+(4k−4(i−1)) deg(P i)+
+(3k−3(i−1)) deg(P k+i) + (2k−2(i−1)) deg(P 2k+i))
++
+ kX
+i=1
+(k−(i−1)) deg(P 3k+i) +
+k−1X
+i=1
+(4k−i) deg(P 4k+i)
+!
++((4k−1) deg(P 5k) + (3k−3) deg(P 5k+1)
++(2k−2) deg(P 5k+2) + (k−1) deg(P 5k+3)).
+Since|C||C ⊥|= 16 4kn wheren= P5k+3 i=1 deg(Pi),we have|C ⊥|= 16 η where
+η= (4k) degP 0 +
+kX
+i=2
+4(i−1) deg(P i) +
+kX
+i=1
+(k+ 3(i−1)) deg(P k+i)
++
+kX
+i=1
+(2k+ 2(i−1)) deg(P 2k+i) +
+kX
+i=1
+(3k+ (i−1)) deg(P 3k+i) +
+k−1X
+i=1
+ideg(P 4k+i)
++ deg(P5k) + (k+ 3) deg(P5k+1) + (2k+ 2) deg(P5k+2) + (3k+ 1) deg(P5k+3).
+Now, we consider
+C∗ =⟨ ˆP ∗ 0 ⟩
+kM
+i=2
+⟨uk−(i−1) ˆP ∗ i ⟩
+kM
+i=1
+⟨v3 ˆP ∗ k+i⟩+⟨u k−(i−1) ˆP ∗ k+i⟩
+kM
+i=1
+⟨v2 ˆP ∗ 2k+i⟩+⟨u k−(i−1) ˆP ∗ 2k+i⟩
+kM
+i=1
+⟨v ˆP ∗ 3k+i⟩+⟨u k−(i−1) ˆP ∗ 3k+i⟩
+k−1M
+i=1
+⟨uk−iv3 ˆP ∗ 4k+i⟩ M ⟨uk−1v3 ˆP ∗ 5k⟩ M ⟨v3 ˆP ∗ 5k+1⟩+⟨u k−1 ˆP ∗ 5k+1⟩
+M
+⟨v2 ˆP ∗ 5k+2⟩+⟨u k−1 ˆP ∗ 5k+2⟩ M ⟨v ˆP ∗ 5k+3⟩+⟨u k−1 ˆP ∗ 5k+3⟩.
+It can be easily seen that
+Fori={2, . . . , k}, ui−1uk−(i−1) ˆPi ˆP ∗ i = 0.
+Fori={1, . . . , k}, ui−1v(⟨v 3⟩+⟨u k−(i−1)⟩) ˆPk+i ˆP ∗ k+i = 0,
+ui−1v2(⟨v2⟩+⟨u k−(i−1)⟩) ˆP2k+i ˆP ∗ 2k+i = 0, ui−1v3(⟨v⟩+⟨u k−(i−1)⟩)
+ˆP3k+i ˆP ∗ 3k+i = 0.
+Fori={1, . . . , k−1},⟨(ui +vα 1i +v 2α2i +v 3α3i)⟩(uk−iv3) ˆP4k+i ˆP ∗ 4k+i = 0.
+⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +· · ·+uk−1α(i+1)k))⟩uk−1v3 ˆP5k ˆP ∗ 5k = 0.
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
+
+18
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +u 3αi4 +· · ·+uk−1αik))⟩(⟨v3⟩+⟨u k−1⟩)
+ˆP5k+1 ˆP ∗ 5k+1 = 0.
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +u 3α24 +· · ·+uk−2α2(k−1)))⟩(⟨v2⟩+⟨u k−1⟩)
+ˆP5k+2 ˆP ∗ 5k+2 = 0.
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))⟩(⟨v⟩+⟨u k−1⟩)
+ˆP5k+3 ˆP ∗ 5k+3 = 0.
+Hence, we can say thatC ∗ ⊆ C⊥. Now,
+|⟨ ˆP ∗ 0 ⟩|= 16 4kdeg(P 0),|⟨u k−(i−1) ˆP ∗ i ⟩|= 16 4(i−1) deg(Pi) fori={2, . . . , k}.
+Fori={1, . . . , k},we have|⟨v3 ˆP ∗ k+i⟩+⟨u k−(i−1) ˆP ∗ k+i⟩|= 16 k+3(i−1) deg(Pk+i),
+|⟨v2 ˆP ∗ 2k+i⟩+⟨u k−(i−1) ˆP ∗ 2k+i⟩|= 16 2k+2(i−1) deg(P2k+i),
+|⟨v ˆP ∗ 3k+i⟩+⟨u k−(i−1) ˆP ∗ 3k+i⟩|= 16 3k+(i−1) deg(P3k+i).
+Next, fori={1, . . . , k−1},we have|⟨uk−iv3 ˆP ∗ 4k+i⟩|= 16 ideg(P 4k+i).
+|⟨uk−1v3 ˆP ∗ 5k⟩|= 16 deg(P5k),|⟨v 3 ˆP ∗ 5k+1⟩+⟨u k−1 ˆP ∗ 5k+1⟩|= 16 k+3 deg(P5k+1),
+|⟨v2 ˆP ∗ 5k+2⟩+⟨u k−1 ˆP ∗ 5k+2⟩|= 16 2k+2 deg(P5k+2),
+|⟨v ˆP ∗ 5k+3⟩+⟨u k−1 ˆP ∗ 5k+3⟩|= 16 3k+1 deg(P5k+3).
+Thus,|C ∗|= 16 η where
+η= (4k) degP 0 +
+kX
+i=2
+4(i−1) deg(P i) +
+kX
+i=1
+(k+ 3(i−1)) deg(P k+i)
++
+kX
+i=1
+(2k+ 2(i−1)) deg(P 2k+i) +
+kX
+i=1
+(3k+ (i−1)) deg(P 3k+i) +
+k−1X
+i=1
+ideg(P 4k+i)
++ deg(P5k) + (k+ 3) deg(P5k+1) + (2k+ 2) deg(P5k+2) + (3k+ 1) deg(P5k+3).
+Consequently, we get|C ∗|=|C ⊥|.□
+Theorem 4.2.LetCbe a cyclic code of odd lengthnoverR. Then there exist
+polynomials
+
+19
+A∗ 1, A∗ 2, A∗ 3, . . . , A∗ 5k+3 inF 16[x],which are factors ofx n −1such that
+C⊥ =
+kM
+i=1
+ui−1⟨A∗ i ⟩R′
+kM
+i=1
+ui−1v⟨A∗ k+i⟩R′
+kM
+i=1
+ui−1v2⟨A∗ 2k+i⟩R′
+kM
+i=1
+ui−1v3⟨A∗ 3k+i⟩R′
+k−1M
+i=1
+(ui +vβ 1i +v 2β2i +v 3β3i)⟨A∗ 4k+i⟩R′
+M
+((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k))⟨A∗ 5k⟩R′
+M
+(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik))⟨A∗ 5k+1⟩R′
+M
+(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1)))⟨A∗ 5k+2⟩R′
+M
+(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))⟨A∗ 5k+3⟩R′
+whereα ij are units inF16[x]and⟨−⟩ R′ is an ideal ofR′ generated by−. Also,
+|C|= 16 (5k+3)n−(degA ∗ 1 +degA ∗ 2 +···degA ∗ 5k+3 ).
+Proof.It follows from Theorem 3.5 and Theorem 4.1.□
+4.2.Hermitian Dual of Cyclic Codes overR.The Hermitian inner product
+ofa= (a 0, a1, . . . , an−1) andb= (b 0, b1, . . . , bn−1)∈ R∗n is defined by⟨a, b⟩=
+a0b0 +a 1b1 +· · ·+an−1bn−1 where “−” stands for conjugation and bi =b 4 i . For a
+codeC, its Hermitian dualC ⊥ is defined as,C ⊥H ={b∈ Rn | ⟨a, b⟩= 0∀a∈ C}.
+For a polynomialf(x) =f 0 +f 1x+f 2x2 +· · ·+fn−1xn−1 withf n−1 ̸= 0, its
+reciprocal is defined asf ∗(x) =x n−1f(x) =f n−1 +f n−2x+· · ·+f0xn−1. It can be
+seen that degf ∗(x)≤degf(x). Iff 0 ̸= 0,then degf ∗(x) = degf(x). We denote
+f(x) =f 4 0 +f 4 1 x+f 4 2 x2 +· · ·+f4 n−1xn−1.
+Theorem 4.3.LetCbe the cyclic code of odd lengthnoverRwith
+C=
+kM
+i=1
+⟨ui−1 ˆPi⟩
+kM
+i=1
+⟨ui−1v ˆPk+i⟩
+kM
+i=1
+⟨ui−1v2 ˆP2k+i⟩
+kM
+i=1
+⟨ui−1v3 ˆP3k+i⟩
+k−1M
+i=1
+⟨(ui +vβ 1i +v 2β2i +v 3β3i) ˆP4k+i⟩ M ⟨((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k)) ˆP5k⟩
+M
+⟨(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik)) ˆP5k+1⟩
+M
+⟨(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
+
+20
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1))) ˆP5k+2⟩ M
+⟨(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1))) ˆP5k+3⟩.
+Then
+C⊥H =⟨ ˆP ∗ 0⟩ kM
+i=2
+⟨uk−(i−1) ˆP ∗ i ⟩ kM
+i=1
+⟨v3 ˆP ∗ k+i⟩+⟨u k−(i−1) ˆP ∗ k+i⟩
+kM
+i=1
+⟨v2 ˆP ∗ 2k+i⟩+⟨u k−(i−1) ˆP ∗ 2k+i⟩ kM
+i=1
+⟨v ˆP ∗ 3k+i⟩+⟨u k−(i−1) ˆP ∗ 3k+i⟩
+k−1M
+i=1
+⟨uk−iv3 ˆP ∗ 4k+i⟩ M ⟨uk−1v3 ˆP ∗ 5k⟩ M ⟨v3 ˆP ∗ 5k+1⟩+⟨u k−1 ˆP ∗ 5k+1⟩
+M
+⟨v2 ˆP ∗ 5k+2⟩+⟨u k−1 ˆP ∗ 5k+2⟩ M ⟨v ˆP ∗ 5k+3⟩+⟨u k−1 ˆP ∗ 5k+3⟩.
+Further,|C ⊥H |= 16 η where
+η= (4k) degP 0 +
+kX
+i=2
+4(i−1) deg(P i) +
+kX
+i=1
+(k+ 3(i−1)) deg(P k+i)
++
+kX
+i=1
+(2k+ 2(i−1)) deg(P 2k+i) +
+kX
+i=1
+(3k+ (i−1)) deg(P 3k+i)
++
+k−1X
+i=1
+ideg(P 4k+i) + deg(P5k)
++(k+ 3) deg(P 5k+1) + (2k+ 2) deg(P5k+2) + (3k+ 1) deg(P5k+3).
+Proof.The proof follows the same procedure as the proof of Theorem 4.1.□
+Theorem 4.4.LetCbe a cyclic code of odd lengthnoverR. Then there exist
+polynomials
+A∗ 1, A∗ 2, A∗ 3, . . . ,A∗ 5k+3 inF 16[x]which are factors ofx n −1such that
+C⊥H =
+kM
+i=1
+ui−1⟨A ∗ i ⟩R′
+kM
+i=1
+ui−1v⟨A ∗ k+i⟩R′
+kM
+i=1
+ui−1v2⟨A ∗ 2k+i⟩R′
+kM
+i=1
+ui−1v3⟨A ∗ 3k+i⟩R′
+k−1M
+i=1
+(ui +vβ 1i +v 2β2i +v 3β3i)⟨A ∗ 4k+i⟩R′ M ((u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=1
+vi(α(i+1)1 +uα (i+1)2 +u 2α(i+1)3 +u 3α(i+1)4 +· · ·+uk−1α(i+1)k))⟨A ∗ 5k⟩R′
+M
+(v(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
++
+3X
+i=2
+vi(αi1 +uα i2 +u 2αi3 +· · ·+uk−1αik))⟨A ∗ 5k+1⟩R′
+M
+(v2(u+u 2α13 +u 3α14 +· · ·+uk−1α1k)
+
+21
++v3(α21 +uα 22 +u 2α23 +· · ·+uk−2α2(k−1)))⟨A ∗ 5k+2⟩R′
+M
+(v3(u+u 2α13 +u 3α14 +· · ·+uk−2α1(k−1)))⟨A ∗ 5k+3⟩R′,
+whereα ij are units inF16[x]and⟨−⟩ R′ is an ideal ofR′ generated by−. Also,
+|C|= 16 (5k+3)n−(degA ∗ 1 +degA ∗ 2 +···degA ∗ 5k+3 ).
+Proof.Follows from Theorem 3.5 and Theorem 4.3.
+□
+5.RightF 2-module Isometry
+5.1.The Gray map.In the case of ringF 2 +uF 2 [5], Lee weight is defined as
+below.
+ωL(0) = 0, ωL(1) =ω L(1 +u) = 1, ωL(u) = 2.
+Also, the Gray map from (F2 +uF 2)n toF 2n 2 sends (a+ub) to (b, a+b) fora, b∈F n 2 .
+Now, in our case we extend this Gray mapθfromRtoF 4kn 16 by
+θ[(d1 +vd 2 +v 2d3 +v 3d4) +u(d 5 +vd 6 +v 2d7 +v 3d8) +u 2(d9
++vd10 +v 2d11 +v 3d12) +· · ·+uk−1(d4k−3 +vd 4k−2 +v 2d4k−1 +v 3d4k)] =
+(d4k, d4k−1 +d 4k, d4k−2 +d 4k, d4k−3 +d 4k, . . . , d3 +d 4k, d2 +d 4k
+, d1 +d 2 +d 3 +· · ·+d4k),
+whered i ∈F 16 fori= 1to4kandθis also distance preserving. Hence, for any
+element
+r= (d 1 +vd 2 +v 2d3 +v 3d4)+u(d 5 +vd 6 +v 2d7 +v 3d8)+u 2(d9 +vd 10 +v 2d11 +v 3d12)
++· · ·+uk−1(d4k−3 +vd 4k−2 +v 2d4k−1 +v 3d4k)
+inR, the extended Lee weight is defined as :
+ωL(r) = (ωH (d4k) +ω H (d4k−1 +d 4k) +ω H (d4k−2 +d 4k)+
+ωH (d4k−3 +d 4k) +· · ·+ωH (d3 +d 4k) +ω H (d2 +d 4k)+
+ωH (d1 +d 2 +d 3 +· · ·+d4k)),
+whereω H (.) denotes the Hamming weight inF 16. For thec= (c 0, c1, . . . , cn−1) in
+Rn, we define the following terms.
+•The Lee weight incisω L(c) =ω L(c0) +ω L(c1) +· · ·+ωL(cn−1).
+•The Hamming weight of a codeword isω H (c) is the number of nonzero
+components of thec.
+•The Hamming distance for any two codewordscandc ′ is defined as
+dH (c, c′) =ω H (c−c ′).
+•The Hamming distance for the codeCis defined as
+dL(C) =min{d L(c, c′)|c̸=c ′ ∀c, c′ ∈ C}.
+Theorem 5.1.LetCbe a cyclic code overRof lengthn, sizeM, and Lee distance
+d. Thenθ(C)is a linear code overF16 of length4kn, sizeM, and Hamming distance
+d.
+
+22
+5.2.The Bachoc map.We have considered the ringRas a usual extension to
+the ringM 4(F2) and extended the Bachoc weight fromM 4(F2) toR, which was
+introduced in [5]. In [14], the theory of cyclic codes and their duals was discussed.
+However, these results were derived only for odd lengths. By defining the Bachoc
+map, we can construct the codes of even length overM 4(F2). LetW B be the
+Bachoc weight overRandw B be the ordinary Bachoc weight ofM 4(F2) codes. For
+Y1, Y2, . . . , Yk−1 ∈M 4(F2), we define
+WB(Y=Y 1 +uY 2 +· · ·+uk−1Yk−1) =w B(Yk−1)
++wB(Yk−1 +Y k−2) +· · ·+wB(Yk−1 +Y 2) +w B(Y1 +Y 2 +· · ·+Yk−1).
+This immediately leads to a Bachoc mapϕfromRtoM k−1 4 (F2) which is defined
+by
+ϕ(Y1+uY2+· · ·+uk−1Yk−1) = (Yk−1, Yk−1+Yk−2, . . . , Yk−1+Y2, Y1+Y2+· · ·+Yk−1).
+The mapϕcan be naturally extended toR n by preserving isometry as,
+ϕ: (R n,Bachoc weight)7→(M (k−1)n 4 (F2),Bachoc weight).
+Now, we define the mapψby
+ψ:M 4(F2[u]/⟨uk⟩)7→F 16[u, v]/⟨uk, v4⟩
+
+
+Pk
+i=1 ui−1(a1i+b2i+c3i+d4i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b4i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c4i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d4i)Pk
+i=1 ui−1(a2i+b1i+c4i+d3i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b3i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c3i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d3i)Pk
+i=1 ui−1(a3i+b4i+c1i+d2i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b2i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c2i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d2i)Pk
+i=1 ui−1(a4i+b3i+c2i+d1i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b1i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c1i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d1i)
+
+
+7− →
+4X
+j=1
+kX
+i=1
+vj−1ui−1(aji +b jiω+c jiω2 +d jiω3).
+Theorem 5.2.The mapϕfromM 4(F2[u]/⟨uk⟩)toF 16[u, v]/⟨uk, v4⟩is a leftF 2-
+module isomorphism.
+Proof.Letx, y∈M 4(F2[u]/⟨uk⟩) andrbelongs toF 2. Then
+x=
+
+
+Pk
+i=1 ui−1(a1i+b2i+c3i+d4i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b4i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c4i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d4i)Pk
+i=1 ui−1(a2i+b1i+c4i+d3i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b3i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c3i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d3i)Pk
+i=1 ui−1(a3i+b4i+c1i+d2i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b2i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c2i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d2i)Pk
+i=1 ui−1(a4i+b3i+c2i+d1i) Pk i=1 ui−1(a2i+b1i+c4i+d3i+b1i) Pk i=1 ui−1(a3i+b4i+c1i+d2i+c1i) Pk i=1 ui−1(a4i+b3i+c2i+d1i+d1i)
+
+
+y=
+
+
+Pk
+i=1 ui−1(a′ 1i+b′ 2i+c′ 3i+d′ 4i) Pk i=1 ui−1(a′ 2i+b′ 1i+c′ 4i+d′ 3i+b′ 4i) Pk i=1 ui−1(a′ 3i+b′ 4i+c′ 1i+d′ 2i+c′ 4i) Pk i=1 ui−1(a′ 4i+b′ 3i+c′ 2i+d′ 1i+d′ 4i)Pk
+i=1 ui−1(a′ 2i+b′ 1i+c′ 4i+d′ 3i) Pk i=1 ui−1(a′ 2i+b′ 1i+c′ 4i+d′ 3i+b′ 3i) Pk i=1 ui−1(a′ 3i+b′ 4i+c′ 1i+d′ 2i+c′ 3i) Pk i=1 ui−1(a′ 4i+b′ 3i+c′ 2i+d′ 1i+d′ 3i)Pk
+i=1 ui−1(a′ 3i+b′ 4i+c′ 1i+d′ 2i) Pk i=1 ui−1(a′ 2i+b′ 1i+c′ 4i+d′ 3i+b′ 2i) Pk i=1 ui−1(a′ 3i+b′ 4i+c′ 1i+d′ 2i+c′ 2i) Pk i=1 ui−1(a′ 4i+b′ 3i+c′ 2i+d′ 1i+d′ 2i)Pk
+i=1 ui−1(a′ 4i+b′ 3i+c′ 2i+d′ 1i) Pk i=1 ui−1(a′ 2i+b′ 1i+c′ 4i+d′ 3i+b′ 1i) Pk i=1 ui−1(a′ 3i+b′ 4i+c′ 1i+d′ 2i+c′ 1i) Pk i=1 ui−1(a′ 4i+b′ 3i+c′ 2i+d′ 1i+d′ 1i)
+
+
+andx+y=
+
+
+A B C D
+E F G H
+I J K L
+M N O P
+
+
+whereA= Pk i=1 ui−1((a′ 1i +b ′ 2i +c ′ 3i +d ′ 4i) + (a1i +b 2i +c 3i +d 4i)),
+B= Pk i=1 ui−1((a′ 2i +b ′ 1i +c ′ 4i +d ′ 3i +b ′ 4i) + (a2i +b 1i +c 4i +d 3i +b 4i)),
+C= Pk i=1 ui−1((a′ 3i +b ′ 4i +c ′ 1i +d ′ 2i +c ′ 4i) + (a3i +b 4i +c 1i +d 2i +c 4i)),
+D= Pk i=1 ui−1((a′ 4i +b ′ 3i +c ′ 2i +d ′ 1i +d ′ 4i) + (a4i +b 3i +c 2i +d 1i +d 4i)),
+
+23
+E= Pk i=1 ui−1((a′ 2i +b ′ 1i +c ′ 4i +d ′ 3i) + (a2i +b 1i +c 4i +d 3i)),
+F= Pk i=1 ui−1((a′ 2i +b ′ 1i +c ′ 4i +d ′ 3i +b ′ 3i) + (a2i +b 1i +c 4i +d 3i +b 3i)),
+G= Pk i=1 ui−1((a′ 3i +b ′ 4i +c ′ 1i +d ′ 2i +c ′ 3i) + (a3i +b 4i +c 1i +d 2i +c 3i)),
+H= Pk i=1 ui−1((a′ 4i +b ′ 3i +c ′ 2i +d ′ 1i +d ′ 3i) + (a4i +b 3i +c 2i +d 1i +d 3i)),
+I= Pk i=1 ui−1((a′ 3i +b ′ 4i +c ′ 1i +d ′ 2i) + (a3i +b 4i +c 1i +d 2i)),
+J= Pk i=1 ui−1((a′ 2i +b ′ 1i +c ′ 4i +d ′ 3i +b ′ 2i) + (a2i +b 1i +c 4i +d 3i +b 2i)),
+K= Pk i=1 ui−1((a′ 3i +b ′ 4i +c ′ 1i +d ′ 2i +c ′ 2i) + (a3i +b 4i +c 1i +d 2i +c 2i)),
+L= Pk i=1 ui−1((a′ 4i +b ′ 3i +c ′ 2i +d ′ 1i +d ′ 2i) + (a4i +b 3i +c 2i +d 1i +d 2i)),
+M= Pk i=1 ui−1((a′ 4i +b ′ 3i +c ′ 2i +d ′ 1i) + (a4i +b 3i +c 2i +d 1i)),
+N= Pk i=1 ui−1((a′ 2i +b ′ 1i +c ′ 4i +d ′ 3i +b ′ 1i) + (a2i +b 1i +c 4i +d 3i +b 1i)),
+O= Pk i=1 ui−1((a′ 3i +b ′ 4i +c ′ 1i +d ′ 2i +c ′ 1i) + (a3i +b 4i +c 1i +d 2i +c 1i)),
+P= Pk i=1 ui−1((a′ 4i +b ′ 3i +c ′ 2i +d ′ 1i +d ′ 1i) + (a4i +b 3i +c 2i +d 1i +d 1i)).
+Hence,
+ϕ(x+y) =
+4X
+j=1
+kX
+i=1
+vj−1ui−1(aji +a ′ ji) + (bji +b ′ ji)ω+ (c ji +c ′ ji)ω2
++(dji +d ′ ji)ω3) =
+4X
+j=1
+kX
+i=1
+vj−1ui−1(aji +b jiω+c jiω2 +d jiω3)
++
+4X
+j=1
+kX
+i=1
+vj−1ui−1(a′ ji +b ′ jiω+c ′ jiω2 +d ′ jiω3) =ϕ(x) +ϕ(y).
+Now,rx=
+
+
+A′ B′ C ′ D′
+E′ F ′ G′ H ′
+I ′ J ′ K ′ L′
+M ′ N ′ O′ P ′
+
+
+where
+A′ =
+kX
+i=1
+ui−1r(a1i +b 2i +c 3i +d 4i), B′ =
+kX
+i=1
+ui−1r(a2i +b 1i +c 4i +d 3i +b 4i),
+C ′ =
+kX
+i=1
+ui−1r(a3i +b 4i +c 1i +d 2i +c 4i), D′ =
+kX
+i=1
+ui−1r(a4i +b 3i +c 2i +d 1i +d 4i),
+E′ =
+kX
+i=1
+ui−1r(a2i +b 1i +c 4i +d 3i), F′ =
+kX
+i=1
+ui−1r(a2i +b 1i +c 4i +d 3i +b 3i),
+G′ =
+kX
+i=1
+ui−1r(a3i +b 4i +c 1i +d 2i +c 3i), H′ =
+kX
+i=1
+ui−1r(a4i +b 3i +c 2i +d 1i +d 3i),
+I ′ =
+kX
+i=1
+ui−1r(a3i +b 4i +c 1i +d 2i), J′ =
+kX
+i=1
+ui−1r(a2i +b 1i +c 4i +d 3i +b 2i),
+K ′ =
+kX
+i=1
+ui−1r(a3i +b 4i +c 1i +d 2i +c 2i), L′ =
+kX
+i=1
+ui−1r(a4i +b 3i +c 2i +d 1i +d 2i),
+
+24
+M ′ =
+kX
+i=1
+ui−1r(a4i +b 3i +c 2i +d 1i), N′ =
+kX
+i=1
+ui−1r(a2i +b 1i +c 4i +d 3i +b 1i),
+O′ =
+kX
+i=1
+ui−1r(a3i +b 4i +c 1i +d 2i +c 1i), P′ =
+kX
+i=1
+ui−1r(a4i +b 3i +c 2i +d 1i +d 1i).
+Hence,
+ϕ(rx) =
+4X
+j=1
+kX
+i=1
+vj−1ui−1r(aji +b jiω+c jiω2 +d jiω3)
+=r
+4X
+j=1
+kX
+i=1
+vj−1ui−1(aji +b jiω+c jiω2 +d jiω3)
+=rϕ(x).
+Now, assume thatϕ(x) =ϕ(y). This implies that
+4X
+j=1
+kX
+i=1
+vj−1ui−1(aji +b jiω+c jiω2 +d jiω3)
+=
+4X
+j=1
+kX
+i=1
+vj−1ui−1(a′ ji +b ′ jiω+c ′ jiω2 +d ′ jiω3).
+Recall that two polynomials of degreenin indeterminatexare said to be equal if
+and only if their respective coefficients ofx i fori= 0,1, . . . , nare equal. Therefore,
+we havea ji =a ′ ji, bji =b ′ ji, cji =c ′ ji, dji =d ′ ji,which implies thatx=y. Hence
+the result.□
+Now, we arrive at the following theorem.
+Theorem 5.3.LetCbe a cyclic code overRof lengthn, sizeM, and Bachoc
+distanced. Thenψ(C)is a linear code overF16 of length4kn, sizeMand Hamming
+distanced.
+Proof.Letx= (x 1, x2, . . . , xn−1), y= (y1, y2, . . . , yn−1)∈ C, andλ∈F 16.
+Let xj =
+
+
+A B C D
+E F G H
+I J K L
+M N O P
+
+ andy j =
+
+
+A′ B′ C ′ D′
+E′ F ′ G′ H ′
+I ′ J ′ K ′ L′
+M ′ N ′ O′ P ′
+
+
+where
+A=
+kX
+i=1
+ui−1(aj1i +b j2i +c j3i +d j4i), B=
+kX
+i=1
+ui−1(aj2i +b j1i +c j4i +d j3i +b j4i),
+C=
+kX
+i=1
+ui−1(aj3i +bj4i +cj1i +dj2i +cj4i), D=
+kX
+i=1
+ui−1(aj4i +bj3i +cj2i +dj1i +dj4i),
+E=
+kX
+i=1
+ui−1(aj2i +b j1i +c j4i +d j3i), F=
+kX
+i=1
+ui−1(aj2i +b j1i +c j4i +d j3i +b j3i),
+
+25
+G=
+kX
+i=1
+ui−1(aj3i +bj4i +cj1i +dj2i +cj3i), H=
+kX
+i=1
+ui−1(aj4i +bj3i +cj2i +dj1i +dj3i),
+I=
+kX
+i=1
+ui−1(aj3i +b j4i +c j1i +d j2i), J=
+kX
+i=1
+ui−1(aj2i +b j1i +c j4i +d j3i +b j2i),
+K=
+kX
+i=1
+ui−1(aj3i +bj4i +cj1i +dj2i +cj2i), L=
+kX
+i=1
+ui−1(aj4i +bj3i +cj2i +dj1i +dj2i),
+M=
+kX
+i=1
+ui−1(aj4i +b j3i +c j2i +d j1i), N=
+kX
+i=1
+ui−1(aj2i +b j1i +c j4i +d j3i +b j1i),
+O=
+kX
+i=1
+ui−1(aj3i +bj4i +cj1i +dj2i +cj1i), P=
+kX
+i=1
+ui−1(aj4i +bj3i +cj2i +dj1i +dj1i),
+and
+A′ =
+kX
+i=1
+ui−1(a′ j1i +b ′ j2i +c ′ j3i +d ′ j4i), B′ =
+kX
+i=1
+ui−1(a′ j2i +b ′ j1i +c ′ j4i +d ′ j3i +b ′ j4i),
+C ′ =
+kX
+i=1
+ui−1(a′ j3i +b ′ j4i +c ′ j1i +d ′ j2i +c ′ j4i),
+D′ =
+kX
+i=1
+ui−1(a′ j4i +b ′ j3i +c ′ j2i +d ′ j1i +d ′ j4i),
+E′ =
+kX
+i=1
+ui−1(a′ j2i +b ′ j1i +c ′ j4i +d ′ j3i), F′ =
+kX
+i=1
+ui−1(a′ j2i +b ′ j1i +c ′ j4i +d ′ j3i +b ′ j3i),
+G′ =
+kX
+i=1
+ui−1(a′ j3i +b ′ j4i +c ′ j1i +d ′ j2i +c ′ j3i),
+H ′ =
+kX
+i=1
+ui−1(a′ j4i +b ′ j3i +c ′ j2i +d ′ j1i +d ′ j3i),
+I ′ =
+kX
+i=1
+ui−1(a′ j3i +b ′ j4i +c ′ j1i +d ′ j2i), J′ =
+kX
+i=1
+ui−1(a′ j2i +b ′ j1i +c ′ j4i +d ′ j3i +b ′ j2i),
+K ′ =
+kX
+i=1
+ui−1(a′ j3i +b ′ j4i +c ′ j1i +d ′ j2i +c ′ j2i),
+L′ =
+kX
+i=1
+ui−1(a′ j4i +b ′ j3i +c ′ j2i +d ′ j1i +d ′ j2i),
+M ′ =
+kX
+i=1
+ui−1(a′ j4i +b ′ j3i +c ′ j2i +d ′ j1i), N′ =
+kX
+i=1
+ui−1(a′ j2i +b ′ j1i +c ′ j4i +d ′ j3i +b ′ j1i),
+O′ =
+kX
+i=1
+ui−1(a′ j3i +b ′ j4i +c ′ j1i +d ′ j2i +c ′ j1i),
+
+26
+P ′ =
+kX
+i=1
+ui−1(a′ j4i +b ′ j3i +c ′ j2i +d ′ j1i +d ′ j1i).
+Then by Theorem 5.2,ϕ(x j +y j) =ϕ(x j) +ϕ(y j).
+ϕ(xj +y j) =
+4X
+p=1
+kX
+i=1
+vp−1ui−1(ajpi +a ′ jpi)+
+(bjpi +b ′ jpi)ω+ (c jpi +c ′ jpi)ω2 + (djpi +d ′ jpi)ω3.
+Hence,
+θ(ϕ(xj +y j)) =
+((aj4k +a ′ j4k ) + (bj4k +b ′ j4k )ω+ (c j4k +c ′ j4k )ω2 + (dj4k +d ′ j4k )ω3,
+(aj4k +a ′ j4k +a j4(k−1) +a ′ j4(k−1) ) + (bj4k +b ′ j4k +b j4(k−1) +b ′ j4(k−1) )ω
++(cj4k +c ′ j4k +c j4(k−1) +c ′ j4(k−1) )ω2 + (dj4k +d ′ j4k +d j4(k−1) +d ′ j4(k−1) )ω3,
+(aj4k +a ′ j4k +a j4(k−2) +a ′ j4(k−2) ) + (bj4k +b ′ j4k +b j4(k−2) +b ′ j4(k−2) )ω
++(cj4k +c ′ j4k +c j4(k−2) +c ′ j4(k−2) )ω2 + (dj4k +d ′ j4k +d j4(k−2) +d ′ j4(k−2) )ω3,
+· · ·,
+4X
+p=1
+kX
+i=1
+(ajpi +a ′ jpi) + (bjpi +b ′ jpi)ω+ (c jpi +c ′ jpi)ω2 + (djpi +d ′ jpi)ω3).
+= ((aj4k ) + (bj4k )ω+ (c j4k )ω2 + (dj4k )ω3,(a j4k +a j4(k−1) ) + (bj4k +b j4(k−1) )ω
++(cj4k +c j4(k−1) )ω2 + (dj4k +d j4(k−1) )ω3,(a j4k +a j4(k−2) + (bj4k +b j4(k−2) )ω
++(cj4k +c j4(k−2) )ω2 + (dj4k +d j4(k−2) )ω3,
+. . . ,
+4X
+p=1
+kX
+i=1
+(ajpi) + (bjpi)ω+ (c jpi)ω2 + (djpi)ω3))
++((a′ j4k ) + (b′ j4k )ω+ (c ′ j4k )ω2 + (d′ j4k )ω3,(a ′ j4k +a ′ j4(k−1) ) + (b′ j4k +b ′ j4(k−1) )ω
++(c′ j4k +c ′ j4(k−1) )ω2 + (d′ j4k +d ′ j4(k−1) )ω3,(a ′ j4k +a ′ j4(k−2) + (b′ j4k +b ′ j4(k−2) )ω
++(c′ j4k +c ′ j4(k−2) )ω2 + (d′ j4k +d ′ j4(k−2) )ω3,
+. . . ,
+4X
+p=1
+kX
+i=1
+(a′ jpi) + (b′ jpi)ω+ (c ′ jpi)ω2 + (d′ jpi)ω3)).
+=θ(ϕ(x j)) +θ(ϕ(y j)).
+Now,θ(ϕ(λx j)) = (λ((aj4k ) + (bj4k )ω+ (c j4k )ω2 + (dj4k )ω3),
+λ((aj4k +a j4(k−1) ) + (bj4k +b j4(k−1) )ω
++(cj4k +c j4(k−1) )ω2 + (dj4k +d j4(k−1) )ω3),
+λ((aj4k +a j4(k−2) + (bj4k +b j4(k−2) )ω
++(cj4k +c j4(k−2) )ω2 + (dj4k +d j4(k−2) )ω3)),
+· · ·, λ
+4X
+p=1
+kX
+i=1
+(ajpi) + (bjpi)ω+ (c jpi)ω2 + (djpi)ω3)).
+
+27
+=λ(((a j4k ) + (bj4k )ω+ (c j4k )ω2 + (dj4k )ω3,(a j4k +a j4(k−1) ) + (bj4k +b j4(k−1) )ω
++(cj4k +c j4(k−1) )ω2 + (dj4k +d j4(k−1) )ω3,(a j4k +a j4(k−2) ) + (bj4k +b j4(k−2) )ω
++(cj4k +c j4(k−2) )ω2 + (dj4k +d j4(k−2) )ω3,
+· · ·,
+4X
+p=1
+kX
+i=1
+(ajpi) + (bjpi)ω+ (c jpi)ω2 + (djpi)ω3)).
+=λθ(ϕ(x j)).
+Thus,θ(ϕ(x)) is linear. Note that,θ(ϕ(x)) is bijective. Hence,|C|=|θ(ϕ(C))|and
+d=d H .
+□
+6.Examples
+One of the basic problems for a linear code [n, k] is to optimize d and obtain
+dM DS=n−k+ 1. In the following examples, we have obtained linear codes that
+are near to MDS asd M DS−d≤3 by using the structure ofR. Here, we determine
+the parameters of the codes using Magma Computation Software [6].
+Example 6.1.Forn= 5, we havex 5 −1 = (x+ 1)(x+w 3)(x+w 6)(x+w 9)(x+
+w12)∈F 16[x]. Letf 1 =x+ 1, f 2 =x+w 3, f3 =x+w 6, f4 =x+w 9, f5 =x+w 12.
+Ifk= 1, we have some cyclic codes of length5overR, and their Gray images are
+as follows.
+Generators of cyclic codes Images underθ dM DS
+⟨(w3v3 +w 5v2 +w 4v+w 13 +w)f 2 +wf 1⟩ [20,14,5] 7
+⟨(wv3 +w 2v2 +w 5)f2,(w 2v2 +wv+w 5)f1f3f4f5⟩ [20,16,3] 5
+⟨(wv3 +w 2v2 +w 5)f2,(w 2v3 +wv+w 4)f1f3f4f5⟩ [20,15,4] 6
+⟨(wv+w 2v2 +vw 5)f2,(w 2v2 +vw 7)f3f4f5⟩ [20,19,2] 2
+Example 6.2.Forn= 5andk= 3, we have the following cyclic codes of length
+5overRand their Gray images are as follows.
+Generators of cyclic codes Images underθ dM DS
+⟨(w5u2v3 +vw 6)f2,(w 5uv3 +v 3w6)f3f4f5, [60,54,4] 7
+(w5uv+uv 3w6 +v 3w9)f1f2f3f5⟩
+⟨(w5u2v3 +vw 6)f2,(w 7u2v3 +w 3v2)f3f4f5, [60,56,3] 5
+(wu2v3 +w 2u2)f2f3f1f5 + (wu+w 5 +wv
++wv3 +wv 2)f4f3f1f5⟩
+⟨(w5u2v3 +w 5u2v2)f2,(w 5u2v3 +w 7u2)f3f4f5, [60,57,2] 4
+(w5u2v3 +w 5vu+w 5v3)f2f3f5f4⟩
+Example 6.3.Forn= 3, the factorization ofx 3 −1is given byx 3 −1 = (x+
+1)(x+w 5)(x+w 10)∈F 16[x]. Letf 1 =x+ 1, f 2 =x+w 5, f3 =x+w 10. Then,
+some good codes under the Gray images of cyclic codes of lengthn= 3, k= 4over
+Rare as follows.
+
+28
+Generators of cyclic codes Images underθ dM DS
+⟨(wu3v3 +w 3u3v+w 5u2v3 +w 7u2v+w 11uv3 [48,41,5] 8
++w13uv+w 3v3 +w 7v)f2 + (wu3v3 +w 5u3v+
+w6u2v3 +w 7u2v+w 10uv3 +w 13uv+w 3v3
++w7v+w 13)f1,(wu 2v2 +w 4u3 +w 6u2v2+
+w8u2 +w 10uv2 +w 14u+w 2v2 +w 4)f3⟩
+⟨(u3v3 +vw)f 2,(wu 3v3 +v 2 +w 2)f3, [48,43,3] 6
+(u3v2w3 +u 2v2w3 +u 2w4 +w 4)f1f3⟩
+⟨(u3v3 +vw)f 2,(wu 3v3 +v 2 +w 2)f3, [48,42,4] 7
+(w9u2v3 +w 9uv3 +w 8u2 +w 8u3 +w 3vu2
++w7vu3 +w 7v2u2 +w 3v2u3)f1f2⟩
+⟨(u3v2w+u 3vw3)f2,(u 3v2w2 +u 3vw7)f3, [48,46,2] 3
+(u3v2w13 +u 3vw5 +w 7)f2f1⟩
+Example 6.4.Forn= 7, the factorization ofx7−1is given byx7−1 = (x+1)(x 3+
+x+ 1)(x 3 +x 2 + 1)∈F 16[x]. Letf 1 =x+ 1, f 2 =x 3 +x+ 1, f 3 =x 3 +x 2 + 1.
+Forn= 7, k= 1, andn= 3, k= 1, we compare the newly obtained codes over
+R=M 4(F2[u]/⟨uk⟩)and existing codes for the structureM4(F2) [14]. Forn= 3,
+the factorization ofx3 −1is used as given in Example 3.
+Generators of cyclic code(n= 7, k= 1) Obtained codes Existing codes[14]
+⟨(wv3 +w 2v2 +w 3v+w 7)f1, [28,27,2] [28,25,2]
+(w11v3 +w 13v2 +w 15v)f3⟩
+⟨(wv3 +w 2v2 +w 3v)f2, [28,22,4] [28,14,3]
+(w3v3 +w 9v)f1f3⟩
+⟨(wv3 +w 2v2 +w 3v)f2,(w 3v3 [28,23,3] [28,16,3]
++w9v)f1f3,(w 5v3 +wv 2 +w 11v)f2f3⟩
+Generators of cyclic code(n= 3, k= 1)
+⟨(wv3 +w 2v2 +w 5)f2,(w 3v3 +w)f 1f3⟩ [12,7,4] [12,6,3]
+⟨(wv3 +w)f 2,(w 3v+w 3v2)f1f3⟩ [12,8,3] [12,8,2]
+7.Conclusion
+In 2022, Patel et al. [15] discussed the structure of cyclic codes overM4(F2+uF2).
+[15] for odd length. Initially, we have extended their work to the matrix ring
+R=M 4(F2 +uF 2 +· · ·+uk−1F2). Then, we have derived the structure of cyclic
+codes, which includes the formation of ideals of the ringR, cyclic codes as direct
+sums of submodules, and the cardinality of cyclic codes over the ringR, respectively.
+Here, we have studied the Euclidean and Hermitian duals of the derived cyclic codes.
+Further, in the module isometry for the given ring, we have defined the Bachoc map
+and the Gray map, which takes our cyclic code overRtoF 16. In addition, we have
+provided some non-trivial examples of linear codes overF 16 with good parameters
+that support our derived results, as well as a comparison of some existing codes for
+the structureM 4(F2) in [14] and obtained codes overF 16 for the extended structure
+
+29
+M4(F2[u]/⟨uk⟩). Here, the study of self-dual, self-orthogonal, and dual-containing
+codes overRwill be an interesting problem to be discussed. One can also attempt
+to derive a deterministic criterion which will prove that our extended family of
+codes is also a good choice for transmission through the MIMO channel, as given
+in the case ofM 4(F2) in [13].
+Acknowledgements
+The first and third authors are thankful to the Indian Institute of Technol-
+ogy Patna and the Department of Science and Technology (DST), Govt. of In-
+dia (under SERB File Number: MTR/2022/001052, vide Diary No / Finance No
+SERB/F/8787/2022-2023 dated 29 December 2022), respectively, for providing fi-
+nancial support.
+Data A vailability
+The authors declare that [the/all other] data supporting the findings of this
+study are available within the article. Any clarification may be requested from
+corresponding author provided it is essential.
+Competing interests: The authors declare that there is no conflict of interest
+regarding the publication of this manuscript.
+References
+[1] T. Abualrub, and I. Siap, Cyclic codes over the ringZ 2 +uZ 2 andZ 2 +uZ 2 +u 2Z2,Des.
+Codes Cryptogr.42(3) (2007), 273–287.
+[2] A. Alahmadi, H. Sboui, P. Sol´ e, and O. Yemen, Cyclic codes overM 2(F2),J. Franklin Inst.
+350(9) (2013) 2837–2847.
+[3] C. Bachoc, Applications of coding theory to the construction of modular lattices,J. Combin.
+Theory Ser. A78(1) (1997), 92–119.
+[4] S. Bhowmick, J. Pal, R. Bandi, and S. Bagchi, Self-dual cyclic codes overM 2(Z4),Discuss.
+Math. Gen. Algebra Appl.42(2) (2022), 349–362.
+[5] A. Bonnecaze, and P. Udaya, Cyclic codes and self-dual codes overF 2 +uF 2,IEEE Trans.
+Inf. Theory45(4) (1999), 1250–1255.
+[6] W. Bosma, and J. Cannon, Handbook of Magma Functions, University of Sydney, Sydney
+(1995).
+[7] D. F. Falcunit, and V. P. Sison, Cyclic codes over matrix ringM 2(Fp) and their isometric
+images overF p2 +uF p2 ,in: Proc. Int. Zurich Seminar on Communications(IZS) (2014),
+26–28.
+[8] M. Greferath, and S. E. Schmidt, Linear codes and rings of matrices,in: Proc. AAECC-13,
+Springer, Berlin Heidelberg(1999), 160–169.
+[9] H. Q. Dinh, A. Gaur, P. Kumar, M. K. Singh, and A. K. Singh, Cyclic codes over rings of
+matrices,Adv. Math. Commun.18(4) (2024), 1100–1122.
+[10] A. R. Hammons, P. V. Kumar, A. R. Calderbank, N. J. A. Sloane, and P. Sol´ e, TheZ 4-
+linearity of Kerdock, Preparata, Goethals, and related codes,IEEE Trans. Inf. Theory40
+(2) (1994), 301–319.
+[11] H. Islam, O. Prakash, and D. K. Bhunia, On the structure of cyclic codes overM 2(Fp +uF p),
+Indian J. Pure Appl. Math.53(1) (2022), 153–161.
+[12] R. Luo, and P. Udaya, Cyclic codes overM 2(F2 +uF 2),Cryptogr. Commun.10(6) (2018),
+1109–1117.
+[13] F. Oggier, P. Sol´ e, and J. C. Belfiore, Codes over matrix rings for space-time coded modula-
+tions,IEEE Trans. Inf. Theory58(2) (2012), 734–746.
+[14] J. Pal, S. Bhowmick, and S. Bagchi, Cyclic codes overM 4(F2),J. Appl. Math. Comput.60
+(1–2) (2019), 749–756.
+[15] S. Patel, O. Prakash, and H. Islam, Cyclic codes overM 4(F2 +uF 2),Cryptogr. Commun.14
+(5) (2022), 1021–1034.
+
+30
+[16] E. Prange, Cyclic error-correcting codes in two symbols, Air Force Cambridge Research Cen-
+ter (1957).
+[17] R. Wisbauer, Foundations of module and ring theory, Gordon and Breach Science Publishers
+(1991).
+[18] J. A. Wood, Duality for modules over finite rings and applications to coding theory,Amer.
+J. Math.121(3) (1999), 555–575.
+Department of Mathematics, Indian Institute of Technology Patna, Patna-801106
+Email address:E-mail: soham 2421ma14@iitp.ac.in
+Department of Mathematics, Indian Institute of Information Technology Bhopal,
+462003, India
+Email address:shikha 1821ma05@iitp.ac.in
+Department of Mathematics, Indian Institute of Technology Patna, Patna-801106
+Email address:om@iitp.ac.in
