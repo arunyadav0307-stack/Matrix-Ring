@@ -1,0 +1,40 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "raw_environment_timestamp_utc": "2026-11-14T02:04:10.985440+00:00",
+  "branch": "arena/7d88376d-matrix-ring",
+  "precommit_head": "d278f163c6cdcc4010fb1c19d30fddee801b63ee",
+  "AST_parsed_scripts": [
+    "autonomous_research/AR01/computations/audit_core_a_independent.py",
+    "autonomous_research/AR01/computations/audit_core_a_structure_global.py",
+    "autonomous_research/AR01/computations/audit_split_global.py",
+    "autonomous_research/AR01/computations/core_a.py",
+    "autonomous_research/AR01/computations/verify_core_a.py",
+    "autonomous_research/AR01/computations/verify_core_a_structure.py",
+    "autonomous_research/AR01/computations/verify_split_coupling.py",
+    "autonomous_research/AR01/tools/check_preservation.py",
+    "autonomous_research/AR01/tools/checkpoint.py"
+  ],
+  "all_existing_result_source_and_input_hashes_match": true,
+  "all_old_tracked_result_and_backup_bytes_match_M3": true,
+  "prior_backup_sha256_verified": {
+    "AR01_M1_INTAKE.zip": "bc57c44ac2c6fbe38a8be76fd27665262a16fdec0238fd653c8bf21e66d8d72a",
+    "AR01_M2_CORE_A_CHECKS.zip": "18f355b5b4b0df79dc3eba911cd05536311886e4157750e7b5c863d87922ffef",
+    "AR01_M3_EMBEDDED_STRUCTURE.zip": "7d8d84020ad986e328d759e3a9c030f903d9cda4008fec67b10462eaa9633941"
+  },
+  "protected_intake": {
+    "protected_files": 2059,
+    "protected_bytes": 110323589,
+    "changed_originals": [],
+    "missing_originals": [],
+    "scope": "Intake-byte preservation only; not historical seal/source/mathematical certification"
+  },
+  "fresh_reference_cases": 41,
+  "fresh_original_global_cases": 41,
+  "new_summary_sha256": {
+    "split_resumed_v1": "289e0289db10a77e46741ca6c07d9d13dd58a70c008b6ad3a2f1be6b1787a11a",
+    "split_global_resumed_v1": "8b1475c5c75e39f6f8fa3ad3d9bb046bc5cab109a8305b48630fec63a34a4685"
+  },
+  "new_text_bounded_credential_pattern_scan": "no matches; not exhaustive private-data certification",
+  "external_originality_certified": false,
+  "independent_human_review_completed": false
+}

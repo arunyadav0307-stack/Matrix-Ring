@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "original_global_matrix_pairing_cases": 41,
+  "primary_case_stream_sha256": "c9295448655cdeaac3cf6281e01c652cb458f86bdb7fa8fb40f066521f268809",
+  "source_hashes": {
+    "audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+    "audit_split_global.py": "703e1e07ad866dcddf09f108d5a8c473d953ca4ee10b46bc7b943f7acd1ec2aa"
+  },
+  "no_primary_or_structural_arithmetic_imports": true,
+  "original_cyclic_matrix_product_used_to_generate_codes": true,
+  "all_eight_pairing_field_coordinates_enforced": true,
+  "complete_input_dual_hull_spaces_compared_not_only_dimensions": true,
+  "CRT_linear_map_full_rank_checked_each_field_length": [
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      14
+    ],
+    [
+      16,
+      2
+    ],
+    [
+      16,
+      6
+    ],
+    [
+      16,
+      10
+    ],
+    [
+      16,
+      30
+    ]
+  ],
+  "same_input_q4_n6_code_dimension": 20,
+  "same_input_q4_n6_hull_dimensions_s0_s1": [
+    12,
+    4
+  ],
+  "same_input_q4_n6_hull_matrix_generator_numbers_s0_s1": [
+    2,
+    1
+  ],
+  "same_input_explicit_hull_matrix_generators_checked": true,
+  "negative_controls": [
+    {
+      "wrong_rule": "no_reversal",
+      "actual_global_hull_maximum_mu": 4,
+      "wrong_predicted_maximum_mu": 2,
+      "complete_spaces_differ": true
+    },
+    {
+      "wrong_rule": "forward_instead_of_inverse_Frobenius",
+      "actual_global_hull_maximum_mu": 4,
+      "wrong_predicted_maximum_mu": 2,
+      "complete_spaces_differ": true
+    }
+  ],
+  "all_codes_at_lengths_n_greater_than_2_exhausted": false,
+  "global_case_stream_sha256": "da18d2e28d30d77a912b38d3ea37de24d35123abdc48302de5d8feb6bc2fec77",
+  "same_input_certificates_sha256": "947a9821edae66e145e3edf3cc5c5f0a3590a4385d422bac250ec3f79e8ca44a",
+  "human_independent_review_completed": false,
+  "external_originality_certified": false,
+  "quantum_or_distance_certificate": false
+}

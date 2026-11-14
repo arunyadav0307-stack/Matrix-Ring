@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "named_field_length_twist_cases": 41,
+  "coverage": {
+    "q4_N": [
+      1,
+      3
+    ],
+    "q8_N": [
+      1,
+      7
+    ],
+    "q16_N": [
+      1,
+      3,
+      5,
+      15
+    ],
+    "all_twists_for_each_listed_family": true
+  },
+  "all_code_census_at_larger_lengths": false,
+  "actual_inverse_frobenius_reversal_factor_rule": "PASS",
+  "negative_controls": {
+    "omitting_reversal_detected_q4_N3_s0": true,
+    "inverse_not_forward_frobenius_permutation_detected_q8_N7_s1": true
+  },
+  "same_q4_n6_input_maximum_component_hull_mu_s0_s1": [
+    4,
+    2
+  ],
+  "same_q4_n6_input_hull_matrix_generator_numbers_s0_s1": [
+    2,
+    1
+  ],
+  "same_q4_n6_input_code_dimension": 20,
+  "same_q4_n6_input_hull_dimensions_s0_s1": [
+    12,
+    4
+  ],
+  "case_stream_sha256": "c9295448655cdeaac3cf6281e01c652cb458f86bdb7fa8fb40f066521f268809",
+  "source_hashes": {
+    "core_a.py": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148",
+    "verify_split_coupling.py": "ac5317018c0f5232884fd22308dce23952b8904ceec8e6b409787c0d03f9778f"
+  },
+  "global_original_pairing_audit_required_separately": true,
+  "external_originality_certified": false,
+  "human_independent_review_completed": false,
+  "quantum_or_distance_certificate": false
+}

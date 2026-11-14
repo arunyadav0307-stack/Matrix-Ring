@@ -27,3 +27,12 @@ PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit
 ```
 
 The structural verifier reads the preserved `results/audit_v1/binary_all_modules.json` as comparison data. Recorded successors are `structure_v1` and `structure_global_v1`. All q4/q8 embedded inputs/all twists are checked by the structural vs generic route; all q4 cases are additionally checked with the alternative global route. q2 remains auxiliary; q16 has only named line-family checks. q8 full case data are deterministically hashed, not stored in bulk. See `../audits/CORE_A_STRUCTURE_AUDIT.md`. Do not use `-O`.
+
+## Fully split double-root successor — M4
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/verify_split_coupling.py NEW_SPLIT_LABEL
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit_split_global.py NEW_SPLIT_LABEL NEW_SPLIT_GLOBAL_LABEL
+```
+
+Current saved runs are `split_resumed_v1` and `split_global_resumed_v1`. They are fresh executions after an explicitly recorded continuation recovery, not recovered old `split_v1` files. The two reconstructed script sources byte-match the hashes in the earlier transcript. The reference uses `core_a.py`; the alternative global driver imports only the separate audit arithmetic and enforces the original variable-length cyclic matrix products/form. Complete input/dual/hull spaces are compared for41 named cases, at eight field/length pairs through n30; no all-code census at n>2 is claimed. Same-input q4n6 certificates include original-coordinate hull bases and explicit minimal matrix generators, verified by their complete right spans. See `../audits/SPLIT_COUPLING_AUDIT.md`. Always use fresh labels and enabled assertions.

@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M4_SPLIT_COUPLING.zip",
+  "bytes": 811689,
+  "sha256": "85fab431331a867ad5ed7e1fe1bf34ed758623045cec0935a88e69241acf6333",
+  "payload_files": 84,
+  "zip_entries": 85,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

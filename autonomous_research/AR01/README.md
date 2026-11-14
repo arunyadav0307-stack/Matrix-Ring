@@ -29,3 +29,9 @@ Core A foundations and principal-input preservation are written and internally p
 ## Latest bounded development — AR01-M3
 
 The [embedded structure note](phase3/CORE_A_EMBEDDED_STRUCTURE.md) now gives a complete same-coordinate descriptor and hull-generator prescription, and classifies all nonprincipal Core A hulls as specified nonprincipal self-dual inputs. Every proper hull is principal in this exact ring. The [structural audit](audits/CORE_A_STRUCTURE_AUDIT.md) records complete q4/q8 checks and a separate original-global-pairing check of all q4 cases. External originality and paper readiness remain unestablished; reciprocal-factor coupling is a separate explicitly motivated applicability check, not covered by the n=2 theorem.
+
+## Latest bounded development — AR01-M4
+
+The [split double-root note](phase3/SPLIT_DOUBLE_ROOT_COUPLING.md) derives the actual inverse-Frobenius/reversal coupling and proves the exact fully split principality-preservation criterion. The [audit](audits/SPLIT_COUPLING_AUDIT.md) records 41 fresh global-pairing checks and an identical q4n6 code with hull generator counts2/1 across twists. The sharp μ4 mechanism is explicitly scalar-reducible, so it is not promoted alone to a new paper. The next bounded target is a closed Core A generator-number distribution.
+
+The continuation checkout differed from the preceding transcript; [recovery/chronology provenance](evidence/M4_CHRONOLOGY_AND_CONTINUATION.md) distinguishes verified M3 recovery from reconstructed scripts and fresh runs. No original bytes or historical outputs were overwritten; no external originality/human review/submission readiness is asserted.

@@ -1,0 +1,11 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "observed_environment_raw_utc": "2026-11-14T02:00:36.165312+00:00",
+  "recovery_operation": "git merge --ff-only FETCH_HEAD after reviewed index adoption of byte-identical remote files",
+  "restored_commit": "d278f163c6cdcc4010fb1c19d30fddee801b63ee",
+  "all_2059_resumption_original_files_unchanged": true,
+  "initial_resumption_manifest_sha256": "1e1ab2c03d78c99231c204d74d63bd7c91f8392e4d99b4ca8a13a9b472854d71",
+  "prior_local_only_M4_scripts_results_note_and_M3_receipt_not_recovered_from_remote": true,
+  "cause_of_checkout_state_change": "unknown",
+  "next_action": "Recreate explicitly from the preceding conversation and rerun under fresh evidence labels; do not call those files remotely recovered."
+}

@@ -33,3 +33,11 @@ Session calendar **2026-11-12 UTC**. Previous M2 commit/push verified: `37d53afb
 - Added `verify_core_a_structure.py` and `audit_core_a_structure_global.py`, saved `structure_v1` and `structure_global_v1` outputs with script/input/stream hashes. Complete q4/q8 structural comparisons and complete q4 original-global-pairing checks PASS; q16 is not exhaustive.
 - Added structural proof/computation audit, appended actual source-read/applicability limits, updated reproducibility and progress records. No original output/old manuscript/source payload overwritten.
 - Preserved 2,059 original files/110,323,589 bytes and prior checkpoint hashes. Research backup is not a publication release. No novelty, external review, quantum/parameter, quartile or submission success invented.
+
+## AR01-M4 — split coupling, fresh global certificates and transparent recovery
+
+- Reverified completed M3 synchronization (`d278f163c6cdcc4010fb1c19d30fddee801b63ee`, all2,135 blobs and26 changed paths). Restored the unexpectedly base-only checkout by reviewed, byte-preserving same-branch fast-forward; recorded the first Git abort and successful retry exactly.
+- Reconstructed the missing local-only split proof and both scripts; source SHA-256 values match the preceding transcript. Saved **new execution** outputs under `split_resumed_v1` / `split_global_resumed_v1`, rather than pretending to recover earlier result bytes.
+- Added the fully split principality-preservation iff theorem, explicit μ3/μ4 witnesses, actual Frobenius/reversal direction, original-global q4n6 object certificates and complete 41-case separate-implementation checks.
+- Added internal proof/coverage audit, explicit scalar reduction, contribution-depth restraint and next same-ring distribution question. No older theorem issue, human review, novelty or publication gate is silently closed.
+- Added chronology/provenance addendum retaining session-calendar/raw-clock distinctions and all old records. Original 2,059 files and old computation/backup bytes remain protected. M4 payload synchronization pending at this pre-commit entry; research backup is not a submission release.

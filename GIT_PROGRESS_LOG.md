@@ -24,3 +24,11 @@ Session calendar **2026-11-12 UTC**. **M2 push completed** at `37d53afb01350b6f5
 M3 adds a complete embedded descriptor/hull prescription, exact nonprincipal self-dual boundary, proved input/LCD counts and twist support; complete q4/q8 structural checks, all-q4 alternative global audit and their saved evidence. Existing source/results remain immutable. The supplied matrix-ring predecessor was reread and its applicability limits saved. Original 2,059-file preservation rechecked.
 
 M3 payload commit/push is pending at this pre-commit entry. `AR01_M3_EMBEDDED_STRUCTURE.zip` is the verified bounded research backup; actual receipt follows after successful remote verification. Not a manuscript/submission release.
+
+## AR01-M4 — verified split-factor boundary and continuation recovery
+
+**M3 synchronization completed:** `d278f163c6cdcc4010fb1c19d30fddee801b63ee`, freshly reverified against all **2,135 tracked GitHub blobs/modes** and all 26 changed paths. `M3_REMOTE_REVERIFICATION_AT_M4.json` is a fresh receipt, not recovery of the previous local-only receipt. Earlier M3 pending entries are historical pre-commit states.
+
+On continuation the checkout unexpectedly contained only the base commit plus the 2,059 original files. Cause unknown. Captured hashes, fetched this same branch, recorded an untracked-file fast-forward abort, reviewed/adopted only 1,965 byte-identical remote files in the index, then fast-forwarded successfully. All originals remain unchanged. Full provenance/chronology is in `autonomous_research/AR01/evidence/M4_CHRONOLOGY_AND_CONTINUATION.md`; no clock explanation or date normalization is invented.
+
+Reconstructed the missing local-only A12 proof/scripts from the preceding transcript; both script hashes match. **Fresh** `split_resumed_v1` and `split_global_resumed_v1` runs PASS for 41 named cases, with complete spaces and actual global matrix pairing. Added proof audit, scalar-reduction/non-novelty boundary and reproducibility records. M4 payload commit/push remains pending at this pre-commit entry; actual success requires the post-push remote/file verification receipt. Backup `AR01_M4_SPLIT_COUPLING.zip` is a research checkpoint, not a submission release.

@@ -48,3 +48,18 @@ Session calendar **2026-11-12 UTC**. M2 synchronization verified at `37d53afb013
 | 8 | RESEARCH CHECKPOINT ONLY | Not a submission archive, compiled manuscript or externally authorized submission |
 
 No whole scientific phase is marked complete from these bounded achievements. Originals, old issue/decision fields and historical seals are unchanged.
+
+## AR01-M4 — bounded extension status (append-only)
+
+M3 remote checkpoint is verified at `d278f163c6cdcc4010fb1c19d30fddee801b63ee`; continuation recovery preserved every original byte. M4 commit/push is pending in this pre-commit entry.
+
+| Phase | Latest disposition | Remaining gate |
+|---|---|---|
+| 1 | A12 reduced to scalar/CRT mechanisms; not selected as sole original paper contribution | Full closest-source technical comparison and a genuinely differentiated, sufficiently deep final research question |
+| 2–3 | Exact fully split CRT/adjunction and principality iff criterion proved and internally audited | Exact hypotheses only; non-split factors and larger nilpotency/rank not inferred |
+| 4 | 41 fresh named split cases PASS through reference and separate original-global implementation; explicit same-code object certificates | Not all-code exhaustion at n>2; no q16 Core A census added here |
+| 5 | No application forced | Physical/metric bridge and distances absent |
+| 6 | Same-agent proof/algorithmic checks recorded for A12 | No independent human review or final reference audit |
+| 7–8 | Not scientifically ready for publication manuscript/submission package | Originality/depth, full technical sources, human review, final journal/version/permission/build requirements remain |
+
+Next bounded question: closed all-q/all-twist distribution of Core A hull generator numbers. It is not pre-certified true, novel or paper-sized by this register. Earlier historical statuses and issue counts are preserved.
