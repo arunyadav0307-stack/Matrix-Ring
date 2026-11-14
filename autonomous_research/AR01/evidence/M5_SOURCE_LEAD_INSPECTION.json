@@ -1,0 +1,85 @@
+{
+  "host_used": "api.github.com",
+  "records": [
+    {
+      "name": "FinInG",
+      "repository": "gap-packages/FinInG",
+      "git_blob": "f3316459a685c4f07a84ca9136ebeb86b7bca863",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:12.069163+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/FinInG.tex",
+      "bytes": 13907,
+      "sha256": "695465f9d57a3f66be8278f04d3c24fa6012727ff522b813673011a40f0fe629",
+      "lines": 231,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    },
+    {
+      "name": "Coding_1810_09951",
+      "repository": "jd-coderepos/sota",
+      "git_blob": "50195b9fc394512f35f489ee2da5334394b1eff5",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:12.394641+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/Coding_1810_09951.tex",
+      "bytes": 47118,
+      "sha256": "72e58983e375422bac6fa0e34c038e5a4ecc7282fb77fa4df9b545e54fc67646",
+      "lines": 1246,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    },
+    {
+      "name": "Quantum_lead_197013",
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "git_blob": "1586a36b75fceb6aaf12cd6a57fbb044da05b5ee",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:12.791895+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/Quantum_lead_197013.tex",
+      "bytes": 87178,
+      "sha256": "11ee9c8af97a63846a913f9ddeb63ad4566cbb9c1de643035163a5c29de8bdfe",
+      "lines": 2081,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    },
+    {
+      "name": "Geometry_lead_208684",
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "git_blob": "bbd428cc759c3fbdcae2f9986492f711420f28b5",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:13.180861+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/Geometry_lead_208684.tex",
+      "bytes": 57346,
+      "sha256": "d5819b1b54498b69b7e0212c033664ad9159a9c2e11069576358d5f5b189a38c",
+      "lines": 971,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    },
+    {
+      "name": "Geometry_lead_154191",
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "git_blob": "51b15f63de261990fd27cb99e49066769a0ea040",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:13.585344+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/Geometry_lead_154191.tex",
+      "bytes": 140632,
+      "sha256": "6ac2984c24687b5dd7e68c3a1f1ae0f911862e456cdf4c9d5ac743c17ac230e3",
+      "lines": 2229,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    },
+    {
+      "name": "Geometry_lead_189353",
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "git_blob": "691331ac1999870304c279c41342bb8a1b14a252",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:18:13.942104+00:00",
+      "cache_path": "/home/user/AR01_M5_SOURCE_CACHE/Geometry_lead_189353.tex",
+      "bytes": 50497,
+      "sha256": "fb5d8f23764e7637d37bfecb294c2c73f90e57a5cb7384e650b44b8fea954624",
+      "lines": 458,
+      "inspection_level": "Header/title and keyword locator only; not complete technical reading",
+      "primary_status": "Unestablished from repository search alone; mirror equality/licence not inferred"
+    }
+  ],
+  "full_text_acquisition_is_not_version_equality_or_primary_authorship_verification": true,
+  "no_external_novelty_clearance": true
+}

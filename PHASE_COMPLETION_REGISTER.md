@@ -63,3 +63,18 @@ M3 remote checkpoint is verified at `d278f163c6cdcc4010fb1c19d30fddee801b63ee`; 
 | 7–8 | Not scientifically ready for publication manuscript/submission package | Originality/depth, full technical sources, human review, final journal/version/permission/build requirements remain |
 
 Next bounded question: closed all-q/all-twist distribution of Core A hull generator numbers. It is not pre-certified true, novel or paper-sized by this register. Earlier historical statuses and issue counts are preserved.
+
+## AR01-M5 — closed-formula proof finalisation and audit
+
+M4 synchronization is completed and reverified at `a74f33f6c6fed1fd8315309815d9e98749c58026` (all2,156 blobs/modes,29 paths). All six requested finalisation records now exist. The following are bounded dispositions, not blanket scientific-phase completion or closure of old RF/claim/conflict/AD registers.
+
+| Phase | Latest bounded disposition | Remaining gate |
+|---|---|---|
+|1|A13 exact claim/source-overlap crosswalk supplied; A12-alone selection rejected|Full closest-source/version/primary-geometry comparison; novelty/depth OPEN|
+|2–3|All-parameter Core A closed marginal distribution proved conventionally in P01–P30; no identified unresolved assumption within exact scope|No arbitrary length/rank/form or joint-profile extrapolation; external theorem review absent|
+|4|Preserved full q16 census and separate geometry audit PASS; fresh original-global/trace/graph checks PASS|q16 global remains176-case subset; q32/q64 geometry only; integer regressions not field censuses|
+|5|No application fabricated|No proved Gray/physical/distance bridge|
+|6|Six requested records, line-by-line same-agent audit and alternative mathematical/algorithmic routes COMPLETE|Not independent human review or formal proof certification; final reference audit open|
+|7–8|Research checkpoint/preservation only; not promoted to publication manuscript/submission release|Originality/depth, source completeness, human review, journal/version/declaration/permission requirements open|
+
+M5 commit/push is pending at this pre-commit entry. A reopened/hash-verified research ZIP and subsequent remote receipt record their actual scopes. Literature comparison follows autonomously after synchronization.

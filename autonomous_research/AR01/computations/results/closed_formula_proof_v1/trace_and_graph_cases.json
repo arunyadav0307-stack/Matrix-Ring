@@ -1,0 +1,371 @@
+[
+  {
+    "q": 4,
+    "s": 0,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 4,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "16": 5
+    },
+    "isotropic_vectors": 256,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 64,
+      "1": 20,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 125,
+    "extended_rank_one_incidences": 125,
+    "rank_two_incidences_F": 300,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 4,
+    "s": 1,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "8": 5
+    },
+    "isotropic_vectors": 136,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 16,
+      "1": 10,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 63,
+    "extended_rank_one_incidences": 63,
+    "rank_two_incidences_F": 72,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 8,
+    "s": 0,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 8,
+    "sigma_squared_fixed_field_size": 8,
+    "kernel_size_direction_counts": {
+      "64": 9
+    },
+    "isotropic_vectors": 4096,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 512,
+      "1": 72,
+      "0": 1
+    },
+    "contained_planes": 10,
+    "base_rank_one_incidences": 729,
+    "extended_rank_one_incidences": 729,
+    "rank_two_incidences_F": 4536,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 8,
+    "s": 1,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "16": 3,
+      "8": 6
+    },
+    "isotropic_vectors": 736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 51,
+    "rank_two_incidences_F": 84,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 8,
+    "s": 2,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "16": 3,
+      "8": 6
+    },
+    "isotropic_vectors": 736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 51,
+    "rank_two_incidences_F": 84,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 16,
+    "s": 0,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 16,
+    "sigma_squared_fixed_field_size": 16,
+    "kernel_size_direction_counts": {
+      "256": 17
+    },
+    "isotropic_vectors": 65536,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 4096,
+      "1": 272,
+      "0": 1
+    },
+    "contained_planes": 18,
+    "base_rank_one_incidences": 4913,
+    "extended_rank_one_incidences": 4913,
+    "rank_two_incidences_F": 69360,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 16,
+    "s": 1,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "32": 5,
+      "16": 12
+    },
+    "isotropic_vectors": 5536,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 16,
+      "1": 10,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 63,
+    "extended_rank_one_incidences": 135,
+    "rank_two_incidences_F": 324,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 16,
+    "s": 2,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 4,
+    "sigma_squared_fixed_field_size": 16,
+    "kernel_size_direction_counts": {
+      "64": 17
+    },
+    "isotropic_vectors": 16576,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 256,
+      "1": 68,
+      "0": 1
+    },
+    "contained_planes": 10,
+    "base_rank_one_incidences": 725,
+    "extended_rank_one_incidences": 725,
+    "rank_two_incidences_F": 4800,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 16,
+    "s": 3,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "32": 5,
+      "16": 12
+    },
+    "isotropic_vectors": 5536,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 16,
+      "1": 10,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 63,
+    "extended_rank_one_incidences": 135,
+    "rank_two_incidences_F": 324,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 32,
+    "s": 1,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "64": 3,
+      "32": 30
+    },
+    "isotropic_vectors": 36736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 147,
+    "rank_two_incidences_F": 348,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 32,
+    "s": 2,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "64": 3,
+      "32": 30
+    },
+    "isotropic_vectors": 36736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 147,
+    "rank_two_incidences_F": 348,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 32,
+    "s": 3,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "64": 3,
+      "32": 30
+    },
+    "isotropic_vectors": 36736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 147,
+    "rank_two_incidences_F": 348,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 32,
+    "s": 4,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 2,
+    "kernel_size_direction_counts": {
+      "64": 3,
+      "32": 30
+    },
+    "isotropic_vectors": 36736,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 8,
+      "1": 6,
+      "0": 1
+    },
+    "contained_planes": 4,
+    "base_rank_one_incidences": 27,
+    "extended_rank_one_incidences": 147,
+    "rank_two_incidences_F": 348,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 64,
+    "s": 1,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "128": 5,
+      "64": 60
+    },
+    "isotropic_vectors": 286336,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 16,
+      "1": 10,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 63,
+    "extended_rank_one_incidences": 423,
+    "rank_two_incidences_F": 1332,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 64,
+    "s": 2,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 4,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "256": 5,
+      "64": 60
+    },
+    "isotropic_vectors": 326656,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 64,
+      "1": 20,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 125,
+    "extended_rank_one_incidences": 485,
+    "rank_two_incidences_F": 5040,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 64,
+    "s": 4,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 4,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "256": 5,
+      "64": 60
+    },
+    "isotropic_vectors": 326656,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 64,
+      "1": 20,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 125,
+    "extended_rank_one_incidences": 485,
+    "rank_two_incidences_F": 5040,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  },
+  {
+    "q": 64,
+    "s": 5,
+    "scope": "Trace kernels and descended plane graph charts ONLY, not a B^2 module census",
+    "fixed_field_size": 2,
+    "sigma_squared_fixed_field_size": 4,
+    "kernel_size_direction_counts": {
+      "128": 5,
+      "64": 60
+    },
+    "isotropic_vectors": 286336,
+    "selfdual_plane_projection_rank_counts": {
+      "2": 16,
+      "1": 10,
+      "0": 1
+    },
+    "contained_planes": 6,
+    "base_rank_one_incidences": 63,
+    "extended_rank_one_incidences": 423,
+    "rank_two_incidences_F": 1332,
+    "all_new_route_and_old_raw_geometry_counts_match": true
+  }
+]

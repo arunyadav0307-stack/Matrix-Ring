@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M5_CLOSED_FORMULA_PROOF.zip",
+  "bytes": 923509,
+  "sha256": "d2e456902e9e0b56c38e351648c7cd883d023826005d57bd9bbd90989e2a8186",
+  "payload_files": 121,
+  "zip_entries": 122,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

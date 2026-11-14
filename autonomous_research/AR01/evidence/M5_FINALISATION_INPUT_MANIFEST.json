@@ -1,0 +1,104 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "raw_observed_timestamp_utc": "2026-11-14T02:32:55.086634+00:00",
+  "preserved_checkpoint": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+  "current_branch": "arena/7d88376d-matrix-ring",
+  "existing_uncommitted_input_files": [
+    {
+      "path": "autonomous_research/AR01/audits/CORE_A_DISTRIBUTION_AUDIT.md",
+      "bytes": 10920,
+      "sha256": "1edec663f343023ca461e09cbd9e5f5d2d79487deced810ec50780861564bcb5"
+    },
+    {
+      "path": "autonomous_research/AR01/audits/PUBLICATION_READINESS_M5.md",
+      "bytes": 4206,
+      "sha256": "8ea5c4a12ec02d494f671b494bfa452dac1495b05592767f143266eb2f95890c"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/audit_core_a_distribution.py",
+      "bytes": 12389,
+      "sha256": "9559c9ed0c261a6d6dee881cdfd0b51f501d4a2b22ecff15e591b3cb280a88e8"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/core_a_distribution.py",
+      "bytes": 2568,
+      "sha256": "5a8276e58f3cc33fd209739ff34328e01bb66ff59a7d7cddbc12e126a190cbd7"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_audit_v1/geometry_cases.json",
+      "bytes": 21792,
+      "sha256": "2570268bf64f82f7bde2cf014caa9848195da6eaddd1de6a9c7b2a93886886d6"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_audit_v1/q16_global_cases.jsonl",
+      "bytes": 64032,
+      "sha256": "0b235bf6542ed719ec43677ea251545e20350c49c79ee53cb9e09cbb729768fc"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_audit_v1/stdout.txt",
+      "bytes": 1579,
+      "sha256": "6ae404f8471d0533e3fd8c389fcdbc7ddc0706b89500022089da1468b6c33210"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_audit_v1/summary.json",
+      "bytes": 1579,
+      "sha256": "6ae404f8471d0533e3fd8c389fcdbc7ddc0706b89500022089da1468b6c33210"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_v1/formula_predictions.json",
+      "bytes": 7548,
+      "sha256": "110f4feacd68b39985eb5fbfe2852a399750929f38198b6db12180dd7ebace69"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_v1/q16_global_audit_cases.jsonl",
+      "bytes": 73162,
+      "sha256": "e01eab3d2a0d44bfbcb44913da245014f6e46c98f428b968d687da87b546823f"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_v1/stdout.txt",
+      "bytes": 2500,
+      "sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/distribution_v1/summary.json",
+      "bytes": 2500,
+      "sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/verify_core_a_distribution.py",
+      "bytes": 6630,
+      "sha256": "49025cce5c1558f77c44873202f67d3ef32478ac7a3f565090aca6dd579e160a"
+    },
+    {
+      "path": "autonomous_research/AR01/evidence/M4_REMOTE_RECEIPT.json",
+      "bytes": 4030,
+      "sha256": "8a845b5dc22e1085f3b44b4ef91a067a401d5b0562cb1153f34fa095622d9f80"
+    },
+    {
+      "path": "autonomous_research/AR01/evidence/M5_ALLOWED_HOST_SOURCE_SEARCH.json",
+      "bytes": 12803,
+      "sha256": "7867bfe6d527db32dd136056c64ce486f753099a1243966e2dadfaa9d9c16e82"
+    },
+    {
+      "path": "autonomous_research/AR01/evidence/M5_SOURCE_LEAD_INSPECTION.json",
+      "bytes": 4236,
+      "sha256": "aa920a245376d47ec38b9f584fb6b6ab5b5ca00024b4fc231b696f52821ad225"
+    },
+    {
+      "path": "autonomous_research/AR01/evidence/M5_SOURCE_READING_ADDENDUM.md",
+      "bytes": 4800,
+      "sha256": "c9c359cac35e3641a0b5896ed94b68ed2f1ecf87590e573e57621da3c4009b67"
+    },
+    {
+      "path": "autonomous_research/AR01/phase1/A13_THEOREM_LEVEL_COMPARISON_AND_GATE.md",
+      "bytes": 9284,
+      "sha256": "096e74a09ff8ee2022259a29ee3bc5f8e4bfa34c71520bcc8dbf1d32de33a34f"
+    },
+    {
+      "path": "autonomous_research/AR01/phase3/CORE_A_HULL_DISTRIBUTION.md",
+      "bytes": 16880,
+      "sha256": "8fb0c4bafd881d9857ad0e6171875afdc83a0538df000efef90e16874ecead91"
+    }
+  ],
+  "purpose": "Freeze the already executed q16/geometry results and preceding working notes before requested proof finalisation; these are not new execution claims."
+}

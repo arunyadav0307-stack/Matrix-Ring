@@ -1,0 +1,1266 @@
+[
+  {
+    "q": 4,
+    "s": 0,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 85,
+    "observed_U_rank_two_points": 60,
+    "observed_B_incidences": 300,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 40,
+      "tangent": 15,
+      "external": 24
+    },
+    "observed_K_V_hull_mu_one": 120,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 85,
+      "2": 357,
+      "3": 85,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "cf4a91aa1f75fdeaf3284a2435cbc204b2a622a14e858c77a8a36eabdbc65838",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 4,
+    "s": 1,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 45,
+    "observed_U_rank_two_points": 24,
+    "observed_B_incidences": 72,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 12,
+      "tangent": 9
+    },
+    "observed_K_V_hull_mu_one": 96,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 85,
+      "2": 357,
+      "3": 85,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "cf4a91aa1f75fdeaf3284a2435cbc204b2a622a14e858c77a8a36eabdbc65838",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 8,
+    "s": 0,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 585,
+    "observed_U_rank_two_points": 504,
+    "observed_B_incidences": 4536,
+    "observed_plane_types": {
+      "contained": 10,
+      "secant": 288,
+      "tangent": 63,
+      "external": 224
+    },
+    "observed_K_V_hull_mu_one": 1008,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 585,
+      "2": 4745,
+      "3": 585,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "978f88867eb4733e7cdb4081fe2d9f8a1093dfd342bc8006bb4a22c377ccee2a",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 8,
+    "s": 1,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 105,
+    "observed_U_rank_two_points": 72,
+    "observed_B_incidences": 84,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "observed_K_V_hull_mu_one": 708,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 585,
+      "2": 4745,
+      "3": 585,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "978f88867eb4733e7cdb4081fe2d9f8a1093dfd342bc8006bb4a22c377ccee2a",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 8,
+    "s": 2,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 105,
+    "observed_U_rank_two_points": 72,
+    "observed_B_incidences": 84,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "observed_K_V_hull_mu_one": 708,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 585,
+      "2": 4745,
+      "3": 585,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "978f88867eb4733e7cdb4081fe2d9f8a1093dfd342bc8006bb4a22c377ccee2a",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 16,
+    "s": 0,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 4369,
+    "observed_U_rank_two_points": 4080,
+    "observed_B_incidences": 69360,
+    "observed_plane_types": {
+      "contained": 18,
+      "secant": 2176,
+      "tangent": 255,
+      "external": 1920
+    },
+    "observed_K_V_hull_mu_one": 8160,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 4369,
+      "2": 70161,
+      "3": 4369,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "df063ea078a18e512224af7ef974759606537caf758aa214168dcd5ade8bb980",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 16,
+    "s": 1,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 369,
+    "observed_U_rank_two_points": 276,
+    "observed_B_incidences": 324,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 12,
+      "tangent": 9
+    },
+    "observed_K_V_hull_mu_one": 4920,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 4369,
+      "2": 70161,
+      "3": 4369,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "df063ea078a18e512224af7ef974759606537caf758aa214168dcd5ade8bb980",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 16,
+    "s": 2,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 1105,
+    "observed_U_rank_two_points": 960,
+    "observed_B_incidences": 4800,
+    "observed_plane_types": {
+      "contained": 10,
+      "secant": 240,
+      "tangent": 75
+    },
+    "observed_K_V_hull_mu_one": 13440,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 4369,
+      "2": 70161,
+      "3": 4369,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "df063ea078a18e512224af7ef974759606537caf758aa214168dcd5ade8bb980",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 16,
+    "s": 3,
+    "full_all_T_enumeration": true,
+    "observed_isotropic_points": 369,
+    "observed_U_rank_two_points": 276,
+    "observed_B_incidences": 324,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 12,
+      "tangent": 9
+    },
+    "observed_K_V_hull_mu_one": 4920,
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "enumerated_T_by_dimension": {
+      "0": 1,
+      "1": 4369,
+      "2": 70161,
+      "3": 4369,
+      "4": 1
+    },
+    "selfdual_plane_stream_sha256_for_whole_field_all_twists": "df063ea078a18e512224af7ef974759606537caf758aa214168dcd5ade8bb980",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 32,
+    "s": 1,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 1185,
+    "observed_U_rank_two_points": 1056,
+    "observed_B_incidences": 348,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 33825,
+    "fixed_field_sigma_squared_size": 2,
+    "all_descended_two_plane_candidates": 35,
+    "selfdual_plane_stream_sha256": "fffa2c8ab56d4cef72f85984a90d23406de9eb316366de5c9b737a01b6d10a01",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 32,
+    "s": 2,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 1185,
+    "observed_U_rank_two_points": 1056,
+    "observed_B_incidences": 348,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 33825,
+    "fixed_field_sigma_squared_size": 2,
+    "all_descended_two_plane_candidates": 35,
+    "selfdual_plane_stream_sha256": "8c36d040925c409cfd4552592476564a71a1110d9a9087628334c1817cc3a9a4",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 32,
+    "s": 3,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 1185,
+    "observed_U_rank_two_points": 1056,
+    "observed_B_incidences": 348,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 33825,
+    "fixed_field_sigma_squared_size": 2,
+    "all_descended_two_plane_candidates": 35,
+    "selfdual_plane_stream_sha256": "0583d2380ba08d3d1b336bf4a0530e40482799dcfa6fc82bb070a8d73589c57e",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 32,
+    "s": 4,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 1185,
+    "observed_U_rank_two_points": 1056,
+    "observed_B_incidences": 348,
+    "observed_plane_types": {
+      "contained": 4,
+      "secant": 6,
+      "tangent": 3,
+      "external": 2
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 33825,
+    "fixed_field_sigma_squared_size": 2,
+    "all_descended_two_plane_candidates": 35,
+    "selfdual_plane_stream_sha256": "c9ecaf4461534d5fcdf12ef57d4c057bbd247b5bcf8cae1b117eb4ce7f6d2a63",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 64,
+    "s": 1,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 4545,
+    "observed_U_rank_two_points": 4164,
+    "observed_B_incidences": 1332,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 12,
+      "tangent": 9
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 266305,
+    "fixed_field_sigma_squared_size": 4,
+    "all_descended_two_plane_candidates": 357,
+    "selfdual_plane_stream_sha256": "cb79b16322e7c93f016d76dcac31ca4e857ab7e802abc20b93371fd823a4db9b",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 64,
+    "s": 2,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 5185,
+    "observed_U_rank_two_points": 4800,
+    "observed_B_incidences": 5040,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 40,
+      "tangent": 15,
+      "external": 24
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          58
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 266305,
+    "fixed_field_sigma_squared_size": 4,
+    "all_descended_two_plane_candidates": 357,
+    "selfdual_plane_stream_sha256": "01b68b7c87e7700717fb299ef2061c7e0ca0a4b29e1a4e2746e5eddbc5b2fe0f",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 64,
+    "s": 4,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 5185,
+    "observed_U_rank_two_points": 4800,
+    "observed_B_incidences": 5040,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 40,
+      "tangent": 15,
+      "external": 24
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "external": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          58
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 266305,
+    "fixed_field_sigma_squared_size": 4,
+    "all_descended_two_plane_candidates": 357,
+    "selfdual_plane_stream_sha256": "00043e00b0b44d2199632ae40f2531e44d305b9d1eb5fed1c3d6037ff922ca93",
+    "all_stated_formula_comparisons": "PASS"
+  },
+  {
+    "q": 64,
+    "s": 5,
+    "full_all_T_enumeration": false,
+    "observed_isotropic_points": 4545,
+    "observed_U_rank_two_points": 4164,
+    "observed_B_incidences": 1332,
+    "observed_plane_types": {
+      "contained": 6,
+      "secant": 12,
+      "tangent": 9
+    },
+    "one_plane_witness_each_observed_type": {
+      "contained": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "secant": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "tangent": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "all_projective_points_enumerated": 266305,
+    "fixed_field_sigma_squared_size": 4,
+    "all_descended_two_plane_candidates": 357,
+    "selfdual_plane_stream_sha256": "ca455afc04902672c86162006b049122d7851453d29d8b34126b4ce4ff094680",
+    "all_stated_formula_comparisons": "PASS"
+  }
+]

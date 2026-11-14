@@ -1,0 +1,237 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "purpose": "Bounded lawful closest-source and finite-geometry lead retrieval, not novelty clearance",
+  "host_used": "api.github.com",
+  "records": [
+    {
+      "query": "\"hulls\" \"Cao\" \"Fu\" extension:tex",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:17:38.777959+00:00",
+      "total_count": 51,
+      "incomplete_results": false,
+      "items": [
+        {
+          "repository": "Stellarium/stellarium",
+          "path": "guide/ch_skycultures.tex",
+          "sha": "3efb8c6d4600f498b1379926cee4196f14248afd",
+          "html_url": "https://github.com/Stellarium/stellarium/blob/24060f6b25790c09dd26c08b5081d5d8c17b77c8/guide/ch_skycultures.tex"
+        },
+        {
+          "repository": "Foundations-of-Applied-Mathematics/Labs",
+          "path": "DataScienceEssentials/Pandas4/Pandas4.tex",
+          "sha": "225b723be977c301656b502fbecca705382216d5",
+          "html_url": "https://github.com/Foundations-of-Applied-Mathematics/Labs/blob/f841ddb9e8ed9251c9ef178b8687c9a6d909f13f/DataScienceEssentials/Pandas4/Pandas4.tex"
+        },
+        {
+          "repository": "yao-lab/yao-lab.github.io",
+          "path": "2019_csic5011/slides/PKU_2018b.tex",
+          "sha": "3b363394f56b85d261b4629bf91f1ec53bd51754",
+          "html_url": "https://github.com/yao-lab/yao-lab.github.io/blob/0320c9332ba582788c722672b7ffb8d7997eab1a/2019_csic5011/slides/PKU_2018b.tex"
+        },
+        {
+          "repository": "standardgalactic/alphabet",
+          "path": "Flower Wars.tex",
+          "sha": "2e0ad2925d9a1edce404d1bd824aeb34f0e57924",
+          "html_url": "https://github.com/standardgalactic/alphabet/blob/58037cac81cabccfdb968dc4469add455b527243/Flower Wars.tex"
+        },
+        {
+          "repository": "VladimirReshetnikov/ProveIt",
+          "path": "ProveIt_Walkthrough_2.tex",
+          "sha": "aa1932f4181c099b748c09629e34d03d5f4d4fd6",
+          "html_url": "https://github.com/VladimirReshetnikov/ProveIt/blob/82ed5fd10656629727ea178e88dd6d584d8d6143/ProveIt_Walkthrough_2.tex"
+        },
+        {
+          "repository": "hadipourh/talks",
+          "path": "20250315-SKCAM2025/main.tex",
+          "sha": "6dd93ce3dbf91b9bd66d4d3a9aa2eac8691c8921",
+          "html_url": "https://github.com/hadipourh/talks/blob/1bbd9fca1e08faa9c5b492017a154bda097a3041/20250315-SKCAM2025/main.tex"
+        },
+        {
+          "repository": "PerAlexandersson/symmetricfunctions.com",
+          "path": "tex-source/polytopes.tex",
+          "sha": "86b60d8b06652b52720ef6931aa213568e4ee530",
+          "html_url": "https://github.com/PerAlexandersson/symmetricfunctions.com/blob/25f53afcf0b37cafe06cd835afee8cf7f922c699/tex-source/polytopes.tex"
+        },
+        {
+          "repository": "darshanmakwana412/darshanmakwana412.github.io",
+          "path": "resume/cv.tex",
+          "sha": "865aeb335602ff842760ef2d32f21660bf80f8ae",
+          "html_url": "https://github.com/darshanmakwana412/darshanmakwana412.github.io/blob/8632d456d473486e7ec180b7925688351e8f550c/resume/cv.tex"
+        },
+        {
+          "repository": "WakaruLabs/ontologize",
+          "path": "latex/proposal/sections/background.tex",
+          "sha": "8b7a6c27cba8517e10d83213c8c2231dced9453c",
+          "html_url": "https://github.com/WakaruLabs/ontologize/blob/edb64dbcb39879826183d683d1b917f0d030a7cf/latex/proposal/sections/background.tex"
+        },
+        {
+          "repository": "jd-coderepos/sota",
+          "path": "dataset/train/1810.09951v1/1810.09951v1.tex",
+          "sha": "50195b9fc394512f35f489ee2da5334394b1eff5",
+          "html_url": "https://github.com/jd-coderepos/sota/blob/c50d9173b900c6a8130932d87064d92f38cd0aa5/dataset/train/1810.09951v1/1810.09951v1.tex"
+        }
+      ]
+    },
+    {
+      "query": "\"quantum codes derived\" extension:tex",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:17:39.308234+00:00",
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/197013/source0.tex",
+          "sha": "1586a36b75fceb6aaf12cd6a57fbb044da05b5ee",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/197013/source0.tex"
+        },
+        {
+          "repository": "xiyin137/PhysicsLogic",
+          "path": "references/paradigm/quantum-information/calderbank-shor-1995/source/cs-ecc.tex",
+          "sha": "6f64cff2c9cfc667992f93a6d2d80cde011be950",
+          "html_url": "https://github.com/xiyin137/PhysicsLogic/blob/dc28b068ae07034466638d2910aff3bb85611385/references/paradigm/quantum-information/calderbank-shor-1995/source/cs-ecc.tex"
+        }
+      ]
+    },
+    {
+      "query": "\"sesquilinear\" \"quadric\" extension:tex",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:17:40.008921+00:00",
+      "total_count": 39,
+      "incomplete_results": false,
+      "items": [
+        {
+          "repository": "dalcde/cam-notes",
+          "path": "IA_M/vectors_and_matrices.tex",
+          "sha": "aac5c6114f93893445cd26e11bd7a67064b5bc28",
+          "html_url": "https://github.com/dalcde/cam-notes/blob/0c1046b9244d84f65df513b14f22d26c51fd78b5/IA_M/vectors_and_matrices.tex"
+        },
+        {
+          "repository": "gap-packages/FinInG",
+          "path": "paper/fining.tex",
+          "sha": "f3316459a685c4f07a84ca9136ebeb86b7bca863",
+          "html_url": "https://github.com/gap-packages/FinInG/blob/9aef2a28b6ba500c9fedf2ddad79343895096a16/paper/fining.tex"
+        },
+        {
+          "repository": "Tensorera/BourbakiMathLatex",
+          "path": "ConvertedLatex(EN)/02Algebra_ch9(\u6cd5\u6587)/chapters/back03-terminology-index.tex",
+          "sha": "808ef742df397f3412da7fb8466ced9e3b73d4d7",
+          "html_url": "https://github.com/Tensorera/BourbakiMathLatex/blob/f82af6015e228fe9b9c6f5930e7ce52163728925/ConvertedLatex(EN)/02Algebra_ch9(\u6cd5\u6587)/chapters/back03-terminology-index.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/154191/source0.tex",
+          "sha": "51b15f63de261990fd27cb99e49066769a0ea040",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/154191/source0.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/208684/source0.tex",
+          "sha": "bbd428cc759c3fbdcae2f9986492f711420f28b5",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/208684/source0.tex"
+        },
+        {
+          "repository": "gap-system/gap-in-the-browser",
+          "path": "pkg/forms/doc/forms.tex",
+          "sha": "9f1d694d9d948f16fd577768bfe698b290dcf5bc",
+          "html_url": "https://github.com/gap-system/gap-in-the-browser/blob/3ee306c060008bb2ac64cffe92d33bfd44f1ae49/pkg/forms/doc/forms.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/items/208684_author_proof.tex",
+          "sha": "7d40c38555c1a7a1f800d8ff6ed54d064ff4e299",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/items/208684_author_proof.tex"
+        },
+        {
+          "repository": "shuopeng9wu-dotcom/Mathnote",
+          "path": "Complex-Geometry.tex",
+          "sha": "78b201e00219f939e483a71f119ef8b9a44e3576",
+          "html_url": "https://github.com/shuopeng9wu-dotcom/Mathnote/blob/582b1262c12880031e569900e143bab9ebe2f1e8/Complex-Geometry.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/160308/source0.tex",
+          "sha": "8fe15952359c30477ced9f8866486547a3872e2c",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/160308/source0.tex"
+        },
+        {
+          "repository": "kyrem1/james2022cv",
+          "path": "old_resumes/cv2022/james2022cv.tex",
+          "sha": "33c6acca5568240c0dabcd491b770d2d94d49d5e",
+          "html_url": "https://github.com/kyrem1/james2022cv/blob/3d5686a146adc289d198dcf3687f94933244a2f1/old_resumes/cv2022/james2022cv.tex"
+        }
+      ]
+    },
+    {
+      "query": "\"Frobenius\" \"isotropic points\" extension:tex",
+      "exit_code": 0,
+      "raw_retrieval_timestamp_utc": "2026-11-14T02:17:40.637200+00:00",
+      "total_count": 15,
+      "incomplete_results": false,
+      "items": [
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "w33_everything.tex",
+          "sha": "54960192158ffd1f49534a1f7c30805c326cbe6f",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/w33_everything.tex"
+        },
+        {
+          "repository": "ajt60gaibb/OpenProblemsInNLA",
+          "path": "references/colbrook-tensor-metrics-rank-2026-09-11/submitted/TR-17/solution.tex",
+          "sha": "a62afac71a591ca57cf210f58ccbc758eac7e546",
+          "html_url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/d25e2ccd77be39aee95f64d467a1109c0a76faf6/references/colbrook-tensor-metrics-rank-2026-09-11/submitted/TR-17/solution.tex"
+        },
+        {
+          "repository": "ajt60gaibb/OpenProblemsInNLA",
+          "path": "references/colbrook-tensor-metrics-rank-2026-09-11/manuscripts/tr17_solution.tex",
+          "sha": "ec8315193ba1a71955b0310d8e2fcd0765e5ce13",
+          "html_url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/d25e2ccd77be39aee95f64d467a1109c0a76faf6/references/colbrook-tensor-metrics-rank-2026-09-11/manuscripts/tr17_solution.tex"
+        },
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "manuscripts/tex/part_ihara_weil_zeta.tex",
+          "sha": "54adbb0e935a67f3c2517cf406aed45583913e5a",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/manuscripts/tex/part_ihara_weil_zeta.tex"
+        },
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "manuscripts/tex/PART_LXIII_ARXIV_COMPLETE_PAPER.tex",
+          "sha": "d035ced6686ddb09d9be57cbbf59e8ed7f6a5b82",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/manuscripts/tex/PART_LXIII_ARXIV_COMPLETE_PAPER.tex"
+        },
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "W36_PAPER.tex",
+          "sha": "e2b454181394d871272676b8038f6f835626daff",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/W36_PAPER.tex"
+        },
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "archive/documents/W33_CKM_PMNS_FROM_QCA.tex",
+          "sha": "07db8520c7cf5c44874b0359746f999e48774cdd",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/archive/documents/W33_CKM_PMNS_FROM_QCA.tex"
+        },
+        {
+          "repository": "wilcompute/W33-Theory",
+          "path": "analysis/BT3701_BT3714_d4_f4_triality_axial_lattice_insert.tex",
+          "sha": "c05291aa4ff01d64734ccd4010d37e1a75d36006",
+          "html_url": "https://github.com/wilcompute/W33-Theory/blob/e5c85d51e4fe0f760659d89597b88f90c1b27652/analysis/BT3701_BT3714_d4_f4_triality_axial_lattice_insert.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/189353/source0.tex",
+          "sha": "691331ac1999870304c279c41342bb8a1b14a252",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/189353/source0.tex"
+        },
+        {
+          "repository": "christopherwaight/Multirobot_Testbed",
+          "path": "Paper_Writing/Separatrix_and_OW_Paper/Draft_5c.tex",
+          "sha": "e83e227fcc7ad0246cdca19f3374b916aca8b353",
+          "html_url": "https://github.com/christopherwaight/Multirobot_Testbed/blob/d5870bfd0fc52f98bf36365db5d372237e406d70/Paper_Writing/Separatrix_and_OW_Paper/Draft_5c.tex"
+        }
+      ]
+    }
+  ],
+  "no_result_is_not_noncoverage_evidence": true,
+  "technical_full_text_read_by_search_alone": false
+}

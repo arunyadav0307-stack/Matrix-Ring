@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "primary_summary_sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac",
+  "source_hashes": {
+    "audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+    "core_a_distribution.py": "5a8276e58f3cc33fd209739ff34328e01bb66ff59a7d7cddbc12e126a190cbd7",
+    "audit_core_a_distribution.py": "9559c9ed0c261a6d6dee881cdfd0b51f501d4a2b22ecff15e591b3cb280a88e8"
+  },
+  "primary_field_module_descriptor_hull_code_imported": false,
+  "shared_code_limited_to_integer_prediction_function": true,
+  "full_all_T_geometry_fields_and_all_twists": {
+    "4": [
+      0,
+      1
+    ],
+    "8": [
+      0,
+      1,
+      2
+    ],
+    "16": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "higher_point_and_descended_plane_checks_only": {
+    "32": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "64": [
+      1,
+      2,
+      4,
+      5
+    ]
+  },
+  "all_isotropic_point_U_plane_type_B_incidence_comparisons": "PASS",
+  "q32_q64_full_finite_distributivity_checks": 294912,
+  "original_global_q16_cases": 176,
+  "q16_global_cases_are_named_deterministic_subset_not_census": true,
+  "full_local_and_global_dual_and_hull_spaces_checked_in_selected_cases": true,
+  "geometry_cases_sha256": "2570268bf64f82f7bde2cf014caa9848195da6eaddd1de6a9c7b2a93886886d6",
+  "q16_global_cases_sha256": "0b235bf6542ed719ec43677ea251545e20350c49c79ee53cb9e09cbb729768fc",
+  "human_independent_review_completed": false,
+  "external_originality_certified": false,
+  "joint_same_input_all_twist_distribution_certified": false
+}
