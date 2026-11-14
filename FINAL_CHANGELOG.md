@@ -24,3 +24,12 @@ Session calendar **2026-11-12 UTC**. M1 push is complete at `b69e8c9c597cbefd4ed
 - Verified 2,059 intake originals unchanged. No historical audit/seal/manuscript payload overwritten; old scientific closure counts remain unchanged.
 
 M2 payload commit/push is not yet claimed by this pre-commit entry; actual synchronization receipt follows after verification. The M2 ZIP is a research checkpoint, **not** a final submission release.
+
+## AR01-M3 — embedded hull structure and complete finite checks
+
+Session calendar **2026-11-12 UTC**. Previous M2 commit/push verified: `37d53afb01350b6f59b228f39e30fa5b2fb96cd7`, complete 2,117-blob tree. M3 payload commit/push pending at this entry.
+
+- Added `phase3/CORE_A_EMBEDDED_STRUCTURE.md`: unique radical/primitive embedded descriptors, exact same-input profiles, classification of all nonprincipal Core A hulls, exceptional-twist support and total/LCD counts with proofs.
+- Added `verify_core_a_structure.py` and `audit_core_a_structure_global.py`, saved `structure_v1` and `structure_global_v1` outputs with script/input/stream hashes. Complete q4/q8 structural comparisons and complete q4 original-global-pairing checks PASS; q16 is not exhaustive.
+- Added structural proof/computation audit, appended actual source-read/applicability limits, updated reproducibility and progress records. No original output/old manuscript/source payload overwritten.
+- Preserved 2,059 original files/110,323,589 bytes and prior checkpoint hashes. Research backup is not a publication release. No novelty, external review, quantum/parameter, quartile or submission success invented.

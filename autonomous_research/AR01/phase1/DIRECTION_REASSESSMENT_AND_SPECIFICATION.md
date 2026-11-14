@@ -40,3 +40,9 @@ No lane is certified externally original by this table. The newly found QIP2024 
 ## 4. Phase consequences
 
 The Core A foundations and preservation argument can advance within Phases 2–4 despite incomplete external originality assessment. Phase 1 remains open for a paper-sized final specification. Phase 5 is not forced; μ alone gives no justified quantum application. Phase 6 has an explicit internal audit but not external review. Phases 7–8 are not ready and no journal/quartile decision is invented.
+
+## A11 completion at M3 — bounded internal result, not novelty clearance
+
+The same-ring embedded descriptor and hull prescription are now proved in `../phase3/CORE_A_EMBEDDED_STRUCTURE.md`, with exact nonprincipal classification, root/twist support and total/LCD counts. Generic-vs-structural comparisons exhaust all q4 and q8 inputs/all twists; a separate original-global-pairing implementation checks the full q4 census. See `../audits/CORE_A_STRUCTURE_AUDIT.md` for exact limits. A11's bounded mathematical obligations are supplied; its external originality/depth gate is not closed.
+
+**A12 next technical check (not a silent parameter pivot):** the n=2 obstruction proof treats a module against its own local dual. At length 2N, reciprocal/Frobenius CRT factors can instead couple different embedded modules. Derive this map from the actual global pairing before deciding whether any larger-length preservation claim survives. This is a boundary/applicability check motivated by the proof, not a claim that CRT assembly or a scalar repeated-root example is a new paper. Retain coefficient nilpotency2, rank2 and the original right/first-slot convention; any length change is explicit.

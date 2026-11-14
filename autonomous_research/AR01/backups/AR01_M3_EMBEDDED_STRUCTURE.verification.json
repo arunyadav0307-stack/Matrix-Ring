@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M3_EMBEDDED_STRUCTURE.zip",
+  "bytes": 679143,
+  "sha256": "7d8d84020ad986e328d759e3a9c030f903d9cda4008fec67b10462eaa9633941",
+  "payload_files": 66,
+  "zip_entries": 67,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

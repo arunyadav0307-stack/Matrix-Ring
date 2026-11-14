@@ -18,3 +18,12 @@ Choose fresh alphanumeric/underscore/hyphen labels: both drivers refuse to overw
 Mathematical proofs: `../phase2/CORE_A_FOUNDATIONS.md`, `../phase3/CORE_A_PRESERVATION.md`. Audit/limitations: `../audits/CORE_A_PROOF_AND_COMPUTATION_AUDIT.md`.
 
 PASS means the stated finite assertions ran successfully. It does not certify all fields, external originality, journal fit, independent human review, a quantum bridge or distances. q2 is auxiliary and outside m≥2; q4/q8/q16 main samples are not complete censuses. Original project evidence has not been overwritten or silently rerun.
+
+## Structural successor runs
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/verify_core_a_structure.py NEW_STRUCTURE_LABEL
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit_core_a_structure_global.py NEW_STRUCTURE_LABEL NEW_GLOBAL_LABEL
+```
+
+The structural verifier reads the preserved `results/audit_v1/binary_all_modules.json` as comparison data. Recorded successors are `structure_v1` and `structure_global_v1`. All q4/q8 embedded inputs/all twists are checked by the structural vs generic route; all q4 cases are additionally checked with the alternative global route. q2 remains auxiliary; q16 has only named line-family checks. q8 full case data are deterministically hashed, not stored in bulk. See `../audits/CORE_A_STRUCTURE_AUDIT.md`. Do not use `-O`.

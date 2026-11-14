@@ -87,3 +87,13 @@ Primary publisher preview fetched: https://link.springer.com/article/10.1007/s11
 ### Retrieval continuation
 
 A fresh direct arXiv:1910.02237 PDF fetch again failed; the Springer article preview successfully reconfirmed the title, date, volume/pages and stated scalar Euclidean hull coverage. No complete NL10 technical text was obtained by that retry.
+
+## S10 — supplied matrix-ring structural predecessor (technical text read)
+
+Habibul Islam, Om Prakash and Dipak Kumar Bhunia, *On the structure of cyclic codes over M₂(F_p+uF_p)*, Indian Journal of Pure and Applied Mathematics **53, 153–161 (2022)**, online 14 June 2021, DOI **10.1007/s13226-021-00014-x**. Publisher metadata freshly verified. [1](https://link.springer.com/article/10.1007/s13226-021-00014-x) An erratum is listed at DOI **10.1007/s13226-021-00142-4**, published 29 June 2021, issue page 1128 (2022); its complete text has not been read in this continuation. [3](https://link.springer.com/article/10.1007/s13226-021-00142-4)
+
+Available primary PDF (corrected publication): `phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf`, SHA-256 **0679c4a6077b8477e8d325737b8efc8d3d96b9f8f356be6b8edaa06d6a26f989**. The complete 378-line inherited text extraction `phase0_audit/pdfs_text/s13226-021-00014-x_2.txt` was read, including §§2–4, Propositions 1–7 and Theorems 2–5. Font/control-character extraction limitations remain; this is a technical reading, not an independent certification of all printed proofs.
+
+The displayed structural setting takes p prime, p≡2 or3 mod5, u²=0 and **gcd(N,p)=1** from §3 onwards. Theorem 2 gives its CRT decomposition; Proposition 1 lists the component right-submodule types in its chosen representation; Theorem 3 gives cyclic-code decomposition/size; Proposition 4/Corollary 1 assert principal generation; Theorems 4–5 give the paper's dual/self-dual structure. It also develops a specific F_(p²)-coordinate/Gray representation.
+
+**Applicability boundary:** the retained Core A has coefficient field k=F_(2^m), m≥2, repeated-root n=2 and a specified first-slot transpose/Frobenius form. Its B=k[u,w]/(u²,w²) arises from the central repeated root, not from reinterpreting a noncommutative ring as a commutative ring through a merely linear/isometric representation. The source's coprimality and dual convention cannot be silently discarded. Broad matrix-ring/cyclic/principal-generation infrastructure is positive prior coverage; exact all-twist embedded-hull boundary novelty is still not cleared by a parameter or convention difference.

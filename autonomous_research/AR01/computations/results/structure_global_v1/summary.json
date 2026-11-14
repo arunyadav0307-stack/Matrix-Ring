@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "source_q4_cases_sha256": "460e85a6bfd3922db9da0c8ce4a48f57bad42901515baeb0fd7bbb58baf31f4c",
+  "source_structural_summary_sha256": "525235671618c04414a5d75d81eb58dce72e81aaf6d253f03132b2c3651a728c",
+  "implementation_source_sha256": {
+    "audit_core_a_structure_global.py": "fc4a86c6a0f0082625f2b5549655085e08d655c10a0a8993c4302d20d55430f9",
+    "audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b"
+  },
+  "primary_reference_or_structural_code_imported": false,
+  "q4_all_embedded_modules_global_checked": 1221,
+  "q4_all_field_twist_cases_full_global_dual_and_hull_spaces": 2442,
+  "q4_primary_and_independent_hull_bases_equal": true,
+  "q4_hull_mu_histograms": [
+    {
+      "0": 258,
+      "1": 522,
+      "2": 440,
+      "3": 1
+    },
+    {
+      "0": 130,
+      "1": 538,
+      "2": 550,
+      "3": 3
+    }
+  ],
+  "q4_global_basis_stream_sha256": "cdfa3839291f2b496d3b7dd40bc7417664c48de1b759220631c5f896865888be",
+  "all_norm_line_candidate_global_cases_q4_q8_q16": 87,
+  "norm_root_counts_and_same_input_support_formula_checked": true,
+  "q8_full_generic_census_not_repeated_globally_here": true,
+  "q16_checks_are_named_family_not_full_census": true,
+  "human_independent_review_completed": false,
+  "external_originality_certified": false
+}

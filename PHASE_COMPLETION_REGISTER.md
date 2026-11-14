@@ -31,3 +31,20 @@ Session calendar **2026-11-12 UTC**. M1 preservation/synchronization is complete
 | 8 Submission package | NOT READY | Research checkpoint only; manuscript/journal/permissions/build prerequisites absent |
 
 Files/checks: AR01 foundations, preservation note, audit, computation scripts/results and Phase-1 dossier/specification. M2 synchronization is pending at the time this entry is written; actual hashes/remote receipt follow in the next tracked update. No whole scientific phase is declared complete by a partial note.
+
+## AR01-M3 — latest status (prior tables retained as history)
+
+Session calendar **2026-11-12 UTC**. M2 synchronization verified at `37d53afb01350b6f59b228f39e30fa5b2fb96cd7`. M3 pre-commit status: payload synchronization pending.
+
+| Phase | Latest disposition | Explicit remaining boundary |
+|---|---|---|
+| 1 | IN PROGRESS: source/version readings and differentiated comparison recorded | Exact closest-source comparison, sufficient originality/depth and final paper specification not cleared |
+| 2 | BOUNDED CORE A FOUNDATIONS AND EMBEDDED DESCRIPTORS SUPPLIED | Larger lengths require a freshly derived reversal/Frobenius/CRT map |
+| 3 | BOUNDED CORE A THEOREM PACKAGE PROVED AND INTERNALLY AUDITED | All-proper-hull preservation/nonprincipal classification is exact only at n=2; not external novelty certification |
+| 4 | CORE q4/q8 FULL STRUCTURAL CENSUSES PASS; FULL q4 SEPARATE GLOBAL AUDIT PASS | Not an all-q numerical exhaustion; q16 named family only; universal scope comes from proof |
+| 5 | NO APPLICATION FORCED | No metric/physical bridge, distances or quantum parameters certified |
+| 6 | BOUNDED INTERNAL PROOF/SEPARATE-ALGORITHM AUDITS COMPLETE | External independent human review and final source/manuscript audit absent |
+| 7 | NOT SCIENTIFICALLY READY FOR PUBLICATION MANUSCRIPT | No externally differentiated paper-sized claim/journal/quartile selection |
+| 8 | RESEARCH CHECKPOINT ONLY | Not a submission archive, compiled manuscript or externally authorized submission |
+
+No whole scientific phase is marked complete from these bounded achievements. Originals, old issue/decision fields and historical seals are unchanged.

@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "proof_role": "Exhaustive finite checks of a separately written uniform theorem, not a proof substitute",
+  "field_results": [
+    {
+      "q": 2,
+      "auxiliary_outside_m_ge_2": true,
+      "all_embedded_modules": 159,
+      "all_twists_tested": [
+        0
+      ],
+      "field_twist_cases": 159,
+      "kind_counts": {
+        "radical": 101,
+        "primitive": 57,
+        "ambient": 1
+      },
+      "input_mu_counts": {
+        "0": 1,
+        "1": 51,
+        "2": 85,
+        "3": 21,
+        "4": 1
+      },
+      "hull_mu_counts_by_twist": [
+        {
+          "0": 18,
+          "1": 78,
+          "2": 62,
+          "3": 1
+        }
+      ],
+      "complete_stream_sha256_in_deterministic_generation_order": "39d8f1e373eeb1126307ed5c41bf02d52322ce2873dd1f83653e7656d68cd8f1",
+      "all_generic_and_structural_hull_bases_equal": true,
+      "all_nonprincipal_inputs_and_LCD_counts_match_proved_formulas": true,
+      "q2_all_spaces_match_separate_ambient_subspace_audit": true
+    },
+    {
+      "q": 4,
+      "auxiliary_outside_m_ge_2": false,
+      "all_embedded_modules": 1221,
+      "all_twists_tested": [
+        0,
+        1
+      ],
+      "field_twist_cases": 2442,
+      "kind_counts": {
+        "radical": 715,
+        "primitive": 505,
+        "ambient": 1
+      },
+      "input_mu_counts": {
+        "0": 1,
+        "1": 485,
+        "2": 639,
+        "3": 95,
+        "4": 1
+      },
+      "hull_mu_counts_by_twist": [
+        {
+          "0": 258,
+          "1": 522,
+          "2": 440,
+          "3": 1
+        },
+        {
+          "0": 130,
+          "1": 538,
+          "2": 550,
+          "3": 3
+        }
+      ],
+      "complete_stream_sha256_in_deterministic_generation_order": "460e85a6bfd3922db9da0c8ce4a48f57bad42901515baeb0fd7bbb58baf31f4c",
+      "all_generic_and_structural_hull_bases_equal": true,
+      "all_nonprincipal_inputs_and_LCD_counts_match_proved_formulas": true,
+      "q2_all_spaces_match_separate_ambient_subspace_audit": false
+    },
+    {
+      "q": 8,
+      "auxiliary_outside_m_ge_2": false,
+      "all_embedded_modules": 12993,
+      "all_twists_tested": [
+        0,
+        1,
+        2
+      ],
+      "field_twist_cases": 38979,
+      "kind_counts": {
+        "radical": 7151,
+        "primitive": 5841,
+        "ambient": 1
+      },
+      "input_mu_counts": {
+        "0": 1,
+        "1": 5769,
+        "2": 6619,
+        "3": 603,
+        "4": 1
+      },
+      "hull_mu_counts_by_twist": [
+        {
+          "0": 4098,
+          "1": 3858,
+          "2": 5036,
+          "3": 1
+        },
+        {
+          "0": 4098,
+          "1": 3534,
+          "2": 5360,
+          "3": 1
+        },
+        {
+          "0": 4098,
+          "1": 3534,
+          "2": 5360,
+          "3": 1
+        }
+      ],
+      "complete_stream_sha256_in_deterministic_generation_order": "933ca76d6d290f9894c94d94332f1ce6250394f5f59d14d94fe432034561098d",
+      "all_generic_and_structural_hull_bases_equal": true,
+      "all_nonprincipal_inputs_and_LCD_counts_match_proved_formulas": true,
+      "q2_all_spaces_match_separate_ambient_subspace_audit": false
+    }
+  ],
+  "q4_full_case_stream_sha256": "460e85a6bfd3922db9da0c8ce4a48f57bad42901515baeb0fd7bbb58baf31f4c",
+  "source_hashes": {
+    "core_a.py": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148",
+    "verify_core_a_structure.py": "4eba8e306812498ac1dbce0af286e644e5f2bb0771334ef42fcae9d0b7e094e2"
+  },
+  "separate_binary_audit_input_sha256": "de4844f7826ff0685b22ee1c569eaf4eeb187c73e793449456cc923dc11d89c5",
+  "q16_exhaustion_not_run": true,
+  "q8_all_case_stream_stored_as_hash_only": true,
+  "external_originality_certified": false,
+  "human_independent_review_completed": false
+}

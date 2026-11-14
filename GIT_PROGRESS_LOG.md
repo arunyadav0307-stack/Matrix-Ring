@@ -16,3 +16,11 @@ Session calendar **2026-11-12 UTC**; raw tool timestamps retained in evidence wi
 - **M2 work:** explicit Core A foundations/preservation proof, original-pairing independent-implementation audit, saved main/audit outputs, source-reading dossier and fair direction reassessment/specification; original history untouched.
 - **Checks:** 2,059 intake files/110,323,589 bytes unchanged; primary exhaustive auxiliary q2 generator census and bounded core samples PASS; separately implemented 417,199-subspace auxiliary census and 112 global matrix-pairing cases PASS. No external novelty or human review claimed.
 - **Synchronization at this entry:** M2 payload commit/push pending; the post-push receipt and next entry will record the actual hash, expected-file tree and result. Checkpoint `AR01_M2_CORE_A_CHECKS.zip` is a research backup, not a submission package.
+
+## AR01-M3 — embedded structure milestone
+
+Session calendar **2026-11-12 UTC**. **M2 push completed** at `37d53afb01350b6f59b228f39e30fa5b2fb96cd7`; remote ref and all **2,117 tracked blobs** matched, including all 28 changed paths. Receipt `autonomous_research/AR01/evidence/M2_REMOTE_RECEIPT.json` is included here. The default Git whitespace check initially flagged the recorded CSV's CRLF; original result bytes were kept and the check passed with per-invocation `cr-at-eol`. No scientific test failed.
+
+M3 adds a complete embedded descriptor/hull prescription, exact nonprincipal self-dual boundary, proved input/LCD counts and twist support; complete q4/q8 structural checks, all-q4 alternative global audit and their saved evidence. Existing source/results remain immutable. The supplied matrix-ring predecessor was reread and its applicability limits saved. Original 2,059-file preservation rechecked.
+
+M3 payload commit/push is pending at this pre-commit entry. `AR01_M3_EMBEDDED_STRUCTURE.zip` is the verified bounded research backup; actual receipt follows after successful remote verification. Not a manuscript/submission release.

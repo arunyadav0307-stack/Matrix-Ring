@@ -25,3 +25,7 @@ Raw environment/commit timestamps may disagree with the supplied session calenda
 ## Latest bounded development — AR01-M2
 
 Core A foundations and principal-input preservation are written and internally proof-audited; executed `main_v1` and separately implemented original-global-pairing `audit_v1` checks PASS in explicitly finite scopes. See [proof](phase3/CORE_A_PRESERVATION.md), [audit](audits/CORE_A_PROOF_AND_COMPUTATION_AUDIT.md), [reproducibility](computations/README.md), [sources](phase1/PRIMARY_SOURCE_READING_NOTES.md) and [reassessment/specification](phase1/DIRECTION_REASSESSMENT_AND_SPECIFICATION.md). This does not establish external originality, an independent human review, a quantum application, a manuscript or a submission package. Root logs record synchronization separately.
+
+## Latest bounded development — AR01-M3
+
+The [embedded structure note](phase3/CORE_A_EMBEDDED_STRUCTURE.md) now gives a complete same-coordinate descriptor and hull-generator prescription, and classifies all nonprincipal Core A hulls as specified nonprincipal self-dual inputs. Every proper hull is principal in this exact ring. The [structural audit](audits/CORE_A_STRUCTURE_AUDIT.md) records complete q4/q8 checks and a separate original-global-pairing check of all q4 cases. External originality and paper readiness remain unestablished; reciprocal-factor coupling is a separate explicitly motivated applicability check, not covered by the n=2 theorem.
