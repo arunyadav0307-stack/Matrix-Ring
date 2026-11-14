@@ -1,0 +1,58 @@
+[
+  {
+    "q": 4,
+    "s": 1,
+    "E_size": 4,
+    "Q": 2,
+    "graph_matrices": 16,
+    "actual_graph_root_types": {
+      "contained": 2,
+      "tangent": 6,
+      "secant": 8
+    },
+    "all_noncontained_graphs_split_over_E": true,
+    "scope": "Hermitian graph chart only; ranks0/1 handled in the candidate proof and other geometry driver"
+  },
+  {
+    "q": 16,
+    "s": 1,
+    "E_size": 4,
+    "Q": 2,
+    "graph_matrices": 16,
+    "actual_graph_root_types": {
+      "contained": 2,
+      "tangent": 6,
+      "secant": 8
+    },
+    "all_noncontained_graphs_split_over_E": true,
+    "scope": "Hermitian graph chart only; ranks0/1 handled in the candidate proof and other geometry driver"
+  },
+  {
+    "q": 16,
+    "s": 2,
+    "E_size": 16,
+    "Q": 4,
+    "graph_matrices": 256,
+    "actual_graph_root_types": {
+      "contained": 4,
+      "tangent": 60,
+      "secant": 192
+    },
+    "all_noncontained_graphs_split_over_E": true,
+    "scope": "Hermitian graph chart only; ranks0/1 handled in the candidate proof and other geometry driver"
+  },
+  {
+    "q": 16,
+    "s": 3,
+    "E_size": 4,
+    "Q": 2,
+    "graph_matrices": 16,
+    "actual_graph_root_types": {
+      "contained": 2,
+      "tangent": 6,
+      "secant": 8
+    },
+    "all_noncontained_graphs_split_over_E": true,
+    "scope": "Hermitian graph chart only; ranks0/1 handled in the candidate proof and other geometry driver"
+  }
+]

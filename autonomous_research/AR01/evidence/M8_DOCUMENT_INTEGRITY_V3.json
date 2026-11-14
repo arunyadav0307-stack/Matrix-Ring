@@ -1,0 +1,252 @@
+{
+  "status": "PASS",
+  "session_calendar_utc": "2026-11-12",
+  "raw_environment_observed_at_utc": "2026-11-14T05:38:58.885774+00:00",
+  "timestamp_kind": "Raw sandbox observation is not the session calendar or publication date",
+  "branch": "arena/7d88376d-matrix-ring",
+  "base_commit": "c4f170dffbb6c6a99b7ae2339851ea3d29039022",
+  "head_at_check": "c4f170dffbb6c6a99b7ae2339851ea3d29039022",
+  "intake_originals_verified": 2059,
+  "intake_original_bytes_verified": 110323589,
+  "frozen_M5_input_files_verified": 19,
+  "M8_baseline_files_verified": 166,
+  "M8_baseline_permitted_append_only_paths": [
+    "autonomous_research/AR01/README.md",
+    "autonomous_research/AR01/computations/README.md"
+  ],
+  "root_progress_logs_original_prefixes_verified": [
+    "GIT_PROGRESS_LOG.md",
+    "RESEARCH_PROGRESS_LOG.md",
+    "PHASE_COMPLETION_REGISTER.md",
+    "FINAL_CHANGELOG.md"
+  ],
+  "legacy_content_groups_and_paths_verified": [
+    12,
+    93
+  ],
+  "PDF_unique_hashes_metadata_headers_and_failures": [
+    10,
+    9,
+    8,
+    1
+  ],
+  "new_source_acquisition_and_reading_scope_crosslinks_verified": true,
+  "all_six_required_successors_exist": true,
+  "documents": {
+    "autonomous_research/AR01/finalisation/M8/CORE_A_CLOSED_FORMULA_FULL_PROOF.md": {
+      "sha256": "44bdf307ecf4cf4297283e4b27115c3cc7078977134f6fddd0ee7ae435933a7c",
+      "lines": 368
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_CLOSED_FORMULA_THEOREM.md": {
+      "sha256": "3b360c24cbccbd40fc4b46c92efb6b9842c7b069758f2b5bdb24ce66028d2f7b",
+      "lines": 97
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_EXCEPTIONAL_CASES_REGISTER.md": {
+      "sha256": "e8020ca62d35a2616f450e5ab3b1e9e677784f1067e06c3742cc1ae7f1382053",
+      "lines": 48
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_GATE_STATUS.json": {
+      "sha256": "f8e442f7182813fa79a8662627602088c8780cd72bad2bc7ece993b84096b17b",
+      "lines": 64
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_INDEPENDENT_PROOF_AUDIT.md": {
+      "sha256": "84483ac1b5a69e833a90432b088917c117ec251cde0b158c9bdbba333fd5089f",
+      "lines": 127
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_INPUT_INVENTORY.md": {
+      "sha256": "4504e465233a66d2bc4857b4ec40da7daf6e43b715f19098c84ed67ca4fc14b2",
+      "lines": 79
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_PRIMARY_SOURCE_NOVELTY_ASSESSMENT.md": {
+      "sha256": "280b0db562c86f52f13f1297b4e17448adbafb6e8f934e070b4481eb8fad3619",
+      "lines": 100
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_OBLIGATIONS.json": {
+      "sha256": "bd4234ec290443276d1182f025e8825f43812935a4e241de374252be788e46d7",
+      "lines": 521
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_STATUS_REPORT.md": {
+      "sha256": "3d1c393542b2e6fe9bf38fb536e81cd60d677345260e7d1cb5603722e9671614",
+      "lines": 103
+    },
+    "autonomous_research/AR01/finalisation/M8/CORE_A_THEORY_COMPUTATION_COMPARISON.md": {
+      "sha256": "9ac877c061ae0c1cce7d07cecc083851efeca6a85395ddf9855b530ec326778a",
+      "lines": 112
+    }
+  },
+  "proof_units_and_audit_line_ranges": [
+    [
+      "P01",
+      9,
+      20
+    ],
+    [
+      "P02",
+      21,
+      34
+    ],
+    [
+      "P03",
+      35,
+      44
+    ],
+    [
+      "P04",
+      45,
+      58
+    ],
+    [
+      "P05",
+      59,
+      70
+    ],
+    [
+      "P06",
+      71,
+      85
+    ],
+    [
+      "P07",
+      86,
+      95
+    ],
+    [
+      "P08",
+      96,
+      114
+    ],
+    [
+      "P09",
+      115,
+      124
+    ],
+    [
+      "P10",
+      125,
+      142
+    ],
+    [
+      "P11",
+      143,
+      151
+    ],
+    [
+      "P12",
+      152,
+      163
+    ],
+    [
+      "P13",
+      164,
+      174
+    ],
+    [
+      "P14",
+      175,
+      189
+    ],
+    [
+      "P15",
+      190,
+      197
+    ],
+    [
+      "P16",
+      198,
+      210
+    ],
+    [
+      "P17",
+      211,
+      218
+    ],
+    [
+      "P18",
+      219,
+      232
+    ],
+    [
+      "P19",
+      233,
+      253
+    ],
+    [
+      "P20",
+      254,
+      265
+    ],
+    [
+      "P21",
+      266,
+      271
+    ],
+    [
+      "P22",
+      272,
+      287
+    ],
+    [
+      "P23",
+      288,
+      297
+    ],
+    [
+      "P24",
+      298,
+      308
+    ],
+    [
+      "P25",
+      309,
+      328
+    ],
+    [
+      "P26",
+      329,
+      339
+    ],
+    [
+      "P27",
+      340,
+      351
+    ],
+    [
+      "P28",
+      352,
+      359
+    ],
+    [
+      "P29",
+      360,
+      363
+    ],
+    [
+      "P30",
+      364,
+      368
+    ]
+  ],
+  "proof_block_hashes_and_prior_unit_dependencies_match": true,
+  "candidate_statement_T1_T5_byte_unchanged": true,
+  "local_document_links_checked": 52,
+  "exact_five_variable_N2_assembly_identity": true,
+  "unchanged_rerun_result_files_verified": 39,
+  "new_standalone_result_files_verified": 4,
+  "run_source_input_and_output_hashes_verified": true,
+  "historical_summaries_omitting_human_review_flag": [
+    "finalisation_m8_foundations_v1"
+  ],
+  "absent_flags_not_treated_as_independent_review_evidence": true,
+  "computational_import_dependency_graph_unchanged": true,
+  "in_memory_negative_controls_rejected": [
+    "unearned proved-status promotion",
+    "modified proof bytes",
+    "wrong audit line range",
+    "replacement instead of append"
+  ],
+  "checker_sha256": "5eab91dbc13ab0448aa93d86eb8497af853548a304df83ba2535dcafeaa993ad",
+  "unqualified_proved_status_authorized": false,
+  "independent_complete_proof_acceptance_established": false,
+  "external_originality_certified": false,
+  "scope": "Document/range/hash/link, baseline/prefix/result/source integrity, exact assembly only. NOT a logical proof checker, independent review, execution attestation or novelty certificate."
+}

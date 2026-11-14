@@ -1,0 +1,422 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T05:40:31.565532+00:00",
+  "timestamp_kind": "Raw sandbox observation only",
+  "staged_paths_before_this_receipt": [
+    {
+      "status": "M",
+      "path": "FINAL_CHANGELOG.md",
+      "sha256": "4bcc44f749a9632e6605ac8698d0f7f007c677d169f44e54c8fd13645d9baffb"
+    },
+    {
+      "status": "M",
+      "path": "GIT_PROGRESS_LOG.md",
+      "sha256": "a194658b3c19e0254767632555d44fe28390951a44a5737aa17b0dc0eb91b7e0"
+    },
+    {
+      "status": "M",
+      "path": "PHASE_COMPLETION_REGISTER.md",
+      "sha256": "08fef64e41aa705eb58d675a7094a27fee5bff7ba89cc9f22d7eb4b35ea4e7c8"
+    },
+    {
+      "status": "M",
+      "path": "RESEARCH_PROGRESS_LOG.md",
+      "sha256": "5c8214a6c510f6ddad12c44873e3c4f09edd5739adb0e1c0343a2bf13594696f"
+    },
+    {
+      "status": "M",
+      "path": "autonomous_research/AR01/README.md",
+      "sha256": "d6812be681ef108f269aebfe8c4916d2071ed825d1654e6a8627d07ef9c81871"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/backups/AR01_M8_FINALISATION_REVIEW.verification.json",
+      "sha256": "78816fe862a3b791b711f8f8b994cb96bf882e265e58d340f9e2704e57cd2289"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/backups/AR01_M8_FINALISATION_REVIEW.zip",
+      "sha256": "7e7f028defa297496aca0eefe940086f69649bae924c22733e051955319be429"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/backups/AR01_M8_FINALISATION_REVIEW.zip.sha256",
+      "sha256": "7075ba5e1814680e92ac6c767faa1b30e8ef791ab75f079db02b9ceee46a01c9"
+    },
+    {
+      "status": "M",
+      "path": "autonomous_research/AR01/computations/README.md",
+      "sha256": "2dce3f6c5e7cd8a46f0ffa12cd853fac47f80c2b4b0e08ad75d701329ae9ae42"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/audit_core_a_directed_flags.py",
+      "sha256": "8be0311f0417099e45313f0dce7fd4c2644940c0a512ce7ac7ffe7d536c1cfb8"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_directed_flags_v1/directed_flag_cases.json",
+      "sha256": "bf78c38aee1dcc4075f552decd747e443661f0cebc08c96eacf3005394eabf8a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_directed_flags_v1/hermitian_graph_cases.json",
+      "sha256": "d86264508772b39894f5e65b5e715a3ab65e99d5b0fcaf6d9720cc17b2da3e92"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_directed_flags_v1/stdout.txt",
+      "sha256": "31d083a02d5a885703de65f6ccac63a5f81e5593037576c2ecfd4566bddcf985"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_directed_flags_v1/summary.json",
+      "sha256": "31d083a02d5a885703de65f6ccac63a5f81e5593037576c2ecfd4566bddcf985"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_audit_v1/geometry_cases.json",
+      "sha256": "2570268bf64f82f7bde2cf014caa9848195da6eaddd1de6a9c7b2a93886886d6"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_audit_v1/q16_global_cases.jsonl",
+      "sha256": "0b235bf6542ed719ec43677ea251545e20350c49c79ee53cb9e09cbb729768fc"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_audit_v1/stdout.txt",
+      "sha256": "6ae404f8471d0533e3fd8c389fcdbc7ddc0706b89500022089da1468b6c33210"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_audit_v1/summary.json",
+      "sha256": "6ae404f8471d0533e3fd8c389fcdbc7ddc0706b89500022089da1468b6c33210"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_v1/formula_predictions.json",
+      "sha256": "110f4feacd68b39985eb5fbfe2852a399750929f38198b6db12180dd7ebace69"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_v1/q16_global_audit_cases.jsonl",
+      "sha256": "e01eab3d2a0d44bfbcb44913da245014f6e46c98f428b968d687da87b546823f"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_v1/stdout.txt",
+      "sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_distribution_v1/summary.json",
+      "sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_audit_v1/binary_all_modules.json",
+      "sha256": "de4844f7826ff0685b22ee1c569eaf4eeb187c73e793449456cc923dc11d89c5"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_audit_v1/global_cases.json",
+      "sha256": "30986561633d77f50e970a222dd162ce7659b2863e8caf5f62b1c163ec5172c3"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_audit_v1/stdout.txt",
+      "sha256": "64db0bb535a204de8ea3027f818e19dbb40908986d3888dfdfdeef6222ae1cbc"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_audit_v1/summary.json",
+      "sha256": "64db0bb535a204de8ea3027f818e19dbb40908986d3888dfdfdeef6222ae1cbc"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_v1/auxiliary_q2.csv",
+      "sha256": "b790a54555b4b0f3294cb561bcaacbb174197b394ba184f2c315c7ca9f26f0b0"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_v1/cases.json",
+      "sha256": "f92d86a2657e6df4760e26054a16cc5b1d72e8ff40c956aa4acade976c35a13f"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_v1/stdout.txt",
+      "sha256": "470a760cf406695e10eb035ee3fec10a0fe61da4d124a195376df72234930986"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_v1/summary.json",
+      "sha256": "470a760cf406695e10eb035ee3fec10a0fe61da4d124a195376df72234930986"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_proof_v1/noninvolution_control.json",
+      "sha256": "b8c76463948feba89dcf3fcb2d9c9affce8942c64a4cde2ad9f728d4d12db37c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_proof_v1/stdout.txt",
+      "sha256": "14137007ea37558e6840a66899209e204765090a6a2cc65a9d4cbc8e25a4d16c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_proof_v1/summary.json",
+      "sha256": "14137007ea37558e6840a66899209e204765090a6a2cc65a9d4cbc8e25a4d16c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_proof_v1/trace_and_graph_cases.json",
+      "sha256": "d5039892c5b218034227875237494d9e345456725de39a792121da489390dc6a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_scalar_qc_v1/stdout.txt",
+      "sha256": "ab4ec150fbc440cdc0d7b9401cec5dabd9f3c968b30987fb22a91e1759785f23"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_scalar_qc_v1/summary.json",
+      "sha256": "ab4ec150fbc440cdc0d7b9401cec5dabd9f3c968b30987fb22a91e1759785f23"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_boundary_v1/cases.jsonl",
+      "sha256": "c9295448655cdeaac3cf6281e01c652cb458f86bdb7fa8fb40f066521f268809"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_boundary_v1/factor_permutations.json",
+      "sha256": "5afe52187e4f0293ca5e95fec705ba173e6c5a8c5950df08c2370c699593d139"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_boundary_v1/stdout.txt",
+      "sha256": "289e0289db10a77e46741ca6c07d9d13dd58a70c008b6ad3a2f1be6b1787a11a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_boundary_v1/summary.json",
+      "sha256": "289e0289db10a77e46741ca6c07d9d13dd58a70c008b6ad3a2f1be6b1787a11a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_global_boundary_v1/global_cases.jsonl",
+      "sha256": "da18d2e28d30d77a912b38d3ea37de24d35123abdc48302de5d8feb6bc2fec77"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_global_boundary_v1/same_input_q4_n6_certificates.json",
+      "sha256": "947a9821edae66e145e3edf3cc5c5f0a3590a4385d422bac250ec3f79e8ca44a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_global_boundary_v1/stdout.txt",
+      "sha256": "8b1475c5c75e39f6f8fa3ad3d9bb046bc5cab109a8305b48630fec63a34a4685"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_split_global_boundary_v1/summary.json",
+      "sha256": "8b1475c5c75e39f6f8fa3ad3d9bb046bc5cab109a8305b48630fec63a34a4685"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_global_v1/exceptional_q4_certificates.json",
+      "sha256": "334f21466e6e2836a060ef96222d8433262ca1b969527b1ab00bf12aa05c2f17"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_global_v1/norm_line_family_cases.json",
+      "sha256": "9370b2eacec310fa9a3c96e772bb15f24d30bc6a3bc22e0fb494861838d8a5f9"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_global_v1/same_input_twist_supports.json",
+      "sha256": "23a64694fef26425c228bc32c5052b7ce5f51542e45c2605c83ff0b117efe835"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_global_v1/stdout.txt",
+      "sha256": "9260fd5f827d110eb75262229c627ea073649589854e123acee1ff705350878a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_global_v1/summary.json",
+      "sha256": "9260fd5f827d110eb75262229c627ea073649589854e123acee1ff705350878a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_v1/cases_q4.jsonl",
+      "sha256": "460e85a6bfd3922db9da0c8ce4a48f57bad42901515baeb0fd7bbb58baf31f4c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_v1/modules_q2.json",
+      "sha256": "2932dcb7b70d992b86a70e26264f429d0d0e63a3bbd9ffea87df183a6b6062d8"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_v1/stdout.txt",
+      "sha256": "525235671618c04414a5d75d81eb58dce72e81aaf6d253f03132b2c3651a728c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/computations/results/finalisation_m8_structure_v1/summary.json",
+      "sha256": "525235671618c04414a5d75d81eb58dce72e81aaf6d253f03132b2c3651a728c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_CLI_GUARDS_V1.json",
+      "sha256": "6f6956482705948e7bd4d002729a17e2f0e876b421a34a6ff9aa6b734f003e57"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_DOCUMENT_CHECKER_DEVELOPMENT_V1.json",
+      "sha256": "20d838f013018c0f7021970a8d32c1db652b48334b08d2ad43ff23d31d3b86ad"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_DOCUMENT_INTEGRITY_V2.json",
+      "sha256": "5ca9bfcaab64f26868a86677c43301db467149c31457b629d78da69373194ed4"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_DOCUMENT_INTEGRITY_V3.json",
+      "sha256": "34751d46bd34b94368a2c7bb5eb1241f3ef2d140b2069dd386d04d04cfb2f3f9"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_FINALISATION_BASELINE.json",
+      "sha256": "3c21dffddddd61707e70132ae2f79784c20417fe604fe45ea197714c6b416f65"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_FINALISATION_PROVENANCE.md",
+      "sha256": "7ec429ce683334e8bf6f376f3052f42b5bed3182657129c7b78b1e43dddd9ebc"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_INPUT_INVENTORY_V1.json",
+      "sha256": "4865ad1398cf274e3f68e3c5f61f00a030d0eebf645991b8391a5192c5684200"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_INTAKE_PRESERVATION_V1.json",
+      "sha256": "1ed122e8dea5cbc5bb318bb2e0c7cc90b62875145a2c0a21d3dd25277bdeb692"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_LOCAL_PDF_SCOPE_V1.json",
+      "sha256": "aa59fa9a545dd3ef7d57e04a81a224a2caca8e5bed7a1a55bb8722edd8979c44"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_PRECOMMIT_INTEGRITY_V1.json",
+      "sha256": "c3173376572a247c7d013ca915a82f7bf392b4f6d29c3ab8db64201e37056116"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_PRESERVED_SIX_DOCUMENTS_CHECK_V1.json",
+      "sha256": "cd6faa4e6601a128c5758f2e5f583c66e1fdf53a7b120ca05c5a4e66b76fb98e"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_PRIMARY_GEOMETRY_REFINEMENT_V1.json",
+      "sha256": "2984d02491ce4969cd4e93ce1d3463b6654ec49416cc6178c2c2ab1d63b70b14"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_PRIMARY_SOURCE_SEARCH_V1.json",
+      "sha256": "0855b3f09c34b2a18a88bef4c4759960e916e9d1984af4fd93639c21d4543855"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_REGRESSION_COMPARISON_V1.json",
+      "sha256": "4aa63c449fe35d0d4df1ebde3458b29cf6e8cc8e8dac245595b14686dd2236e1"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_SOURCE_ACQUISITION_V1.json",
+      "sha256": "8c4548fa32d77d1f2662beb9fa7d238ba25d54e1a05b678e9993ad5a6e0c86ce"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/evidence/M8_SOURCE_READING_SCOPE_V1.json",
+      "sha256": "be53b51c8785f14cdf8cd38ca18569587f3edeb0bf6994e9f78e478f884c5c70"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_CLOSED_FORMULA_FULL_PROOF.md",
+      "sha256": "44bdf307ecf4cf4297283e4b27115c3cc7078977134f6fddd0ee7ae435933a7c"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_CLOSED_FORMULA_THEOREM.md",
+      "sha256": "3b360c24cbccbd40fc4b46c92efb6b9842c7b069758f2b5bdb24ce66028d2f7b"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_EXCEPTIONAL_CASES_REGISTER.md",
+      "sha256": "e8020ca62d35a2616f450e5ab3b1e9e677784f1067e06c3742cc1ae7f1382053"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_GATE_STATUS.json",
+      "sha256": "f8e442f7182813fa79a8662627602088c8780cd72bad2bc7ece993b84096b17b"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_INDEPENDENT_PROOF_AUDIT.md",
+      "sha256": "84483ac1b5a69e833a90432b088917c117ec251cde0b158c9bdbba333fd5089f"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_INPUT_INVENTORY.md",
+      "sha256": "4504e465233a66d2bc4857b4ec40da7daf6e43b715f19098c84ed67ca4fc14b2"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_PRIMARY_SOURCE_NOVELTY_ASSESSMENT.md",
+      "sha256": "280b0db562c86f52f13f1297b4e17448adbafb6e8f934e070b4481eb8fad3619"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_OBLIGATIONS.json",
+      "sha256": "bd4234ec290443276d1182f025e8825f43812935a4e241de374252be788e46d7"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_STATUS_REPORT.md",
+      "sha256": "3d1c393542b2e6fe9bf38fb536e81cd60d677345260e7d1cb5603722e9671614"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/finalisation/M8/CORE_A_THEORY_COMPUTATION_COMPARISON.md",
+      "sha256": "9ac877c061ae0c1cce7d07cecc083851efeca6a85395ddf9855b530ec326778a"
+    },
+    {
+      "status": "A",
+      "path": "autonomous_research/AR01/tools/check_core_a_finalisation_m8.py",
+      "sha256": "5eab91dbc13ab0448aa93d86eb8497af853548a304df83ba2535dcafeaa993ad"
+    }
+  ],
+  "staged_bytes_equal_working_files": true,
+  "only_prior_path_changes_are_six_permitted_append_only_files": true,
+  "no_deletion_or_ignored_cache_or_protected_scientific_edit": true,
+  "default_git_diff_check_observation": {
+    "exit_code": 2,
+    "cause": "The preserved Python csv.writer output has138 CRLF records; default Git whitespace checking reports the carriage returns as trailing whitespace. No data normalized or rewritten.",
+    "file": "autonomous_research/AR01/computations/results/finalisation_m8_foundations_v1/auxiliary_q2.csv",
+    "sha256": "b790a54555b4b0f3294cb561bcaacbb174197b394ba184f2c315c7ca9f26f0b0",
+    "byte_identical_to": "autonomous_research/AR01/computations/results/main_v1/auxiliary_q2.csv"
+  },
+  "explicit_CR_at_EOL_aware_check": {
+    "command": "git -c core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol diff --cached --check",
+    "exit_code": 0
+  },
+  "scope": "Staging/file-mode/path/whitespace safety only. This receipt is necessarily outside its own preceding index snapshot and the earlier immutable ZIP; all are included by the later full remote-tree check."
+}

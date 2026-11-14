@@ -1,0 +1,188 @@
+[
+  {
+    "q": 4,
+    "s": 0,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 60,
+    "dimension_two_candidate_flags": 300,
+    "selfdual_flags_F": 300,
+    "nonselfdual_flags": 0,
+    "dimension_one_and_three_flags": 120,
+    "K_V_mu_one_by_actual_right_radicals": 120,
+    "distinct_noncontained_selfdual_planes_met": 79,
+    "wrong_annihilator_direction_witness": null,
+    "complete_flag_stream_sha256_hash_only": "8f82d4762651147935ad89a959a27d17d7ef4dc7664f2c6b7a3705b747662485"
+  },
+  {
+    "q": 4,
+    "s": 1,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 24,
+    "dimension_two_candidate_flags": 120,
+    "selfdual_flags_F": 72,
+    "nonselfdual_flags": 48,
+    "dimension_one_and_three_flags": 48,
+    "K_V_mu_one_by_actual_right_radicals": 96,
+    "distinct_noncontained_selfdual_planes_met": 21,
+    "wrong_annihilator_direction_witness": null,
+    "complete_flag_stream_sha256_hash_only": "f08dfcc3f12e7a5cb18f3f0d1b0aa2faff61fde17a0355ca3bfd827cbc161bec"
+  },
+  {
+    "q": 8,
+    "s": 0,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 504,
+    "dimension_two_candidate_flags": 4536,
+    "selfdual_flags_F": 4536,
+    "nonselfdual_flags": 0,
+    "dimension_one_and_three_flags": 1008,
+    "K_V_mu_one_by_actual_right_radicals": 1008,
+    "distinct_noncontained_selfdual_planes_met": 575,
+    "wrong_annihilator_direction_witness": null,
+    "complete_flag_stream_sha256_hash_only": "ca598f86c24144686f7051c73c4139c32f19ec93e0db22b05dc81ab61ff2c5b8"
+  },
+  {
+    "q": 8,
+    "s": 1,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 72,
+    "dimension_two_candidate_flags": 648,
+    "selfdual_flags_F": 84,
+    "nonselfdual_flags": 564,
+    "dimension_one_and_three_flags": 144,
+    "K_V_mu_one_by_actual_right_radicals": 708,
+    "distinct_noncontained_selfdual_planes_met": 11,
+    "wrong_annihilator_direction_witness": {
+      "v": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "w": [
+        1,
+        1,
+        6,
+        0
+      ],
+      "omega_w_v": 0,
+      "omega_v_w": 2
+    },
+    "complete_flag_stream_sha256_hash_only": "8dc42fbc361b1b4469781e6a7b20fa34aac48f63403c9b7f142789348fe77884"
+  },
+  {
+    "q": 8,
+    "s": 2,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 72,
+    "dimension_two_candidate_flags": 648,
+    "selfdual_flags_F": 84,
+    "nonselfdual_flags": 564,
+    "dimension_one_and_three_flags": 144,
+    "K_V_mu_one_by_actual_right_radicals": 708,
+    "distinct_noncontained_selfdual_planes_met": 11,
+    "wrong_annihilator_direction_witness": {
+      "v": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "w": [
+        1,
+        1,
+        4,
+        0
+      ],
+      "omega_w_v": 0,
+      "omega_v_w": 2
+    },
+    "complete_flag_stream_sha256_hash_only": "7b5b949a92fad09c4fb79dd491197db8364df2da16a545034d5103c9da44a756"
+  },
+  {
+    "q": 16,
+    "s": 0,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 4080,
+    "dimension_two_candidate_flags": 69360,
+    "selfdual_flags_F": 69360,
+    "nonselfdual_flags": 0,
+    "dimension_one_and_three_flags": 8160,
+    "K_V_mu_one_by_actual_right_radicals": 8160,
+    "distinct_noncontained_selfdual_planes_met": 4351,
+    "wrong_annihilator_direction_witness": null,
+    "complete_flag_stream_sha256_hash_only": "1f6500f14cad71dff5eaee30cf1b53abe1981e91219e7a58ec33ea834f3ef152"
+  },
+  {
+    "q": 16,
+    "s": 1,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 276,
+    "dimension_two_candidate_flags": 4692,
+    "selfdual_flags_F": 324,
+    "nonselfdual_flags": 4368,
+    "dimension_one_and_three_flags": 552,
+    "K_V_mu_one_by_actual_right_radicals": 4920,
+    "distinct_noncontained_selfdual_planes_met": 21,
+    "wrong_annihilator_direction_witness": {
+      "v": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "w": [
+        1,
+        1,
+        5,
+        0
+      ],
+      "omega_w_v": 0,
+      "omega_v_w": 1
+    },
+    "complete_flag_stream_sha256_hash_only": "7933fa9e9b3f5e503a3e79eedf562c8918f5cee6b3a45efef03808277807d7a3"
+  },
+  {
+    "q": 16,
+    "s": 2,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 960,
+    "dimension_two_candidate_flags": 16320,
+    "selfdual_flags_F": 4800,
+    "nonselfdual_flags": 11520,
+    "dimension_one_and_three_flags": 1920,
+    "K_V_mu_one_by_actual_right_radicals": 13440,
+    "distinct_noncontained_selfdual_planes_met": 315,
+    "wrong_annihilator_direction_witness": null,
+    "complete_flag_stream_sha256_hash_only": "a48709709476485e66a6dafc4e0066626b9b85379397cba3016f9a9ce62bc9fc"
+  },
+  {
+    "q": 16,
+    "s": 3,
+    "scope": "All rank2 isotropic points and their directed flags; not a B^2 module or global census",
+    "rank_two_isotropic_points_U": 276,
+    "dimension_two_candidate_flags": 4692,
+    "selfdual_flags_F": 324,
+    "nonselfdual_flags": 4368,
+    "dimension_one_and_three_flags": 552,
+    "K_V_mu_one_by_actual_right_radicals": 4920,
+    "distinct_noncontained_selfdual_planes_met": 21,
+    "wrong_annihilator_direction_witness": {
+      "v": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "w": [
+        1,
+        1,
+        4,
+        0
+      ],
+      "omega_w_v": 0,
+      "omega_v_w": 1
+    },
+    "complete_flag_stream_sha256_hash_only": "03edcb88948d16a29b215ddc47bd1ec4e9dcb0d5cd75d2e87499d2f1e802c0f5"
+  }
+]

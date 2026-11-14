@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "session_calendar_utc": "2026-11-12",
+  "raw_environment_observed_at_utc": "2026-11-14T05:39:49.658942+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "branch": "arena/7d88376d-matrix-ring",
+  "uncommitted_base": "c4f170dffbb6c6a99b7ae2339851ea3d29039022",
+  "remote_ref_still_matches_base": true,
+  "intake_originals_verified": 2059,
+  "frozen_M5_inputs_verified": 19,
+  "final_document_check_path": "autonomous_research/AR01/evidence/M8_DOCUMENT_INTEGRITY_V3.json",
+  "final_document_check_sha256": "34751d46bd34b94368a2c7bb5eb1241f3ef2d140b2069dd386d04d04cfb2f3f9",
+  "CLI_guard_check_sha256": "6f6956482705948e7bd4d002729a17e2f0e876b421a34a6ff9aa6b734f003e57",
+  "archives_reopened_and_verified": [
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M1_INTAKE.zip",
+      "bytes": 529289,
+      "sha256": "bc57c44ac2c6fbe38a8be76fd27665262a16fdec0238fd653c8bf21e66d8d72a",
+      "manifest_payloads_verified": 31,
+      "zip_entries_verified": 32,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M2_CORE_A_CHECKS.zip",
+      "bytes": 614450,
+      "sha256": "18f355b5b4b0df79dc3eba911cd05536311886e4157750e7b5c863d87922ffef",
+      "manifest_payloads_verified": 50,
+      "zip_entries_verified": 51,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M3_EMBEDDED_STRUCTURE.zip",
+      "bytes": 679143,
+      "sha256": "7d8d84020ad986e328d759e3a9c030f903d9cda4008fec67b10462eaa9633941",
+      "manifest_payloads_verified": 66,
+      "zip_entries_verified": 67,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M4_SPLIT_COUPLING.zip",
+      "bytes": 811689,
+      "sha256": "85fab431331a867ad5ed7e1fe1bf34ed758623045cec0935a88e69241acf6333",
+      "manifest_payloads_verified": 84,
+      "zip_entries_verified": 85,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M5_CLOSED_FORMULA_PROOF.zip",
+      "bytes": 923509,
+      "sha256": "d2e456902e9e0b56c38e351648c7cd883d023826005d57bd9bbd90989e2a8186",
+      "manifest_payloads_verified": 121,
+      "zip_entries_verified": 122,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M6_SCALAR_QC_COMPARISON.zip",
+      "bytes": 964837,
+      "sha256": "aee3af08dd5faeac71debe972a38b1da77eb85a3da3db2112b3d2b926ea27f03",
+      "manifest_payloads_verified": 135,
+      "zip_entries_verified": 136,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M7_CHECKPOINT_CONTINUATION.zip",
+      "bytes": 1230180,
+      "sha256": "d97052012c462b4c072c8b56fd17f5a5aa7a599196f8c2699bf44ee8884ffc63",
+      "manifest_payloads_verified": 149,
+      "zip_entries_verified": 150,
+      "reopened_all_payloads_verified": true
+    },
+    {
+      "path": "autonomous_research/AR01/backups/AR01_M8_FINALISATION_REVIEW.zip",
+      "bytes": 1484123,
+      "sha256": "7e7f028defa297496aca0eefe940086f69649bae924c22733e051955319be429",
+      "manifest_payloads_verified": 220,
+      "zip_entries_verified": 221,
+      "reopened_all_payloads_verified": true
+    }
+  ],
+  "new_archive_payloads_equal_current_precommit_files": true,
+  "note": "This receipt is created after the immutable ZIP snapshot and therefore is not itself inside it. Later post-push receipts/completion suffixes are likewise a documentary follow-up, not an archive rewrite.",
+  "independent_complete_proof_acceptance_established": false,
+  "novelty_cleared": false,
+  "submission_package": false,
+  "scope": "Preservation, file/link/range/assembly/CLI and research-archive integrity only; not independent mathematical acceptance or scientific novelty"
+}

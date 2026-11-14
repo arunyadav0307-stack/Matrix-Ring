@@ -1,0 +1,292 @@
+[
+  {
+    "m": 1,
+    "q": 2,
+    "s": 0,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 1,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 159,
+    "hull_mu_counts": {
+      "0": 18,
+      "1": 78,
+      "2": 62,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 15,
+    "isotropic_projection_rank_one_points": 9,
+    "isotropic_projection_rank_two_points_U": 6,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 4,
+      "tangent": 3,
+      "secant": 6,
+      "external": 2
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 18,
+    "mu_one_K_equals_V_inputs": 12,
+    "mu_one_primitive_inputs": 37,
+    "mu_one_radical_K_line_inputs": 29
+  },
+  {
+    "m": 2,
+    "q": 4,
+    "s": 0,
+    "gcd_s_m": 2,
+    "fixed_field_size_Q": 4,
+    "Frobenius_order": 1,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 1221,
+    "hull_mu_counts": {
+      "0": 258,
+      "1": 522,
+      "2": 440,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 85,
+    "isotropic_projection_rank_one_points": 25,
+    "isotropic_projection_rank_two_points_U": 60,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 6,
+      "tangent": 15,
+      "secant": 40,
+      "external": 24
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 300,
+    "mu_one_K_equals_V_inputs": 120,
+    "mu_one_primitive_inputs": 233,
+    "mu_one_radical_K_line_inputs": 169
+  },
+  {
+    "m": 2,
+    "q": 4,
+    "s": 1,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 2,
+    "isotropic_residue_lines_d": 3,
+    "all_embedded_input_modules": 1221,
+    "hull_mu_counts": {
+      "0": 130,
+      "1": 538,
+      "2": 550,
+      "3": 3
+    },
+    "layer_isotropic_projective_points": 45,
+    "isotropic_projection_rank_one_points": 21,
+    "isotropic_projection_rank_two_points_U": 24,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 6,
+      "tangent": 9,
+      "secant": 12,
+      "external": 0
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 72,
+    "mu_one_K_equals_V_inputs": 96,
+    "mu_one_primitive_inputs": 305,
+    "mu_one_radical_K_line_inputs": 137
+  },
+  {
+    "m": 3,
+    "q": 8,
+    "s": 0,
+    "gcd_s_m": 3,
+    "fixed_field_size_Q": 8,
+    "Frobenius_order": 1,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 12993,
+    "hull_mu_counts": {
+      "0": 4098,
+      "1": 3858,
+      "2": 5036,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 585,
+    "isotropic_projection_rank_one_points": 81,
+    "isotropic_projection_rank_two_points_U": 504,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 10,
+      "tangent": 63,
+      "secant": 288,
+      "external": 224
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 4536,
+    "mu_one_K_equals_V_inputs": 1008,
+    "mu_one_primitive_inputs": 1681,
+    "mu_one_radical_K_line_inputs": 1169
+  },
+  {
+    "m": 3,
+    "q": 8,
+    "s": 1,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 3,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 12993,
+    "hull_mu_counts": {
+      "0": 4098,
+      "1": 3534,
+      "2": 5360,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 105,
+    "isotropic_projection_rank_one_points": 33,
+    "isotropic_projection_rank_two_points_U": 72,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 4,
+      "tangent": 3,
+      "secant": 6,
+      "external": 2
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 84,
+    "mu_one_K_equals_V_inputs": 708,
+    "mu_one_primitive_inputs": 1657,
+    "mu_one_radical_K_line_inputs": 1169
+  },
+  {
+    "m": 3,
+    "q": 8,
+    "s": 2,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 3,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 12993,
+    "hull_mu_counts": {
+      "0": 4098,
+      "1": 3534,
+      "2": 5360,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 105,
+    "isotropic_projection_rank_one_points": 33,
+    "isotropic_projection_rank_two_points_U": 72,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 4,
+      "tangent": 3,
+      "secant": 6,
+      "external": 2
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 84,
+    "mu_one_K_equals_V_inputs": 708,
+    "mu_one_primitive_inputs": 1657,
+    "mu_one_radical_K_line_inputs": 1169
+  },
+  {
+    "m": 4,
+    "q": 16,
+    "s": 0,
+    "gcd_s_m": 4,
+    "fixed_field_size_Q": 16,
+    "Frobenius_order": 1,
+    "isotropic_residue_lines_d": 1,
+    "all_embedded_input_modules": 166521,
+    "hull_mu_counts": {
+      "0": 65538,
+      "1": 29730,
+      "2": 71252,
+      "3": 1
+    },
+    "layer_isotropic_projective_points": 4369,
+    "isotropic_projection_rank_one_points": 289,
+    "isotropic_projection_rank_two_points_U": 4080,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 18,
+      "tangent": 255,
+      "secant": 2176,
+      "external": 1920
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 69360,
+    "mu_one_K_equals_V_inputs": 8160,
+    "mu_one_primitive_inputs": 12833,
+    "mu_one_radical_K_line_inputs": 8737
+  },
+  {
+    "m": 4,
+    "q": 16,
+    "s": 1,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 4,
+    "isotropic_residue_lines_d": 3,
+    "all_embedded_input_modules": 166521,
+    "hull_mu_counts": {
+      "0": 57346,
+      "1": 33490,
+      "2": 75682,
+      "3": 3
+    },
+    "layer_isotropic_projective_points": 369,
+    "isotropic_projection_rank_one_points": 93,
+    "isotropic_projection_rank_two_points_U": 276,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 6,
+      "tangent": 9,
+      "secant": 12,
+      "external": 0
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 324,
+    "mu_one_K_equals_V_inputs": 4920,
+    "mu_one_primitive_inputs": 20345,
+    "mu_one_radical_K_line_inputs": 8225
+  },
+  {
+    "m": 4,
+    "q": 16,
+    "s": 2,
+    "gcd_s_m": 2,
+    "fixed_field_size_Q": 4,
+    "Frobenius_order": 2,
+    "isotropic_residue_lines_d": 5,
+    "all_embedded_input_modules": 166521,
+    "hull_mu_counts": {
+      "0": 49154,
+      "1": 48386,
+      "2": 68976,
+      "3": 5
+    },
+    "layer_isotropic_projective_points": 1105,
+    "isotropic_projection_rank_one_points": 145,
+    "isotropic_projection_rank_two_points_U": 960,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 10,
+      "tangent": 75,
+      "secant": 240,
+      "external": 0
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 4800,
+    "mu_one_K_equals_V_inputs": 13440,
+    "mu_one_primitive_inputs": 27233,
+    "mu_one_radical_K_line_inputs": 7713
+  },
+  {
+    "m": 4,
+    "q": 16,
+    "s": 3,
+    "gcd_s_m": 1,
+    "fixed_field_size_Q": 2,
+    "Frobenius_order": 4,
+    "isotropic_residue_lines_d": 3,
+    "all_embedded_input_modules": 166521,
+    "hull_mu_counts": {
+      "0": 57346,
+      "1": 33490,
+      "2": 75682,
+      "3": 3
+    },
+    "layer_isotropic_projective_points": 369,
+    "isotropic_projection_rank_one_points": 93,
+    "isotropic_projection_rank_two_points_U": 276,
+    "selfdual_two_plane_quadric_intersection_types": {
+      "contained": 6,
+      "tangent": 9,
+      "secant": 12,
+      "external": 0
+    },
+    "selfdual_two_plane_rank_two_point_incidences_B": 324,
+    "mu_one_K_equals_V_inputs": 4920,
+    "mu_one_primitive_inputs": 20345,
+    "mu_one_radical_K_line_inputs": 8225
+  }
+]

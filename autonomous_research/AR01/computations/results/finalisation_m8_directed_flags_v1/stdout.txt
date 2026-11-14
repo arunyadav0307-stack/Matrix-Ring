@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "repository_code_imports": [],
+  "field_twist_cases": 9,
+  "directed_two_plane_flags_checked": 101316,
+  "nonreflexive_wrong_direction_witnesses": 4,
+  "hermitian_graph_field_twist_cases": 4,
+  "hermitian_graph_matrices_checked": 304,
+  "all_fresh_raw_geometry_and_q16_stratum_comparisons_match": true,
+  "source_sha256": "8be0311f0417099e45313f0dce7fd4c2644940c0a512ce7ac7ffe7d536c1cfb8",
+  "input_hashes": {
+    "results/finalisation_m8_distribution_audit_v1/geometry_cases.json": "2570268bf64f82f7bde2cf014caa9848195da6eaddd1de6a9c7b2a93886886d6",
+    "results/finalisation_m8_distribution_v1/summary.json": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac"
+  },
+  "output_hashes": {
+    "directed_flag_cases.json": "bf78c38aee1dcc4075f552decd747e443661f0cebc08c96eacf3005394eabf8a",
+    "hermitian_graph_cases.json": "d86264508772b39894f5e65b5e715a3ab65e99d5b0fcaf6d9720cc17b2da3e92"
+  },
+  "human_independent_review_completed": false,
+  "proof_assistant_checked": false,
+  "external_originality_certified": false,
+  "scope": "Additional standalone finite directed-flag/root scrutiny by the same agent; not complete-proof independent acceptance"
+}

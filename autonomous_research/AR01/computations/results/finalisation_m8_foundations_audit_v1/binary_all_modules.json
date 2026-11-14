@@ -1,0 +1,1909 @@
+[
+  {
+    "basis_bits_low_pivots": [],
+    "input_dimension": 0,
+    "input_mu": 0,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      8
+    ],
+    "input_dimension": 1,
+    "input_mu": 1,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      136
+    ],
+    "input_dimension": 1,
+    "input_mu": 1,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      128
+    ],
+    "input_dimension": 1,
+    "input_mu": 1,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      130,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      134,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      102,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      162,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      230,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      132,
+      8
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      68,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      196,
+      136
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      40,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      72,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      104,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      32,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      96,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      64,
+      128
+    ],
+    "input_dimension": 2,
+    "input_mu": 1,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      130,
+      4,
+      8
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      132,
+      8
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      130,
+      132,
+      8
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      68,
+      136
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      162,
+      68,
+      136
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      196,
+      136
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      162,
+      196,
+      136
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      38,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      70,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      98,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      102,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      36,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      100,
+      8,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 1,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      72,
+      32,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      72,
+      96,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      40,
+      64,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 3,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      129,
+      2,
+      4,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      65,
+      130,
+      4,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      193,
+      130,
+      4,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      33,
+      2,
+      132,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      161,
+      2,
+      132,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      97,
+      130,
+      132,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      225,
+      130,
+      132,
+      8
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      34,
+      68,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      145,
+      34,
+      68,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      81,
+      162,
+      68,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      209,
+      162,
+      68,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      49,
+      34,
+      196,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      177,
+      34,
+      196,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      113,
+      162,
+      196,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      241,
+      162,
+      196,
+      136
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 4,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 3,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      98,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      36,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      36,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      36,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      98,
+      36,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 3,
+    "hull_dimension": 4,
+    "hull_mu": 3
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      98,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      100,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      100,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      100,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      98,
+      100,
+      8,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      70,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      18,
+      72,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      82,
+      72,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      70,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      22,
+      72,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      86,
+      72,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      38,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      68,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      68,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 4,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      36,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      20,
+      40,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      52,
+      40,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 3,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      24,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 4,
+    "input_mu": 1,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      33,
+      2,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      65,
+      2,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      97,
+      2,
+      4,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      34,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      49,
+      34,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      81,
+      34,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      113,
+      34,
+      68,
+      8,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      4,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      68,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      68,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      4,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      68,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      66,
+      68,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      36,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      34,
+      36,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      18,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      22,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 3,
+    "hull_dimension": 3,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      20,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 5,
+    "input_mu": 2,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      65,
+      2,
+      4,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      2,
+      68,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      81,
+      2,
+      68,
+      8,
+      32,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      65,
+      2,
+      4,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      66,
+      68,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      81,
+      66,
+      68,
+      8,
+      96,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      33,
+      2,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      34,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      49,
+      34,
+      4,
+      8,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 4,
+    "hull_dimension": 2,
+    "hull_mu": 2
+  },
+  {
+    "basis_bits_low_pivots": [
+      18,
+      4,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      20,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      18,
+      20,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      6,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 6,
+    "input_mu": 2,
+    "hull_dimension": 2,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 7,
+    "input_mu": 3,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      17,
+      2,
+      4,
+      8,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 7,
+    "input_mu": 3,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 7,
+    "input_mu": 3,
+    "hull_dimension": 1,
+    "hull_mu": 1
+  },
+  {
+    "basis_bits_low_pivots": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "input_dimension": 8,
+    "input_mu": 2,
+    "hull_dimension": 0,
+    "hull_mu": 0
+  }
+]

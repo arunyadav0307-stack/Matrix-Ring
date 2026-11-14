@@ -1,0 +1,129 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:23:24.777626+00:00",
+  "timestamp_kind": "Raw environment observation only",
+  "extractor": "Preserved vendored pypdf 6.1.1",
+  "deduplicated_pdf_count": 10,
+  "sources": [
+    {
+      "sha256": "0679c4a6077b8477e8d325737b8efc8d3d96b9f8f356be6b8edaa06d6a26f989",
+      "representative": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/s13226-021-00014-x (2).pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf"
+      ],
+      "pages": 9,
+      "metadata_title": "On the structure of cyclic codes over M2 + u",
+      "first_page_header": "ORIGINAL RESEARCH\nOn the structure of cyclic codes over M2\u00f0Fp + u Fp\u00de\nHabibul Islam \u2022 Om Prakash \u2022 Dipak Kumar Bhunia\nReceived: 25 February 2019 / Accepted: 22 January 2021 / Published online: 14 June 2021\n/C211The Indian National Science Academy 2021, corrected publication 2021\nAbstract In this article, for a prime p such that p /C17 2o r3 \u00f0mod 5 \u00de, we identify cyclic codes of length N\nover R \u00bc M2\u00f0Fp \u00fe uFp\u00de, u2 \u00bc 0 as right R-submodules of R\u00bdx/C138=hxN /C0 1i. Also, we de\ufb01ne an isometry from\nM2\u00f0Fp \u00fe uFp\u00de to Fp2 \u00fe uFp2 \u00fe vFp2 \u00fe uvFp2 , where u2 \u00bc v2 \u00bc 0; uv \u00bc vu and determine the structure of\ncyclic codes, in particular self-dual cyclic codes of length N where gcd \u00f0N; p\u00de\u00bc 1. Moreover, several\noptimal and near to optimal codes are obtained as the Gray images of these codes over R.\nKeywords Cyclic code /C1Gray map /C1Self-dual code /C1Matrix ring /C1Optimal code\nMathematics Subject Classi\ufb01cation 94B05 /C194B15 /C194B35 /C194B60\n1 Introduction\nThe class of cyclic codes is an important class of linear codes which has been extensively studied over \ufb01nite\nrings after the establishing work of Hammons et al. [ 7] in 1994. Like commutative rings [ 9, 11\u201314],\nnoncommutative rings also play an important role in the development of error-correcting codes. Apart from\nskew polynomial rings [ 4, 8, 10], rings of matrices have recently attracted a growing interest among\nresearchers. In 2012, Oggier et al. [ 16] considered the matrix ring M\n2\u00f0F2\u00de for space-time coding. In 2013,\nAlahmadi et al. [ 1] studied cyclic codes over M2\u00f0F2\u00de and explored certain self-dual F4-codes. Also, in 2014,\nFalcunit and Sison [ 5] investigated the structure of cyclic codes over M2\u00f0Fp\u00de by using an isometry between\nM2\u00f0Fp\u00de and Fp2 \u00fe uFp2 . Recently, Luo and Udaya [ 15] considered the matrix ring M2\u00f0F2 \u00fe uF2\u00de and\nobtained several optimal F4-codes of length 16 and 20, respectively as the Gray images of cyclic codes.\nFurther, Pal et al. [ 17] and Bhowmick et al. [ 2] have studied cyclic codes over M4\u00f0F2\u00de and sel",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "410b6df35669b8d9f21fa0c5a2a3ae9e721306f2d1bf22474e1a983a4e43b52b",
+      "representative": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/s12190-018-01235-w (1).pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf"
+      ],
+      "pages": 8,
+      "metadata_title": "Cyclic codes over )",
+      "first_page_header": "",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "68b1b6bb7071b725367528b674a185c529075fb8dcd28f65e0aa351e2c583a53",
+      "representative": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/algebraic-structure-of-cyclic-codes-over-m3fp.pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf"
+      ],
+      "pages": 13,
+      "metadata_title": "",
+      "first_page_header": "\u00a9\nAlgebraic structure of cyclic codes over M3(Fp)\nHabibul Islam \n\u2020\nOm Prakash *\nDipak Kumar Bhunia \n\u00a7\nDepartment of Mathematics\nIndian Institute of Technology Patna \nPatna 801106\nBihar\nIndia\nAbstract\nLet Fp  be the finite field of order p and F3 ( ),pM  the ring of \u00d733  matrices over F ,p  \nwhere p  is a prime. For certain prime p, we determine the complete algebraic properties \nof cyclic codes of length N \uf08c()pN  over F3 ( ).pM  We define an isometry from F3 () pM  to \n++FF F33 3\n2 ,pp p ee  where 3 = 1.e  As an outcome, we derive numerous optimal and good linear \nF8  codes induced from F8 -images of cyclic codes over F32( ).M  \nSubject Classification: (2010) 94B05, 94B15, 94B35, 94B60.\nKeywords: Matrix ring, Linear code, Cyclic code, Gray map, Optimal code. \n1. Introduction\nCyclic codes over finite rings have been at the centre of attraction \namong researchers since 1994 [9]. They have a rich algebraic structure and, \nconsequently, produce a huge amount of good linear codes. Initially, cyclic \ncodes were considered over finite commutative as well as noncommutative \nrings. To discover new codes, cyclic codes over finite commutative rings \nare investigated in [7, 10\u201312, 14\u201317, 19, 22, 24, 25, 29]. Till now, a few papers \n[1, 3, 5, 8, 13, 18, 20, 21, 23] have come into the literature that presented the \nstudy of these codes over noncommutative rings, namely, matrix rings. \n\u2020\n E-mail:  habibul.pma17@iitp.ac.in\n* E-mail: om@iitp.ac.in (Corresponding Author)\n\u00a7\n E-mail: dipak.mtmc17@iitp.ac.in\nJournal of Discrete Mathematical Sciences & Cryptography\nISSN 0972-0529 (Print), ISSN 2169-0065 (Online)\nVol. 27 (2024), No. 1, pp. 189\u2013201\nDOI : 10.47974/JDMSC-1730",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "709fdd7bc52cd66187e39839ad9a5a9eb0c3818b73501270b57aa548ef11faf1",
+      "representative": "phase0_audit/extracted/prior_project/PAPER/main.pdf",
+      "extraction_error": "list index out of range",
+      "scope": "No technical reading"
+    },
+    {
+      "sha256": "a25f4ca4d3116ad49a48fefd105d9dd8670ad19a5e0e9bf6bd50c2bca55bc502",
+      "representative": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf"
+      ],
+      "pages": 5,
+      "metadata_title": "Construction of Codes Over <tex>$\\mathbb{F}_{p^{3}}$</tex> from Cyclic Codes Over <tex>$\\mathscr{M}_{3}\\left(\\mathbb{F}_{p}+u \\mathbb{F}_{p}+u^{2} \\mathbb{F}_{p}\\right)$</tex>",
+      "first_page_header": "Construction of Codes Over Fp3 From Cyclic Codes\nOver M3(Fp + uFp + u2Fp)\nShikha Patel1, Soham Ravikant Joshi 2 and Om Prakash 3\n1Department of Mathematics, Indian Institute of Information Technology Bhopal, Bhopal- 462 003, India\n2,3Department of Mathematics, Indian Institute of Technology Patna, Bihta, Patna - 801 106, India\nEmail: shikha 1821ma05@iitp.ac.in, soham 2421ma14@iitp.ac.in, om@iitp.ac.in\nAbstract\u2014Let Fp be a finite field with p elements and\nFp[u]/\u27e8u3\u27e9 = Fp + uFp + u2Fp, u3 = 0 be a finite chain ring.\nThis paper presents the construction of cyclic codes over Fp3 for\ncertain primes (p \u2264 100) from a noncommutative non-chain ring\nR = M3(Fp[u]/\u27e8u3\u27e9) of 3 \u00d7 3 matrices. First, we show that the\nstructure of R is isomorphic to (Fp3 +eFp3 +e2Fp3 +u(Fp3 +eFp3 +\ne2Fp3)+u2(Fp3 +eFp3 +e2Fp3) where e3 = 1, u3 = 0, uiej = ejui\nfor i \u2208 {1, 2} and j \u2208 {1, 2, 3}. Then we provide the form of ideals\nof R and derive that cyclic codes can be written as the direct sum\nof R-submodules of R[x]\n<xn\u22121> . Further, we find the formula for the\ncardinality of cyclic codes over R. Later, in the module isometry\nfor R, we define the Gray map, which takes derived cyclic codes\nover R to Fp3. In addition, we provide non-trivial examples of\nlinear codes over Fp3 with good parameters which support our\nderived results.\nIndex Terms\u2014Finite field, cyclic codes, matrix rings, Gray map,\nMDS/AMDS codes.\nI. I NTRODUCTION\nThe study of cyclic codes over finite rings has received con-\nsiderable attention in the last decades of the twentieth century\nand has made significant contributions to the development of\nerror-correcting codes. Several studies have been conducted\nover the past three decades on cyclic codes over finite fields and\nfinite commutative rings. Many well-known codes, including\nbinary Hamming codes, Reed-Muller, Golay, Kerdock, BCH,\nPreparata, and Justesen codes, are either cyclic or constructed\nfrom cyclic codes. Recall that a cyclic code of length n over a\nfinite field Fq is also classif",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "af68bf2490cf33722d069299e6a687c6e9a80fc45cc5040abb28c417ac19153d",
+      "representative": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/s12095-022-00572-9 (3).pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf"
+      ],
+      "pages": 14,
+      "metadata_title": "Cyclic codes over",
+      "first_page_header": "Vol.:(0123456789)\nhttps://doi.org/10.1007/s12095-022-00572-9\n1 3\nCyclic codes over\u00a0M4(/u1D53D2 + u/u1D53D2)\u00a0\u00a0\nShikha\u00a0Patel1\u00a0\u00b7 Om\u00a0Prakash1 \u00a0\u00b7 Habibul\u00a0Islam1\n\u00a9 The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2022\nAbstract\nLet p be a prime and /u1D53Dq be a finite field for q = pm . In this paper, we consider the ring \nR = M 4(/u1D53D2 + u/u1D53D2) of 4 \u00d7 4 matrices over the finite ring /u1D53D2 + u/u1D53D2 with u2 = 0 . Then \nR is a noncommutative non-chain ring of cardinality 416 and isomorphic to the ring \n/u1D53D16 + v/u1D53D16 + v2 /u1D53D16 + v3 /u1D53D16 + u/u1D53D16 + uv/u1D53D16 + uv2 /u1D53D16 + uv3 /u1D53D16 , where v4 = 0 , uv = vu , \nuv2 = v2u and uv3 = v3u . Here, first we establish the structure of cyclic codes and their \ngenerators over R and later the dual (Euclidean and Hermitian both) of these cyclic codes \nare discussed. Further, with the help of the Gray map, we show that the image of a cyclic \ncode is an /u1D53D16-linear code. Finally, we provide some non-trivial examples of linear codes \nwith good parameters to support our derived results.\nKeywords Modules\u00a0\u00b7 Matrix ring\u00a0\u00b7 Cyclic codes\u00a0\u00b7 Gray map\nMathematics subject classification (2010) 12E20\u00a0\u00b7 94B05\u00a0\u00b7 94B15\n1 Introduction\nThe study of linear codes over finite rings has received much attention in the last decades \nof the twentieth century. A linear code whose codewords are invariant under a circular shift \nis known as a cyclic code. A cyclic code of length n over a ring R is an ideal of the quo -\ntient ring R[x]\u2215\u27e8xn \u2212 1\u27e9 , and each codeword is identified by a polynomial of degree at most \nn \u2212 1 . Due to such algebraic structure, the class of cyclic codes is a better choice among \nresearchers for encoding and decoding purposes than other linear codes [ 1, 5]. In 1994, \nHammons et\u00a0al. [ 9] gave a new direction to linear codes over \u21244 and obtained some good \nnon-linear binary codes as the Gray images of linear codes. Afterwards, the study of li",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "beb31f56d58a88d9674d86700390a5e0bc4faddc0eadf787f06c6a1ccd32bb8b",
+      "representative": "s11128-026-05230-0 (3).pdf",
+      "all_copy_paths": [
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s11128-026-05230-0 (3).pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/s11128-026-05230-0 (3).pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s11128-026-05230-0 (3).pdf",
+        "s11128-026-05230-0 (3).pdf"
+      ],
+      "pages": 30,
+      "metadata_title": "Quantum codes construction from cyclic codes over matrix rings",
+      "first_page_header": "Quantum Information Processing (2026) 25:207\nhttps://doi.org/10.1007/s11128-026-05230-0\nQuantum codes construction from cyclic codes over matrix\nrings\nSoham Ravikant Joshi 1 \u00b7 Shikha Patel 2 \u00b7 Om Prakash 1\nReceived: 31 December 2025 / Accepted: 22 May 2026 / Published online: 9 June 2026\n\u00a9 The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature\n2026\nAbstract\nLet Fp be the \ufb01nite \ufb01eld with p elements where p is a prime, and R b ea3 \u00d73 matrices\nover Fp[u]/\u27e8uk \u27e9, i.e., R = M3(Fp + uFp +\u00b7\u00b7\u00b7+ uk\u22121Fp) with uk = 0. First, we\nstudy the structure of cyclic codes over R as the direct sum of submodules of R, along\nwith the Euclidean and Hermitian dual for the ring S = M3(F3 +uF3 +\u00b7\u00b7\u00b7+ uk\u22121F3).\nLater, to show that the structure is suitable for the construction of good linear codes,\nwe provide many AMDS (almost maximum-distance-separable) and best-known lin-\near codes over F125, F27, and F8. Further, we study dual-containing codes over S\nusing a new non-degenerate inner product and provide a new approach to constructing\nquantum codes over matrix rings via the CSS (Calderbank-Shor-Steane) construction.\nFinally, we construct several quantum codes with small quantum Singleton defects\nusing a suitable Gray map.\nKeywords Modules \u00b7 Matrix rings \u00b7 Cyclic codes \u00b7 Gray map \u00b7 CSS construction \u00b7\nQuantum codes\nMathematics Subject Classi\ufb01cation 12E20 \u00b7 94B05 \u00b7 94B15 \u00b7 81P45 \u00b7 81P70\n1 Introduction\nCyclic codes are a special class of linear codes used for error detection and correc-\ntion. They rely on polynomial representations over \ufb01nite \ufb01elds and rings, enabling\nB Om Prakash\nom@iitp.ac.in\nSoham Ravikant Joshi\nsoham_2421ma14@iitp.ac.in\nShikha Patel\nshikha_1821ma05@iitp.ac.in\n1 Department of Mathematics, Indian Institute of Technology Patna, Bihta, Patna 801 106, India\n2 Department of Mathematics, Indian Institute of Information Technology Bhopal, Bhopal 462003,\nIndia\n123",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "cf1af5654ff639a3195b18d1dab1c2d5dad0497994779a77aa24f63804f1f810",
+      "representative": "autonomous_research/AR01/evidence/history/remote_s12190-018-01235-w.pdf",
+      "all_copy_paths": [
+        "autonomous_research/AR01/evidence/history/remote_s12190-018-01235-w.pdf"
+      ],
+      "pages": 8,
+      "metadata_title": "Cyclic codes over )",
+      "first_page_header": "Journal of Applied Mathematics and Computing (2019) 60:749\u2013756\nhttps://doi.org/10.1007/s12190-018-01235-w\nORIGINAL RESEARCH\nCyclic codes over M4(F2)\nJoydeb Pal 1 \u00b7 Sanjit Bhowmick 1 \u00b7 Satya Bagchi 1\nReceived: 6 October 2018 / Published online: 3 January 2019\n\u00a9 Korean Society for Computational and Applied Mathematics 2019\nAbstract\nIn this article, keeping the huge research prospective of the study in mind, we consider\nthe non-commutative ring M4(F2),t h es e to fa l l4 \u00d7 4 matrices over the \ufb01eld F2 and\ncon\ufb01rm that this ring is isomorphic with the ring F16 +uF16 +u2F16 +u3F16, where\nu4 = 0. Besides, we develop the structure of cyclic codes and their generators over\nthe ring. Also, making use of Gray map from M4(F2) to F4\n16, we infer that the image\nof a cyclic code is a linear code. Finally, our \ufb01ndings are authenticated by suitable\nnon-trivial examples.\nKeywords Matrix ring \u00b7 Modules \u00b7 Cyclic codes \u00b7 Quaternary codes\nMathematics Subject Classi\ufb01cation 94B05 \u00b7 94B15\n1 Introduction\nCyclic codes over \ufb01nite rings have been extensively studied due to their vast signif-\nicance in the theory of error correcting codes. Besides, codes over \ufb01nite rings have\nexperienced a remarkable growth after the development of linear codes over the ring\nof integers modulo 4 obtained in [ 7]. In that article, the authors gave a new wing to the\ntopic by employing Gray map from Z4 to F2\n2 which relates some illustrious non-linear\ncodes to some linear codes. Since then, codes have been thoroughly studied over \ufb01nite\ncommutative rings by several mathematicians and consequently plenty of interesting\nresults on codes over \ufb01nite commutative rings are there in the literature, among those\nsome of are related to chain [ 1,4,6,10] and some others are non-chain [ 13,14]. A very\nB Joydeb Pal\njoydebpal77@gmail.com\nSanjit Bhowmick\nsanjitbhowmick392@gmail.com\nSatya Bagchi\nsatya.bagchi@maths.nitdgp.ac.in\n1 Department of Mathematics, National Institute of Technology Durgapur, Burdwan, India\n123",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "cffa3e24e2627894ec6d8a4dd93a97c5c2e492461aa078aad07c8ef5f79eeb3f",
+      "representative": "2602.18255v1 (1).pdf",
+      "all_copy_paths": [
+        "2602.18255v1 (1).pdf",
+        "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/2602.18255v1 (1).pdf",
+        "phase0_audit/extracted/literature/Matrix Ring 1/2602.18255v1 (1).pdf",
+        "phase0_audit/independent_review/work/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/2602.18255v1 (1).pdf"
+      ],
+      "pages": 30,
+      "metadata_title": "Construction of Cyclic Codes over a Class of Matrix Rings",
+      "first_page_header": "CONSTRUCTION OF CYCLIC CODES OVER A CLASS OF\nMATRIX RINGS\nSOHAM RAVIKANT JOSHI, SHIKHA PATEL, AND OM PRAKASH\u22c6\nAbstract.LetF 2[u]/\u27e8uk\u27e9=F 2 +uF2 +u2F2 +\u00b7\u00b7\u00b7+u k\u22121F2,whereu k = 0 for\na positive integerk, andR=M 4(F2(u)/\u27e8uk\u27e9) be the finite noncommutative\nnon-chain matrix ring of order 4\u00d74. This paper presents the construction of\ncyclic codes over the finite fieldF 16 via the considered matrix ringR. In this\nconnection, first, we discuss the structure of the ringRand show thatRis\nisomorphic to the ring (F16 +vF 16 +v 2F16 +v 3F16) +u(F16 +vF 16 +v 2F16 +\nv3F16)+u2(F16+vF16+v2F16+v3F16)+\u00b7\u00b7\u00b7+u k\u22121(F16+vF16+v2F16+v3F16)\nwherev 4 = 0, uk = 0, uivj =v jui fori\u2208 {1, . . . , k\u22121}andj\u2208 {1,2,3}. Then,\nwe establish the form of ideals of the ringRand related cyclic codes overR.\nFurther, we show that these cyclic codes can be written as the direct sums\nofR-submodules of R[x]\n<xn\u22121> , and derive the formula for the cardinality of\ncyclic codes overR. Then, we consider the Euclidean and Hermitian duals\nof the derived cyclic codes overR. Under the module isometry forR, we\nuse the Bachoc map and the Gray map, which takes derived cyclic code over\nRtoF 16. Finally, we provide some non-trivial examples of linear codes over\nF16 with good parameters that support our derived results and compare a few\ncodes with existing codes in the literature.\n1.Introduction\nPrange [16] introduced cyclic codes in 1957 and has attracted the attention\nof several researchers since their elaboration. It is an important class of linear\ncodes and plays a vital role in developing error-correcting codes. Researchers have\ndone numerous revolutionary works on cyclic codes over finite fields and finite\ncommutative rings. Furthermore, many well-known codes, such as BCH, Kerdock,\nGolay, Reed-Muller, Preparata, Justesen, and binary Hamming codes, are cyclic\nor derived from it. A cyclic code of lengthnover a finite fieldFis the ideal of\nthe quotient ringF[x]/\u27e8x n \u22121\u27e9. Being rich with algebraic properties and ease\nof implemen",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    },
+    {
+      "sha256": "f432b4cf10f939b1a82aa2b1782a36460dc65a76a54eb2c02e1431789787b16c",
+      "representative": "NEW_RESEARCH_BLUEPRINT_REVIEW.pdf",
+      "all_copy_paths": [
+        "NEW_RESEARCH_BLUEPRINT_REVIEW.pdf"
+      ],
+      "pages": 64,
+      "metadata_title": "New Research Blueprint \u2014 Complete Author Reading Edition",
+      "first_page_header": "MATRIX RING  /  AUTHOR READING EDITION\nNEW RESEARCH\nBLUEPRINT\nGenerator Profiles of Galois Hulls of\nPrincipal Cyclic Codes over Matrix Rings\nRecommended direction: P2-S \u2014 provisional\n18 author decisions pending \u00b7 43 audit constraints retained\nExternal novelty unverified \u00b7 Phase 1 not authorized\nPrevious project remains on CONDITIONAL HOLD\nIncluded in this PDF\nMaster overview and author-scope addendum first, followed by all nine detailed chapters and the\ncomplete audit-constraint crosswalk.\nThis is a read-only presentation of the existing planning files. It is not a research manuscript, proof, novelty certificate or\npermission to execute research.\nFrom the current local Git workspace; not committed or pushed.\nBranch: arena/7d88376d-matrix-ring\nOriginal source files and sealed ZIP remain unchanged.\n",
+      "scope": "First page metadata/header only; not a whole-paper reading"
+    }
+  ]
+}

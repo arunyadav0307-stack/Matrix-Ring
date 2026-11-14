@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "old_census_comparison_summary_sha256": "525235671618c04414a5d75d81eb58dce72e81aaf6d253f03132b2c3651a728c",
+  "q2_q4_q8_censuses_read_as_old_evidence_not_new_execution": true,
+  "new_q16_all_embedded_modules": 166521,
+  "new_q16_all_twists": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "new_q16_generic_and_structural_full_space_cases": 666084,
+  "all_q16_generic_and_structural_hull_bases_equal": true,
+  "q16_kind_counts": {
+    "radical": 87895,
+    "primitive": 78625,
+    "ambient": 1
+  },
+  "q16_observations": [
+    {
+      "s": 0,
+      "observed_hull_mu_counts": {
+        "0": 65538,
+        "1": 29730,
+        "2": 71252,
+        "3": 1
+      },
+      "observed_mu_one_input_strata": {
+        "K_line": 8737,
+        "K_V": 8160,
+        "primitive": 12833
+      }
+    },
+    {
+      "s": 1,
+      "observed_hull_mu_counts": {
+        "0": 57346,
+        "1": 33490,
+        "2": 75682,
+        "3": 3
+      },
+      "observed_mu_one_input_strata": {
+        "K_line": 8225,
+        "K_V": 4920,
+        "primitive": 20345
+      }
+    },
+    {
+      "s": 2,
+      "observed_hull_mu_counts": {
+        "0": 49154,
+        "1": 48386,
+        "2": 68976,
+        "3": 5
+      },
+      "observed_mu_one_input_strata": {
+        "K_line": 7713,
+        "K_V": 13440,
+        "primitive": 27233
+      }
+    },
+    {
+      "s": 3,
+      "observed_hull_mu_counts": {
+        "0": 57346,
+        "1": 33490,
+        "2": 75682,
+        "3": 3
+      },
+      "observed_mu_one_input_strata": {
+        "K_line": 8225,
+        "K_V": 4920,
+        "primitive": 20345
+      }
+    }
+  ],
+  "q16_all_case_stream_sha256_not_bulk_stored": "3a7417fd6536629e6aff17dc1bbd4a8deb1f2d62e5afc66f51f523d0aeca28d2",
+  "q16_selected_original_global_audit_cases": 176,
+  "selected_global_cases_sha256": "e01eab3d2a0d44bfbcb44913da245014f6e46c98f428b968d687da87b546823f",
+  "source_hashes": {
+    "core_a.py": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148",
+    "verify_core_a_structure.py": "4eba8e306812498ac1dbce0af286e644e5f2bb0771334ef42fcae9d0b7e094e2",
+    "core_a_distribution.py": "5a8276e58f3cc33fd209739ff34328e01bb66ff59a7d7cddbc12e126a190cbd7",
+    "verify_core_a_distribution.py": "49025cce5c1558f77c44873202f67d3ef32478ac7a3f565090aca6dd579e160a"
+  },
+  "separate_global_and_incidence_audit_required": true,
+  "external_originality_certified": false,
+  "human_independent_review_completed": false,
+  "full_joint_same_input_all_twist_distribution_claimed": false
+}

@@ -1,0 +1,65 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:28:56.331867+00:00",
+  "timestamp_kind": "Raw sandbox observation only",
+  "sources": [
+    {
+      "repository": "thomwiggers/cryptobib-export-split-demo",
+      "path": "bib/crypto_DCC14.bib",
+      "html_url": "https://github.com/thomwiggers/cryptobib-export-split-demo/blob/a03c9a5a89afab3ec53b3f22ae3cfdfff679fbad/bib/crypto_DCC14.bib",
+      "blob_sha": "3752c218a2646591c0ea87f249ee1fa4e7749ded",
+      "sha256": "9eefdc71fb69409a23389fec76939c9f1b6e7e547ef257c855aaf534ed3ee85a",
+      "complete_ranges_read": [
+        [
+          1863,
+          1876
+        ]
+      ],
+      "other_scope": "One complete secondary bibliographic entry only",
+      "full_technical_paper_read": false,
+      "primary_or_final_version_authenticated": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/201507/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201507/source0.tex",
+      "blob_sha": "3d9f458f7c77552abf498b1d6f280fd441460b51",
+      "sha256": "6213978eb779f1b98e472836fa850c6a6f03a0ac29c6b5cb2e889dc4a330921f",
+      "complete_ranges_read": [
+        [
+          108,
+          148
+        ]
+      ],
+      "other_scope": "Section/keyword locator inventory only",
+      "full_technical_paper_read": false,
+      "primary_or_final_version_authenticated": false
+    },
+    {
+      "id": "S10",
+      "path": "phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE/literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf",
+      "pdf_sha256": "0679c4a6077b8477e8d325737b8efc8d3d96b9f8f356be6b8edaa06d6a26f989",
+      "technical_extraction_path": "phase0_audit/pdfs_text/s13226-021-00014-x_2.txt",
+      "technical_extraction_sha256": "4fdf0c2b91a080ffbe698738285f5724b355df6a7197855e83c8042cc90f3947",
+      "fresh_complete_ranges_read": [
+        [
+          1,
+          27
+        ],
+        [
+          140,
+          170
+        ],
+        [
+          244,
+          295
+        ]
+      ],
+      "scope": "Fresh PDF first-page/header verification and bounded hypothesis/form/CRT text. Inherited earlier complete extraction reading is not relabelled fresh. No full paper-proof or unread erratum certification.",
+      "supplied_primary_artifact_identity_checked": true,
+      "publisher_download_or_final_erratum_equality_verified": false
+    }
+  ],
+  "full_S01_S09_or_primary_geometry_article_acquired": false,
+  "scope": "New precise reading limits only; previous M5/M6 scopes remain immutable and are not upgraded",
+  "off_allowed_host_Drive_or_author_contact_occurred": false
+}

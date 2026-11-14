@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "exact_sparse_polynomial_identities": [
+    "odd_trace_vector_count",
+    "odd_base_incidence_F",
+    "even_trace_vector_count",
+    "even_base_incidence_F",
+    "complete_descriptor_total"
+  ],
+  "integer_formula_regressions_m1_to_64": 2080,
+  "integer_regressions_not_claimed_as_field_or_module_censuses": true,
+  "new_trace_graph_geometry_cases": 17,
+  "higher_q32_q64_geometry_only_not_module_census": true,
+  "original_global_coefficient_and_shift_basis_checks": 4608,
+  "fresh_original_global_all_q4_cases": 2442,
+  "fresh_original_global_selected_q16_cases": 176,
+  "full_global_dual_hull_and_reference_hull_spaces_checked": true,
+  "q16_full_module_census_compared_as_existing_evidence_not_rerun": 666084,
+  "original_global_basis_stream_sha256_hash_only": "007b4e2ca7166f7ecda7c29e19b172f5b02874a51ed3c361c5ce716b3412c6c9",
+  "q16_existing_summary_sha256": "1c46baab6e7ae0ab5fe4a3291a0248d97fd79a4b7a4405eb54c9aeccb09c72ac",
+  "existing_geometry_sha256": "2570268bf64f82f7bde2cf014caa9848195da6eaddd1de6a9c7b2a93886886d6",
+  "new_trace_graph_records_sha256": "d5039892c5b218034227875237494d9e345456725de39a792121da489390dc6a",
+  "source_hashes": {
+    "audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+    "audit_core_a_distribution.py": "9559c9ed0c261a6d6dee881cdfd0b51f501d4a2b22ecff15e591b3cb280a88e8",
+    "core_a_distribution.py": "5a8276e58f3cc33fd209739ff34328e01bb66ff59a7d7cddbc12e126a190cbd7",
+    "verify_closed_formula_proof.py": "5525dc37579aa858f1027817eb363a0fa2a6116024c45ec0db305a7ab8a1d148"
+  },
+  "human_independent_review_completed": false,
+  "proof_assistant_checked": false,
+  "external_originality_certified": false
+}

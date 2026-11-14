@@ -1,0 +1,521 @@
+{
+  "statement_sha256": "3b360c24cbccbd40fc4b46c92efb6b9842c7b069758f2b5bdb24ce66028d2f7b",
+  "proof_sha256": "44bdf307ecf4cf4297283e4b27115c3cc7078977134f6fddd0ee7ae435933a7c",
+  "proof_lines": 368,
+  "scope": "All proof units replayed line-by-line by the same agent, with second central derivations; NOT an independent reviewer or a formal proof certificate",
+  "units": [
+    {
+      "unit": "P01",
+      "lines": [
+        9,
+        20
+      ],
+      "obligation": "Fixed fields, trace and cyclic norms",
+      "scrutiny": "Separate s=0 before a polynomial root argument. For positive s, gcd(2s,m) gives E. The ordinary trace polynomial has degree<q and is nonzero, including r=1; rank-nullity gives im(1+\u03c3)=ker Tr. Multiplication proves trace-pairing nondegeneracy. Cyclic-group root/kernel counts justify every norm use.",
+      "prior_unit_dependencies": [],
+      "block_sha256": "3fffec49de264f78f6eca152c4f1bbcb78c3c2476f9faeac886712982d018a30",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P02",
+      "lines": [
+        21,
+        34
+      ],
+      "obligation": "Localness, Nakayama and both packing bounds",
+      "scrutiny": "Explicit finite geometric inverse proves B local with radical J, not merely that J is nilpotent. Iterate M/L=J(M/L) three times. A matrix supplies at most two column generators; packing a minimal list supplies the reverse bound, also at zero.",
+      "prior_unit_dependencies": [],
+      "block_sha256": "b4410585d6c5eef1cc302dbeb61ab21a54d621eb6f2756fc1f4ac471d8d43a32",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P03",
+      "lines": [
+        35,
+        44
+      ],
+      "obligation": "Exact family, all right ideals",
+      "scrutiny": "Central X and characteristic2 give M\u2082(B). Matrix units isolate/place columns; summing arbitrary isolated columns proves surjectivity and injectivity of the embedded correspondence. No GL quotient or principal-input assumption.",
+      "prior_unit_dependencies": [],
+      "block_sha256": "ac7e96a5aaeedcbe59fc6a3d085f7191ff14524ea42297a0827f7b1e8acea5e9",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P04",
+      "lines": [
+        45,
+        58
+      ],
+      "obligation": "Original-global dual transport",
+      "scrutiny": "For each arbitrary codeword test x and Xx. These test both coefficients of x\u2020y, not just a constant. Dagger fixes w only at length2. Its (i,j) entry is the first-slot scalar B product between the source/target columns; matrix units make source columns independent.",
+      "prior_unit_dependencies": [
+        "P03"
+      ],
+      "block_sha256": "e8a5d9ed098e424b7154eb4a3e74aaaaeb3faee3e594b7840e9a735fc225daeb",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P05",
+      "lines": [
+        59,
+        70
+      ],
+      "obligation": "Dimension and positive double twist",
+      "scrutiny": "The [z] functional is explicitly auxiliary, not equal to the original global [u]trace functional. Complementary monomials make its product Gram invertible. Testing all B-multiples makes its orthogonal equal to the B-valued one. D_s=\u03c3D\u2080, D\u2080\u00b2=id and commutation imply positive \u03c3\u00b2, never id by default. The same Gram argument applies to \u03a9.",
+      "prior_unit_dependencies": [
+        "P04"
+      ],
+      "block_sha256": "819f6d00dc2c47206a8efc1bb279027f866727893795bd722360c0da98fe07b5",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P06",
+      "lines": [
+        71,
+        85
+      ],
+      "obligation": "Complete scalar ideal/annihilator table",
+      "scrutiny": "Every proper ideal is radical. A nonzero first radical layer forces z and determines a line/full image. au+bw generates its line ideal. A mixed-radical annihilator has zero constant, one layer equation and arbitrary socle; unit/zero/nonzero-socle cases are disjoint.",
+      "prior_unit_dependencies": [
+        "P02"
+      ],
+      "block_sha256": "00600874259792c49e76794a93c532acb0855fa949eff8240afd8b50f96e1999",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P07",
+      "lines": [
+        86,
+        95
+      ],
+      "obligation": "Unique radical descriptor",
+      "scrutiny": "Closure under w/u forces respectively a,b into K. Lift differences lie exactly in zK; f is quotient-valued and linear. Converse reconstruction is u,w stable and extraction returns the data. Counting representatives does not quotient embeddings.",
+      "prior_unit_dependencies": [
+        "P02"
+      ],
+      "block_sha256": "8ba6b9826f6c773011d374397662309e8ad93bb00f6c6f754035ed6260b96430",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P08",
+      "lines": [
+        96,
+        114
+      ],
+      "obligation": "Actual radical hull and \u03bc",
+      "scrutiny": "Direct product leaves only z[\u03c3(a)\u00b7b\u2032+\u03c3(b)\u00b7a\u2032]. Socle zK is always retained. Restricting T and f is exactly membership plus all source tests. JW=zP(T) and top dimension give \u03bc; f affects embeddings but not this value.",
+      "prior_unit_dependencies": [
+        "P05",
+        "P07"
+      ],
+      "block_sha256": "646f53e388cf3c11cb1b07c8f3f79fbf0243e15baafeede3c88967e8897744e2",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P09",
+      "lines": [
+        115,
+        124
+      ],
+      "obligation": "All nonradical residue ranks",
+      "scrutiny": "Nakayama on B\u00b2/W forces the ambient module at residue rank2. At rank1 a unit-coordinate projection is onto; a unit in its kernel ideal would contradict residue rank1. Normalized lift differences are precisely I. The vertical chart is disjoint and not omitted.",
+      "prior_unit_dependencies": [
+        "P02",
+        "P06"
+      ],
+      "block_sha256": "c533c39aecb346e6a1766b99bcbd3f41d472e2c240bd726ab08a069b30931522",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P10",
+      "lines": [
+        125,
+        142
+      ],
+      "obligation": "Primitive dual/colon table and lifts",
+      "scrutiny": "Solve \u03b2((1,t),y)=0, then every (0,i) test, then actual membership. This gives the injective B-linear ideal map in (11). Unit multiplication preserves every ideal; distinct line ideals intersect in kz. For t\u2192t+j, \u03c3(j)b=0 and the remaining norm difference is \u03c3(t)jb\u2208I, so both L_s and the embedded hull agree.",
+      "prior_unit_dependencies": [
+        "P06",
+        "P09"
+      ],
+      "block_sha256": "7a4dc3fecc88bf368e19e91e7baa5eca407f5be3e5c44ca0cc21a6276a0fd554",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P11",
+      "lines": [
+        143,
+        151
+      ],
+      "obligation": "Isotropic slope count d",
+      "scrutiny": "Axis lines are anisotropic. a\u03c3(a)=1 implies \u03c3\u00b2(a)=a. On E, \u03c3=id or Q-involution. Odd case gives a=1 in characteristic2; even case gives a norm-one kernel of size Q+1. The cyclic root count equals the stated gcd even at s=0.",
+      "prior_unit_dependencies": [
+        "P01"
+      ],
+      "block_sha256": "8c67150f357c80bbb78d4862e5fcbfee428c5f164796ff603a72b320f108de92",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P12",
+      "lines": [
+        152,
+        163
+      ],
+      "obligation": "Only \u03bc3 and exact exceptional inputs",
+      "scrutiny": "Primitive table excludes \u03bc>2. For dimK\u22641 use h\u22642 and nonzero projection sum. At K=V, h\u2264min(t,4\u2212t); the sole >2 case forces t=h=2 and p=1, hence T=L\u2295L. Test one cross basis pairing to force isotropic L. dimW=dimD=4 promotes actual self-orthogonality to equality.",
+      "prior_unit_dependencies": [
+        "P05",
+        "P08",
+        "P10",
+        "P11"
+      ],
+      "block_sha256": "6f109d0735b03c5ab40e0e3c39bcd3ca540df921b4d3514319e50d3c918b69b1",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P13",
+      "lines": [
+        164,
+        174
+      ],
+      "obligation": "All Grassmann dimensions",
+      "scrutiny": "Count nonzero vectors/functionals modulo q\u22121, and independent ordered pairs modulo ordered bases. Add dimensions0 through4 to obtain G\u2084; these are integer cardinalities, not field divisions.",
+      "prior_unit_dependencies": [],
+      "block_sha256": "4a3a9b51d2f2b269c9057901f34ff548e966680451db88408df4e4d07816149d",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P14",
+      "lines": [
+        175,
+        189
+      ],
+      "obligation": "All inputs exactly once",
+      "scrutiny": "Sum unique K,T,f data; for a K-line each f has q^(dimT) choices. Sum slope cosets with fixed residue using |J/I| for every proper ideal including J. The full ambient is separate. Algebra gives L, not a fitted numerical total.",
+      "prior_unit_dependencies": [
+        "P06",
+        "P07",
+        "P09",
+        "P13"
+      ],
+      "block_sha256": "b7d7211fef84e9a61b3465a78c9a88119f5da600fba63949b10bd149a8df41e8",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P15",
+      "lines": [
+        190,
+        197
+      ],
+      "obligation": "Zero and \u03bc3 strata",
+      "scrutiny": "Any nonzero radical input retains a nonzero socle. Every nonzero-I primitive hull is nonzero. I=0 is zero precisely for anisotropic residue; q\u00b3 lifts each, plus zero/full. \u03bc3 follows from the earlier classification, not a census observation.",
+      "prior_unit_dependencies": [
+        "P10",
+        "P12",
+        "P14"
+      ],
+      "block_sha256": "9e18b6331dca31d42f1200ed0591c2e0939d35e687e8d5995f2e56ac3ba9b71c",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P16",
+      "lines": [
+        198,
+        210
+      ],
+      "obligation": "Primitive \u03bc1 strata",
+      "scrutiny": "Nonzero-I total equals A\u2080, with exactly d q\u00b2 \u03bc2 exceptions. Expand the actual coefficient Frobenius norm on all free isotropic lifts. Pure nonzero socle iff x,y fixed and h nonfixed; cross term vanishes in char2. n=0 is not miscounted as \u03bc2.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P10",
+        "P11",
+        "P14"
+      ],
+      "block_sha256": "f6a752ee829560ab3ee9c9d614c8cf53be7ab85a5b3e7272dd3656a695b764f7",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P17",
+      "lines": [
+        211,
+        218
+      ],
+      "obligation": "Radical K-line \u03bc1 strata",
+      "scrutiny": "At T dimensions0/1 the socle and projection formula always give \u03bc1, even if the line is not isotropic. At T dimension2, the restriction is a nonzero scalar times an invertible semilinear symplectic Gram, unless K is isotropic; only the latter d q\u00b2 lift maps give \u03bc2.",
+      "prior_unit_dependencies": [
+        "P08",
+        "P11",
+        "P14"
+      ],
+      "block_sha256": "d5868dfbf1a67bf75e0ef9987bc0e791aafecb2e0a8ad30367288191fdb3c874",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P18",
+      "lines": [
+        219,
+        232
+      ],
+      "obligation": "Directed right-radical flag count",
+      "scrutiny": "For \u2113 in the right radical every source x satisfies \u03a9(x,\u2113)=0. Applying \u03c3\u207b\u00b9 gives an ordinary nonzero linear equation, so A_\u2113 is a hyperplane. The 1/3-dimensional radicals must equal \u2113 by dimensions. The q+1 two-plane flags have right radical \u2113 unless wholly self-orthogonal; exactly the latter self-dual flags are subtracted with incidence multiplicity.",
+      "prior_unit_dependencies": [
+        "P05",
+        "P08"
+      ],
+      "block_sha256": "22526ca0b4fcab7e7a57e1ac01d37b2c18c2e1397023d62f2b5dd045df4d75d4",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P19",
+      "lines": [
+        233,
+        253
+      ],
+      "obligation": "Arbitrary-order point count",
+      "scrutiny": "Condition on a-directions. Each active coordinate has image a_i\u03c3(a_i)T\u2080. Trace-pairing annihilators prove equality of scaled hyperplanes iff the scalar ratio is fixed, equivalently \u03c3\u00b2(t)=t. Axes and a=0 are separate. Rescaling a and b together proves equal kernel size for every representative; homogeneous self-isotropy justifies projectivizing.",
+      "prior_unit_dependencies": [
+        "P01"
+      ],
+      "block_sha256": "c84772b1cc39abf00c3711371f3f549bafeac7b03fd88fa8295adb75b6ead22a",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P20",
+      "lines": [
+        254,
+        265
+      ],
+      "obligation": "Rank1 subtraction",
+      "scrutiny": "A rank1 point has a unique image line and coefficient line. Its self-pairing factors exactly. Isotropic image lines allow all q+1 coefficient directions, others only the Q+1 F_Q-rational directions, including infinity. Every nonzero point has projection rank1 or2.",
+      "prior_unit_dependencies": [
+        "P11",
+        "P19"
+      ],
+      "block_sha256": "6e52f5415e7b988cfbe193751c4e99bc8de2deeebe8d096fb7dca614a49d7739",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P21",
+      "lines": [
+        266,
+        271
+      ],
+      "obligation": "Self-dual planes, and only those, descend",
+      "scrutiny": "The actual positive double-dual law forces \u03c3\u00b2(T)=T. The unique RREF basis then has entries fixed by \u03c3\u00b2. Its E-row space is unique. Conversely extending a totally isotropic E-two-plane gives a k-two-plane contained in its two-dimensional right dual. No involutivity on k is inferred.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P05"
+      ],
+      "block_sha256": "baa2283e21f27861f4c1a53ca8ceaab48a78ffb7427d07ac36cde737acb4dedb",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P22",
+      "lines": [
+        272,
+        287
+      ],
+      "obligation": "Plane totals, no circular F argument",
+      "scrutiny": "Only over the descended involutive field use \u2113\u22a5/\u2113 and (\u2113\u22a5)\u22a5=\u2113. A Hermitian two-space has a vector with nonzero self-pairing (otherwise scaling contradicts nondegeneracy); diagonal splitting and norm surjectivity give Q+1 isotropic lines. P19 gives point totals independently of any plane/F formula. Divide actual incidences in the integers.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P19",
+        "P21"
+      ],
+      "block_sha256": "cf58bc874b1cd04e4b8a9ded7d15afb9e2db4fec1021aa25c3445160106ee946",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P23",
+      "lines": [
+        288,
+        297
+      ],
+      "obligation": "Contained quadric planes",
+      "scrutiny": "Two rank-one basis matrices with independent image and coefficient factors would sum to rank2. Hence one common factor is necessary and sufficient. The two rulings are distinct as two-planes; actual restricted form gives counts1,Q+1 in the odd case and Q+1,Q+1 in the even.",
+      "prior_unit_dependencies": [
+        "P11",
+        "P20",
+        "P21"
+      ],
+      "block_sha256": "703f1976cac3aa48e050dab2d9d0cbf9d3743e4675a2fc4f6e49b8146bf61659",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P24",
+      "lines": [
+        298,
+        308
+      ],
+      "obligation": "Odd incidence correction",
+      "scrutiny": "A nonzero binary quadratic on the descended projective line can only acquire roots of degree\u22642. Odd [k:F_Q] excludes new quadratic roots. All base rank1 points are symplectic-isotropic, each on Q+1 planes. Only contained planes gain q\u2212Q roots. Subtract their exact incidences to derive F.",
+      "prior_unit_dependencies": [
+        "P21",
+        "P22",
+        "P23"
+      ],
+      "block_sha256": "f06ac65ed52d7246ebfaaa106d4a4a0192d2983ffb889189e860c6011f1b2662",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P25",
+      "lines": [
+        309,
+        328
+      ],
+      "obligation": "Even graph splitting, including non-graphs",
+      "scrutiny": "Projection rank0 is contained, rank1 gives a displayed product of linear forms. Rank2 is a Hermitian graph and \u0394 becomes (27). x=0 and h+j=0 are separate; otherwise z=x^Q(a\u2081/a\u2082)/(h+j) gives Artin\u2013Schreier constant Norm(x)/(h+j)\u00b2\u2208F_Q. Its absolute trace in E is zero, hence it splits. This works when [k:E] is even.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P21"
+      ],
+      "block_sha256": "c8fb1771696d5c72d39155f501ad90f91323f38cecbd1acaa4b0095d1ec05a1c",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P26",
+      "lines": [
+        329,
+        339
+      ],
+      "obligation": "Even incidence correction",
+      "scrutiny": "Rank1 base point count is (Q+1)(2Q\u00b2\u2212Q+1); each lies on Q+1 Hermitian generators. P25 ensures noncontained planes gain no new roots, without an invalid parity argument. Contained ones gain q\u2212Q\u00b2, giving the displayed F.",
+      "prior_unit_dependencies": [
+        "P20",
+        "P22",
+        "P23",
+        "P25"
+      ],
+      "block_sha256": "c1ee29facb57de311615655d6100fdbb0408e413e27dfd1209a4ed85c11f959d",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P27",
+      "lines": [
+        340,
+        351
+      ],
+      "obligation": "N1 sum and expanded N2",
+      "scrutiny": "Three disjoint \u03bc1 input classes sum to (29); coverage and \u03bc\u22654 exclusion make N2 the complement, not a conjecture. Exact five-variable polynomial assembly checks (30) independently of evaluating any field.",
+      "prior_unit_dependencies": [
+        "P12",
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19",
+        "P20",
+        "P24",
+        "P26"
+      ],
+      "block_sha256": "9ce629393c30a014dc7eef56447003db5655e585441af938ce4f2b97897f7dcb",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P28",
+      "lines": [
+        352,
+        359
+      ],
+      "obligation": "Endpoints and non-involutive orders",
+      "scrutiny": "s0 has Q=q, r1, trace image0; formulas simplify to the stated polynomials. r2 makes the contained extension correction zero. r>2 uses the trace and descent lemmas, never a polarity on all k.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P27"
+      ],
+      "block_sha256": "e7864a13064e4fc1b5a62c59f31dc3f9c2fb46606506165c404786ba0fba3cd9",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P29",
+      "lines": [
+        360,
+        363
+      ],
+      "obligation": "Gcd marginal and matrix conversion",
+      "scrutiny": "Parameters depend only on q,gcd(s,m). This does not identify hulls of the same W across twists. Two-column packing gives the matrix histogram. All \u03bc3 cases are equal to input and dual under P04, so the proper-hull assertion has its actual side/form.",
+      "prior_unit_dependencies": [
+        "P02",
+        "P04",
+        "P12",
+        "P27"
+      ],
+      "block_sha256": "c65b22f5e82eb1a156a5915088aa72fb13f935c558bc2acc4d82c679513c6095",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    },
+    {
+      "unit": "P30",
+      "lines": [
+        364,
+        368
+      ],
+      "obligation": "Scope and acceptance",
+      "scrutiny": "Every all-parameter deduction above has been internally replayed; no counterexample or unresolved mathematical implication was found. This row does not promote a same-agent reread into genuinely independent acceptance. The full proof still needs the independent-scrutiny gate required by the user. Other lengths/ranks/forms, joint profiles, novelty and applications are excluded.",
+      "prior_unit_dependencies": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19",
+        "P20",
+        "P21",
+        "P22",
+        "P23",
+        "P24",
+        "P25",
+        "P26",
+        "P27",
+        "P28",
+        "P29"
+      ],
+      "block_sha256": "be1d308ae4d5506371cdc24218145b2b470c17392a8438b9e710740196e4f358",
+      "internal_verdict": "No unresolved implication identified in same-agent review",
+      "genuinely_independent_scrutiny": "NOT_ESTABLISHED"
+    }
+  ],
+  "unqualified_proved_status_authorized": false
+}

@@ -1,0 +1,17 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:37:37.971671+00:00",
+  "timestamp_kind": "Raw sandbox observation only",
+  "failed_attempt_label": "M8_DOCUMENT_INTEGRITY_V1",
+  "failed_attempt_wrote_receipt": false,
+  "checker_source_before_fix_sha256": "8383f1675db260b8644b59f8485f8140e859918c3b826fefaa8666c428867457",
+  "error_type": "KeyError",
+  "missing_key": "human_independent_review_completed",
+  "affected_preserved_summary_schema_labels": [
+    "finalisation_m8_foundations_v1"
+  ],
+  "description": "Initial new integrity checker incorrectly required every unchanged historical summary schema to contain the human-review flag. The primary foundations summary omits that flag. Its absent field is not evidence of human review either way; current independent-scrutiny status is explicitly NOT_ESTABLISHED in the new gate record. Fix is to verify false for each actually present flag and report absent historical fields separately, without modifying old or fresh result bytes.",
+  "scientific_finite_regression_failed": false,
+  "all_eleven_finite_run_statuses": "PASS",
+  "mathematical_counterexample_from_this_error": false,
+  "next_successful_attempt_uses_fresh_label": true
+}

@@ -1,0 +1,7 @@
+{
+  "q": 8,
+  "s": 1,
+  "input_free_line_slope": 2,
+  "double_dual_slope_sigma_squared": 6,
+  "original_global_double_dual_equals_positive_sigma_squared_not_input": true
+}

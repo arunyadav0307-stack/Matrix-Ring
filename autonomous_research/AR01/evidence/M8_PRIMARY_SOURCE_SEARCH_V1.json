@@ -1,0 +1,122 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:20:22.844859+00:00",
+  "timestamp_kind": "Raw sandbox observation; not session-date authority or publication time",
+  "host": "api.github.com",
+  "scope": "Bounded GitHub code search, first five results per query only; search and mirrors are not authentication of primary technical versions; not an absence or novelty test",
+  "queries": [
+    {
+      "query": "\"On the functional codes defined by quadrics\"",
+      "exit_code": 0,
+      "raw_response_sha256": "09e820692e77baa8d31c491808b5d59abf5cca1d57e10d40d83fdbf7b408bc3b",
+      "total_count": 5,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "tmylla/CCF-Rec-Paper-DB",
+          "path": "paper_db/3/Designs, Codes and Cryptography.json",
+          "blob_sha": "14e294e67a63932555916fd31fce4e5ecf291c53",
+          "html_url": "https://github.com/tmylla/CCF-Rec-Paper-DB/blob/23ba278b5c99d64926141957a80fb602b6c6d9ca/paper_db/3/Designs, Codes and Cryptography.json",
+          "api_url": "https://api.github.com/repositories/472612325/contents/paper_db/3/Designs, Codes and Cryptography.json?ref=23ba278b5c99d64926141957a80fb602b6c6d9ca"
+        },
+        {
+          "repository": "Aticode/Spider_dblp",
+          "path": "source/journals/dcc/dcc71.csv",
+          "blob_sha": "c39f70ed857b057031b0176b36c3a29e61a28cb8",
+          "html_url": "https://github.com/Aticode/Spider_dblp/blob/a67e99768d2e7af42f9063ec08a98cebcf19fe1e/source/journals/dcc/dcc71.csv",
+          "api_url": "https://api.github.com/repositories/102924399/contents/source/journals/dcc/dcc71.csv?ref=a67e99768d2e7af42f9063ec08a98cebcf19fe1e"
+        },
+        {
+          "repository": "thomwiggers/cryptobib-export-split-demo",
+          "path": "bib/crypto_DCC14.bib",
+          "blob_sha": "3752c218a2646591c0ea87f249ee1fa4e7749ded",
+          "html_url": "https://github.com/thomwiggers/cryptobib-export-split-demo/blob/a03c9a5a89afab3ec53b3f22ae3cfdfff679fbad/bib/crypto_DCC14.bib",
+          "api_url": "https://api.github.com/repositories/1212570457/contents/bib/crypto_DCC14.bib?ref=a03c9a5a89afab3ec53b3f22ae3cfdfff679fbad"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/201195/source0.tex",
+          "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/201195/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "Leonis-Q-F/CCF-VIS",
+          "path": "src/backend/paper_db/3/Designs, Codes and Cryptography.json",
+          "blob_sha": "14e294e67a63932555916fd31fce4e5ecf291c53",
+          "html_url": "https://github.com/Leonis-Q-F/CCF-VIS/blob/7b2a5119a3839219a229fa6fd18c71340949540e/src/backend/paper_db/3/Designs, Codes and Cryptography.json",
+          "api_url": "https://api.github.com/repositories/898517017/contents/src/backend/paper_db/3/Designs, Codes and Cryptography.json?ref=7b2a5119a3839219a229fa6fd18c71340949540e"
+        }
+      ]
+    },
+    {
+      "query": "\"Edoukou\" \"Hermitian\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "e0a49f4c15de98aee81eaba06f627d590e8ffeefa61f27039d713a4db79d568f",
+      "total_count": 1,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/201195/source0.tex",
+          "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/201195/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        }
+      ]
+    },
+    {
+      "query": "\"1910.02237\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"self-duality\" \"oddly\" \"Cao\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"s11128-024-04514-7\"",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"hulls\" \"repeated-root\" \"u\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "0ddd4cf15bde61b2e6952cdaa178ba1b683215f0ce40a3b3b24304060242c0d4",
+      "total_count": 3,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "area9innovation/weyl-gravity",
+          "path": "paper/14-pure-weyl-black-hole-radiation.tex",
+          "blob_sha": "ae9b89c4b62ba77139399eae859991e04e84944a",
+          "html_url": "https://github.com/area9innovation/weyl-gravity/blob/3ccc73f28e25ce3364855700b9c1c26a0768e9ec/paper/14-pure-weyl-black-hole-radiation.tex",
+          "api_url": "https://api.github.com/repositories/1300523002/contents/paper/14-pure-weyl-black-hole-radiation.tex?ref=3ccc73f28e25ce3364855700b9c1c26a0768e9ec"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/201507/source0.tex",
+          "blob_sha": "3d9f458f7c77552abf498b1d6f280fd441460b51",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201507/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/201507/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "area9innovation/weyl-gravity",
+          "path": "foundations/site/sources/paper/14-pure-weyl-black-hole-radiation.tex",
+          "blob_sha": "ae9b89c4b62ba77139399eae859991e04e84944a",
+          "html_url": "https://github.com/area9innovation/weyl-gravity/blob/3ccc73f28e25ce3364855700b9c1c26a0768e9ec/foundations/site/sources/paper/14-pure-weyl-black-hole-radiation.tex",
+          "api_url": "https://api.github.com/repositories/1300523002/contents/foundations/site/sources/paper/14-pure-weyl-black-hole-radiation.tex?ref=3ccc73f28e25ce3364855700b9c1c26a0768e9ec"
+        }
+      ]
+    }
+  ]
+}

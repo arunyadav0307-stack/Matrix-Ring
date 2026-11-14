@@ -111,3 +111,20 @@ M7 is a bounded reproducibility/preservation checkpoint, not whole-phase complet
 ## AR01-M7 — verified completion receipt
 
 The specific requirement **“continue Core A from a74f33f and preserve that checkpoint, without scope expansion”** is completed and synchronized at `bab577437a94dc3324b589699c0ce4bf8008a0e3`. The remote ref, all2,230 blobs/modes and23 expected continuation paths match. Original a74f33f remains unchanged/ancestral and all originals/old evidence are intact. Previous M7 pending entries are historical pre-commit states. This closes the bounded continuation/preservation requirement only, not any open originality/depth, external-human-review or submission-readiness gate.
+
+## AR01-M8 — internal scrutiny/reproducibility milestone, not independent proof closure
+
+Versioned report: `autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_STATUS_REPORT.md`. This entry does **not** close the full user-requested independent-proof gate or any publication phase.
+
+|Requirement|Actual current disposition|Limit|
+|---|---|---|
+|Exact unchanged candidate and six successor records|SUPPLIED; original six preserved|No formula/family change|
+|All-parameter conventional derivation and complete internal line replay|SUPPLIED/INTERNALLY REPLAYED,30 units|Same agent; not independently accepted|
+|Genuinely independent complete-proof scrutiny|**OPEN RB01**|No independent reviewer or complete formal certificate; not falsely marked proved|
+|Fresh q16 and other regressions|**PASS**,11 runs; full666,084 q16 generic/structural comparisons|q16 global176 subset; q32/q64 geometry only|
+|New directed-annihilator stress test|PASS:101,316 flags/304 graphs/four wrong-direction witnesses|Finite geometry, not a new code census or external review|
+|Separate primary-source novelty comparison|SUPPLIED within exact authenticated/reading scope; **NL01–NL04 OPEN**|No firstness, sufficient paper depth, Q1 or submission clearance|
+|Intake/old evidence preservation|Protected; checks recorded separately|Only permitted logs/READMEs append|
+|Current payload commit/push/archive|PENDING in this pre-commit entry|Actual-success receipt must follow; research backup only|
+
+No numerical regression failure or mathematical counterexample was found in this scope; an unfinished independent verification gate is not rebranded as a mathematical obstruction. No-paper remains legitimate if authenticated closest-source comparison defeats sufficient novelty. Historical phase0/issue/seal/manuscript/private-fact registers remain unchanged.

@@ -1,0 +1,39 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:21:10.908393+00:00",
+  "timestamp_kind": "Raw sandbox observation only",
+  "scope": "Allowed-host retrieval; Git content identities verified, primary authority NOT inferred",
+  "sources": [
+    {
+      "repository": "thomwiggers/cryptobib-export-split-demo",
+      "path": "bib/crypto_DCC14.bib",
+      "blob_sha": "3752c218a2646591c0ea87f249ee1fa4e7749ded",
+      "html_url": "https://github.com/thomwiggers/cryptobib-export-split-demo/blob/a03c9a5a89afab3ec53b3f22ae3cfdfff679fbad/bib/crypto_DCC14.bib",
+      "api_url": "https://api.github.com/repositories/1212570457/contents/bib/crypto_DCC14.bib?ref=a03c9a5a89afab3ec53b3f22ae3cfdfff679fbad",
+      "exit_code": 0,
+      "response_sha256": "212fc3f5eb62b996fb6e1d9e84a27289fc0382848cb9f1f7f39dbbcfa24ef29b",
+      "cache_path": "/home/user/Matrix-Ring/.cache/AR01_M8_SOURCES/DCC14_metadata.bib",
+      "bytes": 69222,
+      "sha256": "9eefdc71fb69409a23389fec76939c9f1b6e7e547ef257c855aaf534ed3ee85a",
+      "git_blob_sha1_recomputed": true,
+      "line_count": 2374,
+      "primary_version_authenticated": false,
+      "scope": "Third-party mirror/bibliography, not author or publisher technical-version authentication"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/201507/source0.tex",
+      "blob_sha": "3d9f458f7c77552abf498b1d6f280fd441460b51",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201507/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/201507/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "exit_code": 0,
+      "response_sha256": "6af83887fe239a7590b03f1106aef2f0a63c1291840d3279608c0956d2cdb2b4",
+      "cache_path": "/home/user/Matrix-Ring/.cache/AR01_M8_SOURCES/Mirror_201507.tex",
+      "bytes": 102372,
+      "sha256": "6213978eb779f1b98e472836fa850c6a6f03a0ac29c6b5cb2e889dc4a330921f",
+      "git_blob_sha1_recomputed": true,
+      "line_count": 2894,
+      "primary_version_authenticated": false,
+      "scope": "Third-party mirror/bibliography, not author or publisher technical-version authentication"
+    }
+  ]
+}

@@ -68,3 +68,30 @@ Recorded `scalar_qc_v1`: PASS. The driver constructs scalar A-valued length4/ind
 ## AR01-M7 — preserve a74f33f and continue Core A in scope
 
 Fresh saved continuation labels are `checkpoint_continuation_proof_v1` and `checkpoint_continuation_scalar_qc_v1`, both PASS using the unchanged respective drivers. They rerun the already specified global/trace/graph and scalar-QC checks, not a full q16 census. The same2,442 q4 and176 selected q16 object sets are not counted twice as new distinct-code coverage. Basis-stream and trace/graph hashes reproduce the preserved originals exactly; q32/q64 remain selected-twist geometry only. The six-document checker has a fresh `A74F33F_CONTINUATION_DOCUMENT_CHECKS_V1` receipt. See the [checkpoint preservation/coverage report](../audits/CORE_A_CHECKPOINT_CONTINUATION_REPORT.md). No historical result/source was overwritten or silently relabelled.
+
+## AR01-M8 — fresh reruns and standalone directed scrutiny
+
+All11 fresh M8 runs PASS. The ten unchanged-driver reruns actually executed and reproduce39 preserved files exactly; a deterministic byte match does not mean they were copied. The new directed run has four additional files. Exact per-file old/fresh source/input/result identities are in [M8_REGRESSION_COMPARISON_V1.json](../evidence/M8_REGRESSION_COMPARISON_V1.json); [current coverage](../finalisation/M8/CORE_A_THEORY_COMPUTATION_COMPARISON.md) distinguishes repeated object sets from distinct codes.
+
+|Driver(s)|Fresh saved label(s)|
+|---|---|
+|`verify_core_a.py`; `audit_core_a_independent.py FRESH_MAIN FRESH_AUDIT`|`finalisation_m8_foundations_v1`; `finalisation_m8_foundations_audit_v1`|
+|`verify_core_a_structure.py`; `audit_core_a_structure_global.py FRESH_STRUCTURE FRESH_GLOBAL`|`finalisation_m8_structure_v1`; `finalisation_m8_structure_global_v1`|
+|`verify_core_a_distribution.py`; `audit_core_a_distribution.py FRESH_CENSUS FRESH_GEOMETRY`|`finalisation_m8_distribution_v1`; `finalisation_m8_distribution_audit_v1`|
+|`verify_closed_formula_proof.py`|`finalisation_m8_proof_v1`|
+|`audit_core_a_scalar_qc.py`|`finalisation_m8_scalar_qc_v1`|
+|`verify_split_coupling.py`; `audit_split_global.py FRESH_SPLIT FRESH_GLOBAL`|`finalisation_m8_split_boundary_v1`; `finalisation_m8_split_global_boundary_v1`|
+|**New** `audit_core_a_directed_flags.py`|`finalisation_m8_directed_flags_v1`|
+
+All single-run drivers take one fresh result label; the paired auditors take their already completed reference label and one new output label. Run from the repository root with `PYTHONDONTWRITEBYTECODE=1 python3 -B`; **never** use `-O` or overwrite labels. Existing command blocks above give the unchanged drivers' full invocations.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit_core_a_directed_flags.py NEW_DIRECTED_LABEL
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/tools/check_core_a_finalisation_m8.py NEW_M8_INTEGRITY_LABEL
+```
+
+The new standalone checker imports **no repository code**. It implements finite-field polynomial long arithmetic and kernels/RREF separately, enumerates all101,316 rank2-point/directed-two-plane flags for all q4/q8/q16 twists, verifies actual right radicals, and checks304 Hermitian graph matrices in four q4/q16 even-order cases. It reads the **fresh fixed M8** geometry/census result paths above as data. It saves four nonreflexive witnesses to Ω(w,v)=0 but Ω(v,w)≠0, so the annihilator direction cannot be interchanged. This is not a B²/global code census or independent complete-proof review.
+
+The new integrity tool checks the **M8 successor** documents/ranges/block hashes/dependencies/local links, exact unchanged T1–T5 statement, OPEN scientific gates, exact N2 assembly, old baselines/log prefixes and all result/source/input identities. In-memory deliberately modified proof/ranges/gates/prefixes must be rejected; no research file is corrupted. This is **not a logical theorem prover**. The original document checker still targets the unchanged six M5 records and is not silently redirected.
+
+The proof/scalar-QC drivers intentionally retain old distribution/geometry/structure input paths. The complete q16 census was separately actually rerun by the first distribution command; old and fresh inputs have identical hashes. q32/q64 remain the exact geometry-only twists previously documented. Same-agent alternative algorithms/derivations do not satisfy the current genuinely independent whole-proof gate. See [controlling status](../finalisation/M8/CORE_A_PROOF_STATUS_REPORT.md).

@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M8_FINALISATION_REVIEW.zip",
+  "bytes": 1484123,
+  "sha256": "7e7f028defa297496aca0eefe940086f69649bae924c22733e051955319be429",
+  "payload_files": 220,
+  "zip_entries": 221,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

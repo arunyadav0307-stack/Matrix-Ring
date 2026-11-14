@@ -1,0 +1,510 @@
+{
+  "status": "PASS",
+  "proof_role": "Finite evidence only; universal statement proved separately",
+  "seed": 20261112,
+  "python": "3.11.2 (main, Apr  8 2026, 01:58:00) [GCC 12.2.0]",
+  "arithmetic_files_sha256": {
+    "core_a.py": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148",
+    "verify_core_a.py": "767774155a779c4c85958c16d27ee0207494edcc7bfffa136e4f8245336b17c1"
+  },
+  "auxiliary_q2": {
+    "all_generator_matrices": 65536,
+    "distinct_principal_input_modules": 137,
+    "all_twists": [
+      0
+    ],
+    "outside_core_m_ge_2": true,
+    "maximum_hull_mu": 2
+  },
+  "core_named_cases_including_out_of_class_controls": 72,
+  "core_sampled_field_twist_cases": 2160,
+  "sampled_generating_matrices_per_q": 240,
+  "sampling_not_exhaustive_for_q4_q8_q16": true,
+  "all_sampled_local_B_scalar_duality_size_and_positive_double_twist_checks": "PASS",
+  "maximum_sampled_hull_mu": 2,
+  "sample_histogram_q_s_inputmu_hullmu": [
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        0,
+        1,
+        0
+      ],
+      "cases": 36
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        0,
+        1,
+        1
+      ],
+      "cases": 25
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        0,
+        2,
+        0
+      ],
+      "cases": 37
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        0,
+        2,
+        1
+      ],
+      "cases": 58
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        0,
+        2,
+        2
+      ],
+      "cases": 84
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        1,
+        0
+      ],
+      "cases": 20
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "cases": 35
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        1,
+        2
+      ],
+      "cases": 6
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        2,
+        0
+      ],
+      "cases": 37
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        2,
+        1
+      ],
+      "cases": 62
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        4,
+        1,
+        2,
+        2
+      ],
+      "cases": 80
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        0,
+        1,
+        0
+      ],
+      "cases": 47
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        0,
+        1,
+        1
+      ],
+      "cases": 5
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        0,
+        2,
+        0
+      ],
+      "cases": 38
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        0,
+        2,
+        1
+      ],
+      "cases": 57
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        0,
+        2,
+        2
+      ],
+      "cases": 93
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        1,
+        1,
+        0
+      ],
+      "cases": 47
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        1,
+        1,
+        1
+      ],
+      "cases": 5
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        1,
+        2,
+        0
+      ],
+      "cases": 38
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        1,
+        2,
+        1
+      ],
+      "cases": 61
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        1,
+        2,
+        2
+      ],
+      "cases": 89
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        2,
+        1,
+        0
+      ],
+      "cases": 47
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        2,
+        1,
+        1
+      ],
+      "cases": 5
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        2,
+        2,
+        0
+      ],
+      "cases": 38
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        2,
+        2,
+        1
+      ],
+      "cases": 60
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        8,
+        2,
+        2,
+        2
+      ],
+      "cases": 90
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        0,
+        1,
+        0
+      ],
+      "cases": 41
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        0,
+        1,
+        1
+      ],
+      "cases": 8
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        0,
+        2,
+        0
+      ],
+      "cases": 46
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        0,
+        2,
+        1
+      ],
+      "cases": 50
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        0,
+        2,
+        2
+      ],
+      "cases": 95
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        1,
+        0
+      ],
+      "cases": 36
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        1,
+        1
+      ],
+      "cases": 12
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        1,
+        2
+      ],
+      "cases": 1
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        2,
+        0
+      ],
+      "cases": 46
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        2,
+        1
+      ],
+      "cases": 52
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        1,
+        2,
+        2
+      ],
+      "cases": 93
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        1,
+        0
+      ],
+      "cases": 30
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        1,
+        1
+      ],
+      "cases": 17
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        1,
+        2
+      ],
+      "cases": 2
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        2,
+        0
+      ],
+      "cases": 46
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        2,
+        1
+      ],
+      "cases": 61
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        2,
+        2,
+        2
+      ],
+      "cases": 84
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        1,
+        0
+      ],
+      "cases": 36
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        1,
+        1
+      ],
+      "cases": 12
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        1,
+        2
+      ],
+      "cases": 1
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        2,
+        0
+      ],
+      "cases": 46
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        2,
+        1
+      ],
+      "cases": 52
+    },
+    {
+      "q_s_inputmu_hullmu": [
+        16,
+        3,
+        2,
+        2
+      ],
+      "cases": 93
+    }
+  ],
+  "ideal_exhaustions": [
+    {
+      "field_order": 2,
+      "all_field_subspaces_of_B_examined": 67,
+      "ideals_found": 7,
+      "maximum_ideal_mu": 2,
+      "mu_counts": {
+        "0": 1,
+        "1": 5,
+        "2": 1
+      }
+    },
+    {
+      "field_order": 4,
+      "all_field_subspaces_of_B_examined": 529,
+      "ideals_found": 9,
+      "maximum_ideal_mu": 2,
+      "mu_counts": {
+        "0": 1,
+        "1": 7,
+        "2": 1
+      }
+    }
+  ],
+  "negative_controls": {
+    "mu_not_socle_type": {
+      "ideal_mu": 2,
+      "ideal_socle_dimension": 1
+    },
+    "top_not_embedded_residue": {
+      "u_line_mu": 1,
+      "embedded_residue_dimension": 0
+    },
+    "ordinary_coordinate_dot_product_gives_different_dual": true,
+    "sixteen_coordinate_row_rejected_by_eight_coordinate_api": true,
+    "q8_s1_double_dual_positive_twist_and_not_original": true,
+    "positive_growth_not_nonprincipality": "Named primitive_socle_norm_growth has mu(W)=1, mu(H)=2",
+    "all_hulls_principal_false_without_input_hypothesis": "Known control has input_mu=hull_mu=3"
+  },
+  "cases_sha256": "f92d86a2657e6df4760e26054a16cc5b1d72e8ff40c956aa4acade976c35a13f",
+  "independent_human_review": false,
+  "novelty_certified": false
+}

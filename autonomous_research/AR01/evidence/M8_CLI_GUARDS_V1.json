@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T05:38:58.148927+00:00",
+  "timestamp_kind": "Raw sandbox observation only",
+  "source_sha256": {
+    "autonomous_research/AR01/computations/audit_core_a_directed_flags.py": "8be0311f0417099e45313f0dce7fd4c2644940c0a512ce7ac7ffe7d536c1cfb8",
+    "autonomous_research/AR01/tools/check_core_a_finalisation_m8.py": "5eab91dbc13ab0448aa93d86eb8497af853548a304df83ba2535dcafeaa993ad"
+  },
+  "tests": [
+    {
+      "command": [
+        "python3",
+        "-O",
+        "-B",
+        "autonomous_research/AR01/computations/audit_core_a_directed_flags.py",
+        "M8_GUARD_CANARY_MUST_NOT_BE_CREATED"
+      ],
+      "expected_rejection": "Assertions must remain enabled",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Assertions must remain enabled\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "autonomous_research/AR01/computations/audit_core_a_directed_flags.py",
+        "finalisation_m8_directed_flags_v1"
+      ],
+      "expected_rejection": "Refusing to overwrite evidence",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/user/Matrix-Ring/autonomous_research/AR01/computations/audit_core_a_directed_flags.py\", line 262, in <module>\n    main(sys.argv[1])\n  File \"/home/user/Matrix-Ring/autonomous_research/AR01/computations/audit_core_a_directed_flags.py\", line 215, in main\n    assert not destination.exists(), \"Refusing to overwrite evidence\"\nAssertionError: Refusing to overwrite evidence\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "autonomous_research/AR01/computations/audit_core_a_directed_flags.py"
+      ],
+      "expected_rejection": "Supply a fresh result label",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Supply a fresh result label\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-O",
+        "-B",
+        "autonomous_research/AR01/tools/check_core_a_finalisation_m8.py",
+        "M8_GUARD_CANARY_MUST_NOT_BE_CREATED"
+      ],
+      "expected_rejection": "Assertions must be enabled",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Assertions must be enabled; do not use -O\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "autonomous_research/AR01/tools/check_core_a_finalisation_m8.py",
+        "M8_DOCUMENT_INTEGRITY_V2"
+      ],
+      "expected_rejection": "Refusing to overwrite an integrity receipt",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Traceback (most recent call last):\n  File \"/home/user/Matrix-Ring/autonomous_research/AR01/tools/check_core_a_finalisation_m8.py\", line 365, in <module>\n    main(sys.argv[1])\n  File \"/home/user/Matrix-Ring/autonomous_research/AR01/tools/check_core_a_finalisation_m8.py\", line 166, in main\n    assert not destination.exists(), \"Refusing to overwrite an integrity receipt\"\nAssertionError: Refusing to overwrite an integrity receipt\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "autonomous_research/AR01/tools/check_core_a_finalisation_m8.py"
+      ],
+      "expected_rejection": "Supply a fresh M8 integrity receipt label",
+      "exit_code": 1,
+      "matched_expected_rejection": true,
+      "stderr": "Supply a fresh M8 integrity receipt label\n"
+    }
+  ],
+  "protected_existing_results_and_receipt_unchanged": true,
+  "canary_output_not_created": true,
+  "scope": "CLI safety contract only: expected rejection of optimized Python, overwrite and missing label. Expected nonzero exits are guard successes, not failed scientific regressions or mathematical evidence."
+}

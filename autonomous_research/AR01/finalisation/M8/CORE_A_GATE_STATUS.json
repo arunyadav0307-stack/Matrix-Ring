@@ -1,0 +1,64 @@
+{
+  "milestone": "M8 versioned candidate scrutiny and fresh reproducibility; not independent theorem acceptance",
+  "base_commit": "c4f170dffbb6c6a99b7ae2339851ea3d29039022",
+  "branch": "arena/7d88376d-matrix-ring",
+  "statement_sha256": "3b360c24cbccbd40fc4b46c92efb6b9842c7b069758f2b5bdb24ce66028d2f7b",
+  "proof_sha256": "44bdf307ecf4cf4297283e4b27115c3cc7078977134f6fddd0ee7ae435933a7c",
+  "candidate_formula_and_hypotheses_changed": false,
+  "conventional_derivation_supplied": true,
+  "same_agent_line_scrutiny_completed": true,
+  "identified_unresolved_internal_mathematical_implications": [],
+  "mathematical_counterexample_identified": false,
+  "independent_complete_proof_scrutiny": "NOT_ESTABLISHED",
+  "independent_human_review_completed": false,
+  "complete_formal_proof_certificate": false,
+  "unqualified_proved_status_authorized": false,
+  "requested_independent_proof_terminal_condition_reached": false,
+  "novelty_cleared": false,
+  "sufficient_paper_depth_established": false,
+  "submission_ready": false,
+  "proof_verification_blockers": [
+    {
+      "id": "RB01",
+      "type": "Missing independent complete-proof validation, not an asserted mathematical gap",
+      "scope": "P01\u2013P29 of the exact statement/proof hashes, including original-global transport, exhaustive descriptors, directed right-radical flags, arbitrary-Frobenius trace and E-incidence counts",
+      "discharge": "An independently attributable complete mathematical assessment or suitably complete formal derivation; resolve any objections and identify exact reviewed bytes",
+      "status": "OPEN"
+    }
+  ],
+  "primary_source_blockers": [
+    {
+      "id": "NL01",
+      "scope": "Complete authenticated S01 scalar repeated-root tables/proofs and all-generator module/QC consequences",
+      "status": "OPEN"
+    },
+    {
+      "id": "NL02",
+      "scope": "Complete authenticated S09 technical form/module-generator/specialization comparison",
+      "status": "OPEN"
+    },
+    {
+      "id": "NL03",
+      "scope": "Authenticated primary Hermitian/quadric point and line-incidence comparison",
+      "status": "OPEN"
+    },
+    {
+      "id": "NL04",
+      "scope": "Load-bearing preprint/final technical-version reconciliation",
+      "status": "OPEN"
+    }
+  ],
+  "fresh_executed_runs": 11,
+  "unchanged_driver_reruns": 10,
+  "new_standalone_stress_tests": 1,
+  "fresh_q16_full_generic_structural_cases": 666084,
+  "q16_modules_per_twist": 166521,
+  "q16_global_and_QC_named_subset_cases": 176,
+  "q4_global_all_cases": 2442,
+  "q32_q64_scope": "Geometry only, q32 s1,2,3,4 and q64 s1,2,4,5; no full module census",
+  "new_directed_two_plane_flags": 101316,
+  "new_hermitian_graph_matrices": 304,
+  "old_six_documents_overwritten": false,
+  "old_result_or_computation_source_overwritten": false,
+  "scope": "Machine-readable scientific gates only; Git/ZIP completion is recorded by separate actual synchronization receipts, not a circular self-containing success claim"
+}
