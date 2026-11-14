@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M2_CORE_A_CHECKS.zip",
+  "bytes": 614450,
+  "sha256": "18f355b5b4b0df79dc3eba911cd05536311886e4157750e7b5c863d87922ffef",
+  "payload_files": 50,
+  "zip_entries": 51,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

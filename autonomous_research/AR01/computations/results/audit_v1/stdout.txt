@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "primary_source_data_sha256": "f92d86a2657e6df4760e26054a16cc5b1d72e8ff40c956aa4acade976c35a13f",
+  "audit_script_sha256": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+  "no_primary_or_original_project_arithmetic_imports": true,
+  "binary_auxiliary_exhaustion": {
+    "ambient_subspaces_exhausted": 417199,
+    "all_B_submodules_found": 159,
+    "principal_input_modules": 137,
+    "all_primary_principal_input_canonical_spaces_match": true,
+    "maximum_principal_input_hull_mu": 2,
+    "outside_core_m_ge_2": true,
+    "input_mu_hull_mu_counts": [
+      {
+        "mu_pair": [
+          0,
+          0
+        ],
+        "modules": 1
+      },
+      {
+        "mu_pair": [
+          1,
+          0
+        ],
+        "modules": 16
+      },
+      {
+        "mu_pair": [
+          1,
+          1
+        ],
+        "modules": 35
+      },
+      {
+        "mu_pair": [
+          2,
+          0
+        ],
+        "modules": 1
+      },
+      {
+        "mu_pair": [
+          2,
+          1
+        ],
+        "modules": 34
+      },
+      {
+        "mu_pair": [
+          2,
+          2
+        ],
+        "modules": 50
+      },
+      {
+        "mu_pair": [
+          3,
+          1
+        ],
+        "modules": 9
+      },
+      {
+        "mu_pair": [
+          3,
+          2
+        ],
+        "modules": 11
+      },
+      {
+        "mu_pair": [
+          3,
+          3
+        ],
+        "modules": 1
+      },
+      {
+        "mu_pair": [
+          4,
+          2
+        ],
+        "modules": 1
+      }
+    ]
+  },
+  "global_matrix_pairing_cases": 112,
+  "global_case_scope": "All 72 named q=4,8,16 cases including out-of-class controls; first four samples/category at q=4 for both twists (40 cases)",
+  "full_global_local_hull_and_dual_spaces_compared_not_only_dimensions": true,
+  "functional_checks": [
+    {
+      "q": 4,
+      "actual_scalar_functional_basis_checks_all_twists": "PASS",
+      "wrong_left_action_counterexample_detected": true,
+      "coefficient_frobenius_fixes_u_but_whole_ring_square_does_not": true
+    },
+    {
+      "q": 8,
+      "actual_scalar_functional_basis_checks_all_twists": "PASS",
+      "wrong_left_action_counterexample_detected": true,
+      "coefficient_frobenius_fixes_u_but_whole_ring_square_does_not": true
+    },
+    {
+      "q": 16,
+      "actual_scalar_functional_basis_checks_all_twists": "PASS",
+      "wrong_left_action_counterexample_detected": true,
+      "coefficient_frobenius_fixes_u_but_whole_ring_square_does_not": true
+    }
+  ],
+  "human_independent_review_completed": false,
+  "limitations": "Finite algorithmic/representation cross-check by same agent; neither external peer review, proof assistant certificate nor exhaustive core q=4,8,16 census"
+}

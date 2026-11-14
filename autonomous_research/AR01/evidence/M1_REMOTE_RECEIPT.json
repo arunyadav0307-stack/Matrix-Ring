@@ -1,0 +1,14 @@
+{
+  "snapshot_commit": "717450cd3c2c264284c7738eaa5f3d02ee070d71",
+  "reconciliation_commit": "b69e8c9c597cbefd4ed4cf4c0aeaa7b3dafc34ea",
+  "remote_history_parent": "d2e7c70c5a2d2605f976d5c0e08a30510294e4f3",
+  "merge_tree_identical_to_preserved_snapshot": true,
+  "branch": "arena/7d88376d-matrix-ring",
+  "push_status": "VERIFIED",
+  "verified_remote_head": "b69e8c9c597cbefd4ed4cf4c0aeaa7b3dafc34ea",
+  "github_tree_files_verified": 2094,
+  "session_calendar_utc": "2026-11-12",
+  "environment_verified_timestamp_raw_utc": "2026-11-14T01:19:35.663865+00:00",
+  "tracked_and_untracked_status": "clean",
+  "scope": "Remote designated ref and complete tracked blob tree verified through ls-remote and GitHub API"
+}

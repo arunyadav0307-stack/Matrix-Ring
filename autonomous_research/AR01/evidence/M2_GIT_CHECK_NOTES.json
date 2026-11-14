@@ -1,0 +1,10 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "environment_timestamp_raw_utc": "2026-11-14T01:36:43.339262+00:00",
+  "initial_cached_whitespace_check_exit": 2,
+  "cause": "Python csv default RFC-style CRLF output flagged as whitespace by Git default; all 138 CSV lines contain CRLF",
+  "preserved_recorded_output_bytes": true,
+  "remedy": "Repeat cached whitespace check with Git cr-at-eol enabled for this one invocation; retain all other whitespace checks",
+  "scientific_test_failure": false,
+  "commit_attempted_before_successful_whitespace_check": false
+}

@@ -1,0 +1,91 @@
+{
+  "session_calendar_utc": "2026-11-12",
+  "environment_checked_timestamp_raw_utc": "2026-11-14T01:36:24.070226+00:00",
+  "repo": "/home/user/Matrix-Ring",
+  "branch": "arena/7d88376d-matrix-ring",
+  "precommit_head": "b69e8c9c597cbefd4ed4cf4c0aeaa7b3dafc34ea",
+  "ast_parsed_scripts": 5,
+  "recorded_result_source_hashes_match": true,
+  "main_result": "PASS",
+  "separate_implementation_result": "PASS",
+  "finite_coverage_only": true,
+  "independent_human_review": false,
+  "external_originality_certified": false,
+  "preservation": {
+    "protected_files": 2059,
+    "protected_bytes": 110323589,
+    "changed_originals": [],
+    "missing_originals": [],
+    "scope": "Intake-byte preservation only; not historical seal/source/mathematical certification"
+  },
+  "historical_M1_backup_sha256_verified": true,
+  "script_and_result_payloads": [
+    {
+      "path": "autonomous_research/AR01/computations/audit_core_a_independent.py",
+      "bytes": 16317,
+      "sha256": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/core_a.py",
+      "bytes": 7146,
+      "sha256": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/audit_v1/binary_all_modules.json",
+      "bytes": 27477,
+      "sha256": "de4844f7826ff0685b22ee1c569eaf4eeb187c73e793449456cc923dc11d89c5"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/audit_v1/global_cases.json",
+      "bytes": 148585,
+      "sha256": "30986561633d77f50e970a222dd162ce7659b2863e8caf5f62b1c163ec5172c3"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/audit_v1/stdout.txt",
+      "bytes": 2756,
+      "sha256": "64db0bb535a204de8ea3027f818e19dbb40908986d3888dfdfdeef6222ae1cbc"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/audit_v1/summary.json",
+      "bytes": 2756,
+      "sha256": "64db0bb535a204de8ea3027f818e19dbb40908986d3888dfdfdeef6222ae1cbc"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/main_v1/auxiliary_q2.csv",
+      "bytes": 18336,
+      "sha256": "b790a54555b4b0f3294cb561bcaacbb174197b394ba184f2c315c7ca9f26f0b0"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/main_v1/cases.json",
+      "bytes": 1446634,
+      "sha256": "f92d86a2657e6df4760e26054a16cc5b1d72e8ff40c956aa4acade976c35a13f"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/main_v1/stdout.txt",
+      "bytes": 7735,
+      "sha256": "470a760cf406695e10eb035ee3fec10a0fe61da4d124a195376df72234930986"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/results/main_v1/summary.json",
+      "bytes": 7735,
+      "sha256": "470a760cf406695e10eb035ee3fec10a0fe61da4d124a195376df72234930986"
+    },
+    {
+      "path": "autonomous_research/AR01/computations/verify_core_a.py",
+      "bytes": 13591,
+      "sha256": "767774155a779c4c85958c16d27ee0207494edcc7bfffa136e4f8245336b17c1"
+    },
+    {
+      "path": "autonomous_research/AR01/tools/check_preservation.py",
+      "bytes": 1123,
+      "sha256": "fb50cd7ba02e1423020686252da35346d924d9f1ac9e6c6b83df2543b9577288"
+    },
+    {
+      "path": "autonomous_research/AR01/tools/checkpoint.py",
+      "bytes": 2953,
+      "sha256": "0dcc6ac6b239bf7f2721802b2eb45ac0d561970439e553811e62a21afb867cfc"
+    }
+  ],
+  "path_preflight": "New work realpath inside designated checkout verified",
+  "publication_or_submission_ready": false
+}

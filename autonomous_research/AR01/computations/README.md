@@ -1,0 +1,20 @@
+# Core A reproducibility
+
+Python **3.11**, standard library only. Run from the checkout root (no environment activation or install needed):
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/verify_core_a.py NEW_MAIN_LABEL
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit_core_a_independent.py NEW_MAIN_LABEL NEW_AUDIT_LABEL
+```
+
+Choose fresh alphanumeric/underscore/hyphen labels: both drivers refuse to overwrite a prior result directory. Do not run with Python `-O`, which disables the assertions used for verification. `SEED=20261112` is a fixed reproducibility parameter, not a claimed execution date. Recorded main/audit runs are `results/main_v1` and `results/audit_v1`.
+
+## Exact scope
+
+- `core_a.py`: GF2/GF4/GF8/GF16 polynomial-basis arithmetic, B ring actions and 8-coordinate Morita modules; not a new hull algorithm.
+- `verify_core_a.py`: primary exhaustive auxiliary q2 generator matrices; q2/q4 scalar ideals; named and seeded stratified q4/q8/q16 inputs, all twists. See per-run summaries for counts and source hashes.
+- `audit_core_a_independent.py`: no primary/project arithmetic imports; independent binary subspace enumeration and GF tables; original 16-coordinate global matrix pairing, right-ideal multiplication and successive hyperplane restriction. It reads primary case data and compares complete spaces.
+
+Mathematical proofs: `../phase2/CORE_A_FOUNDATIONS.md`, `../phase3/CORE_A_PRESERVATION.md`. Audit/limitations: `../audits/CORE_A_PROOF_AND_COMPUTATION_AUDIT.md`.
+
+PASS means the stated finite assertions ran successfully. It does not certify all fields, external originality, journal fit, independent human review, a quantum bridge or distances. q2 is auxiliary and outside m≥2; q4/q8/q16 main samples are not complete censuses. Original project evidence has not been overwritten or silently rerun.
