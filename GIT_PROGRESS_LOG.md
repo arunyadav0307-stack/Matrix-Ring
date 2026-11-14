@@ -78,3 +78,11 @@ Froze166 existing AR01 files/13,021,961 bytes before work. Added versioned six-d
 A new M8 integrity checker validates old bytes/prefixes, exact current line/hash/link/dependency records, unchanged T1–T5 statement, all fresh/predecessor result identities and the exact N2 assembly, without claiming logical proof verification. The bounded deterministic `AR01_M8_FINALISATION_REVIEW.zip` is a research snapshot, not a submission release. Reopened manifest/payload checks, reviewed staging, commit/push and complete remote-ref/blob/mode/changed-path verification follow on this same branch. **Payload synchronization remains pending at this pre-commit entry.**
 
 Current independent-complete-proof and primary-novelty gates remain OPEN. New chronology clarification uses session calendar2026-11-12 UTC and preserves later raw clock observations unchanged, without inferring causes or external event dates.
+
+## AR01-M8 — actual payload synchronization verified
+
+**Committed/pushed and remotely verified:** `0e60375b74e8a742a9766adcb3be2ea93035f793`, fixed branch `arena/7d88376d-matrix-ring`. `M8_FINALISATION_REMOTE_RECEIPT_V1.json` matches the remote ref before/after, all**2,306 blobs/OIDs/modes** and all**81 changed paths** against c4f170d, with no deletion and a clean working tree before writing the receipt. Earlier M8 pending statements are preserved pre-commit history, not a current payload-sync failure.
+
+The immutable M8 research ZIP has**220 payloads/221 entries**,1,484,123 bytes,SHA-256 `7e7f028defa297496aca0eefe940086f69649bae924c22733e051955319be429`; every manifest/payload was reopened and checked, as were all seven earlier ZIPs. The original2,059 files,19 M5 inputs,old scientific bytes and current unchanged T1–T5 are verified; only permitted progress/README suffixes were added. The initial new-integrity-tool schema error and default Git CRLF warning are explicitly recorded; corrected final integrity and CR-at-EOL-aware whitespace checks pass without rewriting result bytes.
+
+This follow-up archives actual post-push facts and adds append-only completion notes. Its own final commit is verified subsequently rather than circularly self-hashed. **Independent whole-proof acceptance RB01 and primary-source/novelty NL01–NL04 remain OPEN**; Git/ZIP success does not close them.

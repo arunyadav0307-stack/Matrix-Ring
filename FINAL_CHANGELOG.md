@@ -84,3 +84,9 @@ Session calendar **2026-11-12 UTC**. Previous M2 commit/push verified: `37d53afb
 - Added a dedicated document/preservation/result-integrity checker with in-memory corruptions required to fail. Kept all originals,19 M5 inputs,six old documents,old source/result/evidence/archive bytes unchanged. Root README remains protected; progress logs and two AR01 READMEs append only.
 - Added current calendar/provenance clarification without rewriting old raw observations or inferring a clock-reset cause. Current session label remains2026-11-12 UTC.
 - The M8 bounded deterministic ZIP is a research review checkpoint, not a submission package. Actual archive reopening, preservation, reviewed staging,push and remote all-file verification are recorded after execution; synchronization is pending in this pre-commit entry. No external review, originality, journal or application claim is introduced.
+
+## AR01-M8 — actual synchronization receipt and current-status suffixes
+
+- Saved actual post-push remote receipt for `0e60375b74e8a742a9766adcb3be2ea93035f793`:all2,306 blobs/modes and81 changed paths match,with no deletions and clean tree before the receipt. Original a74f33f and verified c4f170d remain ancestors.
+- Recorded immutable research ZIP integrity:1,484,123 bytes,220 payloads/221 entries,SHA-256 `7e7f028defa297496aca0eefe940086f69649bae924c22733e051955319be429`. All seven old ZIPs and all protected/frozen originals remain unchanged. Later receipt/staging/completion records are outside the earlier archive snapshot,not retroactively inserted.
+- Appended actual-success notes without changing candidate formulas/proof hashes,old evidence or OPEN independent-proof/primary-novelty gates. The containing receipt-only follow-up is checked separately; no circular self-hash or scientific acceptance is claimed.

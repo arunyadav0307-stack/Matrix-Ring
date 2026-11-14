@@ -128,3 +128,7 @@ Versioned report: `autonomous_research/AR01/finalisation/M8/CORE_A_PROOF_STATUS_
 |Current payload commit/push/archive|PENDING in this pre-commit entry|Actual-success receipt must follow; research backup only|
 
 No numerical regression failure or mathematical counterexample was found in this scope; an unfinished independent verification gate is not rebranded as a mathematical obstruction. No-paper remains legitimate if authenticated closest-source comparison defeats sufficient novelty. Historical phase0/issue/seal/manuscript/private-fact registers remain unchanged.
+
+## AR01-M8 — checkpoint synchronization complete, scientific terminal condition open
+
+The versioned six-document/internal-review/fresh-reproducibility payload is synchronized at `0e60375b74e8a742a9766adcb3be2ea93035f793`,all2,306 remote blobs/modes and81 expected paths verified. Research ZIP220 payloads/221 entries is reopened/manifest-verified; preservation checks pass. M8 pre-commit pending entries are superseded for this payload by the actual receipt. **The requested genuinely independent complete-proof condition remains NOT ESTABLISHED (RB01); primary novelty/depth obligations NL01–NL04 remain OPEN.** No complete-proof,novel-paper,whole-publication-phase or submission gate is declared finished.
