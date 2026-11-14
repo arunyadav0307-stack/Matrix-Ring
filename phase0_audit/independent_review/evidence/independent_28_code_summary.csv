@@ -1,0 +1,29 @@
+row,file,code,q,route,N,rank_k,h_E,K,c,exact_d,independent_method,matrix_dual_agrees,CSS_route_condition,all_checks_pass
+1,"01_24_8_4_9_(9,1,6)_SO.json","[[24,8,4]]_9",9,SO,24,8,8,8,0,4,complete independent parity-check support search through claimed d,True,True,True
+2,"02_20_4_4_4_(4,1,5)_SO.json","[[20,4,4]]_4",4,SO,20,8,8,4,0,4,complete independent parity-check support search through claimed d,True,True,True
+3,"03_20_4_4_4_(4,1,5)_DC.json","[[20,4,4]]_4",4,DC,20,12,8,4,0,4,complete independent parity-check support search through claimed d,True,True,True
+4,"04_20_2_10-18_4_(4,1,5)_EA.json","[[20,2,10;18]]_4",4,EA,20,18,0,2,18,10,complete independent enumeration,True,True,True
+5,"05_24_2_10-18_9_(9,1,6)_EA.json","[[24,2,10;18]]_9",9,EA,24,20,2,2,18,10,complete independent enumeration,True,True,True
+6,"06_4_2_2-2_4_(4,1,1)_EA.json","[[4,2,2;2]]_4",4,EA,4,2,0,2,2,2,complete independent enumeration,True,True,True
+7,"07_8_4_3-4_4_(4,1,2)_EA.json","[[8,4,3;4]]_4",4,EA,8,4,0,4,4,3,complete independent enumeration,True,True,True
+8,"08_12_2_6-10_4_(4,1,3)_EA.json","[[12,2,6;10]]_4",4,EA,12,10,0,2,10,6,complete independent enumeration,True,True,True
+9,"09_16_4_5-8_4_(4,1,4)_EA.json","[[16,4,5;8]]_4",4,EA,16,10,2,4,8,5,complete independent enumeration,True,True,True
+10,"10_24_4_9-20_4_(4,1,6)_EA.json","[[24,4,9;20]]_4",4,EA,24,20,0,4,20,9,complete independent enumeration,True,True,True
+11,"11_8_4_2-4_4_(4,2,1)_EA.json","[[8,4,2;4]]_4",4,EA,8,4,0,4,4,2,complete independent enumeration,True,True,True
+12,"12_16_4_4-12_4_(4,2,2)_EA.json","[[16,4,4;12]]_4",4,EA,16,12,0,4,12,4,complete independent enumeration,True,True,True
+13,"13_24_4_6-20_4_(4,2,3)_EA.json","[[24,4,6;20]]_4",4,EA,24,20,0,4,20,6,complete independent enumeration,True,True,True
+14,"14_12_6_2-6_4_(4,3,1)_EA.json","[[12,6,2;6]]_4",4,EA,12,6,0,6,6,2,complete independent enumeration,True,True,True
+15,"15_16_6_2-10_4_(4,4,1)_EA.json","[[16,6,2;10]]_4",4,EA,16,10,0,6,10,2,complete independent enumeration,True,True,True
+16,"16_4_2_2-2_8_(8,1,1)_EA.json","[[4,2,2;2]]_8",8,EA,4,2,0,2,2,2,complete independent enumeration,True,True,True
+17,"17_8_4_3-4_8_(8,1,2)_EA.json","[[8,4,3;4]]_8",8,EA,8,4,0,4,4,3,complete independent enumeration,True,True,True
+18,"18_12_2_6-10_8_(8,1,3)_EA.json","[[12,2,6;10]]_8",8,EA,12,10,0,2,10,6,complete independent enumeration,True,True,True
+19,"19_12_4_2-8_8_(8,3,1)_EA.json","[[12,4,2;8]]_8",8,EA,12,8,0,4,8,2,complete independent enumeration,True,True,True
+20,"20_4_2_2-2_9_(9,1,1)_EA.json","[[4,2,2;2]]_9",9,EA,4,2,0,2,2,2,complete independent enumeration,True,True,True
+21,"21_8_2_4-6_9_(9,1,2)_EA.json","[[8,2,4;6]]_9",9,EA,8,6,0,2,6,4,complete independent enumeration,True,True,True
+22,"22_12_2_5-6_9_(9,1,3)_EA.json","[[12,2,5;6]]_9",9,EA,12,8,2,2,6,5,complete independent enumeration,True,True,True
+23,"23_16_2_8-14_9_(9,1,4)_EA.json","[[16,2,8;14]]_9",9,EA,16,14,0,2,14,8,complete independent enumeration,True,True,True
+24,"24_20_4_9-16_9_(9,1,5)_EA.json","[[20,4,9;16]]_9",9,EA,20,16,0,4,16,9,complete independent enumeration,True,True,True
+25,"25_8_4_2-4_9_(9,2,1)_EA.json","[[8,4,2;4]]_9",9,EA,8,4,0,4,4,2,complete independent enumeration,True,True,True
+26,"26_16_4_4-12_9_(9,2,2)_EA.json","[[16,4,4;12]]_9",9,EA,16,12,0,4,12,4,complete independent enumeration,True,True,True
+27,"27_12_4_2-8_9_(9,3,1)_EA.json","[[12,4,2;8]]_9",9,EA,12,8,0,4,8,2,complete independent enumeration,True,True,True
+28,"28_24_6_4-18_9_(9,3,2)_EA.json","[[24,6,4;18]]_9",9,EA,24,18,0,6,18,4,complete independent parity-check support search through claimed d,True,True,True

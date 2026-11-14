@@ -1,0 +1,62 @@
+{
+  "recorded_clock_utc": "2026-11-13T08:45:59.828361+00:00",
+  "status": "HOLD — CORRECTION PLAN ONLY — IMPLEMENTATION NOT AUTHORIZED.",
+  "implementation_authorized": false,
+  "scientific_executions_in_this_task": 0,
+  "fresh_external_queries_in_this_task": 0,
+  "manuscript_edits_in_this_task": 0,
+  "replacement_theorems_or_proofs_generated": false,
+  "tex_compilation_performed": false,
+  "commits_or_pushes_performed": false,
+  "all_new_outputs_within_correction_plan": true,
+  "verbatim_source_copies_verified_against_originals": 42,
+  "available_version_file_hashes_verified": 320,
+  "manuscript_target_paths_checked": 113,
+  "manuscript_target_line_ranges_checked": 119,
+  "protected_original_count": 1959,
+  "protected_original_bytes": 106136867,
+  "blocking_count_convention": "8 inherited BLOCKING finding families -> 8 CRITICAL actions; 29 MAJOR and 6 MINOR actions remain; A01–A04 excluded from research-blocker count.",
+  "submission_status": "AUTHOR CONFIRMATION REQUIRED",
+  "authoritative_staging_version": "MS03; subject to current author baseline confirmation",
+  "not_claimed": [
+    "proof repair",
+    "new result",
+    "new code search",
+    "full historical census recertification",
+    "exhaustive literature/priority check",
+    "actual submission/acceptance verification",
+    "journal-policy clearance",
+    "mathematical GO"
+  ],
+  "content_validation": {
+    "requested_documents": 7,
+    "actions": 43,
+    "explicit_fields_per_action": 11,
+    "severity_counts": {
+      "MAJOR": 29,
+      "CRITICAL": 8,
+      "MINOR": 6
+    },
+    "critical_blockers": [
+      "CP10",
+      "CP23",
+      "CP24",
+      "CP25",
+      "CP27",
+      "CP29",
+      "CP32",
+      "CP40"
+    ],
+    "dependency_dag_acyclic": true,
+    "verbatim_source_copies": 42,
+    "recovered_source_roots": 19,
+    "distinct_complete_core_payloads": 9,
+    "curated_mirror_roots": 4,
+    "ms03_source_manifest_sha256": "b52028fac20c3d4603cfd8e2c44d6d885003ae444098437223a9c71875ac3e24",
+    "protected_original_count": 1959,
+    "protected_original_bytes": 106136867,
+    "local_planning_and_report_links_checked": 125,
+    "implementation_authorized": false,
+    "scientific_scripts_executed": false
+  }
+}

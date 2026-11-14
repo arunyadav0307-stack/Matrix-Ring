@@ -1,0 +1,246 @@
+
+==============================================================================
+PHASE 0 FEASIBILITY EXPERIMENTS  (exact arithmetic, no assumptions)
+==============================================================================
+ring family:  R = M_m(A_t),  A_t = F_q[u]/<u^t>,  q = p^r
+run date: 2026-11-13 07:09:13
+python: 3.11.2
+
+==============================================================================
+E1  Automorphism tests on R = M_m(A_t)
+==============================================================================
+Question: is the entrywise Frobenius  sigma_s(a) = a^(p^s)  (extended
+entrywise to matrices) a ring AUTOMORPHISM?  Is  theta = sigma o
+transpose an ANTI-automorphism?  Is it nontrivial?
+
+  q=p^r=2^1=2, t=1, m=2, |R|=16
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+  q=p^r=2^2=4, t=1, m=2, |R|=256
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      sigma_1                          additive=True  mult=True  nontrivial=True 
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+      theta_1 = sigma_1 o transpose    additive=True  anti-mult=True 
+  q=p^r=2^1=2, t=2, m=2, |R|=256
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      mu_c(c=1)                        additive=True  mult=True  nontrivial=False
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+  q=p^r=2^2=4, t=2, m=2, |R|=65536
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      sigma_1                          additive=True  mult=True  nontrivial=True 
+      mu_c(c=2)                        additive=True  mult=True  nontrivial=True 
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+      theta_1 = sigma_1 o transpose    additive=True  anti-mult=True 
+  q=p^r=2^1=2, t=1, m=3, |R|=512
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+  q=p^r=3^2=9, t=1, m=2, |R|=6561
+      sigma_0                          additive=True  mult=True  nontrivial=False
+      sigma_1                          additive=True  mult=True  nontrivial=True 
+      theta_0 = sigma_0 o transpose    additive=True  anti-mult=True 
+      theta_1 = sigma_1 o transpose    additive=True  anti-mult=True 
+
+  NOTE: for q = p (r = 1) the *field* Frobenius is the identity, so a
+  nontrivial Galois-type twist needs r >= 2 (q = p^r, s in 1..r-1) or
+  an automorphism moving u (mu_c) or an inner (PGL_m) automorphism.
+
+==============================================================================
+E2  Frobenius functional  Lambda = lambda o tr  (lambda = coeff of u^(t-1))
+==============================================================================
+Lambda non-degenerate on both sides  <=>  the F_q-valued pairing
+(X,Y) |-> Lambda(XY) is a perfect duality (Wood 1999: Frobenius ring).
+
+  q=2, t=1, m=2, |R|=16      left-nondeg=True  right-nondeg=True  symmetric=True
+  q=4, t=1, m=2, |R|=256     left-nondeg=True  right-nondeg=True  symmetric=True
+  q=2, t=2, m=2, |R|=256     left-nondeg=True  right-nondeg=True  symmetric=True
+  q=4, t=2, m=2, |R|=65536   left-nondeg=True  right-nondeg=True  symmetric=True
+  q=2, t=1, m=3, |R|=512     left-nondeg=True  right-nondeg=True  symmetric=True
+  q=16, t=1, m=2, |R|=65536   left-nondeg=True  right-nondeg=True  symmetric=True
+
+==============================================================================
+E3  n = 1: LEFT ideals vs RIGHT ideals under four candidate pairings
+==============================================================================
+
+### R = M_2(F_2[u]/<u^1>),  |R| = 16
+ambient F_q-dimension = 4, |R| = 16
+
+  --- left ideals: 5 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                
+  2      4            2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      4            2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      4            2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  4      16           4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                
+
+  --- right ideals: 5 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                
+  2      4            2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      4            2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      4            2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  4      16           4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                
+
+  legend: 'k+d=OK' means dim(C) + dim(C^perp) = dim(R) (perfect
+  duality); the last word is the module side of the dual code.
+
+### R = M_2(F_4[u]/<u^1>),  |R| = 256
+ambient F_q-dimension = 4, |R| = 256
+
+  --- left ideals: 7 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                
+  2      16           2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      16           2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      16           2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      16           2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  2      16           2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  right                 2+2=OK  left                  
+  4      256          4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                
+
+  --- right ideals: 7 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                0+4=OK  two-si                
+  2      16           2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      16           2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      16           2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      16           2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  2      16           2+0=BAD two-si                2+2=OK  right                 2+0=BAD two-si                2+2=OK  right                 2+2=OK  left                  2+2=OK  left                  2+2=OK  right                 
+  4      256          4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                4+0=OK  two-si                
+
+  legend: 'k+d=OK' means dim(C) + dim(C^perp) = dim(R) (perfect
+  duality); the last word is the module side of the dual code.
+
+### R = M_2(F_2[u]/<u^2>),  |R| = 256
+ambient F_q-dimension = 8, |R| = 256
+
+  --- left ideals: 15 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                
+  2      4            2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  right                 2+6=OK  left                  
+  2      4            2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  right                 2+6=OK  left                  
+  2      4            2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  right                 2+6=OK  left                  
+  4      16           4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  4      16           4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  right                 4+4=OK  left                  
+  6      64           6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  right                 6+2=OK  left                  
+  6      64           6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  right                 6+2=OK  left                  
+  6      64           6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  right                 6+2=OK  left                  
+  8      256          8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                
+
+  --- right ideals: 15 ideals found ---
+  dim C  |C|          dot                           dotT                          sigma-inv                     theta=sig o T                 trace                         trace-sigma                   trace-theta                   
+  0      1            0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                0+8=OK  two-si                
+  2      4            2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  left                  2+6=OK  left                  2+6=OK  right                 
+  2      4            2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  left                  2+6=OK  left                  2+6=OK  right                 
+  2      4            2+4=BAD two-si                2+6=OK  right                 2+4=BAD two-si                2+6=OK  right                 2+6=OK  left                  2+6=OK  left                  2+6=OK  right                 
+  4      16           4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                4+4=OK  two-si                
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  4      16           4+0=BAD two-si                4+4=OK  right                 4+0=BAD two-si                4+4=OK  right                 4+4=OK  left                  4+4=OK  left                  4+4=OK  right                 
+  6      64           6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  left                  6+2=OK  left                  6+2=OK  right                 
+  6      64           6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  left                  6+2=OK  left                  6+2=OK  right                 
+  6      64           6+0=BAD two-si                6+2=OK  right                 6+0=BAD two-si                6+2=OK  right                 6+2=OK  left                  6+2=OK  left                  6+2=OK  right                 
+  8      256          8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                8+0=OK  two-si                
+
+  legend: 'k+d=OK' means dim(C) + dim(C^perp) = dim(R) (perfect
+  duality); the last word is the module side of the dual code.
+
+==============================================================================
+E4  Complete enumeration of length-3 cyclic codes over M_2(F_2)
+==============================================================================
+R = M_2(F_2), length n = 3, ambient F_2-dimension = 12
+  right       cyclic codes (closed under shift + right mult): 35
+      F_2-dimensions: [0, 2, 2, 2, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 10, 10, 10, 12]
+  left        cyclic codes (closed under shift + left mult): 35
+      F_2-dimensions: [0, 2, 2, 2, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 10, 10, 10, 12]
+  two-sided   cyclic codes (closed under shift + two-sided mult): 4
+      F_2-dimensions: [0, 4, 8, 12]
+
+  Duality / hull table for the RIGHT convention (cyclic = right ideal):
+  dimC  | dot-dual       dot perfect?   | theta-dual     theta perfect? | hull(dot)   hull(theta) hull(tr-th) hull R-mod 
+  0     | 12             OK             | 12             OK             | 0           0           0           yes        
+  2     | 8              BAD            | 10             OK             | 0           0           0           yes        
+  2     | 8              BAD            | 10             OK             | 0           0           0           yes        
+  2     | 8              BAD            | 10             OK             | 0           2           2           yes        
+  4     | 4              BAD            | 8              OK             | 0           0           0           yes        
+  4     | 4              BAD            | 8              OK             | 0           0           0           yes        
+  4     | 4              BAD            | 8              OK             | 0           4           4           yes        
+  4     | 8              OK             | 8              OK             | 0           0           0           yes        
+  4     | 4              BAD            | 8              OK             | 0           4           4           yes        
+  4     | 4              BAD            | 8              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           0           0           yes        
+  6     | 0              BAD            | 6              OK             | 0           0           0           yes        
+  6     | 0              BAD            | 6              OK             | 0           6           6           yes        
+  6     | 0              BAD            | 6              OK             | 0           0           0           yes        
+  6     | 0              BAD            | 6              OK             | 0           2           2           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           6           6           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           0           0           yes        
+  6     | 0              BAD            | 6              OK             | 0           4           4           yes        
+  6     | 0              BAD            | 6              OK             | 0           2           2           yes        
+  6     | 0              BAD            | 6              OK             | 0           6           6           yes        
+  8     | 0              BAD            | 4              OK             | 0           0           0           yes        
+  8     | 0              BAD            | 4              OK             | 0           4           4           yes        
+  8     | 4              OK             | 4              OK             | 0           0           0           yes        
+  8     | 0              BAD            | 4              OK             | 0           4           4           yes        
+  8     | 0              BAD            | 4              OK             | 0           4           4           yes        
+  8     | 0              BAD            | 4              OK             | 0           0           0           yes        
+  10    | 0              BAD            | 2              OK             | 0           0           0           yes        
+  10    | 0              BAD            | 2              OK             | 0           2           2           yes        
+  10    | 0              BAD            | 2              OK             | 0           0           0           yes        
+  12    | 0              OK             | 0              OK             | 0           0           0           yes        
+
+  'theta'  = pairing  sum_i theta_s(x_i) y_i  with theta_s = sigma_s o transpose
+  'tr-th'  = F_q-valued  Lambda(sum_i theta_s(x_i) y_i)
+  codes with BROKEN duality under the naive Euclidean dot product: 31 / 35
+  codes with BROKEN duality under the theta pairing            : 0 / 35
+
+==============================================================================
+E5  Check against Alahmadi-Sboui-Sole-Yemen (2013), Thm. 1
+==============================================================================
+Their parametrisation: every cyclic code of odd length n over
+M_2(F_2) = F_4 + u F_4  (u^2 = 0) is  C = (f h) + u (f g)  with
+x^n - 1 = f g h  a factorisation into pairwise coprime polynomials
+over F_4.  For n = 3 there are 3^3 = 27 such triples.
+
+  cyclic codes found by complete enumeration : 35
+      dimension profile (F_2-dim : #codes): {0: 1, 2: 3, 4: 6, 6: 15, 8: 6, 10: 3, 12: 1}
+
+  --- reading A : u on the left,  C = (fh)R_n + u(fg)R_n
+      distinct codes produced      : 15
+      dimension profile            : {0: 1, 2: 1, 4: 4, 6: 3, 8: 4, 10: 1, 12: 1}
+      all of them are cyclic codes : True
+      cyclic codes NOT produced    : 20
+
+  --- reading B : u on the right, C = (fh)R_n + (fg)u R_n
+      distinct codes produced      : 19
+      dimension profile            : {0: 1, 2: 1, 4: 4, 6: 5, 8: 4, 10: 3, 12: 1}
+      all of them are cyclic codes : True
+      cyclic codes NOT produced    : 16
+
+  --- reading C : residue+torsion, C = {r + u t}
+      distinct codes produced      : 27
+      dimension profile            : {0: 1, 2: 3, 4: 6, 6: 7, 8: 6, 10: 3, 12: 1}
+      all of them are cyclic codes : False
+      cyclic codes NOT produced    : 26
+
+  Interpretation: this is a COMPUTATIONAL OBSERVATION on one fixed
+  parameter set (m = 2, q = 2, t = 1, n = 3, exhaustive over all
+  2^12 ambient vectors).  It is evidence, not a proof, and must be
+  re-derived by hand against the original paper in Phase 1.
+
+==============================================================================
+END OF EXPERIMENTS   (32.4 s)
+==============================================================================
+
+[log written to /home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/phase0_rerun/scripts/phase0_results.txt]

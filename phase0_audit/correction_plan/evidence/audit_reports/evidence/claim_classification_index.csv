@@ -1,0 +1,85 @@
+claim_id,statement_and_scope,classification,evidence_and_conditions
+N1,"S §1, θ² and automorphism laws; F03/F04",VERIFIED UNDER CONDITIONS,"S §1, θ² and automorphism laws; F03/F04"
+N2,"`06_AUDIT/PHASE0_PROOF_VERIFICATION.md` §3, θ(B(x,y))=B(y,σ_2k x); D10. This is theta-Hermitian symmetry when reflexive, not ordinary value symmetry",VERIFIED UNDER CONDITIONS,"`06_AUDIT/PHASE0_PROOF_VERIFICATION.md` §3, θ(B(x,y))=B(y,σ_2k x); D10. This is theta-Hermitian symmetry when reflexive, not ordinary value symmetry"
+N3,S Props2.1/2.2 and Thms3.4/3.5; D01/D03/D07/D09,VERIFIED UNDER CONDITIONS,S Props2.1/2.2 and Thms3.4/3.5; D01/D03/D07/D09
+N4,S Thm3.6 and historical proof audit §5; positive double twist D10,VERIFIED UNDER CONDITIONS,S Thm3.6 and historical proof audit §5; positive double twist D10
+N5,S Thm3.9 and proof audit §6; universal quantifier and matrix size≥2 essential,VERIFIED UNDER CONDITIONS,S Thm3.9 and proof audit §6; universal quantifier and matrix size≥2 essential
+N6,Historical proof audit §8; coefficient σ commutes with θ and preserves zero/nonzero entries; D17,VERIFIED UNDER CONDITIONS,Historical proof audit §8; coefficient σ commutes with θ and preserves zero/nonzero entries; D17
+N7,"N4+N6: DD=σ_2k(C) preserves size, coefficient/ring-Hamming enumerator, distance and hull dimension. No arbitrary metric-change claim",VERIFIED UNDER CONDITIONS,"N4+N6: DD=σ_2k(C) preserves size, coefficient/ring-Hamming enumerator, distance and hull dimension. No arbitrary metric-change claim"
+N8,Historical proof audit §7; S Thm3.7 shift identity; D07/D16,VERIFIED UNDER CONDITIONS,Historical proof audit §7; S Thm3.7 shift identity; D07/D16
+N9,S Prop4.1 and proof audit §9; right-module hypothesis; D08,VERIFIED UNDER CONDITIONS,S Prop4.1 and proof audit §9; right-module hypothesis; D08
+N10,"Historical proof audit §§1/5: for entrywise τ∈Aut(A), θ_τ=τ∘T has θ_τ²=τ²; the same correctly sided annihilator argument gives DD=τ²(C). Universal reflexivity criterion needs r≥2. This is existing source generalization, not newly implemented research",VERIFIED UNDER CONDITIONS,"Historical proof audit §§1/5: for entrywise τ∈Aut(A), θ_τ=τ∘T has θ_τ²=τ²; the same correctly sided annihilator argument gives DD=τ²(C). Universal reflexivity criterion needs r≥2. This is existing source generalization, not newly implemented research"
+N11,"`06_AUDIT/PHASE0_U8_U9_DECISIONS.md` §4; field-degree trichotomy, D12",VERIFIED UNDER CONDITIONS,"`06_AUDIT/PHASE0_U8_U9_DECISIONS.md` §4; field-degree trichotomy, D12"
+N12,S Thm3.8 plus proof audit §8; cyclic right hull/σ-equivariance D17,VERIFIED UNDER CONDITIONS,S Thm3.8 plus proof audit §8; cyclic right hull/σ-equivariance D17
+F01,"A is a finite commutative chain/Frobenius ring, ideals (u^i), size p^(mt)",VERIFIED UNDER CONDITIONS,Polynomial truncation with field coefficients; S §0/Lemma1.4; standard top-coefficient argument
+F02,"R is noncommutative for r≥2, center A I, radical M_r((u)), size p^(mtr²)",VERIFIED UNDER CONDITIONS,Matrix units and reduction modulo u; source ring feasibility §2
+F03,"Coefficient σ_k is an automorphism, fixes u, order m/gcd(m,k)",VERIFIED UNDER CONDITIONS,S Lemma1.1; E1 coefficient-lift countercheck. Not whole-ring powering; a nontrivial residue k needs m>1
+F04,θ_k is anti-multiplicative and θ_k²=σ_2k,VERIFIED UNDER CONDITIONS,S Lemmas1.2–1.3; transpose/Frobenius commute; not automatically an involution
+F05,Top coefficient composed with matrix and field traces gives a generating-character framework,VERIFIED UNDER CONDITIONS,S Lemma1.4; nonzero-ideal detection; L03/L04/L20. Distinguish scalar functional from exponentiated character
+F06,“Most one-sided ideals of the base R are nonprincipal”,INCORRECT,"Chain-ring Morita modules in A^r need ≤r generators, hence all base left/right ideals are principal; E1 checks all33 for F4/u²,r2"
+F07,Cyclic right R-modules correspond to right ideals of R_n≅M_r(B) and B-submodules of B^r,VERIFIED UNDER CONDITIONS,"Central X, X^n−1; S2A Morita/column convention. Not arbitrary left or two-sided ideals"
+F08,I_W is principal iff μ_B(W)≤r; dim_Fq I_W=r dim_Fq W,VERIFIED UNDER CONDITIONS,Columns of one r×r generator versus r arbitrary column vectors; S2A generator dictionary (r2 form)
+F09,"For matrix-size2, all cyclic right ideals principal iff t=1 **or** p∤n",VERIFIED UNDER CONDITIONS,"S2B Thms4.1/4.3/Cor4.4. The reports' “general principality still open” is stale, not a missing theorem"
+F10,Clean squarefree/split CRT enumeration needs p∤n; repeated-root cases need separate treatment,VERIFIED UNDER CONDITIONS,S2B explicitly treats t1 repeated roots and wild t≥2 cases. The valid warning does not make all t≥2 principality theory open; see F09
+F11,Every submodule of a chain-ring free module is itself free,INCORRECT,"M05 sentence; uA⊂A with A=F4[u]/u² has4 elements, incompatible with nonzero free A-rank. The needed ≤r-generation result is valid"
+D01,"B_k(xa,y)=θ_k(a)B_k(x,y), B_k(x,yb)=B_k(x,y)b",VERIFIED UNDER CONDITIONS,Right action; S Prop2.1. Full derivation in pairing audit §2
+D02,"Frozen P1 summary: B_k(ax,y)=θ_k(a)B_k(x,y)",INCORRECT,"E1 `summary_ax_formula_counterexample`, E12/E21 witness. Detailed S has the correct law"
+D03,B_k is elementwise nondegenerate in both variables,VERIFIED UNDER CONDITIONS,S Prop2.2: select a nonzero coordinate and use I_r there
+D04,Summary's E_ba probe always proves nondegeneracy,INCORRECT,"E1 x=E12,y=E21 gives0 after transpose; theorem survives via identity probe"
+D05,Plain product can fail the same-right-module size law,VERIFIED,"E1 M2(F2), top-row right ideal: size(C)=4, plain dual1, theta dual4, ambient16; ER reproduces31/35 historical failures"
+D06,Therefore the plain product is elementwise degenerate / all opposite-sided duality invalid,INCORRECT,Identity probe is nondegenerate; S Prop2.3 gives correctly sided annihilator theory. “Degenerate” requires qualification
+D07,"C^perp_k is a right R-module, cyclic when C is cyclic",VERIFIED UNDER CONDITIONS,"S Thm3.4/3.7; correct right law and B(x,Ty)=B(T^-1x,y)"
+D08,λTr ring-orthogonal equals scalar-orthogonal,VERIFIED UNDER CONDITIONS,C must be right R-module; S Prop4.1. E3 non-module subspace gives dimensions2 versus3
+D09,"size(C)·size(C^perp_k)=size(R)^n, dimensions sum to N",VERIFIED UNDER CONDITIONS,"S Thm3.5; module-side scalar equality/perfect Gram form, not nondegeneracy alone"
+D10,Same-convention double dual is **+σ_2k(C)**,VERIFIED UNDER CONDITIONS,S Thm3.6; apply θ to B=0 then size. E1 F8 brute force distinguishes positive/negative/C
+D11,Same-twist double dual is always C,INCORRECT,E1 explicit F8 slope ideal: DD≠C. General result is D10
+D12,Universal reflexivity iff m divides2k,VERIFIED UNDER CONDITIONS,r≥2 and universal quantifier; S Thm3.9 slope proof. Thm3.6's short necessity sketch alone is insufficient
+D13,"For an individual code, inclusion in DD implies equality and holds iff σ_2k(C)=C",VERIFIED UNDER CONDITIONS,Finite equal cardinality. Particular invariant codes can be reflexive when global duality is not
+D14,Left mirror Σx_i θ(y_i) can inherit the positive DD and same linearity unchanged,INCORRECT,It is a valid different left convention with **negative σ_-2k DD**; S's positive mirror is Σy_i θ(x_i). E2 brute-force distinction
+D15,A-valued trace candidate is fully reconciled with the same k P1/P2 dual,INCOMPLETE,"Its correct right-action identity and scalar comparison involve **−k**, not automatic +k. Pairing audit §6; original sketch uses the wrong side"
+D16,Cyclic dual equals reversal of the right annihilator of θ(C),VERIFIED UNDER CONDITIONS,"Central-variable quotient; Stage2C Thm3.8, cyclic/right conventions required"
+D17,"Hull is a cyclic right module, σ-equivariant, self-orthogonal; dual-hull formula uses σ_2k(C)",VERIFIED UNDER CONDITIONS,"S Thm3.8, M05 `thm:hullstruct`; intersection arguments; no reflexivity needed for hull self-orthogonality"
+D18,"A nonprincipal self-dual hull exists at (4,2,2)",VERIFIED,"S3B §7 explicit witness; E1 dimW4, dimradW1, μ3>2, dimC8, self-dual for k0,1"
+D19,"M05 i0,dimU2 “direct-sum” family has μ3",INCORRECT,"E2 intersection dimension1; actual sum dimension5, radical dimension3, μ2. Does not refute D18"
+D20,Full hull-μ distributions / all additional wild-family witnesses are independently established here,COMPUTATIONALLY SUPPORTED ONLY,Historical S3B/Phase6 data; not a new independent full census. Only D18 and focused representation checks recertified
+D21,Phase5 D3 hrows→unpair computes the hull Morita generator number correctly,INCORRECT,Script lines1364–1368 uses wrong-length row representation; E3 reproduces wrongμ4 vs correctμ3; Phase6 already warns/fixes this route
+G01,Coefficient Gray map is an Fq-linear bijection to Fq^N,VERIFIED UNDER CONDITIONS,Fixed matrix/u/position ordering; G T176; not automatically R-linear
+G02,Transported scalar Gram matrix J=I_(r²n)⊗H_t,VERIFIED UNDER CONDITIONS,G T177; top-coefficient calculation; E1 direct matrix/trace calculation
+G03,"φ(C^perp_k)=φ(C)^perp_(k,J)",VERIFIED UNDER CONDITIONS,Right-module scalar equality + specified map/form; G T178; not arbitrary Gray maps or Euclidean target
+G04,Gray map carries hull to transported-hull intersection even if nonprincipal,VERIFIED UNDER CONDITIONS,Injectivity plus G03; G T179
+G05,Coefficient/Hamming isometry and stated ring-weight inequalities,VERIFIED UNDER CONDITIONS,"G T180; coefficient metric, not symbol-Hamming/homogeneous metric"
+G06,Normalized nonintegral homogeneous weight has no ordinary Hamming isometry,VERIFIED UNDER CONDITIONS,"G T181/T182, stated normalization and source character-sum identity; not all rescalings settled"
+G07,"Image is QC of index tr² (4t at r2), not generally cyclic",VERIFIED UNDER CONDITIONS,G T183; transported block shift
+G08,Transported form is literally Euclidean iff t1 and σ_k=id,VERIFIED UNDER CONDITIONS,G T184 and E1 Euclidean-dual counterexample outside that corner. This literal-form statement does not forbid a particular code from also satisfying an ordinary-Euclidean inclusion
+G09,Characteristic2/even-t **bilinear** form not congruent to I,VERIFIED UNDER CONDITIONS,"G T185, M06 definition restricts σ=id; alternatingness invariant under ordinary congruence"
+G10,Same obstruction rules out all Hermitian/sesquilinear congruences,INCORRECT,"E1 explicit F4 T has σ(T)^T H2 T=I, but T^T H2 T≠I; no Hamming isometry claimed"
+G11,Zero diagonal means alternating for all characteristics/form types,INCORRECT,E2 F9 bilinear and F4 Hermitian self-values nonzero; M06 statement is overbroad
+G12,Displayed Phase5 GF9 T is a Hermitian congruence,INCORRECT,E2 T^THT=I but σ1(T)^THT≠I. Valid bilinear scope remains
+G13,The463-check suite supplies finite experimental support for its tested Gray scopes,COMPUTATIONALLY SUPPORTED ONLY,"ER exactly reproduces log,311EXH/152SMP; verified execution does not prove universal Gray/quantum compatibility. G02/G03 need their proof, not the count"
+G14,Every EXH-labelled pairing/symmetry assertion tested all ambient pairs,INCORRECT,"Script limits to first120² and50² pairs, even with exhaustive ambient enumeration"
+G15,Script reflexivity header uses a meaningful m divides2k test,INCORRECT,"Line982 uses m%gcd(m,2k)==0, always true; actual line1026 C5 test is correct. Do not claim the C5 checks are tautologies"
+G16,Fq-valued scalar form has θ(matrix)-semilinear scalar output for arbitrary R multipliers,INCORRECT,G §0.2 type mismatch; only central-field scalar sesquilinearity is valid
+G17,Lack of an ambient Euclidean congruence prohibits every code-specific CSS inclusion,INCORRECT,"Nonzero Euclidean-SO codes occur in original Gray log; code-specific inclusion must be tested, not inferred from ambient classification"
+Q01,Trace-symplectic isotropic labels with a phase-correct scalar-free stabilizer lift yield the standard dimension/distance rule,VERIFIED UNDER CONDITIONS,"Actual isotropy, phase lift and nontrivial code conventions required; Fp commutation basis or equivalent Fq value tests"
+Q02,Printed Weyl relation X(a)Z(b)=χ(+Tr(ab))Z(b)X(a) with the stated operators,INCORRECT,M07 LemmaQ1; direct action gives **negative** sign. E2 p3 witness; zero commutation criterion is unaffected
+Q03,LemmaQ2 gives joint-eigenspace dimension q^N/size(C) for arbitrary additive C without isotropy/lift conditions,INCORRECT,"E2 C=F2²,N1 would give1/2 dimension, while X and Z do not commute. The ±S/anti-commutes language also fails as general odd-p statement"
+Q04,R1 graph from a transported-self-orthogonal D gives K=N−k,VERIFIED UNDER CONDITIONS,"M07 `thm:R1`, pairwise vanishing and correct phase convention. Graph only Fp-linear in general; use trace orthogonal"
+Q05,"M07 final parameter theorem can use Fq-symplectic orthogonal for all routes, including R1",INCORRECT,E3 explicit R1 example has trace-orthogonal labels not Fq-orthogonal. It also uses wrong V for un-relabelled DC
+Q06,Euclidean SO/DC CSS parameters and respective distance differences,VERIFIED UNDER CONDITIONS,"M07 `thm:R2`: SO requires D⊂D_E^perp, DC requires D_E^perp⊂D. E28 checks actual inclusions"
+Q07,All28 supplied field-generator records have their claimed exact parameters/distances,VERIFIED,"E28 independent arithmetic,24 complete enumerations+4 complete support searches. Finite records only; no optimality claim"
+Q08,"EA c=k−h_E, K=N−k−h_E, d=min wt(D_E^perp\Hull_E(D))",VERIFIED UNDER CONDITIONS,Fq-linear D; standard Bob completion. Independent Gram-rank/Bob cancellation for E28; proof explained below
+Q09,M07 R3 proof's hyperbolic decomposition and “v⊗I fixes codespace” steps,INCORRECT,"V is nonisotropic when c>0; hyperbolic pairs must both occur in its nondegenerate part, and Bob completion is essential. This does not refute Q08"
+Q10,EA entanglement count can use the transported Galois hull h_k with no further bridge,INCORRECT,Q08 uses **ordinary Euclidean h_E**. Gray preservation is for J/k; no automatic equality with h_E
+Q11,EA/SO relative distance equals the minimum nonzero **coset-leader** weight in the appropriate quotient,VERIFIED UNDER CONDITIONS,M08 valid metric portion; target and excluded subspace must match the route; positive quotient dimension
+Q12,That quotient is automatically an ordinary length-N Hamming linear code with representative-independent coordinate weights,INCORRECT,"E3 same coset001+span(110) has representatives001,111 of weights1,3. Coset-leader metric is different"
+Q13,M08 uses D_E^perp/H_E and K=N−k−h_E for R2-DC with the original D,INCORRECT,"Supplied DC N20,k12,h8 has actualK4,d4, but that quotient has dimension0. Need D/D_E^perp or explicit D relabelling; scope JSON"
+Q14,K+d≤N+1 for the correctly chosen positive-dimensional relative quotient,VERIFIED UNDER CONDITIONS,A linear complement plus ordinary Singleton proves it; manuscript's raw projection on cosets is not well-defined without a quotient codomain
+Q15,This elementary relative-quotient bound is a verified new/independent novelty contribution,UNVERIFIABLE,No sufficient priority/literature proof; source's “ordinary quotient code” argument is defective
+Q16,EA identities K−c=N−2k and c+K=N−2h_E hold for **all** R1/SO/DC routes with the original D,INCORRECT,"M08 `thm:bookkeeping`; E3 R1 N8,k4,K4,c0 contradicts first; supplied DC N20,k12,K4,c0 gives4≠−4. EA/SO/relabelled conventions need separation"
+Q17,Historically every one of28 examples ran all three distance methods,INCORRECT,"Phase16/source logic: M1 completes24, M2 fallback4, M3 all28 (11exact/17lower). Later staged §08 already corrects this; canonical/log retain false text"
+Q18,Wider120721/5055/4418-exact/637-lower/frontier counts constitute independently proved completeness here,COMPUTATIONALLY SUPPORTED ONLY,"Inherited census/search scope, partly re-executed original pipeline; not independent full recertification. Blocked/count-only/sampled families remain excluded"
+Q19,Legacy Grassl q4/q9 headers can be relabelled physicalq4/q9,INCORRECT,"B01/B02 actually physicalq2/q3. B03 gives physicalq4 N20,K4 bound7..8; old record/gap labels invalid"
+Q20,Physicalq8 stabilizer tables and EA tables do not exist,INCORRECT,B04/B06 physicalq8 probe; B07 actual EA qubit/qutrit tables. No same-q4/8/9 EA optimality follows
+Q21,A first q8 EA application remains wholly unimplemented in the campaign,INCORRECT,Four supplied q8 EA records independently pass; twist-specific differentiation still an open proposal
+Q22,P1/P2/P3 new theorem programs are already proved/ready to implement without a new gate,INCOMPLETE,P1 overlaps; P2 needs μ>3/index9t/structural novelty; P3 needs valid Ore quotient and compatibility theory. None authorized
+Q23,"Q1 viability, firstness, full external nonoccupation, actual FFA submission/acceptance",UNVERIFIABLE,Bounded literature/current sources do not establish these. Author confirmation and further authorized review required

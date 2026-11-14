@@ -1,0 +1,130 @@
+[
+  {
+    "test": "scalar_orthogonal_requires_module_hypothesis",
+    "assertion_verified": true,
+    "details": {
+      "C": "F4 E11 in M2(F4), an F4-subspace but NOT a right R-submodule",
+      "ring_valued_dual_dimension": 2,
+      "Lambda_trace_dual_dimension": 3
+    }
+  },
+  {
+    "test": "R1_trace_and_Fq_orthogonals_are_different",
+    "assertion_verified": true,
+    "details": {
+      "source_code": "C=u M2(F4[u]/u^2), n=1",
+      "D_basis_indices": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "R1_graph": "(u | sigma1(u) J)",
+      "test_label_a_index": 0,
+      "test_label_b_index": 1,
+      "all_symplectic_values": [
+        0,
+        1
+      ],
+      "all_absolute_traces_zero": true,
+      "in_Fq_symplectic_orthogonal": false,
+      "scope": "Refutes identifying the two orthogonal sets for R1; this example alone does not show different minimum distances."
+    }
+  },
+  {
+    "test": "R1_not_covered_by_EA_bookkeeping_identities",
+    "assertion_verified": true,
+    "details": {
+      "N": 8,
+      "k": 4,
+      "R1_c": 0,
+      "R1_K": 4,
+      "claimed_all_routes_N_minus_2k": 0,
+      "source": "PAPER/sections/08_certification.tex thm:bookkeeping"
+    }
+  },
+  {
+    "test": "quotient_is_not_ordinary_coordinate_Hamming_code",
+    "assertion_verified": true,
+    "details": {
+      "D": "span_F2(110)",
+      "D_Euclidean_dual": "span_F2(110,001)",
+      "Hull_E": "span_F2(110)",
+      "same_nonzero_coset_representatives": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "representative_weights": [
+        1,
+        3
+      ],
+      "coset_minimum_weight": 1,
+      "scope": "Coset-leader metric is well-defined; it is not an ordinary length-N coordinate code with representative-independent Hamming weights."
+    }
+  },
+  {
+    "test": "Phase5_hull_mu_coordinate_error_reproduced",
+    "assertion_verified": true,
+    "details": {
+      "method": "Focused use of unchanged source helpers in disposable copy, NOT independent arithmetic",
+      "known_Stage3B_witness": [
+        [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ],
+      "dimH": 8,
+      "inter_row_length": 8,
+      "hrows_row_length": 16,
+      "proper_Morita_module_mu": 3,
+      "Phase5_wrong_hrows_conversion_mu": 4,
+      "corrected_source_exists": "phase6_quantum_parameter_enhancement.py:hull_mu explicitly warns against using the fourth return value."
+    }
+  }
+]

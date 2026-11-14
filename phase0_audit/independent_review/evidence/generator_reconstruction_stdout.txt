@@ -1,0 +1,157 @@
+extract_certified_generators: importing /home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/generator_reconstruction/scripts
+seed = 20261210
+running PART 2 (census) ...
+
+==============================================================================
+PART 2.  CENSUS AFTER THE EXTENSION (Task B)
+==============================================================================
+  q in {4,8,9}, t >= 1, n >= 1, t*n <= 8.  A family is enumerated
+  EXHAUSTIVELY by the new CRT route when every component lattice
+  satisfies |S^2| = q^{2 dim S} <= 4000000 (the BFS bottleneck) and the
+  product of the component lattice sizes is <= 40000.
+  'old' = the Phase-2C Components routine supported this family.
+
+   (q,t,n) |  N | X^n-1             | dims    | regime      | |B|      | #codes   | old | method
+  ------------------------------------------------------------------------------------------------
+   (4,1,1) |  4 | (d1)^1             | [1]     | SEMISIMPLE  | 4        | 7        | yes | EXHAUSTIVE  [0s]
+   (4,1,2) |  8 | (d1)^2             | [2]     | RAMIFIED    | 16       | 33       | yes | EXHAUSTIVE  [0s]
+   (4,1,3) | 12 | (d1)^1(d1)^1(d1)^1 | [1, 1, 1] | SEMISIMPLE  | 64       | 343      | yes | EXHAUSTIVE  [0s]
+   (4,1,4) | 16 | (d1)^4             | [4]     | RAMIFIED    | 256      | 565      | yes | EXHAUSTIVE  [17s]
+   (4,1,5) | 20 | (d1)^1(d2)^1(d2)^1 | [1, 2, 2] | SEMISIMPLE  | 1024     | 2527     | NO  | EXHAUSTIVE  [0s]
+   (4,1,6) | 24 | (d1)^2(d1)^2(d1)^2 | [2, 2, 2] | RAMIFIED    | 4096     | 35937    | NO  | EXHAUSTIVE  [0s]
+   (4,2,1) |  8 | (d1)^1             | [2]     | SEMISIMPLE  | 16       | 33       | yes | EXHAUSTIVE  [0s]
+   (4,2,2) | 16 | (d1)^2             | [4]     | WILD        | 256      | 1221     | yes | EXHAUSTIVE  [36s]
+   (4,2,3) | 24 | (d1)^1(d1)^1(d1)^1 | [2, 2, 2] | SEMISIMPLE  | 4096     | 35937    | yes | EXHAUSTIVE  [0s]
+   (4,2,4) | 32 | (d1)^4             | [8]     | WILD        | 65536    | -        | yes | component BFS too large (|S^2|=4294967296)
+   (4,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 64       | 139      | yes | EXHAUSTIVE  [0s]
+   (4,3,2) | 24 | (d1)^2             | [6]     | WILD        | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
+   (4,4,1) | 16 | (d1)^1             | [4]     | SEMISIMPLE  | 256      | 565      | yes | EXHAUSTIVE  [10s]
+   (4,4,2) | 32 | (d1)^2             | [8]     | WILD        | 65536    | -        | yes | component BFS too large (|S^2|=4294967296)
+   (8,1,1) |  4 | (d1)^1             | [1]     | SEMISIMPLE  | 8        | 11       | yes | EXHAUSTIVE  [0s]
+   (8,1,2) |  8 | (d1)^2             | [2]     | RAMIFIED    | 64       | 93       | yes | EXHAUSTIVE  [0s]
+   (8,1,3) | 12 | (d1)^1(d2)^1       | [1, 2]  | SEMISIMPLE  | 512      | 737      | NO  | EXHAUSTIVE  [0s]
+   (8,1,4) | 16 | (d1)^4             | [4]     | RAMIFIED    | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
+   (8,1,5) | 20 | (d1)^1(d4)^1       | [1, 4]  | SEMISIMPLE  | 32768    | -        | NO  | component BFS too large (|S^2|=16777216)
+   (8,1,6) | 24 | (d1)^2(d2)^2       | [2, 4]  | RAMIFIED    | 262144   | -        | NO  | component BFS too large (|S^2|=16777216)
+   (8,2,1) |  8 | (d1)^1             | [2]     | SEMISIMPLE  | 64       | 93       | yes | EXHAUSTIVE  [0s]
+   (8,2,2) | 16 | (d1)^2             | [4]     | WILD        | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
+   (8,2,3) | 24 | (d1)^1(d2)^1       | [2, 4]  | SEMISIMPLE  | 262144   | -        | NO  | component BFS too large (|S^2|=16777216)
+   (8,2,4) | 32 | (d1)^4             | [8]     | WILD        | 16777216 | -        | yes | component BFS too large (|S^2|=281474976710656)
+   (8,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 512      | 751      | yes | EXHAUSTIVE  [15s]
+   (8,3,2) | 24 | (d1)^2             | [6]     | WILD        | 262144   | -        | yes | component BFS too large (|S^2|=68719476736)
+   (8,4,1) | 16 | (d1)^1             | [4]     | SEMISIMPLE  | 4096     | -        | yes | component BFS too large (|S^2|=16777216)
+   (8,4,2) | 32 | (d1)^2             | [8]     | WILD        | 16777216 | -        | yes | component BFS too large (|S^2|=281474976710656)
+   (9,1,1) |  4 | (d1)^1             | [1]     | SEMISIMPLE  | 9        | 12       | yes | EXHAUSTIVE  [0s]
+   (9,1,2) |  8 | (d1)^1(d1)^1       | [1, 1]  | SEMISIMPLE  | 81       | 144      | yes | EXHAUSTIVE  [0s]
+   (9,1,3) | 12 | (d1)^3             | [3]     | RAMIFIED    | 729      | 1024     | yes | EXHAUSTIVE  [33s]
+   (9,1,4) | 16 | (d1)^1(d1)^1(d1)^1(d1)^1 | [1, 1, 1, 1] | SEMISIMPLE  | 6561     | 20736    | yes | EXHAUSTIVE  [0s]
+   (9,1,5) | 20 | (d1)^1(d2)^1(d2)^1 | [1, 2, 2] | SEMISIMPLE  | 59049    | 84672    | NO  | COUNTED-ONLY  [0s]
+   (9,1,6) | 24 | (d1)^3(d1)^3       | [3, 3]  | RAMIFIED    | 531441   | 1048576  | NO  | COUNTED-ONLY  [33s]
+   (9,2,1) |  8 | (d1)^1             | [2]     | SEMISIMPLE  | 81       | 113      | yes | EXHAUSTIVE  [0s]
+   (9,2,2) | 16 | (d1)^1(d1)^1       | [2, 2]  | SEMISIMPLE  | 6561     | 12769    | yes | EXHAUSTIVE  [0s]
+   (9,2,3) | 24 | (d1)^3             | [6]     | WILD        | 531441   | -        | yes | component BFS too large (|S^2|=282429536481)
+   (9,2,4) | 32 | (d1)^1(d1)^1(d1)^1(d1)^1 | [2, 2, 2, 2] | SEMISIMPLE  | 43046721 | 163047361 | yes | COUNTED-ONLY  [0s]
+   (9,3,1) | 12 | (d1)^1             | [3]     | SEMISIMPLE  | 729      | 1024     | yes | EXHAUSTIVE  [30s]
+   (9,3,2) | 24 | (d1)^1(d1)^1       | [3, 3]  | SEMISIMPLE  | 531441   | 1048576  | yes | COUNTED-ONLY  [33s]
+   (9,4,1) | 16 | (d1)^1             | [4]     | SEMISIMPLE  | 6561     | -        | yes | component BFS too large (|S^2|=43046721)
+   (9,4,2) | 32 | (d1)^1(d1)^1       | [4, 4]  | SEMISIMPLE  | 43046721 | -        | yes | component BFS too large (|S^2|=43046721)
+  [EXH] B2  the extension makes NEW families exhaustively enumerable: (q,t,n) with N = 20 and 24 at t = 1 and N = 12 at q = 8, none of which the Phase-2C routine supported (Phase 6 O-6.3) PASS  [EXH] 3 new families: (4,1,5) N=20: 2527 codes, (4,1,6) N=24: 35937 codes, (8,1,3) N=12: 737 codes
+  [EXH] B3  families that Phase 6 could only SAMPLE (300 codes) are now exhaustively enumerated PASS  [EXH] (4,1,3) N=12: 343 codes, (4,1,4) N=16: 565 codes, (4,2,2) N=16: 1221 codes, (4,2,3) N=24: 35937 codes, (4,4,1) N=16: 565 codes, (8,3,1) N=12: 751 codes, (9,1,3) N=12: 1024 codes, (9,1,4) N=16: 20736 codes, (9,2,2) N=16: 12769 codes, (9,3,1) N=12: 1024 codes
+running PART 3 (family scan) ...
+
+==============================================================================
+PART 3.  TASK C: SYSTEMATIC SEARCH OVER THE EXTENDED FAMILY LIST
+==============================================================================
+  Every family of the census with a component lattice small enough
+  to enumerate.  For each code the cheap invariants (dim D = k, the
+  Euclidean hull h_E, the entanglement c = k - h_E, the dimension
+  K = N - k - h_E, self-orthogonality, dual-containment) are computed
+  for EVERY code; the expensive distance computation is run on a
+  deterministically selected subset:
+      * all SO / DC codes up to 150 per family;
+      * the 120 EA codes with the smallest dual (largest possible d);
+      * the 120 EA codes with the smallest entanglement (Task A).
+  Distances come in cheap exact stages (weight <= 2, complete
+  enumeration up to 262144 codewords, weight <= 3) and, for at most 25
+  survivors per family, a deep support search to weight 6 (N <= 16) / 4 (N >= 20).
+  Every reported value is either EXACT or a PROVED lower bound.
+
+   (q,t,n) |  N | #codes (total)   | SO  DC | EA cand | dist | deep | best d | t
+  ------------------------------------------------------------------------------------
+   (4,1,1) |  4 | 7      (7       ) |   0   1 |       4 |    5 |    0 |      2 | 0s
+   (4,1,2) |  8 | 33     (33      ) |   5   6 |      16 |   27 |    0 |      3 | 0s
+   (4,1,3) | 12 | 343    (343     ) |  28  29 |     278 |  242 |    0 |      6 | 1s
+   (4,1,4) | 16 | 565    (565     ) |  47  48 |     432 |  279 |    0 |      5 | 4s
+   (4,1,5) | 20 | 2527   (2527    ) |  46  47 |    2408 |  333 |   25 |     10 | 27s
+   (4,1,6) | 24 | 35937  (35937   ) | 1715 1716 |   32340 |  390 |    0 |      9 | 54s
+   (4,2,1) |  8 | 33     (33      ) |   1   2 |      28 |   31 |    0 |      2 | 0s
+   (4,2,2) | 16 | 1221   (1221    ) |  51  52 |    1112 |  343 |    0 |      4 | 2s
+   (4,2,3) | 24 | 35937  (35937   ) | 247 248 |   35434 |  390 |   14 |      6 | 45s
+   (4,3,1) | 12 | 139    (139     ) |   2   3 |     132 |  137 |    0 |      2 | 0s
+   (4,4,1) | 16 | 565    (565     ) |   3   4 |     556 |  231 |    0 |      2 | 0s
+   (8,1,1) |  4 | 11     (11      ) |   0   1 |       8 |    9 |    0 |      2 | 0s
+   (8,1,2) |  8 | 93     (93      ) |   9  10 |      64 |   83 |    0 |      3 | 0s
+   (8,1,3) | 12 | 737    (737     ) |  10  11 |     706 |  206 |    0 |      6 | 22s
+   (8,3,1) | 12 | 751    (751     ) |   2   3 |     744 |  205 |    0 |      2 | 0s
+   (9,1,1) |  4 | 12     (12      ) |   0   1 |       8 |    9 |    0 |      2 | 0s
+   (9,1,2) |  8 | 144    (144     ) |   4   5 |     130 |  139 |    0 |      4 | 1s
+   (9,1,3) | 12 | 1024   (1024    ) |  29  30 |     944 |  251 |   25 |      5 | 5s
+   (9,1,4) | 16 | 20736  (20736   ) | 248 249 |   20190 |  390 |   25 |      8 | 26s
+   (9,1,5) | 20 | 2000   (84672   ) |   6   5 |    1986 |  251 |   25 |      9 | 41s
+   (9,1,6) | 24 | 2000   (1048576 ) |   6   5 |    1987 |  251 |   25 |     10 | 101s
+   (9,2,1) |  8 | 113    (113     ) |   2   3 |     105 |  110 |    0 |      2 | 0s
+   (9,2,2) | 16 | 12769  (12769   ) |  20  21 |   12723 |  281 |    0 |      4 | 12s
+   (9,3,1) | 12 | 1024   (1024    ) |   4   5 |    1012 |  226 |    0 |      2 | 1s
+   (9,3,2) | 24 | 2000   (1048576 ) |   0   0 |    2000 |  236 |    3 |      4 | 8s
+running PART 6 (certification) ...
+
+==============================================================================
+PART 6.  TASK E: INDEPENDENT CERTIFICATION OF THE HEADLINE CODES
+==============================================================================
+  Each certified code is the EXACT code found by the search (the
+  image basis is carried through, no re-selection by invariants).
+  Three independent methods:
+    M1  complete enumeration of the relevant classical difference
+        set (exact and complete when q^dim <= 3*10^6);
+    M2  increasing-weight support search over F_q^N (a different
+        algorithm: for each support it solves a left-kernel problem);
+    M3  exhaustive search of the AMBIENT quantum space F_q^{2N} in
+        increasing symplectic weight, testing commutation with the
+        whole group V and non-membership of V (+) V.
+  Plus: the stabilizer group is F_p-abelian, and K, c recompute.
+
+   (q,t,n,N,kind) |  k   K   d   c | M1  | M2  | M3 (>=) | exact | abelian | S-def
+  ------------------------------------------------------------------------------------
+  (9,1,6,24,SO) |   8   8   4   0 |    - |    4 |      >2 | yes   | True    | 10
+  (4,1,5,20,SO) |   8   4   4   0 |    - |    4 |      >2 | yes   | True    | 10
+  (4,1,5,20,DC) |  12   4   4   0 |    - |    4 |      >2 | yes   | True    | 10
+  (4,1,5,20,EA) |  18   2  10  18 |   10 |  n/a |      >2 | yes   | True    | 18
+  (9,1,6,24,EA) |  20   2  10  18 |   10 |  n/a |      >2 | yes   | True    | 22
+  (4,1,1, 4,EA) |   2   2   2   2 |    2 |  n/a |       2 | yes   | True    | 2
+  (4,1,2, 8,EA) |   4   4   3   4 |    3 |  n/a |       3 | yes   | True    | 4
+  (4,1,3,12,EA) |  10   2   6  10 |    6 |  n/a |      >2 | yes   | True    | 10
+  (4,1,4,16,EA) |  10   4   5   8 |    5 |  n/a |      >2 | yes   | True    | 12
+  (4,1,6,24,EA) |  20   4   9  20 |    9 |  n/a |      >2 | yes   | True    | 24
+  (4,2,1, 8,EA) |   4   4   2   4 |    2 |  n/a |       2 | yes   | True    | 6
+  (4,2,2,16,EA) |  12   4   4  12 |    4 |  n/a |      >2 | yes   | True    | 18
+  (4,2,3,24,EA) |  20   4   6  20 |    6 |  n/a |      >2 | yes   | True    | 30
+  (4,3,1,12,EA) |   6   6   2   6 |    2 |  n/a |       2 | yes   | True    | 10
+  (4,4,1,16,EA) |  10   6   2  10 |    2 |  n/a |       2 | yes   | True    | 18
+  (8,1,1, 4,EA) |   2   2   2   2 |    2 |  n/a |       2 | yes   | True    | 2
+  (8,1,2, 8,EA) |   4   4   3   4 |    3 |  n/a |       3 | yes   | True    | 4
+  (8,1,3,12,EA) |  10   2   6  10 |    6 |  n/a |      >2 | yes   | True    | 10
+  (8,3,1,12,EA) |   8   4   2   8 |    2 |  n/a |       2 | yes   | True    | 14
+  (9,1,1, 4,EA) |   2   2   2   2 |    2 |  n/a |       2 | yes   | True    | 2
+  (9,1,2, 8,EA) |   6   2   4   6 |    4 |  n/a |      >3 | yes   | True    | 6
+  (9,1,3,12,EA) |   8   2   5   6 |    5 |  n/a |      >2 | yes   | True    | 8
+  (9,1,4,16,EA) |  14   2   8  14 |    8 |  n/a |      >2 | yes   | True    | 14
+  (9,1,5,20,EA) |  16   4   9  16 |    9 |  n/a |      >2 | yes   | True    | 16
+  (9,2,1, 8,EA) |   4   4   2   4 |    2 |  n/a |       2 | yes   | True    | 6
+  (9,2,2,16,EA) |  12   4   4  12 |    4 |  n/a |      >2 | yes   | True    | 18
+  (9,3,1,12,EA) |   8   4   2   8 |    2 |  n/a |       2 | yes   | True    | 14
+  (9,3,2,24,EA) |  18   6   4  18 |    - |    4 |      >2 | yes   | True    | 30
+  [EXH] E1  every headline code is certified by the three independent methods (classical enumeration, support search, ambient quantum search), has an F_p-abelian stabilizer, and recomputes K and c PASS  [EXH] 28 certified codes
+
+       M1 and M2 decide the exact minimum weight of the classical difference set; M3 is complete only up to the weight reached and is stated as a lower bound otherwise.  For a stabilizer code the Knill-Laflamme condition at radius t = floor((d-1)/2) is equivalent to d = min swt(S^{perp} \ S), which is what M1/M2/M3 certify.
+writing 28 generator matrices to /home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/generator_reconstruction/generated
+done

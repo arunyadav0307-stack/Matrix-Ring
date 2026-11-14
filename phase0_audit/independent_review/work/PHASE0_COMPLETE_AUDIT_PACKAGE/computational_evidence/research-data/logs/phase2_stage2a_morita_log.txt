@@ -1,0 +1,699 @@
+PHASE 2 -- STAGE 2A: MORITA CORRESPONDENCE AND GENERATOR NUMBERS
+script: phase2_stage2a_morita_checks.py
+seed:   20261105   (all sampling is deterministic)
+python: 3.11.2
+document: 03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md
+
+Conventions: P = B^2 columns (right B-module); S = M_2(B) = End_B(P_B)
+             acts by LEFT multiplication; I_W = {M : im M subset W};
+             W(I) = sum_{M in I} im M;  mu(0) = 0;  principal <=> mu <= 1.
+
+Every right ideal xS is computed as span_{F_q}{xN : N in the F_q-basis
+of S} -- never from im(x).  Minimal generator numbers come from three
+independent methods (lattice BFS, brute-force scan, Nakayama).
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,1,1)      |B| = 2,  |B^2| = 4,  |S| = 16
+################################################################################################
+  [EXH] (2,1,1): |B| = q^{tn}                                        PASS  |B|=2
+  [EXH] (2,1,1): B is commutative                                    PASS  exhaustive over all 2^2 pairs
+  [EXH] (2,1,1): X^n = 1 in B                                        PASS  
+  [EXH] (2,1,1): u^t = 0 in B                                        PASS  
+  [EXH] (2,1,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=1
+  nilradical J(B): dim = 0, |J| = 1,  B/J(B) has |B/J| = 2
+  [EXH] (2,1,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,1,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 0
+  submodule lattice: 5 submodules of B^2 (4 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 3), (2, 1)]
+  [EXH] (2,1,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  5 submodules checked exhaustively for k<=2
+  [EXH] (2,1,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  5 submodules compared
+  principal right ideals: 5 (scan over all |S| = 16 elements)
+  right-ideal lattice: 5 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 4)]
+  [EXH] (2,1,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  5 vs 5
+  [EXH] (2,1,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  5 right ideals scanned
+  [EXH] (2,1,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  5 right ideals compared
+  [EXH] (2,1,1): W(I_W) = W for every submodule W                    PASS  5 submodules
+  [EXH] (2,1,1): I_{W(I)} = I for every right ideal I                PASS  5 right ideals
+  [EXH] (2,1,1): every I_W is a right ideal (IS subset I)            PASS  5 submodules
+  [EXH] (2,1,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  5 submodules
+  [EXH] (2,1,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  10 pairs
+  [EXH] (2,1,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  10 pairs
+  [EXH] (2,1,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  10 pairs
+  [EXH] (2,1,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  5 submodules; mu_B distribution [(0, 1), (1, 3), (2, 1)]
+  [EXH] (2,1,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 16 elements of S
+  [EXH] (2,1,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  256 pairs
+  [EXH] (2,1,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  16 pairs
+  [EXH] (2,1,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  5 submodules
+  [EXH] (2,1,1): I_W principal <=> mu_B(W) <= 2                      PASS  5 principal / 0 non-principal of 5
+  [EXH] (2,1,1): #left ideals = #right ideals                        PASS  5 vs 5
+  [EXH] (2,1,1): I right ideal => I^T left ideal (transpose)         PASS  5 right ideals
+  [EXH] (2,1,1): L left ideal => L^T right ideal (transpose)         PASS  5 left ideals
+  [EXH] (2,1,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  2 two-sided, 2 ideals of B
+  [EXH] (2,1,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  2 ideals
+  ideals of B: 2 ;  two-sided ideals of S: 2
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 2, dim W = 1, mu_S = 1, |I_W| = 4
+    mu_B = 2 : |W| = 4, dim W = 2, mu_S = 1, |I_W| = 16
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 16, |R| = 16, #right ideals of R_n = 5
+  [EXH] (2,1,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  16 elements
+  [EXH] (2,1,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  256 pairs
+  [EXH] (2,1,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  29 elements, 5 ideals
+  [EXH] (2,1,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  464 (x,a) pairs
+  [EXH] (2,1,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  5 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,1,2)      |B| = 4,  |B^2| = 16,  |S| = 256
+################################################################################################
+  [EXH] (2,1,2): |B| = q^{tn}                                        PASS  |B|=4
+  [EXH] (2,1,2): B is commutative                                    PASS  exhaustive over all 4^2 pairs
+  [EXH] (2,1,2): X^n = 1 in B                                        PASS  
+  [EXH] (2,1,2): u^t = 0 in B                                        PASS  
+  [EXH] (2,1,2): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=2
+  nilradical J(B): dim = 1, |J| = 2,  B/J(B) has |B/J| = 2
+  [EXH] (2,1,2): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,1,2): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 4
+  submodule lattice: 15 submodules of B^2 (10 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 9), (2, 5)]
+  [EXH] (2,1,2): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  15 submodules checked exhaustively for k<=2
+  [EXH] (2,1,2): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  15 submodules compared
+  principal right ideals: 15 (scan over all |S| = 256 elements)
+  right-ideal lattice: 15 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 14)]
+  [EXH] (2,1,2): #right ideals = #submodules of B^2 (Morita bijection) PASS  15 vs 15
+  [EXH] (2,1,2): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  15 right ideals scanned
+  [EXH] (2,1,2): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  15 right ideals compared
+  [EXH] (2,1,2): W(I_W) = W for every submodule W                    PASS  15 submodules
+  [EXH] (2,1,2): I_{W(I)} = I for every right ideal I                PASS  15 right ideals
+  [EXH] (2,1,2): every I_W is a right ideal (IS subset I)            PASS  15 submodules
+  [EXH] (2,1,2): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  15 submodules
+  [EXH] (2,1,2): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  105 pairs
+  [EXH] (2,1,2): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  105 pairs
+  [EXH] (2,1,2): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  105 pairs
+  [EXH] (2,1,2): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  15 submodules; mu_B distribution [(0, 1), (1, 9), (2, 5)]
+  [EXH] (2,1,2): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 256 elements of S
+  [SMP] (2,1,2): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (2,1,2): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  256 pairs
+  [EXH] (2,1,2): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  15 submodules
+  [EXH] (2,1,2): I_W principal <=> mu_B(W) <= 2                      PASS  15 principal / 0 non-principal of 15
+  [EXH] (2,1,2): #left ideals = #right ideals                        PASS  15 vs 15
+  [EXH] (2,1,2): I right ideal => I^T left ideal (transpose)         PASS  15 right ideals
+  [EXH] (2,1,2): L left ideal => L^T right ideal (transpose)         PASS  15 left ideals
+  [EXH] (2,1,2): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  3 two-sided, 3 ideals of B
+  [EXH] (2,1,2): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  3 ideals
+  ideals of B: 3 ;  two-sided ideals of S: 3
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 4, dim W = 2, mu_S = 1, |I_W| = 16
+    mu_B = 2 : |W| = 16, dim W = 4, mu_S = 1, |I_W| = 256
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 256, |R| = 16, #right ideals of R_n = 15
+  [EXH] (2,1,2): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  256 elements
+  [EXH] (2,1,2): iota is a ring homomorphism (convolution <-> matrix product) PASS  65536 pairs
+  [EXH] (2,1,2): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  573 elements, 15 ideals
+  [EXH] (2,1,2): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  9168 (x,a) pairs
+  [SMP] (2,1,2): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  15 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,2,1)      |B| = 4,  |B^2| = 16,  |S| = 256
+################################################################################################
+  [EXH] (2,2,1): |B| = q^{tn}                                        PASS  |B|=4
+  [EXH] (2,2,1): B is commutative                                    PASS  exhaustive over all 4^2 pairs
+  [EXH] (2,2,1): X^n = 1 in B                                        PASS  
+  [EXH] (2,2,1): u^t = 0 in B                                        PASS  
+  [EXH] (2,2,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=2
+  nilradical J(B): dim = 1, |J| = 2,  B/J(B) has |B/J| = 2
+  [EXH] (2,2,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,2,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 4
+  submodule lattice: 15 submodules of B^2 (10 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 9), (2, 5)]
+  [EXH] (2,2,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  15 submodules checked exhaustively for k<=2
+  [EXH] (2,2,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  15 submodules compared
+  principal right ideals: 15 (scan over all |S| = 256 elements)
+  right-ideal lattice: 15 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 14)]
+  [EXH] (2,2,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  15 vs 15
+  [EXH] (2,2,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  15 right ideals scanned
+  [EXH] (2,2,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  15 right ideals compared
+  [EXH] (2,2,1): W(I_W) = W for every submodule W                    PASS  15 submodules
+  [EXH] (2,2,1): I_{W(I)} = I for every right ideal I                PASS  15 right ideals
+  [EXH] (2,2,1): every I_W is a right ideal (IS subset I)            PASS  15 submodules
+  [EXH] (2,2,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  15 submodules
+  [EXH] (2,2,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  105 pairs
+  [EXH] (2,2,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  105 pairs
+  [EXH] (2,2,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  105 pairs
+  [EXH] (2,2,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  15 submodules; mu_B distribution [(0, 1), (1, 9), (2, 5)]
+  [EXH] (2,2,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 256 elements of S
+  [SMP] (2,2,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (2,2,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  256 pairs
+  [EXH] (2,2,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  15 submodules
+  [EXH] (2,2,1): I_W principal <=> mu_B(W) <= 2                      PASS  15 principal / 0 non-principal of 15
+  [EXH] (2,2,1): #left ideals = #right ideals                        PASS  15 vs 15
+  [EXH] (2,2,1): I right ideal => I^T left ideal (transpose)         PASS  15 right ideals
+  [EXH] (2,2,1): L left ideal => L^T right ideal (transpose)         PASS  15 left ideals
+  [EXH] (2,2,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  3 two-sided, 3 ideals of B
+  [EXH] (2,2,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  3 ideals
+  ideals of B: 3 ;  two-sided ideals of S: 3
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 2, dim W = 1, mu_S = 1, |I_W| = 4
+    mu_B = 2 : |W| = 4, dim W = 2, mu_S = 1, |I_W| = 16
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 256, |R| = 256, #right ideals of R_n = 15
+  [EXH] (2,2,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  256 elements
+  [EXH] (2,2,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  65536 pairs
+  [EXH] (2,2,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  573 elements, 15 ideals
+  [EXH] (2,2,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  83152 (x,a) pairs
+  [SMP] (2,2,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  15 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (4,1,1)      |B| = 4,  |B^2| = 16,  |S| = 256
+################################################################################################
+  [EXH] (4,1,1): |B| = q^{tn}                                        PASS  |B|=4
+  [EXH] (4,1,1): B is commutative                                    PASS  exhaustive over all 4^2 pairs
+  [EXH] (4,1,1): X^n = 1 in B                                        PASS  
+  [EXH] (4,1,1): u^t = 0 in B                                        PASS  
+  [EXH] (4,1,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=1
+  nilradical J(B): dim = 0, |J| = 1,  B/J(B) has |B/J| = 4
+  [EXH] (4,1,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (4,1,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 0
+  submodule lattice: 7 submodules of B^2 (6 cyclic), enumerated exhaustively
+  [EXH] (4,1,1): #submodules of B^2 equals the Phase-1 cyclic-code count PASS  7 vs 7
+  mu_B distribution: [(0, 1), (1, 5), (2, 1)]
+  [EXH] (4,1,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  7 submodules checked exhaustively for k<=2
+  [EXH] (4,1,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  7 submodules compared
+  principal right ideals: 7 (scan over all |S| = 256 elements)
+  right-ideal lattice: 7 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 6)]
+  [EXH] (4,1,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  7 vs 7
+  [EXH] (4,1,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  7 right ideals scanned
+  [EXH] (4,1,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  7 right ideals compared
+  [EXH] (4,1,1): W(I_W) = W for every submodule W                    PASS  7 submodules
+  [EXH] (4,1,1): I_{W(I)} = I for every right ideal I                PASS  7 right ideals
+  [EXH] (4,1,1): every I_W is a right ideal (IS subset I)            PASS  7 submodules
+  [EXH] (4,1,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  7 submodules
+  [EXH] (4,1,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  21 pairs
+  [EXH] (4,1,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  21 pairs
+  [EXH] (4,1,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  21 pairs
+  [EXH] (4,1,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  7 submodules; mu_B distribution [(0, 1), (1, 5), (2, 1)]
+  [EXH] (4,1,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 256 elements of S
+  [SMP] (4,1,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (4,1,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  256 pairs
+  [EXH] (4,1,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  7 submodules
+  [EXH] (4,1,1): I_W principal <=> mu_B(W) <= 2                      PASS  7 principal / 0 non-principal of 7
+  [EXH] (4,1,1): #left ideals = #right ideals                        PASS  7 vs 7
+  [EXH] (4,1,1): I right ideal => I^T left ideal (transpose)         PASS  7 right ideals
+  [EXH] (4,1,1): L left ideal => L^T right ideal (transpose)         PASS  7 left ideals
+  [EXH] (4,1,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  2 two-sided, 2 ideals of B
+  [EXH] (4,1,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  2 ideals
+  ideals of B: 2 ;  two-sided ideals of S: 2
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 4, dim W = 1, mu_S = 1, |I_W| = 16
+    mu_B = 2 : |W| = 16, dim W = 2, mu_S = 1, |I_W| = 256
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 256, |R| = 256, #right ideals of R_n = 7
+  [EXH] (4,1,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  256 elements
+  [EXH] (4,1,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  65536 pairs
+  [EXH] (4,1,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  337 elements, 7 ideals
+  [EXH] (4,1,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  22736 (x,a) pairs
+  [SMP] (4,1,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  7 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (9,1,1)      |B| = 9,  |B^2| = 81,  |S| = 6561
+################################################################################################
+  [EXH] (9,1,1): |B| = q^{tn}                                        PASS  |B|=9
+  [EXH] (9,1,1): B is commutative                                    PASS  exhaustive over all 9^2 pairs
+  [EXH] (9,1,1): X^n = 1 in B                                        PASS  
+  [EXH] (9,1,1): u^t = 0 in B                                        PASS  
+  [EXH] (9,1,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=1
+  nilradical J(B): dim = 0, |J| = 1,  B/J(B) has |B/J| = 9
+  [EXH] (9,1,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (9,1,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 0
+  submodule lattice: 12 submodules of B^2 (11 cyclic), enumerated exhaustively
+  [EXH] (9,1,1): #submodules of B^2 equals the Phase-1 cyclic-code count PASS  12 vs 12
+  mu_B distribution: [(0, 1), (1, 10), (2, 1)]
+  [EXH] (9,1,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  12 submodules checked exhaustively for k<=2
+  [EXH] (9,1,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  12 submodules compared
+  principal right ideals: 12 (scan over all |S| = 6561 elements)
+  right-ideal lattice: 12 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 11)]
+  [EXH] (9,1,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  12 vs 12
+  [EXH] (9,1,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  12 right ideals scanned
+  [EXH] (9,1,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  12 right ideals compared
+  [EXH] (9,1,1): W(I_W) = W for every submodule W                    PASS  12 submodules
+  [EXH] (9,1,1): I_{W(I)} = I for every right ideal I                PASS  12 right ideals
+  [EXH] (9,1,1): every I_W is a right ideal (IS subset I)            PASS  12 submodules
+  [EXH] (9,1,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  12 submodules
+  [EXH] (9,1,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  66 pairs
+  [EXH] (9,1,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  66 pairs
+  [EXH] (9,1,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  66 pairs
+  [EXH] (9,1,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  12 submodules; mu_B distribution [(0, 1), (1, 10), (2, 1)]
+  [EXH] (9,1,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 6561 elements of S
+  [SMP] (9,1,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (9,1,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  6561 pairs
+  [EXH] (9,1,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  12 submodules
+  [EXH] (9,1,1): I_W principal <=> mu_B(W) <= 2                      PASS  12 principal / 0 non-principal of 12
+  [EXH] (9,1,1): #left ideals = #right ideals                        PASS  12 vs 12
+  [EXH] (9,1,1): I right ideal => I^T left ideal (transpose)         PASS  12 right ideals
+  [EXH] (9,1,1): L left ideal => L^T right ideal (transpose)         PASS  12 left ideals
+  [EXH] (9,1,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  2 two-sided, 2 ideals of B
+  [EXH] (9,1,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  2 ideals
+  ideals of B: 2 ;  two-sided ideals of S: 2
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 9, dim W = 1, mu_S = 1, |I_W| = 81
+    mu_B = 2 : |W| = 81, dim W = 2, mu_S = 1, |I_W| = 6561
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 6561, |R| = 6561, #right ideals of R_n = 12
+  [EXH] (9,1,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  6561 elements
+  [SMP] (9,1,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [EXH] (9,1,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  7372 elements, 12 ideals
+  [SMP] (9,1,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  16661 (x,a) pairs
+  [SMP] (9,1,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  12 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,1,3)      |B| = 8,  |B^2| = 64,  |S| = 4096
+################################################################################################
+  [EXH] (2,1,3): |B| = q^{tn}                                        PASS  |B|=8
+  [EXH] (2,1,3): B is commutative                                    PASS  exhaustive over all 8^2 pairs
+  [EXH] (2,1,3): X^n = 1 in B                                        PASS  
+  [EXH] (2,1,3): u^t = 0 in B                                        PASS  
+  [EXH] (2,1,3): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=3
+  nilradical J(B): dim = 0, |J| = 1,  B/J(B) has |B/J| = 8
+  [EXH] (2,1,3): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,1,3): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 0
+  submodule lattice: 35 submodules of B^2 (24 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 23), (2, 11)]
+  [EXH] (2,1,3): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  35 submodules checked exhaustively for k<=2
+  [EXH] (2,1,3): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  35 submodules compared
+  principal right ideals: 35 (scan over all |S| = 4096 elements)
+  right-ideal lattice: 35 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 34)]
+  [EXH] (2,1,3): #right ideals = #submodules of B^2 (Morita bijection) PASS  35 vs 35
+  [EXH] (2,1,3): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  35 right ideals scanned
+  [EXH] (2,1,3): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  35 right ideals compared
+  [EXH] (2,1,3): W(I_W) = W for every submodule W                    PASS  35 submodules
+  [EXH] (2,1,3): I_{W(I)} = I for every right ideal I                PASS  35 right ideals
+  [EXH] (2,1,3): every I_W is a right ideal (IS subset I)            PASS  35 submodules
+  [EXH] (2,1,3): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  35 submodules
+  [EXH] (2,1,3): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  595 pairs
+  [EXH] (2,1,3): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  595 pairs
+  [EXH] (2,1,3): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  595 pairs
+  [EXH] (2,1,3): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  35 submodules; mu_B distribution [(0, 1), (1, 23), (2, 11)]
+  [EXH] (2,1,3): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 4096 elements of S
+  [SMP] (2,1,3): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (2,1,3): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4096 pairs
+  [EXH] (2,1,3): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  35 submodules
+  [EXH] (2,1,3): I_W principal <=> mu_B(W) <= 2                      PASS  35 principal / 0 non-principal of 35
+  [EXH] (2,1,3): #left ideals = #right ideals                        PASS  35 vs 35
+  [EXH] (2,1,3): I right ideal => I^T left ideal (transpose)         PASS  35 right ideals
+  [EXH] (2,1,3): L left ideal => L^T right ideal (transpose)         PASS  35 left ideals
+  [EXH] (2,1,3): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  4 two-sided, 4 ideals of B
+  [EXH] (2,1,3): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  4 ideals
+  ideals of B: 4 ;  two-sided ideals of S: 4
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 8, dim W = 3, mu_S = 1, |I_W| = 64
+    mu_B = 2 : |W| = 64, dim W = 6, mu_S = 1, |I_W| = 4096
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 4096, |R| = 16, #right ideals of R_n = 35
+  [EXH] (2,1,3): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  4096 elements
+  [SMP] (2,1,3): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [EXH] (2,1,3): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  9773 elements, 35 ideals
+  [EXH] (2,1,3): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  92832 (x,a) pairs
+  [SMP] (2,1,3): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  35 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,3,1)      |B| = 8,  |B^2| = 64,  |S| = 4096
+################################################################################################
+  [EXH] (2,3,1): |B| = q^{tn}                                        PASS  |B|=8
+  [EXH] (2,3,1): B is commutative                                    PASS  exhaustive over all 8^2 pairs
+  [EXH] (2,3,1): X^n = 1 in B                                        PASS  
+  [EXH] (2,3,1): u^t = 0 in B                                        PASS  
+  [EXH] (2,3,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=3
+  nilradical J(B): dim = 2, |J| = 4,  B/J(B) has |B/J| = 2
+  [EXH] (2,3,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,3,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 8
+  submodule lattice: 37 submodules of B^2 (22 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 21), (2, 15)]
+  [EXH] (2,3,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  37 submodules checked exhaustively for k<=2
+  [EXH] (2,3,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  37 submodules compared
+  principal right ideals: 37 (scan over all |S| = 4096 elements)
+  right-ideal lattice: 37 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 36)]
+  [EXH] (2,3,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  37 vs 37
+  [EXH] (2,3,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  37 right ideals scanned
+  [EXH] (2,3,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  37 right ideals compared
+  [EXH] (2,3,1): W(I_W) = W for every submodule W                    PASS  37 submodules
+  [EXH] (2,3,1): I_{W(I)} = I for every right ideal I                PASS  37 right ideals
+  [EXH] (2,3,1): every I_W is a right ideal (IS subset I)            PASS  37 submodules
+  [EXH] (2,3,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  37 submodules
+  [EXH] (2,3,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  666 pairs
+  [EXH] (2,3,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  666 pairs
+  [EXH] (2,3,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  666 pairs
+  [EXH] (2,3,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  37 submodules; mu_B distribution [(0, 1), (1, 21), (2, 15)]
+  [EXH] (2,3,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 4096 elements of S
+  [SMP] (2,3,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (2,3,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4096 pairs
+  [EXH] (2,3,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  37 submodules
+  [EXH] (2,3,1): I_W principal <=> mu_B(W) <= 2                      PASS  37 principal / 0 non-principal of 37
+  [EXH] (2,3,1): #left ideals = #right ideals                        PASS  37 vs 37
+  [EXH] (2,3,1): I right ideal => I^T left ideal (transpose)         PASS  37 right ideals
+  [EXH] (2,3,1): L left ideal => L^T right ideal (transpose)         PASS  37 left ideals
+  [EXH] (2,3,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  4 two-sided, 4 ideals of B
+  [EXH] (2,3,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  4 ideals
+  ideals of B: 4 ;  two-sided ideals of S: 4
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 2, dim W = 1, mu_S = 1, |I_W| = 4
+    mu_B = 2 : |W| = 4, dim W = 2, mu_S = 1, |I_W| = 16
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 4096, |R| = 4096, #right ideals of R_n = 37
+  [EXH] (2,3,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  4096 elements
+  [SMP] (2,3,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [EXH] (2,3,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  10045 elements, 37 ideals
+  [SMP] (2,3,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  85968 (x,a) pairs
+  [SMP] (2,3,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  37 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (8,1,1)      |B| = 8,  |B^2| = 64,  |S| = 4096
+################################################################################################
+  [EXH] (8,1,1): |B| = q^{tn}                                        PASS  |B|=8
+  [EXH] (8,1,1): B is commutative                                    PASS  exhaustive over all 8^2 pairs
+  [EXH] (8,1,1): X^n = 1 in B                                        PASS  
+  [EXH] (8,1,1): u^t = 0 in B                                        PASS  
+  [EXH] (8,1,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=1
+  nilradical J(B): dim = 0, |J| = 1,  B/J(B) has |B/J| = 8
+  [EXH] (8,1,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (8,1,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 0
+  submodule lattice: 11 submodules of B^2 (10 cyclic), enumerated exhaustively
+  [EXH] (8,1,1): #submodules of B^2 equals the Phase-1 cyclic-code count PASS  11 vs 11
+  mu_B distribution: [(0, 1), (1, 9), (2, 1)]
+  [EXH] (8,1,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  11 submodules checked exhaustively for k<=2
+  [EXH] (8,1,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  11 submodules compared
+  principal right ideals: 11 (scan over all |S| = 4096 elements)
+  right-ideal lattice: 11 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 10)]
+  [EXH] (8,1,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  11 vs 11
+  [EXH] (8,1,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  11 right ideals scanned
+  [EXH] (8,1,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  11 right ideals compared
+  [EXH] (8,1,1): W(I_W) = W for every submodule W                    PASS  11 submodules
+  [EXH] (8,1,1): I_{W(I)} = I for every right ideal I                PASS  11 right ideals
+  [EXH] (8,1,1): every I_W is a right ideal (IS subset I)            PASS  11 submodules
+  [EXH] (8,1,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  11 submodules
+  [EXH] (8,1,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  55 pairs
+  [EXH] (8,1,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  55 pairs
+  [EXH] (8,1,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  55 pairs
+  [EXH] (8,1,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  11 submodules; mu_B distribution [(0, 1), (1, 9), (2, 1)]
+  [EXH] (8,1,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 4096 elements of S
+  [SMP] (8,1,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [EXH] (8,1,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4096 pairs
+  [EXH] (8,1,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  11 submodules
+  [EXH] (8,1,1): I_W principal <=> mu_B(W) <= 2                      PASS  11 principal / 0 non-principal of 11
+  [EXH] (8,1,1): #left ideals = #right ideals                        PASS  11 vs 11
+  [EXH] (8,1,1): I right ideal => I^T left ideal (transpose)         PASS  11 right ideals
+  [EXH] (8,1,1): L left ideal => L^T right ideal (transpose)         PASS  11 left ideals
+  [EXH] (8,1,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  2 two-sided, 2 ideals of B
+  [EXH] (8,1,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  2 ideals
+  ideals of B: 2 ;  two-sided ideals of S: 2
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 8, dim W = 1, mu_S = 1, |I_W| = 64
+    mu_B = 2 : |W| = 64, dim W = 2, mu_S = 1, |I_W| = 4096
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 4096, |R| = 4096, #right ideals of R_n = 11
+  [EXH] (8,1,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  4096 elements
+  [SMP] (8,1,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [EXH] (8,1,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  4673 elements, 11 ideals
+  [SMP] (8,1,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  11856 (x,a) pairs
+  [SMP] (8,1,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  11 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (4,1,2)      |B| = 16,  |B^2| = 256,  |S| = 65536
+################################################################################################
+  [EXH] (4,1,2): |B| = q^{tn}                                        PASS  |B|=16
+  [EXH] (4,1,2): B is commutative                                    PASS  exhaustive over all 16^2 pairs
+  [EXH] (4,1,2): X^n = 1 in B                                        PASS  
+  [EXH] (4,1,2): u^t = 0 in B                                        PASS  
+  [EXH] (4,1,2): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=2
+  nilradical J(B): dim = 1, |J| = 4,  B/J(B) has |B/J| = 4
+  [EXH] (4,1,2): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (4,1,2): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 4
+  submodule lattice: 33 submodules of B^2 (26 cyclic), enumerated exhaustively
+  [EXH] (4,1,2): #submodules of B^2 equals the Phase-1 cyclic-code count PASS  33 vs 33
+  mu_B distribution: [(0, 1), (1, 25), (2, 7)]
+  [EXH] (4,1,2): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  32 submodules checked exhaustively for k<=2
+  [EXH] (4,1,2): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  33 submodules compared
+  principal right ideals: 33 (scan over all |S| = 65536 elements)
+  right-ideal lattice: 33 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 32)]
+  [EXH] (4,1,2): #right ideals = #submodules of B^2 (Morita bijection) PASS  33 vs 33
+  [EXH] (4,1,2): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  32 right ideals scanned
+  [EXH] (4,1,2): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  33 right ideals compared
+  [EXH] (4,1,2): W(I_W) = W for every submodule W                    PASS  33 submodules
+  [EXH] (4,1,2): I_{W(I)} = I for every right ideal I                PASS  33 right ideals
+  [EXH] (4,1,2): every I_W is a right ideal (IS subset I)            PASS  33 submodules
+  [EXH] (4,1,2): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  33 submodules
+  [EXH] (4,1,2): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  528 pairs
+  [EXH] (4,1,2): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  528 pairs
+  [EXH] (4,1,2): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  528 pairs
+  [EXH] (4,1,2): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  33 submodules; mu_B distribution [(0, 1), (1, 25), (2, 7)]
+  [EXH] (4,1,2): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 65536 elements of S
+  [SMP] (4,1,2): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [SMP] (4,1,2): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4000 pairs
+  [EXH] (4,1,2): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  33 submodules
+  [EXH] (4,1,2): I_W principal <=> mu_B(W) <= 2                      PASS  33 principal / 0 non-principal of 33
+  [EXH] (4,1,2): #left ideals = #right ideals                        PASS  33 vs 33
+  [EXH] (4,1,2): I right ideal => I^T left ideal (transpose)         PASS  33 right ideals
+  [EXH] (4,1,2): L left ideal => L^T right ideal (transpose)         PASS  33 left ideals
+  [EXH] (4,1,2): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  3 two-sided, 3 ideals of B
+  [EXH] (4,1,2): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  3 ideals
+  ideals of B: 3 ;  two-sided ideals of S: 3
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 16, dim W = 2, mu_S = 1, |I_W| = 256
+    mu_B = 2 : |W| = 256, dim W = 4, mu_S = 1, |I_W| = 65536
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 65536, |R| = 256, #right ideals of R_n = 33
+  [EXH] (4,1,2): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  65536 elements
+  [SMP] (4,1,2): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [SMP] (4,1,2): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  70161 elements, 6 ideals
+  [SMP] (4,1,2): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  12352 (x,a) pairs
+  [SMP] (4,1,2): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  6 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (4,2,1)      |B| = 16,  |B^2| = 256,  |S| = 65536
+################################################################################################
+  [EXH] (4,2,1): |B| = q^{tn}                                        PASS  |B|=16
+  [EXH] (4,2,1): B is commutative                                    PASS  exhaustive over all 16^2 pairs
+  [EXH] (4,2,1): X^n = 1 in B                                        PASS  
+  [EXH] (4,2,1): u^t = 0 in B                                        PASS  
+  [EXH] (4,2,1): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=2
+  nilradical J(B): dim = 1, |J| = 4,  B/J(B) has |B/J| = 4
+  [EXH] (4,2,1): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (4,2,1): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 4
+  submodule lattice: 33 submodules of B^2 (26 cyclic), enumerated exhaustively
+  [EXH] (4,2,1): #submodules of B^2 equals the Phase-1 cyclic-code count PASS  33 vs 33
+  mu_B distribution: [(0, 1), (1, 25), (2, 7)]
+  [EXH] (4,2,1): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  32 submodules checked exhaustively for k<=2
+  [EXH] (4,2,1): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  33 submodules compared
+  principal right ideals: 33 (scan over all |S| = 65536 elements)
+  right-ideal lattice: 33 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 32)]
+  [EXH] (4,2,1): #right ideals = #submodules of B^2 (Morita bijection) PASS  33 vs 33
+  [EXH] (4,2,1): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  32 right ideals scanned
+  [EXH] (4,2,1): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  33 right ideals compared
+  [EXH] (4,2,1): W(I_W) = W for every submodule W                    PASS  33 submodules
+  [EXH] (4,2,1): I_{W(I)} = I for every right ideal I                PASS  33 right ideals
+  [EXH] (4,2,1): every I_W is a right ideal (IS subset I)            PASS  33 submodules
+  [EXH] (4,2,1): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  33 submodules
+  [EXH] (4,2,1): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  528 pairs
+  [EXH] (4,2,1): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  528 pairs
+  [EXH] (4,2,1): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  528 pairs
+  [EXH] (4,2,1): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  33 submodules; mu_B distribution [(0, 1), (1, 25), (2, 7)]
+  [EXH] (4,2,1): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 65536 elements of S
+  [SMP] (4,2,1): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [SMP] (4,2,1): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4000 pairs
+  [EXH] (4,2,1): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  33 submodules
+  [EXH] (4,2,1): I_W principal <=> mu_B(W) <= 2                      PASS  33 principal / 0 non-principal of 33
+  [EXH] (4,2,1): #left ideals = #right ideals                        PASS  33 vs 33
+  [EXH] (4,2,1): I right ideal => I^T left ideal (transpose)         PASS  33 right ideals
+  [EXH] (4,2,1): L left ideal => L^T right ideal (transpose)         PASS  33 left ideals
+  [EXH] (4,2,1): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  3 two-sided, 3 ideals of B
+  [EXH] (4,2,1): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  3 ideals
+  ideals of B: 3 ;  two-sided ideals of S: 3
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 4, dim W = 1, mu_S = 1, |I_W| = 16
+    mu_B = 2 : |W| = 16, dim W = 2, mu_S = 1, |I_W| = 256
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 65536, |R| = 65536, #right ideals of R_n = 33
+  [EXH] (4,2,1): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  65536 elements
+  [SMP] (4,2,1): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [SMP] (4,2,1): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  4641 elements, 6 ideals
+  [SMP] (4,2,1): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  6330 (x,a) pairs
+  [SMP] (4,2,1): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  6 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (2,2,2)      |B| = 16,  |B^2| = 256,  |S| = 65536
+################################################################################################
+  [EXH] (2,2,2): |B| = q^{tn}                                        PASS  |B|=16
+  [EXH] (2,2,2): B is commutative                                    PASS  exhaustive over all 16^2 pairs
+  [EXH] (2,2,2): X^n = 1 in B                                        PASS  
+  [EXH] (2,2,2): u^t = 0 in B                                        PASS  
+  [EXH] (2,2,2): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=4
+  nilradical J(B): dim = 3, |J| = 8,  B/J(B) has |B/J| = 2
+  [EXH] (2,2,2): B/J(B) is reduced (J(B) = nilradical)               PASS  0 nonzero nilpotents in B/J
+  [EXH] (2,2,2): M_2(J(B)) is a two-sided ideal of S                 PASS  dim = 12
+  submodule lattice: 159 submodules of B^2 (52 cyclic), enumerated exhaustively
+  mu_B distribution: [(0, 1), (1, 51), (2, 85), (3, 21), (4, 1)]
+  [EXH] (2,2,2): mu_B from brute-force k-tuple scan agrees with the lattice BFS PASS  136 submodules checked exhaustively for k<=2
+  [EXH] (2,2,2): mu_B from Nakayama on B/J(B) agrees with the lattice BFS PASS  137 submodules compared
+  principal right ideals: 137 (scan over all |S| = 65536 elements)
+  right-ideal lattice: 159 right ideals, enumerated exhaustively
+  mu_S distribution: [(0, 1), (1, 136), (2, 22)]
+  [EXH] (2,2,2): #right ideals = #submodules of B^2 (Morita bijection) PASS  159 vs 159
+  [EXH] (2,2,2): mu_S from the exhaustive x-scan agrees with the ideal lattice BFS PASS  136 right ideals scanned
+  [EXH] (2,2,2): mu_S from Nakayama on S/J(S) agrees with the ideal lattice BFS PASS  159 right ideals compared
+  [EXH] (2,2,2): W(I_W) = W for every submodule W                    PASS  159 submodules
+  [EXH] (2,2,2): I_{W(I)} = I for every right ideal I                PASS  159 right ideals
+  [EXH] (2,2,2): every I_W is a right ideal (IS subset I)            PASS  159 submodules
+  [EXH] (2,2,2): dim I_W = 2 dim W and |I_W| = |W|^2                 PASS  159 submodules
+  [EXH] (2,2,2): I_{W1+W2} = I_{W1} + I_{W2}                         PASS  12561 pairs
+  [EXH] (2,2,2): I_{W1 cap W2} = I_{W1} cap I_{W2}                   PASS  12561 pairs
+  [EXH] (2,2,2): W1 subset W2  <=>  I_{W1} subset I_{W2}             PASS  12561 pairs
+  [EXH] (2,2,2): mu_S(I_W) = ceil(mu_B(W)/2) for every W             PASS  159 submodules; mu_B distribution [(0, 1), (1, 51), (2, 85), (3, 21), (4, 1)]
+  [EXH] (2,2,2): L-2.3a with k = 1: xS = I_{im x} for every x in S   PASS  all 65536 elements of S
+  [SMP] (2,2,2): L-2.3a with k = 2: xS + yS = I_{im x + im y}        PASS  1000 pairs
+  [SMP] (2,2,2): L-2.3c: im[w1|w2] = Bw1 + Bw2                       PASS  4000 pairs
+  [EXH] (2,2,2): L-2.3b: min #(<=2-generated summands) = ceil(mu_B/2) PASS  159 submodules
+  [EXH] (2,2,2): I_W principal <=> mu_B(W) <= 2                      PASS  137 principal / 22 non-principal of 159
+  [EXH] (2,2,2): #left ideals = #right ideals                        PASS  159 vs 159
+  [EXH] (2,2,2): I right ideal => I^T left ideal (transpose)         PASS  159 right ideals
+  [EXH] (2,2,2): L left ideal => L^T right ideal (transpose)         PASS  159 left ideals
+  [EXH] (2,2,2): two-sided ideals of S are exactly M_2(J), J an ideal of B PASS  7 two-sided, 7 ideals of B
+  [EXH] (2,2,2): W = J (+) J is a submodule of B^2 for every ideal J of B PASS  7 ideals
+  ideals of B: 7 ;  two-sided ideals of S: 7
+  boundary cases:
+    W = 0      mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+    W = B^2    mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+    mu_B = 0 : |W| = 1, dim W = 0, mu_S = 0, |I_W| = 1
+    mu_B = 1 : |W| = 4, dim W = 2, mu_S = 1, |I_W| = 16
+    mu_B = 2 : |W| = 8, dim W = 3, mu_S = 1, |I_W| = 64
+    mu_B = 3 : |W| = 32, dim W = 5, mu_S = 2, |I_W| = 1024
+    mu_B = 4 : |W| = 64, dim W = 6, mu_S = 2, |I_W| = 4096
+
+  -- Stage-1 dictionary: R_n = M_2(A_t)[X]/<X^n-1>  ==  M_2(B) --
+     |R^n| = 65536, |R| = 256, #right ideals of R_n = 159
+  [EXH] (2,2,2): Stage-1 iota: R^n -> M_2(B) is bijective            PASS  65536 elements
+  [SMP] (2,2,2): iota is a ring homomorphism (convolution <-> matrix product) PASS  4000 pairs
+  [SMP] (2,2,2): C = iota^{-1}(I) is T-invariant (Stage-1 side)      PASS  357 elements, 6 ideals
+  [EXH] (2,2,2): C = iota^{-1}(I) is a right R-submodule of R^n      PASS  27856 (x,a) pairs
+  [SMP] (2,2,2): Morita W(I) = regroup(iota^{-1}(I) . A_t^2)  (same correspondence) PASS  6 right ideals
+
+################################################################################################
+#  B = A_t[X]/<X^n-1> at (q,t,n) = (4,1,3)   |B| = 64, |B^2| = 4096, |S| = 16777216
+#  (|S| too large for an exhaustive ideal scan: submodules exhaustive,
+#   mu_S by exhibited generators + Nakayama lower bound)
+################################################################################################
+  [EXH] (4,1,3): |B| = q^{tn}                                        PASS  |B|=64
+  [EXH] (4,1,3): B is commutative                                    PASS  exhaustive over all 64^2 pairs
+  [EXH] (4,1,3): X^n = 1 in B                                        PASS  
+  [EXH] (4,1,3): u^t = 0 in B                                        PASS  
+  [EXH] (4,1,3): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=3
+  submodule lattice: 343 submodules (exhaustive), mu_B distribution [(0, 1), (1, 215), (2, 127)]
+  [EXH] (4,1,3): #submodules equals the Phase-1 cyclic-code count    PASS  343 vs 343
+  [EXH] (4,1,3): ceil(mu_B/2) packed generators do generate I_W      PASS  343 submodules
+  [EXH] (4,1,3): the Nakayama lower bound never exceeds ceil(mu_B/2) PASS  343 submodules
+  mu_S (= ceil(mu_B/2), certified above and below): [(0, 1), (1, 342)]
+
+################################################################################################
+#  WILD CASE (q,t,n) = (4,2,2):  B = F_4[u,eps]/<u^2,eps^2>
+#  |B| = 256, |B^2| = 65536, |S| = 4294967296  (no exhaustive lattice enumeration)
+################################################################################################
+  [EXH] (4,2,2): |B| = q^{tn}                                        PASS  |B|=256
+  [EXH] (4,2,2): B is commutative                                    PASS  exhaustive over all 256^2 pairs
+  [EXH] (4,2,2): X^n = 1 in B                                        PASS  
+  [EXH] (4,2,2): u^t = 0 in B                                        PASS  
+  [EXH] (4,2,2): {u^i X^j : i<t, j<n} spans B over F_q               PASS  dim=4
+  J(B) = m: dim = 3, |m| = 64 ; B/m has |B/m| = 4 (= F_4)
+  [EXH] (4,2,2): J(B) = (u, eps)                                     PASS  dim 3
+  m^2: dim = 1, |m^2| = 4 ;  dim_{F_4}(m/m^2) = 2
+  [EXH] (4,2,2): dim_{B/m}(m/m^2) = 2 (so m is not principal)        PASS  dim = 2
+  W = 0                                  |W|=1       dim W=0  mu_B in [0,0]  mu_S in [0,0]
+  [EXH] (4,2,2): W = 0 generators do generate I_W (upper bound)      PASS  0 generator(s)
+  [EXH] (4,2,2): W = 0 lower bounds match the identity               PASS  mu_B = 0, mu_S = 0, ceil(mu_B/2) = 0
+  W = B^2                                |W|=65536   dim W=8  mu_B in [2,2]  mu_S in [1,1]
+  [EXH] (4,2,2): W = B^2 generators do generate I_W (upper bound)    PASS  1 generator(s)
+  [EXH] (4,2,2): W = B^2 lower bounds match the identity             PASS  mu_B = 2, mu_S = 1, ceil(mu_B/2) = 1
+  W = e_1 B                              |W|=256     dim W=4  mu_B in [1,1]  mu_S in [1,1]
+  [EXH] (4,2,2): W = e_1 B generators do generate I_W (upper bound)  PASS  1 generator(s)
+  [EXH] (4,2,2): W = e_1 B lower bounds match the identity           PASS  mu_B = 1, mu_S = 1, ceil(mu_B/2) = 1
+  W = m e_1 + B e_2                      |W|=16384   dim W=7  mu_B in [3,3]  mu_S in [2,2]
+  [EXH] (4,2,2): W = m e_1 + B e_2 generators do generate I_W (upper bound) PASS  2 generator(s)
+  [EXH] (4,2,2): W = m e_1 + B e_2 lower bounds match the identity   PASS  mu_B = 3, mu_S = 2, ceil(mu_B/2) = 2
+  [EXH] (4,2,2): W = m e_1 + B e_2 is NOT principal (mu_B = 3 > 2)   PASS  certificate: dim_{F_q}(I/IJ) = 6 > 4 dim_{F_q}(K) = 4
+  W = m (+) m  <-- the wild submodule    |W|=4096    dim W=6  mu_B in [4,4]  mu_S in [2,2]
+  [EXH] (4,2,2): W = m (+) m  <-- the wild submodule generators do generate I_W (upper bound) PASS  2 generator(s)
+  [EXH] (4,2,2): W = m (+) m  <-- the wild submodule lower bounds match the identity PASS  mu_B = 4, mu_S = 2, ceil(mu_B/2) = 2
+  [EXH] (4,2,2): W = m (+) m  <-- the wild submodule is NOT principal (mu_B = 4 > 2) PASS  certificate: dim_{F_q}(I/IJ) = 8 > 4 dim_{F_q}(K) = 4
+  W = m e_1 + m e_2 with a twist         |W|=1024    dim W=5  mu_B in [3,3]  mu_S in [2,2]
+  [EXH] (4,2,2): W = m e_1 + m e_2 with a twist generators do generate I_W (upper bound) PASS  2 generator(s)
+  [EXH] (4,2,2): W = m e_1 + m e_2 with a twist lower bounds match the identity PASS  mu_B = 3, mu_S = 2, ceil(mu_B/2) = 2
+  [EXH] (4,2,2): W = m e_1 + m e_2 with a twist is NOT principal (mu_B = 3 > 2) PASS  certificate: dim_{F_q}(I/IJ) = 6 > 4 dim_{F_q}(K) = 4
+
+################################################################################################
+#  PART: WHERE PROJECTIVITY IS USED IN L-2.3a
+#  B = F_2[eps]/<eps^2>,  P' = B (+) k,  k = B/(eps)   (P' NOT projective)
+################################################################################################
+  [EXH] proj: B = F_2[eps]/<eps^2> with eps^2 = 0                    PASS  |B| = 4
+  [EXH] proj: P' = B (+) k is a right B-module (axioms verified)     PASS  all 8 x 4^2 triples
+  [EXH] proj: k is not projective (B -> k has no B-linear section)   PASS  0 candidates b0 with eps b0 = 0 and bar(b0) = 1
+  |End_B(P')| = 32
+  [EXH] proj: S' = End_B(P') is closed under composition             PASS  32 x 32 pairs
+  [EXH] proj: x : (b,m) |-> (eps b, 0) is B-linear                   PASS  
+  |x S'| = 2 ,  |I_{im x}| = 4 ,  |im x| = 2
+  [EXH] proj: xS' is STRICTLY contained in I_{im x} (L-2.3a fails for P') PASS  2 < 4
+  [EXH] proj: witness g in I_{im x} but g not in xS'                 PASS  g B-linear: True ; im g subset im x: True ; g in xS': False
+  [EXH] proj: no h in S' satisfies x o h = g (the lift does not exist) PASS  0 candidates found
+  [EXH] proj: for the FREE module P = B^2 the identity xS = I_{im x} holds PASS  all 256 x in M_2(B)
+
+================================================================================================
+SUMMARY
+================================================================================================
+  429 checks, 429 PASS, 0 FAIL
+  no failures
+  end of log

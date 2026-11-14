@@ -1,0 +1,371 @@
+variant,file,line,text
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/01_introduction.tex,2,\section{Introduction and research motivation}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/01_introduction.tex,3,\label{sec:intro}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/01_introduction.tex,38,\subsection{The chain of constructions}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/01_introduction.tex,120,\subsection{What the paper does and does not claim}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/01_introduction.tex,134,\subsection{Organisation}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,2,\section{Literature review and the research gap}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,3,\label{sec:lit}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,6,\subsection{Cyclic codes over matrix rings}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,29,\subsection{Duality over finite rings}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,44,\subsection{Galois duality and Galois hulls}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,63,\subsection{The research gap}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/02_literature.tex,105,\subsection{Quantum codes from classical codes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,4,\label{sec:prelim}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,7,\subsection{Standing hypotheses and notation}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,10,\begin{equation}\label{eq:rings}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,21,\begin{definition}[cyclic code]\label{def:code}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,30,\begin{equation}\label{eq:morita}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,38,\begin{lemma}[basic structure]\label{lem:basic}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,62,\subsection{The Frobenius functional}\label{subsec:lambda}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,66,\begin{equation}\label{eq:Lambda}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,71,\begin{lemma}\label{lem:lambda}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,97,\subsection{The right-module convention and the failure lemma}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,99,\begin{lemma}[failure lemma]\label{lem:failure}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,123,\begin{remark}\label{rem:convention}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,130,\subsection{Automorphisms and the anti-automorphism}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,132,\begin{definition}\label{def:sigma}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,135,\begin{equation}\label{eq:theta}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,141,\begin{lemma}\label{lem:theta}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,185,\subsection{The CRT decomposition of \texorpdfstring{$\Bq$}{B}}%
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,186,\label{subsec:crt}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,190,\begin{equation}\label{eq:crt}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,200,\begin{lemma}[component generation]\label{lem:components}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,241,\subsection{The reversal operator}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,243,\begin{definition}\label{def:rev}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,249,\begin{lemma}\label{lem:rev}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,267,\subsection{Worked examples I: the ring and the CRT decomposition}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,270,anti-automorphism]\label{ex:ring}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/03_preliminaries.tex,295,\begin{example}[a wild CRT component]\label{ex:crt}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,2,\section{Cyclic codes and Galois duality}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,3,\label{sec:cyclic}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,6,\subsection{The \texorpdfstring{$\theta_s$}{theta\_s}-pairing}%
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,7,\label{subsec:pairing}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,9,\begin{definition}\label{def:pairing}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,23,\begin{lemma}[sesquilinearity]\label{lem:sesqui}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,50,\subsection{The duality theorem}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,52,\begin{theorem}[Galois duality on right modules]\label{thm:duality}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,125,\subsection{Explicit duals: annihilators and the reversal}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,131,\begin{lemma}\label{lem:ann}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,147,\begin{theorem}[dual formula]\label{thm:dualformula}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,200,\label{cor:rev}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,209,\subsection{Equality of the two orthogonals}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,215,\begin{proposition}\label{prop:twoorth}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,230,\subsection{Three regimes}\label{subsec:regimes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,234,\begin{definition}\label{def:regimes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,244,\begin{proposition}\label{prop:regimes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,266,\subsection{Worked examples II: duality in a reflexive and in a
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,270,\label{ex:dual}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/04_cyclic_galois.tex,303,\label{ex:nonreflexive}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,2,\section{Galois hull structure and main algebraic results}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,3,\label{sec:hulls}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,6,\begin{definition}\label{def:hull}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,14,\subsection{Structure of the hull}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,16,\begin{theorem}[hull structure]\label{thm:hullstruct}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,79,\label{prop:moritahull}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,98,\subsection{Non-principal hulls: the conjecture O-3.1 is false}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,118,\begin{theorem}\label{thm:nonprincipal}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,140,\begin{equation}\label{eq:witnessfamily}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,167,\subsection{The witnesses}\label{subsec:witnesses}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,178,\label{tab:witnesses}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,203,\begin{remark}[the sharper question (O-3.1b) remains open]\label{rem:o31b}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,218,\begin{remark}[a disambiguation]\label{rem:mub}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,226,\subsection{What does not exist}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,228,\begin{theorem}[no closed hull formula]\label{thm:noclosed}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,251,"\subsection{LCD, self-orthogonal and self-dual codes}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,253,\begin{proposition}\label{prop:lcdso}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,282,\subsection{Worked examples III: hulls}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,284,"\begin{example}[an LCD code, by the Morita criterion]\label{ex:lcd}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,301,\begin{example}[a self-orthogonal and a self-dual code]\label{ex:sd}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,319,"\begin{example}[the $(9,2,3)$ witness, in full]\label{ex:witnessA}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/05_hulls.tex,355,"\begin{example}[the $(4,2,4)$ witness]\label{ex:witnessB}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,2,\section{Gray-map compatibility and finite-field representation}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,3,\label{sec:gray}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,10,\subsection{The coefficient expansion}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,12,\begin{definition}[coefficient expansion]\label{def:gray}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,26,\begin{lemma}\label{lem:philin}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,43,\subsection{The exact induced form}\label{subsec:induced}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,49,\begin{theorem}[Gram matrix of the transported form]\label{thm:gram}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,95,\begin{corollary}[the transported form is not Euclidean]\label{cor:noteuclid}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,109,\subsection{Duality and hull preservation}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,111,\begin{theorem}[duality preservation]\label{thm:grayduality}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,131,\label{thm:grayhull}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,150,\subsection{The image code}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,152,\begin{proposition}[quasi-cyclicity]\label{prop:qc}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,167,\begin{remark}[what the map does to weights]\label{rem:weights}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,185,\begin{remark}[no homogeneous-weight isometry]\label{rem:noisometry}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,196,\subsection{Every Galois hull is self-orthogonal}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,201,\begin{theorem}[hull self-orthogonality]\label{thm:hullso}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,231,\subsection{Physical coordinates and the characteristic-two obstruction}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,232,\label{subsec:phys}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,238,\begin{definition}\label{def:congruence}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,245,\begin{proposition}[the congruence and its cost]\label{prop:congruence}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,266,\begin{theorem}[characteristic-two obstruction]\label{thm:obstruction}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,282,\begin{remark}[the hypotheses are exact]\label{rem:obstructionexact}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,294,\begin{theorem}[number of physical coordinates]\label{thm:nphys}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,309,\subsection{Worked examples IV: the Gray map}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,312,\label{ex:gray}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/06_gray.tex,347,\label{ex:obstruction}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,2,\section{Quantum error-correcting code constructions}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,3,\label{sec:quantum}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,10,\subsection{The \texorpdfstring{$q$}{q}-ary Weyl operators}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,14,\begin{equation}\label{eq:weyl}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,20,\begin{equation}\label{eq:omega}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,26,\begin{lemma}[commutation]\label{lem:Q1}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,45,\begin{lemma}[stabilizer lemma]\label{lem:Q2}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,83,\begin{theorem}[commutation must be tested over $\F_p$]\label{thm:fpbasis}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,113,\subsection{Three routes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,118,\begin{equation}\label{eq:V}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,126,\label{thm:R1}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,159,\begin{theorem}[the R1 distance cap]\label{thm:R1cap}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,177,\begin{theorem}[route R2: Euclidean/CSS]\label{thm:R2}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,205,\begin{theorem}[route R3: entanglement-assisted]\label{thm:R3}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,255,\subsection{The parameter theorem}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,257,\begin{theorem}[parameters]\label{thm:parameters}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,298,\subsection{Worked examples V: the \texorpdfstring{$\F_p$}{F\_p}-basis subtlety}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,300,\begin{example}[why commutation must be tested over $\F_p$]\label{ex:fpbasis}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/07_quantum.tex,333,\begin{example}[the three routes on one family]\label{ex:routes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,2,\section{Distance certification and quantum parameter analysis}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,3,\label{sec:cert}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,6,\subsection{The coset-distance theorem}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,12,\begin{theorem}[coset-distance characterisation]\label{thm:cosetdistance}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,26,\begin{equation}\label{eq:criterion}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,62,\subsection{The coset Singleton bound}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,64,\begin{theorem}[coset Singleton bound]\label{thm:cosetsingleton}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,67,\begin{equation}\label{eq:cosetsingleton}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,86,\begin{proposition}[the coset Singleton bound is new]\label{prop:newsbound}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,104,\subsection{The feasibility inequality}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,106,\begin{theorem}[feasibility inequality]\label{thm:feasibility}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,109,\begin{equation}\label{eq:feasibility}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,136,"\subsection{Bookkeeping identities, and an erratum}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,138,\begin{theorem}[bookkeeping]\label{thm:bookkeeping}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,168,\subsection{Certification methodology}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,201,\subsection{Parameter analysis}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,212,"\begin{proposition}[frontier, computational]\label{prop:frontier}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,236,\label{tab:headline}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,272,\subsection{Bounds satisfied}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,274,\begin{proposition}[bounds]\label{prop:bounds}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,286,\subsection{The entanglement budget}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,299,\label{tab:budget}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,322,\subsection{Worked example VI: a full certification}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/08_certification.tex,326,"\begin{example}[{certifying $[[20,2,10;18]]_4$}]\label{ex:certify}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,2,\section{Comparison with existing quantum codes}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,3,\label{sec:cmp}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,6,\subsection{The terms of the comparison}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,30,\subsection{The comparison table}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,37,\label{tab:comparison}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,61,\subsection{Reading of the comparison}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,80,\subsection{Novelty}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/09_comparison.tex,128,"\subsection{On the earlier tuple \texorpdfstring{$[[24,4,5;12]]_4$}{[[24,4,5;12]]\_4}}"
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/10_conclusion.tex,2,\section{Conclusion}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/10_conclusion.tex,3,\label{sec:conclusion}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,2,\section{Reproducibility}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,3,\label{app:repro}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,11,\subsection{Package layout}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,34,\subsection{Environment}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,43,\subsection{Randomness}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,56,\subsection{Where the numbers come from}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,86,\subsection{How to reproduce}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,103,\subsection{What is \emph{not} reproducible from the package}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_reproducibility.tex,110,\subsection{Verification of the package itself}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,3,\section{Certification table and comparison data}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,4,\label{app:tables}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,7,\subsection{The certification table}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,25,\label{tab:cert}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,63,\subsection{The non-principal witnesses}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,84,\subsection{Best known distances used in Section~\ref{sec:cmp}}
+canonical,phase0_audit/extracted/prior_project/PAPER/sections/appendix_tables.tex,96,\label{tab:grassl}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,200,\section*{Acknowledgements}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,201,\label{sec:acknowledgements}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,207,\section*{Declaration of competing interests}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,208,\label{sec:competinginterests}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,219,\section*{Funding}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,220,\label{sec:funding}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,229,\section*{Author contributions (CRediT)}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,230,\label{sec:credit}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,237,\section*{Data availability}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,238,\label{sec:dataavailability}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,274,\section*{Declaration of generative AI and AI-assisted technologies in the
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,276,\label{sec:genai}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,2,\section{Introduction and research motivation}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,3,\label{sec:intro}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,38,\subsection{The chain of constructions}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,120,\subsection{What the paper does and does not claim}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,135,"\subsection{The role of the matrix-ring formulation, and what Morita"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,137,\label{subsec:morita}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,177,"\subsection{Contributions, in order of emphasis}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,178,\label{subsec:contributions}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,210,\subsection{On the parameters obtained}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,211,\label{subsec:parametersposition}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,228,\subsection{Organisation}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,2,\section{Literature review and the research gap}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,3,\label{sec:lit}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,6,\subsection{Cyclic codes over matrix rings}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,29,\subsection{Duality over finite rings}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,44,\subsection{Galois duality and Galois hulls}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,63,\subsection{The research gap}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/02_literature.tex,105,\subsection{Quantum codes from classical codes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,4,\label{sec:prelim}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,7,\subsection{Standing hypotheses and notation}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,10,\begin{equation}\label{eq:rings}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,21,\begin{definition}[cyclic code]\label{def:code}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,30,\begin{equation}\label{eq:morita}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,38,\begin{lemma}[basic structure]\label{lem:basic}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,62,\subsection{The Frobenius functional}\label{subsec:lambda}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,66,\begin{equation}\label{eq:Lambda}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,71,\begin{lemma}\label{lem:lambda}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,97,\subsection{The right-module convention and the failure lemma}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,99,\begin{lemma}[failure lemma]\label{lem:failure}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,123,\begin{remark}\label{rem:convention}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,130,\subsection{Automorphisms and the anti-automorphism}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,132,\begin{definition}\label{def:sigma}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,135,\begin{equation}\label{eq:theta}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,141,\begin{lemma}\label{lem:theta}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,185,\subsection{The CRT decomposition of \texorpdfstring{$\Bq$}{B}}%
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,186,\label{subsec:crt}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,190,\begin{equation}\label{eq:crt}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,200,\begin{lemma}[component generation]\label{lem:components}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,241,\subsection{The reversal operator}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,243,\begin{definition}\label{def:rev}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,249,\begin{lemma}\label{lem:rev}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,267,\subsection{Worked examples I: the ring and the CRT decomposition}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,270,anti-automorphism]\label{ex:ring}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/03_preliminaries.tex,295,\begin{example}[a wild CRT component]\label{ex:crt}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,2,\section{Cyclic codes and Galois duality}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,3,\label{sec:cyclic}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,6,\subsection{The \texorpdfstring{$\theta_s$}{theta\_s}-pairing}%
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,7,\label{subsec:pairing}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,9,\begin{definition}\label{def:pairing}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,23,\begin{lemma}[sesquilinearity]\label{lem:sesqui}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,50,\subsection{The duality theorem}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,52,\begin{theorem}[Galois duality on right modules]\label{thm:duality}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,125,\subsection{Explicit duals: annihilators and the reversal}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,131,\begin{lemma}\label{lem:ann}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,147,\begin{theorem}[dual formula]\label{thm:dualformula}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,200,\label{cor:rev}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,209,\subsection{Equality of the two orthogonals}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,215,\begin{proposition}\label{prop:twoorth}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,230,\subsection{Three regimes}\label{subsec:regimes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,234,\begin{definition}\label{def:regimes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,244,\begin{proposition}\label{prop:regimes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,266,\subsection{Worked examples II: duality in a reflexive and in a
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,270,\label{ex:dual}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/04_cyclic_galois.tex,303,\label{ex:nonreflexive}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,2,\section{Galois hull structure and main algebraic results}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,3,\label{sec:hulls}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,6,\begin{definition}\label{def:hull}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,14,\subsection{Structure of the hull}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,16,\begin{theorem}[hull structure]\label{thm:hullstruct}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,79,\label{prop:moritahull}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,98,\subsection{Non-principal hulls: the conjecture O-3.1 is false}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,118,\begin{theorem}\label{thm:nonprincipal}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,140,\begin{equation}\label{eq:witnessfamily}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,167,\subsection{The witnesses}\label{subsec:witnesses}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,178,\label{tab:witnesses}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,203,\begin{remark}[the sharper question (O-3.1b) remains open]\label{rem:o31b}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,218,\begin{remark}[a disambiguation]\label{rem:mub}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,226,\subsection{What does not exist}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,228,\begin{theorem}[no closed hull formula]\label{thm:noclosed}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,251,"\subsection{LCD, self-orthogonal and self-dual codes}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,253,\begin{proposition}\label{prop:lcdso}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,282,\subsection{Worked examples III: hulls}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,284,"\begin{example}[an LCD code, by the Morita criterion]\label{ex:lcd}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,301,\begin{example}[a self-orthogonal and a self-dual code]\label{ex:sd}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,319,"\begin{example}[the $(9,2,3)$ witness, in full]\label{ex:witnessA}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/05_hulls.tex,355,"\begin{example}[the $(4,2,4)$ witness]\label{ex:witnessB}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,2,\section{Gray-map compatibility and finite-field representation}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,3,\label{sec:gray}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,10,\subsection{The coefficient expansion}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,12,\begin{definition}[coefficient expansion]\label{def:gray}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,26,\begin{lemma}\label{lem:philin}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,43,\subsection{The exact induced form}\label{subsec:induced}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,49,\begin{theorem}[Gram matrix of the transported form]\label{thm:gram}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,95,\begin{corollary}[the transported form is not Euclidean]\label{cor:noteuclid}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,109,\subsection{Duality and hull preservation}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,111,\begin{theorem}[duality preservation]\label{thm:grayduality}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,131,\label{thm:grayhull}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,150,\subsection{The image code}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,152,\begin{proposition}[quasi-cyclicity]\label{prop:qc}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,167,\begin{remark}[what the map does to weights]\label{rem:weights}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,185,\begin{remark}[no homogeneous-weight isometry]\label{rem:noisometry}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,196,\subsection{Every Galois hull is self-orthogonal}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,201,\begin{theorem}[hull self-orthogonality]\label{thm:hullso}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,231,\subsection{Physical coordinates and the characteristic-two obstruction}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,232,\label{subsec:phys}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,238,\begin{definition}\label{def:congruence}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,245,\begin{proposition}[the congruence and its cost]\label{prop:congruence}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,266,\begin{theorem}[characteristic-two obstruction]\label{thm:obstruction}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,282,\begin{remark}[the hypotheses are exact]\label{rem:obstructionexact}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,294,\begin{theorem}[number of physical coordinates]\label{thm:nphys}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,309,\subsection{Worked examples IV: the Gray map}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,312,\label{ex:gray}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/06_gray.tex,347,\label{ex:obstruction}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,2,\section{Quantum error-correcting code constructions}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,3,\label{sec:quantum}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,10,\subsection{The \texorpdfstring{$q$}{q}-ary Weyl operators}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,14,\begin{equation}\label{eq:weyl}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,20,\begin{equation}\label{eq:omega}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,26,\begin{lemma}[commutation]\label{lem:Q1}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,45,\begin{lemma}[stabilizer lemma]\label{lem:Q2}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,83,\begin{theorem}[commutation must be tested over $\F_p$]\label{thm:fpbasis}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,113,\subsection{Three routes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,118,\begin{equation}\label{eq:V}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,126,\label{thm:R1}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,159,\begin{theorem}[the R1 distance cap]\label{thm:R1cap}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,177,\begin{theorem}[route R2: Euclidean/CSS]\label{thm:R2}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,205,\begin{theorem}[route R3: entanglement-assisted]\label{thm:R3}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,255,\subsection{The parameter theorem}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,257,\begin{theorem}[parameters]\label{thm:parameters}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,298,\subsection{Worked examples V: the \texorpdfstring{$\F_p$}{F\_p}-basis subtlety}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,300,\begin{example}[why commutation must be tested over $\F_p$]\label{ex:fpbasis}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,333,\begin{example}[the three routes on one family]\label{ex:routes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,2,\section{Distance certification and quantum parameter analysis}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,3,\label{sec:cert}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,6,\subsection{The coset-distance theorem}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,12,\begin{theorem}[coset-distance characterisation]\label{thm:cosetdistance}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,26,\begin{equation}\label{eq:criterion}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,62,\subsection{The coset Singleton bound}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,64,\begin{theorem}[coset Singleton bound]\label{thm:cosetsingleton}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,67,\begin{equation}\label{eq:cosetsingleton}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,86,\begin{proposition}[the coset Singleton bound is new]\label{prop:newsbound}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,104,\subsection{The feasibility inequality}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,106,\begin{theorem}[feasibility inequality]\label{thm:feasibility}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,109,\begin{equation}\label{eq:feasibility}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,136,"\subsection{Bookkeeping identities, and an erratum}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,138,\begin{theorem}[bookkeeping]\label{thm:bookkeeping}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,168,\subsection{Certification methodology}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,214,\subsection{Parameter analysis}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,225,"\begin{proposition}[frontier, computational]\label{prop:frontier}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,249,\label{tab:headline}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,285,\subsection{Bounds satisfied}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,287,\begin{proposition}[bounds]\label{prop:bounds}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,299,\subsection{The entanglement budget}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,312,\label{tab:budget}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,335,\subsection{Worked example VI: a full certification}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,339,"\begin{example}[{certifying $[[20,2,10;18]]_4$}]\label{ex:certify}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,2,\section{Comparison with existing quantum codes}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,3,\label{sec:cmp}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,6,\subsection{The terms of the comparison}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,30,\subsection{The comparison table}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,37,\label{tab:comparison}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,61,\subsection{Reading of the comparison}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,80,\subsection{Novelty}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/09_comparison.tex,128,"\subsection{On the earlier tuple \texorpdfstring{$[[24,4,5;12]]_4$}{[[24,4,5;12]]\_4}}"
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/10_conclusion.tex,2,\section{Conclusion}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/10_conclusion.tex,3,\label{sec:conclusion}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,2,\section{Reproducibility}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,3,\label{app:repro}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,11,\subsection{Package layout}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,34,\subsection{Environment}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,43,\subsection{Randomness}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,56,\subsection{Where the numbers come from}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,86,\subsection{How to reproduce}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,103,\subsection{What is \emph{not} reproducible from the package}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_reproducibility.tex,110,\subsection{Verification of the package itself}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,3,\section{Certification table and comparison data}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,4,\label{app:tables}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,7,\subsection{The certification table}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,37,\label{tab:cert}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,75,\subsection{The non-principal witnesses}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,96,\subsection{Best known distances used in Section~\ref{sec:cmp}}
+latest_staged,phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,108,\label{tab:grassl}

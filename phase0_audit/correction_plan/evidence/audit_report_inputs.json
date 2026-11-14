@@ -1,0 +1,44 @@
+[
+  {
+    "file": "phase0_audit/independent_review/INDEPENDENT_PACKAGE_AUDIT.md",
+    "bytes": 14377,
+    "sha256": "6b66ec3c569f32848749ab0b522cf871bb13d8213c0e6eb154fbb71b0cbb4998",
+    "copied_verbatim_to": "audit_reports/INDEPENDENT_PACKAGE_AUDIT.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/MATHEMATICAL_CLAIM_VERIFICATION.md",
+    "bytes": 27139,
+    "sha256": "22b1f3e626197f4e5072be761da41800d8e1098a30531a0c6e877dc99989e098",
+    "copied_verbatim_to": "audit_reports/MATHEMATICAL_CLAIM_VERIFICATION.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/PAIRING_AND_DUALITY_CRITICAL_AUDIT.md",
+    "bytes": 15825,
+    "sha256": "0c5303747e4f1cc5a24d166d6d6fe0778c6051672a7aea6252996bf1b92b2215",
+    "copied_verbatim_to": "audit_reports/PAIRING_AND_DUALITY_CRITICAL_AUDIT.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/GRAY_MAP_EVIDENCE_AUDIT.md",
+    "bytes": 14702,
+    "sha256": "909810416a54a7ac37a8d2cb2a3055702e357a3b2dcd780d425b76547b58d442",
+    "copied_verbatim_to": "audit_reports/GRAY_MAP_EVIDENCE_AUDIT.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/LITERATURE_AND_NOVELTY_RECHECK.md",
+    "bytes": 15898,
+    "sha256": "777bfcdc61db88ec9a9f039aaa512812ce86d64e3914dfd59c0ff891a9859ec4",
+    "copied_verbatim_to": "audit_reports/LITERATURE_AND_NOVELTY_RECHECK.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/DISCREPANCY_AND_CORRECTION_REGISTER.md",
+    "bytes": 17066,
+    "sha256": "e8c80952d22f9b5afad0cc59085727bc46a7ad67e34d1dd4ea457079c2d3e7bf",
+    "copied_verbatim_to": "audit_reports/DISCREPANCY_AND_CORRECTION_REGISTER.md"
+  },
+  {
+    "file": "phase0_audit/independent_review/AUTHOR_DECISION_BRIEF.md",
+    "bytes": 8036,
+    "sha256": "8f57c07902542bc581195fce72d5a27e88a8d8ab9b3c13531d8fd5f2601c6736",
+    "copied_verbatim_to": "audit_reports/AUTHOR_DECISION_BRIEF.md"
+  }
+]

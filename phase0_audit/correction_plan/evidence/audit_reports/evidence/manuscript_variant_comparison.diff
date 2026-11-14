@@ -1,0 +1,68 @@
+--- canonical/sections/07_quantum.tex
+
++++ FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex
+
+@@ -14,7 +14,7 @@
+
+ \begin{equation}\label{eq:weyl}
+   X(a)|v\rangle=|v+a\rangle,\qquad
+   Z(b)|v\rangle=\chi\bigl(\Tr_{\F_q/\F_p}(b\cdot v)\bigr)|v\rangle,
+-  \qquad \chi(x)=e^{2\pi i x/p},
++  \qquad \chi(x)=\exp(2\pi i x/p),
+ \end{equation}
+ and $E(a|b)=X(a)Z(b)$. Write
+ \begin{equation}\label{eq:omega}
+--- canonical/sections/08_certification.tex
+
++++ FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex
+
+@@ -169,7 +169,20 @@
+
+ 
+ Every distance reported in this paper is either \textbf{exact} or a
+ \textbf{proved lower bound}, and the two are never conflated. Three
+-independent methods are used, and every headline code is certified by all three.
++independent methods are employed across the certification; their applicability
++is recorded per code, and no single code is certified by all three. Each
++headline code has its exact distance certified by exactly one of the two exact
++methods: M1 where the enumeration completes, and otherwise M2, which is run
++precisely when M1 cannot finish. Every headline code is additionally
++cross-checked by the ambient quantum search (M3), which runs for all $28$ codes.
++M3 searches in increasing symplectic weight from $1$, so a returned value is the
++true minimum and is an independent exact determination; this occurs for $11$ of
++the $28$ codes. For the remaining $17$ it finds no vector at or below the
++search weight and yields a proved lower bound only, consistent with the exact
++value from M1 or M2 (see Appendix~\ref{app:tables} and the supplementary
++certification data). No code is certified by all three, and the strength of the
++M3 cross-check is not uniform: it is exact for $11$ codes and a lower bound for
++$17$.
+ 
+ \begin{description}
+ \item[M1 --- complete enumeration.] Enumerate the relevant classical difference
+@@ -225,8 +238,8 @@
+
+ families is claimed to be dominated.
+ \end{remark}
+ 
+-Table~\ref{tab:headline} lists the headline codes, all certified by the three
+-methods. Table~\ref{tab:cert} in Appendix~A lists the full certification table.
++Table~\ref{tab:headline} lists the headline codes, each certified by an
++applicable exact method and cross-checked by the ambient quantum search. Table~\ref{tab:cert} in Appendix~A lists the full certification table.
+ 
+ \begin{table}[t]
+ \centering
+@@ -341,9 +354,10 @@
+
+ the quotient code $\mathcal Q=D^{\perp_E}/\Hull_E(D)$; here $h_E=0$, so
+ $\Hull_E(D)=\{0\}$ and $\mathcal Q=D^{\perp_E}$, a linear $[20,2]_4$ code. Its
+ $4^2=16$ codewords are enumerated completely (method M1), and the minimum
+-weight found is $10$; the independent support search (M2) and the ambient
+-quantum search (M3, which certifies $d\ge3$ as a lower bound) agree with the
+-reported value. Hence $d=10$ exactly and
++weight found is $10$. The support search (M2) is run only when M1 cannot
++finish, so it was not run here and contributes nothing; the ambient quantum
++search (M3) independently certifies $d\ge3$ as a lower bound, consistent with
++this value. Hence $d=10$ exactly and
+ \[
+   [[20,2,10;18]]_4 .
+ \]

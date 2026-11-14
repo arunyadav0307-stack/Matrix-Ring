@@ -1,0 +1,1106 @@
+==============================================================================
+PHASE 4 -- GRAY MAP COMPATIBILITY AND FINITE-FIELD CODE CONSTRUCTION
+independent computational corroboration of
+03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md
+==============================================================================
+  seed                     : 20261110
+  python                   : 3.11.2
+  conventions              : A_t = F_q[u]/<u^t>, R = M_2(A_t),
+                             R_n = R[X]/<X^n - 1>, C = I_W a right
+                             ideal of R_n (Morita), word length n;
+                             (Tx)_e = x_{e-1 mod n};
+                             b_s(x,y) = Lambda(sum_e theta_s(x_e) y_e)
+                             with Lambda = lambda o tr, lambda(a) = a_{t-1}.
+  the map under study      : phi_n = coefficient expansion
+                             R^n -> F_q^N,  N = 4tn,
+                             coordinate ((e*4 + k)*t + a).
+  [EXH] = exhaustive over the stated finite set;
+  [SMP] = verified on a seeded random sample.
+  timing lines are written to stdout only, so two runs of this script
+  produce byte-identical logs.
+
+
+
+==============================================================================
+PART A -- TASK A: the candidate maps and their properties
+==============================================================================
+
+(q,t,n) = (4,1,1):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 4   |R| = 256   |R^n| = 256
+  [EXH] (4,1,1): phi_A is additive (F_q^t)                           PASS  all 4^2 pairs
+  [EXH] (4,1,1): phi_A is F_q-linear                                 PASS  all 4 x 4
+  [EXH] (4,1,1): phi_A is injective (|image| = |A_t|)                PASS  4 elements
+  [EXH] (4,1,1): phi_R agrees with the independent flat coordinate map PASS  256 elements
+  [SMP] (4,1,1): phi_n = concat of phi_R over positions              PASS  200 words
+  [EXH] (4,1,1): phi_R additive                                      PASS  10240 pairs
+  [EXH] (4,1,1): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 4
+  [EXH] (4,1,1): phi_R injective (|image| = |R|)                     PASS  |R| = 256
+  [EXH] (4,1,1): phi_R surjective (image = F_q^{4t})                 PASS  |F_q^{4t}| = 256
+       phi_R(XY) != phi_R(YX) on 3312 / 3600 sampled pairs (R is noncommutative: |R| = 256)
+  [EXH] (4,1,1): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [EXH] (4,1,1): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [EXH] (4,1,1): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [EXH] (4,1,1): a |-> M_L(a) is injective on 256 elements           PASS  256 distinct matrices
+  [EXH] (4,1,1): phi_n(Tx) = That phi_n(x) on all 4 basis words (That = rotation by 4t) PASS  all 4
+  [SMP] (4,1,1): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (4,1,1): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (4,1,1): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 4
+
+(q,t,n) = (4,1,2):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 8   |R| = 256   |R^n| = 65536
+  [EXH] (4,1,2): phi_A is additive (F_q^t)                           PASS  all 4^2 pairs
+  [EXH] (4,1,2): phi_A is F_q-linear                                 PASS  all 4 x 4
+  [EXH] (4,1,2): phi_A is injective (|image| = |A_t|)                PASS  4 elements
+  [EXH] (4,1,2): phi_R agrees with the independent flat coordinate map PASS  256 elements
+  [SMP] (4,1,2): phi_n = concat of phi_R over positions              PASS  200 words
+  [EXH] (4,1,2): phi_R additive                                      PASS  10240 pairs
+  [EXH] (4,1,2): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 4
+  [EXH] (4,1,2): phi_R injective (|image| = |R|)                     PASS  |R| = 256
+  [EXH] (4,1,2): phi_R surjective (image = F_q^{4t})                 PASS  |F_q^{4t}| = 256
+       phi_R(XY) != phi_R(YX) on 3312 / 3600 sampled pairs (R is noncommutative: |R| = 256)
+  [EXH] (4,1,2): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [EXH] (4,1,2): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [EXH] (4,1,2): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [EXH] (4,1,2): a |-> M_L(a) is injective on 256 elements           PASS  256 distinct matrices
+  [EXH] (4,1,2): phi_n(Tx) = That phi_n(x) on all 8 basis words (That = rotation by 4t) PASS  all 8
+  [SMP] (4,1,2): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (4,1,2): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (4,1,2): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 8
+
+(q,t,n) = (4,2,1):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 8   |R| = 65536   |R^n| = 65536
+  [EXH] (4,2,1): phi_A is additive (F_q^t)                           PASS  all 16^2 pairs
+  [EXH] (4,2,1): phi_A is F_q-linear                                 PASS  all 16 x 4
+  [EXH] (4,2,1): phi_A is injective (|image| = |A_t|)                PASS  16 elements
+  [SMP] (4,2,1): phi_R agrees with the independent flat coordinate map PASS  4000 elements
+  [SMP] (4,2,1): phi_n = concat of phi_R over positions              PASS  200 words
+  [SMP] (4,2,1): phi_R additive                                      PASS  40000 pairs
+  [SMP] (4,2,1): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 4
+  [SMP] (4,2,1): phi_R injective on 4000 sampled elements (distinct inputs have distinct images) PASS  3889 distinct inputs
+       phi_R(XY) != phi_R(YX) on 3520 / 3600 sampled pairs (R is noncommutative: |R| = 65536)
+  [SMP] (4,2,1): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [SMP] (4,2,1): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [SMP] (4,2,1): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [SMP] (4,2,1): a |-> M_L(a) is injective on 400 elements           PASS  400 distinct matrices
+  [EXH] (4,2,1): phi_n(Tx) = That phi_n(x) on all 8 basis words (That = rotation by 4t) PASS  all 8
+  [SMP] (4,2,1): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (4,2,1): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (4,2,1): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 8
+  [SMP] (4,2,1): Bachoc-type phi_B is a map R^n -> F_q^N             PASS  length 8
+  [SMP] (4,2,1): Bachoc-type phi_B is additive                       PASS  200 pairs
+  [SMP] (4,2,1): Bachoc-type phi_B commutes with the shift           PASS  300 words
+       S^T H_2 S = [['0', '1'], ['1', '0']]   (H_2 = [['0', '1'], ['1', '0']])
+  [EXH] (4,2,1): the Bachoc map transports b_s to the SAME Hankel form as the coefficient map  <=>  char F_q = 2 PASS  p = 2
+       #words (of 500) with wt_Ham(phi_B x) != w_coef(x): 361
+  [SMP] (4,2,1): the Bachoc map is NOT a w_coef/Hamming isometry     PASS  361 / 500
+
+(q,t,n) = (8,1,2):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 8   |R| = 4096   |R^n| = 16777216
+  [EXH] (8,1,2): phi_A is additive (F_q^t)                           PASS  all 8^2 pairs
+  [EXH] (8,1,2): phi_A is F_q-linear                                 PASS  all 8 x 8
+  [EXH] (8,1,2): phi_A is injective (|image| = |A_t|)                PASS  8 elements
+  [EXH] (8,1,2): phi_R agrees with the independent flat coordinate map PASS  4096 elements
+  [SMP] (8,1,2): phi_n = concat of phi_R over positions              PASS  200 words
+  [EXH] (8,1,2): phi_R additive                                      PASS  163840 pairs
+  [EXH] (8,1,2): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 8
+  [EXH] (8,1,2): phi_R injective (|image| = |R|)                     PASS  |R| = 4096
+  [EXH] (8,1,2): phi_R surjective (image = F_q^{4t})                 PASS  |F_q^{4t}| = 4096
+       phi_R(XY) != phi_R(YX) on 3092 / 3600 sampled pairs (R is noncommutative: |R| = 4096)
+  [EXH] (8,1,2): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [EXH] (8,1,2): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [EXH] (8,1,2): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [EXH] (8,1,2): a |-> M_L(a) is injective on 400 elements           PASS  400 distinct matrices
+  [EXH] (8,1,2): phi_n(Tx) = That phi_n(x) on all 8 basis words (That = rotation by 4t) PASS  all 8
+  [SMP] (8,1,2): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (8,1,2): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (8,1,2): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 8
+
+(q,t,n) = (9,1,2):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 8   |R| = 6561   |R^n| = 43046721
+  [EXH] (9,1,2): phi_A is additive (F_q^t)                           PASS  all 9^2 pairs
+  [EXH] (9,1,2): phi_A is F_q-linear                                 PASS  all 9 x 9
+  [EXH] (9,1,2): phi_A is injective (|image| = |A_t|)                PASS  9 elements
+  [EXH] (9,1,2): phi_R agrees with the independent flat coordinate map PASS  6561 elements
+  [SMP] (9,1,2): phi_n = concat of phi_R over positions              PASS  200 words
+  [EXH] (9,1,2): phi_R additive                                      PASS  262440 pairs
+  [EXH] (9,1,2): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 9
+  [EXH] (9,1,2): phi_R injective (|image| = |R|)                     PASS  |R| = 6561
+  [EXH] (9,1,2): phi_R surjective (image = F_q^{4t})                 PASS  |F_q^{4t}| = 6561
+       phi_R(XY) != phi_R(YX) on 3126 / 3600 sampled pairs (R is noncommutative: |R| = 6561)
+  [EXH] (9,1,2): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [EXH] (9,1,2): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [EXH] (9,1,2): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [EXH] (9,1,2): a |-> M_L(a) is injective on 400 elements           PASS  400 distinct matrices
+  [EXH] (9,1,2): phi_n(Tx) = That phi_n(x) on all 8 basis words (That = rotation by 4t) PASS  all 8
+  [SMP] (9,1,2): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (9,1,2): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (9,1,2): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 8
+
+(q,t,n) = (4,1,3):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 12   |R| = 256   |R^n| = 16777216
+  [EXH] (4,1,3): phi_A is additive (F_q^t)                           PASS  all 4^2 pairs
+  [EXH] (4,1,3): phi_A is F_q-linear                                 PASS  all 4 x 4
+  [EXH] (4,1,3): phi_A is injective (|image| = |A_t|)                PASS  4 elements
+  [EXH] (4,1,3): phi_R agrees with the independent flat coordinate map PASS  256 elements
+  [SMP] (4,1,3): phi_n = concat of phi_R over positions              PASS  200 words
+  [EXH] (4,1,3): phi_R additive                                      PASS  10240 pairs
+  [EXH] (4,1,3): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 4
+  [EXH] (4,1,3): phi_R injective (|image| = |R|)                     PASS  |R| = 256
+  [EXH] (4,1,3): phi_R surjective (image = F_q^{4t})                 PASS  |F_q^{4t}| = 256
+       phi_R(XY) != phi_R(YX) on 3312 / 3600 sampled pairs (R is noncommutative: |R| = 256)
+  [EXH] (4,1,3): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [EXH] (4,1,3): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [EXH] (4,1,3): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [EXH] (4,1,3): a |-> M_L(a) is injective on 256 elements           PASS  256 distinct matrices
+  [EXH] (4,1,3): phi_n(Tx) = That phi_n(x) on all 12 basis words (That = rotation by 4t) PASS  all 12
+  [SMP] (4,1,3): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (4,1,3): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (4,1,3): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 12
+
+(q,t,n) = (4,2,2):  the candidate maps phi_A, phi_R, phi_n
+----------------------------------------------------------
+  N = 4tn = 16   |R| = 65536   |R^n| = 4294967296
+  [EXH] (4,2,2): phi_A is additive (F_q^t)                           PASS  all 16^2 pairs
+  [EXH] (4,2,2): phi_A is F_q-linear                                 PASS  all 16 x 4
+  [EXH] (4,2,2): phi_A is injective (|image| = |A_t|)                PASS  16 elements
+  [SMP] (4,2,2): phi_R agrees with the independent flat coordinate map PASS  4000 elements
+  [SMP] (4,2,2): phi_n = concat of phi_R over positions              PASS  200 words
+  [SMP] (4,2,2): phi_R additive                                      PASS  40000 pairs
+  [SMP] (4,2,2): phi_R is F_q-homogeneous (F_q central)              PASS  200 x 4
+  [SMP] (4,2,2): phi_R injective on 4000 sampled elements (distinct inputs have distinct images) PASS  3892 distinct inputs
+       phi_R(XY) != phi_R(YX) on 3526 / 3600 sampled pairs (R is noncommutative: |R| = 65536)
+  [SMP] (4,2,2): phi_R(aX) = M_L(a) phi_R(X)                         PASS  12 x 20
+  [SMP] (4,2,2): a |-> M_L(a) is multiplicative (ring embedding R -> M_{4t}(F_q)) PASS  12^2 pairs
+  [SMP] (4,2,2): a |-> M_L(a) is additive                            PASS  12^2 pairs
+  [SMP] (4,2,2): a |-> M_L(a) is injective on 398 elements           PASS  398 distinct matrices
+  [EXH] (4,2,2): phi_n(Tx) = That phi_n(x) on all 16 basis words (That = rotation by 4t) PASS  all 16
+  [SMP] (4,2,2): phi_n(Tx) = That phi_n(x) on 300 random words       PASS  300 words
+  [SMP] (4,2,2): phi^rev = P.phi_n is well defined (P = reversal inside each (e,k) block) PASS  300 words
+  [EXH] (4,2,2): P commutes with That (so phi^rev has the same quasi-cyclic index 4t) PASS  N = 16
+  [SMP] (4,2,2): Bachoc-type phi_B is a map R^n -> F_q^N             PASS  length 16
+  [SMP] (4,2,2): Bachoc-type phi_B is additive                       PASS  200 pairs
+  [SMP] (4,2,2): Bachoc-type phi_B commutes with the shift           PASS  300 words
+       S^T H_2 S = [['0', '1'], ['1', '0']]   (H_2 = [['0', '1'], ['1', '0']])
+  [EXH] (4,2,2): the Bachoc map transports b_s to the SAME Hankel form as the coefficient map  <=>  char F_q = 2 PASS  p = 2
+       #words (of 500) with wt_Ham(phi_B x) != w_coef(x): 387
+  [SMP] (4,2,2): the Bachoc map is NOT a w_coef/Hamming isometry     PASS  387 / 500
+
+
+
+==============================================================================
+PART B -- TASK B: the weight structure
+==============================================================================
+
+(q,t,n) = (4,1,1):  weights on R^n
+----------------------------------
+  [SMP] (4,1,1): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (4,1,1): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [EXH] (4,1,1): w_H <= w_ent <= 4 w_H                               PASS  256 words
+  [EXH] (4,1,1): w_ent <= w_coef <= t w_ent                          PASS  256 words
+  [EXH] (4,1,1): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  256 words
+       lower bound attained (w_coef = w_H > 0): yes
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 243 / 256
+       witness: w_H = 1, w_ent = 2, w_coef = 2, w_rank = 1
+
+(q,t) = (4,1):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+  [EXH] (4,1): the character sums are rational (c_1=...=c_{p-1})     PASS  all |R| = 256 elements (|R^x| = 180)
+  [EXH] (4,1): w_hom(0) = 0                                          PASS  
+  [EXH] (4,1): mean of w_hom over R is 1 (normalisation)             PASS  mean = 1
+  [EXH] (4,1): w_hom(X) = w_hom(Xc) for c in F_q^x (F_q-homogeneity) PASS  all |R| = 256 elements (|R^x| = 180)
+  [EXH] (4,1): w_hom(uX) = w_hom(X) for units u (left associates)    PASS  40 x 6
+       the values taken by w_hom:  [('44/45', 180), ('16/15', 75), ('0', 1)]
+       denominators occurring: [1, 15, 45]
+       => w_hom is NOT integer valued
+  [EXH] (4,1): w_hom(X-Y) <= w_hom(X)+w_hom(Y) (triangle inequality, necessary for a Gray isometry) PASS  3600 pairs
+       w_hom by (u-adic valuation, rank of the leading matrix):
+         (val= 0, rank= 1) -> [Fraction(16, 15)]
+         (val= 0, rank= 2) -> [Fraction(44, 45)]
+         (val= 1, rank= 0) -> [Fraction(0, 1)]
+  [EXH] (4,1): closed form  w_hom(X) = 0 / 1+1/(q^2-1) / 1-1/((q-1)^2(q+1))  by rank PASS  all |R| = 256 elements (|R^x| = 180)
+       w_hom on structured elements (t = 1):
+         w_hom(           0) = 0
+         w_hom(           I) = 44/45
+         w_hom(         E11) = 16/15
+  [EXH] (4,1): w_hom(0) = 0 (exact character sum over |R| = 256)     PASS  
+
+(q,t,n) = (4,1,2):  weights on R^n
+----------------------------------
+  [SMP] (4,1,2): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (4,1,2): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [EXH] (4,1,2): w_H <= w_ent <= 4 w_H                               PASS  65536 words
+  [EXH] (4,1,2): w_ent <= w_coef <= t w_ent                          PASS  65536 words
+  [EXH] (4,1,2): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  65536 words
+       lower bound attained (w_coef = w_H > 0): yes
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 65367 / 65536
+       witness: w_H = 1, w_ent = 2, w_coef = 2, w_rank = 1
+
+(q,t) = (4,1):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+       w_hom depends only on (q,t), not on n: already computed above for this ring (all |R| = 256 elements (|R^x| = 180))
+
+(q,t,n) = (4,2,1):  weights on R^n
+----------------------------------
+  [SMP] (4,2,1): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (4,2,1): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [EXH] (4,2,1): w_H <= w_ent <= 4 w_H                               PASS  65536 words
+  [EXH] (4,2,1): w_ent <= w_coef <= t w_ent                          PASS  65536 words
+  [EXH] (4,2,1): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  65536 words
+       lower bound attained (w_coef = w_H > 0): yes
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 65511 / 65536
+       witness: w_H = 1, w_ent = 1, w_coef = 2, w_rank = 1
+
+(q,t) = (4,2):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+  [EXH] (4,2): the character sums are rational (c_1=...=c_{p-1})     PASS  120 sampled elements (|R| |R\R^x| = 1275068416 > budget)
+       (the zero element is not in the sample: w_hom(0) not re-tested here)
+  [SMP] (4,2): w_hom(X) = w_hom(Xc) for c in F_q^x (F_q-homogeneity) PASS  120 sampled elements (|R| |R\R^x| = 1275068416 > budget)
+  [SMP] (4,2): w_hom(uX) = w_hom(X) for units u (left associates)    PASS  8 x 3 (weights recomputed)
+       the values taken by w_hom:  [('1', 120)]
+       denominators occurring: [1]
+       => w_hom is INTEGER valued
+       w_hom on structured elements (t = 2):
+         w_hom(           0) = 0
+         w_hom(           I) = 1
+         w_hom(         E11) = 1
+         w_hom(       u^1 I) = 44/45
+         w_hom(     u^1 E11) = 16/15
+         w_hom(     u^1 E12) = 16/15
+  [EXH] (4,2): w_hom(0) = 0 (exact character sum over |R| = 65536)   PASS  
+
+(q,t,n) = (8,1,2):  weights on R^n
+----------------------------------
+  [SMP] (8,1,2): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (8,1,2): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [SMP] (8,1,2): w_H <= w_ent <= 4 w_H                               PASS  2000 words
+  [SMP] (8,1,2): w_ent <= w_coef <= t w_ent                          PASS  2000 words
+  [SMP] (8,1,2): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  2000 words
+       lower bound attained (w_coef = w_H > 0): no
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 2000 / 2000
+       witness: w_H = 2, w_ent = 7, w_coef = 7, w_rank = 3
+
+(q,t) = (8,1):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+  [EXH] (8,1): the character sums are rational (c_1=...=c_{p-1})     PASS  all |R| = 4096 elements (|R^x| = 3528)
+  [EXH] (8,1): w_hom(0) = 0                                          PASS  
+  [EXH] (8,1): mean of w_hom over R is 1 (normalisation)             PASS  mean = 1
+  [EXH] (8,1): w_hom(X) = w_hom(Xc) for c in F_q^x (F_q-homogeneity) PASS  all |R| = 4096 elements (|R^x| = 3528)
+  [EXH] (8,1): w_hom(uX) = w_hom(X) for units u (left associates)    PASS  40 x 6
+       the values taken by w_hom:  [('440/441', 3528), ('64/63', 567), ('0', 1)]
+       denominators occurring: [1, 63, 441]
+       => w_hom is NOT integer valued
+       w_hom by (u-adic valuation, rank of the leading matrix):
+         (val= 0, rank= 1) -> [Fraction(64, 63)]
+         (val= 0, rank= 2) -> [Fraction(440, 441)]
+         (val= 1, rank= 0) -> [Fraction(0, 1)]
+  [EXH] (8,1): closed form  w_hom(X) = 0 / 1+1/(q^2-1) / 1-1/((q-1)^2(q+1))  by rank PASS  all |R| = 4096 elements (|R^x| = 3528)
+       w_hom on structured elements (t = 1):
+         w_hom(           0) = 0
+         w_hom(           I) = 440/441
+         w_hom(         E11) = 64/63
+  [EXH] (8,1): w_hom(0) = 0 (exact character sum over |R| = 4096)    PASS  
+
+(q,t,n) = (9,1,2):  weights on R^n
+----------------------------------
+  [SMP] (9,1,2): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (9,1,2): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [SMP] (9,1,2): w_H <= w_ent <= 4 w_H                               PASS  2000 words
+  [SMP] (9,1,2): w_ent <= w_coef <= t w_ent                          PASS  2000 words
+  [SMP] (9,1,2): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  2000 words
+       lower bound attained (w_coef = w_H > 0): no
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 2000 / 2000
+       witness: w_H = 2, w_ent = 7, w_coef = 7, w_rank = 4
+
+(q,t) = (9,1):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+  [EXH] (9,1): the character sums are rational (c_1=...=c_{p-1})     PASS  all |R| = 6561 elements (|R^x| = 5760)
+  [EXH] (9,1): w_hom(0) = 0                                          PASS  
+  [EXH] (9,1): mean of w_hom over R is 1 (normalisation)             PASS  mean = 1
+  [EXH] (9,1): w_hom(X) = w_hom(Xc) for c in F_q^x (F_q-homogeneity) PASS  all |R| = 6561 elements (|R^x| = 5760)
+  [EXH] (9,1): w_hom(uX) = w_hom(X) for units u (left associates)    PASS  40 x 6
+       the values taken by w_hom:  [('639/640', 5760), ('81/80', 800), ('0', 1)]
+       denominators occurring: [1, 80, 640]
+       => w_hom is NOT integer valued
+       w_hom by (u-adic valuation, rank of the leading matrix):
+         (val= 0, rank= 1) -> [Fraction(81, 80)]
+         (val= 0, rank= 2) -> [Fraction(639, 640)]
+         (val= 1, rank= 0) -> [Fraction(0, 1)]
+  [EXH] (9,1): closed form  w_hom(X) = 0 / 1+1/(q^2-1) / 1-1/((q-1)^2(q+1))  by rank PASS  all |R| = 6561 elements (|R^x| = 5760)
+       w_hom on structured elements (t = 1):
+         w_hom(           0) = 0
+         w_hom(           I) = 639/640
+         w_hom(         E11) = 81/80
+  [EXH] (9,1): w_hom(0) = 0 (exact character sum over |R| = 6561)    PASS  
+
+(q,t,n) = (4,1,3):  weights on R^n
+----------------------------------
+  [SMP] (4,1,3): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (4,1,3): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [SMP] (4,1,3): w_H <= w_ent <= 4 w_H                               PASS  2000 words
+  [SMP] (4,1,3): w_ent <= w_coef <= t w_ent                          PASS  2000 words
+  [SMP] (4,1,3): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  2000 words
+       lower bound attained (w_coef = w_H > 0): no
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 2000 / 2000
+       witness: w_H = 3, w_ent = 10, w_coef = 10, w_rank = 6
+
+(q,t) = (4,1):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+       w_hom depends only on (q,t), not on n: already computed above for this ring (all |R| = 256 elements (|R^x| = 180))
+
+(q,t,n) = (4,2,2):  weights on R^n
+----------------------------------
+  [SMP] (4,2,2): wt_Ham(phi_n(x)) = w_coef(x)  (phi_n is a w_coef/Hamming isometry by construction) PASS  300 words
+  [SMP] (4,2,2): d_Ham(phi_n x, phi_n y) = w_coef(x-y)               PASS  3600 pairs
+  [SMP] (4,2,2): w_H <= w_ent <= 4 w_H                               PASS  2000 words
+  [SMP] (4,2,2): w_ent <= w_coef <= t w_ent                          PASS  2000 words
+  [SMP] (4,2,2): w_H <= wt_Ham(phi_n(x)) <= 4t w_H                   PASS  2000 words
+       lower bound attained (w_coef = w_H > 0): no
+       upper bound attained (w_coef = 4t w_H): yes
+       #words with w_coef(x) != w_H(x): 2000 / 2000
+       witness: w_H = 2, w_ent = 7, w_coef = 11, w_rank = 3
+
+(q,t) = (4,2):  the homogeneous weight on R = M_2(A_t)
+------------------------------------------------------
+       w_hom depends only on (q,t), not on n: already computed above for this ring (120 sampled elements (|R| |R\R^x| = 1275068416 > budget))
+
+
+
+==============================================================================
+PARTS C, D, E, F -- the transported form, hull compatibility, the
+==============================================================================
+                     image codes, and the quantum-relevant conditions
+
+==============================================================================
+(q,t,n) = (4,1,1)   kind = split   N = 4tn = 4   |R^n| = 256
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 7
+
+(q,t,n,s) = (4,1,1,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,1,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 4
+  [EXH] (4,1,1,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 4 = N
+  [EXH] (4,1,1,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,1,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,1,0): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,1,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,1,1,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,1,1,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,1,1,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,1,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 4
+  [EXH] (4,1,1,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 4
+  [EXH] (4,1,1,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  6 / 6 codes
+  [EXH] (4,1,1,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,1,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  6 / 6 codes
+  [EXH] (4,1,1,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  6 / 6 codes
+       #nonzero codes                    : 6
+       #images invariant under shift by 1: 2  (cyclic)
+       #self-orthogonal (transported form): 1
+       #self-dual     (transported form)  : 1
+       #LCD          (transported form)   : 5
+       #self-orthogonal (EUCLIDEAN form)   : 1
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 1
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 0
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 1}
+       min distances (all 6 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 3 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (1, 1)]
+
+(q,t,n,s) = (4,1,1,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,1,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 4
+  [EXH] (4,1,1,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 4 = N
+  [EXH] (4,1,1,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,1,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,1,1): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,1,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,1,1,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,1,1,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,1,1,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,1,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 4
+  [EXH] (4,1,1,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 4
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (4,1,1,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  6 / 6 codes
+  [EXH] (4,1,1,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,1,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  6 / 6 codes
+  [EXH] (4,1,1,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  6 / 6 codes
+       #nonzero codes                    : 6
+       #images invariant under shift by 1: 2  (cyclic)
+       #self-orthogonal (transported form): 3
+       #self-dual     (transported form)  : 3
+       #LCD          (transported form)   : 3
+       #self-orthogonal (EUCLIDEAN form)   : 1
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 3
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 2
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 3}
+       min distances (all 6 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 3 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (1, 1)]
+
+==============================================================================
+(q,t,n) = (4,1,2)   kind = chain   N = 4tn = 8   |R^n| = 65536
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 33
+
+(q,t,n,s) = (4,1,2,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,2,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (4,1,2,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [EXH] (4,1,2,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,2,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,2,0): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,2,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,1,2,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,1,2,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,1,2,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,2,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (4,1,2,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+  [EXH] (4,1,2,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  32 / 32 codes
+  [EXH] (4,1,2,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,2,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  32 / 32 codes
+  [EXH] (4,1,2,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  32 / 32 codes
+       #nonzero codes                    : 32
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 10
+       #self-dual     (transported form)  : 5
+       #LCD          (transported form)   : 17
+       #self-orthogonal (EUCLIDEAN form)   : 10
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 10
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 0
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 14, 2: 1}
+       min distances (all 31 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 16 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (4, 2), (1, 1)]
+
+(q,t,n,s) = (4,1,2,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,2,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (4,1,2,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [EXH] (4,1,2,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,2,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,2,1): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,2,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,1,2,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,1,2,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,1,2,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,2,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (4,1,2,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (4,1,2,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  32 / 32 codes
+  [EXH] (4,1,2,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,2,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  32 / 32 codes
+  [EXH] (4,1,2,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  32 / 32 codes
+       #nonzero codes                    : 32
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 12
+       #self-dual     (transported form)  : 7
+       #LCD          (transported form)   : 9
+       #self-orthogonal (EUCLIDEAN form)   : 10
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 12
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 18
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 22, 2: 1}
+       min distances (all 31 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 16 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (4, 2), (1, 1)]
+
+==============================================================================
+(q,t,n) = (4,2,1)   kind = split   N = 4tn = 8   |R^n| = 65536
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 33
+
+(q,t,n,s) = (4,2,1,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,1,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (4,2,1,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [EXH] (4,2,1,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,1,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,1,0): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,1,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,2,1,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,2,1,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,2,1,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [EXH] (4,2,1,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  32 / 32 codes
+  [EXH] (4,2,1,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,2,1,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  32 / 32 codes
+  [EXH] (4,2,1,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  32 / 32 codes
+       #nonzero codes                    : 32
+       #images invariant under shift by 1: 2  (cyclic)
+       #self-orthogonal (transported form): 10
+       #self-dual     (transported form)  : 5
+       #LCD          (transported form)   : 17
+       #self-orthogonal (EUCLIDEAN form)   : 2
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 2
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 26
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 26
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 14, 2: 1}
+       min distances (all 31 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 16 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (1, 1)]
+
+(q,t,n,s) = (4,2,1,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,1,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (4,2,1,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [EXH] (4,2,1,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,1,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,1,1): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,1,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [EXH] (4,2,1,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [EXH] (4,2,1,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [EXH] (4,2,1,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [EXH] (4,2,1,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  32 / 32 codes
+  [EXH] (4,2,1,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,2,1,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  32 / 32 codes
+  [EXH] (4,2,1,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  32 / 32 codes
+       #nonzero codes                    : 32
+       #images invariant under shift by 1: 2  (cyclic)
+       #self-orthogonal (transported form): 12
+       #self-dual     (transported form)  : 7
+       #LCD          (transported form)   : 9
+       #self-orthogonal (EUCLIDEAN form)   : 2
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 6
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 28
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 26
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 22, 2: 1}
+       min distances (all 31 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 16 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (1, 1)]
+
+==============================================================================
+(q,t,n) = (8,1,2)   kind = chain   N = 4tn = 8   |R^n| = 16777216
+==============================================================================
+  r = [F_q : F_p] = 3 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 93
+
+(q,t,n,s) = (8,1,2,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (8,1,2,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (8,1,2,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (8,1,2,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (8,1,2,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (8,1,2,0): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (8,1,2,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (8,1,2,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (8,1,2,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (8,1,2,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (8,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (8,1,2,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (8,1,2,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+  [EXH] (8,1,2,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  92 / 92 codes
+  [EXH] (8,1,2,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (8,1,2,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  92 / 92 codes
+  [EXH] (8,1,2,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  92 / 92 codes
+       #nonzero codes                    : 92
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 18
+       #self-dual     (transported form)  : 9
+       #LCD          (transported form)   : 65
+       #self-orthogonal (EUCLIDEAN form)   : 18
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 18
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 0
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 26, 2: 1}
+       min distances (all 82 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 26 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (4, 2), (4, 2)]
+
+(q,t,n,s) = (8,1,2,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (8,1,2,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (8,1,2,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (8,1,2,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (8,1,2,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (8,1,2,1): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (8,1,2,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (8,1,2,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = False, observed False
+  [SMP] (8,1,2,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = False, observed False
+  [SMP] (8,1,2,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (8,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (8,1,2,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (8,1,2,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (8,1,2,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  92 / 92 codes
+  [EXH] (8,1,2,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (8,1,2,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  92 / 92 codes
+  [EXH] (8,1,2,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  92 / 92 codes
+       #nonzero codes                    : 92
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 12
+       #self-dual     (transported form)  : 3
+       #LCD          (transported form)   : 65
+       #self-orthogonal (EUCLIDEAN form)   : 18
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 12
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 78
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 26, 2: 1}
+       min distances (all 82 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 26 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (4, 2), (4, 2)]
+
+(q,t,n,s) = (8,1,2,2):   r | 2s  =  True
+----------------------------------------
+  [EXH] (8,1,2,2): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (8,1,2,2): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (8,1,2,2): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (8,1,2,2): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (8,1,2,2): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (8,1,2,2): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (8,1,2,2): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = False, observed False
+  [SMP] (8,1,2,2): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = False, observed False
+  [SMP] (8,1,2,2): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (8,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (8,1,2,2): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (8,1,2,2): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+       for s = 2 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (8,1,2,2): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  92 / 92 codes
+  [EXH] (8,1,2,2): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (8,1,2,2): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  92 / 92 codes
+  [EXH] (8,1,2,2): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  92 / 92 codes
+       #nonzero codes                    : 92
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 12
+       #self-dual     (transported form)  : 3
+       #LCD          (transported form)   : 65
+       #self-orthogonal (EUCLIDEAN form)   : 18
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 12
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 78
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 26, 2: 1}
+       min distances (all 82 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 26 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (4, 2), (4, 2)]
+
+==============================================================================
+(q,t,n) = (9,1,2)   kind = split   N = 4tn = 8   |R^n| = 43046721
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 144
+
+(q,t,n,s) = (9,1,2,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (9,1,2,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (9,1,2,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (9,1,2,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (9,1,2,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (9,1,2,0): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (9,1,2,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (9,1,2,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (9,1,2,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (9,1,2,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (9,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (9,1,2,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (9,1,2,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+  [EXH] (9,1,2,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  143 / 143 codes
+  [EXH] (9,1,2,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (9,1,2,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  143 / 143 codes
+  [EXH] (9,1,2,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  143 / 143 codes
+       #nonzero codes                    : 143
+       #images invariant under shift by 1: 15  (cyclic)
+       #self-orthogonal (transported form): 8
+       #self-dual     (transported form)  : 4
+       #LCD          (transported form)   : 99
+       #self-orthogonal (EUCLIDEAN form)   : 8
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 8
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 0
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 44}
+       min distances (all 20 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 4 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (2, 2), (4, 2), (4, 2), (4, 2)]
+
+(q,t,n,s) = (9,1,2,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (9,1,2,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (9,1,2,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (9,1,2,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (9,1,2,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (9,1,2,1): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (9,1,2,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (9,1,2,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (9,1,2,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (9,1,2,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (9,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (9,1,2,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (9,1,2,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (9,1,2,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  143 / 143 codes
+  [EXH] (9,1,2,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (9,1,2,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  143 / 143 codes
+  [EXH] (9,1,2,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  143 / 143 codes
+       #nonzero codes                    : 143
+       #images invariant under shift by 1: 15  (cyclic)
+       #self-orthogonal (transported form): 24
+       #self-dual     (transported form)  : 16
+       #LCD          (transported form)   : 63
+       #self-orthogonal (EUCLIDEAN form)   : 8
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 24
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 108
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 80}
+       min distances (all 20 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 4 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (2, 2), (4, 2), (4, 2), (4, 2)]
+
+==============================================================================
+(q,t,n) = (4,1,3)   kind = split   N = 4tn = 12   |R^n| = 16777216
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 343
+
+(q,t,n,s) = (4,1,3,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,3,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 12
+  [EXH] (4,1,3,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 12 = N
+  [SMP] (4,1,3,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,3,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,3,0): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,3,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,1,3,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,1,3,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,1,3,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,3,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 12
+  [EXH] (4,1,3,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 12
+  [EXH] (4,1,3,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  342 / 342 codes
+  [EXH] (4,1,3,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,3,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  342 / 342 codes
+  [EXH] (4,1,3,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  342 / 342 codes
+       #nonzero codes                    : 342
+       #images invariant under shift by 1: 26  (cyclic)
+       #self-orthogonal (transported form): 35
+       #self-dual     (transported form)  : 7
+       #LCD          (transported form)   : 131
+       #self-orthogonal (EUCLIDEAN form)   : 35
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 35
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 0
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 197, 2: 14}
+       min distances (SAMPLED 120 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 46 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(3, 2), (3, 2), (3, 3), (3, 3), (2, 2), (3, 2)]
+
+(q,t,n,s) = (4,1,3,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,1,3,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 12
+  [EXH] (4,1,3,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 12 = N
+  [SMP] (4,1,3,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,1,3,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 1, J = I: True
+  [EXH] (4,1,3,1): J is alternating  <=>  t is even                  PASS  t = 1, alternating: False
+  [SMP] (4,1,3,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,1,3,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,1,3,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,1,3,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (4,1)
+       T is monomial  =>  it preserves the Hamming weight
+  [EXH] (4,1,3,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 12
+  [EXH] (4,1,3,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 12
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  True
+  [EXH] (4,1,3,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  342 / 342 codes
+  [EXH] (4,1,3,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,1,3,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  342 / 342 codes
+  [EXH] (4,1,3,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  342 / 342 codes
+       #nonzero codes                    : 342
+       #images invariant under shift by 1: 26  (cyclic)
+       #self-orthogonal (transported form): 63
+       #self-dual     (transported form)  : 27
+       #LCD          (transported form)   : 63
+       #self-orthogonal (EUCLIDEAN form)   : 35
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 63
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 308
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 0
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 279}
+       min distances (SAMPLED 120 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 54 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(3, 3), (4, 3), (3, 2), (3, 2), (3, 3), (3, 2)]
+
+==============================================================================
+(q,t,n) = (9,2,1)   kind = split   N = 4tn = 8   |R^n| = 43046721
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 113
+
+(q,t,n,s) = (9,2,1,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (9,2,1,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (9,2,1,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (9,2,1,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (9,2,1,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (9,2,1,0): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (9,2,1,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (9,2,1,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (9,2,1,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (9,2,1,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (9,2)
+       T is NOT monomial  =>  it does NOT preserve the Hamming weight
+  [EXH] (9,2,1,0): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (9,2,1,0): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+  [EXH] (9,2,1,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  112 / 112 codes
+  [EXH] (9,2,1,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (9,2,1,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  112 / 112 codes
+  [EXH] (9,2,1,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  112 / 112 codes
+       #nonzero codes                    : 112
+       #images invariant under shift by 1: 3  (cyclic)
+       #self-orthogonal (transported form): 13
+       #self-dual     (transported form)  : 3
+       #LCD          (transported form)   : 73
+       #self-orthogonal (EUCLIDEAN form)   : 4
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 4
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 101
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 101
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 38, 2: 1}
+       min distances (all 10 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 2 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (2, 1)]
+
+(q,t,n,s) = (9,2,1,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (9,2,1,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 8
+  [EXH] (9,2,1,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 8 = N
+  [SMP] (9,2,1,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (9,2,1,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (9,2,1,1): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (9,2,1,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (9,2,1,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (9,2,1,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (9,2,1,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       a per-block congruence T with T^T H_t T = I_t EXISTS for (q,t) = (9,2)
+       T is NOT monomial  =>  it does NOT preserve the Hamming weight
+  [EXH] (9,2,1,1): (I (x) T)^T J (I (x) T) = I  (bilinear case)      PASS  N = 8
+  [EXH] (9,2,1,1): (I (x) T) commutes with the block shift That (the image stays quasi-cyclic) PASS  N = 8
+       for s = 1 (sigma_s != id) the same T gives sigma_s(T)^T J T = I :  False
+  [EXH] (9,2,1,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  112 / 112 codes
+  [EXH] (9,2,1,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (9,2,1,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  112 / 112 codes
+  [EXH] (9,2,1,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  112 / 112 codes
+       #nonzero codes                    : 112
+       #images invariant under shift by 1: 3  (cyclic)
+       #self-orthogonal (transported form): 23
+       #self-dual     (transported form)  : 13
+       #LCD          (transported form)   : 55
+       #self-orthogonal (EUCLIDEAN form)   : 4
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 8
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 107
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 101
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 56, 2: 1}
+       min distances (all 10 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 2 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(1, 1), (1, 1), (2, 1), (2, 1), (2, 1), (2, 1)]
+
+==============================================================================
+(q,t,n) = (4,2,2)   kind = wild   N = 4tn = 16   |R^n| = 4294967296
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : exhaustive BFS over the submodule lattice of B^2
+  #codes examined    : 1221
+
+(q,t,n,s) = (4,2,2,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,2,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 16
+  [EXH] (4,2,2,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 16 = N
+  [SMP] (4,2,2,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,2,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,2,0): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,2,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,2,2,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,2,2,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,2,2,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [EXH] (4,2,2,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  1220 / 1220 codes
+  [EXH] (4,2,2,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,2,2,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  1220 / 1220 codes
+  [EXH] (4,2,2,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  1220 / 1220 codes
+       #nonzero codes                    : 1220
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 356
+       #self-dual     (transported form)  : 149
+       #LCD          (transported form)   : 257
+       #self-orthogonal (EUCLIDEAN form)   : 56
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 56
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 1188
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 1188
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 522, 2: 440, 3: 1}
+
+       ---- 1 code(s) whose Galois hull is NOT principal (mu_B >= 3) ----
+         dim C = 8, dim Hull = 8, mu_B(Hull) = 3, hull compatibility holds: True
+            hull generator (over B): ((1, 1, 0, 0), (1, 1, 0, 0))
+            hull generator (over B): ((0, 0, 1, 0), (0, 0, 0, 1))
+            hull generator (over B): ((0, 0, 0, 1), (0, 0, 0, 1))
+  [EXH] (4,2,2,0): hull compatibility holds for EVERY non-principal hull (mu_B >= 3) as well PASS  1 witnesses
+       => no principality hypothesis is used anywhere in Task C or Task D
+       min distances (SAMPLED 120 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 67 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 1), (4, 2), (3, 2), (4, 2), (2, 2), (3, 2)]
+
+(q,t,n,s) = (4,2,2,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,2,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 16
+  [EXH] (4,2,2,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 16 = N
+  [SMP] (4,2,2,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,2,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,2,1): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,2,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,2,2,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,2,2,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,2,2,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [EXH] (4,2,2,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  1220 / 1220 codes
+  [EXH] (4,2,2,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [EXH] (4,2,2,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  1220 / 1220 codes
+  [EXH] (4,2,2,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  1220 / 1220 codes
+       #nonzero codes                    : 1220
+       #images invariant under shift by 1: 4  (cyclic)
+       #self-orthogonal (transported form): 234
+       #self-dual     (transported form)  : 51
+       #LCD          (transported form)   : 129
+       #self-orthogonal (EUCLIDEAN form)   : 56
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 68
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 1206
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 1188
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 538, 2: 550, 3: 3}
+
+       ---- 3 code(s) whose Galois hull is NOT principal (mu_B >= 3) ----
+         dim C = 8, dim Hull = 8, mu_B(Hull) = 3, hull compatibility holds: True
+            hull generator (over B): ((1, 1, 0, 0), (1, 1, 0, 0))
+            hull generator (over B): ((0, 0, 1, 0), (0, 0, 0, 1))
+            hull generator (over B): ((0, 0, 0, 1), (0, 0, 0, 1))
+         dim C = 8, dim Hull = 8, mu_B(Hull) = 3, hull compatibility holds: True
+            hull generator (over B): ((1, 1, 0, 0), (2, 2, 0, 0))
+            hull generator (over B): ((0, 0, 1, 0), (0, 0, 0, 2))
+            hull generator (over B): ((0, 0, 0, 1), (0, 0, 0, 2))
+         dim C = 8, dim Hull = 8, mu_B(Hull) = 3, hull compatibility holds: True
+            hull generator (over B): ((1, 1, 0, 0), (3, 3, 0, 0))
+            hull generator (over B): ((0, 0, 1, 0), (0, 0, 0, 3))
+            hull generator (over B): ((0, 0, 0, 1), (0, 0, 0, 3))
+  [EXH] (4,2,2,1): hull compatibility holds for EVERY non-principal hull (mu_B >= 3) as well PASS  3 witnesses
+       => no principality hypothesis is used anywhere in Task C or Task D
+       min distances (SAMPLED 120 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 81 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(2, 2), (2, 2), (4, 2), (4, 2), (2, 2), (2, 2)]
+
+==============================================================================
+(q,t,n) = (4,2,3)   kind = split   N = 4tn = 24   |R^n| = 281474976710656
+==============================================================================
+  r = [F_q : F_p] = 2 ;  reflexivity of b_s  <=>  r | 2s
+  enumeration method : CRT product lattice (33 local submodules)^3, 400 SAMPLED
+  #codes examined    : 400
+
+(q,t,n,s) = (4,2,3,0):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,3,0): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 24
+  [EXH] (4,2,3,0): J is non-singular (non-degeneracy of the transported form) PASS  rank 24 = N
+  [SMP] (4,2,3,0): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,3,0): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,3,0): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,3,0): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,2,3,0): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,2,3,0): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,2,3,0): (c) form symmetric as a value  <=>  r | s         PASS  r|s = True, observed True
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [SMP] (4,2,3,0): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  400 / 400 codes
+  [SMP] (4,2,3,0): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [SMP] (4,2,3,0): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  400 / 400 codes
+  [SMP] (4,2,3,0): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  400 / 400 codes
+       #nonzero codes                    : 400
+       #images invariant under shift by 1: 0  (cyclic)
+       #self-orthogonal (transported form): 23
+       #self-dual     (transported form)  : 2
+       #LCD          (transported form)   : 62
+       #self-orthogonal (EUCLIDEAN form)   : 5
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 5
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 397
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 397
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 288, 2: 50}
+       min distances (all 10 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 6 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(3, 3), (3, 2), (3, 3), (3, 3), (2, 2), (3, 3)]
+
+(q,t,n,s) = (4,2,3,1):   r | 2s  =  True
+----------------------------------------
+  [EXH] (4,2,3,1): the transported Gram matrix is J = I_{4n} (x) H_t PASS  N = 24
+  [EXH] (4,2,3,1): J is non-singular (non-degeneracy of the transported form) PASS  rank 24 = N
+  [SMP] (4,2,3,1): <phi_n x, phi_n y>^hat_s = b_s(x,y)               PASS  120^2 pairs
+  [EXH] (4,2,3,1): the transported Gram J is the identity  <=>  t = 1 PASS  t = 2, J = I: False
+  [EXH] (4,2,3,1): J is alternating  <=>  t is even                  PASS  t = 2, alternating: True
+  [SMP] (4,2,3,1): phi_n(sigma_s x) = sigma-hat_s(phi_n x)           PASS  200 words
+  [SMP] (4,2,3,1): (a) <v,u>^hat = sigma_s(<u,v>^hat)  <=>  r | 2s   PASS  r|2s = True, observed True
+  [SMP] (4,2,3,1): (b) orthogonality relation symmetric  <=>  r | 2s PASS  r|2s = True, observed True
+  [SMP] (4,2,3,1): (c) form symmetric as a value  <=>  r | s         PASS  r|s = False, observed False
+       NO per-block congruence T^T H_t T = I_t exists for (q,t) = (4,2)  (search exhaustive)
+       (proved impossible: J is alternating in characteristic 2, the standard form is not)
+  [SMP] (4,2,3,1): phi_n(C^{perp_s}) = phi_n(C)^{perp_hat_s} for all codes (2 independent routes) PASS  400 / 400 codes
+  [SMP] (4,2,3,1): dim phi_n(C) + dim phi_n(C)^{perp_hat_s} = N      PASS  0 violations
+  [SMP] (4,2,3,1): phi_n(Hull_s(C)) = phi_n(C) cap phi_n(C)^{perp_hat_s} for all codes PASS  400 / 400 codes
+  [SMP] (4,2,3,1): the image is invariant under the block shift That (quasi-cyclic of index 4t) PASS  400 / 400 codes
+       #nonzero codes                    : 400
+       #images invariant under shift by 1: 0  (cyclic)
+       #self-orthogonal (transported form): 20
+       #self-dual     (transported form)  : 1
+       #LCD          (transported form)   : 13
+       #self-orthogonal (EUCLIDEAN form)   : 5
+       #self-orthogonal (plain sigma_s-Hermitian, Gram I): 2
+       NEGATIVE CONTROL: #codes where the EUCLIDEAN orthogonal of the image differs from phi_n(C^{perp_s}): 400
+       NEGATIVE CONTROL: #codes where the plain Hermitian (Gram I) orthogonal differs from phi_n(C^{perp_s}): 397
+       mu_B(Hull_s(C)) distribution over the codes with a nonzero hull: {1: 348, 2: 39}
+       min distances (all 10 codes, |C| <= 4100): d_Ham(image) = ring-Hamming distance on 6 of them
+       examples (d_Ham(phi_n C), ring-Hamming d(C)): [(3, 3), (3, 2), (3, 3), (3, 3), (2, 2), (3, 3)]
+
+==============================================================================
+PART G -- negative controls (what FAILS, and why)
+==============================================================================
+  C1  the Euclidean form on F_q^N is NOT the transported form unless
+      t = 1 and r | s:  J = I_{4n} (x) H_t = I  <=>  t = 1, and the
+      sigma_s-twist is trivial  <=>  r | s.  Measured per family above
+      ('#codes where the EUCLIDEAN orthogonal ... differs').
+  C2  the plain sigma_s-Hermitian form (Gram = I, no Hankel twist) is
+      NOT the transported form unless t = 1 (same counter above).
+  C3  phi_n is NOT a ring-Hamming isometry:  w_H(x) <= wt_Ham(phi_n x)
+      <= 4t w_H(x), and both bounds are attained; the count of words
+      with wt_Ham(phi_n x) != w_H(x) is reported per family.
+  C4  NO map into a Hamming space can be an isometry for the
+      homogeneous weight: w_hom takes the non-integral values
+      1 + 1/(q^2-1) and 1 - 1/((q-1)^2(q+1)) on R = M_2(F_q)
+      (verified exhaustively for q = 4, 8, 9), while Hamming weights
+      are integers.
+  C5  the image of a code is NOT in general a cyclic code: it is
+      quasi-cyclic of index 4t and co-index n, and the number of codes
+      whose image IS invariant under the shift by 1 is reported per
+      family (typically a small minority).
+  C6  phi_n is F_q-linear, NOT R-linear: the target F_q^{4tn} carries
+      no R-module structure; what survives is the transported left
+      regular representation a |-> M_L(a), an injective ring
+      homomorphism R -> M_{4t}(F_q) (checked above).
+
+==============================================================================
+SUMMARY
+==============================================================================
+  checks              : 463
+  PASS                : 463
+  FAIL                : 0

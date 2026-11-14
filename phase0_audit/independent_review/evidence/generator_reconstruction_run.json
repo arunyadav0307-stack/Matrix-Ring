@@ -1,0 +1,193 @@
+{
+  "name": "generator_reconstruction",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/generator_reconstruction/scripts/extract_certified_generators.py",
+    "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/generator_reconstruction/generated"
+  ],
+  "cwd": "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/generator_reconstruction",
+  "timeout_seconds": 720,
+  "state": "COMPLETED",
+  "exit_code": 0,
+  "elapsed_seconds": 616.785,
+  "stdout": "generator_reconstruction_stdout.txt",
+  "generated_logs": [],
+  "generator_comparisons": [
+    {
+      "file": "01_24_8_4_9_(9,1,6)_SO.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "02_20_4_4_4_(4,1,5)_SO.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "03_20_4_4_4_(4,1,5)_DC.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "04_20_2_10-18_4_(4,1,5)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "05_24_2_10-18_9_(9,1,6)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "06_4_2_2-2_4_(4,1,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "07_8_4_3-4_4_(4,1,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "08_12_2_6-10_4_(4,1,3)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "09_16_4_5-8_4_(4,1,4)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "10_24_4_9-20_4_(4,1,6)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "11_8_4_2-4_4_(4,2,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "12_16_4_4-12_4_(4,2,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "13_24_4_6-20_4_(4,2,3)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "14_12_6_2-6_4_(4,3,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "15_16_6_2-10_4_(4,4,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "16_4_2_2-2_8_(8,1,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "17_8_4_3-4_8_(8,1,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "18_12_2_6-10_8_(8,1,3)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "19_12_4_2-8_8_(8,3,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "20_4_2_2-2_9_(9,1,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "21_8_2_4-6_9_(9,1,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "22_12_2_5-6_9_(9,1,3)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "23_16_2_8-14_9_(9,1,4)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "24_20_4_9-16_9_(9,1,5)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "25_8_4_2-4_9_(9,2,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "26_16_4_4-12_9_(9,2,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "27_12_4_2-8_9_(9,3,1)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "28_24_6_4-18_9_(9,3,2)_EA.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    },
+    {
+      "file": "INDEX.json",
+      "exists_in_original": true,
+      "byte_equal": true,
+      "json_equal": true
+    }
+  ],
+  "scope": "Re-execution of included historical scripts, not an independent implementation."
+}

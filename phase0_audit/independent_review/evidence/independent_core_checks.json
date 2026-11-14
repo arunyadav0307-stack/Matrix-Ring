@@ -1,0 +1,840 @@
+[
+  {
+    "test": "independent_field_2",
+    "assertion_verified": true,
+    "details": {
+      "p": 2,
+      "m": 1,
+      "monic_modulus_low_coefficients": [
+        0
+      ],
+      "encoding": "base-p little-endian coefficients"
+    }
+  },
+  {
+    "test": "independent_field_4",
+    "assertion_verified": true,
+    "details": {
+      "p": 2,
+      "m": 2,
+      "monic_modulus_low_coefficients": [
+        1,
+        1
+      ],
+      "encoding": "base-p little-endian coefficients"
+    }
+  },
+  {
+    "test": "independent_field_8",
+    "assertion_verified": true,
+    "details": {
+      "p": 2,
+      "m": 3,
+      "monic_modulus_low_coefficients": [
+        1,
+        1,
+        0
+      ],
+      "encoding": "base-p little-endian coefficients"
+    }
+  },
+  {
+    "test": "independent_field_9",
+    "assertion_verified": true,
+    "details": {
+      "p": 3,
+      "m": 2,
+      "monic_modulus_low_coefficients": [
+        1,
+        0
+      ],
+      "encoding": "base-p little-endian coefficients"
+    }
+  },
+  {
+    "test": "summary_ax_formula_counterexample",
+    "assertion_verified": true,
+    "details": {
+      "a": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "x": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "y": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "B(ax,y)": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "theta(a)B(x,y)": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "B(xa,y)": [
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "test": "summary_matrix_unit_nondegeneracy_probe_fails",
+    "assertion_verified": true,
+    "details": {
+      "x": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "report_probe_y": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "correct_probe_y": [
+        1,
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "test": "plain_pairing_nondegenerate_but_wrong_same_side_size",
+    "assertion_verified": true,
+    "details": {
+      "C_size": 4,
+      "plain_dual_size": 1,
+      "theta_dual_size": 4,
+      "R_size": 16
+    }
+  },
+  {
+    "test": "double_dual_positive_not_negative_direction",
+    "assertion_verified": true,
+    "details": {
+      "q": 8,
+      "matrix_size": 2,
+      "n": 1,
+      "k": 1,
+      "G": [
+        [
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ]
+      ],
+      "dual_basis": [
+        [
+          4,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          1
+        ]
+      ],
+      "double_dual_basis": [
+        [
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1
+        ]
+      ],
+      "sigma_2_G": [
+        [
+          1,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          6
+        ]
+      ],
+      "sigma_minus_2_G": [
+        [
+          1,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          4
+        ]
+      ],
+      "C_size": 64,
+      "dual_size": 64,
+      "ambient_size": 4096
+    }
+  },
+  {
+    "test": "nonreflexive_zero_relation_witness",
+    "assertion_verified": true,
+    "details": {
+      "X": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "Y": [
+        4,
+        0,
+        1,
+        0
+      ],
+      "B(X,Y)": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "B(Y,X)": [
+        4,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "test": "coefficient_lift_is_not_full_ring_power",
+    "assertion_verified": true,
+    "details": {
+      "u": [
+        0,
+        1
+      ],
+      "u_to_power_2": [
+        0,
+        0
+      ],
+      "coefficient_lift_sigma_1_u": [
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "test": "base_matrix_ring_ideals_are_principal_in_tested_case",
+    "assertion_verified": true,
+    "details": {
+      "A": "F4[u]/u^2",
+      "A_submodules_of_A_squared": 33,
+      "max_mu_A": 2,
+      "dimension_counts": {
+        "0": 1,
+        "1": 5,
+        "2": 21,
+        "3": 5,
+        "4": 1
+      },
+      "all_33_corresponding_right_ideals_in_M2_A_principal": true
+    }
+  },
+  {
+    "test": "historical_nonprincipal_selfdual_hull_witness",
+    "assertion_verified": true,
+    "details": {
+      "B": "F4[u,w]/(u^2,w^2), w=X+1",
+      "B_generators_in_1_w_u_uw_order": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "W_basis": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "radical_W_basis": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "dim_W": 4,
+      "dim_radical_W": 1,
+      "mu_B": 3,
+      "max_columns_of_single_2x2_generator": 2,
+      "C_basis_Gray_coordinates": [
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "pairings": [
+        {
+          "k": 0,
+          "C_dimension": 8,
+          "dual_dimension": 8,
+          "self_dual": true
+        },
+        {
+          "k": 1,
+          "C_dimension": 8,
+          "dual_dimension": 8,
+          "self_dual": true
+        }
+      ]
+    }
+  },
+  {
+    "test": "Gray_Gram_independent_matrix_trace_verification",
+    "assertion_verified": true,
+    "details": {
+      "q": 4,
+      "t": 2,
+      "N": 8,
+      "basis_pairs_per_k": 64,
+      "seeded_pairs_per_k": 500,
+      "J": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "test": "Gray_dual_not_standard_Euclidean",
+    "assertion_verified": true,
+    "details": {
+      "code": "u M2(F4[u]/u^2), n=1",
+      "C_basis": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "transported_dual": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "Euclidean_dual": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "test": "char2_even_t_Hermitian_congruence_counterexample",
+    "assertion_verified": true,
+    "details": {
+      "q": 4,
+      "t": 2,
+      "k": 1,
+      "alpha_encoding": 2,
+      "T": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "sigma_T_transpose_H_T": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "T_transpose_H_T": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "scope": "Refutes an unrestricted sesquilinear obstruction, NOT the bilinear k=0 obstruction. T is not monomial; no Hamming isometry claimed."
+    }
+  },
+  {
+    "test": "field_encoding_mismatch_8",
+    "assertion_verified": true,
+    "details": {
+      "integer_element": 2,
+      "power": 3,
+      "records_modulus": [
+        1,
+        1,
+        0
+      ],
+      "early_matrix_ring_lib_modulus": [
+        1,
+        0,
+        1
+      ],
+      "records_result": 3,
+      "early_result": 5
+    }
+  },
+  {
+    "test": "field_encoding_mismatch_9",
+    "assertion_verified": true,
+    "details": {
+      "integer_element": 3,
+      "power": 2,
+      "records_modulus": [
+        1,
+        0
+      ],
+      "early_matrix_ring_lib_modulus": [
+        2,
+        1
+      ],
+      "records_result": 2,
+      "early_result": 7
+    }
+  }
+]

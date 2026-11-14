@@ -1,0 +1,23 @@
+script,syntax_parsed,executed_in_packaging,local_imports_json,dependencies_packaged
+alahmadi_reconciliation.py,PASS,False,"[""matrix_ring_lib""]",True
+audit_pairing_equivalence.py,PASS,False,"[""matrix_ring_lib""]",True
+decision_support_checks.py,PASS,False,"[""matrix_ring_lib""]",True
+extract_certified_generators.py,PASS,False,"[""phase7_extended_search""]",True
+galois_duality_experiments.py,PASS,False,"[""matrix_ring_lib""]",True
+galois_t2_check.py,PASS,False,"[""matrix_ring_lib""]",True
+independent_audit_checks.py,PASS,False,[],True
+matrix_ring_lib.py,PASS,False,[],True
+module_actions_checks.py,PASS,False,"[""ring_structure_checks""]",True
+phase0_feasibility.py,PASS,False,"[""matrix_ring_lib""]",True
+phase2_stage1_shift_checks.py,PASS,False,"[""ring_structure_checks""]",True
+phase2_stage2a_morita_checks.py,PASS,False,"[""ring_structure_checks""]",True
+phase2_stage2b_crt_principality.py,PASS,False,"[""ring_structure_checks""]",True
+phase2_stage2c_galois_duality.py,PASS,False,"[""ring_structure_checks""]",True
+phase3_stage3a_hull_structure.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""ring_structure_checks""]",True
+phase3_stage3b_hull_enumeration.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""ring_structure_checks""]",True
+phase4_gray_map_compatibility.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""phase3_stage3b_hull_enumeration"", ""ring_structure_checks""]",True
+phase5_quantum_constructions.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""phase3_stage3b_hull_enumeration"", ""phase4_gray_map_compatibility"", ""ring_structure_checks""]",True
+phase6_quantum_parameter_enhancement.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""phase3_stage3b_hull_enumeration"", ""phase4_gray_map_compatibility"", ""phase5_quantum_constructions"", ""ring_structure_checks""]",True
+phase7_extended_search.py,PASS,False,"[""phase2_stage2c_galois_duality"", ""phase3_stage3b_hull_enumeration"", ""phase4_gray_map_compatibility"", ""phase5_quantum_constructions"", ""phase6_quantum_parameter_enhancement"", ""ring_structure_checks""]",True
+ring_structure_checks.py,PASS,False,[],True
+u8_n3_selfdual_check.py,PASS,False,[],True

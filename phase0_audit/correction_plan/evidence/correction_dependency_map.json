@@ -1,0 +1,498 @@
+{
+  "status": "HOLD \u2014 CORRECTION PLAN ONLY \u2014 IMPLEMENTATION NOT AUTHORIZED.",
+  "nodes": [
+    {
+      "id": "CP01",
+      "audit_id": "CR01",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP02",
+      "audit_id": "CR02",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP01"
+      ]
+    },
+    {
+      "id": "CP03",
+      "audit_id": "CR03",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP01",
+        "CP02"
+      ]
+    },
+    {
+      "id": "CP04",
+      "audit_id": "CR04",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP01"
+      ]
+    },
+    {
+      "id": "CP05",
+      "audit_id": "CR05",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP01",
+        "CP02"
+      ]
+    },
+    {
+      "id": "CP06",
+      "audit_id": "CR06",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP04",
+        "CP05"
+      ]
+    },
+    {
+      "id": "CP07",
+      "audit_id": "CR07",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP01"
+      ]
+    },
+    {
+      "id": "CP08",
+      "audit_id": "CR08",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP05",
+        "CP07"
+      ]
+    },
+    {
+      "id": "CP09",
+      "audit_id": "CR09",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP07"
+      ]
+    },
+    {
+      "id": "CP10",
+      "audit_id": "CR10",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP08",
+        "CP09",
+        "CP11",
+        "CP12"
+      ]
+    },
+    {
+      "id": "CP11",
+      "audit_id": "CR11",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP05",
+        "CP20"
+      ]
+    },
+    {
+      "id": "CP12",
+      "audit_id": "CR12",
+      "group": "A",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP04",
+        "CP05"
+      ]
+    },
+    {
+      "id": "CP13",
+      "audit_id": "CR13",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP05",
+        "CP12"
+      ]
+    },
+    {
+      "id": "CP14",
+      "audit_id": "CR14",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP13"
+      ]
+    },
+    {
+      "id": "CP15",
+      "audit_id": "CR15",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP13",
+        "CP14",
+        "CP20"
+      ]
+    },
+    {
+      "id": "CP16",
+      "audit_id": "CR16",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP13",
+        "CP15"
+      ]
+    },
+    {
+      "id": "CP17",
+      "audit_id": "CR17",
+      "group": "C",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP01",
+        "CP05"
+      ]
+    },
+    {
+      "id": "CP18",
+      "audit_id": "CR18",
+      "group": "B",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP12"
+      ]
+    },
+    {
+      "id": "CP19",
+      "audit_id": "CR19",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP18"
+      ]
+    },
+    {
+      "id": "CP20",
+      "audit_id": "CR20",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP21",
+      "audit_id": "CR21",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP19",
+        "CP20"
+      ]
+    },
+    {
+      "id": "CP22",
+      "audit_id": "CR22",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP20",
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP23",
+      "audit_id": "CR23",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP22"
+      ]
+    },
+    {
+      "id": "CP24",
+      "audit_id": "CR24",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP05",
+        "CP23"
+      ]
+    },
+    {
+      "id": "CP25",
+      "audit_id": "CR25",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP12",
+        "CP16",
+        "CP23",
+        "CP24"
+      ]
+    },
+    {
+      "id": "CP26",
+      "audit_id": "CR26",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP05",
+        "CP13",
+        "CP24"
+      ]
+    },
+    {
+      "id": "CP27",
+      "audit_id": "CR27",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP25"
+      ]
+    },
+    {
+      "id": "CP28",
+      "audit_id": "CR28",
+      "group": "A",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP27"
+      ]
+    },
+    {
+      "id": "CP29",
+      "audit_id": "CR29",
+      "group": "A",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP25",
+        "CP27"
+      ]
+    },
+    {
+      "id": "CP30",
+      "audit_id": "CR30",
+      "group": "C",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP20",
+        "CP21"
+      ]
+    },
+    {
+      "id": "CP31",
+      "audit_id": "CR31",
+      "group": "B",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP10",
+        "CP11",
+        "CP20",
+        "CP25",
+        "CP27",
+        "CP29"
+      ]
+    },
+    {
+      "id": "CP32",
+      "audit_id": "CR32",
+      "group": "D",
+      "severity": "CRITICAL",
+      "depends_on": [
+        "CP20",
+        "CP25",
+        "CP27",
+        "CP29",
+        "CP31",
+        "CP33"
+      ]
+    },
+    {
+      "id": "CP33",
+      "audit_id": "CR33",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP34",
+      "audit_id": "CR34",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP35",
+      "audit_id": "CR35",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP34"
+      ]
+    },
+    {
+      "id": "CP36",
+      "audit_id": "CR36",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP10",
+        "CP12",
+        "CP24",
+        "CP25",
+        "CP28",
+        "CP31",
+        "CP32",
+        "CP34",
+        "CP35"
+      ]
+    },
+    {
+      "id": "CP37",
+      "audit_id": "CR37",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP26",
+        "CP36"
+      ]
+    },
+    {
+      "id": "CP38",
+      "audit_id": "CR38",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP07",
+        "CP36"
+      ]
+    },
+    {
+      "id": "CP39",
+      "audit_id": "CR39",
+      "group": "D",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP04",
+        "CP36"
+      ]
+    },
+    {
+      "id": "CP40",
+      "audit_id": "CR40",
+      "group": "C",
+      "severity": "CRITICAL",
+      "depends_on": []
+    },
+    {
+      "id": "CP41",
+      "audit_id": "CR41",
+      "group": "C",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP42",
+      "audit_id": "CR42",
+      "group": "C",
+      "severity": "MAJOR",
+      "depends_on": [
+        "CP40"
+      ]
+    },
+    {
+      "id": "CP43",
+      "audit_id": "CR43",
+      "group": "C",
+      "severity": "MINOR",
+      "depends_on": [
+        "CP19",
+        "CP21",
+        "CP30"
+      ]
+    }
+  ],
+  "topological_order": [
+    "CP40",
+    "CP01",
+    "CP20",
+    "CP33",
+    "CP34",
+    "CP41",
+    "CP42",
+    "CP02",
+    "CP04",
+    "CP07",
+    "CP22",
+    "CP35",
+    "CP03",
+    "CP05",
+    "CP09",
+    "CP23",
+    "CP06",
+    "CP08",
+    "CP11",
+    "CP12",
+    "CP17",
+    "CP24",
+    "CP10",
+    "CP13",
+    "CP18",
+    "CP14",
+    "CP19",
+    "CP26",
+    "CP15",
+    "CP21",
+    "CP16",
+    "CP30",
+    "CP25",
+    "CP43",
+    "CP27",
+    "CP28",
+    "CP29",
+    "CP31",
+    "CP32",
+    "CP36",
+    "CP37",
+    "CP38",
+    "CP39"
+  ],
+  "critical_blockers": [
+    "CP10",
+    "CP23",
+    "CP24",
+    "CP25",
+    "CP27",
+    "CP29",
+    "CP32",
+    "CP40"
+  ],
+  "severity_counts": {
+    "MAJOR": 29,
+    "CRITICAL": 8,
+    "MINOR": 6
+  },
+  "implementation_authorized": false
+}

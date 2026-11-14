@@ -1,0 +1,354 @@
+[
+  {
+    "test": "alternate_left_mirror_has_negative_double_twist",
+    "assertion_verified": true,
+    "details": {
+      "left_ideal_basis": [
+        [
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "alternate_pairing": "Lalt(x,y)=x theta_1(y)",
+      "dual_basis": [
+        [
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          1
+        ]
+      ],
+      "double_dual_basis": [
+        [
+          7,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          7,
+          1
+        ]
+      ],
+      "sigma_minus_2_basis": [
+        [
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "sigma_plus_2_basis": [
+        [
+          1,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          6
+        ]
+      ],
+      "dual_cardinality": 64,
+      "semilinear_left_multiplier_identity": "Lalt(x,a y)=Lalt(x,y) theta_1(a)",
+      "not_claimed_ordinary_left_linear_in_y": true
+    }
+  },
+  {
+    "test": "stated_GF9_congruence_not_Hermitian",
+    "assertion_verified": true,
+    "details": {
+      "field_modulus": [
+        1,
+        0
+      ],
+      "T_from_Phase5_T199": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "T_transpose_H_T": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "sigma1_T_transpose_H_T": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "test": "zero_diagonal_does_not_mean_alternating",
+    "assertion_verified": true,
+    "details": {
+      "odd_characteristic_example": "(1,1) H2 (1,1)^T = 2 in F9, not zero",
+      "Hermitian_even_characteristic_example": "sigma_1(1,alpha) H2 (1,alpha)^T = alpha+alpha^2 = 1 in F4",
+      "Hermitian_value": 1
+    }
+  },
+  {
+    "test": "manuscript_nonprincipal_i0_family_proof_fails",
+    "assertion_verified": true,
+    "details": {
+      "B": "F4[u,w]/(u^2,w^2)",
+      "proposed_U": "socle(B^2)=span(uw e1,uw e2)",
+      "dim_Be1": 4,
+      "dim_U": 2,
+      "intersection_dimension": 1,
+      "dim_sum": 5,
+      "dim_radical_times_sum": 3,
+      "actual_mu_B": 2,
+      "manuscript_claimed_mu_B": 3,
+      "scope": "Does not refute the valid explicit Stage3B nonprincipal self-dual witness."
+    }
+  },
+  {
+    "test": "odd_characteristic_Weyl_phase_sign_counterexample",
+    "assertion_verified": true,
+    "details": {
+      "p": 3,
+      "a": 1,
+      "b": 1,
+      "v": 0,
+      "XZ_on_v_phase_exponent": 0,
+      "claimed_chi_plus_ab_ZX_phase_exponent": 2,
+      "correct_chi_minus_ab_ZX_phase_exponent": 0,
+      "commutation_zero_test_unaffected": true
+    }
+  },
+  {
+    "test": "arbitrary_additive_group_stabilizer_lemma_missing_isotropy",
+    "assertion_verified": true,
+    "details": {
+      "p": 2,
+      "N": 1,
+      "C": "F2^2",
+      "C_size": 4,
+      "X_Z_commutator": "XZ=-ZX",
+      "joint_eigenspace_exists": false,
+      "claimed_dimension": 0.5,
+      "required_conditions": "Trace isotropy, suitable phase-correct stabilizer lift with no nontrivial scalar, nonzero logical space conventions."
+    }
+  },
+  {
+    "test": "incorrect_field_documentation_has_real_effect",
+    "assertion_verified": true,
+    "details": {
+      "records_checked": 15,
+      "records_with_dual_mismatch_under_wrong_encoding": 5,
+      "details": [
+        {
+          "file": "01_24_8_4_9_(9,1,6)_SO.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": false,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 8
+        },
+        {
+          "file": "05_24_2_10-18_9_(9,1,6)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 2,
+          "recorded_h_E": 2
+        },
+        {
+          "file": "16_4_2_2-2_8_(8,1,1)_EA.json",
+          "q": 8,
+          "early_modulus": [
+            1,
+            0,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": false,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "17_8_4_3-4_8_(8,1,2)_EA.json",
+          "q": 8,
+          "early_modulus": [
+            1,
+            0,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "18_12_2_6-10_8_(8,1,3)_EA.json",
+          "q": 8,
+          "early_modulus": [
+            1,
+            0,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": false,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "19_12_4_2-8_8_(8,3,1)_EA.json",
+          "q": 8,
+          "early_modulus": [
+            1,
+            0,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "20_4_2_2-2_9_(9,1,1)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "21_8_2_4-6_9_(9,1,2)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "22_12_2_5-6_9_(9,1,3)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 2,
+          "recorded_h_E": 2
+        },
+        {
+          "file": "23_16_2_8-14_9_(9,1,4)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "24_20_4_9-16_9_(9,1,5)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": false,
+          "h_E_using_wrong_encoding": 2,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "25_8_4_2-4_9_(9,2,1)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "26_16_4_4-12_9_(9,2,2)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "27_12_4_2-8_9_(9,3,1)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": true,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        },
+        {
+          "file": "28_24_6_4-18_9_(9,3,2)_EA.json",
+          "q": 9,
+          "early_modulus": [
+            2,
+            1
+          ],
+          "dual_agrees_using_wrong_documented_encoding": false,
+          "h_E_using_wrong_encoding": 0,
+          "recorded_h_E": 0
+        }
+      ]
+    }
+  }
+]

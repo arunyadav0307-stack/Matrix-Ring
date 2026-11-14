@@ -1,0 +1,22 @@
+{
+  "name": "phase0_rerun",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/phase0_rerun/scripts/phase0_feasibility.py"
+  ],
+  "cwd": "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/phase0_rerun",
+  "timeout_seconds": 90,
+  "state": "COMPLETED",
+  "exit_code": 0,
+  "elapsed_seconds": 32.46,
+  "stdout": "phase0_rerun_stdout.txt",
+  "generated_logs": [
+    {
+      "file": "phase0_rerun__phase0_results.txt",
+      "sha256": "30bcf23a074298b143cb230e32a75342b8a167f5e03d852c57bc5e46d48195ed"
+    }
+  ],
+  "generator_comparisons": [],
+  "scope": "Re-execution of included historical scripts, not an independent implementation."
+}

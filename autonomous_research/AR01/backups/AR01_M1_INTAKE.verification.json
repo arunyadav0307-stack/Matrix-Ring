@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M1_INTAKE.zip",
+  "bytes": 529289,
+  "sha256": "bc57c44ac2c6fbe38a8be76fd27665262a16fdec0238fd653c8bf21e66d8d72a",
+  "payload_files": 31,
+  "zip_entries": 32,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

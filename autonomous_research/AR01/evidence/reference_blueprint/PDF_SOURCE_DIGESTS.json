@@ -1,0 +1,88 @@
+{
+  "purpose": "Read-only PDF presentation. Not research execution or approval.",
+  "branch": "arena/7d88376d-matrix-ring",
+  "head_unchanged": "168ec3e0b860cbe086ccb7a92a1a1aac5f8a277b",
+  "sealed_zip_sha256": "23dcc025177ddbf917abbd00c0d381a2e70d15af56eeb53b11c31fa098e6b0b6",
+  "reading_order": [
+    "10_MASTER_NEW_RESEARCH_BLUEPRINT.md",
+    "AUTHOR_FINAL_SCOPE_DECISION.md",
+    "01_CANDIDATE_DIRECTION_COMPARISON.md",
+    "02_LITERATURE_AND_NOVELTY_POSITIONING.md",
+    "03_SELECTED_RESEARCH_PROBLEM.md",
+    "04_MATHEMATICAL_FRAMEWORK.md",
+    "05_THEOREM_ROADMAP.md",
+    "06_COMPUTATIONAL_METHODOLOGY.md",
+    "07_QUANTUM_CONSTRUCTION_STRATEGY.md",
+    "08_PHASE_WISE_EXECUTION_PLAN.md",
+    "09_AUTHOR_DECISION_REGISTER.md"
+  ],
+  "all_18_author_decisions": "PENDING — NOT APPROVED",
+  "all_43_constraints": "OPEN / AUTHOR CHOICE AND REVIEW REQUIRED; NOT AUTHORIZED / NOT IMPLEMENTED",
+  "sources": [
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/10_MASTER_NEW_RESEARCH_BLUEPRINT.md",
+      "bytes": 16689,
+      "sha256": "27d24d534ff2d0f93d8b893e95b9ff009cc7ede6fd1595cf4dd4a0a29c698165"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/AUTHOR_FINAL_SCOPE_DECISION.md",
+      "bytes": 25226,
+      "sha256": "19d08f85af8b73dd7f739aec15b75c33793ec03e64c8b620ffd1abdd68636a2b"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/01_CANDIDATE_DIRECTION_COMPARISON.md",
+      "bytes": 9149,
+      "sha256": "692416698a3a88ec04a313b4d29f746f68a50e61751c36661233c2d8194f4adf"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/02_LITERATURE_AND_NOVELTY_POSITIONING.md",
+      "bytes": 13519,
+      "sha256": "eb57ae6eded29e74ee56e84a5459b17b38bd37281d0b4b423a002819b1cdc67f"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/03_SELECTED_RESEARCH_PROBLEM.md",
+      "bytes": 10382,
+      "sha256": "1f51f626760f526e45b4d1275585a7b97eebcfcf6badd28262853a560cab0ef8"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/04_MATHEMATICAL_FRAMEWORK.md",
+      "bytes": 9927,
+      "sha256": "0b23e3dc8f5a0dbe6bfe68269b8af1fd6d4c7c0cd10015ac0aca62ed0fb93290"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/05_THEOREM_ROADMAP.md",
+      "bytes": 12174,
+      "sha256": "e7cfb31dd8509f7bfd7415d89f21744b505401bc8db14e9b8ac5d5426f655489"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/06_COMPUTATIONAL_METHODOLOGY.md",
+      "bytes": 12482,
+      "sha256": "1cdfee14c658704f333b31933a9c51a581e4a006fef68ecfeea078a0bf77713d"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/07_QUANTUM_CONSTRUCTION_STRATEGY.md",
+      "bytes": 8610,
+      "sha256": "de43e07e3212b8008baeb3b663e8723a362f3db1d2d71686d25f8dddc49bfadb"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/08_PHASE_WISE_EXECUTION_PLAN.md",
+      "bytes": 15671,
+      "sha256": "28ce2dd5fc9668dbd5092e03fbd396630513622e7ddf2ff898260279a82495f2"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/09_AUTHOR_DECISION_REGISTER.md",
+      "bytes": 17997,
+      "sha256": "3b98344c9c8b4109bab69d773a15d2d2d257095042f42e673e07652cbbfba8fd"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/README.md",
+      "bytes": 3356,
+      "sha256": "754de760173c962638e804e585b29561c141b20b94fca5d9d3141a225a485a52"
+    },
+    {
+      "path": "NEW_RESEARCH_BLUEPRINT/evidence/AUDIT_CONSTRAINT_CROSSWALK.csv",
+      "bytes": 16494,
+      "sha256": "42a8d8275696f0215700d47ad9da3654b262c26c8b8af702a39a5b90b6899c1e"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "DC_counterexample_to_unqualified_EA_bookkeeping_and_coset_theorem": {
+    "record": "03_20_4_4_4_(4,1,5)_DC.json",
+    "N": 20,
+    "k_original_D": 12,
+    "h_E": 8,
+    "actual_CSS_K": 4,
+    "actual_CSS_c": 0,
+    "EA_N_minus_k_minus_h": 0,
+    "dimension_Ddual_mod_H": 0,
+    "proper_DC_distance": "min wt(D minus Ddual), not min wt(Ddual minus Hull_E(D))",
+    "actual_exact_d": 4,
+    "K_minus_c": 4,
+    "N_minus_2k_original_D": -4,
+    "scope": "Arithmetic/scope diagnosis of a supplied record, not a new construction."
+  },
+  "bibliography_scope_counts": {
+    "PRIMARY_METADATA": 25,
+    "NOT_FRESHLY_REVERIFIED": 18,
+    "PUBLISHER_SEARCH_ONLY": 1,
+    "PRIMARY_METADATA_WITH_UNIVERSITY_CORROBORATION": 2,
+    "PRIMARY_ENDPOINT_CHECK": 3,
+    "PLACEHOLDER_NOT_A_VERIFIED_CITATION": 1
+  }
+}

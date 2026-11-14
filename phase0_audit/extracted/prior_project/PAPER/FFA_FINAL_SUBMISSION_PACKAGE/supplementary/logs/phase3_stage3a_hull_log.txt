@@ -1,0 +1,792 @@
+
+####################################################################################################
+  PHASE 3 -- STAGE 3A:  Galois hull structure and dimension theory
+####################################################################################################
+  seed 20261108 ;  every [SMP] line carries the sample size
+  hull by four routes: pairing definition / annihilator+reversal / Morita im-ker / numerical identities
+
+####################################################################################################
+  case (q,t,n) = (4,1,1)   --   split, n = 1: R_n = M_2(F_4); the theory degenerates to the ideal theory of M_2(F_4) (O-2.7).  Exhaustive where possible.
+####################################################################################################
+  |B| = 4, |R_n| = 256, dim_{F_q} R_n = 4, r = 2, regimes: split
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [EXH] (q,t,n)=(4,1,1), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  6 scalar multiples of dual basis vectors tested
+  [EXH] (q,t,n)=(4,1,1), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [EXH] (q,t,n)=(4,1,1), s=0: Hull_s(C) is NOT always a left submodule PASS  3 of 3 nonzero hulls are not left ideals
+  [EXH] (q,t,n)=(4,1,1), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,1), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,1), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,1), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (1, 0)
+  [SMP] (q,t,n)=(4,1,1), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,1), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [EXH] (q,t,n)=(4,1,1), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [EXH] (q,t,n)=(4,1,1), s=0: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,1,1), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 14; dropping theta_s for 4
+  [EXH] (q,t,n)=(4,1,1), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [EXH] (q,t,n)=(4,1,1), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [EXH] (q,t,n)=(4,1,1), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 37, 1: 3}
+  [EXH] (q,t,n)=(4,1,1), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,1), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0]   (tau = id: True);  n | p^s+1  <=>  1 | 2
+  [SMP] (q,t,n)=(4,1,1), s=0: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,1,1), s=0: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,1,1), s=0: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,1,1), s=0: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 37 LCD
+  [EXH] (q,t,n)=(4,1,1), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 3 self-orthogonal
+  [EXH] (q,t,n)=(4,1,1), s=0: C = C^{perp_s}  <=>  self-orthogonal and 2 dim C = 4tn PASS  3 self-orthogonal codes, 3 self-dual
+  [EXH] (q,t,n)=(4,1,1), s=0: self-dual implies C is sigma_2s-stable PASS  3 self-dual codes
+     census at (q,t,n)=(4,1,1), s=0: LCD 37, self-orthogonal 3, self-dual 3  (40 codes)
+     neg-1 (q,t,n)=(4,1,1), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [EXH] neg-2 (q,t,n)=(4,1,1), s=0: ann_l instead of ann_r is wrong  PASS  14 of 40 codes detect it
+  [EXH] neg-3 (q,t,n)=(4,1,1), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  3 of 40 codes detect it
+  [EXH] neg-4 (q,t,n)=(4,1,1), s=0: the hull is NOT always two-sided PASS  3 of 3 nonzero hulls are not left ideals
+     neg-5 (q,t,n)=(4,1,1), s=0: every sampled code has a sigma_k-invariant hull here, so this control is not exhibited
+  [SMP] neg-6 (q,t,n)=(4,1,1), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  14 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [EXH] (q,t,n)=(4,1,1), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  6 scalar multiples of dual basis vectors tested
+  [EXH] (q,t,n)=(4,1,1), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [EXH] (q,t,n)=(4,1,1), s=1: Hull_s(C) is NOT always a left submodule PASS  6 of 6 nonzero hulls are not left ideals
+  [EXH] (q,t,n)=(4,1,1), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,1), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,1), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,1), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (1, 0)
+  [SMP] (q,t,n)=(4,1,1), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,1), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [EXH] (q,t,n)=(4,1,1), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [EXH] (q,t,n)=(4,1,1), s=1: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,1,1), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 10; dropping theta_s for 6
+  [EXH] (q,t,n)=(4,1,1), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [EXH] (q,t,n)=(4,1,1), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [EXH] (q,t,n)=(4,1,1), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [EXH] (q,t,n)=(4,1,1), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 34, 1: 6}
+  [EXH] (q,t,n)=(4,1,1), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,1), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0]   (tau = id: True);  n | p^s+1  <=>  1 | 3
+  [SMP] (q,t,n)=(4,1,1), s=1: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,1,1), s=1: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,1,1), s=1: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,1,1), s=1: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [EXH] (q,t,n)=(4,1,1), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 34 LCD
+  [EXH] (q,t,n)=(4,1,1), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 6 self-orthogonal
+  [EXH] (q,t,n)=(4,1,1), s=1: C = C^{perp_s}  <=>  self-orthogonal and 2 dim C = 4tn PASS  6 self-orthogonal codes, 6 self-dual
+  [EXH] (q,t,n)=(4,1,1), s=1: self-dual implies C is sigma_2s-stable PASS  6 self-dual codes
+     census at (q,t,n)=(4,1,1), s=1: LCD 34, self-orthogonal 6, self-dual 6  (40 codes)
+     neg-1 (q,t,n)=(4,1,1), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [EXH] neg-2 (q,t,n)=(4,1,1), s=1: ann_l instead of ann_r is wrong  PASS  10 of 40 codes detect it
+  [EXH] neg-3 (q,t,n)=(4,1,1), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  6 of 40 codes detect it
+  [EXH] neg-4 (q,t,n)=(4,1,1), s=1: the hull is NOT always two-sided PASS  6 of 6 nonzero hulls are not left ideals
+     neg-5 (q,t,n)=(4,1,1), s=1: every sampled code has a sigma_k-invariant hull here, so this control is not exhibited
+  [SMP] neg-6 (q,t,n)=(4,1,1), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  10 of 40 codes detect it
+  [SMP] (q,t,n)=(4,1,1): dim Hull_s(C) depends on s                  PASS  2 of 12 fixed codes vary; e.g. [[0, 2], [0, 2]]
+
+####################################################################################################
+  case (q,t,n) = (4,1,2)   --   chain: t = 1 with p | n; B = F_4[X]/<(X-1)^2> is a chain ring.
+####################################################################################################
+  |B| = 16, |R_n| = 65536, dim_{F_q} R_n = 8, r = 2, regimes: chain
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,1,2), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  24 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull_s(C) is NOT always a left submodule PASS  5 of 5 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,2), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,2), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,2), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(4,1,2), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,2), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,1,2), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+     note: no genuinely non-principal 2-generator code appeared in this sample, so the omission test is not exhibited here
+     removal sensitivity at (q,t,n)=(4,1,2), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 10; dropping theta_s for 2
+  [EXH] (q,t,n)=(4,1,2), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,1,2), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,2), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,1,2), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 35, 1: 5}
+  [EXH] (q,t,n)=(4,1,2), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     the CRT decomposition is TRIVIAL at (q,t,n)=(4,1,2), s=0 (B is a chain ring, a single component): the component analysis of Task C3 carries no information and is therefore not tested here -- the chain-ring route is the Smith normal form, tested above (C5)
+  [SMP] (q,t,n)=(4,1,2), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 35 LCD
+  [SMP] (q,t,n)=(4,1,2), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,1,2), s=0)
+     census at (q,t,n)=(4,1,2), s=0: LCD 35, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(4,1,2), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,1,2), s=0: ann_l instead of ann_r is wrong  PASS  10 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,1,2), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  5 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,1,2), s=0: the hull is NOT always two-sided PASS  5 of 5 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,1,2), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  1 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,1,2), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  10 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,1,2), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  24 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull_s(C) is NOT always a left submodule PASS  10 of 10 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,2), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,2), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,2), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(4,1,2), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,2), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,1,2), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,1,2), s=1: for a non-principal code the 1-generator formula is WRONG PASS  2 of 2 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,1,2), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 10; dropping theta_s for 7
+  [EXH] (q,t,n)=(4,1,2), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,1,2), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,2), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,1,2), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 30, 1: 10}
+  [EXH] (q,t,n)=(4,1,2), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     the CRT decomposition is TRIVIAL at (q,t,n)=(4,1,2), s=1 (B is a chain ring, a single component): the component analysis of Task C3 carries no information and is therefore not tested here -- the chain-ring route is the Smith normal form, tested above (C5)
+  [SMP] (q,t,n)=(4,1,2), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,1,2), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 30 LCD
+  [SMP] (q,t,n)=(4,1,2), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 1 self-orthogonal
+  [SMP] (q,t,n)=(4,1,2), s=1: C = C^{perp_s}  <=>  self-orthogonal and 2 dim C = 4tn PASS  1 self-orthogonal codes, 1 self-dual
+  [SMP] (q,t,n)=(4,1,2), s=1: self-dual implies C is sigma_2s-stable PASS  1 self-dual codes
+     census at (q,t,n)=(4,1,2), s=1: LCD 30, self-orthogonal 1, self-dual 1  (40 codes)
+     neg-1 (q,t,n)=(4,1,2), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,1,2), s=1: ann_l instead of ann_r is wrong  PASS  10 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,1,2), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  10 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,1,2), s=1: the hull is NOT always two-sided PASS  10 of 10 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,1,2), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  1 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,1,2), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  10 of 40 codes detect it
+     note: no s-dependence of dim Hull was observed among the 12 fixed codes at (q,t,n)=(4,1,2)
+
+####################################################################################################
+  case (q,t,n) = (4,2,1)   --   chain: t >= 2 with p does not divide n; B = F_4[u]/<u^2>.
+####################################################################################################
+  |B| = 16, |R_n| = 65536, dim_{F_q} R_n = 8, r = 2, regimes: split
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,1), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  0 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(C) is NOT always a left submodule PASS  10 of 10 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,1), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,1), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,1), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(4,2,1), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,2,1), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,2,1), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,1), s=0: for a non-principal code the 1-generator formula is WRONG PASS  2 of 2 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,1), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 12; dropping theta_s for 7
+  [EXH] (q,t,n)=(4,2,1), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,2,1), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,2,1), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,2,1), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 30, 1: 10}
+  [EXH] (q,t,n)=(4,2,1), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0]   (tau = id: True);  n | p^s+1  <=>  1 | 2
+  [SMP] (q,t,n)=(4,2,1), s=0: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,2,1), s=0: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 30 LCD
+  [SMP] (q,t,n)=(4,2,1), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,1), s=0)
+     census at (q,t,n)=(4,2,1), s=0: LCD 30, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(4,2,1), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,2,1), s=0: ann_l instead of ann_r is wrong  PASS  12 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,1), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  10 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,1), s=0: the hull is NOT always two-sided PASS  10 of 10 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,1), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  2 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,1), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  12 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,1), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  12 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(C) is NOT always a left submodule PASS  15 of 15 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,1), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,1), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,1), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(4,2,1), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,2,1), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,2,1), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,1), s=1: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,1), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 15; dropping theta_s for 13
+  [EXH] (q,t,n)=(4,2,1), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,2,1), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,2,1), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,2,1), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 25, 1: 15}
+  [EXH] (q,t,n)=(4,2,1), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0]   (tau = id: True);  n | p^s+1  <=>  1 | 3
+  [SMP] (q,t,n)=(4,2,1), s=1: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 1 components
+  [SMP] (q,t,n)=(4,2,1), s=1: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,1), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 25 LCD
+  [SMP] (q,t,n)=(4,2,1), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,1), s=1)
+     census at (q,t,n)=(4,2,1), s=1: LCD 25, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(4,2,1), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,2,1), s=1: ann_l instead of ann_r is wrong  PASS  15 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,1), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  15 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,1), s=1: the hull is NOT always two-sided PASS  15 of 15 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,1), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  1 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,1), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  15 of 40 codes detect it
+     note: no s-dependence of dim Hull was observed among the 12 fixed codes at (q,t,n)=(4,2,1)
+
+####################################################################################################
+  case (q,t,n) = (4,2,2)   --   WILD: t >= 2 and p | n; B is local but not a chain ring.
+####################################################################################################
+  |B| = 256, |R_n| = 4294967296, dim_{F_q} R_n = 16, r = 2, regimes: wild
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,2), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  12 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull_s(C) is NOT always a left submodule PASS  8 of 8 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,2), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,2), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,2), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (4, 0)
+  [SMP] (q,t,n)=(4,2,2), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+     note: elementwise inclusion check skipped at (q,t,n)=(4,2,2), s=0 (the hull is too large to enumerate)
+  [SMP] (q,t,n)=(4,2,2), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,2), s=0: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,2), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 8; dropping theta_s for 8
+  [EXH] (q,t,n)=(4,2,2), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,2,2), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+     note: |I_W| = |W|^2 enumeration skipped at (q,t,n)=(4,2,2), s=0 (too large)
+  [SMP] (q,t,n)=(4,2,2), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     [WILD] no Smith normal form at (q,t,n)=(4,2,2), s=0: the dual generator (when it exists) comes from Nakayama, and the hull is computed by the Morita route only
+     no CRT component decomposition available at (q,t,n)=(4,2,2), s=0 (kind = wild): the component analysis of Task C3 does not apply here -- a genuine limitation, recorded as such
+  [SMP] (q,t,n)=(4,2,2), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 32 LCD
+  [SMP] (q,t,n)=(4,2,2), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,2), s=0)
+     census at (q,t,n)=(4,2,2), s=0: LCD 32, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(4,2,2), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,2,2), s=0: ann_l instead of ann_r is wrong  PASS  8 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,2), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  8 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,2), s=0: the hull is NOT always two-sided PASS  8 of 8 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,2), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  2 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,2), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  8 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,2), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  24 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull_s(C) is NOT always a left submodule PASS  11 of 11 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,2), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,2), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,2), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (4, 0)
+  [SMP] (q,t,n)=(4,2,2), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+     note: elementwise inclusion check skipped at (q,t,n)=(4,2,2), s=1 (the hull is too large to enumerate)
+  [SMP] (q,t,n)=(4,2,2), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,2), s=1: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,2), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 11; dropping theta_s for 11
+  [EXH] (q,t,n)=(4,2,2), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,2,2), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+     note: |I_W| = |W|^2 enumeration skipped at (q,t,n)=(4,2,2), s=1 (too large)
+  [SMP] (q,t,n)=(4,2,2), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     [WILD] no Smith normal form at (q,t,n)=(4,2,2), s=1: the dual generator (when it exists) comes from Nakayama, and the hull is computed by the Morita route only
+     no CRT component decomposition available at (q,t,n)=(4,2,2), s=1 (kind = wild): the component analysis of Task C3 does not apply here -- a genuine limitation, recorded as such
+  [SMP] (q,t,n)=(4,2,2), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,2), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 29 LCD
+  [SMP] (q,t,n)=(4,2,2), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,2), s=1)
+     census at (q,t,n)=(4,2,2), s=1: LCD 29, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(4,2,2), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(4,2,2), s=1: ann_l instead of ann_r is wrong  PASS  11 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,2), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  11 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,2), s=1: the hull is NOT always two-sided PASS  11 of 11 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,2), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  3 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,2), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  11 of 40 codes detect it
+  [SMP] (q,t,n)=(4,2,2): dim Hull_s(C) depends on s                  PASS  1 of 12 fixed codes vary; e.g. [[4, 2]]
+
+  ---- wild regime: is the HULL itself ever non-principal? -----------------------------------------
+     [WILD] largest mu_B(W_hull) found over 60 sampled codes at (q,t,n)=(4,2,2), s=0: 2
+     [WILD] no hull with mu_B(W_hull) >= 3 was found in this sample, so a non-principal HULL is not exhibited here (the non-principal DUAL of Stage 2C is, and it is the same obstruction: M_2(m) at (4,2,2))
+     [WILD] largest mu_B(W_hull) found over 60 sampled codes at (q,t,n)=(4,2,2), s=1: 2
+     [WILD] no hull with mu_B(W_hull) >= 3 was found in this sample, so a non-principal HULL is not exhibited here (the non-principal DUAL of Stage 2C is, and it is the same obstruction: M_2(m) at (4,2,2))
+
+####################################################################################################
+  case (q,t,n) = (4,1,3)   --   split semisimple, B = F_4^3, n = 3: rev is non-trivial and tau != id for s = 0.
+####################################################################################################
+  |B| = 64, |R_n| = 16777216, dim_{F_q} R_n = 12, r = 2, regimes: split
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,1,3), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  42 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(C) is NOT always a left submodule PASS  20 of 20 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,3), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,3), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,3), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (3, 0)
+  [SMP] (q,t,n)=(4,1,3), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,3), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,1,3), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,1,3), s=0: for a non-principal code the 1-generator formula is WRONG PASS  4 of 4 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,1,3), s=0: dropping rev changes the hull for 21 of 40 codes; using ann_l for 24; dropping theta_s for 17
+  [EXH] (q,t,n)=(4,1,3), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,1,3), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,3), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,1,3), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 20, 1: 20}
+  [EXH] (q,t,n)=(4,1,3), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 2, 1]   (tau = id: False);  n | p^s+1  <=>  3 | 2
+  [SMP] (q,t,n)=(4,1,3), s=0: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,1,3), s=0: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: tau != id, so the NAIVE componentwise hull formula sum_j dim Hull_s(C_j) FAILS PASS  9 of 20 codes detect the failure
+  [SMP] (q,t,n)=(4,1,3), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 20 LCD
+  [SMP] (q,t,n)=(4,1,3), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,1,3), s=0)
+     census at (q,t,n)=(4,1,3), s=0: LCD 20, self-orthogonal 0, self-dual 0  (40 codes)
+  [SMP] neg-1 (q,t,n)=(4,1,3), s=0: omitting rev changes the hull    PASS  21 of 40 codes detect it
+  [SMP] neg-2 (q,t,n)=(4,1,3), s=0: ann_l instead of ann_r is wrong  PASS  24 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,1,3), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  20 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,1,3), s=0: the hull is NOT always two-sided PASS  20 of 20 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,1,3), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  7 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,1,3), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  24 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,1,3), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  36 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(C) is NOT always a left submodule PASS  20 of 20 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,1,3), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,1,3), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,1,3), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (3, 0)
+  [SMP] (q,t,n)=(4,1,3), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(4,1,3), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(4,1,3), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,1,3), s=1: for a non-principal code the 1-generator formula is WRONG PASS  8 of 8 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,1,3), s=1: dropping rev changes the hull for 20 of 40 codes; using ann_l for 25; dropping theta_s for 24
+  [EXH] (q,t,n)=(4,1,3), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(4,1,3), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(4,1,3), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(4,1,3), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 20, 1: 20}
+  [EXH] (q,t,n)=(4,1,3), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 1, 2]   (tau = id: True);  n | p^s+1  <=>  3 | 3
+  [SMP] (q,t,n)=(4,1,3), s=1: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,1,3), s=1: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,1,3), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 20 LCD
+  [SMP] (q,t,n)=(4,1,3), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,1,3), s=1)
+     census at (q,t,n)=(4,1,3), s=1: LCD 20, self-orthogonal 0, self-dual 0  (40 codes)
+  [SMP] neg-1 (q,t,n)=(4,1,3), s=1: omitting rev changes the hull    PASS  20 of 40 codes detect it
+  [SMP] neg-2 (q,t,n)=(4,1,3), s=1: ann_l instead of ann_r is wrong  PASS  25 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,1,3), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  20 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,1,3), s=1: the hull is NOT always two-sided PASS  20 of 20 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,1,3), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  3 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,1,3), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  26 of 40 codes detect it
+  [SMP] (q,t,n)=(4,1,3): dim Hull_s(C) depends on s                  PASS  1 of 12 fixed codes vary; e.g. [[0, 2]]
+
+####################################################################################################
+  case (q,t,n) = (9,1,2)   --   split semisimple, B = F_9 x F_9; r = 2, both s reflexive.
+####################################################################################################
+  |B| = 81, |R_n| = 43046721, dim_{F_q} R_n = 8, r = 2, regimes: split
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(9,1,2), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  48 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(C) is NOT always a left submodule PASS  3 of 3 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(9,1,2), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(9,1,2), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(9,1,2), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(9,1,2), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(9,1,2), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(9,1,2), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(9,1,2), s=0: for a non-principal code the 1-generator formula is WRONG PASS  2 of 2 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(9,1,2), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 9; dropping theta_s for 4
+  [EXH] (q,t,n)=(9,1,2), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(9,1,2), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(9,1,2), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(9,1,2), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 37, 1: 3}
+  [EXH] (q,t,n)=(9,1,2), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 1]   (tau = id: True);  n | p^s+1  <=>  2 | 2
+  [SMP] (q,t,n)=(9,1,2), s=0: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 2 components
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 2 components
+  [SMP] (q,t,n)=(9,1,2), s=0: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 37 LCD
+  [SMP] (q,t,n)=(9,1,2), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(9,1,2), s=0)
+     census at (q,t,n)=(9,1,2), s=0: LCD 37, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(9,1,2), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(9,1,2), s=0: ann_l instead of ann_r is wrong  PASS  9 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(9,1,2), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  3 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(9,1,2), s=0: the hull is NOT always two-sided PASS  3 of 3 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(9,1,2), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  3 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(9,1,2), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  9 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(9,1,2), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  48 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(C) is NOT always a left submodule PASS  4 of 4 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(9,1,2), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(9,1,2), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(9,1,2), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(9,1,2), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(9,1,2), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(9,1,2), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(9,1,2), s=1: for a non-principal code the 1-generator formula is WRONG PASS  1 of 1 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(9,1,2), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 13; dropping theta_s for 6
+  [EXH] (q,t,n)=(9,1,2), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 2)
+  [SMP] (q,t,n)=(9,1,2), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(9,1,2), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(9,1,2), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 36, 1: 4}
+  [EXH] (q,t,n)=(9,1,2), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 1]   (tau = id: True);  n | p^s+1  <=>  2 | 4
+  [SMP] (q,t,n)=(9,1,2), s=1: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 2 components
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 2 components
+  [SMP] (q,t,n)=(9,1,2), s=1: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(9,1,2), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 36 LCD
+  [SMP] (q,t,n)=(9,1,2), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(9,1,2), s=1)
+     census at (q,t,n)=(9,1,2), s=1: LCD 36, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(9,1,2), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(9,1,2), s=1: ann_l instead of ann_r is wrong  PASS  13 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(9,1,2), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  4 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(9,1,2), s=1: the hull is NOT always two-sided PASS  4 of 4 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(9,1,2), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  2 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(9,1,2), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  13 of 40 codes detect it
+  [SMP] (q,t,n)=(9,1,2): dim Hull_s(C) depends on s                  PASS  3 of 12 fixed codes vary; e.g. [[2, 0], [0, 2], [0, 2]]
+
+####################################################################################################
+  case (q,t,n) = (8,1,2)   --   chain ring F_8[X]/<(X-1)^2>; r = 3 is odd, so NO non-trivial reflexive s exists -- the non-reflexive regime.
+####################################################################################################
+  |B| = 64, |R_n| = 16777216, dim_{F_q} R_n = 8, r = 3, regimes: chain
+
+  ---- s = 0   (r = 3, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(8,1,2), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  42 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull_s(C) is NOT always a left submodule PASS  4 of 4 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 3 values of k
+  [SMP] (q,t,n)=(8,1,2), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(8,1,2), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(8,1,2), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(8,1,2), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(8,1,2), s=0: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(8,1,2), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+     note: no genuinely non-principal 2-generator code appeared in this sample, so the omission test is not exhibited here
+     removal sensitivity at (q,t,n)=(8,1,2), s=0: dropping rev changes the hull for 0 of 40 codes; using ann_l for 6; dropping theta_s for 3
+  [EXH] (q,t,n)=(8,1,2), s=0: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 3)
+  [SMP] (q,t,n)=(8,1,2), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(8,1,2), s=0: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(8,1,2), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 36, 1: 4}
+  [EXH] (q,t,n)=(8,1,2), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     the CRT decomposition is TRIVIAL at (q,t,n)=(8,1,2), s=0 (B is a chain ring, a single component): the component analysis of Task C3 carries no information and is therefore not tested here -- the chain-ring route is the Smith normal form, tested above (C5)
+  [SMP] (q,t,n)=(8,1,2), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 36 LCD
+  [SMP] (q,t,n)=(8,1,2), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(8,1,2), s=0)
+     census at (q,t,n)=(8,1,2), s=0: LCD 36, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(8,1,2), s=0 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(8,1,2), s=0: ann_l instead of ann_r is wrong  PASS  6 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(8,1,2), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  4 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(8,1,2), s=0: the hull is NOT always two-sided PASS  4 of 4 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(8,1,2), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  1 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(8,1,2), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  6 of 40 codes detect it
+
+  ---- s = 1   (r = 3, 2s mod r = 2, reflexive: False) ---------------------------------------------
+  [SMP] (q,t,n)=(8,1,2), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  0 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(C) is NOT always a left submodule PASS  1 of 1 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 3 values of k
+  [SMP] (q,t,n)=(8,1,2), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(8,1,2), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(8,1,2), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(8,1,2), s=1: b_s is NOT sigma_s-Hermitian (r does not divide 2s) PASS  51 of 60 pairs violate Hermiticity
+  [SMP] (q,t,n)=(8,1,2), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(8,1,2), s=1: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(8,1,2), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+     note: no genuinely non-principal 2-generator code appeared in this sample, so the omission test is not exhibited here
+     removal sensitivity at (q,t,n)=(8,1,2), s=1: dropping rev changes the hull for 0 of 40 codes; using ann_l for 1; dropping theta_s for 1
+  [EXH] (q,t,n)=(8,1,2), s=1: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 3)
+  [SMP] (q,t,n)=(8,1,2), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(8,1,2), s=1: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(8,1,2), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 39, 1: 1}
+  [EXH] (q,t,n)=(8,1,2), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     the CRT decomposition is TRIVIAL at (q,t,n)=(8,1,2), s=1 (B is a chain ring, a single component): the component analysis of Task C3 carries no information and is therefore not tested here -- the chain-ring route is the Smith normal form, tested above (C5)
+  [SMP] (q,t,n)=(8,1,2), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=1 [CONJECTURE; r does not divide 2s]: Hull_s(C) is contained in sigma_2s(C) PASS  1 nonzero hulls tested, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=1: Hull_s(C^{perp_s}) = Hull_s(C) on this sample (no counterexample found) PASS  0 of 1 nonzero hulls differ
+  [SMP] (q,t,n)=(8,1,2), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 39 LCD
+  [SMP] (q,t,n)=(8,1,2), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(8,1,2), s=1)
+     census at (q,t,n)=(8,1,2), s=1: LCD 39, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(8,1,2), s=1 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(8,1,2), s=1: ann_l instead of ann_r is wrong  PASS  1 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(8,1,2), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  1 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(8,1,2), s=1: the hull is NOT always two-sided PASS  1 of 1 nonzero hulls are not left ideals
+     neg-5 (q,t,n)=(8,1,2), s=1: every sampled code has a sigma_k-invariant hull here, so this control is not exhibited
+  [SMP] neg-6 (q,t,n)=(8,1,2), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  1 of 40 codes detect it
+
+  ---- s = 2   (r = 3, 2s mod r = 1, reflexive: False) ---------------------------------------------
+  [SMP] (q,t,n)=(8,1,2), s=2: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  14 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(C) is NOT always a left submodule PASS  3 of 3 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 3 values of k
+  [SMP] (q,t,n)=(8,1,2), s=2: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(8,1,2), s=2: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(8,1,2), s=2: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (2, 0)
+  [SMP] (q,t,n)=(8,1,2), s=2: b_s is NOT sigma_s-Hermitian (r does not divide 2s) PASS  50 of 60 pairs violate Hermiticity
+  [SMP] (q,t,n)=(8,1,2), s=2: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+  [EXH] (q,t,n)=(8,1,2), s=2: both inclusions, elementwise (enumerated hull) PASS  6 codes, hulls enumerated as sets
+  [SMP] (q,t,n)=(8,1,2), s=2: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+     note: no genuinely non-principal 2-generator code appeared in this sample, so the omission test is not exhibited here
+     removal sensitivity at (q,t,n)=(8,1,2), s=2: dropping rev changes the hull for 0 of 40 codes; using ann_l for 4; dropping theta_s for 3
+  [EXH] (q,t,n)=(8,1,2), s=2: dim_{F_p} Hull = r * dim_{F_q} Hull    PASS  8 codes, F_p-rank computed directly (r = 3)
+  [SMP] (q,t,n)=(8,1,2), s=2: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=2: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=2: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+  [EXH] (q,t,n)=(8,1,2), s=2: |I_W| = |W|^2 = |Hull| for W = W(hull)  (enumerated) PASS  6 codes, sets enumerated
+  [SMP] (q,t,n)=(8,1,2), s=2: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 37, 1: 3}
+  [EXH] (q,t,n)=(8,1,2), s=2: the hull is principal iff mu_B(W_hull) <= 2 PASS  40 codes, principality by exhaustive generator search; 40 principal
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     the CRT decomposition is TRIVIAL at (q,t,n)=(8,1,2), s=2 (B is a chain ring, a single component): the component analysis of Task C3 carries no information and is therefore not tested here -- the chain-ring route is the Smith normal form, tested above (C5)
+  [SMP] (q,t,n)=(8,1,2), s=2: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(8,1,2), s=2 [CONJECTURE; r does not divide 2s]: Hull_s(C) is contained in sigma_2s(C) PASS  3 nonzero hulls tested, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=2: Hull_s(C^{perp_s}) = Hull_s(C) on this sample (no counterexample found) PASS  0 of 3 nonzero hulls differ
+  [SMP] (q,t,n)=(8,1,2), s=2: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 37 LCD
+  [SMP] (q,t,n)=(8,1,2), s=2: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(8,1,2), s=2)
+     census at (q,t,n)=(8,1,2), s=2: LCD 37, self-orthogonal 0, self-dual 0  (40 codes)
+     neg-1 (q,t,n)=(8,1,2), s=2 is VACUOUS here: rev = id for n <= 2, so omitting it cannot change anything (the control is skipped, not passed)
+  [SMP] neg-2 (q,t,n)=(8,1,2), s=2: ann_l instead of ann_r is wrong  PASS  4 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(8,1,2), s=2: I_W built from ROWS instead of COLUMNS is wrong PASS  3 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(8,1,2), s=2: the hull is NOT always two-sided PASS  3 of 3 nonzero hulls are not left ideals
+     neg-5 (q,t,n)=(8,1,2), s=2: every sampled code has a sigma_k-invariant hull here, so this control is not exhibited
+  [SMP] neg-6 (q,t,n)=(8,1,2), s=2: the Euclidean form sum x_e y_e gives a different dual PASS  4 of 40 codes detect it
+     note: no s-dependence of dim Hull was observed among the 12 fixed codes at (q,t,n)=(8,1,2)
+  [SMP] (q,t,n)=(8,1,2), s=1 [CONJECTURE, dedicated probe]: Hull_s(C) <= sigma_2s(C) PASS  34 nonzero hulls out of 300 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=1 [CONJECTURE, dedicated probe]: Hull_s(C^{perp_s}) = Hull_s(C) PASS  34 nonzero hulls, 0 differ
+  [SMP] (q,t,n)=(8,1,2), s=2 [CONJECTURE, dedicated probe]: Hull_s(C) <= sigma_2s(C) PASS  30 nonzero hulls out of 300 codes, 0 violations
+  [SMP] (q,t,n)=(8,1,2), s=2 [CONJECTURE, dedicated probe]: Hull_s(C^{perp_s}) = Hull_s(C) PASS  30 nonzero hulls, 0 differ
+
+####################################################################################################
+  case (q,t,n) = (4,2,3)   --   split, t >= 2, B = A_2^3; rev non-trivial, tau != id for s = 0.
+####################################################################################################
+  |B| = 4096, |R_n| = 281474976710656, dim_{F_q} R_n = 24, r = 2, regimes: split
+
+  ---- s = 0   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,3), s=0: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  66 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(C) is NOT always a left submodule PASS  27 of 27 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,3), s=0: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,3), s=0: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,3), s=0: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (6, 0)
+  [SMP] (q,t,n)=(4,2,3), s=0: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=0: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+     note: elementwise inclusion check skipped at (q,t,n)=(4,2,3), s=0 (the hull is too large to enumerate)
+  [SMP] (q,t,n)=(4,2,3), s=0: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,3), s=0: for a non-principal code the 1-generator formula is WRONG PASS  8 of 8 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,3), s=0: dropping rev changes the hull for 20 of 40 codes; using ann_l for 29; dropping theta_s for 24
+     note: the F_p-rank check is skipped at (q,t,n)=(4,2,3), s=0 (ambient F_p dimension 48 is too large)
+  [SMP] (q,t,n)=(4,2,3), s=0: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=0: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=0: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+     note: |I_W| = |W|^2 enumeration skipped at (q,t,n)=(4,2,3), s=0 (too large)
+  [SMP] (q,t,n)=(4,2,3), s=0: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 13, 1: 27}
+  [EXH] (q,t,n)=(4,2,3), s=0: the hull is principal iff mu_B(W_hull) <= 2 PASS  38 codes, principality by exhaustive generator search; 38 principal
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 2, 1]   (tau = id: False);  n | p^s+1  <=>  3 | 2
+  [SMP] (q,t,n)=(4,2,3), s=0: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,2,3), s=0: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: tau != id, so the NAIVE componentwise hull formula sum_j dim Hull_s(C_j) FAILS PASS  1 of 20 codes detect the failure
+  [SMP] (q,t,n)=(4,2,3), s=0: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=0: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 13 LCD
+  [SMP] (q,t,n)=(4,2,3), s=0: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,3), s=0)
+     census at (q,t,n)=(4,2,3), s=0: LCD 13, self-orthogonal 0, self-dual 0  (40 codes)
+  [SMP] neg-1 (q,t,n)=(4,2,3), s=0: omitting rev changes the hull    PASS  20 of 40 codes detect it
+  [SMP] neg-2 (q,t,n)=(4,2,3), s=0: ann_l instead of ann_r is wrong  PASS  29 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,3), s=0: I_W built from ROWS instead of COLUMNS is wrong PASS  27 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,3), s=0: the hull is NOT always two-sided PASS  27 of 27 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,3), s=0: Hull_s(sigma_k C) differs from Hull_s(C) PASS  8 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,3), s=0: the Euclidean form sum x_e y_e gives a different dual PASS  29 of 40 codes detect it
+
+  ---- s = 1   (r = 2, 2s mod r = 0, reflexive: True) ----------------------------------------------
+  [SMP] (q,t,n)=(4,2,3), s=1: C^{perp_s} is an F_q-subspace (c*y, c in F_q^*) PASS  30 scalar multiples of dual basis vectors tested
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(C) is a right R_n-submodule (a cyclic code) PASS  0 of 40 codes fail closure
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(C) is NOT always a left submodule PASS  26 of 27 nonzero hulls are not left ideals
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(C) is shift-invariant (T(Hull) = Hull) PASS  10 codes x 5 hull vectors
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(sigma_k C) = sigma_k Hull_s(C) for every k PASS  12 codes x 2 values of k
+  [SMP] (q,t,n)=(4,2,3), s=1: theta_s(Hull) = theta_s(C) n rev(ann_l(sigma_2s C)) PASS  12 codes; both sides computed independently
+  [SMP] (q,t,n)=(4,2,3), s=1: rev(Hull_s(C)) = rev(C) n ann_r(theta_s(C)) PASS  12 codes
+  [EXH] (q,t,n)=(4,2,3), s=1: B_0 = sum x_e^T y_e differs from the Euclidean sum x_e y_e PASS  witness: basis vectors (6, 0)
+  [SMP] (q,t,n)=(4,2,3), s=1: b_s(y,x) = sigma_s(b_s(x,y))  (r | 2s: Hermitian) PASS  60 pairs, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=1: hull by definition = hull by annihilator/rev = hull by Morita PASS  40 codes, 3 independent routes
+     note: elementwise inclusion check skipped at (q,t,n)=(4,2,3), s=1 (the hull is too large to enumerate)
+  [SMP] (q,t,n)=(4,2,3), s=1: non-principal (2 generators): the three routes agree PASS  15 two-generator codes
+  [SMP] (q,t,n)=(4,2,3), s=1: for a non-principal code the 1-generator formula is WRONG PASS  8 of 8 non-principal codes detect the omission
+     removal sensitivity at (q,t,n)=(4,2,3), s=1: dropping rev changes the hull for 23 of 40 codes; using ann_l for 27; dropping theta_s for 27
+     note: the F_p-rank check is skipped at (q,t,n)=(4,2,3), s=1 (ambient F_p dimension 48 is too large)
+  [SMP] (q,t,n)=(4,2,3), s=1: dim Hull = 4tn - dim(C + C^{perp_s})   PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=1: dim Hull = dim C - rank(psi_C)  (restricted pairing) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=1: dim Hull = 2 dim_{F_q}(W(C) n W(C^{perp_s}))  (Morita) PASS  40 codes, 0 violations
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull = I_{W n W'} (Morita, columns)    PASS  40 codes
+     note: |I_W| = |W|^2 enumeration skipped at (q,t,n)=(4,2,3), s=1 (too large)
+  [SMP] (q,t,n)=(4,2,3), s=1: dim_{F_q} Hull_s(C) is always even (Morita) PASS  40 codes, 0 with odd dimension
+     mu_B(W_hull) distribution over 40 codes: {0: 13, 1: 26, 2: 1}
+  [EXH] (q,t,n)=(4,2,3), s=1: the hull is principal iff mu_B(W_hull) <= 2 PASS  38 codes, principality by exhaustive generator search; 38 principal
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull = g R_n n h R_n, h the P-2.8 SNF generator PASS  15 codes, 15 verified
+     tau = [0, 1, 2]   (tau = id: True);  n | p^s+1  <=>  3 | 3
+  [SMP] (q,t,n)=(4,2,3), s=1: (C^{perp_s})_j = (C_tau(j))^{perp_s} componentwise PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(C)_j = C_j n (C_tau(j))^{perp_s} PASS  20 codes x 3 components
+  [SMP] (q,t,n)=(4,2,3), s=1: dim Hull = sum_j dim (C_j n (C_tau(j))^{perp_s}) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: tau = id, so the hull decomposes: dim Hull = sum_j dim Hull_s(C_j) PASS  20 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: dim Hull_s(C^{perp_s}) = dim Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: Hull_s(sigma_2s C) = sigma_2s Hull_s(C)  (all s) PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: r | 2s, so Hull_s(C^{perp_s}) = Hull_s(C) as subspaces PASS  40 codes
+  [SMP] (q,t,n)=(4,2,3), s=1: LCD <=> hull = 0 <=> C + C^{perp_s} = R_n <=> W n W' = 0 PASS  40 codes, 13 LCD
+  [SMP] (q,t,n)=(4,2,3), s=1: C <= C^{perp_s}  <=>  theta_s(rev g) * g = 0 PASS  40 codes, 0 self-orthogonal
+     note: no self-orthogonal code in this sample, so the self-dual criterion is not exercised here ((q,t,n)=(4,2,3), s=1)
+     census at (q,t,n)=(4,2,3), s=1: LCD 13, self-orthogonal 0, self-dual 0  (40 codes)
+  [SMP] neg-1 (q,t,n)=(4,2,3), s=1: omitting rev changes the hull    PASS  23 of 40 codes detect it
+  [SMP] neg-2 (q,t,n)=(4,2,3), s=1: ann_l instead of ann_r is wrong  PASS  27 of 40 codes detect it
+  [SMP] neg-3 (q,t,n)=(4,2,3), s=1: I_W built from ROWS instead of COLUMNS is wrong PASS  26 of 40 codes detect it
+  [SMP] neg-4 (q,t,n)=(4,2,3), s=1: the hull is NOT always two-sided PASS  26 of 27 nonzero hulls are not left ideals
+  [SMP] neg-5 (q,t,n)=(4,2,3), s=1: Hull_s(sigma_k C) differs from Hull_s(C) PASS  6 of 12 codes detect it
+  [SMP] neg-6 (q,t,n)=(4,2,3), s=1: the Euclidean form sum x_e y_e gives a different dual PASS  27 of 40 codes detect it
+  [SMP] (q,t,n)=(4,2,3): dim Hull_s(C) depends on s                  PASS  4 of 12 fixed codes vary; e.g. [[6, 2], [6, 2], [0, 2]]
+
+####################################################################################################
+  summary
+####################################################################################################
+  583 checks, 583 PASS, 0 FAIL
+  no failures
+  end of log

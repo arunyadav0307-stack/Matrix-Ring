@@ -1,0 +1,356 @@
+==========================================================================================
+PHASE 1 -- SUPPLEMENTARY VERIFICATION OF THE LEFT/RIGHT MODULE ACTIONS
+ corroborates section 5.6 of 03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md
+==========================================================================================
+
+A    actions on R = M_2(A_t)      q = 4,  t = 1,  |R| = 256
+  [SMP] right action mixes COLUMNS:  col_j(Xa) = sum_k a_kj col_k(X) PASS  
+  [SMP] left  action mixes ROWS:     row_i(aX) = sum_k a_ik row_k(X) PASS  
+  [SMP] (R,R)-bimodule law:  (aX)b = a(Xb)                           PASS  
+  [EXH] RIGHT ideals = {X : COLUMNS in W}, W <= A_t^2 an A_t-submodule (Prop. 2.6) PASS  7 submodules
+  [EXH] LEFT  ideals = {X : ROWS in U},    U <= A_t^2 an A_t-submodule PASS  7 submodules
+  [EXH] dim_{F_q} I_W = dim_{F_q} L_U = 2 dim_{F_q} W                PASS  
+  [EXH] both handednesses give 7 ideals  (= q+3)                     PASS  right 7, left 7
+  [EXH] the transpose maps right ideals bijectively onto left ideals PASS  7 right, 7 left
+  [SMP] F_p-scalars are central:  (cI)X = X(cI)                      PASS  
+
+A    actions on R = M_2(A_t)      q = 9,  t = 1,  |R| = 6561
+  [SMP] right action mixes COLUMNS:  col_j(Xa) = sum_k a_kj col_k(X) PASS  
+  [SMP] left  action mixes ROWS:     row_i(aX) = sum_k a_ik row_k(X) PASS  
+  [SMP] (R,R)-bimodule law:  (aX)b = a(Xb)                           PASS  
+  [EXH] RIGHT ideals = {X : COLUMNS in W}, W <= A_t^2 an A_t-submodule (Prop. 2.6) PASS  12 submodules
+  [EXH] LEFT  ideals = {X : ROWS in U},    U <= A_t^2 an A_t-submodule PASS  12 submodules
+  [EXH] dim_{F_q} I_W = dim_{F_q} L_U = 2 dim_{F_q} W                PASS  
+  [EXH] both handednesses give 12 ideals  (= q+3)                    PASS  right 12, left 12
+  [EXH] the transpose maps right ideals bijectively onto left ideals PASS  12 right, 12 left
+  [SMP] F_p-scalars are central:  (cI)X = X(cI)                      PASS  
+
+A    actions on R = M_2(A_t)      q = 4,  t = 2,  |R| = 65536
+  [SMP] right action mixes COLUMNS:  col_j(Xa) = sum_k a_kj col_k(X) PASS  
+  [SMP] left  action mixes ROWS:     row_i(aX) = sum_k a_ik row_k(X) PASS  
+  [SMP] (R,R)-bimodule law:  (aX)b = a(Xb)                           PASS  
+  [EXH] RIGHT ideals = {X : COLUMNS in W}, W <= A_t^2 an A_t-submodule (Prop. 2.6) PASS  33 submodules
+  [EXH] LEFT  ideals = {X : ROWS in U},    U <= A_t^2 an A_t-submodule PASS  33 submodules
+  [EXH] dim_{F_q} I_W = dim_{F_q} L_U = 2 dim_{F_q} W                PASS  
+  [EXH] both handednesses give 33 ideals  (= q^2+3q+5)               PASS  right 33, left 33
+  [EXH] the transpose maps right ideals bijectively onto left ideals PASS  33 right, 33 left
+  [SMP] F_p-scalars are central:  (cI)X = X(cI)                      PASS  
+
+B    actions on R_n = M_2(B), B = A_t[X]/<X^n-1>      q = 4, t = 1, n = 1
+  [EXH] X is CENTRAL in B:  Xb = bX for all b in B                   PASS  
+  [EXH] X^n = 1 in B   (X is a unit, T is invertible)                PASS  
+  [EXH] left and right multiplication by X coincide on R_n           PASS  
+  [EXH] both equal the cyclic shift T:  (Tx)_e = x_{e-1 mod n}       PASS  
+  [SMP] right mult by a in R is (x.a)_e = x_e a;  left mult is (a.x)_e = a x_e PASS  
+
+B    actions on R_n = M_2(B), B = A_t[X]/<X^n-1>      q = 4, t = 1, n = 2
+  [EXH] X is CENTRAL in B:  Xb = bX for all b in B                   PASS  
+  [EXH] X^n = 1 in B   (X is a unit, T is invertible)                PASS  
+  [SMP] left and right multiplication by X coincide on R_n           PASS  
+  [SMP] both equal the cyclic shift T:  (Tx)_e = x_{e-1 mod n}       PASS  
+  [SMP] right mult by a in R is (x.a)_e = x_e a;  left mult is (a.x)_e = a x_e PASS  
+
+B    actions on R_n = M_2(B), B = A_t[X]/<X^n-1>      q = 4, t = 1, n = 3
+  [EXH] X is CENTRAL in B:  Xb = bX for all b in B                   PASS  
+  [EXH] X^n = 1 in B   (X is a unit, T is invertible)                PASS  
+  [SMP] left and right multiplication by X coincide on R_n           PASS  
+  [SMP] both equal the cyclic shift T:  (Tx)_e = x_{e-1 mod n}       PASS  
+  [SMP] right mult by a in R is (x.a)_e = x_e a;  left mult is (a.x)_e = a x_e PASS  
+
+B    actions on R_n = M_2(B), B = A_t[X]/<X^n-1>      q = 9, t = 1, n = 2
+  [EXH] X is CENTRAL in B:  Xb = bX for all b in B                   PASS  
+  [EXH] X^n = 1 in B   (X is a unit, T is invertible)                PASS  
+  [SMP] left and right multiplication by X coincide on R_n           PASS  
+  [SMP] both equal the cyclic shift T:  (Tx)_e = x_{e-1 mod n}       PASS  
+  [SMP] right mult by a in R is (x.a)_e = x_e a;  left mult is (a.x)_e = a x_e PASS  
+
+B    actions on R_n = M_2(B), B = A_t[X]/<X^n-1>      q = 4, t = 2, n = 2
+  [EXH] X is CENTRAL in B:  Xb = bX for all b in B                   PASS  
+  [EXH] X^n = 1 in B   (X is a unit, T is invertible)                PASS  
+  [SMP] left and right multiplication by X coincide on R_n           PASS  
+  [SMP] both equal the cyclic shift T:  (Tx)_e = x_{e-1 mod n}       PASS  
+  [SMP] right mult by a in R is (x.a)_e = x_e a;  left mult is (a.x)_e = a x_e PASS  
+
+C    pairing vs. the four actions on R^n      q = 4, t = 1, n = 1   (dim_{F_q} R^n = 4)
+  [EXH] the linear-algebra encoding of both orthogonals agrees with brute force PASS  
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [3 u^0, 0, 2 u^0, 1 u^0]   while   a B_s(x,y) = [2 u^0, 3 u^0, 1 u^0, 0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^0, 0, 0, 2 u^0]   while   a B_s(x,y) = [1 u^0, 2 u^0, 2 u^0, 1 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      7 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 7 distinct right ideals, 7 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  7 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=1) PASS  7 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 4  (Thm 6.6, n=1)        PASS  7 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=1) PASS  0 of 7 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 2
+  [EXH] n=1: the right orthogonal of every left ideal is one of the t+1 two-sided ideals u^i R  (Remark 5.6b) PASS  7 left ideals, 2 two-sided ideals
+
+C    pairing vs. the four actions on R^n      q = 4, t = 1, n = 2   (dim_{F_q} R^n = 8)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^0, 0, 2 u^0, 2 u^0]   while   a B_s(x,y) = [0, 3 u^0, 2 u^0, 1 u^0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [0, 1 u^0, 3 u^0, 0]   while   a B_s(x,y) = [2 u^0, 0, 3 u^0, 1 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      33 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 33 distinct right ideals, 33 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  33 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=2) PASS  33 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 8  (Thm 6.6, n=2)        PASS  33 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=2) PASS  0 of 33 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 4
+
+C    pairing vs. the four actions on R^n      q = 4, t = 1, n = 3   (dim_{F_q} R^n = 12)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^0, 2 u^0, 2 u^0, 0]   while   a B_s(x,y) = [1 u^0, 1 u^0, 1 u^0, 1 u^0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^0, 2 u^0, 2 u^0, 2 u^0]   while   a B_s(x,y) = [2 u^0, 0, 2 u^0, 1 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      343 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 343 distinct right ideals, 343 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  343 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=3) PASS  343 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 12  (Thm 6.6, n=3)       PASS  343 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=3) PASS  0 of 343 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 6
+
+C    pairing vs. the four actions on R^n      q = 9, t = 1, n = 1   (dim_{F_q} R^n = 4)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [6 u^0, 0, 0, 6 u^0]   while   a B_s(x,y) = [4 u^0, 8 u^0, 8 u^0, 2 u^0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [6 u^0, 0, 8 u^0, 1 u^0]   while   a B_s(x,y) = [5 u^0, 7 u^0, 8 u^0, 6 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      12 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 12 distinct right ideals, 12 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  12 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=1) PASS  12 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 4  (Thm 6.6, n=1)        PASS  12 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=1) PASS  0 of 12 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 2
+  [EXH] n=1: the right orthogonal of every left ideal is one of the t+1 two-sided ideals u^i R  (Remark 5.6b) PASS  12 left ideals, 2 two-sided ideals
+
+C    pairing vs. the four actions on R^n      q = 9, t = 1, n = 2   (dim_{F_q} R^n = 8)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [0, 3 u^0, 3 u^0, 3 u^0]   while   a B_s(x,y) = [4 u^0, 0, 7 u^0, 4 u^0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [5 u^0, 6 u^0, 4 u^0, 6 u^0]   while   a B_s(x,y) = [4 u^0, 0, 5 u^0, 8 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      144 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 144 distinct right ideals, 144 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  144 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=2) PASS  144 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 8  (Thm 6.6, n=2)        PASS  144 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=2) PASS  0 of 144 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 4
+
+C    pairing vs. the four actions on R^n      q = 9, t = 1, n = 3   (dim_{F_q} R^n = 12)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [7 u^0, 3 u^0, 3 u^0, 1 u^0]   while   a B_s(x,y) = [4 u^0, 2 u^0, 4 u^0, 1 u^0]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [5 u^0, 7 u^0, 1 u^0, 0]   while   a B_s(x,y) = [1 u^0, 0, 8 u^0, 6 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      (B-submodule enumeration skipped: dim_{F_q} B^2 = 6)
+
+C    pairing vs. the four actions on R^n      q = 8, t = 1, n = 1   (dim_{F_q} R^n = 4)
+  [EXH] the linear-algebra encoding of both orthogonals agrees with brute force PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [5 u^0, 5 u^0, 2 u^0, 5 u^0]   while   a B_s(x,y) = [1 u^0, 2 u^0, 7 u^0, 2 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      11 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 11 distinct right ideals, 11 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  11 codes
+  [EXH] s=1  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=1) PASS  11 codes
+  [EXH] s=1  dim C + dim C^{perp_s} = 4tn = 4  (Thm 6.6, n=1)        PASS  11 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=1  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=1) PASS  0 of 11 fail
+  [SMP] s=1  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 2
+  [EXH] n=1: the right orthogonal of every left ideal is one of the t+1 two-sided ideals u^i R  (Remark 5.6b) PASS  11 left ideals, 2 two-sided ideals
+
+C    pairing vs. the four actions on R^n      q = 8, t = 1, n = 2   (dim_{F_q} R^n = 8)
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [7 u^0, 5 u^0, 1 u^0, 6 u^0]   while   a B_s(x,y) = [1 u^0, 1 u^0, 4 u^0, 4 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      93 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 93 distinct right ideals, 93 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  93 codes
+  [EXH] s=1  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=2) PASS  93 codes
+  [EXH] s=1  dim C + dim C^{perp_s} = 4tn = 8  (Thm 6.6, n=2)        PASS  93 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=1  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=2) PASS  0 of 93 fail
+  [SMP] s=1  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 4
+
+C    pairing vs. the four actions on R^n      q = 4, t = 2, n = 1   (dim_{F_q} R^n = 8)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^0+3 u^1, 2 u^1, 1 u^0+3 u^1, 3 u^0+1 u^1]   while   a B_s(x,y) = [2 u^1, 1 u^0+3 u^1, 1 u^0+1 u^1, 2 u^1]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [2 u^1, 1 u^0, 3 u^0+2 u^1, 2 u^0+3 u^1]   while   a B_s(x,y) = [2 u^0+2 u^1, 1 u^1, 3 u^1, 1 u^0+2 u^1]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      33 B-submodules of B^2   (Morita: = right ideals of M_2(B) = cyclic codes)
+      -> 33 distinct right ideals, 33 distinct left ideals of R_n
+  [EXH] every right ideal of R_n is a right R-submodule of R^n that is T-stable (a cyclic code) PASS  33 codes
+  [EXH] s=0  the dual of a cyclic code is a cyclic code (Cor. 6.4, n=1) PASS  33 codes
+  [EXH] s=0  dim C + dim C^{perp_s} = 4tn = 8  (Thm 6.6, n=1)        PASS  33 codes
+  [SMP] every T-stable right submodule generated by a random subset is one of the enumerated codes (completeness) PASS  
+  [EXH] s=0  for every LEFT ideal of R_n BOTH orthogonals are LEFT R-submodules (Lemma 5.6a, n=1) PASS  0 of 33 fail
+  [SMP] s=0  same for a randomly generated LEFT submodule (Lemma 5.6a) PASS  
+  [EXH] the test is not vacuous: the cyclic code generated by E_11 in coordinate 0 is a right module but NOT a left module PASS  dim = 4
+  [EXH] n=1: the right orthogonal of every left ideal is one of the t+1 two-sided ideals u^i R  (Remark 5.6b) PASS  33 left ideals, 3 two-sided ideals
+
+C    pairing vs. the four actions on R^n      q = 4, t = 2, n = 2   (dim_{F_q} R^n = 16)
+  [SMP] s=0  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=0  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=0  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=0  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=0  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=0  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=0  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [3 u^0+2 u^1, 2 u^0, 2 u^0+1 u^1, 1 u^0+3 u^1]   while   a B_s(x,y) = [3 u^0+3 u^1, 2 u^0, 2 u^1, 1 u^0+2 u^1]
+  [SMP] s=0  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=0  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+  [SMP] s=1  B_s(x.a, y) = theta_s(a) B_s(x,y)   (right action, slot 1) PASS  
+  [SMP] s=1  B_s(x, y.a) = B_s(x,y) a            (right action, slot 2) PASS  
+  [SMP] s=1  B_s(a.x, y) = sum_e theta_s(x_e) theta_s(a) y_e  (left action, slot 1) PASS  
+  [SMP] s=1  B_s(x, a.y) = sum_e theta_s(x_e) a y_e          (left action, slot 2) PASS  
+  [SMP] s=1  B_s(x, Ty) = B_s(T^{-1}x, y)  (Corollary 6.4, proof)    PASS  
+  [SMP] s=1  b_s = Lambda o B_s satisfies the same four identities   PASS  
+  [SMP] s=1  B_s(a.x, y) is NOT a(s) B_s(x,y): explicit witness exists PASS  
+        witness: B_s(a.x,y) = [3 u^1, 1 u^0+2 u^1, 3 u^0+3 u^1, 0]   while   a B_s(x,y) = [3 u^0+3 u^1, 2 u^1, 2 u^0+2 u^1, 3 u^0]
+  [SMP] s=1  for ARBITRARY subsets BOTH orthogonals are right R-submodules PASS  
+  [SMP] s=1  sigma_k(C^{perp_s}) = (sigma_k C)^{perp_s}  (Lemma 6.11) PASS  
+      (B-submodule enumeration skipped: dim_{F_q} B^2 = 8)
+
+==========================================================================================
+RESULT: all 276 checks PASSED.
+==========================================================================================

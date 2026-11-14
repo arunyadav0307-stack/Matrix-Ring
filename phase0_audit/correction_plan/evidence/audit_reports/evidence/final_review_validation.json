@@ -1,0 +1,72 @@
+{
+  "checked_clock_utc": "2026-11-13T07:50:06.002403+00:00",
+  "status": "PASS",
+  "required_reports": [
+    "INDEPENDENT_PACKAGE_AUDIT.md",
+    "MATHEMATICAL_CLAIM_VERIFICATION.md",
+    "PAIRING_AND_DUALITY_CRITICAL_AUDIT.md",
+    "GRAY_MAP_EVIDENCE_AUDIT.md",
+    "LITERATURE_AND_NOVELTY_RECHECK.md",
+    "DISCREPANCY_AND_CORRECTION_REGISTER.md",
+    "AUTHOR_DECISION_BRIEF.md"
+  ],
+  "report_readability_and_table_syntax": "PASS",
+  "report_sha256": {
+    "INDEPENDENT_PACKAGE_AUDIT.md": "6b66ec3c569f32848749ab0b522cf871bb13d8213c0e6eb154fbb71b0cbb4998",
+    "MATHEMATICAL_CLAIM_VERIFICATION.md": "22b1f3e626197f4e5072be761da41800d8e1098a30531a0c6e877dc99989e098",
+    "PAIRING_AND_DUALITY_CRITICAL_AUDIT.md": "0c5303747e4f1cc5a24d166d6d6fe0778c6051672a7aea6252996bf1b92b2215",
+    "GRAY_MAP_EVIDENCE_AUDIT.md": "909810416a54a7ac37a8d2cb2a3055702e357a3b2dcd780d425b76547b58d442",
+    "LITERATURE_AND_NOVELTY_RECHECK.md": "777bfcdc61db88ec9a9f039aaa512812ce86d64e3914dfd59c0ff891a9859ec4",
+    "DISCREPANCY_AND_CORRECTION_REGISTER.md": "e8c80952d22f9b5afad0cc59085727bc46a7ad67e34d1dd4ea457079c2d3e7bf",
+    "AUTHOR_DECISION_BRIEF.md": "8f57c07902542bc581195fce72d5a27e88a8d8ab9b3c13531d8fd5f2601c6736"
+  },
+  "classified_claim_entries_including_historical_N_map": 84,
+  "classification_counts": {
+    "VERIFIED UNDER CONDITIONS": 46,
+    "INCORRECT": 28,
+    "VERIFIED": 3,
+    "INCOMPLETE": 2,
+    "COMPUTATIONALLY SUPPORTED ONLY": 3,
+    "UNVERIFIABLE": 2
+  },
+  "correction_register_main_entries": 43,
+  "auditor_self_disclosures": [
+    "A01",
+    "A02",
+    "A03",
+    "A04"
+  ],
+  "new_review_local_links": 56,
+  "new_review_external_attribution_links": 3,
+  "source_locator_paths_verified": [
+    "mathematical_evidence/prior_project/03_THEOREMS/PAIRING_COMPLETE_PROOFS.md",
+    "mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md",
+    "mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md",
+    "mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md",
+    "mathematical_evidence/prior_project/03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md",
+    "mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_NOVELTY_STATEMENT.md",
+    "mathematical_evidence/prior_project/06_AUDIT/PHASE0_PROOF_VERIFICATION.md",
+    "mathematical_evidence/prior_project/06_AUDIT/PHASE0_U8_U9_DECISIONS.md",
+    "computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_CERTIFICATION_METHOD_AUDIT.md",
+    "computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_CERTIFICATION_LOGIC.md",
+    "repository_integrity/prior_work/PAPER/SUPPLEMENTARY_V2/SUPPLEMENTARY_CORRECTION_NOTE.md",
+    "repository_integrity/prior_work/PAPER/references.bib",
+    "computational_evidence/research-data/scripts/phase5_quantum_constructions.py",
+    "computational_evidence/research-data/scripts/phase6_quantum_parameter_enhancement.py",
+    "computational_evidence/research-data/scripts/phase7_extended_search.py"
+  ],
+  "independent_focused_assertions": 29,
+  "independent_code_records": 28,
+  "source_reruns_exit0": 3,
+  "generator_records_plus_index_byte_identical": 29,
+  "expanded_original_files_byte_matched": 211,
+  "all_baseline_original_files_preserved": true,
+  "scientific_decision": "HOLD",
+  "limits": [
+    "No TeX compilation",
+    "Qualified historical reference closure",
+    "Bounded external literature/metadata review",
+    "Not independent recertification of all historical search outputs",
+    "No implementation of manuscript corrections or new research"
+  ]
+}

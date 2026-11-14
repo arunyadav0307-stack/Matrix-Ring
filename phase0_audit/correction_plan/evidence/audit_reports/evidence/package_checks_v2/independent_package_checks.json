@@ -1,0 +1,131 @@
+{
+  "zip_file": "/home/user/Matrix-Ring/phase0_audit/PHASE0_COMPLETE_AUDIT_PACKAGE.zip",
+  "zip_sha256": "350e5b9e4796d6b7798c17ce8ef047ee032e50cc4e49df0ef6e8d28ea5538c4e",
+  "zip_bytes": 5208317,
+  "regular_files": 211,
+  "uncompressed_bytes": 11137023,
+  "internal_manifest_entries": 210,
+  "six_reports": [
+    {
+      "report": "PHASE0_REPOSITORY_AUDIT.md",
+      "bytes": 12539,
+      "lines": 98,
+      "UTF8_readable": true,
+      "sha256": "7dd22cba7d5e1862bd3244d1260f2517640c26063d175bf8cbac42ede9b7aac5",
+      "same_as_original": true
+    },
+    {
+      "report": "PHASE0_LITERATURE_REVIEW.md",
+      "bytes": 11534,
+      "lines": 70,
+      "UTF8_readable": true,
+      "sha256": "35cb5e91c687cee179077c4600ae7cf3d825b844a76c42cf8eebb7362b8a04a3",
+      "same_as_original": true
+    },
+    {
+      "report": "PHASE0_RING_FEASIBILITY.md",
+      "bytes": 9415,
+      "lines": 74,
+      "UTF8_readable": true,
+      "sha256": "24f2c09c0b14b0e29f21f7ef2eb2407123d186a86e14790079c96d2fd178dddd",
+      "same_as_original": true
+    },
+    {
+      "report": "PHASE0_PAIRING_OPTIONS.md",
+      "bytes": 8146,
+      "lines": 57,
+      "UTF8_readable": true,
+      "sha256": "9ad67cc11fd22d36caf36f852f516554df4c64503d8a40ecaf608001ae6d3ad0",
+      "same_as_original": true
+    },
+    {
+      "report": "PHASE0_RESEARCH_GAP.md",
+      "bytes": 8021,
+      "lines": 65,
+      "UTF8_readable": true,
+      "sha256": "edfd8ad01c08e120acb061f773642406cc17750d5368712257ab332c76a8df9c",
+      "same_as_original": true
+    },
+    {
+      "report": "PHASE0_DECISION_REPORT.md",
+      "bytes": 12136,
+      "lines": 88,
+      "UTF8_readable": true,
+      "sha256": "10f2d6331a0507ac2325e9cbaecf9a7264b0b651c2e2de4abe5d084f50e50ad0",
+      "same_as_original": true
+    }
+  ],
+  "research_data_files": 88,
+  "research_data_bytes": 1880790,
+  "non_manifest_data_files": 86,
+  "data_extension_counts": {
+    ".sha256": 2,
+    ".md": 4,
+    ".csv": 8,
+    ".json": 29,
+    ".txt": 23,
+    ".py": 22
+  },
+  "publication_manifest_entries": 87,
+  "legacy_manifest_rows_verified": 85,
+  "provenance_rows": 239,
+  "reference_occurrences": 1010,
+  "reference_targets": 1017,
+  "reference_statuses": {
+    "INVENTORY_ONLY": 11,
+    "PACKAGED": 619,
+    "PACKAGED_MULTIPLE": 41,
+    "PACKAGED_ALIAS": 226,
+    "UNAVAILABLE_VALID_BINARY": 14,
+    "OMITTED_HISTORICAL": 69,
+    "UNAVAILABLE_HISTORICAL_CONTAINER": 15,
+    "UNRESOLVED_HISTORICAL": 11,
+    "EXTERNAL_HISTORICAL_URL": 4
+  },
+  "mandatory_report_reference_statuses": {
+    "INVENTORY_ONLY": 6,
+    "PACKAGED": 25,
+    "PACKAGED_MULTIPLE": 2,
+    "PACKAGED_ALIAS": 7,
+    "UNAVAILABLE_VALID_BINARY": 1
+  },
+  "literal_line_exceptions": 0,
+  "markdown_link_occurrences": 225,
+  "markdown_link_statuses": {
+    "EXISTS": 225
+  },
+  "research_scripts_parsed": 22,
+  "local_python_import_edges": 34,
+  "nonstdlib_nonlocal_imports": [],
+  "latex": [
+    {
+      "variant": "FFA_FINAL_SUBMISSION_V2",
+      "input_rows": 13,
+      "labels": 116,
+      "duplicate_labels": [],
+      "reference_occurrences": 264,
+      "undefined_references": [],
+      "citation_occurrences": 32,
+      "undefined_citations": [],
+      "bibliography_entries": 13,
+      "nonliteral_relocated_inputs": 9
+    },
+    {
+      "variant": "canonical",
+      "input_rows": 13,
+      "labels": 107,
+      "duplicate_labels": [],
+      "reference_occurrences": 246,
+      "undefined_references": [],
+      "citation_occurrences": 32,
+      "undefined_citations": [],
+      "bibliography_entries": 13,
+      "nonliteral_relocated_inputs": 0
+    }
+  ],
+  "theorem_id_report_pairs": 58,
+  "errors": [],
+  "integrity_status": "PASS",
+  "reference_closure_status": "QUALIFIED_NOT_UNIVERSALLY_COMPLETE",
+  "scope": "Existence/integrity/syntactic reference checks only. Missing historical documents and semantic cross-reference errors remain explicitly qualified."
+}

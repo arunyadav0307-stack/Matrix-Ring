@@ -1,0 +1,43 @@
+{
+  "recorded_clock_utc": "2026-11-13T08:21:12.771762+00:00",
+  "recovered_source_roots": 19,
+  "curated_mirror_roots": 4,
+  "distinct_complete_core_payloads_in_recovered_roots": 9,
+  "unique_main_hashes_in_recovered_roots": 7,
+  "file_inventory_rows": 320,
+  "declared_binary_only_manuscript_artifacts": 11,
+  "historical_archive_sidecar_claims": 4,
+  "documentary_markdown_files_searched": 209,
+  "documentary_hit_rows": 139,
+  "submission_status": "AUTHOR CONFIRMATION REQUIRED",
+  "no_editorial_receipt_verified": true,
+  "latest_staged_version": {
+    "version_id": "MS03",
+    "kind": "RECOVERED_CAMPAIGN_SOURCE_SNAPSHOT",
+    "root": "phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2",
+    "main_file": "phase0_audit/extracted/prior_project/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex",
+    "main_bytes": 13996,
+    "observed_main_mtime_utc": "2026-11-13T06:47:04.036386+00:00",
+    "main_sha256": "8c4f53380f8677e425a639a87fc3294fefc21bdac33fa4df2f8d8db4b9f156c0",
+    "core_files": 14,
+    "section_files": 12,
+    "source_payload_sha256": "b52028fac20c3d4603cfd8e2c44d6d885003ae444098437223a9c71875ac3e24",
+    "literal_input_paths_missing": "",
+    "timestamp_caveat": "Observed recovery/extraction filesystem mtime, not authorship/submission time"
+  },
+  "canonical_version": {
+    "version_id": "MS01",
+    "kind": "RECOVERED_CAMPAIGN_SOURCE_SNAPSHOT",
+    "root": "phase0_audit/extracted/prior_project/PAPER",
+    "main_file": "phase0_audit/extracted/prior_project/PAPER/main.tex",
+    "main_bytes": 7488,
+    "observed_main_mtime_utc": "2026-11-13T06:47:04.060386+00:00",
+    "main_sha256": "ee47ce7e91444ef3b05901e54a7e4c40e16df19aeb81817368d277ac4501737c",
+    "core_files": 14,
+    "section_files": 12,
+    "source_payload_sha256": "57dd301e63a19f9c89fe0a26978c3ae9eb59294f6573440f6667fbcb276fdf60",
+    "literal_input_paths_missing": "",
+    "timestamp_caveat": "Observed recovery/extraction filesystem mtime, not authorship/submission time"
+  },
+  "scope": "Read-only local inventory and text comparison. No research runs, proof repairs, TeX compilation, external status query or manuscript edits."
+}

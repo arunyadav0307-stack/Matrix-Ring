@@ -1,0 +1,113 @@
+% =====================================================================
+\section{Literature review and the research gap}
+\label{sec:lit}
+% =====================================================================
+
+\subsection{Cyclic codes over matrix rings}
+
+The use of a matrix ring as a code alphabet goes back to
+Bachoc's construction of modular lattices, and the coding-theoretic study of
+cyclic codes over $M_2(\F_2)$ was initiated by Alahmadi, Sboui, Sol\'e and
+Yemen \cite{Alahmadi2013CyclicM2F2}, who fixed the convention that cyclic codes
+are \emph{right} ideals and used the ring-valued Euclidean dot product. Luo and
+Parampalli \cite{LuoParampalli2018M2F2uF2} extended the structure theorem to
+$M_2(\F_2+u\F_2)$, i.e. to $t=2$ in our notation, and Dinh, Gaur, Kumar, Singh
+and Singh \cite{Dinh2024CyclicRingsOfMatrices} to $M_2(\F_2[u]/\langle u^k\rangle)$
+for all $k$ --- the same ring family as the present paper --- obtaining the
+structure via an isometry onto $\F_4[u,v]/\langle u^k,v^2\rangle$. Most
+recently Joshi, Patel and Prakash \cite{JoshiPatelPrakash2026M4} treated
+$M_4(\F_2[u]/\langle u^k\rangle)$ with Euclidean and Hermitian duals and both
+the Bachoc and the Gray map into $\F_{16}$. A separate, genuinely different line
+uses skew polynomial rings and cyclic algebras over $M_2(\F_2)$
+\cite{SiNiu2023SkewM2F2}.
+
+What \emph{none} of these papers contains is a Galois duality, a hull, or a
+quantum construction. Their duals are the Euclidean and the Hermitian dual, and
+their output is a classical code over a finite field, compared with the best
+known classical codes.
+
+\subsection{Duality over finite rings}
+
+The authority for duality over non-commutative finite rings is Wood
+\cite{Wood1999Duality}: the extension of the MacWilliams equivalence theorem to
+finite rings characterises Frobenius rings, and duality for modules over a
+finite Frobenius ring is the correct general framework. We import the statement
+that $R=M_m(A_t)$ is Frobenius and prove directly, in
+Lemma~\ref{lem:lambda}, that $\Lambda=\lambda\circ\tr$ is a Frobenius functional
+on it.
+
+For the weight side, Greferath and Schmidt \cite{GreferathSchmidt1999GrayIsometry}
+construct Gray isometries for finite \emph{chain} rings. Their theorem does not
+apply to $M_2(A_t)$, which is not a chain ring for $t\ge1$ and $m=2$; we use it
+only to delimit what our own map can achieve (Remark~\ref{rem:noisometry}).
+
+\subsection{Galois duality and Galois hulls}
+
+Over a finite field, Fan and Zhang \cite{FanZhang2017GaloisSelfDual} introduced
+the $\ell$-Galois inner product $\langle a,b\rangle_\ell=\sum_i a_ib_i^{p^\ell}$
+and studied $\ell$-Galois self-dual constacyclic codes; Liu and Pan
+\cite{LiuPan2020GaloisHulls} introduced the $\ell$-Galois hull
+$\Hull_\ell(C)=C\cap C^{\perp_\ell}$ and gave its dimension formulas. Cao
+\cite{Cao2021MDSGaloisHulls} constructed MDS codes with Galois hulls of
+arbitrary dimensions and the corresponding entanglement-assisted quantum codes.
+All of this takes place over a \emph{commutative} base.
+
+The closest prior work to the present paper is Zhang, Kong and Zheng
+\cite{ZhangKongZheng2026QuantumGaloisHulls}, who study constacyclic codes over a
+finite non-chain ring $R$ (commutative, with a decomposition
+$C=e_1C_1\oplus\cdots\oplus e_tC_t$), determine the dimensions of the
+$\ell$-Galois hulls of their Gray images, and construct EAQECCs and QECCs by a
+construction $X$ for the Galois inner product, obtaining some QMDS codes and
+some QECCs better than the best known ones.
+
+\subsection{The research gap}
+
+The gap is the conjunction of three properties, none of which is present in the
+literature:
+
+\begin{enumerate}[label=\textnormal{(\arabic*)},leftmargin=*]
+\item the alphabet is \textbf{non-commutative} (a matrix ring over a finite
+  chain ring), so that the Galois twist must be an \emph{anti}-automorphism and
+  the left/right distinction is substantive;
+\item the duality is \textbf{Galois} (a Frobenius parameter $s$ is present,
+  interpolating between the Euclidean and Hermitian cases in a way that a
+  commutative alphabet cannot reproduce);
+\item the outcome is \textbf{quantum}: stabilizer and entanglement-assisted
+  codes, obtained from the hull through a Gray map whose induced form is
+  identified exactly.
+\end{enumerate}
+
+Property (1) alone is the matrix-ring literature; (2) alone is the Galois-hull
+literature; (2)+(3) over a commutative non-chain ring is
+\cite{ZhangKongZheng2026QuantumGaloisHulls}. The conjunction (1)+(2)+(3) is
+what this paper supplies.
+
+Two consequences of the non-commutativity are worth signalling here, because
+they have no commutative analogue and they shape the whole paper.
+
+\begin{itemize}
+\item The pairing must use $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, not
+  $\sigma_s$. Over a commutative ring the transpose is invisible and the
+  $\ell$-Galois form is simply Frobenius-in-one-argument; here the transpose is
+  what makes $\theta_s$ an anti-automorphism, and the anti-automorphism is what
+  makes the dual of a \emph{right} module again a right module
+  (Theorem~\ref{thm:duality}). The plain product $\sum_ix_iy_i$, which is the
+  Euclidean dot product used in \cite{Alahmadi2013CyclicM2F2}, has a perfect
+  dual on left modules but \emph{not} on right modules
+  (Lemma~\ref{lem:failure}).
+\item The hull need not be principal, so no generator-polynomial formula for
+  the hull can exist, and every downstream statement must be proved without a
+  principality hypothesis. This is not a technical nuisance: the
+  counterexamples are exactly the families that the quantum constructions later
+  use (Theorem~\ref{thm:nonprincipal} and Section~\ref{subsec:witnesses}).
+\end{itemize}
+
+\subsection{Quantum codes from classical codes}
+
+The stabilizer formalism for $q$-ary quantum codes is due to
+\cite{KetkarEtAl2006NonbinaryStabilizer} in the non-binary case. We do not
+import the parameter formulas: Section~\ref{sec:quantum} re-derives the
+stabilizer lemma and all three routes from the symplectic commutation relation,
+so that every hypothesis (in particular the requirement that commutation be
+tested on an $\F_p$-basis, Theorem~\ref{thm:fpbasis}) is visible where it is
+used.

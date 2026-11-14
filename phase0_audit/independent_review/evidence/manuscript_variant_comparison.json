@@ -1,0 +1,14 @@
+[
+  {
+    "section": "07_quantum.tex",
+    "canonical_sha256": "95c706036aaeaa610a0f19894c244e792f3f5de5e27ecdc2787a1ecb97432144",
+    "staged_sha256": "838d354d279e8a4b1fd60816b9f4ea0d8e1f9818b887557e45ba2d2afe9e9a55",
+    "same_bytes": false
+  },
+  {
+    "section": "08_certification.tex",
+    "canonical_sha256": "fb853d83b391a1f60377d311e37d2d437d3d5ba363449bbdbc68b14c9443a8af",
+    "staged_sha256": "15d94372e3d795fad91fa1b738243ec5aaa400d1d264167c81331b4343d99ed8",
+    "same_bytes": false
+  }
+]

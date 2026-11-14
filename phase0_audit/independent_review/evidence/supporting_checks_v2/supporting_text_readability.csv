@@ -1,0 +1,205 @@
+file,readable,details
+PACKAGE_MANIFEST.md,True,UTF-8 decoded
+README.md,True,UTF-8 decoded
+SHA256SUMS.txt,True,UTF-8 decoded
+computational_evidence/README.md,True,UTF-8 decoded
+computational_evidence/SCRIPT_DEPENDENCIES.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/current_phase0/RERUN_COMPARISON.json,True,UTF-8 decoded; JSON parsed
+computational_evidence/current_phase0/phase0_feasibility_rerun_2026-11-12.txt,True,UTF-8 decoded
+computational_evidence/current_phase0/phase0_rerun_diff_vs_recorded_log.txt,True,UTF-8 decoded
+computational_evidence/prior_project/04_COMPUTATION/README.md,True,UTF-8 decoded
+computational_evidence/prior_project/04_COMPUTATION/UPDATED_COMPUTATION_SCRIPTS_AND_LOGS.md,True,UTF-8 decoded
+computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_28_CODE_APPLICABILITY_TABLE.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/prior_project/PHASE16_CERTIFICATION_DOCUMENTATION/PHASE16_CERTIFICATION_METHOD_AUDIT.md,True,UTF-8 decoded
+computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_CERTIFICATION_LOGIC.md,True,UTF-8 decoded
+computational_evidence/prior_project/PHASE17_RESEARCHER_DECISION/PHASE17_REFEREE_METHOD_NOTE.md,True,UTF-8 decoded
+computational_evidence/research-data/PUBLICATION_MANIFEST.sha256,True,UTF-8 decoded
+computational_evidence/research-data/README.md,True,UTF-8 decoded
+computational_evidence/research-data/distance_certificates/certified_codes.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/documentation/MANIFEST.sha256,True,UTF-8 decoded
+computational_evidence/research-data/documentation/SUPPLEMENTARY_PACKAGE_README.md,True,UTF-8 decoded
+"computational_evidence/research-data/generator_matrices/01_24_8_4_9_(9,1,6)_SO.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/02_20_4_4_4_(4,1,5)_SO.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/03_20_4_4_4_(4,1,5)_DC.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/04_20_2_10-18_4_(4,1,5)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/05_24_2_10-18_9_(9,1,6)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/06_4_2_2-2_4_(4,1,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/07_8_4_3-4_4_(4,1,2)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/08_12_2_6-10_4_(4,1,3)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/09_16_4_5-8_4_(4,1,4)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/10_24_4_9-20_4_(4,1,6)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/11_8_4_2-4_4_(4,2,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/12_16_4_4-12_4_(4,2,2)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/13_24_4_6-20_4_(4,2,3)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/14_12_6_2-6_4_(4,3,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/15_16_6_2-10_4_(4,4,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/16_4_2_2-2_8_(8,1,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/17_8_4_3-4_8_(8,1,2)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/18_12_2_6-10_8_(8,1,3)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/19_12_4_2-8_8_(8,3,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/20_4_2_2-2_9_(9,1,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/21_8_2_4-6_9_(9,1,2)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/22_12_2_5-6_9_(9,1,3)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/23_16_2_8-14_9_(9,1,4)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/24_20_4_9-16_9_(9,1,5)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/25_8_4_2-4_9_(9,2,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/26_16_4_4-12_9_(9,2,2)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/27_12_4_2-8_9_(9,3,1)_EA.json",True,UTF-8 decoded; JSON parsed
+"computational_evidence/research-data/generator_matrices/28_24_6_4-18_9_(9,3,2)_EA.json",True,UTF-8 decoded; JSON parsed
+computational_evidence/research-data/generator_matrices/INDEX.json,True,UTF-8 decoded; JSON parsed
+computational_evidence/research-data/logs/alahmadi_reconciliation_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/audit_pairing_equivalence_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/decision_support_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/extract_certified_generators_run.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/galois_experiments_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/galois_t2_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/independent_audit_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/module_actions_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase0_results.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase0_stdout.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase2_stage1_shift_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase2_stage2a_morita_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase2_stage2b_crt_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase2_stage2c_galois_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase3_stage3a_hull_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase3_stage3b_hull_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase4_gray_map_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase5_quantum_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase6_quantum_parameter_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase7_extended_search_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/phase7_extended_search_log_v1.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/ring_structure_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/logs/u8_n3_selfdual_log.txt,True,UTF-8 decoded
+computational_evidence/research-data/quantum_code_records/comparison_grassl_q4.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/comparison_grassl_q9.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/entanglement_budget.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/family_census.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/family_scan.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/nonprincipal_witnesses.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/quantum_code_records/pareto_frontier.csv,True,UTF-8 decoded; CSV parsed
+computational_evidence/research-data/scripts/alahmadi_reconciliation.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/audit_pairing_equivalence.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/decision_support_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/extract_certified_generators.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/galois_duality_experiments.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/galois_t2_check.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/independent_audit_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/matrix_ring_lib.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/module_actions_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase0_feasibility.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase2_stage1_shift_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase2_stage2a_morita_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase2_stage2b_crt_principality.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase2_stage2c_galois_duality.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase3_stage3a_hull_structure.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase3_stage3b_hull_enumeration.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase4_gray_map_compatibility.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase5_quantum_constructions.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase6_quantum_parameter_enhancement.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/phase7_extended_search.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/ring_structure_checks.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/scripts/u8_n3_selfdual_check.py,True,UTF-8 decoded; Python AST parsed
+computational_evidence/research-data/verification_procedures/CERTIFICATION_PROCEDURE.md,True,UTF-8 decoded
+computational_evidence/research-data/verification_procedures/ENVIRONMENT.md,True,UTF-8 decoded
+literature_evidence/PDF_FRONT_MATTER_EXCERPTS.md,True,UTF-8 decoded
+literature_evidence/SEARCH_EVIDENCE_TRANSCRIPTION.md,True,UTF-8 decoded
+literature_evidence/SUPPLIED_PDF_METADATA.csv,True,UTF-8 decoded; CSV parsed
+literature_evidence/prior_project/01_LITERATURE/annotated_bibliography.md,True,UTF-8 decoded
+literature_evidence/prior_project/01_LITERATURE/comparison_matrix.md,True,UTF-8 decoded
+literature_evidence/prior_project/01_LITERATURE/references.bib,True,UTF-8 decoded
+literature_evidence/prior_project/PAPER/LITERATURE_VERIFICATION.md,True,UTF-8 decoded
+literature_evidence/prior_project/PAPER/NOVELTY_COMPARISON.md,True,UTF-8 decoded
+mathematical_evidence/COUNTEREXAMPLES_AND_FAILURES_INDEX.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/00_BLUEPRINT/Research_Blueprint_extracted_text.txt,True,UTF-8 decoded
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/ALAHMADI_THEOREM_RECONCILIATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/NONTRIVIAL_GALOIS_EXPERIMENTS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/PHASE0_REVISION_REPORT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/Phase_0_Report.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/02_PHASE_REPORTS/Phase_0/UPDATED_PHASE0_FINAL_RECOMMENDATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PAIRING_COMPLETE_PROOFS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE1_CYCLIC_SHIFT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2A_MORITA_GENERATORS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2B_CRT_PRINCIPALITY.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE2_STAGE2C_GALOIS_DUALITY.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3A_GALOIS_HULL_STRUCTURE.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE3_STAGE3B_GALOIS_HULL_ENUMERATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE4_GRAY_MAP_COMPATIBILITY.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE5_QUANTUM_CONSTRUCTIONS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE6_QUANTUM_PARAMETER_ENHANCEMENT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE7_EXTENDED_SEARCH.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/PHASE7_LONGER_LENGTH_AND_PARAMETER_OPTIMIZATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/RING_AND_GALOIS_FOUNDATIONS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/UPDATED_THEOREM_REGISTER.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/03_THEOREMS/theorem_register.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_COMPUTATIONAL_AUDIT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_DECISION_FORM.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_GO_MODIFY_STOP.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_FINAL_NOVELTY_STATEMENT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_INDEPENDENT_AUDIT_REPORT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_NOVELTY_REASSESSMENT.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_PARAMETER_SELECTION_RECOMMENDATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_PROOF_VERIFICATION.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_RESEARCHER_DECISION_SHEET.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE0_U8_U9_DECISIONS.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/06_AUDIT/PHASE1_FINAL_AUDIT_MANIFEST.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/PHASE1_COMPLETION_AND_APPROVAL_GATE.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/PHASE2_PROPOSAL.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/PHASE2_PROPOSAL_v2.md,True,UTF-8 decoded
+mathematical_evidence/prior_project/PROJECT_DECISION_LOG.md,True,UTF-8 decoded
+reports/PHASE0_DECISION_REPORT.md,True,UTF-8 decoded
+reports/PHASE0_LITERATURE_REVIEW.md,True,UTF-8 decoded
+reports/PHASE0_PAIRING_OPTIONS.md,True,UTF-8 decoded
+reports/PHASE0_REPOSITORY_AUDIT.md,True,UTF-8 decoded
+reports/PHASE0_RESEARCH_GAP.md,True,UTF-8 decoded
+reports/PHASE0_RING_FEASIBILITY.md,True,UTF-8 decoded
+repository_integrity/EVIDENCE_LIMITATIONS.md,True,UTF-8 decoded
+repository_integrity/PACKAGING_VERIFICATION.json,True,UTF-8 decoded; JSON parsed
+repository_integrity/REFERENCE_CHECK_SUMMARY.md,True,UTF-8 decoded
+repository_integrity/duplicate_aliases.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/git_status_before.txt,True,UTF-8 decoded
+repository_integrity/inherited_manifest_verification.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/manuscript_input_resolution.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/original_files_inventory.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/original_zip_inventories.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/package_tools/build_package.py,True,UTF-8 decoded; Python AST parsed
+repository_integrity/package_tools/verify_package.py,True,UTF-8 decoded; Python AST parsed
+repository_integrity/patch_binary_files.txt,True,UTF-8 decoded
+repository_integrity/patch_diff_inventory.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/preexisting_snapshot.json,True,UTF-8 decoded; JSON parsed
+repository_integrity/prior_work/PAPER/CLAIM_TRACEABILITY_MATRIX.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/CONTRIBUTION_MAP.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/SOURCE_REUSE.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/main.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/01_introduction.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/07_quantum.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/08_certification.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FFA_FINAL_SUBMISSION_V2/sections/appendix_tables.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/FINAL_VALIDATION_REPORT.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/MANUSCRIPT_SELF_AUDIT.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/OPEN_ISSUES_AND_LIMITATIONS.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/PARAMETER_COMPARISON.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/README.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/SUPPLEMENTARY_V2/SUPPLEMENTARY_CORRECTION_NOTE.md,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/main.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/references.bib,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/01_introduction.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/02_literature.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/03_preliminaries.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/04_cyclic_galois.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/05_hulls.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/06_gray.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/07_quantum.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/08_certification.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/09_comparison.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/10_conclusion.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/appendix_reproducibility.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PAPER/sections/appendix_tables.tex,True,UTF-8 decoded
+repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_DATA_AVAILABILITY_STATEMENT.md,True,UTF-8 decoded
+repository_integrity/prior_work/PHASE23_FFA_FINALIZATION/PHASE23_FFA_OPTION_C_COMPLIANCE.md,True,UTF-8 decoded
+repository_integrity/prior_work/README.md,True,UTF-8 decoded
+repository_integrity/reference_resolution.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/selected_patch_reconstruction_checks.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/source_identity/root_README.md,True,UTF-8 decoded
+repository_integrity/source_provenance.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/supplied_pdf_source_comparison.csv,True,UTF-8 decoded; CSV parsed
+repository_integrity/tracked_files_vs_HEAD.csv,True,UTF-8 decoded; CSV parsed

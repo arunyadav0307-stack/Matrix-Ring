@@ -1,0 +1,462 @@
+Construction of Codes Over Fp3 From Cyclic Codes
+Over M3(Fp + uFp + u2Fp)
+Shikha Patel 1, Soham Ravikant Joshi 2 and Om Prakash 3
+1Department of Mathematics, Indian Institute of Information Technology Bhopal, Bhopal- 462 003, India
+2,3Department of Mathematics, Indian Institute of Technology Patna, Bihta, Patna - 801 106, India
+Email: shikha 1821ma05@iitp.ac.in, soham 2421ma14@iitp.ac.in, om@iitp.ac.in
+Abstract—Let Fp be a finite field with p elements and
+Fp[u]/⟨u3⟩ = Fp + uFp + u2Fp, u3 = 0 be a finite chain ring.
+This paper presents the construction of cyclic codes over Fp3 for
+certain primes (p ≤ 100) from a noncommutative non-chain ring
+R = M3(Fp[u]/⟨u3⟩) of 3 × 3 matrices. First, we show that the
+structure of R is isomorphic to (Fp3 +eFp3 +e2Fp3 +u(Fp3 +eFp3 +
+e2Fp3 )+ u2(Fp3 +eFp3 +e2Fp3 ) where e3 = 1, u3 = 0, uiej = ejui
+for i ∈ {1, 2} and j ∈ {1, 2, 3}. Then we provide the form of ideals
+of R and derive that cyclic codes can be written as the direct sum
+of R-submodules of R[x] <xn−1> . Further, we find the formula for the cardinality of cyclic codes over R. Later, in the module isometry
+for R, we define the Gray map, which takes derived cyclic codes
+over R to Fp3. In addition, we provide non-trivial examples of
+linear codes over Fp3 with good parameters which support our
+derived results.
+Index Terms—Finite field, cyclic codes, matrix rings, Gray map,
+MDS/AMDS codes.
+I. I NTRODUCTION
+The study of cyclic codes over finite rings has received con-
+siderable attention in the last decades of the twentieth century
+and has made significant contributions to the development of
+error-correcting codes. Several studies have been conducted
+over the past three decades on cyclic codes over finite fields and
+finite commutative rings. Many well-known codes, including
+binary Hamming codes, Reed-Muller, Golay, Kerdock, BCH,
+Preparata, and Justesen codes, are either cyclic or constructed
+from cyclic codes. Recall that a cyclic code of length n over a
+finite field Fq is also classified as the ideal of the quotient ring
+Fq[x]/⟨xn − 1⟩. Due to the rich algebraic structure, researchers
+prefer the class of cyclic codes for encoding and decoding
+purposes over conventional linear codes.
+To obtain a new code with better parameters, cyclic codes
+over finite commutative rings were investigated in [13], [15],
+[16], [18]. Matrix rings also produce distinct and good cyclic
+codes, much like skew polynomial rings. This was accom-
+plished by Alahmadi et al. [1], who obtained different self-dual
+F4-codes and cyclic codes structure over M2(F2) concerning
+Euclidean self-dual cyclic values. In 2014, Falcunit and Sison
+[5] further investigated the algebraic properties of cyclic codes
+over a more extended ring M2(Fp), where p ≡ 2 or 3 (mod 5) .
+Furthermore, Luo and Udaya [9] investigated cyclic codes over
+the matrix ring M2(F2[u]/⟨u2⟩) in 2018. Several quaternary
+optimal codes were obtained by using an isometry between
+M2(F2+uF2) and F4[u, v]/⟨u2, v2, uv−vu⟩. Later, Bhowmick
+et al. [2] studied self-dual cyclic codes over M2(Z4), and Pal
+et al. [12] studied cyclic codes over M4(F2). The cyclic codes
+over M2(Fp + uFp) were also examined by Islam et al. [7]
+in 2021. Further, in 2022, Patel et al. [14] discussed cyclic
+codes over M4(F2 + uF2) and obtained many good codes over
+F16. More recently, in [8], the authors considered the cyclic
+codes over M3(Fp) in 2024 and discovered good linear codes
+over F8 for p = 2. Continuing with that framework, we find
+linear codes over different fields with better parameters. Two
+significant contributions of the paper are given below.
+• We analyze and explore the algebraic structure of the
+noncommutative non-chain ring M3(Fp + uFp + u2Fp)
+with u3 = 0.
+• We obtain some linear codes which are either MDS
+(maximum-distance-separable) or AMDS (almost
+maximum-distance-separable).
+The paper is organized as follows: Section II establishes the
+structure of R = M3(Fp + uFp + u2Fp) while Section
+III studies the cyclic code on R as the direct sum of the
+submodules of R. Section IV defines the Gray map for the
+correspondence between F9 p3 and R, and Section V includes
+some examples of non-trivial codes to support our obtained
+results. Finally, Section VI concludes the paper.
+II. C ONSTRUCTION OF M3(Fp + uFp + u2Fp)
+Let Fp be the finite field of p elements. Throughout the
+paper, R represents the ring M3(Fp[u]/⟨u3⟩), which is a finite
+noncommutatie non-chain ring. For a prime p ≤ 100, let
+f (x) ∈ Fp[x], an irreducible polynomial of degree 3. For
+example, f (x) = x3 − x − 1 is irreducible in Fp[x] for
+p ∈ {2, 3, 13, 29, 31, 41, 47, 71, 73} as it has no roots in Fp.
+Similarly, g(x) = x3 + x + 1 is irreducible in Fp[x] for
+p ∈ {2, 5, 7, 19, 41, 59, 71, 97} and h(x) = x3 + 3x + 2 is
+irreducible in Fp[x] for p ∈ {5, 7, 11, 31, 53, 73, 83, 97}. We
+can choose any of f (x), g(x), or h(x) depending on which
+prime we have to construct Fp3 = Fp[ω] which is a Galois
+field where f (ω) = 0 or g(ω) = 0 or h(ω) = 0 . The Galois
+group G = Gal(Fp3 /Fp) is cyclic generated by Frobenius
+automorphism σ : Fp3 − →Fp3 defined by σ(a) = ap. Also,
+using the construction given in [8], [11], we have a cyclic
+algebra A = ( Fp3 /Fp, σ,1) = Fp3 + eFp3 + e2Fp3 where
+ae = eσ(a), and e3 = 1 for all a ∈ Fp3. Here, A is a central
+2025 11th International Workshop on Signal Design and Its Applications in Communications (IWSDA) | 979-8-3315-9340-7/25/$31.00 ©2025 IEEE | DOI: 10.1109/IWSDA67899.2025.11457425
+Authorized licensed use limited to: SR University. Downloaded on November 12,2026 at 06:28:05 UTC from IEEE Xplore.  Restrictions apply. 
+
+simple algebra with dim(A) = 9 and therefore, A ∼= M3(Fp).
+It is easy to check that
+R = M3(Fp[u]/⟨u3⟩) ∼= M3(Fp)[u]/⟨u3⟩.
+Hence,
+R = (Fp3 + eFp3 + e2Fp3 ) + u(Fp3 + eFp3 + e2Fp3 )
++u2(Fp3 + eFp3 + e2Fp3 ),
+where e3 = 1, u3 = 0, ue= eu,
+u2e = eu2, ue2 = e2u, u2e2 = e2u2. (1)
+The primary objective of establishing this isomorphism is to
+provide a framework for analyzing the algebraic properties
+of cyclic codes over R, which also simplifies the theoretical
+investigation.
+III. M AIN RESULTS
+A linear code C of length n over R is an R-submodule
+of Rn, and is said to be cyclic if for each codeword c =
+(c0, c1, . . . , cn−1) ∈ C , its cyclic shift (cn−1, c0, . . . , cn−2) ∈
+C . A cyclic code of length n over R is also an ideal of
+Rn = R[x]/⟨xn − 1⟩ where each codeword (c0, c1, . . . , cn−1)
+corresponds to a polynomial c0 + c1x + · · ·+ cn−1xn−1.
+We restrict ourselves to cyclic codes of length n such that
+gcd(n, p) = 1, i.e., p ∤ n.
+Let R[x] be the ring of polynomials over R. For any a ∈ R,− →a be the polynomial reduction of a modulo u and e as defined
+in Equation (II). We consider a polynomial reduction mapping
+∆ : R[x] → Fp3 [x] defined by
+n−1X
+i=0
+aixi 7→
+n−1X
+i=0
+− →ai xi.
+Then a polynomial f (x) is called basic irreducible over R
+if ∆(f (x)) is irreducible over Fp3. If n is such that p ∤ n
+and xn − 1 = Qm r=1 fr where fr’s are irreducible polynomials
+in indeterminate x over Fp3, then the polynomial xn − 1 can
+be uniquely factorized into pairwise coprime polynomials over
+Fp3.
+Theorem 1 ( [11], [17]). Let n be such that p ∤ n and xn −1 =Qm
+r=1 fr where fr’s are basic irreducible polynomials over R.
+Then
+Rn = R[x]/⟨xn − 1⟩ =
+mM
+r=1
+R[x]/⟨fr⟩.
+Since ⟨fr⟩ is not a two-sided ideal, we consider R[x]/⟨fr⟩
+as a right R-module. Now, we find all the possible forms of
+the submodules of R[x]/⟨fr⟩.
+Theorem 2. Let f be a basic irreducible polynomial over R.
+The following is the complete set of right R-submodules of
+Rf = R[x]/⟨f ⟩.
+1) {0}, ⟨u⟩, ⟨u2⟩, ⟨ue⟩, ⟨ue2⟩, ⟨u2e⟩, ⟨u2e2⟩, ⟨e⟩, ⟨e2⟩.
+2) ⟨u + eη21 + e2η31⟩, ⟨u2 + eη22 + e2η32⟩, ⟨u, e, e2⟩ and
+⟨u2, e, e2⟩.
+where ηmn are units in Fp3 [x].
+Proof. Let g + ⟨f ⟩ be a nonzero element of the R-
+submodule I of Rf . Then g /∈ ⟨f ⟩ and there exist
+g11, g12, g13, g21, g22, g23, g31, g32, g33 in Fp3 such that
+g = (g11 + ug12 + u2g13) + e(g21 + ug22 + u2g23)
++e2(g31 + ug32 + u2g33).
+Now, we consider following two cases.
+(i) If we take gcd(g11, f) = 1 , then there exists g−1 11 ∈
+Fp3 [x] such that g11g−1 11 + ⟨f ⟩ = 1 +⟨f ⟩. Thus, I = Rf .
+(ii) If we take gcd(g11, f) = f, then
+g + ⟨f ⟩ = (ug12 + u2g13) + e(g21 + ug22 + u2g23)
++e2(g31 + ug32 + u2g33).
+From case (ii), if we consider gcd(g21, f) = gcd(g31, f) = f,
+and gcd(g12, f) = 1, there exist g−1 12 such that g12g−1 12 = 1 and
+we have I = ⟨u⟩. If along with g21 and g31, gcd(g12, f) =
+gcd(g22, f) = gcd(g32, f) = f, and gcd(g13, f) = 1, we have
+g−1 13 such that g13g−1 13 = 1 and I = ⟨u2⟩.
+If we consider gcd(g11, f) = gcd( g12, f) = gcd( g13, f) =
+f, gcd(g21, f) = gcd( g31, f) = f, and gcd(g22, f) = 1 , then
+there exists g−1 22 such that g22g−1 22 = 1 and we have I = ⟨eu⟩.
+Following the similar process, we can show that I = ⟨eu2⟩,
+I = ⟨e2u⟩ and ⟨e2u2⟩.
+If we consider gcd(g11, f) = gcd( g12, f) = f, and
+gcd(g21, f) = 1 , there exists g−1 21 such that g21g−1 21 = 1 and
+we have I = ⟨e⟩. Following the similar process, we can show
+that I = ⟨e2⟩.
+Let gcd(g22, f) = gcd( g23, f) = gcd( g32, f) =
+gcd(g33, f) = f, and gcd(g21, f) = gcd( g31, f) = 1 . Now,
+we have the following cases.
+(I) If we consider gcd(g13, f) = f and gcd(g12, f) = 1, we
+have
+(a1) ⟨u + eη21 + e2η31⟩ = I
+(b1) ⟨u + eη21 + e2η31⟩ ≨ I.
+(II) If we consider gcd(g12, f) = f and gcd(g13, f) = 1, we
+have
+(a2) ⟨u2 + eη22 + e2η32⟩ = I
+(b2) ⟨u2 + eη22 + e2η32⟩ ≨ I.
+Here, η21 = g21g−1 12 , and η31 = g31g−1 12 , η22 = g21g−1 13 , and
+η32 = g31g−1 13 . Now, from cases (b1) and (b2) we consider the
+following subcases.
+(i) There exist ui +eη′ 2i +e2η3i where η′ 2i ∈ F16[x] such that
+it does not belong to ⟨ui + eη2i + e2η3i⟩. This implies
+e(η2i − η′ 2i) ∈ I. But (η2i − η′ 2i) /∈ I. Hence e ∈ I.
+Hence, I = ⟨ui, e⟩ for i = 1, 2.
+(ii) There exists ui + eη2i + e2η′ 3i where η′ 3i ∈ F16[x] such
+that it does not belong to ⟨ui +eη2i +e2η3i⟩. This implies
+e2(η3i − η′ 3i) ∈ I. But (η3i − η′ 3i) /∈ I. Hence e2 ∈ I.
+Hence, I = ⟨ui, e2⟩ for i = 1, 2.
+From subcase (i), and subcase (ii), I = ⟨ui, e, e2⟩ for i =
+1, 2.
+Authorized licensed use limited to: SR University. Downloaded on November 12,2026 at 06:28:05 UTC from IEEE Xplore.  Restrictions apply. 
+
+Let fi be a factor of xn − 1 and consider ˆfi = xn−1 fi . Then,
+we have the following result for the R-modules in R[x] ⟨xn−1⟩.
+Corollary 1. Any right R-module in R[x] ⟨xn−1⟩ is sum of the
+following R-submodules for xn − 1 = g1g2 . . . gm, where
+gj(1 ≤ j ≤ m) are irreducible pairwise coprime monic
+polynomials in Fp3 [x].
+1) ⟨u ˆgj + ⟨xn − 1⟩⟩, ⟨u2 ˆgj + ⟨xn − 1⟩⟩, ⟨e ˆgj + ⟨xn − 1⟩⟩,
+⟨e2 ˆgj +⟨xn −1⟩⟩, ⟨u2e ˆgj +⟨xn −1⟩⟩, ⟨u2e2 ˆgj +⟨xn −1⟩⟩,
+⟨ue2 ˆgj + ⟨xn − 1⟩⟩, ⟨ue ˆgj + ⟨xn − 1⟩⟩.
+2) ⟨(u+eη21+e2η31) ˆgj +⟨xn−1⟩⟩, ⟨(u2+eη22+e2η32) ˆgj +
+⟨xn − 1⟩⟩.
+3) (⟨uˆgj + ⟨xn − 1⟩⟩ + ⟨eˆgj + ⟨xn − 1⟩⟩ + ⟨e2ˆgj + ⟨xn − 1⟩⟩),
+(⟨u2ˆgj +⟨xn −1⟩⟩+⟨eˆgj +⟨xn −1⟩⟩+⟨e2ˆgj +⟨xn −1⟩⟩).
+Proof. Follows from Theorem 1 and Theorem 2.
+Throughout the paper, we use c0 + c1x + · · ·+ cn−1xn−1 for
+the corresponding coset c0 + c1x + · · ·+ cn−1xn−1 + ⟨xn − 1⟩
+in the ring R[x] ⟨xn−1⟩. Now, we provide the main result of this
+paper.
+Theorem 3. Let C be a cyclic code of odd length n over R.
+Then there exist units ηij in Fp3 [x] and a family of irreducible
+pairwise coprime monic polynomials Pi, for 0 ≤ i ≤ 11, in
+Fp3 [x] such that Q11 i=0 Pi = xn − 1, and
+C = ⟨ ˆP1⟩ ⊕ ⟨u ˆP2⟩ ⊕ ⟨u2 ˆP3⟩ ⊕ ⟨e ˆP4⟩ ⊕ ⟨ue ˆP5⟩
+⊕⟨u2e ˆP6⟩ ⊕ ⟨e2 ˆP7⟩ ⊕ ⟨ue2 ˆP8⟩ ⊕ ⟨u2v2 ˆP9⟩
+⊕⟨(u + eη21 + e2η31) ˆP10⟩ ⊕ ⟨(u2 + eη22 + e2η32) ˆP11⟩.
+Moreover ,|C | = p3ξ where
+ξ = 9 deg(P1) + 6 deg(P2) + 3 deg(P3) + 6 deg(P4)
++4 deg(P5) + 2 deg(P6) + 3 deg(P7) + 2 deg(P8)
++ deg(P9) + 8 deg(P10) + 7 deg(P11).
+Proof. Let xn − 1 = f1f2 · · ·fm where fj(1 ≤ i ≤ m) are
+irreducible and pairwise coprime monic polynomials in F3 p[x].
+Then from the above corollary, any right R-module in R[x] ⟨xn−1⟩
+is the sum of the following R-submodules.
+1) ⟨u ˆgj + ⟨xn − 1⟩⟩, ⟨u2 ˆgj + ⟨xn − 1⟩⟩, ⟨e ˆgj + ⟨xn − 1⟩⟩,
+⟨e2 ˆgj +⟨xn −1⟩⟩, ⟨u2e ˆgj +⟨xn −1⟩⟩, ⟨u2e2 ˆgj +⟨xn −1⟩⟩,
+⟨ue2 ˆgj + ⟨xn − 1⟩⟩, ⟨ue ˆgj + ⟨xn − 1⟩⟩.
+2) ⟨(u+eη21+e2η31) ˆgj +⟨xn−1⟩⟩, ⟨(u2+eη22+e2η32) ˆgj +
+⟨xn − 1⟩⟩.
+Without loss of generality, we can assume that
+C = ⟨ ˆfm1+1⟩ ⊕ · · · ⊕ ⟨ˆfm1+···+m2 ⟩ ⊕ ⟨u ˆfm1+m2+1⟩
+⊕ · · · ⊕ ⟨u ˆfm1+···+m3 ⟩ ⊕ ⟨u2 ˆfm1+m2+m3+1⟩ ⊕ · · · ⊕
+⟨u2 ˆfm1+···+m4 ⟩ ⊕ ⟨e ˆfm1+···+m4+1⟩ ⊕ · · · ⊕ ⟨e ˆfm1+···+m5 ⟩
+⊕⟨ue ˆfm1+···+m5+1⟩ ⊕ · · · ⊕ ⟨ue ˆfm1+···+m6 ⟩
+⊕⟨u2e ˆfm1+···+m6+1⟩ ⊕ · · · ⊕ ⟨u2e ˆfm1+···+m7 ⟩
+⊕⟨e2 ˆfm1+···+m7+1⟩ ⊕ · · · ⊕ ⟨e2 ˆfm1+···+m8 ⟩
+⊕⟨ue2 ˆfm1+···+m8+1⟩ ⊕ · · · ⊕ ⟨ue2 ˆfm1+···+m9 ⟩
+⊕⟨u2e2 ˆfm1+···+m9+1⟩ ⊕ · · · ⊕ ⟨u2e2 ˆfm1+···+m10 ⟩
+⊕⟨(u + eη21 + e2η31) ˆfm1+···+m10+1⟩
+⊕ · · · ⊕ ⟨(u + eη21 + e2η31) ˆfm1+···+m11 ⟩
+⊕⟨(u2 + eη22 + e2η32) ˆfm1+···+m11+1⟩
+⊕ · · · ⊕ ⟨(u2 + eη22 + e2η32) ˆfm⟩,
+where integers m1, m2, m3, m4, m5, m6, m7, m8, m9, m10,
+m11 ≥ 0 and m1 + · · ·+ m11 +1 ≤ m. Let m0 = 0 and
+m12 be a non-negative integer such that m1 + · · ·+ m12 = m.
+Now, we define
+P0 = fm0+1 · · ·fm0+m1 , P1 = fm0+m1+1 · · ·fm0+m1+m2 ,
+P2 = fm0+m1+m2+1 · · ·fm0+···+m3 ,
+P3 = fm0+···+m3+1 · · ·fm0+···+m4 ,
+P4 = fm0+···+m4+1 · · ·fm0+···+m5 ,
+and simillarly for P5, P6, . . . , P11 such that
+P11 = fm0+···+m11+1 · · ·fm.
+Then, from the above construction, P0, P1, . . . , P12 are pair-
+wise coprime and Q12 i=0 Pi = xn − 1. Hence,
+C = ⟨ ˆP1⟩ ⊕ ⟨u ˆP2⟩ ⊕ ⟨u2 ˆP3⟩ ⊕ ⟨e ˆP4⟩ ⊕ ⟨ue ˆP5⟩
+⊕⟨u2e ˆP6⟩ ⊕ ⟨e2 ˆP7⟩ ⊕ ⟨ue2 ˆP8⟩ ⊕ ⟨u2v2 ˆP9⟩
+⊕⟨(u + eη21 + e2η31) ˆP10⟩ ⊕ ⟨(u2 + eη22 + e2η32) ˆP11⟩.
+Furthermore,
+|⟨ ˆP1⟩| = p3(9 deg(P1)), |⟨u ˆP2⟩| = p3(6 deg(P2)),
+|⟨u2 ˆP3⟩| = p3(3 deg(P3)), |⟨e ˆP4⟩| = p3(6 deg(P4)),
+|⟨ue ˆP5⟩| = p3(4 deg(P5)), |⟨u2e ˆP6⟩| = p3(2 deg(P6)),
+|⟨e2 ˆP7⟩| = p3(3 deg(P7)), |⟨ue2 ˆP8⟩| = p3(2 deg(P8)),
+|⟨u2e2 ˆP9⟩| = p3(1 deg(P9)),
+|⟨(u + eβ11 + e2β21) ˆP10⟩| = p3(8 deg(P10)),
+|⟨(u2 + eβ12 + e2β22) ˆP11⟩| = p3(7 deg(P11)),
+Hence, |C | = p3ξ, where
+ξ = 9 deg(P1) + 6 deg(P2) + 3 deg(P3) + 6 deg(P4)
++4 deg(P5) + 2 deg(P6) + 3 deg(P7) + 2 deg(P8)
++ deg(P9) + 8 deg(P10) + 7 deg(P11).
+Now, for an ideal ⟨xn − 1⟩Fp3 [x] of Fp3 [x] generated by
+xn − 1, we consider R′ = Fp3 [x] ⟨xn−1⟩Fp3 [x] . In Theorem 3, we investigated the structure of cyclic code C over R.
+Authorized licensed use limited to: SR University. Downloaded on November 12,2026 at 06:28:05 UTC from IEEE Xplore.  Restrictions apply. 
+
+TABLE I
+CYCLIC CODES OVER F125, F27, AND F8
+n p Generators of cyclic codes Images under φ Remark
+3 5 ⟨(w3u2e + w13u2 + w7ue2 + w31ue + 4w19)f1, (w5u2e + w17u2w2 + w23ue2 + 4w47)f2⟩ [27, 22, 5]125 AMDS
+3 5 ⟨(w3u2e + 4w61u2 + 4w85)f1, (w5u2e + 3u2w2 + 4w34)f2⟩ [27, 25, 3]125 MDS
+3 5 ⟨(w3u2e + w13u2 + w7ue2 + 4w8)f1, (w5u2e + w17u2w2 + w23ue2 + 4w47)f2⟩ [27, 23, 4]125 AMDS
+3 2 ⟨(w3u2e2 + w5u2 + w4ue2 + w)f1, (w3u2e + u2w6 + w4ue2)f2⟩ [27, 23, 3]8 Near Optimal [6]
+3 2 ⟨(w3u2e + w5u2 + w2)f1, (w3u2e + u2w6 + w4)f2⟩ [27, 25, 2]8 Optimal [6]
+5 3 ⟨(w3u2e + w5u2 + w2ue2 + uew2 + 2w18)f1, (w3u2e + u2w6 + w3ue2 + uew + 2w11)f2⟩ [45, 39, 4]27 Near Optimal [10]
+5 3 ⟨(w3u2e + w5u2 + w2ue2 + uew2 + uw18 + 2w5)f1, (w3u2e + u2w6 + w3ue2 + uew + 2w11)f2⟩ [45, 38, 5]27 Near Optimal [10]
+5 3 ⟨(w3u2e + w5u2 + ue2w24 + 2w11)f1, (w3u2e + u2w6 + 2w4)f2⟩ [45, 42, 3]27 Optimal [10]
+5 2 ⟨(w3u2e + w5u2 + w2ue2 + uew2 + w2)f1, (w3u2e + u2w6 + w3ue2 + uew + w5)f2⟩ [45, 39, 4]8 Near Optimal [6]
+5 2 ⟨(w3u2e + w5u2 + w2)f1, (w3u2e + u2w6 + w3ue2 + uew + w5)f2⟩ [45, 41, 3]8 Near Optimal [6]
+Now, we provide the structure of C over R′.
+Theorem 4. Let C be a cyclic code of odd length n over R.
+Then there exist polynomials W1, W2, W3, . . . , W11 in Fp3 [x]
+which are factors of xn − 1 such that
+C = ⟨W1⟩R′ + u⟨W2⟩R′ + u2⟨W3⟩R′ + e⟨W4⟩R′ + ue⟨W5⟩R′
++u2e⟨W6⟩R′ + e2⟨W7⟩R′ + ue2⟨W8⟩R′ + u2e2⟨W9⟩R′
++(u + eη21 + e2η31)⟨W10⟩R′ + (u2 + eη22 + e2η32)⟨W11⟩R′
+where ηmn are units in Fp3 [x] and ⟨−⟩R′ is an ideal of R′
+generated by −. Also,
+|C | = 1611n−(deg W1+deg W2+···+deg W11 ).
+Proof. From Theorem 3, we have
+C = ⟨ ˆP1⟩ ⊕ ⟨u ˆP2⟩ ⊕ ⟨u2 ˆP3⟩ ⊕ ⟨e ˆP4⟩ ⊕ ⟨ue ˆP5⟩
+⊕⟨u2e ˆP6⟩ ⊕ ⟨e2 ˆP7⟩ ⊕ ⟨ue2 ˆP8⟩ ⊕ ⟨u2v2 ˆP9⟩
+⊕⟨(u + eη21 + e2η31) ˆP10⟩ ⊕ ⟨(u2 + eη22 + e2η32) ˆP11⟩.
+It is easy to show that
+⟨ ˆPi⟩ = ⟨ ˆPi⟩R′ ⊕ u⟨ ˆPi⟩R′ ⊕ u2⟨ ˆPi⟩R′
+⊕e⟨ ˆPi⟩R′ ⊕ ue⟨ ˆPi⟩R′ ⊕ u2e⟨ ˆPi⟩R′
+⊕e2⟨ ˆPi⟩R′ ⊕ ue2⟨ ˆPi⟩R′ ⊕ u2e2⟨ ˆPi⟩R′.
+Now, we substitute the value of ⟨ ˆPi⟩ in C which gives
+C = ⟨ ˆP1⟩R′ + u(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′)
++u2(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP3⟩R′) + e(⟨ ˆP1⟩R′ + ⟨ ˆP4⟩R′)
++ue(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP4⟩R′ + ⟨ ˆP5⟩R′)
++u2e(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP4⟩R′ + ⟨ ˆP5⟩R′ + ⟨ ˆP6⟩R′)
++e2(⟨ ˆP1⟩R′ + ⟨ ˆP7⟩R′)
++ue2(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP4⟩R′ + ⟨ ˆP5⟩R′
++⟨ ˆP7⟩R′ + ⟨ ˆP8⟩R′)
++u2e2(⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP3⟩R′ + ⟨ ˆP4⟩R′
++⟨ ˆP5⟩R′ + ⟨ ˆP6⟩R′ + ⟨ ˆP7⟩R′ + ⟨ ˆP8⟩R′ + ⟨ ˆP9⟩R′)
++(u + eη21 + e2η31)⟨ ˆP10⟩R′ + (u2 + eη22 + e2η32)⟨ ˆP11⟩R′.
+We complete the rest of the proof by proving that
+⟨ ˆW2⟩R′ = ⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′,
+⟨ ˆW3⟩R′ = ⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′ + ⟨ ˆP3⟩R′,
+⟨ ˆW4⟩R′ = ⟨ ˆP1⟩R′ + ⟨ ˆP4⟩R′, . . . ,⟨ ˆW11⟩R′ = ⟨ ˆP11⟩R′.
+Now, from the hypothesis we have xn − 1| ˆPi ˆPj, and ˆPi ˆPj =
+0 in R[x] ⟨xn−1⟩ for any distinct i, j∈ {1, . . . ,11}. As {Pj, ˆPj}
+are pairwise coprime, there exist y0j, y1j ∈ Fp3 [x] such that
+y0jPj +y1j ˆPj = 1 for j = {1, . . . ,11}. Further, if we consider
+y0jPj +y1j ˆPj = 1 for j = {2, . . . ,11}, there exist polynomials
+u1, u2, . . . , u11 in Fp3 [x] such that
+u1P2 · · ·P11 +u2 ˆP2P3 · · ·P11 +· · ·+u11P2P3 · · ·P10 ˆP11 = 1.
+If we multiply the above equation by ˆP1, we have ˆP1 =
+u1 ˆP1P2 · · ·P11. From the above construction, we can conclude
+that u1W1P2 · · ·P11 = ˆP1 which implies that ⟨W1⟩R′ = ⟨ ˆP1⟩.
+Now, W2 = ˆP1 + ˆP2. Hence, u1W2P2 · · ·P11 = ˆP1 which
+implies that ˆP1 ∈ ⟨W2⟩R′. If we continue this process, we get ˆP2 ∈ ⟨W2⟩R′. Hence, we can conclude that
+⟨W2⟩R′ = ⟨ ˆP1⟩R′ + ⟨ ˆP2⟩R′.
+Similarly, rest will follow. Since |Fp3 | = p3, |⟨Wj⟩R′| =
+p3(n−deg Wj ) and hence
+|C| = p3(11n−(P11 j=1 deg Wj )).
+IV. T HE GRAY MAP
+In the case of ring F2 + uF2 in [3], Lee weight is defined by
+ωL(0) = 0, ωL(1) = ωL(1 + u) = 1, ωL(u) = 2, and the Gray
+map from (F2 + uF2)n to F2n 2 sends (a + ub) to (b, a+ b) for
+a, b∈ Fn 2 . We extend this Gray map φ from R to F9 p3 by
+φ[(y1 + ey2 + e2y3) + u(y4 + ey5 + e2y6)
++u2(y7 + ey8 + e2y9)] =
+Authorized licensed use limited to: SR University. Downloaded on November 12,2026 at 06:28:05 UTC from IEEE Xplore.  Restrictions apply. 
+
+(y9, y8 + y9, y7 + y9, y6 + y9, . . . , y3 + y9, y2 + y9,
+y1 + y2 + y3 + · · ·+ y9),
+where yi ∈ Fp3 for i = 1 to 9 and φ is also distance preserving.
+Hence, for any element
+r = (y1 + ey2 + e2y3) + u(y4 + ey5 + e2y6)
++u2(y7 + ey8 + e2y9)
+in R, the extended Lee weight is defined as
+ωL(r) = (ωH (y9) + ωH (y8 + y9) + ωH (y7 + d9)+
+ωH (y6 + d9) + · · ·+ ωH (y3 + y9)
++ωH (y2 + y9) + ωH (y1 + y2 + y3 + · · ·+ y9)),
+where ωH (.) denotes the Hamming weight in Fp3. If we take
+c = ( c0, c1, . . . , cn−1) in Rn, then the Lee weight in c is
+ωL(c) = ωL(c0)+ωL(c1)+· · ·+ωL(cn−1). The number of non-
+zero components is the Hamming weight of a codeword ωH (c).
+Hamming distance for any two codewords c and c′ is defined
+as dH (c, c′) = ωH (c − c′). The Hamming distance for the code
+C is defined as dL(R) = min{dL(c, c′) | c ̸= c′ ∀ c, c′ ∈ C }.
+Theorem 5. F or a prime (p ≤ 100), let C be a cyclic code
+of length n over R, size M , and Lee distance dL. Then φ(C )
+is a linear code over Fp3 of length 9n, size M , and Hamming
+distance dH .
+V. E XAMPLES
+A linear q-ary [n, k, d] code is said to be MDS (maximum
+distance separable) if d = n − k + 1, i.e., if it meets the
+Singleton bound d ≤ n − k + 1. One of the basic motives
+in the construction of an [n, k] linear code is to optimize d and
+try to achieve dM DS= n − k + 1. A code is said to be AMDS
+(almost MDS) if its minimum distance d = n − k, and it is
+optimal if it attains the highest possible minimum distance for
+its given length and dimension. For n = 3 and 5, following
+is the construction strategy of cyclic codes over F125, F27, and
+F8, which are the Gray images of cyclic codes. We determine
+parameters using Magma Computation Software [4].
+Example 1. F or n = 3 and p = 5 , we have x3 − 1 =
+(x + 4)(x2 + x + 1) ∈ F125[x]. In this case, we consider
+f1 = x + 4, and f2 = x2 + x + 1. The parameters of the
+codes obtained by the generators given in the Table I are
+[27, 22, 5]125,[27, 25, 3]125, and [27, 23, 4]125.
+Example 2. F orn = 3 and p = 2, we have x3 − 1 = ( x +
+1)(x2 + x + 1) ∈ F8[x]. In this case, we consider f1 = x + 1,
+and f2 = x2 + x + 1. The parameters of the codes obtained
+by the generators provided in the Table I are [27, 23, 3]8, and
+[27, 25, 2]8.
+Example 3. F orn = 5 and p = 3, we have x5 − 1 = ( x +
+2)(x4 + x3 + x2 + x + 1) ∈ F27[x]. In this case, we consider
+f1 = x + 2, and f2 = x4 + x3 + x2 + x + 1. The parameters of
+the codes obtained by the generators given in the Table I are
+[45, 39, 4]27, [45, 38, 5]27 and [45, 42, 3]27.
+Example 4. F orn = 5 and p = 2, we have x5 − 1 = ( x +
+2)(x4 + x3 + x2 + x + 1) ∈ F8[x]. In this case, we consider
+f1 = x + 2, and f2 = x4 + x3 + x2 + x + 1. The parameters of
+the codes obtained by the generators provided in Table I are
+[45, 39, 4]8, and [45, 41, 3]8.
+VI. C ONCLUSION
+In this paper, we have extended the work of [8] to the matrix
+ring R = M3(Fp+uFp+u2Fp). We have deduced the structure
+of cyclic codes, which includes the cardinality of cyclic codes
+over the ring R, the formation of ideals of the ring R, and
+cyclic codes as direct sums of submodules. Additionally, we
+have defined the Gray map for the specified ring, which takes
+cyclic code over R to Fp3. Furthermore, we have presented a
+few non-trivial examples of linear codes over F125, F27, and F8
+with good parameters that validate the results we have derived.
+ACKNOWLEDGEMENT
+First and second authors are thankful to IIIT Bhopal and IIT
+Patna, respectively, for providing the research facilities.
+REFERENCES
+[1] A. Alahmadi, H. Sboui, P. Sol ´e, O. Yemen, “Cyclic codes over M2(F2).”
+J.Franklin Inst. V ol. 350, no. 9, pp. 2837-2847, 2013.
+[2] S. Bhowmick, S. Bagchi, R. K. Bandi, “Self-dual cyclic codes over
+M2(Z4).” Discuss. Math. Gen. Algebra Appl. V ol. 42, no. 2, pp.
+349–362, 2022.
+[3] A. Bonnecaze, P. Udaya, “Cyclic codes and self-dual codes over F2 +
+uF2.” IEEE Trans. Inform. Theory V ol. 45, no. 4, pp. 1250-1255, 1999.
+[4] W. Bosma, J. Cannon, “Handbook of Magma Functions.” Univ. of
+Sydney, Sydney, 1995.
+[5] D. F. Falcunit, V . P. Sison, “Cyclic codes over matrix ring M2(Fp) and
+their isometric images over Fp2 + uFp2 .” International Zurich Seminar
+on Communications(IZS) , pp. 26-28, 2014.
+[6] M. Grassl, “Code Tables: Bounds on the parameters of various types of
+codes” available at http://www.codetables.de/ accessed on 20/03/2020.
+[7] H. Islam, O. Prakash, D. K. Bhunia, “On the structure of cyclic codes
+over M2(Fp + uFp).” Indian J Pure Appl. Math. V ol. 53, no. 1, pp.
+153–161, 2022.
+[8] H. Islam, O. Prakash, D. K. Bhunia, “Algebraic structure of cyclic codes
+over M3(Fp).” J. Discret. Math. Sci. Cryptogr , V ol.27, pp. 189 − 201,
+2024.
+[9] R. Luo, P. Udaya, “Cyclic codes over M2(F2 + uF2).” Cryptogr .
+Commun. V ol. 10, no. 6, pp. 1109-1117, 2018.
+[10] MinT, “The online database for optimal parameters of (t, m, s)-nets,
+(t, s)-sequences, orthogonal arrays, linear codes, and OOAs!” available
+at http://mint.sbg.ac.at/table.php?i=c accessed on 5/9/2024.
+[11] F. Oggier, P. Sol ´e, J. C. Belfiore, “Codes over matrix rings for space-
+time coded modulations.” IEEE Trans. Inform. Theory V ol. 58, no. 2, pp.
+734 − 746, 2012.
+[12] J. Pal, S. Bhowmick, S. Bagchi, “Cyclic codes over M4(F2).” J. Appl.
+Math. Comput. V ol. 60, no. 1-2, pp. 749-756, 2019.
+[13] Pankaj, M. Pruthi, “Cyclic codes of prime power length from generalized
+cyclotomic classes of order 2r.” J. Inf. Optim. Sci. V ol. 39, no. 4, pp.
+965-971, 2018.
+[14] S. Patel, O. Prakash, H. Islam, “Cyclic codes over M4(F2 + uF2).”
+Cryptography Commun. V ol. 14, no. 5, pp. 1021–1034, 2022.
+[15] O. Prakash, H. Islam, S. Das, “On cyclic codes with minimal generating
+sets over the ring Zpk .” Southeast Asian Bull. Math. V ol. 45, no. 4, pp.
+521-532, 2021.
+[16] V . Pless, Z. Qian, “Cyclic codes and quadratic residue codes over Z4.”
+IEEE Trans. Inf. Theory V ol. 42, no. 5, pp. 1594-1600, 1996.
+[17] R. Wisbauer, “Foundations of module and ring theory.” Gordon and
+Breach Science Publishers, 1991.
+[18] J. Wolfmann, “Negacyclic and cyclic codes over Z4.” IEEE Trans. Inf.
+Theory V ol. 45, no. 7, pp. 2527-2532, 1999.
+Authorized licensed use limited to: SR University. Downloaded on November 12,2026 at 06:28:05 UTC from IEEE Xplore.  Restrictions apply. 

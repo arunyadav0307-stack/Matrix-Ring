@@ -1,0 +1,642 @@
+Vol.:(0123456789)
+https://doi.org/10.1007/s12095-022-00572-9
+1 3
+Cyclic codes over M4(𝔽2 + u𝔽2)  
+Shikha Patel1 · Om Prakash1  · Habibul Islam1
+© The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2022
+Abstract
+Let p be a prime and 𝔽q be a finite field for q = pm . In this paper, we consider the ring 
+R = M4(𝔽2 + u𝔽2) of 4 × 4 matrices over the finite ring 𝔽2 + u𝔽2 with u2 = 0 . Then 
+R is a noncommutative non-chain ring of cardinality 416 and isomorphic to the ring 
+𝔽16 + v𝔽16 + v2𝔽16 + v3𝔽16 + u𝔽16 + uv𝔽16 + uv2𝔽16 + uv3𝔽16, where v4 = 0 , uv = vu , 
+uv2 = v2u and uv3 = v3u . Here, first we establish the structure of cyclic codes and their 
+generators over R and later the dual (Euclidean and Hermitian both) of these cyclic codes 
+are discussed. Further, with the help of the Gray map, we show that the image of a cyclic 
+code is an 𝔽16-linear code. Finally, we provide some non-trivial examples of linear codes 
+with good parameters to support our derived results.
+Keywords Modules · Matrix ring · Cyclic codes · Gray map
+Mathematics subject classification (2010) 12E20 · 94B05 · 94B15
+1 Introduction
+The study of linear codes over finite rings has received much attention in the last decades 
+of the twentieth century. A linear code whose codewords are invariant under a circular shift 
+is known as a cyclic code. A cyclic code of length n over a ring R is an ideal of the quo -
+tient ring R[x]∕⟨xn − 1⟩ , and each codeword is identified by a polynomial of degree at most 
+n − 1 . Due to such algebraic structure, the class of cyclic codes is a better choice among 
+researchers for encoding and decoding purposes than other linear codes [ 1, 5]. In 1994, 
+Hammons et al. [ 9] gave a new direction to linear codes over ℤ4 and obtained some good 
+non-linear binary codes as the Gray images of linear codes. Afterwards, the study of linear 
+codes over finite rings has gained significant attention from the coding analysts.
+ * Om Prakash 
+ om@iitp.ac.in
+ Shikha Patel 
+ shikha_1821ma05@iitp.ac.in
+ Habibul Islam 
+ habibul.pma17@iitp.ac.in
+1 Department of Mathematics, Indian Institute of Technology Patna, 801 106 Patna, India
+Cryptography and Communications (2022) 14:1021–1034
+Received: 11 September 2021 / Accepted: 6 March 2022 / Published online: 26 March 2022
+
+1 3
+Besides several remarkable studies over finite commutative rings, recently codes over 
+noncommutative rings have been attracting many researchers, we refer [2, 8, 11–13, 15]. In 
+fact, in 1997, the first concrete set of alphabets A = M2(𝔽2) appeared in algebraic construc-
+tions of modular lattices [3]. Later, in 2012, Oggier et  al. [12] developed the theory for 
+noncommutative ring M2(𝔽2) in the context of space-time codes. In 2013, Alahmadi et al. 
+[2] studied cyclic codes over the same ring M2(𝔽2) . In 2014, F alcunit and Sison [7] dis-
+cussed the structure of cyclic codes over M2(𝔽p) and obtained the isometric images of these 
+codes over the ring 𝔽p2 + u𝔽p2 . Mor eover, in 2018, Luo and Udaya [11] presented the struc-
+ture of cyclic codes over the matrix ring M2(𝔽2 + u𝔽2) and obtained some optimal codes of 
+even length over 𝔽4 . A gain, in 2018, Bhowmick et al. [4] discussed cyclic codes and their 
+dual over a matrix ring M2(ℤ4) . F urther, in 2019, Pal et al. [13] studied cyclic codes over 
+the matrix ring M4(𝔽2) . R ecently, Islam et al. [10] extended the work of [11] to the ring 
+M2(𝔽p + u𝔽p) , where p ≡ 2 or 3 (mod 5) and studied cyclic codes of length n.
+Throughout this paper, R = M4(𝔽2 + u𝔽2), a noncommutative ring of 4 × 4 matrices 
+over 𝔽2 + u𝔽2 with u2 = 0 . It is easy t o check that R = M4(𝔽2)+ uM4(𝔽2)≅M 4(𝔽2)[u]∕⟨u2⟩ . 
+F
+rom [13], if we consider
+and
+then M4(𝔽2) is isomorphic to the ring 𝔽16 + e𝔽16 + e2𝔽16 + e3𝔽16 , where e satisfies t he relation 
+(1 + e)4 = 0 and 𝔽16 is isomorphic to 𝔽2[𝜔] . Moreover, 𝔽16 + e𝔽16 + e2𝔽16 + e3𝔽16 can also be 
+represented as 𝔽16 + v𝔽16 + v2𝔽16 + v3𝔽16 with v4 =( 1 + e)4 = 0 , i.e., v is a nilpo tent element of 
+nilpotency 4. Hence, R = 𝔽16 + v𝔽16 + v2𝔽16 + v3𝔽16 + u𝔽16 + uv𝔽16 + uv2𝔽16 + uv3𝔽16, where 
+v4 = 0 , u2 = 0 , uv = vu , uv2 = v2u and uv3 = v3u.
+In this paper, we focus on cyclic codes of odd length over R = M4(𝔽2 + u𝔽2) where 
+u2 = 0 . This also enables the construction of cyclic codes of even length over 𝔽16 with the 
+help of the Gray map. Further, we define the Bachoc map from M4(𝔽2 + u𝔽2) to M2 4 (𝔽2) 
+which preserves the Bachoc weight. We observed that Pal et al. [13] have discussed results 
+of cyclic codes only for odd lengths. However, we extend it and also obtain the images of 
+cyclic codes of odd length over R under the Bachoc map as binary quasi-cyclic codes of 
+even length over M4(𝔽2) . U ndoubtedly, Pal et al. [13] have given a purposeful research ven-
+ture to study the dual of cyclic codes over M4(𝔽2) and we extend this study to the Euclidean 
+dual as well as the Hermitian dual of cyclic codes over R. A major motivation to study the 
+Hermitian dual codes is that these codes have been efficiently used in the construction of 
+modular lattices [3].
+The presentation of the paper is as follows: Section  2 discusses the ring structure of 
+R = M4(𝔽2 + u𝔽2) and the characterization of cyclic codes over it. Sections 3 and 4 contain 
+the Euclidean dual and Hermitian dual of cyclic codes over R, respectively. In Section  5, 
+we define the Gray map and the Bachoc map to determine a correspondence between 
+e =
+⎛
+⎜
+⎜
+⎜⎝
+1000
+0010
+1100
+0011
+⎞
+⎟
+⎟
+⎟⎠
+𝜔 =
+⎛
+⎜
+⎜
+⎜⎝
+0100
+0010
+0001
+1100
+⎞
+⎟
+⎟
+⎟⎠
+,
+1022 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+M4(𝔽2 + u𝔽2) and 𝔽 8 16 ; M4(𝔽2 + u𝔽2) and M2 4 (𝔽2), respectively. Section  6 presents some 
+examples of non-trivial codes with good parameters in support of our obtained results. Sec-
+tion 7 concludes the paper.
+2  C yclic codes over  M4(𝔽2 + u𝔽2)
+A linear code C of length n over R is an R-submodule of Rn . It is said t o be cyclic if for 
+each codeword c =( c0, c1, … , cn−1)∈C  , its cy clic shift (cn−1, c0, … , cn−2)∈C  . Also, a 
+cy
+clic code of length n over R can be viewed as an ideal of Rn = R[x]∕⟨xn − 1⟩ , and each 
+codeword (c0, c1, … , cn−1) is identified by a polynomial c0 + c1x + ⋯ + cn−1xn−1.
+Let R[x] be the ring of polynomials over R. For any a ∈ R , let ̃a be the polynomial reduc-
+tion of a modulo u and v. We consider a polynomial reduction mapping 𝜌 ∶ R[x] → 𝔽16[x] 
+defined by
+A polynomial f is called basic irreducible over R if 𝜌(f ) is irreducible over 𝔽16 . If n  is odd 
+and xn − 1 = ∏m r=1 fr , where fr ’ s are irreducible polynomials over 𝔽16 , t hen the polynomial 
+xn − 1 can be uniquely factorized into pairwise coprime polynomials over 𝔽16.
+Theorem  1
+ Le
+t n be an odd positive integer and xn − 1 = ∏m r=1 fr ,  where fr ’ s are basic 
+irreducible polynomials over R. Then
+Proof
+ F
+ollows from [12, 14] and application of the Chinese Remainder Theorem to the 
+right R-module R[x]∕⟨xn − 1⟩.
+The above theorem is an analogue of the Chinese Remainder Theorem for noncommu-
+tative setup. Since ⟨fr⟩ is not a two sided ideal, R[x]∕⟨fr⟩ is treated as a right R-module. 
+Now, we find all the possible forms of the submodules of R[x]∕⟨fr⟩.
+Theorem  2
+ If f is a basic ir
+reducible polynomial over R, then the right R-submod-
+ules of Rf = R[x]∕⟨f ⟩ are ⟨0⟩ ,  ⟨1⟩ ,  ⟨v⟩ ,  ⟨v2⟩ ,  ⟨v3⟩ ,  ⟨uv⟩ ,  ⟨uv2⟩ ,  ⟨uv3⟩ ,  ⟨u⟩ ,  ⟨uv2⟩ + ⟨v3⟩ ,  
+⟨uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ⟩ ,  ⟨u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ⟩ and ⟨uv2 + v3h𝛼 ⟩ ,  
+where h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x].
+Proof
+ 
+Let I be a non-zero right R-submodule of Rf  and g + ⟨f ⟩ , a non-zer o element of I. 
+Then g ∉ ⟨f ⟩ and there exist g1, g2, g3, g4, g5, g6, g7, g8 ∈ 𝔽16[x] such that
+There are two cases:
+Case I If gcd(g1, f )=1  , t hen there exists g� 1 ∈ 𝔽16[x] such that g1g� 1 + ⟨f ⟩ = 1 + ⟨f ⟩ . 
+This im
+plies that I = Rf .
+Case II If gcd(g1, f )=f  , then
+n−1/uni2211.s1
+i=0
+aixi →
+n−1/uni2211.s1
+i=0
+̃aixi.
+Rn = R[x]∕⟨xn − 1⟩ =
+m�
+r=1
+R[x]∕⟨fr⟩.
+(1)g = g1 + vg2 + v2g3 + v3g4 + ug5 + uvg6 + uv2g7 + uv3g8.
+1023Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+If gcd(g5, f )=f  , then
+This im
+plies that I = ⟨v⟩ or ⟨v2⟩ or ⟨v3⟩ or ⟨uv⟩ or ⟨uv2⟩ or ⟨uv3⟩.
+If gcd(g5, f )=1  , t hen there exists g−1 5 ∈ 𝔽16[x] such that g5g−1 5 = 1 . N ow, we have 
+uv3 = gv3g−1 5 ∈ I . It f ollows that ug5 + vg2 + v2g3 + v3g4 + uvg6 + uv2g7 = g − uv3g8 ∈ I.
+If gcd(g2, f )=gcd(g 3, f )=gcd(g 4, f )=gcd(g 6, f )=gcd(g 7, f )=f  , then u ∈ I and 
+hence I = ⟨u⟩ . F urther, if gcd(g2, f )=gcd(g 3, f )=gcd(g 4, f )=gcd(g 6, f )=gcd(g 7, f )=1  , 
+t
+hen ⟨u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ⟩ ∈ I where h𝛼 = g2g−1 5 , h𝛽 = g3g−1 5 , h𝛾
+= g4g−1 5 , h𝛿 = g6g−1 5 , h𝛿� = g7g−1 5  are units in 𝔽16[x] . A gain, there are two cases: 
+1.
+ ⟨u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ⟩ = I.
+2.
+ ⟨u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ⟩ ≨ I.
+From (2), we have
+This implies that gvg−1 5 − uv3g7g−1 5 = v2g2g−1 5 + v3g3g−1 5 + uv + uv2g6g−1 5 ∈ I . If 
+gcd(g2, f )=gcd(g 3, f )=gcd(g 6, f )=1  , then uv + v2g2g−1 5 + v3g3g−1 5 + uv2g6g−1 5 ∈ I , 
+wher
+e h𝛼 = g2g−1 5 , h𝛽 = g3g−1 5 , h𝛿 = g6g−1 5  are units in 𝔽16[x] . Ther efore, we have the fol-
+lowing cases: 
+(i)
+  ⟨uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ⟩ = I.
+(ii)
+  ⟨uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ⟩ ≨ I.
+ Again, from (2 ), we have
+This implies that v3g2 + uv2g5 = gv2 − uv3g6 ∈ I . If gcd(g2, f )=1  , then uv2 + v3h𝛼 ∈ I , 
+wher
+e h𝛼 = g2g−1 5  is a unit in 𝔽16[x] . N ow, further we have two cases: 
+(iii)
+  ⟨uv2 + v3h𝛼 ⟩ = I.
+(iv)
+  ⟨uv2 + v3h𝛼 ⟩ ≨ I.
+ Since there exists uv2 + v3h𝛼� ∈ I where h𝛼� ∈ 𝔽16[x] , whic h does not belong to 
+⟨uv2 + v3h𝛼 ⟩ . This im plies that v3(h𝛼 − h𝛼� )∈I  . But, (h𝛼 − h𝛼� )∉⟨f ⟩, therefore, v3 ∈ I . 
+Hence, I = ⟨uv2⟩ + ⟨v3⟩.
+Let fi be a factor of xn − 1 and consider ̂fi = xn −1 fi  . Then w e have the following result 
+for R-modules in R[x] ⟨xn −1⟩.
+(2)g + ⟨f ⟩ = vg2 + v2g3 + v3g4 + ug5 + uvg6 + uv2g7 + uv3g8 + ⟨f ⟩.
+g + ⟨f ⟩ = vg2 + v2g3 + v3g4 + uvg6 + uv2g7 + uv3g8 + ⟨f ⟩.
+gv = v2g2 + v3g3 + uvg5 + uv2g6 + uv3g7.
+gv2 = v3g2 + uv2g5 + uv3g6.
+1024 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+Corollary 1 Let xn − 1 = f1f2 ⋯ fm where fi(1 ≤ i ≤ m) are irreducible pairwise coprime monic pol-
+ynomials in 𝔽16[x] . Then an y right R- module in R[x] ⟨xn −1⟩ is the sum of the R-submodules ⟨ ̂fi + ⟨xn − 1⟩⟩ ,  
+⟨v ̂fi + ⟨xn − 1⟩⟩ , ⟨v2 ̂fi + ⟨xn − 1⟩⟩ , ⟨v3 ̂fi + ⟨xn − 1⟩⟩ , ⟨uv ̂fi + ⟨xn − 1⟩⟩ , ⟨uv2 ̂vi + ⟨xn − 1⟩⟩ ,  
+⟨uv3 ̂fi + ⟨xn − 1⟩⟩ , ⟨u ̂fi + ⟨xn − 1⟩⟩ , ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂fi + ⟨xn − 1⟩⟩ , ⟨(u + vh𝛼
++v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂fi + ⟨xn − 1⟩⟩ and ⟨(uv2 + v3h𝛼 ) ̂fi + ⟨xn − 1⟩⟩  for  1 ≤ i ≤ m.
+Proof
+ F
+ollows from Theorems 1 and 2.
+Throughout the paper, we use c0 + c1x + ⋯ + cn−1xn−1 for the corresponding coset 
+c0 + c1x + ⋯ + cn−1xn−1 + ⟨xn − 1⟩ in the ring R[x] ⟨xn −1⟩ . N ow, we provide the main result of 
+this section.
+Theorem  3
+ Le
+t C be a cyclic code of odd length n over R. Then there exist units 
+h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var in 𝔽16[x] and a family of irreducible pairwise coprime monic polynomials 
+Gi, for 0 ≤ i ≤ 12, in 𝔽16[x] such that ∏12 i=0 Gi = xn − 1 and
+Moreover, /uni007C.varC/uni007C.var = 16𝜉 , wher e 𝜉 = 8 deg(G1)+6 deg(G 2)+4 deg(G 3)+ 2 deg(G4)+3 deg(G 5)
++2 deg(G6)+deg(G 7)+ 4 deg(G8)+3 deg(G 9)+ 3 deg(G10)+ 5 deg(G11)+ 2 deg(G12)
+Proof Let C be a cyclic code of odd length n over R and xn − 1 = f1f2 ⋯ fm where fi(1 ≤ i ≤ m) 
+are pairwise coprime monic irreducible polynomials in 𝔽16[x] . By Corollary 1, C can be  
+written as the direct sum of the right R-submodules ⟨ ̂fi + ⟨xn − 1⟩⟩ , ⟨v ̂fi + ⟨xn − 1⟩⟩ ,  
+⟨v2 ̂fi + ⟨xn − 1⟩⟩ , ⟨v3 ̂fi + ⟨xn − 1⟩⟩ , ⟨uv ̂fi + ⟨xn − 1⟩⟩ , ⟨uv2 ̂fi + ⟨xn − 1⟩⟩ , ⟨uv3 ̂fi + ⟨xn − 1⟩⟩ ,  
+⟨u ̂fi + ⟨xn − 1⟩⟩ , ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂fi + ⟨xn − 1⟩⟩ , ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++uv2h𝛿� ) ̂fi + ⟨xn − 1⟩⟩ and ⟨(uv2 + v3h𝛼 ) ̂fi + ⟨xn − 1⟩⟩ for 1 ≤ i ≤ m . W ithout loss of generality,  
+we can assume that
+C =⟨ ̂G1⟩ ⊕ ⟨v ̂G2⟩ ⊕ ⟨v2 ̂G3⟩ ⊕ ⟨v3 ̂G4⟩ ⊕ ⟨uv ̂G5⟩ ⊕ ⟨uv2 ̂G6⟩ ⊕ ⟨uv3 ̂G7⟩ ⊕ ⟨u ̂G8⟩ ⊕ (⟨uv2 ̂G9⟩
++ ⟨v3 ̂G9⟩) ⊕ ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G10⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++ uv2h𝛿� ) ̂G11⟩ ⊕ ⟨(uv2 + v3h𝛼 ) ̂G12⟩.
+C =⟨̂fm1 +1⟩ ⊕ ⋯ ⊕ ⟨̂fm1 +m2 ⟩ ⊕ ⟨v̂fm1 +m2 +1⟩ ⊕ ⋯ ⊕ ⟨v̂fm1 +m2 +m3 ⟩ ⊕ ⟨v2 ̂fm1 +m2 +m3 +1⟩
+⊕ ⋯ ⊕ ⟨v̂fm1 +m2 +m3 +m4 ⟩ ⊕ ⟨v3 ̂fm1 +m2 +m3 +m4 +1⟩ ⊕ ⋯ ⊕ ⟨v3 ̂fm1 +m2 +m3 +m4 +m5 ⟩
+⊕ ⟨uv̂fm1 +m2 +m3 +m4 +m5 +1⟩ ⊕ ⋯ ⊕ ⟨uv̂fm1 +m2 +m3 +m4 +m5 +m6 ⟩
+⊕ ⟨uv2 ̂fm1 +m2 +m3 +m4 +m5 +m6 +1⟩ ⊕ ⋯ ⊕ ⟨uv2 ̂fm1 +m2 +m3 +m4 +m5 +m6 +m7 ⟩
+⊕ ⟨uv3 ̂fm1 +⋯+m7 +1⟩ ⊕ ⋯ ⊕ ⟨uv3 ̂fm1 +⋯+m8 ⟩ ⊕ ⟨ûfm1 +⋯+m8 +1⟩ ⊕ ⋯ ⊕ ⟨ûfm1 +⋯+m9 ⟩
+⊕ (⟨uv2 ̂fm1 +⋯+m9 +1⟩ + ⟨v3 ̂fm1 +⋯+m9 +1⟩) ⊕ ⋯ ⊕ (⟨uv2 ̂fm1 +⋯+m10 ⟩ + ⟨v3 ̂fm1 +⋯+m10 ⟩)
+⊕ ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )̂fm1 +⋯+m10 +1⟩ ⊕ ⋯ ⊕ ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )
+̂fm1 +⋯+m11 ⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )̂fm1 +⋯+m11 +1⟩ ⊕ ⋯ ⊕
+⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )̂fm1 +⋯+m12 ⟩ ⊕ ⟨(uv2 + v3h𝛼 )̂fm1 +⋯+m12 +1⟩
+⊕ ⋯ ⊕ ⟨(uv2 + v3h𝛼 )̂fm⟩
+.
+1025Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+where integers m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12 ≥ 0 and m1 + ⋯ + m12
++1 ≤ m.
+Let m0 = 0 and m13 be a non-negative integer such that m1 + ⋯ + m13 = m . N ow, we 
+define
+Then, from above construction, G0, G1, … , G12 are pairwise coprime and ∏12 i=0 Gi = xn − 1 . 
+Also,
+F
+urthermore, �⟨ ̂G1⟩� = 168 deg(G1 ) , �⟨v ̂G2⟩� = 166 deg(G2 ) , �⟨v2 ̂G3⟩� = 164 deg(G3 ) , �⟨v3 ̂G4⟩� 
+= 162 deg(G4 ) ,  �⟨uv ̂G5⟩� = 163 deg(G5) ,   �⟨uv2 ̂G6⟩� = 162 deg(G6) ,  �⟨uv3 ̂G7⟩� = 16deg(G7) ,  /uni007C.varu ̂G8/uni007C.var = 164 deg(G8 ) ,  
+�(⟨uv ̂G9⟩ + ⟨v3 ̂G9⟩)� = 163 deg(G9 ) , �⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G10⟩� = 163 deg(G10 ) , �⟨(u + vh𝛼 + v2h𝛽 
++v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G11⟩� = 165 deg(G11 ) , �⟨(uv2 + v3h𝛼 ) ̂G12⟩� = 162 deg(G12) . Thus, /uni007C.varC/uni007C.var = 16𝜉 ,  
+where 𝜉 = 8 deg(G1)+6 deg(G 2)+4 deg(G 3)+2 deg(G 4)+3 deg(G 5) +2 deg(G6)+deg (G7) 
++4 deg(G8)+3 deg(G 9)+ 3 deg(G10)+ 5 deg(G11)+ 2 deg(G12).
+Next, we consider R� = 𝔽16 [x] ⟨xn −1⟩𝔽16 [x]  where ⟨xn − 1⟩𝔽16 [x] is an ideal of 𝔽16[x] generated by 
+xn − 1.
+Theorem 4
+ Le
+t C be a cyclic code of odd length n over R. Then there exist polynomials 
+A, B, D, E, F, G, H, I, J, K, L in 𝔽16[x] which are factors of xn − 1 such that
+where h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x] and ⟨−⟩R� is an ideal of R/uni2032.var generated by −. Also,
+Proof
+ F
+rom Theorem 3, we have
+G0 =fm0 +1 ⋯ fm0 +m1 , G1 = fm0 +m1 +1 ⋯ fm0 +m1 +m2 ,
+G2 =fm0 +m1 +m2 +1 ⋯ fm0 +m1 +m2 +m3 , G3 = fm0 +⋯+m3 +1 ⋯ fm0 +⋯+m4 ,
+G4 =fm0 +⋯+m4 +1 ⋯ fm0 +⋯+m5 , G5 = fm0 +⋯+m5 +1 ⋯ fm0 +⋯+m6 ,
+G6 =fm0 +⋯+m6 +1 ⋯ fm0 +⋯+m7 , G7 = fm0 +⋯+m7 +1 ⋯ fm0 +⋯+m8 ,
+G8 =fm0 +⋯+m8 +1 ⋯ fm0 +⋯+m9 , G9 = fm0 +⋯+m9 +1 ⋯ fm0 +⋯+m10 ,
+G10 =fm0 +⋯+m10 +1 ⋯ fm0 +⋯+m11 , G11 = fm0 +⋯+m11 +1 ⋯ fm0 +⋯+m12 ,
+G12 =fm0 +⋯+m12 +1 ⋯ fm.
+C =⟨ ̂G1⟩ ⊕ ⟨v ̂G2⟩ ⊕ ⟨v2 ̂G3⟩ ⊕ ⟨v3 ̂G4⟩ ⊕ ⟨uv ̂G5⟩ ⊕ ⟨uv2 ̂G6⟩ ⊕ ⟨uv3 ̂G7⟩ ⊕ ⟨u ̂G8⟩ ⊕ (⟨uv2 ̂G9⟩
++ ⟨v3 ̂G9⟩) ⊕ ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G10⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++ uv2h𝛿� ) ̂G11⟩ ⊕ ⟨(uv2 + v3h𝛼 ) ̂G12⟩.
+C =⟨A⟩R� + v⟨B⟩R� + v2⟨D⟩R� + v3⟨E⟩R� + u⟨F⟩R� + uv⟨G⟩R� + uv2⟨H⟩R� + uv3⟨I⟩R�
++( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨J⟩R� +( u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟨K⟩R�
++( uv2 + v3h𝛼 )⟨L⟩R� ,
+/uni007C.varC/uni007C.var = 1611n−(deg A+deg B+deg D+deg E+deg F+deg G+deg H+deg I+deg J+deg K+deg L).
+C =⟨ ̂G1⟩ ⊕ ⟨v ̂G2⟩ ⊕ ⟨v2 ̂G3⟩ ⊕ ⟨v3 ̂G4⟩ ⊕ ⟨uv ̂G5⟩ ⊕ ⟨uv2 ̂G6⟩ ⊕ ⟨uv3 ̂G7⟩ ⊕ ⟨u ̂G8⟩ ⊕ (⟨uv2 ̂G9⟩
++ ⟨v3 ̂G9⟩) ⊕ ⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G10⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++ uv2h𝛿� ) ̂G11⟩ ⊕ ⟨(uv2 + v3h𝛼 ) ̂G12⟩.
+1026 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+It can be easily seen that ⟨ ̂Gi⟩ = ⟨ ̂Gi⟩R� + v⟨ ̂Gi⟩R� + v2⟨ ̂Gi⟩R� + v3⟨ ̂Gi⟩R� + u⟨ ̂Gi⟩R� + uv⟨ ̂Gi⟩R�
++uv2⟨ ̂Gi⟩R� + uv3⟨ ̂Gi⟩R� for 1 ≤ i ≤ 12 . Now,
+Consider
+N
+ow, we have to prove ⟨ ̂B⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� , ⟨ ̂D⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R� + ⟨ ̂G11⟩R� , 
+⟨ ̂E⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R� + ⟨ ̂G4⟩R� + ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R� , ⟨ ̂F⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G8⟩R� , 
+⟨ ̂G⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G5⟩R� + ⟨ ̂G8⟩R� + ⟨ ̂G11⟩R� , ⟨ ̂H⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R�
++⟨ ̂G5⟩R� + ⟨ ̂G6⟩R� + ⟨ ̂G8⟩R� + ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R�, ⟨̂I⟩R� = ⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R�
++⟨ ̂G4⟩R� + ⟨ ̂G5⟩R� + ⟨ ̂G6⟩R� + ⟨ ̂G7⟩R� + ⟨ ̂G8⟩R� + ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R� + ⟨ ̂G12⟩R�.
+For any distinct i, j ∈{ 0, 1, … , 12} , xn − 1/uni007C.var ̂Gi ̂Gj and GiGj = 0 in R[x] ⟨xn −1⟩ . Since {Gi, ̂Gi} 
+are coprime pairs for i = 1, … , 12 , t here exist a0i, a1i ∈ 𝔽16[x] such that a0iGi + a1i ̂Gi = 1.
+Further, we consider a0iGi + a1i ̂Gi = 1, for i = 2, … , 12 , t hen there exist polynomials 
+w1, w2, ⋯ , w12 in 𝔽16[x] such that
+Multiplying above equation by ̂G1 , w e have ̂G1 = w1 ̂G1G2 ⋯ G12. By the above con-
+struction, B = ̂G1 + ̂G2. This implies that w1AG2 ⋯ G12 = w1 ̂G1G2 ⋯ G12 = ̂G1. There-
+fore, w1BG2 ⋯ G12 = ̂G1. Hence, we conclude that ̂G1 ∈ ⟨B⟩R� . Continuing in t his 
+manner, we have ̂G1, ̂G2 ∈ ⟨B⟩R� . Similarly, we can prove ̂G1, ̂G2, ̂G3, ̂G11 ∈ ⟨D⟩R� , ̂G1, ̂G2, ̂G3, ̂G4, ̂G9, ̂G10, ̂G11 ∈ ⟨E⟩R� , ̂G1, ̂G8 ∈ ⟨F⟩R� , ̂G1, ̂G2, ̂G5, ̂G8, ̂G11 ∈ ⟨G⟩R� , ̂G1, ̂G2, ̂G3, ̂G5, ̂G6, ̂G8, ̂G9, ̂G10, ̂G11 ∈ ⟨H⟩R� , ̂G1, ̂G2, ̂G3, ̂G4, ̂G5, ̂G6, ̂G7, ̂G8, ̂G9, ̂G10, ̂G11, ̂G12 ∈ ⟨I⟩R� . 
+Hence,
+C =⟨ ̂G1⟩R� + v⟨ ̂G1⟩R� + v2⟨ ̂G1⟩R� + v3⟨ ̂G1⟩R� + u⟨ ̂G1⟩R� + uv⟨ ̂G1⟩R� + uv2⟨ ̂G1⟩R� + uv3⟨ ̂G1⟩R�
++ v⟨ ̂G2⟩R� + v2⟨ ̂G2⟩R� + v3⟨ ̂G2⟩R� + uv⟨ ̂G2⟩R� + uv2⟨ ̂G2⟩R� + uv3⟨ ̂G2⟩R� + v2⟨ ̂G3⟩R� + v3⟨ ̂G3⟩R�
++ uv2⟨ ̂G3⟩R� + uv3⟨ ̂G3⟩R� + v3⟨ ̂G4⟩R� + uv3⟨ ̂G4⟩R� + uv⟨ ̂G5⟩R� + uv2⟨ ̂G5⟩R� + uv3⟨ ̂G5⟩R�
++ uv2⟨ ̂G6⟩R� + uv3⟨ ̂G6⟩R� + uv3⟨ ̂G7⟩R� + u⟨ ̂G8⟩R� + uv⟨ ̂G8⟩R� + uv2⟨ ̂G8⟩R� + uv3⟨ ̂G8⟩R�
++ uv2⟨ ̂G9⟩R� + uv3⟨ ̂G9⟩R� + v3⟨ ̂G9⟩R� +( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨ ̂G10⟩ + v3⟨ ̂G10⟩
++ uv2⟨ ̂G10⟩ + uv3⟨ ̂G10⟩ +( u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟨ ̂G11⟩ + v2⟨ ̂G11⟩
++ v3⟨ ̂G11⟩ + uv⟨ ̂G11⟩ + uv2⟨ ̂G11⟩ + uv3⟨ ̂G11⟩ +( uv2 + v3h𝛼� )⟨ ̂G12⟩ + uv3⟨ ̂G12⟩
+=⟨ ̂G1⟩R� + v(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� )+v 2(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R� + ⟨ ̂G11⟩R� )+v 3(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R�
++ ⟨ ̂G3⟩R� + ⟨ ̂G4⟩R� + ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R� )+u(⟨ ̂G1⟩R� + ⟨ ̂G8⟩R� )+uv(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R�
++ ⟨ ̂G5⟩R� + ⟨ ̂G8⟩R� + ⟨ ̂G11⟩R� )+uv 2(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R� + ⟨ ̂G5⟩R� + ⟨ ̂G6⟩R� + ⟨ ̂G8⟩R�
++ ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R� )+ uv3(⟨ ̂G1⟩R� + ⟨ ̂G2⟩R� + ⟨ ̂G3⟩R� + ⟨ ̂G4⟩R� + ⟨ ̂G5⟩R� + ⟨ ̂G6⟩R�
++ ⟨ ̂G7⟩R� + ⟨ ̂G8⟩R� + ⟨ ̂G9⟩R� + ⟨ ̂G10⟩R� + ⟨ ̂G11⟩R� + ⟨ ̂G12⟩R� )+( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨ ̂G10⟩
++( u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟨ ̂G11⟩ +( uv2 + v3h𝛼 )⟨ ̂G12⟩.
+A = ̂G1; B = ̂G1 + ̂G2; D = ̂G1 + ̂G2 + ̂G3 + ̂G11;
+E = ̂G1 + ̂G2 + ̂G3 + ̂G4 + ̂G9 + ̂G10 + ̂G11;
+F = ̂G1 + ̂G8; G = ̂G1 + ̂G2 + ̂G5 + ̂G8 + ̂G11;
+H = ̂G1 + ̂G2 + ̂G3 + ̂G5 + ̂G6 + ̂G8 + ̂G9 + ̂G10 + ̂G11;
+I = ̂G1 + ̂G2 + ̂G3 + ̂G4 + ̂G5 + ̂G6 + ̂G7 + ̂G8 + ̂G9 + ̂G10 + ̂G11 + ̂G12;
+J = ̂G10; K = ̂G11; L = ̂G12.
+w1G2 ⋯ G12 + w2 ̂G2G3 ⋯ G12 + ⋯ + w12G2G3 ⋯ G11 ̂G12 = 1.
+1027Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+Since, /uni007C.var𝔽16/uni007C.var = 16 , �⟨A⟩R� � = 16n−deg A and hence
+3  E uclidean dual of cyclic codes over  M4(𝔽2 + u𝔽2)
+For given a =( a0, a1, … , an−1) and b =( b0, b1, … , bn−1) in Rn , the Euclidean inner pr od-
+uct of a  and b  is defined as a ⋅ b = a0b0 + a1b1 + ⋯ + an−1bn−1 . T wo vectors a  and b  
+are said to be orthogonal if a ⋅ b = 0 . F or a linear code C  over R, its dual C⟂ is defined as 
+C⟂ ={ a ∈ C /uni007C.var a ⋅ b = 0 ∀ b ∈ C}. A code C  is called self-orthogonal if C ⊆ C⟂ and self-
+dual if C = C⟂ . F or each polynomial f (x)= f0 + f1x + ⋯ + fn−1xn−1 with fn−1 ≠ 0 , the 
+r
+eciprocal of f (x) is defined as f ∗(x)=x n−1f (1∕x)= fn−1 + fn−2x + ⋯ + f0xn−1 . N ote that 
+deg f ∗(x) ≤ deg f (x) , and if f0 ≠ 0 , then deg f ∗(x)=deg f (x).
+Theorem 5
+ Le
+t C be a cyclic code of odd length n over R with  C = ⟨ ̂G1⟩ ⊕ ⟨v ̂G2⟩ ⊕ ⟨v2 ̂G3⟩
+⊕⟨v3 ̂G4⟩ ⊕ ⟨uv ̂G5⟩ ⊕ ⟨uv2 ̂G6⟩ ⊕ ⟨uv3 ̂G7⟩ ⊕ ⟨u ̂G8⟩ ⊕ (⟨uv2 ̂G9⟩ + ⟨v3 ̂G9⟩) ⊕ ⟨(uv + v2h𝛼 + v3h𝛽
++uv2h𝛿 ) ̂G10⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G11⟩ ⊕ ⟨(uv2 + v3h𝛼 ) ̂G12⟩  where 
+h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x] .  Then
+and /uni007C.varC⟂/uni007C.var = 16𝜂 , where 𝜂 = 8 deg(G0)+2 deg(G 2)+ 4 deg(G3)+6 deg(G 4)+5 deg (G5)
++6 deg(G6)+7 deg(G 7)+ 4 deg(G8)+5 deg(G 9)+ 5 deg(G10)+ 3 deg(G11)+ 6 deg(G12).
+Proof
+ 
+Let C be a cyclic code of odd length n over R. From Theorem 3, /uni007C.varC/uni007C.var = 16𝜉 where  
+𝜉 = 8 deg(G1)+ 6 deg(G2)+4 deg(G 3)+2 deg(G 4)+3 deg(G 5)+ 2 deg(G6)+deg(G 7) +4 deg
+(G8)+3 deg( G9)+3 deg (G10)+ 5 deg(G11)+ 2 deg(G12) . Since  /uni007C.varC/uni007C.var/uni007C.varC⟂/uni007C.var = 168n and n = deg 
+(G0)+deg( G1)+deg( G2)+ deg(G3)+deg( G4)+ deg(G5)+deg( G6)+deg( G7)+ deg(G8)
++ deg(G8)+deg( G9)+ deg(G10)+ deg(G11)+ deg(G12)  t herefore, /uni007C.varC⟂/uni007C.var = 16𝜂 
+where  𝜂 = 8n − 𝜉 = 8 deg(G0)+ 2 deg(G2)+4 deg(G 3)+6 deg(G 4)+5 deg(G 5)+6 deg(G 6)
++7 deg(G7)+4 deg(G 8)+5 deg(G 9)+5 deg(G 10)+3 deg(G 11)+ 6 deg(G12)
+ Now, consider C∗ = ⟨ ̂G∗ 0⟩ ⊕ ⟨v3 ̂G∗ 2⟩ ⊕ ⟨v2 ̂G∗ 3⟩ ⊕ ⟨v ̂G∗ 4⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++uv2h𝛿� ) ̂G∗ 5 ⟩ ⊕ (⟨u ̂G∗ 6 ⟩ + ⟨v2 ̂G∗ 6 ⟩) ⊕ (⟨u ̂G∗ 7 ⟩ + ⟨v ̂G∗ 7 ⟩) ⊕ ⟨u ̂G∗ 8 ⟩ ⊕ (⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )
+̂G∗ 10⟩ + ⟨uv2 ̂G∗ 10⟩ + ⟨v3 ̂G∗ 10⟩) ⊕ (⟨uv3 ̂G∗ 11⟩ + ⟨v2 ̂G∗ 11⟩) ⊕ (⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
+C =⟨A⟩R� + v⟨B⟩R� + v2⟨D⟩R� + v3⟨E⟩R� + u⟨F⟩R� + uv⟨G⟩R� + uv2⟨H⟩R� + uv3⟨I⟩R�
++( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨J⟩R� +( u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟨K⟩R�
++( uv2 + v3h𝛼 )⟨L⟩R� .
+/uni007C.varC/uni007C.var = 1611n−(deg A+deg B+deg D+deg E+deg F+deg G+deg H+deg I+deg J+deg K+deg L).
+C⟂ =⟨ ̂G∗ 0⟩ ⊕ ⟨v3 ̂G∗ 2⟩ ⊕ ⟨v2 ̂G∗ 3⟩ ⊕ ⟨v ̂G∗ 4⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++ uv2h𝛿� ) ̂G∗ 5⟩ ⊕ (⟨u ̂G∗ 6⟩ + ⟨v2 ̂G∗ 6⟩) ⊕ (⟨u ̂G∗ 7⟩ + ⟨v ̂G∗ 7⟩) ⊕ ⟨u ̂G∗ 8⟩ ⊕ (⟨(uv + v2h𝛼
++ v3h𝛽 + uv2h𝛿 ) ̂G∗ 9⟩ + ⟨v3 ̂G∗ 9⟩) ⊕ (⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G∗ 10⟩ + ⟨uv2 ̂G∗ 10⟩
++ ⟨v3 ̂G∗ 10⟩) ⊕ (⟨uv3 ̂G∗ 11⟩ + ⟨v2 ̂G∗ 11⟩) ⊕ (⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿
++ uv2h𝛿� ) ̂G∗ 12⟩ + ⟨v3 ̂G∗ 12⟩),
+.
+1028 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
++uv2h𝛿� ) ̂G∗ 12⟩ + ⟨v3 ̂G∗ 12⟩) . For i ,  j and 0 ≤ i, j ≤ 12 , if i + 1 = 12 − j + 1 , it can be easily 
+seen that
+Precisely, we can say that ̂Gi+1 ̂G∗ 12−j+1 = 0.
+If i + 1 ≠ 12 − j + 1 , i.e., i ≠ 12 − j then xn − 1/uni007C.var ̂Gi+1 ̂G∗ 12−j+1 . This im plies that ̂Gi+1 ̂G∗ 12−j+1 = 0 . Hence, C∗ ⊆ C⟂.
+Furthermore, /uni007C.var ̂G∗ 0 /uni007C.var = 168 deg(G0) , /uni007C.varv3 ̂G∗ 2 /uni007C.var = 162 deg(G2) , /uni007C.varv2 ̂G∗ 3 /uni007C.var = 164 deg(G3) , /uni007C.varv ̂G∗ 4/uni007C.var = 166 deg(G4 ) , 
+/uni007C.var(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G∗ 5/uni007C.var = 165 deg(G5 ) , �(⟨u ̂G∗ 6⟩ + ⟨v2 ̂G∗ 6⟩)� = 166 deg(G6 ) ,  
+�(⟨u ̂G∗ 7⟩ + ⟨v ̂G∗ 7⟩)� = 167 deg(G7 ) , /uni007C.varu ̂G∗ 8 /uni007C.var = 164 deg(G8)  , �(⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G∗ 9 ⟩ +⟨v3 ̂G∗ 9 ⟩)� 
+= 165 deg(G9 ), �(⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G∗ 10⟩ + ⟨uv2 ̂G∗ 10⟩ + ⟨v3 ̂G∗ 10⟩)� = 165 deg(G10 )  , �(⟨uv3 ̂G∗ 11⟩ 
++⟨v2 ̂G∗ 11⟩)� = 163 deg(G11 ) , �(⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G∗ 12⟩ + ⟨v3 ̂G∗ 12⟩)� = 166 deg(G12) . 
+ 
+Ther
+efore, /uni007C.varC∗/uni007C.var = 16𝜂 = /uni007C.varC⟂/uni007C.var where 𝜂 = 8 deg(G0)+2 deg(G 2)+ 4 deg(G3)+6 deg(G 4) 
++5 deg(G5)+6 deg(G 6)+ 7 deg(G7)+4 deg(G 8)+ 5 deg(G9)+5 deg(G 10)+3 deg(G 11)
++6 deg(G12)   Conseq uently, we get C∗ = C⟂.
+Theorem 6
+ Le
+t C be a cyclic code of odd length n over R. Then there exist polynomials 
+A∗, B∗, D∗, E∗, F∗, G∗, H∗, I∗, J∗, K∗, L∗ in 𝔽16[x] which are factors of xn − 1 such that
+where h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x] and ⟨−⟩R� is an ideal of R/uni2032.var generated by −. Moreover,
+Proof
+ F
+ollows from Theorems 4 and 5.
+4  H ermitian dual of cyclic codes over  M4(𝔽2 + u𝔽2)
+For any two codewords a =( a0, a1, … , an−1) and b =( b0, b1, … , bn−1) in Rn , the Her mitian 
+inner product of a and b is defined as
+v4 ̂G2 ̂G∗ 2 = 0, v4 ̂G3 ̂G∗ 3 = 0, v4 ̂G4 ̂G∗ 4 = 0,
+uv(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G5 ̂G∗ 5 = 0,
+uv2(⟨u⟩ + ⟨v2⟩) ̂G6 ̂G∗ 6 = 0, uv3(⟨u⟩ + ⟨v⟩) ̂G7 ̂G∗ 7 = 0, u2 ̂G8 ̂G∗ 8 = 0,
+(⟨uv2⟩ + ⟨v3⟩)(⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟩ + ⟨v3⟩) ̂G9 ̂G∗ 9 = 0,
+(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )(⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟩ + ⟨uv2⟩ + ⟨v3⟩) ̂G10 ̂G∗ 10 = 0,
+(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )(⟨uv3⟩ + ⟨v2⟩) ̂G11 ̂G∗ 11 = 0,
+(uv2 + v3h𝛼 )(⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟩ + ⟨v3⟩) ̂G12 ̂G∗ 12 = 0.
+C⟂ =⟨A∗⟩R� + v⟨B∗⟩R� + v2⟨D∗⟩R� + v3⟨E∗⟩R� + u⟨F∗⟩R� + uv⟨G∗⟩R� + uv2⟨H∗⟩R� + uv3⟨I∗⟩R�
++( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨J∗⟩R� +( u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� )⟨K∗⟩R�
++( uv2 + v3h𝛼 )⟨L∗⟩R� ,
+/uni007C.varC⟂/uni007C.var = 1611n−(deg A∗ +deg B∗ +deg D∗ +deg E∗ +deg F∗ +deg G∗ +deg H∗ +deg I∗ +deg J∗ +deg K∗ +deg L∗ ).
+< a, b >= a0b0 + a1b1 + ⋯ + an−1bn−1,
+1029Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+where “−” stands for the conjugation and bi = b4 i  for i = 0, 1, … , n − 1 . The Hermi-
+tian dual C⟂H of C is defined as C⟂H ={ a ∈ C /uni007C.var < a, b >= 0 ∀ b ∈ C}. It can be eas-
+ily seen that C⟂ = C⟂H . A code C is called Hermitian self-orthogonal if C ⊆ C⟂H and 
+Hermitian self-dual if C = C⟂H . For each polynomial f (x)= f0 + f1x + ⋯ + fkxk with 
+fk ≠ 0 , t he reciprocal of f(x) is defined as f ∗(x)=x kf (1∕x)= fk + fk−1x + ⋯ + f0xk . 
+N
+ote that deg f ∗(x) ≤ deg f (x) , and if f0 ≠ 0 , then deg f ∗(x)=deg f (x) . W e denote 
+f (x)= f 4 0 + f 4 1 x + ⋯ + f 4 k xk and also it is easy to verify f ∗(x)= f (x) ∗ .
+Theorem 7
+ Le
+t C be a cyclic code of odd length n over R with  C = ⟨ ̂G1⟩ ⊕ ⟨v ̂G2⟩ ⊕ ⟨v2 ̂G3⟩
+⊕⟨v3 ̂G4⟩ ⊕ ⟨uv ̂G5⟩ ⊕ ⟨uv2 ̂G6⟩ ⊕ ⟨uv3 ̂G7⟩ ⊕ ⟨u ̂G8⟩ ⊕ (⟨uv2 ̂G9⟩ + ⟨v3 ̂G9⟩) ⊕ ⟨(uv + v2h𝛼
++v3h𝛽 + uv2h𝛿 ) ̂G10⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G11⟩ ⊕ ⟨(uv2 + v3h𝛼 ) ̂G12⟩  
+wher
+e h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x] .  Then
+ 
+and /uni007C.varC⟂H /uni007C.var = 16𝜂 where 𝜂 = 8 deg(G0)+2 deg(G 2)+ 4 deg(G3)+6 deg(G 4)+5 deg(G 5)
++6 deg(G6)+7 deg(G 7)+ 4 deg(G8)+5 deg(G 9)+ 5 deg(G10)+ 3 deg(G11)+ 6 deg(G12) 
+Proof
+ F
+ollows the same procedure as the proof of Theorem 5.
+Theorem 8
+ Le
+t C be a cyclic code of odd length n over R. Then there exist polynomials 
+A∗, B∗, D∗, E∗, F∗, G∗, H∗, I∗, J∗, K∗, L∗ in 𝔽16[x] which are factors of xn − 1 such that
+where h𝛼 , h𝛽 , h𝛾 , h𝛿 , h𝛿/uni2032.var are units in 𝔽16[x] and ⟨−⟩R� is an ideal of R/uni2032.var generated by −. Moreover,
+Proof
+ Using t
+he similar arguments of Theorems 4 and 7, we get the required result.
+5  Right 𝔽2‑module isometry
+5.1  T he Gray map
+We recall from [5], in case of ring 𝔽2 + u𝔽2 , t he Lee weight is defined by 𝜔L(0)=0  , 
+𝜔L(1)=𝜔 L(1 + u)=1  , 𝜔L(u)=2  and the Gray map from (𝔽2 + u𝔽2)n to 𝔽 2n 2  sends (a + ub) 
+to (b, a + b) for a, b ∈ 𝔽 n 2  . N ow, it will help us to extend the Gray map 𝜃 from R to 𝔽 8 16 by
+C⟂H =⟨ ̂G∗ 0⟩ ⊕ ⟨v3 ̂G∗ 2⟩ ⊕ ⟨v2 ̂G∗ 3⟩ ⊕ ⟨v ̂G∗ 4⟩ ⊕ ⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G∗ 5⟩
+⊕ (⟨u ̂G∗ 6⟩ + ⟨v2 ̂G∗ 6⟩) ⊕ (⟨u ̂G∗ 7⟩ + ⟨v ̂G∗ 7⟩) ⊕ ⟨u ̂G∗ 8⟩ ⊕ (⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G∗ 9⟩
++ ⟨v3 ̂G∗ 9⟩) ⊕ (⟨(uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 ) ̂G∗ 10⟩ + ⟨uv2 ̂G∗ 10⟩ + ⟨v3 ̂G∗ 10⟩) ⊕ (⟨uv3 ̂G∗ 11⟩
++ ⟨v2 ̂G∗ 11⟩) ⊕ (⟨(u + vh𝛼 + v2h𝛽 + v3h𝛾 + uvh𝛿 + uv2h𝛿� ) ̂G∗ 12⟩ + ⟨v3 ̂G∗ 12⟩)
+C⟂H =⟨A∗⟩R� + v⟨B∗⟩R� + v2⟨D∗⟩R� + v3⟨E∗⟩R� + u⟨F∗⟩R� + uv⟨G∗⟩R� + uv2⟨H∗⟩R�
++ uv3⟨I∗⟩R� +( uv + v2h𝛼 + v3h𝛽 + uv2h𝛿 )⟨J∗⟩R� +( u + vh𝛼 + v2h𝛽 + v3h𝛾
++ uvh𝛿 + uv2h𝛿� )⟨K∗⟩R� +( uv2 + v3h𝛼 )⟨L∗⟩R�
+/uni007C.varC⟂H /uni007C.var = 1611n−(deg A∗ +deg B∗ +deg D∗ +deg E∗ +deg F∗ +deg G∗ +deg H∗ +deg I∗ +deg J∗ +deg K∗ +deg L∗ ).
+.
+.
+1030 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+where di ∈ 𝔽16 for i = 1, 2, … ,8  . Also, 𝜃 is distance preserving. Therefore, for any element 
+r = d1 + vd2 + v2d3 + v3d4 + ud5 + uvd6 + uv2d7 + uv3d8 in R,  the extended Lee weight is 
+defined as
+where 𝜔H (.) denotes the Hamming weight in 𝔽16 . If c =( c0, c1, … , cn−1)∈R n , t hen the Lee 
+weight of c is
+The Hamming weight 𝜔H (c) of a codeword c =( c0, c1, … , cn−1)∈C  is the num-
+ber of non-zero components. For any two codewords c and c/uni2032.var of C,   the Hamming dis-
+tance is defined as dH (c, c�)= 𝜔H (c − c�) . The Hamming dis tance for the code C is 
+dH (C)= min{dH (c, c�) /uni007C.var c ≠ c� for all c, c� ∈ C} . The Lee dis tance between any two code-
+words c and c/uni2032.var is defined as dL(c, c�)=𝜔 L(c − c�) and the Lee distance for the code C is 
+dL(C)=min{d L(c, c�) /uni007C.var c ≠ c� for all c, c� ∈ C} . N ext, we have the following result.
+Theorem 9
+ Le
+t C be a cyclic code over R of length n, size M and Lee distance d. Then 𝜃(C) 
+is a linear code over 𝔽16 of length 8n, size M and Hamming distance d.
+5.2  T he Bachoc map
+Here, we consider R  as a usual extension of the ring M4(𝔽2) and extend the definition of 
+Bachoc weight from M4(𝔽2) to R  that was introduced in [3 ]. In [13], a theory of cyclic 
+codes over M4(𝔽2) was discussed by giving a characterization of cyclic codes and their 
+duals as right ideals. But, these results were derived only for odd length. Now, by defin-
+ing Bachoc map, we are able to construct codes of even length over M4(𝔽2) . Let WB be 
+the Bachoc weight over R  and wB be the ordinary Bachoc weight of M4(𝔽2) codes. For 
+Y1, Y2 ∈ M4(𝔽2) , w e define
+This immediately leads to a Bachoc map 𝜙 from R to M2 4 (𝔽2) which is defined by
+The map 𝜙 can be naturally extended to Rn by preserving isometry as
+𝜃(d1 + vd2 + v2d3 + v3d4 + ud5 + uvd6 + uv2d7 + uv3d8) =(d 8, d7 + d8, d6 + d8, d5
++ d8, d4 + d8, d3 + d8, d2
++ d8, d1 + d2 + d3 + d4
++ d5 + d6 + d7 + d8)
+𝜔L(r)= 𝜔H (d8)+𝜔 H (d7 + d8)+𝜔 H (d6 + d8)+𝜔 H (d5 + d8)+ 𝜔H (d4 + d8)+𝜔 H (d3 + d8)
++ 𝜔H (d2 + d8)+ 𝜔H (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8)
+𝜔L(c)=𝜔 L(c0)+𝜔 L(c1)+ ⋯ + 𝜔L(cn−1).
+WB(Y = Y1 + uY2)=w B(Y2)+ wB(Y1 + Y2).
+𝜙(Y1 + uY2)=( Y2, Y1 + Y2).
+𝜙 ∶( Rn, Bachoc weight) → (M2n 4 (𝔽2), Bachoc weight).
+1031Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+Now, we define the mapping 𝜓 as
+where ai, bj ∈ 𝔽2 for 1 ≤ i, j ≤ 16 . It can be easil y seen that 𝜓 is a right 𝔽2-module isomor-
+phism. Also,
+for all Y ∈ R , i.e., 𝜓 is a right-module isometry.
+Theorem 10
+ Le
+t C be a cyclic code over R of length n, size M and Bachoc distance d. Then 
+𝜓(C) is a linear code over 𝔽16 of length 8n, size M and Hamming distance d.
+6  Examples
+It is well known that a q -ary linear code [n ,  k,  d] should satisfy the Singleton bound 
+d ≤ n − k + 1 , and said to be MDS (maximum-distance-separable) if d = n − k + 1 . For 
+a linear code [
+n,  k] , it is one of the fundamental problems to optimize d  and attain 
+dMDS = n − k + 1 . Her e, we call [n ,  k,  d] is a good code if dMDS − d ≤ 3 . This section  
+contains many such good codes over 𝔽16 as the Gray images of cyclic codes where the 
+parameters of the codes are calculated by using Magma Computation Software [6 ].
+Example 1
+ 
+For n = 3 , w e have x3 − 1 =( x + 1)(x + w5)(x + w10)∈𝔽 16[x] . Let 
+f1 = x + 1, f2 = x + w5, f3 = x + w10 . Then some good codes under t he Gray images of 
+cyclic codes of length 3 over R are as follows.
+Generators of cyclic codes Images under 𝜃 dMDS Remark
+⟨uf2, vf3, uvf1, (uv2 + v3)f1f3⟩ [24, 17, 5] 8 Good
+⟨f2, uvf1, v2f1f3⟩ [24, 21, 2] 4 Good
+⟨f1, uvf1f2, (uv2 + wv3)f2f3⟩ [24, 20, 3] 5 Good
+𝜓 ∶ M4(𝔽2 + u𝔽2) → 𝔽16 + v𝔽16 + v2𝔽16 + v3𝔽16 + u𝔽16 + uv𝔽16 + uv2𝔽16 + uv3𝔽16
+⎛
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜
+⎜⎝
+a1 + ub1 a2 + ub2 a3 + ub3 a4 + ub4
+(a2 + a5)+u(b 2 + b5)( a3 + a6)+u(b 3 + b6)( a4 + a7)+ u(b4 + b7)( a1 + a2 + a3 + a4 + a8)
++u(b1 + b2 + b3 + b4 + b8)
+a9 + ub9 a10 + ub10 a11 + ub11 a12 + ub12
+(a10 + a13)+u(b 10 + b13)( a11 + a14)+u(b 11 + b14)( a12 + a15)+ u(b12 + b15)( a9 + a10 + a11 + a12 + a16)
++u(b9 + b10 + b11 + b12 + b16)
+⎞
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟
+⎟⎠
+→ (a1 + a2w + a3w2 + a4w3)+v(b 1 + b2w + b3w2 + b4w3)+v 2(a5 + a6w + a7w2 + a8w3)
++ v3(b5 + b6w + b7w2 + b8w3)+u(a 9 + a10w + a11w2 + a12w3)+uv(b 9 + b10w + b11w2 + b12w3)
++ uv2(a13 + a14w + a15w2 + a16w3)+ uv3(b13 + b14w + b15w2 + b16w3)
+WB(Y = Y1 + uY2)=w B(Y2)+w B(Y1 + Y2)=w L(𝜓(Y))
+1032 Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+Generators of cyclic codes Images under 𝜃 dMDS Remark
+⟨vf3, uf1, uv2f2, (uv + v2 + v3w + uv2)f2f3⟩ [24, 19, 4] 6 Good
+⟨uvf2, uf3, uv2f1f2, (uv2 + v3)f1f3⟩ [24, 16, 6] 9 Good
+⟨f2, vf1, uvf2f3⟩ [24, 22, 2] 3 Good
+Example 2 For n = 5 , w e have x5 − 1 =( x + 1)(x + w3)(x + w6)(x + w9)(x + w12)∈𝔽 16[x] . 
+Le
+t f1 = x + 1, f2 = x + w3, f3 = x + w6, f4 = x + w9, f5 = x + w12 . Then some cy clic 
+codes of length 5 over R and their Gray images are given below.
+Generators of cyclic codes Images under 𝜃 dMDS Remark
+⟨f2, uf3, uvf4f5⟩ [40, 37, 2] 4 Good
+⟨uf1, vf2f3, uvf4f5, (uv2 + v3)f1f3f5⟩ [40, 32, 6] 9 Good
+⟨vf3, uvf5, uv2f1f2⟩ [40, 34, 4] 7 Good
+⟨f2f4, vf3, uvf1f4, (uv + v2w + v3 + uv2w2)f1f3f5⟩ [40, 35, 3] 6 Good
+7  Conclusion
+In 2019, the structure of cyclic codes over M4(𝔽2) was discussed by Pal et al. [13] for odd 
+length. Initially, we have extended their work to the matrix ring R = M4(𝔽2 + u𝔽2) and 
+derived the structure theorem for cyclic codes of odd length. Then we have obtained the 
+images of cyclic codes of odd length over the ring R under 𝜙 as binary quasi-cyclic codes 
+of even length over M4(𝔽2) . Based on der ived results, we have provided some good lin-
+ear codes over 𝔽16 . Her e, a natural question comes to generalizing this study of codes of 
+even length over R and finding their generators. It is still open and we can carry forward 
+this research to both the Euclidean and the Hermitian self-dual cyclic codes over the ring 
+R = M4(𝔽2 + u𝔽2).
+Acknowledgements The firs t and second authors are thankful to the Department of Science and Tech-
+nology (DST), Govt. of India for financial support under Ref No. DST/INSPIRE/03/2016/001445 and 
+CRG/2020/005927, vide Diary No. SERB/F/6780/ 2020-2021 dated 31 December, 2020, respectively. Also, 
+the authors would like to thank the anonymous referee(s) and the Editor for their valuable comments to 
+improve the presentation of the paper.
+References
+ 1.  A bualrub, T., Siap, I.: Cyclic codes over the ring ℤ2 + uℤ2 and ℤ2 + uℤ2 + u2ℤ2 . Des. Codes Cr yp-
+togr. 42(3), 273–287 (2007)
+ 2.
+ Alahmadi, A
+., Sboui, H., Solé, P., Yemen, O.: Cyclic codes over M2(𝔽2) . J. F ranklin Inst. 350(9), 
+2837–2847 (2013)
+ 3.
+ Bac
+hoc, C.: Applications of coding theory to the construction of modular lattices. J. Combin. Theory 
+Ser. A 78(1), 92–119 (1997)
+ 4.
+ Bho
+wmick, S., Bagchi S., Bandi, R. K.: Self-dual cyclic codes over M2(Z4) . arXiv :  1807.  04913 (2018)
+ 5.
+ Bonnecaze, A
+., Udaya, P.: Cyclic codes and self-dual codes over 𝔽2 + u𝔽2 . IEEE T rans. Inform. Theory 
+45(4), 1250–1255 (1999)
+ 6.
+ Bosma, W
+., Cannon, J.: Handbook of Magma Functions. Univ. of Sydney, Sydney (1995)
+1033Cryptography and Communications (2022) 14:1021–1034
+
+1 3
+ 7.  F alcunit, D. F., Sison, V. P.: Cyclic codes over matrix ring M2(𝔽p) and their isometric images over 
+𝔽p2 + u𝔽p2 . Inter national Zurich Seminar on Communications (IZS), 26–28 (2014)
+ 8.
+ Gr
+eferath, M., Schmidt, S. E.: Linear codes and rings of matrices. Proceeding of AAECC-13 Hawaii, 
+Springer LNCS , vol. 1719, 160–169 (1999)
+ 9.
+ Hammons, A
+.R., Kumar, P.V., Calderbank, A.R., Sloane, N.J.A., Solé, P.: The ℤ4-linearity of Kerdock, 
+Preparata, Goethals, and related codes. IEEE Trans. Inform. Theory 40(2), 301–319 (1994)
+ 10.
+ Islam, 
+H., Prakash, O., Bhunia, D.K.: On the structure of cyclic codes over M2(𝔽p + u𝔽p) . Indian J. 
+Pure Appl. Math. 53(1), 153–161 (2022)
+ 11.
+ L
+uo, R., Udaya, P.: Cyclic codes over M2(𝔽2 + u𝔽2) . Cr yptogr. Commun. 10(6), 1109–1117 (2018)
+ 12.
+ Oggier
+, F., Solé, P., Belfiore, J.C.: Codes over matrix rings for space-time coded modulations. IEEE 
+Trans. Inform. Theory 58(2), 734–746 (2012)
+ 13.
+ P
+al, J., Bhowmick, S., Bagchi, S.: Cyclic codes over M4(𝔽2) . J. Appl. Mat h. Comput. 60(1–2), 749–756 
+(2019)
+ 14.
+ W
+isbauer, R.: Foundations of module and ring theory. Gordon and Breach Science Publishers (1991)
+ 15.
+ W
+ood, J.: Duality for modules over finite rings and applications to coding theory. Amer. J. Math. 
+121(3), 555–575 (1999)
+1034 Cryptography and Communications (2022) 14:1021–1034

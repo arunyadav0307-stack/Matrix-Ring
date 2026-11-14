@@ -1,0 +1,38 @@
+PASS — correction-plan archive integrity and planning-structure checks; no research executed.
+{
+  "requested_documents": 7,
+  "actions": 43,
+  "explicit_fields_per_action": 11,
+  "severity_counts": {
+    "MAJOR": 29,
+    "CRITICAL": 8,
+    "MINOR": 6
+  },
+  "critical_blockers": [
+    "CP10",
+    "CP23",
+    "CP24",
+    "CP25",
+    "CP27",
+    "CP29",
+    "CP32",
+    "CP40"
+  ],
+  "dependency_dag_acyclic": true,
+  "verbatim_source_copies": 42,
+  "recovered_source_roots": 19,
+  "distinct_complete_core_payloads": 9,
+  "curated_mirror_roots": 4,
+  "ms03_source_manifest_sha256": "b52028fac20c3d4603cfd8e2c44d6d885003ae444098437223a9c71875ac3e24",
+  "protected_original_count": 1959,
+  "protected_original_bytes": 106136867,
+  "local_planning_and_report_links_checked": 125,
+  "implementation_authorized": false,
+  "scientific_scripts_executed": false,
+  "zip_crc": "PASS",
+  "archive_entries": 97,
+  "manifest_hashes": 96,
+  "external_sidecar": "PASS",
+  "status": "HOLD — CORRECTION PLAN ONLY — IMPLEMENTATION NOT AUTHORIZED."
+}
+Integrity PASS is not mathematical GO. HOLD — CORRECTION PLAN ONLY — IMPLEMENTATION NOT AUTHORIZED.

@@ -1,0 +1,93 @@
+{
+  "text_files_checked": 204,
+  "text_errors": [],
+  "pdfs": [
+    {
+      "file": "literature_evidence/supplied_pdfs/2602.18255v1 (1).pdf",
+      "bytes": 437552,
+      "sha256": "cffa3e24e2627894ec6d8a4dd93a97c5c2e492461aa078aad07c8ef5f79eeb3f",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 63236,
+      "pages": 30,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/Construction_of_Codes_Over_mathbbF_p3_from_Cyclic_Codes_Over_mathscrM_3leftmathbbF_pu_mathbbF_pu2_mathbbF_pright.pdf",
+      "bytes": 415078,
+      "sha256": "a25f4ca4d3116ad49a48fefd105d9dd8670ad19a5e0e9bf6bd50c2bca55bc502",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 26506,
+      "pages": 5,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/algebraic-structure-of-cyclic-codes-over-m3fp.pdf",
+      "bytes": 273761,
+      "sha256": "68b1b6bb7071b725367528b674a185c529075fb8dcd28f65e0aa351e2c583a53",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 25498,
+      "pages": 13,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/s11128-026-05230-0 (3).pdf",
+      "bytes": 446086,
+      "sha256": "beb31f56d58a88d9674d86700390a5e0bc4faddc0eadf787f06c6a1ccd32bb8b",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 67512,
+      "pages": 30,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/s12095-022-00572-9 (3).pdf",
+      "bytes": 3797748,
+      "sha256": "af68bf2490cf33722d069299e6a687c6e9a80fc45cc5040abb28c417ac19153d",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 43340,
+      "pages": 14,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/s12190-018-01235-w (1).pdf",
+      "bytes": 414858,
+      "sha256": "cf1af5654ff639a3195b18d1dab1c2d5dad0497994779a77aa24f63804f1f810",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 16879,
+      "pages": 8,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    },
+    {
+      "file": "literature_evidence/supplied_pdfs/s13226-021-00014-x (2).pdf",
+      "bytes": 316007,
+      "sha256": "0679c4a6077b8477e8d325737b8efc8d3d96b9f8f356be6b8edaa06d6a26f989",
+      "matches_recorded_authentic_member": true,
+      "matches_actual_original_zip_member": true,
+      "pdf_magic": true,
+      "parser": "pypdf 6.1.1",
+      "text_bytes": 27564,
+      "pages": 9,
+      "scope": "Readable PDF text and source identity, not mathematical validation of competitor paper."
+    }
+  ],
+  "all_checks_pass": true,
+  "original_zip_comparison_available": true,
+  "scope": "Independent readability/identity checks; no files overwritten."
+}

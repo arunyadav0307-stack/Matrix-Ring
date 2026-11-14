@@ -1,0 +1,6 @@
+# New research tooling artifacts; original research payloads are not removed.
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.cache/

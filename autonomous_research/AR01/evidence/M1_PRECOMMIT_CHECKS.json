@@ -1,0 +1,12 @@
+{
+  "milestone": "AR01-M1 intake",
+  "initial_files_rehashed": 2059,
+  "initial_bytes_preserved": 110323589,
+  "changed_or_missing_originals": [],
+  "new_tools_ast_parse": "PASS",
+  "bounded_secret_pattern_scan": "NO_MATCHES; not a guarantee or audit of private third-party facts",
+  "remote_reconciliation": "Every remote addition accounted for; differing historical PDF preserved at original path and separate remote copy; no source replacement",
+  "old_science_or_seals_revalidated": false,
+  "new_scientific_claims": false,
+  "push_status": "Not yet attempted when this precommit record was written"
+}

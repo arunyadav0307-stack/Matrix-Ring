@@ -1,0 +1,51 @@
+file,key,original_doi,fresh_evidence_ids,fresh_scope,supported_doi,correction_or_limit
+literature_evidence/prior_project/01_LITERATURE/references.bib,Alahmadi2013CyclicM2F2,10.48550/arXiv.1201.6533,"L14a,L14b,L09",PRIMARY_METADATA,10.1016/j.jfranklin.2013.06.023,Manuscript .008 DOI is unrelated; repository uses arXiv DOI.
+literature_evidence/prior_project/01_LITERATURE/references.bib,LuoParampalli2018M2F2uF2,10.1007/s12095-017-0266-1,L09,PRIMARY_METADATA,10.1007/s12095-017-0266-1,"10, 1109-1117 (2018); pending large-bibliography pages now supported."
+literature_evidence/prior_project/01_LITERATURE/references.bib,Dinh2024CyclicRingsOfMatrices,10.3934/amc.2022073,L08,PRIMARY_METADATA,10.3934/amc.2022073,"18(4),1100-1122(2024); online 2022."
+literature_evidence/prior_project/01_LITERATURE/references.bib,FalcunitSison2014M2Fp,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Bhowmick2018SelfDualM2Z4,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,SiNiu2023SkewM2F2,10.3934/math.20231246,L21a,PRIMARY_METADATA,10.3934/math.20231246,"Metadata/abstract checked, not full proof."
+literature_evidence/prior_project/01_LITERATURE/references.bib,DuNiu2025WeightSkewM2F2,10.3934/math.2025520,L21b,PUBLISHER_SEARCH_ONLY,10.3934/math.2025520,Title/volume/pages/DOI corroborated by publisher search result; not full page.
+literature_evidence/prior_project/01_LITERATURE/references.bib,JoshiPatelPrakash2026M4,10.48550/arXiv.2602.18255,L11,PRIMARY_METADATA,10.48550/arXiv.2602.18255,Preprint; no journal DOI verified.
+literature_evidence/prior_project/01_LITERATURE/references.bib,OggierEtAlSpaceTimeMatrixRings,,L19,PRIMARY_METADATA,10.1109/TIT.2011.2173732,"Same-title record is Oggier-Sole-Belfiore, 2012,58(2),734-746; original 2010 author list defective."
+literature_evidence/prior_project/01_LITERATURE/references.bib,Bachoc1997ModularLattices,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,SoleYemenQuasiCyclicMatrixRings,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Wood1999Duality,10.1353/ajm.1999.0024,L20,PRIMARY_METADATA,10.1353/ajm.1999.0024,"Frobenius-ring foundation, not priority for specialization."
+literature_evidence/prior_project/01_LITERATURE/references.bib,Wood2008CodeEquivalence,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,GreferathNechaevWisbauer2004,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Honold2001Frobenius,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,FanZhang2017GaloisSelfDual,10.1007/s10623-016-0282-8,L06,PRIMARY_METADATA,10.1007/s10623-016-0282-8,"Volume84; original six-report matrix says85, BibTeX says84."
+literature_evidence/prior_project/01_LITERATURE/references.bib,LiuPan2020GaloisHulls,,L07,PRIMARY_METADATA,10.1007/s10623-019-00681-2,Missing DOI in originals.
+literature_evidence/prior_project/01_LITERATURE/references.bib,LiuFanLiu2018GaloisLCD,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Cao2021MDSGaloisHulls,,L15,PRIMARY_METADATA,10.1109/TIT.2021.3117562,Missing DOI in originals.
+literature_evidence/prior_project/01_LITERATURE/references.bib,ZhangKongZheng2026QuantumGaloisHulls,10.3390/e28040407,L02,PRIMARY_METADATA,10.3390/e28040407,Commutative-ring nearest neighbour.
+literature_evidence/prior_project/01_LITERATURE/references.bib,DebnathEtAl2024AffineAlgebraGaloisHulls,10.48550/arXiv.2412.08512,L13,PRIMARY_METADATA,10.1016/j.disc.2025.114750,"Journal349(2),114750(2026); preprint2024 retained as provenance."
+literature_evidence/prior_project/01_LITERATURE/references.bib,PereiraMancini2023EAQECCyclic,10.3390/e25010037,L16,PRIMARY_METADATA,10.3390/e25010037,"2023 issue, online2022."
+literature_evidence/prior_project/01_LITERATURE/references.bib,BrunDevetakHsieh2006,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,KetkarEtAl2006NonbinaryStabilizer,,L17,PRIMARY_METADATA_WITH_UNIVERSITY_CORROBORATION,10.1109/TIT.2006.883612,"First author Avanti, not Andreas. Registry has initials; university record corroborates identity."
+literature_evidence/prior_project/01_LITERATURE/references.bib,GrasslCodeTables,,B01-B07,PRIMARY_ENDPOINT_CHECK,not applicable,Duplicate-theme key; metadata and physical-alphabet semantics need explicit retrieval dates.
+literature_evidence/prior_project/01_LITERATURE/references.bib,NebeRainsSloaneAntiIsomorphism,,"L03,L04",PLACEHOLDER_NOT_A_VERIFIED_CITATION,,Related real sources located: NRS2006 book; Wood2010 article; Szabo-Wood2017. Do not invent identity for the placeholder title.
+literature_evidence/prior_project/01_LITERATURE/references.bib,GreferathSchmidt1999GrayIsometry,10.1109/18.796395,L18,PRIMARY_METADATA,10.1109/18.796395,Use S.E.Schmidt; manuscript Sergio R. not supported.
+literature_evidence/prior_project/01_LITERATURE/references.bib,GreferathOSullivan2004,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,CyclicM2FpIsometricImages,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,CalderbankShor1996,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Steane1996,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Gottesman1997Stabilizer,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,KnillLaflamme1997,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,WildeBrun2008EA,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,Rains1999QuantumBounds,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+literature_evidence/prior_project/01_LITERATURE/references.bib,GrasslCodetables,,B01-B07,PRIMARY_ENDPOINT_CHECK,not applicable,"Legacy q is construction alphabet, not physical dimension; EA tables exist."
+literature_evidence/prior_project/01_LITERATURE/references.bib,LaiBrunWilde2013EADualities,,,NOT_FRESHLY_REVERIFIED,,Historical provenance only. No independently verified label inferred.
+repository_integrity/prior_work/PAPER/references.bib,Alahmadi2013CyclicM2F2,10.1016/j.jfranklin.2013.06.008,"L14a,L14b,L09",PRIMARY_METADATA,10.1016/j.jfranklin.2013.06.023,Manuscript .008 DOI is unrelated; repository uses arXiv DOI.
+repository_integrity/prior_work/PAPER/references.bib,LuoParampalli2018M2F2uF2,10.1007/s12095-017-0266-1,L09,PRIMARY_METADATA,10.1007/s12095-017-0266-1,"10, 1109-1117 (2018); pending large-bibliography pages now supported."
+repository_integrity/prior_work/PAPER/references.bib,Dinh2024CyclicRingsOfMatrices,10.3934/amc.2022073,L08,PRIMARY_METADATA,10.3934/amc.2022073,"18(4),1100-1122(2024); online 2022."
+repository_integrity/prior_work/PAPER/references.bib,JoshiPatelPrakash2026M4,10.48550/arXiv.2602.18255,L11,PRIMARY_METADATA,10.48550/arXiv.2602.18255,Preprint; no journal DOI verified.
+repository_integrity/prior_work/PAPER/references.bib,SiNiu2023SkewM2F2,10.3934/math.20231246,L21a,PRIMARY_METADATA,10.3934/math.20231246,"Metadata/abstract checked, not full proof."
+repository_integrity/prior_work/PAPER/references.bib,Wood1999Duality,10.1353/ajm.1999.0024,L20,PRIMARY_METADATA,10.1353/ajm.1999.0024,"Frobenius-ring foundation, not priority for specialization."
+repository_integrity/prior_work/PAPER/references.bib,GreferathSchmidt1999GrayIsometry,10.1109/18.796395,L18,PRIMARY_METADATA,10.1109/18.796395,Use S.E.Schmidt; manuscript Sergio R. not supported.
+repository_integrity/prior_work/PAPER/references.bib,FanZhang2017GaloisSelfDual,10.1007/s10623-016-0282-8,L06,PRIMARY_METADATA,10.1007/s10623-016-0282-8,"Volume84; original six-report matrix says85, BibTeX says84."
+repository_integrity/prior_work/PAPER/references.bib,LiuPan2020GaloisHulls,,L07,PRIMARY_METADATA,10.1007/s10623-019-00681-2,Missing DOI in originals.
+repository_integrity/prior_work/PAPER/references.bib,Cao2021MDSGaloisHulls,,L15,PRIMARY_METADATA,10.1109/TIT.2021.3117562,Missing DOI in originals.
+repository_integrity/prior_work/PAPER/references.bib,ZhangKongZheng2026QuantumGaloisHulls,10.3390/e28040407,L02,PRIMARY_METADATA,10.3390/e28040407,Commutative-ring nearest neighbour.
+repository_integrity/prior_work/PAPER/references.bib,KetkarEtAl2006NonbinaryStabilizer,,L17,PRIMARY_METADATA_WITH_UNIVERSITY_CORROBORATION,10.1109/TIT.2006.883612,"First author Avanti, not Andreas. Registry has initials; university record corroborates identity."
+repository_integrity/prior_work/PAPER/references.bib,GrasslCodetables,,B01-B07,PRIMARY_ENDPOINT_CHECK,not applicable,"Legacy q is construction alphabet, not physical dimension; EA tables exist."

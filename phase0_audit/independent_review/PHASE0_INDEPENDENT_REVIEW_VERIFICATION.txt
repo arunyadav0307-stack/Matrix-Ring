@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "archive": "PHASE0_INDEPENDENT_REVIEW.zip",
+  "archive_sha256": "72e0edd006499ad77f37bcb0f905844ca96a46aa3a6f84daed81c123ed2aaa88",
+  "compressed_bytes": 10731792,
+  "regular_files": 287,
+  "uncompressed_bytes": 18664644,
+  "manifest_entries": 286,
+  "external_sha256_sidecar": "PASS",
+  "required_reports": 7,
+  "new_review_local_links_verified": 56,
+  "nested_original_zip_sha256": "350e5b9e4796d6b7798c17ce8ef047ee032e50cc4e49df0ef6e8d28ea5538c4e",
+  "nested_original_files": 211,
+  "nested_original_internal_hashes": 210,
+  "expanded_original_byte_matches": 211,
+  "preservation_evidence": "1487/1487 original files unchanged; recorded evidence, not a fresh remote-filesystem comparison",
+  "research_executed_by_this_verifier": false,
+  "scientific_decision": "HOLD",
+  "scope": "Integrity and delivery-reference checks only; not independent proof certification or digital signature of original authorship."
+}

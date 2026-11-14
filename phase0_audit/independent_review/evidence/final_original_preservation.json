@@ -1,0 +1,18 @@
+{
+  "checked_clock_utc": "2026-11-13T07:50:06.002403+00:00",
+  "baseline_snapshot_sha256": "6529b4835624bf2c4744165b9b9289d2bcab595cf26895f14656f47bbe20fa90",
+  "baseline_capture_clock_utc": "2026-11-13T07:07:51.274681+00:00",
+  "baseline_review_date_field": "2026-11-12",
+  "date_field_discrepancy": "Copied review_date is one day before recorded capture; preserved and disclosed, not corrected in source evidence.",
+  "baseline_files": 1487,
+  "baseline_bytes": 71459327,
+  "unchanged_files": 1487,
+  "all_originals_unchanged": true,
+  "changed_or_missing": [],
+  "unexpected_additions_outside_review": [],
+  "branch": "arena/7d88376d-matrix-ring",
+  "head": "168ec3e0b860cbe086ccb7a92a1a1aac5f8a277b",
+  "tracked_diff_from_HEAD": false,
+  "git_writes_commits_pushes_performed_by_sealer": false,
+  "scope": "Every baseline regular file rehashed; .git excluded from content census but branch/HEAD and tracked diff checked. New files limited to phase0_audit/independent_review/."
+}

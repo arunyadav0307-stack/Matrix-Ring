@@ -1,0 +1,22 @@
+{
+  "name": "gray_full_rerun",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/gray_full_rerun/scripts/phase4_gray_map_compatibility.py"
+  ],
+  "cwd": "/home/user/Matrix-Ring/phase0_audit/independent_review/work/source_runs/gray_full_rerun",
+  "timeout_seconds": 480,
+  "state": "COMPLETED",
+  "exit_code": 0,
+  "elapsed_seconds": 217.269,
+  "stdout": "gray_full_rerun_stdout.txt",
+  "generated_logs": [
+    {
+      "file": "gray_full_rerun__phase4_gray_map_log.txt",
+      "sha256": "55656a9da040df99e0d577ecb4f22c079bf9abd7b377c98eace31bca107c9a92"
+    }
+  ],
+  "generator_comparisons": [],
+  "scope": "Re-execution of included historical scripts, not an independent implementation."
+}

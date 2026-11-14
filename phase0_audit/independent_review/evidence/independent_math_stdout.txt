@@ -1,0 +1,46 @@
+CORE PASS independent_field_2
+CORE PASS independent_field_4
+CORE PASS independent_field_8
+CORE PASS independent_field_9
+CORE PASS summary_ax_formula_counterexample
+CORE PASS summary_matrix_unit_nondegeneracy_probe_fails
+CORE PASS plain_pairing_nondegenerate_but_wrong_same_side_size
+CORE PASS double_dual_positive_not_negative_direction
+CORE PASS nonreflexive_zero_relation_witness
+CORE PASS coefficient_lift_is_not_full_ring_power
+CORE PASS base_matrix_ring_ideals_are_principal_in_tested_case
+CORE PASS historical_nonprincipal_selfdual_hull_witness
+CORE PASS Gray_Gram_independent_matrix_trace_verification
+CORE PASS Gray_dual_not_standard_Euclidean
+CORE PASS char2_even_t_Hermitian_congruence_counterexample
+CORE PASS field_encoding_mismatch_8
+CORE PASS field_encoding_mismatch_9
+CERT 01_24_8_4_9_(9,1,6)_SO.json PASS d 4 time 0.031
+CERT 02_20_4_4_4_(4,1,5)_SO.json PASS d 4 time 0.017
+CERT 03_20_4_4_4_(4,1,5)_DC.json PASS d 4 time 0.017
+CERT 04_20_2_10-18_4_(4,1,5)_EA.json PASS d 10 time 0.002
+CERT 05_24_2_10-18_9_(9,1,6)_EA.json PASS d 10 time 0.261
+CERT 06_4_2_2-2_4_(4,1,1)_EA.json PASS d 2 time 0.001
+CERT 07_8_4_3-4_4_(4,1,2)_EA.json PASS d 3 time 0.002
+CERT 08_12_2_6-10_4_(4,1,3)_EA.json PASS d 6 time 0.001
+CERT 09_16_4_5-8_4_(4,1,4)_EA.json PASS d 5 time 0.074
+CERT 10_24_4_9-20_4_(4,1,6)_EA.json PASS d 9 time 0.01
+CERT 11_8_4_2-4_4_(4,2,1)_EA.json PASS d 2 time 0.002
+CERT 12_16_4_4-12_4_(4,2,2)_EA.json PASS d 4 time 0.006
+CERT 13_24_4_6-20_4_(4,2,3)_EA.json PASS d 6 time 0.012
+CERT 14_12_6_2-6_4_(4,3,1)_EA.json PASS d 2 time 0.048
+CERT 15_16_6_2-10_4_(4,4,1)_EA.json PASS d 2 time 0.06
+CERT 16_4_2_2-2_8_(8,1,1)_EA.json PASS d 2 time 0.001
+CERT 17_8_4_3-4_8_(8,1,2)_EA.json PASS d 3 time 0.035
+CERT 18_12_2_6-10_8_(8,1,3)_EA.json PASS d 6 time 0.002
+CERT 19_12_4_2-8_8_(8,3,1)_EA.json PASS d 2 time 0.039
+CERT 20_4_2_2-2_9_(9,1,1)_EA.json PASS d 2 time 0.001
+CERT 21_8_2_4-6_9_(9,1,2)_EA.json PASS d 4 time 0.001
+CERT 22_12_2_5-6_9_(9,1,3)_EA.json PASS d 5 time 0.092
+CERT 23_16_2_8-14_9_(9,1,4)_EA.json PASS d 8 time 0.003
+CERT 24_20_4_9-16_9_(9,1,5)_EA.json PASS d 9 time 0.178
+CERT 25_8_4_2-4_9_(9,2,1)_EA.json PASS d 2 time 0.046
+CERT 26_16_4_4-12_9_(9,2,2)_EA.json PASS d 4 time 0.128
+CERT 27_12_4_2-8_9_(9,3,1)_EA.json PASS d 2 time 0.063
+CERT 28_24_6_4-18_9_(9,3,2)_EA.json PASS d 4 time 0.053
+SUMMARY 17 core checks; 28 /28 code records; elapsed 1.245

@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "preexisting_entries_checked": 1267,
+  "changed_or_missing_entries": [],
+  "head": "12db091726835cc6f264fb0f679afc759610c89a",
+  "branch": "arena/7d88376d-matrix-ring",
+  "tracked_diff": "",
+  "staged_diff": "",
+  "tracked_files_matching_HEAD": 94,
+  "research_data_regular_file_count": 88,
+  "supplied_PDF_original_archive_members_verified": 7,
+  "previously_extracted_PDF_discrepancies_recorded": 1,
+  "active_publication_manifest_entries_PASS": 87,
+  "historical_manifest_entries_resolved_PASS": 85,
+  "selected_patch_source_checks": {
+    "EXTRA_TRAILING_NEWLINE_IN_EXISTING_EXTRACTION": 1,
+    "EXACT_BYTES": 127,
+    "NEWLINE_NORMALIZED": 1
+  },
+  "reference_resolution_counts": {
+    "INVENTORY_ONLY": 11,
+    "PACKAGED": 619,
+    "PACKAGED_MULTIPLE": 41,
+    "PACKAGED_ALIAS": 226,
+    "UNAVAILABLE_VALID_BINARY": 14,
+    "OMITTED_HISTORICAL": 69,
+    "UNAVAILABLE_HISTORICAL_CONTAINER": 15,
+    "UNRESOLVED_HISTORICAL": 11,
+    "EXTERNAL_HISTORICAL_URL": 4
+  },
+  "new_research_script_runs_in_packaging": 0,
+  "created_at_utc": "2026-11-13T06:56:33.041461+00:00",
+  "scope": "Preservation/file integrity, not mathematical correctness or novelty."
+}

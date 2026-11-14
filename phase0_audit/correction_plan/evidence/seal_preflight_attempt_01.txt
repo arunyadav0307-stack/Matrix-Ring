@@ -1,0 +1,12 @@
+Planning-package preflight, first attempt — exit 1, before any final seal outputs were written.
+Command: PYTHONDONTWRITEBYTECODE=1 python3 -B phase0_audit/correction_plan/scripts/seal_correction_plan_delivery.py
+
+Recorded stderr:
+Traceback (most recent call last):
+  File "/home/user/Matrix-Ring/phase0_audit/correction_plan/scripts/seal_correction_plan_delivery.py", line 72, in <module>
+    assert 1<=start<=end<=len(lines),(target,len(lines))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('sections/05_hulls.tex:319-380 (ex:witnessA, ex:witnessB)', 379)
+
+Resolution: planning locator endpoints only were corrected after checking the frozen source line counts. A fuller path/range pass also identified CP15's 375 endpoint (actual374), CP31's 380 endpoint (actual379), and CP32/CP33's appendix126 endpoints (actual120). The source-reading heading was bounded to the actual last line. Original manuscript bytes, independent-review reports/evidence, scientific code/data and findings were not changed. The sealer's nonresearch path/range validation was expanded to check every path and semicolon-separated range, not just the first.
+This is a planning-locator/checker issue, not a new scientific result or additional mathematical blocker. Use the final preservation/validation records and successful portable verifier for delivery status. Do not rerun completed exclusive-output inventory/copy/render helpers into their existing outputs.

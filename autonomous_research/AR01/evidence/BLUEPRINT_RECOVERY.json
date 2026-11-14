@@ -1,0 +1,14 @@
+{
+  "pdf_path": "NEW_RESEARCH_BLUEPRINT_REVIEW.pdf",
+  "reference_commit": "d2e7c70c5a2d2605f976d5c0e08a30510294e4f3",
+  "pdf_bytes": 382351,
+  "pdf_sha256": "f432b4cf10f939b1a82aa2b1782a36460dc65a76a54eb2c02e1431789787b16c",
+  "pages": 64,
+  "unique_native_attachments": 14,
+  "verified_source_digests": 13,
+  "identical_parser_aliases": [
+    "AUDIT_CONSTRAINT_CROSSWALK.csv"
+  ],
+  "extraction_tool": "pypdf 7.1.0, installed in /tmp only",
+  "fresh_verification_not_implied": "No unavailable Phase-1 report, mathematical supplement, later master or detailed RF finding was recovered by this extraction."
+}

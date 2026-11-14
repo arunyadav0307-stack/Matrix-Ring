@@ -1,0 +1,399 @@
+--- canonical/main.tex
+
++++ MS12/main.tex
+
+@@ -8,4 +8,7 @@
+
+ %  NOTE ON AUTHOR METADATA: no author names, affiliations, funding,
+ %  acknowledgements or declarations have been supplied.  The three
++%  PHASE 14: \AUTHORPLACEHOLDER is no longer used for PDF metadata; the
++%  confirmed author name is now written into the PDF document information
++%  dictionary.  The macro is retained only for historical compatibility.
+ %  \AUTHORPLACEHOLDER marks below are the ONLY placeholders in this
+ %  manuscript and are deliberately visible.  See PAPER/README.md.
+@@ -50,6 +53,24 @@
+
+ % them and warns.  See compile/BUILD_CORRECTIONS.md, correction C-5.
+ \usepackage[hypertexnames=false,pdfusetitle]{hyperref}
++% ---- Author metadata (CONFIRMED by the researcher, 2026-11-10) ----------
++% Single author. Values supplied by the researcher and used verbatim:
++%   name        : Arun Kumar Yadav
++%   affiliation : School of Basic and Applied Sciences,
++%                 K.R. Mangalam University,
++%                 Sohna Road, Gurugram, Haryana, 122103, India
++%   email       : arunyadav0307@gmail.com
++% No ORCID was supplied; none has been invented.
++% Affiliations are typeset as a superscript-lettered block after \maketitle
++% (\thanks is avoided: it needs a TS1 footnote glyph at 6pt that the offline
++% font map cannot supply).
++\newcommand{\AUTHORONE}{Arun Kumar Yadav}
++\newcommand{\AUTHORONEINST}{School of Basic and Applied Sciences}
++\newcommand{\AUTHORONEORG}{K.R. Mangalam University}
++\newcommand{\AUTHORONEADDR}{Sohna Road, Gurugram, Haryana, 122103}
++\newcommand{\AUTHORONECOUNTRY}{India}
++\newcommand{\CORRESPONDINGEMAIL}{arunyadav0307@gmail.com}
++% --------------------------------------------------------------------------
+ \hypersetup{colorlinks=true,linkcolor=blue!55!black,citecolor=green!35!black,
+-            urlcolor=blue!45!black,pdfauthor={\AUTHORPLACEHOLDER}}
++            urlcolor=blue!45!black,pdfauthor={\AUTHORONE}}
+ 
+ % ------------------------------ notation ------------------------------
+@@ -99,38 +120,49 @@
+
+ 
+ % ------------------------------ metadata ------------------------------
++
++
+ \title{Quantum Error-Correcting Codes from Galois Hulls of Cyclic
+        Codes over Noncommutative Matrix Rings}
+-\author{\AUTHORPLACEHOLDER}
++% Author line. Single author: the affiliation is indicated by a lowercase
++% superscript letter immediately after the name and in front of the address,
++% exactly as the FFA guide for authors requires.
++\author{\AUTHORONE\textsuperscript{a}}
++% Present/permanent address would be a numbered footnote; none was supplied.
++\newcommand{\AFFILIATIONBLOCK}{%
++  \begin{center}\small
++  \textsuperscript{a}\,\AUTHORONEINST, \AUTHORONEORG,
++  \AUTHORONEADDR, \AUTHORONECOUNTRY.\\[2pt]
++  \textit{Corresponding author.} E-mail: \texttt{\CORRESPONDINGEMAIL}
++  \end{center}}
+ \date{}
+ 
+ \begin{document}
+ \maketitle
++\AFFILIATIONBLOCK
+ 
+ \begin{abstract}
+-We construct $q$-ary quantum error-correcting codes from the Galois hulls of
+-cyclic codes over the noncommutative matrix ring $R=M_2(A_t)$,
+-$A_t=\F_q[u]/\langle u^t\rangle$.  The duality is driven by the
+-anti-automorphism $\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, where
+-$\sigma_s$ is the coefficient Frobenius $a\mapsto a^{p^s}$; codes are right
+-ideals of $R_n=R[X]/\langle X^n-1\rangle$.  We prove the duality and hull
+-theory for arbitrary right ideals, with no principality hypothesis, and we
+-refute the natural conjecture that Galois hulls are principal: hulls with
+-minimal generator number $\MU_B=3$ exist, and we show that $\MU_B\ge3$ forces
+-$t\ge2$ and $p\mid n$.  The coefficient-expansion map to $\F_q^{4tn}$ is shown
+-to transport the Galois pairing to an explicitly identified
+-$\widehat\sigma_s$-Hermitian form with Hankel Gram matrix $I_{4n}\otimes H_t$
+---- not the Euclidean form unless $t=1$ --- and to preserve both duality and
+-hulls, including the non-principal ones.  Every Galois hull is self-orthogonal
+-for the transported form, with no reflexivity hypothesis.  This yields three
+-quantum routes of length $\Nlen=4tn$: a Galois-native twisted stabilizer route,
+-a Euclidean/CSS route, and an entanglement-assisted route
+-$[[N,N-k-h_E,d;k-h_E]]_q$.  We prove that the distance is the minimum weight of
+-the quotient code $D^{\perp_E}/\Hull_E(D)$, and derive from it a coset
+-Singleton bound $K+d\le N+1$ that is neither the entanglement-assisted
+-Singleton bound nor implied by it.  Exhaustive computation over the enlarged
+-family list certifies $28$ codes by three independent methods, including the
+-first stabilizer distance $4$ in this framework, $[[24,8,4]]_9$ and
+-$[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$.  No
+-record parameters are claimed.
++We construct $q$-ary quantum codes from the Galois hulls of cyclic codes over
++the noncommutative matrix ring $R=M_2(A_t)$,
++$A_t=\F_q[u]/\langle u^t\rangle$; codes are right ideals of
++$R_n=R[X]/\langle X^n-1\rangle$.  Duality is driven by the anti-automorphism
++$\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$, $\sigma_s$ the coefficient
++Frobenius.  We prove the duality and hull theory for arbitrary right ideals,
++with no principality hypothesis, and refute the conjecture that Galois hulls
++are principal: hulls with minimal generator number $\MU_B=3$ exist, and
++$\MU_B\ge3$ forces $t\ge2$ and $p\mid n$.  The coefficient-expansion map to
++$\F_q^{4tn}$ transports the Galois pairing to an explicit
++$\widehat\sigma_s$-Hermitian form with Hankel Gram matrix
++$I_{4n}\otimes H_t$ --- not the Euclidean form unless $t=1$ --- and preserves
++duality and hulls, including the non-principal ones.  Every Galois hull is
++self-orthogonal for the transported form, with no reflexivity hypothesis.
++Three quantum routes of length $N=4tn$ follow: a twisted stabilizer route, a
++Euclidean/CSS route, and an entanglement-assisted route
++$[[N,N-k-h_E,d;k-h_E]]_q$.  We show that the distance is the minimum weight of
++the quotient $D^{\perp_E}/\Hull_E(D)$, and derive a coset Singleton bound
++$K+d\le N+1$ not implied by the entanglement-assisted Singleton bound.
++Exhaustive computation certifies $28$ codes, each by two applicable
++independent methods, one exact and one a cross-check, among them this
++framework's first distance-$4$ stabilizer codes, $[[24,8,4]]_9$ and
++$[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$.  No record parameters are claimed.
+ 
+ \smallskip
+@@ -158,5 +190,102 @@
+
+ \input{sections/10_conclusion}
+ 
++% =====================================================================
++%  DECLARATIONS -- ALL ENTRIES REQUIRE RESEARCHER CONFIRMATION.
++%  Nothing below is confirmed. Bracketed fields are placeholders and
++%  must be replaced by the authors before submission. See
++%  PHASE11_FFA_FINALIZATION/ for the confirmation documents.
++% =====================================================================
++
++\section*{Acknowledgements}
++\label{sec:acknowledgements}
++
++[\emph{Researcher confirmation required --- optional.}] Elsevier requires
++acknowledgements to appear in a separate section directly before the reference
++list. If no individual or body is to be acknowledged, delete this section.
++
++\section*{Declaration of competing interests}
++\label{sec:competinginterests}
++
++The author declares no known competing financial interests or personal
++relationships that could have appeared to influence the work reported in
++this paper.
++
++\emph{Status: CONFIRMED by the researcher on 2026-11-10.} The declarations
++tool at \texttt{declarations.elsevier.com} must still be completed and the
++generated statement uploaded at the submission step; see
++\texttt{PHASE12\_CONFIRMATION\_REGISTER.md}, category A6.
++
++\section*{Funding}
++\label{sec:funding}
++
++This research did not receive any specific grant from funding agencies in the
++public, commercial, or not-for-profit sectors.
++
++\emph{Status: CONFIRMED by the researcher on 2026-11-10.} The funded
++alternative was not used; see
++\texttt{PHASE12\_CONFIRMATION\_REGISTER.md}, category A7.
++
++\section*{Author contributions (CRediT)}
++\label{sec:credit}
++
++[\emph{Researcher confirmation required --- encouraged, not mandatory.}] Elsevier
++encourages the corresponding author to acknowledge co-author contributions
++using CRediT roles. This section cannot be completed until the author list is
++confirmed.
++
++\section*{Data availability}
++\label{sec:dataavailability}
++
++[\emph{Researcher confirmation required --- mandatory.}] \emph{Finite Fields
++and Their Applications} applies Elsevier research-data \textbf{Option C},
++which requires the authors to deposit the research data in a relevant data
++repository and to provide a link to the dataset during the submission process.
++
++The researcher has elected to use the project's existing public GitHub
++repository \emph{instead of} a dedicated data repository such as Zenodo. The
++data are publicly readable at the commit-pinned address
++
++\begin{quote}\small\raggedright
++\texttt{https://github.com/}\penalty0
++\texttt{arunyadav0307-stack/}\penalty0
++\texttt{Matrix-Ring/tree/}\penalty0
++\texttt{e41c5713\penalty0 fec5cce1\penalty0 d7cb5110\penalty0 5f25d168\penalty0 dc05ebce}\penalty0
++\texttt{/PAPER/supplementary}
++\end{quote}
++
++which resolves to $86$ files: $22$ computational scripts, $23$ execution logs,
++$29$ generator matrices, $8$ parameter tables and $4$ documentation files,
++certified by a SHA-256 manifest.
++
++\textbf{This statement is not yet final.} Two material limitations must be
++resolved before it can be submitted: (i) the supplementary data are present
++only on the research branch and are \textbf{absent from the repository's
++default branch}, so the repository's plain landing page does not reach them;
++and (ii) that branch is unprotected, so its long-term availability is not
++assured. See \texttt{PHASE13\_GITHUB\_RESEARCH\_DATA\_ACCESS\_PLAN.md}.
++
++\section*{Declaration of generative AI and AI-assisted technologies in the
++manuscript preparation process}
++\label{sec:genai}
++
++[\emph{Researcher confirmation required --- mandatory where applicable.}] Elsevier
++requires authors to declare the use of generative AI and AI-assisted
++technologies in the manuscript preparation process, in a new section placed
++before the reference list. AI assistance \textbf{was} used extensively in the
++preparation of this manuscript and therefore a declaration is required; the
++exemption for basic grammar, spelling and reference checking does not cover
++this use. The exact wording, the tools to be named and the scope of the
++disclosure are set out in
++\texttt{PHASE12\_CONFIRMATION\_REGISTER.md} (category A8) and must be confirmed by
++the author before submission.
++
++
+ \appendix
++% Appendix table numbering: Elsevier (Finite Fields and Their Applications)
++% convention numbers appendix tables as Table A.1, A.2, ... (guide for authors).
++% Applicable to tables only; the appendices contain no figures and no numbered
++% display equations, so \thefigure and \theequation need no corresponding change.
++\setcounter{table}{0}
++\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+ \input{sections/appendix_tables}
+ \input{sections/appendix_reproducibility}
+--- canonical/sections/01_introduction.tex
+
++++ MS12/sections/01_introduction.tex
+
+@@ -122,5 +122,6 @@
+
+ The codes constructed here are new in \emph{origin}, not in parameters.
+ Exhaustive computation over the accessible family list ($q\in\{4,8,9\}$,
+-$tn\le8$) certifies $28$ codes by three independent methods, among them the
++$tn\le8$) certifies $28$ codes, the exact distance of each by an applicable
++exact method cross-checked by an independent ambient quantum search, among them the
+ first stabilizer distance $4$ produced by this framework, $[[24,8,4]]_9$ and
+ $[[20,4,4]]_4$, and entanglement-assisted codes up to $[[20,2,10;18]]_4$. Every
+@@ -131,4 +132,97 @@
+
+ non-commutative setting, that it produces quantum codes from hulls that are
+ \emph{not} principal, and that the two new bounds of item (6) hold.
++
++\subsection{The role of the matrix-ring formulation, and what Morita
++            equivalence does and does not settle}
++\label{subsec:morita}
++
++Since $X$ is central, $\Rn$ is canonically isomorphic to $M_2(\Bq)$ with
++$\Bq=A_t[X]/\langle X^n-1\rangle$ \emph{commutative}, and under the Morita
++correspondence right ideals of $\Rn$ correspond to $\Bq$-submodules of
++$\Bq^2$; the hull of a code is then the ideal corresponding to the
++intersection of the two associated submodules
++(Proposition~\ref{prop:moritahull}). It is therefore fair to ask what the
++matrix-ring formulation contributes. Three points.
++
++\textbf{First, Morita equivalence is an equivalence of module categories, not
++of rings with involution, and it does not carry the duality.} The duality used
++throughout is defined by the anti-automorphism
++$\theta_s=\sigma_s\circ(\cdot)^{\mathsf T}$ of $R$, and it is the transpose
++that makes the dual of a \emph{right} ideal a right ideal with the correct
++size (Lemma~\ref{lem:failure} and Theorem~\ref{thm:duality}). Over a
++commutative coefficient ring the twist degenerates to $\sigma_s$ and there is
++nothing to prove. The pairing of Definition~\ref{def:pairing}, the distinction
++between the general Galois and the reflexive regime
++(Definition~\ref{def:regimes}), and the self-orthogonality of hulls without
++reflexivity (Theorem~\ref{thm:hullso}) are all statements about $R$ and
++$\theta_s$ made \emph{before} any Morita translation.
++
++\textbf{Second, what Morita does give is exactly what we use it for:} it
++converts the structure theory of hulls into a computation with submodules of
++$\Bq^2$. That is how the principality criterion of
++Proposition~\ref{prop:moritahull} and the confinement of
++Theorem~\ref{thm:nonprincipal} are proved, and how the witnesses are
++constructed. \emph{We do not claim novelty from the non-commutativity of
++$M_2(A_t)$ alone.} The novelty claimed is in the duality that the
++non-commutative alphabet forces, and in the hull phenomena that the
++$(\,t\ge2$ and $p\mid n\,)$ criterion isolates.
++
++\textbf{Third, after the translation the residual problem is a problem about
++$\Bq=\F_q[u,X]/\langle u^t,\,X^n-1\rangle$.} Its Chinese-remainder
++decomposition is governed by the factorisation of $X^n-1$ over $\F_q$, and the
++condition $p\mid n$ is precisely the repeated-root case. This is where the
++finite-field content of the paper lives, and it is why the framework is
++reported here rather than only in the language of matrices over a chain ring.
++
++\subsection{Contributions, in order of emphasis}
++\label{subsec:contributions}
++
++The contributions, in the order in which we ask them to be read, are:
++
++\begin{enumerate}
++\item \textbf{An algebraic Galois-duality and hull framework over a
++  non-commutative alphabet.} The Galois twist must be the anti-automorphism
++  $\theta_s$, duality and hull theory are developed for arbitrary right ideals
++  with no principality hypothesis, and self-orthogonality holds with no
++  reflexivity hypothesis (Section~\ref{sec:cyclic}, Section~\ref{sec:hulls}).
++\item \textbf{Non-principal hull structure, and a counterexample.} Galois
++  hulls need not be principal; $\MU_{\Bq}\ge3$ forces $t\ge2$ and $p\mid n$;
++  and no closed formula of gcd type exists
++  (Theorem~\ref{thm:nonprincipal}, Theorem~\ref{thm:noclosed}).
++\item \textbf{A duality-preserving expansion to $\F_q^{\Nlen}$.} The
++  transported form is identified exactly, with Hankel Gram matrix
++  $I_{4n}\otimes H_t$, and duality and hulls are preserved, non-principal ones
++  included (Section~\ref{sec:gray}).
++\item \textbf{Quantum stabilizer and entanglement-assisted constructions.}
++  Three routes of length $\Nlen=4tn$, with the characteristic-two obstruction
++  of Theorem~\ref{thm:obstruction} delimiting the Euclidean route
++  (Section~\ref{sec:quantum}).
++\item \textbf{Exact distance certificates and two bounds.} The coset-distance
++  theorem and the coset Singleton bound $K+d\le\Nlen+1$, and the certification
++  of $28$ codes, each by an exact method cross-checked independently
++  (Section~\ref{sec:cert}).
++\end{enumerate}
++
++The enumerators and dimension-distribution statistics produced by the scan are
++\textbf{supporting material}. They are reported where they support a
++construction and are not presented as principal results.
++
++\subsection{On the parameters obtained}
++\label{subsec:parametersposition}
++
++Every stabilizer code constructed here is at best \emph{equal} to the best
++known distance, and then only at $d=2$; every stabilizer code with $d\ge3$ is
++one or two below the best known value (Section~\ref{sec:cmp}). The
++entanglement-assisted codes carry the largest distances obtained in this
++framework, and they cannot be benchmarked at all, because no
++entanglement-assisted table is available; the codes over $\F_8$ are likewise
++unbenchmarked. \textbf{No record parameter is claimed.} What is offered is an
++exact algebraic \emph{origin} for these codes: non-commutative Galois hulls,
++transported to $\F_q$ with duality and hulls preserved, with non-principal
++hulls admitted, and with two new bounds constraining the parameters that
++result. The value of the construction is that every parameter reported is
++derived and certified rather than merely asserted, and that the algebraic
++hypotheses behind each tuple are visible.
++
+ 
+ \subsection{Organisation}
+--- canonical/sections/08_certification.tex
+
++++ MS12/sections/08_certification.tex
+
+@@ -170,5 +170,13 @@
+
+ Every distance reported in this paper is either \textbf{exact} or a
+ \textbf{proved lower bound}, and the two are never conflated. Three
+-independent methods are used, and every headline code is certified by all three.
++independent methods are employed across the certification; their applicability
++is recorded per code, and no single code is certified by all three. Each
++headline code has its exact distance certified by exactly one of the two exact
++methods: M1 where the enumeration completes, and otherwise M2, which is run
++precisely when M1 cannot finish. Every headline code is additionally
++cross-checked by the ambient quantum search (M3), which for most codes yields
++a proved lower bound rather than an exact value (see
++Appendix~\ref{app:tables} and the supplementary certification data). No code
++is certified by all three.
+ 
+ \begin{description}
+@@ -226,6 +234,6 @@
+
+ \end{remark}
+ 
+-Table~\ref{tab:headline} lists the headline codes, all certified by the three
+-methods. Table~\ref{tab:cert} in Appendix~A lists the full certification table.
++Table~\ref{tab:headline} lists the headline codes, each certified by an
++applicable exact method and cross-checked by the ambient quantum search. Table~\ref{tab:cert} in Appendix~A lists the full certification table.
+ 
+ \begin{table}[t]
+@@ -342,7 +350,8 @@
+
+ $\Hull_E(D)=\{0\}$ and $\mathcal Q=D^{\perp_E}$, a linear $[20,2]_4$ code. Its
+ $4^2=16$ codewords are enumerated completely (method M1), and the minimum
+-weight found is $10$; the independent support search (M2) and the ambient
+-quantum search (M3, which certifies $d\ge3$ as a lower bound) agree with the
+-reported value. Hence $d=10$ exactly and
++weight found is $10$. The support search (M2) is run only when M1 cannot
++finish, so it was not run here and contributes nothing; the ambient quantum
++search (M3) independently certifies $d\ge3$ as a lower bound, consistent with
++this value. Hence $d=10$ exactly and
+ \[
+   [[20,2,10;18]]_4 .
+--- canonical/sections/appendix_tables.tex
+
++++ MS12/sections/appendix_tables.tex
+
+@@ -11,8 +11,13 @@
+
+ (\filepath{04_COMPUTATION/phase7_extended_search_log.txt}, Part~6). The
+ columns M1, M2, M3 record the three independent distance methods of
+-Section~\ref{sec:cert}: a dash means the method could not complete, and
+-``$>2$'' means the ambient quantum search (M3) reached weight $2$ without
+-finding a vector, i.e. it certifies $d\ge3$ as a \emph{lower} bound only.
+-The column ``exact'' says yes when all three methods that completed agree
++Section~\ref{sec:cert}. At most two of the three are run for any one code:
++a dash in the M1 column means M1 could not complete within its enumeration
++cap, in which case the support search M2 is run instead; ``n/a'' in the M2
++column means M2 was not run, because M1 had already finished and M2 is run
++only when M1 cannot. Thus exactly one of M1 and M2 carries the exact distance
++for each code. A ``$>2$'' entry means the ambient quantum search
++(M3) reached weight $2$ without finding a vector, i.e. it certifies $d\ge3$ as
++a \emph{lower} bound only; M3 is therefore a cross-check rather than an exact
++method. The column ``exact'' says yes when every method that completed agrees
+ with the reported value, the stabilizer is $\F_p$-abelian, and $K$ and $c$
+ recompute from $k$ and $h_E$.
