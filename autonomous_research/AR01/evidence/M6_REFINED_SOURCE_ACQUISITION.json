@@ -1,0 +1,101 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:49:37.104262+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "sources": [
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/201195/source0.tex",
+      "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_201195.tex",
+      "bytes": 63282,
+      "line_count": 794,
+      "sha256": "c293518fd1ae5462c8f193cf1cbf36f0a6b931b8d88df7388d2c98fba6728d9a",
+      "git_blob_sha1_recomputed": true,
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 88,
+          "text": "\\title[]{Functional codes arising from rank $n$ Hermitian varieties and  hypersurfaces in low dimensions}"
+        },
+        {
+          "line": 90,
+          "text": "\\author{Subrata Manna}"
+        },
+        {
+          "line": 104,
+          "text": "\\date{}"
+        }
+      ],
+      "read_scope": "Header inventory only, later line reading separate",
+      "provenance": "Third-party mirror; primary/final version not authenticated"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/202588/source0.tex",
+      "blob_sha": "ba4abb9f6948088cb999559cfc18f868903def13",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/202588/source0.tex",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_202588.tex",
+      "bytes": 88026,
+      "line_count": 1343,
+      "sha256": "6a697e9bb9492e92d4e6ee1fe93d1ede7487252a508a72f924d58b19df2d9972",
+      "git_blob_sha1_recomputed": true,
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 1,
+          "text": "% concatenated from Hermitian_arXiv.tex"
+        },
+        {
+          "line": 53,
+          "text": "\\title{On determinantal formulas for hermitian random matrices}"
+        },
+        {
+          "line": 54,
+          "text": "\\date{}"
+        },
+        {
+          "line": 56,
+          "text": "\\author[1]{Di YANG}"
+        },
+        {
+          "line": 57,
+          "text": "\\author[1]{Jiayi ZHAO}"
+        },
+        {
+          "line": 58,
+          "text": "\\author[2]{Jian ZHOU}"
+        },
+        {
+          "line": 1166,
+          "text": "Berg C. Fibonacci numbers and orthogonal polynomials. arXiv:math/0609283."
+        },
+        {
+          "line": 1172,
+          "text": "Berg\\`ere M., Eynard B. Determinantal formulae and loop equations. arXiv:0901.3273v2."
+        },
+        {
+          "line": 1211,
+          "text": "Eynard B., Kimura T., Ribault S. {\\it Random matrices}. arXiv:1510.04430v2."
+        },
+        {
+          "line": 1322,
+          "text": "Zhou J. Explicit Formula for Witten-Kontsevich Tau-Function. arXiv:1306.5429."
+        },
+        {
+          "line": 1325,
+          "text": "Zhou J. Emergent Geometry and Mirror Symmetry of A Point. arXiv:1507.01679v1."
+        },
+        {
+          "line": 1328,
+          "text": "Zhou J. Hermitian One-Matrix Model and KP Hierarchy. arXiv:1809.07951v1."
+        },
+        {
+          "line": 1331,
+          "text": "Zhou J. Grothendieck's dessins d'enfants in a web of dualities. arXiv:1905.10773."
+        }
+      ],
+      "read_scope": "Header inventory only, later line reading separate",
+      "provenance": "Third-party mirror; primary/final version not authenticated"
+    }
+  ],
+  "scope": "Immutable blob/hash/header acquisition only; source caches outside Git and ZIPs; no originality inference"
+}

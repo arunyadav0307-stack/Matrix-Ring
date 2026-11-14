@@ -56,3 +56,11 @@ Recorded runs are `distribution_v1`, `distribution_audit_v1` and `closed_formula
 - `../tools/verify_remote_checkpoint.py`: fixed-branch remote ref/all-blob/mode/expected-path identity checks; fresh receipt or print-only mode. It does not change branches/history or certify mathematics.
 
 See [full proof](../phase3/CORE_A_CLOSED_FORMULA_FULL_PROOF.md), [audit](../audits/CORE_A_INDEPENDENT_PROOF_AUDIT.md), [exact coverage](../audits/CORE_A_THEORY_COMPUTATION_COMPARISON.md) and [status](../audits/CORE_A_PROOF_STATUS_REPORT.md). Same-agent alternative mathematics/programs are not external human review. No finite agreement establishes originality, journal fit, a Gray/physical application or submission readiness.
+
+## AR01-M6 — scalar QC reduction and closest-result continuation
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B autonomous_research/AR01/computations/audit_core_a_scalar_qc.py NEW_SCALAR_QC_LABEL
+```
+
+Recorded `scalar_qc_v1`: PASS. The driver constructs scalar A-valued length4/index2 QC inputs using an explicit 1,u,X,uX action span, imposes both A coefficients of the first-slot scalar form, and compares complete hull spaces with primary data and the original-global matrix route. It checks u/shift closure of inputs/duals/hulls, all176 exported q16 dual bases and the radical-quotient generator invariant. Scope is all2,442 q4 cases plus176 q16 subset cases, with1,152 basis/scalar/constant/shift tests at q4/q8/q16. It reuses only the alternative field/row/global checker, not primary field/module/descriptor/hull code. Same-agent verification is not external review; this is a comparison lemma, not a new algorithm, Gray isometry, full q16 census or novelty certificate. The [crosswalk](../phase1/A13_SCALAR_QC_REDUCTION_AND_CLOSEST_RESULT_COMPARISON.md) proves the general statement separately.

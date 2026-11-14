@@ -1,0 +1,249 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:48:35.320011+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "sources": [
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/149141/source0.tex",
+      "blob_sha": "f69c94584591474664fda56b406e29661be2472d",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/149141/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/149141/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_149141.tex",
+      "bytes": 320049,
+      "sha256": "003feb94fd304201235bcfaba77374f7b087f7ff577d6fabd3bd01643396589c",
+      "line_count": 2900,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "dd823d98b7faf95eaa0d8251034f617470c977acbc2f65ce74190e12b8619dcd",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 707,
+          "text": "\\title{\\bf A hierarchy of eigencomputations for polynomial optimization on the sphere}"
+        },
+        {
+          "line": 716,
+          "text": " \\author[$* \\dagger$]{"
+        },
+        {
+          "line": 718,
+          "text": " \\author[$\\ddagger$]{Nathaniel Johnston \\thanks{emails: benjamin.lovitz@gmail.com, njohnston@mta.ca}}"
+        },
+        {
+          "line": 724,
+          "text": "\\date{\\today}"
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/160308/source0.tex",
+      "blob_sha": "8fe15952359c30477ced9f8866486547a3872e2c",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/160308/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/160308/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_160308.tex",
+      "bytes": 63622,
+      "sha256": "8e10009187e05243e18983163e57fa356772b2e0c3e076e532548f2b8d979347",
+      "line_count": 1234,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "82de9e8f1b7e2e6c7c4b84701cc89857acca2e268e802c4033d55acfa6401e68",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 102,
+          "text": "\\title{New bounds and constructions for large partial $m$-ovoids and related structures}"
+        },
+        {
+          "line": 104,
+          "text": "\\author[Bamberg]{John Bamberg$^1$}"
+        },
+        {
+          "line": 108,
+          "text": "\\author[Bishnoi]{Anurag Bishnoi$^2$}"
+        },
+        {
+          "line": 111,
+          "text": "\\author[Ihringer]{Ferdinand Ihringer$^3$}"
+        },
+        {
+          "line": 121,
+          "text": "\\author[Ravi]{Ananthakrishnan Ravi $^4$}"
+        },
+        {
+          "line": 1099,
+          "text": "to appear in Ann. Math. arXiv preprint (2023) \\url{https://arxiv.org/abs/2303.09521}. "
+        },
+        {
+          "line": 1131,
+          "text": "arxiv preprint \\url{https://arxiv.org/abs/2310.04820}."
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/187028/source0.tex",
+      "blob_sha": "92bca585a618fb71d5011fe6057f2e874f923538",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187028/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/187028/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_187028.tex",
+      "bytes": 131952,
+      "sha256": "aeae1a0270c7b09cb1601f51c4682bce1a60ac07f812d56d061fa85150e0dec2",
+      "line_count": 2570,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "9f63e5611ee2de73986752982aa2c51e07ba3a6ebf968be2a19b2c76a41556a5",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 71,
+          "text": "\\title[On Hopf hypersurfaces of the complex hyperbolic quadric]"
+        },
+        {
+          "line": 74,
+          "text": "\\author{Haizhong Li, Hiroshi Tamaru \\and Zeke Yao}"
+        },
+        {
+          "line": 88,
+          "text": "\\date{}"
+        },
+        {
+          "line": 2454,
+          "text": "arXiv:2504.17689"
+        },
+        {
+          "line": 2493,
+          "text": "arXiv:2501.05553v2"
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/187261/source0.tex",
+      "blob_sha": "487733ab9710b23aec02e44b1cb9c98a8704b9a1",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187261/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/187261/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_187261.tex",
+      "bytes": 118292,
+      "sha256": "09cc9f8eef7cef2f371015303b7a448dc96cd0a4c845c40d831a775c1db90608",
+      "line_count": 2824,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "639984caddda82e5f3beae12fad3224490b1443dfeb409ef15cd0a7019d462f2",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 1,
+          "text": "% concatenated from Rodriguez-Tempesta_2025_resubmitted_arxiv_02_july_2026_finale.tex"
+        },
+        {
+          "line": 78,
+          "text": "\\title[Categorical Discretization of Dynamical Systems via Rota  Algebras]{Laurent sequences, extended Rota Algebras \\\\ and Categorical Discretization \\\\ of Dynamical Systems }"
+        },
+        {
+          "line": 81,
+          "text": "\\author{Miguel A. Rodr\\'iguez}"
+        },
+        {
+          "line": 85,
+          "text": "\\author{Piergiulio Tempesta}"
+        },
+        {
+          "line": 127,
+          "text": "\\date{July 2, 2026}"
+        },
+        {
+          "line": 2768,
+          "text": "\\bibitem{LR1995} D. Loeb and G.C. Rota. Recent Contributions to the Calculus of Finite Differences: A Survey. arXiv:math/9502210v1 (1995)"
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/195241/source0.tex",
+      "blob_sha": "d0f600e7343ee79e614394ede4dc2dc5486e7958",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/195241/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/195241/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_195241.tex",
+      "bytes": 128789,
+      "sha256": "e877ab3ece30dd6d0a1db18d5a13d78418022664fe67886c3795552a8ec62dc0",
+      "line_count": 1196,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "b7d760f679be479ccad156fdab24ff33e455b3f4d652eb4bee8e11ea389d1c00",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 39,
+          "text": "\\title{Higher Degree $t$-Hermitian Forms and Positivity-Preserving Contractions}"
+        },
+        {
+          "line": 40,
+          "text": "\\author{Isaac Dobes}"
+        },
+        {
+          "line": 41,
+          "text": "\\date{\\today}"
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/207679/source0.tex",
+      "blob_sha": "b7a3cfe668c95b03298f0c1de418bd072c3fe6d0",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/207679/source0.tex",
+      "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/207679/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5",
+      "cache_file": "/home/user/AR01_M6_SOURCE_CACHE/Mirror_207679.tex",
+      "bytes": 135988,
+      "sha256": "f2e6b4ec998ad6cda66456cca72c3659a7c97584b5dfcb3e2e038af33beccd71",
+      "line_count": 2000,
+      "git_blob_sha1_recomputed": true,
+      "retrieval_response_sha256": "c23fafae7078be25c48918fdb855ef3e0b558da89deb5e1159294b8e781e13d2",
+      "header_candidates_not_authenticated_metadata": [
+        {
+          "line": 98,
+          "text": "\\title{Mixed identities for simple locally finite groups}"
+        },
+        {
+          "line": 99,
+          "text": "\\author[H. Bradford]{Henry Bradford}"
+        },
+        {
+          "line": 102,
+          "text": "\\author[K. Ersoy]{K\u0131van\u00e7 Ersoy}"
+        },
+        {
+          "line": 105,
+          "text": "\\author[J. Schneider]{Jakob Schneider}"
+        },
+        {
+          "line": 108,
+          "text": "\\author[A. Thom]{Andreas Thom}"
+        },
+        {
+          "line": 1653,
+          "text": "  journal={arXiv preprint},"
+        },
+        {
+          "line": 1655,
+          "text": "  eprint={arXiv:2311.03981},"
+        },
+        {
+          "line": 1867,
+          "text": "  journal={arXiv preprint arXiv:2208.07418},"
+        },
+        {
+          "line": 1887,
+          "text": "  journal={arXiv preprint},"
+        },
+        {
+          "line": 1889,
+          "text": "  eprint={arXiv:2606.24741},"
+        }
+      ],
+      "read_scope": "Header/keyword inventory only at acquisition; later explicit reading ranges are separate",
+      "provenance": "Third-party mirror; no author/publisher version equality or authenticity established"
+    }
+  ],
+  "scope": "Immutable Git blob acquisition/hash verification and header inventory only; mirrors are not authenticated primary versions. Cached external source bytes are intentionally outside Git and research ZIPs."
+}

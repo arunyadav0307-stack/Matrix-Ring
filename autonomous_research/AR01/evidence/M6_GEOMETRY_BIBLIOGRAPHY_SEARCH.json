@@ -1,0 +1,91 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:50:45.535363+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "queries": [
+    {
+      "query": "\"Hermitian\" \"permutable\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "8bd0e79d044fe1a964aed2174116bf33cf278f620e5f9d9b4adf4546f627caca",
+      "total_count": 12,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "planetmath/15_Linear_and_multilinear_algebra_matrix_theory",
+          "path": "15A21-LinearInvolution.tex",
+          "blob_sha": "9a41933c6235843d9f04dd4f3d084beab0388116",
+          "html_url": "https://github.com/planetmath/15_Linear_and_multilinear_algebra_matrix_theory/blob/6b5b3a453b1eabf13a56a11f015889e1643bc182/15A21-LinearInvolution.tex"
+        },
+        {
+          "repository": "Tensorera/BourbakiMathLatex",
+          "path": "ConvertedLatex(EN)/09SpectralTheory_ch1-ch2(\u6cd5\u6587)/chapters/ch01-s06-ss07-applications.tex",
+          "blob_sha": "f4f8bd5f3b5e01315114e8aa02b5049cc741f9f7",
+          "html_url": "https://github.com/Tensorera/BourbakiMathLatex/blob/f82af6015e228fe9b9c6f5930e7ce52163728925/ConvertedLatex(EN)/09SpectralTheory_ch1-ch2(\u6cd5\u6587)/chapters/ch01-s06-ss07-applications.tex"
+        },
+        {
+          "repository": "raulsas/PhD.github.io",
+          "path": "Tesis Doctoral/Tesis Doctoral.tex",
+          "blob_sha": "5518bf5f70b1ece188588fb31599bee2045f0f24",
+          "html_url": "https://github.com/raulsas/PhD.github.io/blob/86809bfeb6a55a2ed12059bccb6018bdc50da108/Tesis Doctoral/Tesis Doctoral.tex"
+        },
+        {
+          "repository": "Tensorera/BourbakiMathLatex",
+          "path": "ConvertedLatex(EN)/07Lie groups and lie algebras_ch1-ch3/chapters/ch01-ex-s01-exercises.tex",
+          "blob_sha": "f7d78701422ccd7c2cf990f7bc1627a207c85146",
+          "html_url": "https://github.com/Tensorera/BourbakiMathLatex/blob/f82af6015e228fe9b9c6f5930e7ce52163728925/ConvertedLatex(EN)/07Lie groups and lie algebras_ch1-ch3/chapters/ch01-ex-s01-exercises.tex"
+        },
+        {
+          "repository": "Tensorera/BourbakiMathLatex",
+          "path": "ConvertedLatex(EN)/02Algebra_ch9(\u6cd5\u6587)/chapters/ch09-s07-ss03-relative-reduction.tex",
+          "blob_sha": "df0b43c3cc1dcde9d685b9cc941b6423d17919b7",
+          "html_url": "https://github.com/Tensorera/BourbakiMathLatex/blob/f82af6015e228fe9b9c6f5930e7ce52163728925/ConvertedLatex(EN)/02Algebra_ch9(\u6cd5\u6587)/chapters/ch09-s07-ss03-relative-reduction.tex"
+        },
+        {
+          "repository": "ginkgo-project/ginkgo-generated-documentation",
+          "path": "doc/main/latex/annotated.tex",
+          "blob_sha": "215fee44d56b662478ebc6200ebf5465247c2ec0",
+          "html_url": "https://github.com/ginkgo-project/ginkgo-generated-documentation/blob/62e0e0bec14fbd78eec183714de5a6f7115a4e90/doc/main/latex/annotated.tex"
+        },
+        {
+          "repository": "ginkgo-project/ginkgo-generated-documentation",
+          "path": "doc/v1.10.0/latex/annotated.tex",
+          "blob_sha": "fd641e228b4a093851684b29618a06150eff6b8c",
+          "html_url": "https://github.com/ginkgo-project/ginkgo-generated-documentation/blob/62e0e0bec14fbd78eec183714de5a6f7115a4e90/doc/v1.10.0/latex/annotated.tex"
+        },
+        {
+          "repository": "ginkgo-project/ginkgo-generated-documentation",
+          "path": "doc/v1.11.0/latex/annotated.tex",
+          "blob_sha": "215fee44d56b662478ebc6200ebf5465247c2ec0",
+          "html_url": "https://github.com/ginkgo-project/ginkgo-generated-documentation/blob/62e0e0bec14fbd78eec183714de5a6f7115a4e90/doc/v1.11.0/latex/annotated.tex"
+        },
+        {
+          "repository": "ginkgo-project/ginkgo-generated-documentation",
+          "path": "doc/develop/latex/annotated.tex",
+          "blob_sha": "c870098cb7ca71e1f527cd68d69a68be1624b00e",
+          "html_url": "https://github.com/ginkgo-project/ginkgo-generated-documentation/blob/62e0e0bec14fbd78eec183714de5a6f7115a4e90/doc/develop/latex/annotated.tex"
+        },
+        {
+          "repository": "Tensorera/BourbakiMathLatex",
+          "path": "ConvertedLatex(EN)/09SpectralTheory_ch3-ch5(\u6cd5\u6587)/chapters/ch04-ex-s05-exercises.tex",
+          "blob_sha": "2ad2f6ce73533750821e905e87375e3a3b8ae7f2",
+          "html_url": "https://github.com/Tensorera/BourbakiMathLatex/blob/f82af6015e228fe9b9c6f5930e7ce52163728925/ConvertedLatex(EN)/09SpectralTheory_ch3-ch5(\u6cd5\u6587)/chapters/ch04-ex-s05-exercises.tex"
+        }
+      ]
+    },
+    {
+      "query": "\"codes defined by forms of degree\" \"Edoukou\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "e0a49f4c15de98aee81eaba06f627d590e8ffeefa61f27039d713a4db79d568f",
+      "total_count": 1,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/201195/source0.tex",
+          "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex"
+        }
+      ]
+    }
+  ],
+  "scope": "Top10 acquisition leads only; bibliography search is not reading/authentication or novelty clearance"
+}

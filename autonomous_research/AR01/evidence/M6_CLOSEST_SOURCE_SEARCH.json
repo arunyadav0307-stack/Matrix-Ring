@@ -1,0 +1,267 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:47:43.086593+00:00",
+  "timestamp_kind": "Raw sandbox clock observation, not normalized session calendar or publication date",
+  "milestone_base": "eef4ab6ab3461745dafadbcf4211aa79286344b6",
+  "allowed_host": "api.github.com",
+  "endpoint": "GitHub code search; top10 results per query only",
+  "queries": [
+    {
+      "query": "\"s00200-019-00408-9\"",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"self-duality\" \"oddly\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "0ee71c9618d23c1c39292b20da0e6e2bc7d0eed56fa1b65c65fae4fa21a4d583",
+      "total_count": 6,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "openai/math",
+          "path": "preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "blob_sha": "19bc715361b0d3f085ee1add85c6f7183414c54c",
+          "html_url": "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "api_url": "https://api.github.com/repositories/1407950271/contents/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex?ref=4eaee87548250b2682affda7d05d947c05554bae"
+        },
+        {
+          "repository": "westerbaan/theses",
+          "path": "papers/1805.11496/main.tex",
+          "blob_sha": "1971d678d633734e5666a2611616ddcb1f854399",
+          "html_url": "https://github.com/westerbaan/theses/blob/679be251fbdfc924f93977555788b3eb931c230e/papers/1805.11496/main.tex",
+          "api_url": "https://api.github.com/repositories/78418790/contents/papers/1805.11496/main.tex?ref=679be251fbdfc924f93977555788b3eb931c230e"
+        },
+        {
+          "repository": "Fedor-Popov/Lean_VOA",
+          "path": "Notes/Textbook/chapters/ch12.tex",
+          "blob_sha": "eaabc02d0d78760041b68145f8ad611394686a36",
+          "html_url": "https://github.com/Fedor-Popov/Lean_VOA/blob/013a799ca834a8a6b3afa8129e3e522025b3f45c/Notes/Textbook/chapters/ch12.tex",
+          "api_url": "https://api.github.com/repositories/1444656094/contents/Notes/Textbook/chapters/ch12.tex?ref=013a799ca834a8a6b3afa8129e3e522025b3f45c"
+        },
+        {
+          "repository": "Code-Cornelius/skill-comparator-paper-drafting",
+          "path": "openai_math/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "blob_sha": "19bc715361b0d3f085ee1add85c6f7183414c54c",
+          "html_url": "https://github.com/Code-Cornelius/skill-comparator-paper-drafting/blob/fdd4289d6e963c52c9a37b9d6c15892ed7ed10ce/openai_math/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "api_url": "https://api.github.com/repositories/1414410590/contents/openai_math/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex?ref=fdd4289d6e963c52c9a37b9d6c15892ed7ed10ce"
+        },
+        {
+          "repository": "jingyuanli-hk/openai_math",
+          "path": "preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "blob_sha": "19bc715361b0d3f085ee1add85c6f7183414c54c",
+          "html_url": "https://github.com/jingyuanli-hk/openai_math/blob/746117c6ca34e6831fdfae4c25d02f3e1414691a/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "api_url": "https://api.github.com/repositories/1440432067/contents/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex?ref=746117c6ca34e6831fdfae4c25d02f3e1414691a"
+        },
+        {
+          "repository": "igor024/math",
+          "path": "preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "blob_sha": "19bc715361b0d3f085ee1add85c6f7183414c54c",
+          "html_url": "https://github.com/igor024/math/blob/37fa9a502d652590420333ea1e18a2140cf7ebe3/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex",
+          "api_url": "https://api.github.com/repositories/1439231621/contents/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/build/sections/weights.tex?ref=37fa9a502d652590420333ea1e18a2140cf7ebe3"
+        }
+      ]
+    },
+    {
+      "query": "\"s11128-024-04514-7\"",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"codes derived from quasi-cyclic\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    },
+    {
+      "query": "\"Frobenius\" \"nonclassical\" \"symplectic\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "1c6810f850ac08611a91d542314965b8b09f841d8da4ce5f1df193df2019df99",
+      "total_count": 3,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "brianz98/phd-notes",
+          "path": "v1.tex",
+          "blob_sha": "2ec854baa1cbbebeaa2ef27d51b7d2e7ac768add",
+          "html_url": "https://github.com/brianz98/phd-notes/blob/d9821dd048c922a33b9ad6a7da815553fe1c1e71/v1.tex",
+          "api_url": "https://api.github.com/repositories/801343711/contents/v1.tex?ref=d9821dd048c922a33b9ad6a7da815553fe1c1e71"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/207679/source0.tex",
+          "blob_sha": "b7a3cfe668c95b03298f0c1de418bd072c3fe6d0",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/207679/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/207679/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/187261/source0.tex",
+          "blob_sha": "487733ab9710b23aec02e44b1cb9c98a8704b9a1",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187261/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/187261/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        }
+      ]
+    },
+    {
+      "query": "\"Hermitian\" \"hyperbolic quadric\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "976cb826ada4012bd5c919223afe12afe53339108beafa5b1e9a6af0ecc133e5",
+      "total_count": 19,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/187028/source0.tex",
+          "blob_sha": "92bca585a618fb71d5011fe6057f2e874f923538",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187028/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/187028/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "0thernes/hoggar-bound",
+          "path": "paper/main.tex",
+          "blob_sha": "2f25f144dfc0c84e4bfce13aea01bed889b32756",
+          "html_url": "https://github.com/0thernes/hoggar-bound/blob/c74135c429a0ef827c757df5fc76139aed62a819/paper/main.tex",
+          "api_url": "https://api.github.com/repositories/1451987590/contents/paper/main.tex?ref=c74135c429a0ef827c757df5fc76139aed62a819"
+        },
+        {
+          "repository": "siddhartha-gadgil/CourseSchedule",
+          "path": "data/reports.tex",
+          "blob_sha": "eddecede51d6e5fc9eb9721b288b35bc10d25737",
+          "html_url": "https://github.com/siddhartha-gadgil/CourseSchedule/blob/af4d180696b867aab87ed064c207d14d4e37eac0/data/reports.tex",
+          "api_url": "https://api.github.com/repositories/153763035/contents/data/reports.tex?ref=af4d180696b867aab87ed064c207d14d4e37eac0"
+        },
+        {
+          "repository": "0thernes/hoggar-bound-lab",
+          "path": "paper/c3-spectral-counterexample.tex",
+          "blob_sha": "e053c30bccafa5bbd07665e29089e272f3178e66",
+          "html_url": "https://github.com/0thernes/hoggar-bound-lab/blob/2149cbfc5475efbd8e791547ddd9b040954cb8ed/paper/c3-spectral-counterexample.tex",
+          "api_url": "https://api.github.com/repositories/1451970998/contents/paper/c3-spectral-counterexample.tex?ref=2149cbfc5475efbd8e791547ddd9b040954cb8ed"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/154191/source0.tex",
+          "blob_sha": "51b15f63de261990fd27cb99e49066769a0ea040",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/154191/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/154191/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "0thernes/hoggar-bound-lab",
+          "path": "docs/paper/c3-spectral-counterexample.tex",
+          "blob_sha": "e053c30bccafa5bbd07665e29089e272f3178e66",
+          "html_url": "https://github.com/0thernes/hoggar-bound-lab/blob/2149cbfc5475efbd8e791547ddd9b040954cb8ed/docs/paper/c3-spectral-counterexample.tex",
+          "api_url": "https://api.github.com/repositories/1451970998/contents/docs/paper/c3-spectral-counterexample.tex?ref=2149cbfc5475efbd8e791547ddd9b040954cb8ed"
+        },
+        {
+          "repository": "0thernes/hoggar-bound-lab",
+          "path": "paper/independent-research-note.tex",
+          "blob_sha": "986897ed4797cc3a2bb72a458cc0451fc529816b",
+          "html_url": "https://github.com/0thernes/hoggar-bound-lab/blob/2149cbfc5475efbd8e791547ddd9b040954cb8ed/paper/independent-research-note.tex",
+          "api_url": "https://api.github.com/repositories/1451970998/contents/paper/independent-research-note.tex?ref=2149cbfc5475efbd8e791547ddd9b040954cb8ed"
+        },
+        {
+          "repository": "0thernes/hoggar-bound-lab",
+          "path": "publication/spectral-floor/spectral-floor.tex",
+          "blob_sha": "8db5cf117af1c91b7389c1deaa781d2f2ae73620",
+          "html_url": "https://github.com/0thernes/hoggar-bound-lab/blob/2149cbfc5475efbd8e791547ddd9b040954cb8ed/publication/spectral-floor/spectral-floor.tex",
+          "api_url": "https://api.github.com/repositories/1451970998/contents/publication/spectral-floor/spectral-floor.tex?ref=2149cbfc5475efbd8e791547ddd9b040954cb8ed"
+        },
+        {
+          "repository": "0thernes/hoggar-bound-lab",
+          "path": "publication/spectral-floor/jphysa/manuscript.tex",
+          "blob_sha": "71fd960dadfdc0b821169a69df8f48a01305c944",
+          "html_url": "https://github.com/0thernes/hoggar-bound-lab/blob/2149cbfc5475efbd8e791547ddd9b040954cb8ed/publication/spectral-floor/jphysa/manuscript.tex",
+          "api_url": "https://api.github.com/repositories/1451970998/contents/publication/spectral-floor/jphysa/manuscript.tex?ref=2149cbfc5475efbd8e791547ddd9b040954cb8ed"
+        },
+        {
+          "repository": "siddhartha-gadgil/CourseSchedule",
+          "path": "data/publications_2018-20.tex",
+          "blob_sha": "6dbec9d5ff42c5b8686d4bf00358e2b98fa35880",
+          "html_url": "https://github.com/siddhartha-gadgil/CourseSchedule/blob/af4d180696b867aab87ed064c207d14d4e37eac0/data/publications_2018-20.tex",
+          "api_url": "https://api.github.com/repositories/153763035/contents/data/publications_2018-20.tex?ref=af4d180696b867aab87ed064c207d14d4e37eac0"
+        }
+      ]
+    },
+    {
+      "query": "\"sesquilinear\" \"Segre\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "40e22dcf94bd2c3cb8703644d0d2d6567ef47416eae4a1499bf8e320d7032abf",
+      "total_count": 8,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "ajt60gaibb/OpenProblemsInNLA",
+          "path": "references/colbrook-tensor-metrics-rank-2026-09-11/submitted/TR-17/solution.tex",
+          "blob_sha": "a62afac71a591ca57cf210f58ccbc758eac7e546",
+          "html_url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/d25e2ccd77be39aee95f64d467a1109c0a76faf6/references/colbrook-tensor-metrics-rank-2026-09-11/submitted/TR-17/solution.tex",
+          "api_url": "https://api.github.com/repositories/1360959635/contents/references/colbrook-tensor-metrics-rank-2026-09-11/submitted/TR-17/solution.tex?ref=d25e2ccd77be39aee95f64d467a1109c0a76faf6"
+        },
+        {
+          "repository": "ajt60gaibb/OpenProblemsInNLA",
+          "path": "references/colbrook-tensor-metrics-rank-2026-09-11/manuscripts/tr17_solution.tex",
+          "blob_sha": "ec8315193ba1a71955b0310d8e2fcd0765e5ce13",
+          "html_url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/d25e2ccd77be39aee95f64d467a1109c0a76faf6/references/colbrook-tensor-metrics-rank-2026-09-11/manuscripts/tr17_solution.tex",
+          "api_url": "https://api.github.com/repositories/1360959635/contents/references/colbrook-tensor-metrics-rank-2026-09-11/manuscripts/tr17_solution.tex?ref=d25e2ccd77be39aee95f64d467a1109c0a76faf6"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/195241/source0.tex",
+          "blob_sha": "d0f600e7343ee79e614394ede4dc2dc5486e7958",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/195241/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/195241/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/160308/source0.tex",
+          "blob_sha": "8fe15952359c30477ced9f8866486547a3872e2c",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/160308/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/160308/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/149141/source0.tex",
+          "blob_sha": "f69c94584591474664fda56b406e29661be2472d",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/149141/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/149141/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/132217/source0.tex",
+          "blob_sha": "00bbb93f752f37103f0c5fa0fb6bc6809c4db56e",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/132217/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/132217/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        },
+        {
+          "repository": "BiorgioSecondi/Maths-Notes",
+          "path": "Ordinari2Anno/Geometria_2/geometria_2.tex",
+          "blob_sha": "12d8be3df6bf675c96c482eedc52313e3fdfeb83",
+          "html_url": "https://github.com/BiorgioSecondi/Maths-Notes/blob/3a6b7bde7f32398622c6d869e868809a8eb43f3b/Ordinari2Anno/Geometria_2/geometria_2.tex",
+          "api_url": "https://api.github.com/repositories/1378210378/contents/Ordinari2Anno/Geometria_2/geometria_2.tex?ref=3a6b7bde7f32398622c6d869e868809a8eb43f3b"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/184977/source0.tex",
+          "blob_sha": "6021fc7b18b860d376ed10d49e9f8f8ad7f6aedb",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/184977/source0.tex",
+          "api_url": "https://api.github.com/repositories/1394564761/contents/editable-corpus/sources/184977/source0.tex?ref=92817451c2cf25194bff33da46a1d43e24045fd5"
+        }
+      ]
+    },
+    {
+      "query": "\"Galois hull\" \"quasi-cyclic\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "total_count": 0,
+      "incomplete_results": false,
+      "results": []
+    }
+  ],
+  "scope": "Acquisition leads only; no search absence proves noncoverage or novelty, and search hits do not prove full-text reading or primary-version authenticity"
+}

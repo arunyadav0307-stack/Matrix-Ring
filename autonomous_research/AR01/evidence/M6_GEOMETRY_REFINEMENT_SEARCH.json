@@ -1,0 +1,67 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:49:28.645215+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "queries": [
+    {
+      "query": "\"Hermitian surface\" \"quadric\" \"tangent\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "e0a49f4c15de98aee81eaba06f627d590e8ffeefa61f27039d713a4db79d568f",
+      "total_count": 1,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/201195/source0.tex",
+          "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex"
+        }
+      ]
+    },
+    {
+      "query": "\"generalized Hermitian\" \"Frobenius\" extension:tex",
+      "exit_code": 0,
+      "raw_response_sha256": "fd8c5c3ee9d0cde3d8e5086ea00bb0fff53962888dde936548b76f602bee8366",
+      "total_count": 6,
+      "incomplete_results": false,
+      "results": [
+        {
+          "repository": "VladimirReshetnikov/ProveIt",
+          "path": "Algebra/SurrealNumbers/docs/surcomplex/spectral-theory/article.tex",
+          "blob_sha": "9a70a9f6ff3f825d840471137746543055ea7302",
+          "html_url": "https://github.com/VladimirReshetnikov/ProveIt/blob/b7b715b1d9b970ee917203534735ee1f7c99cb57/Algebra/SurrealNumbers/docs/surcomplex/spectral-theory/article.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/202588/source0.tex",
+          "blob_sha": "ba4abb9f6948088cb999559cfc18f868903def13",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/202588/source0.tex"
+        },
+        {
+          "repository": "DCM-Uni-Paderborn/TopologicalCP2K",
+          "path": "supporting_information.tex",
+          "blob_sha": "7d96d31b52ccedd0be5998e5f006a6c317ee9d4c",
+          "html_url": "https://github.com/DCM-Uni-Paderborn/TopologicalCP2K/blob/90bd18432628336bfcab25946c2f54f9deb988f8/supporting_information.tex"
+        },
+        {
+          "repository": "AlexenderSokolov/cross-theory-formal-database",
+          "path": "editable-corpus/sources/189353/source0.tex",
+          "blob_sha": "691331ac1999870304c279c41342bb8a1b14a252",
+          "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/189353/source0.tex"
+        },
+        {
+          "repository": "joao-lima/plasma-kaapi",
+          "path": "docs/doxygen/out/latex/group__PLASMA__Complex64__t.tex",
+          "blob_sha": "96d25104334d4729320ce3710608aa66f09f24fa",
+          "html_url": "https://github.com/joao-lima/plasma-kaapi/blob/7cada51da1dbf4b19ea9502ef5fb9bc41ccddde9/docs/doxygen/out/latex/group__PLASMA__Complex64__t.tex"
+        },
+        {
+          "repository": "janisaiad/DeNN-NTK",
+          "path": "refs/wk3-ntkspectrum/texsources/sources3/558_neural_tangent_kernel_at_initi-Other Supplementary Material/latex/sec/arx1_ntk.tex",
+          "blob_sha": "5e9b795898fef2d436d5fc8f7910b37356609843",
+          "html_url": "https://github.com/janisaiad/DeNN-NTK/blob/96d254ba6f1fcc03edf1bac6450b3e06fcc2698d/refs/wk3-ntkspectrum/texsources/sources3/558_neural_tangent_kernel_at_initi-Other Supplementary Material/latex/sec/arx1_ntk.tex"
+        }
+      ]
+    }
+  ],
+  "scope": "Top10 acquisition leads only; no full-text reading, authenticity, noncoverage or novelty inference"
+}

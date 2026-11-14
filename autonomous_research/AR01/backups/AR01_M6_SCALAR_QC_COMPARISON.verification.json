@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M6_SCALAR_QC_COMPARISON.zip",
+  "bytes": 964837,
+  "sha256": "aee3af08dd5faeac71debe972a38b1da77eb85a3da3db2112b3d2b926ea27f03",
+  "payload_files": 135,
+  "zip_entries": 136,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

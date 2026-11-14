@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "Exact scalar A-valued QC reduction at central length2 only; not a Gray/field/quantum isometry or novelty test",
+  "scalar_pair_constant_and_shift_basis_checks": 1152,
+  "complete_all_q4_scalar_QC_and_original_global_cases": 2442,
+  "selected_q16_scalar_QC_and_original_global_cases": 176,
+  "recorded_primary_complete_dual_spaces_compared": 176,
+  "all_scalar_QC_hull_and_original_global_spaces_equal": true,
+  "u_and_QC_shift_closure_of_inputs_duals_and_hulls": true,
+  "all_minimum_QC_module_generator_counts_match": true,
+  "q4_hull_generator_histograms": {
+    "0": {
+      "0": 258,
+      "1": 522,
+      "2": 440,
+      "3": 1
+    },
+    "1": {
+      "0": 130,
+      "1": 538,
+      "2": 550,
+      "3": 3
+    }
+  },
+  "full_basis_stream_sha256_hash_only": "c64cfd97e5aeb0c14a78e7d56d61a3255974b679f89e4f0d52053baaba4d0f39",
+  "input_hashes": {
+    "results/structure_v1/cases_q4.jsonl": "460e85a6bfd3922db9da0c8ce4a48f57bad42901515baeb0fd7bbb58baf31f4c",
+    "results/distribution_v1/q16_global_audit_cases.jsonl": "e01eab3d2a0d44bfbcb44913da245014f6e46c98f428b968d687da87b546823f"
+  },
+  "source_hashes": {
+    "audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+    "audit_core_a_scalar_qc.py": "2848bd2d0f2d3a393c566aa15ae4ca9249d2eece31e146260ab977189a40b38c"
+  },
+  "no_primary_field_module_descriptor_hull_code_imports": true,
+  "human_independent_review_completed": false,
+  "external_originality_certified": false
+}

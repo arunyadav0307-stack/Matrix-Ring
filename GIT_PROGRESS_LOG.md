@@ -42,3 +42,13 @@ M5 adds all six requested theorem/proof/audit/exception/comparison/status record
 Fresh finalisation coverage: 2,442 all-q4 global cases,176 selected q16 global cases,4,608 original-pairing/basis/shift checks,17 trace/graph geometry cases and2,080 integer-only regressions; PASS. The prior666,084-case full q16 census is compared as existing executed evidence. q32/q64 remain geometry only. Exact six-document/range/hash/link and N2 polynomial assembly checks PASS. No novelty/Q1/submission certificate follows.
 
 M5 payload synchronization is **pending at this pre-commit entry**. The next remote receipt records the actual commit and expected-file verification; no self-referential commit hash is fabricated. `AR01_M5_CLOSED_FORMULA_PROOF.zip` is the bounded research checkpoint, not a submission release. Date/provenance distinctions and the still-open source/human-review gates are recorded in `M5_FINALISATION_PROVENANCE.md`. Closest-result comparison continues after the milestone.
+
+## AR01-M6 — scalar QC reduction and closest-result continuation
+
+**M5 proof milestone synchronized:** `eef4ab6ab3461745dafadbcf4211aa79286344b6`, pushed on the unchanged fixed branch. `M5_REMOTE_RECEIPT.json` verifies the remote ref before/after the tree check, all **2,196 blobs/modes** and all **46 milestone paths**, including all six requested documents, actual results and the ZIP. The pre-commit “pending” entry is superseded by this actual-success record. The tree was clean before that receipt was written.
+
+The M5 research ZIP is923,509 bytes/121 payloads/122 entries; SHA-256 `d2e456902e9e0b56c38e351648c7cd883d023826005d57bd9bbd90989e2a8186`, reopened and byte/hash-verified. This is not a submission archive. All2,059 originals and the19 frozen M5 inputs remain unchanged.
+
+Continued autonomously after synchronization: proved the exact **whole-family scalar A-valued length4/index2 QC reduction**, added its separately implemented scalar/global regression (`scalar_qc_v1` PASS:2,442 all-q4+176 q16 subset cases and1,152 basis/shift tests), and supplied a more restrictive novelty/depth crosswalk. Matrix-ring packaging is not an originality claim. Twelve allowed-host searches, eight pinned mirror/header acquisitions and two bounded technical readings are recorded; missing primary S01/S09 and exact geometry-table comparisons remain open, not inferred from search failures.
+
+M6's comparison/receipt payload synchronization is pending at this pre-commit entry. Reviewed staging, a reopened/hash-verified bounded successor ZIP, push and full remote-tree/expected-file check follow on the same branch. No external human review, firstness, Q1 verdict, manuscript/submission readiness or routine approval gate is invented.

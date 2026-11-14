@@ -78,3 +78,18 @@ M4 synchronization is completed and reverified at `a74f33f6c6fed1fd8315309815d9e
 |7–8|Research checkpoint/preservation only; not promoted to publication manuscript/submission release|Originality/depth, source completeness, human review, journal/version/declaration/permission requirements open|
 
 M5 commit/push is pending at this pre-commit entry. A reopened/hash-verified research ZIP and subsequent remote receipt record their actual scopes. Literature comparison follows autonomously after synchronization.
+
+## AR01-M6 — scalar QC reduction and closest-result continuation
+
+M5 proof milestone synchronization is completed at `eef4ab6ab3461745dafadbcf4211aa79286344b6`, with all2,196 remote blobs/modes and46 paths verified. Its six requested proof-finalisation records remain frozen and unchanged.
+
+| Phase | Additive bounded disposition | Remaining gate |
+|---|---|---|
+|1|Whole-family scalar QC crosswalk proved; classical descended point/plane ingredients positively matched; specific geometry-primary leads recorded|Authentic complete S01/S09 and exact relative-incidence/version comparison; novelty/depth still OPEN|
+|2–3|Exact original-global scalar-QC dual/hull bridge supplied for arbitrary σ; no A13 formula change|Transport is standard infrastructure, not a new noncommutative main theorem|
+|4|`scalar_qc_v1` PASS for2,442 all-q4,176 selected q16 cases and1,152 basis/shift tests|q16 remains a subset here; no full higher-field census or proof-by-exhaustion|
+|5|No Gray/physical/field isometry claimed|Applications still require their own proved bridge/distances|
+|6|Same-agent alternate proof/scalar/global implementation and traceable source-read scopes supplied|Independent human/formal review and final primary reference audit absent|
+|7–8|Do not promote the proved package as an original/Q1 manuscript/submission release yet|Scientific depth, source completeness, journal/declarations/permissions/readiness unestablished|
+
+Research backup/synchronization checks have only their stated integrity scope. Historical RF/claim/conflict/AD counts, old manuscripts and submitted-version/private facts remain untouched. M6 synchronization is pending at this pre-commit entry, to be verified after push without a routine approval question.

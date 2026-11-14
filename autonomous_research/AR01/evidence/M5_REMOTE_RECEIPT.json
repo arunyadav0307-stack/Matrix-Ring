@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T02:46:49.256999+00:00",
+  "timestamp_kind": "Raw sandbox clock observation, not normalized session calendar or publication date",
+  "repository": "arunyadav0307-stack/Matrix-Ring",
+  "branch": "arena/7d88376d-matrix-ring",
+  "verified_commit": "eef4ab6ab3461745dafadbcf4211aa79286344b6",
+  "expected_paths_base_commit": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+  "verified_blob_count": 2196,
+  "all_remote_local_blob_paths_oids_and_modes_equal": true,
+  "remote_ref_matched_before_and_after_tree_check": true,
+  "github_tree_response_sha256": "95bfc30b14a4146d64e82b90537ff041cd6d872559223c065ae9bda104816710",
+  "expected_changed_paths_verified": {
+    "FINAL_CHANGELOG.md": {
+      "git_blob_sha": "6e94bf3adb54b75bedd207037ff82cb3d6c112dc",
+      "mode": "100644"
+    },
+    "GIT_PROGRESS_LOG.md": {
+      "git_blob_sha": "222995c66fe6b3b7d8ff76d296da6a0c691cfb9f",
+      "mode": "100644"
+    },
+    "PHASE_COMPLETION_REGISTER.md": {
+      "git_blob_sha": "04073b0b91214e4407d0fb18d0f8c70782d64952",
+      "mode": "100644"
+    },
+    "RESEARCH_PROGRESS_LOG.md": {
+      "git_blob_sha": "30eea0119a28fa9c02ec77dc2ecf5ef48b335689",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/README.md": {
+      "git_blob_sha": "798f9ab1da311aff77119dd633857944cf3a4fae",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/CORE_A_DISTRIBUTION_AUDIT.md": {
+      "git_blob_sha": "ad29352370ad9e1ebfd2c18385709d77dc466ccc",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/CORE_A_EXCEPTIONAL_CASES_REGISTER.md": {
+      "git_blob_sha": "5e48ab9fcda832b91190883f15c2977f96d3ea9d",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/CORE_A_INDEPENDENT_PROOF_AUDIT.md": {
+      "git_blob_sha": "530a1b08bbf91718eb4eba49d39cfb38ef8cce97",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/CORE_A_PROOF_STATUS_REPORT.md": {
+      "git_blob_sha": "b1feb4bdacdaea9157152b411827a37f9e878014",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/CORE_A_THEORY_COMPUTATION_COMPARISON.md": {
+      "git_blob_sha": "191d5612838babdbcba030bb16c05bd09ec5245d",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/audits/PUBLICATION_READINESS_M5.md": {
+      "git_blob_sha": "0699bc70032ace59ad030b940e4bd00961521088",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/backups/AR01_M5_CLOSED_FORMULA_PROOF.verification.json": {
+      "git_blob_sha": "1a8a8154fe1d1a9ad315b07e4debb0a76448fafe",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/backups/AR01_M5_CLOSED_FORMULA_PROOF.zip": {
+      "git_blob_sha": "efb46c6877b4cb91ce3e2acefc28e0fe6891b118",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/backups/AR01_M5_CLOSED_FORMULA_PROOF.zip.sha256": {
+      "git_blob_sha": "71099ca15f12ddb5e4001a181d0b1852f67998d4",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/README.md": {
+      "git_blob_sha": "3d9a610f3ba4ea7cf5c3b164b5f93885e934e3b3",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/audit_core_a_distribution.py": {
+      "git_blob_sha": "7ee89f42f71724aa0bb2e25c991623c93b61aa34",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/core_a_distribution.py": {
+      "git_blob_sha": "1bbc9da449d7e706bbcad217a5e62c5cad17a785",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/closed_formula_proof_v1/noninvolution_control.json": {
+      "git_blob_sha": "e7d3a574f23a8a7e5581318fba61cfbdd24141e6",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/closed_formula_proof_v1/stdout.txt": {
+      "git_blob_sha": "69beecba8a0d8635f8bcea4c7bcbab936b0c7f8d",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/closed_formula_proof_v1/summary.json": {
+      "git_blob_sha": "69beecba8a0d8635f8bcea4c7bcbab936b0c7f8d",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/closed_formula_proof_v1/trace_and_graph_cases.json": {
+      "git_blob_sha": "2fb76bf533c4748bd3949705d731f4cf6ef25a25",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_audit_v1/geometry_cases.json": {
+      "git_blob_sha": "bf0390326c0d95a4da03a10322868b0a15ec341b",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_audit_v1/q16_global_cases.jsonl": {
+      "git_blob_sha": "7ae7ab9fab9c86935fe2f851c9ef2f6c035e38f8",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_audit_v1/stdout.txt": {
+      "git_blob_sha": "4a8a234fe8ab5147740f3cd922db77959ef62345",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_audit_v1/summary.json": {
+      "git_blob_sha": "4a8a234fe8ab5147740f3cd922db77959ef62345",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_v1/formula_predictions.json": {
+      "git_blob_sha": "7a1b42a60789315f6a58f96ee7e8987e0c290b04",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_v1/q16_global_audit_cases.jsonl": {
+      "git_blob_sha": "475afb1c5ca58e994062c9f4b3573f76f405f8eb",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_v1/stdout.txt": {
+      "git_blob_sha": "1e720270494ab1fbcff487d1f332c5fe8a8304c8",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/results/distribution_v1/summary.json": {
+      "git_blob_sha": "1e720270494ab1fbcff487d1f332c5fe8a8304c8",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/verify_closed_formula_proof.py": {
+      "git_blob_sha": "1db8b066164a1db37729a45a68181254c95982e8",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/computations/verify_core_a_distribution.py": {
+      "git_blob_sha": "ec51845c1e4907b6ea21300e2ef60f220be5a177",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M4_REMOTE_RECEIPT.json": {
+      "git_blob_sha": "e0e7ec3f66fe251e5164c34b02602011bd7782f3",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M4_REMOTE_REVERIFICATION_AT_M5.json": {
+      "git_blob_sha": "aeac54b8e23b73bc76549ec87dcfe98251bf66ad",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_ALLOWED_HOST_SOURCE_SEARCH.json": {
+      "git_blob_sha": "dce10aa2841f148e915675c184f00309d1b4d494",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_FINALISATION_INPUT_MANIFEST.json": {
+      "git_blob_sha": "2e6d4f947c9084596b550f143792a9a4db460ee1",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_FINALISATION_PROVENANCE.md": {
+      "git_blob_sha": "bf5a7a83ae92c27c0765d18d3b2a901ccb8b6bd0",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_FINAL_DOCUMENT_CHECKS.json": {
+      "git_blob_sha": "afc4c63f6821a411483083c62bf09c1227982dfd",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_PRECOMMIT_CHECKS.json": {
+      "git_blob_sha": "47f802c9a38d3d3a79d5683338fa3549b1fce8e1",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_SOURCE_LEAD_INSPECTION.json": {
+      "git_blob_sha": "bc26827f644980521cc8d008f2ccec4a4c58fafa",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/evidence/M5_SOURCE_READING_ADDENDUM.md": {
+      "git_blob_sha": "48a2357515b754b1faf4d881a22e716b1bad5790",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/phase1/A13_THEOREM_LEVEL_COMPARISON_AND_GATE.md": {
+      "git_blob_sha": "8726bd68984187cd81a9ae6d006b7a70c234b1d5",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/phase3/CORE_A_CLOSED_FORMULA_FULL_PROOF.md": {
+      "git_blob_sha": "44d04464db2f08bcab1be37c9420b3010a3dca6c",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/phase3/CORE_A_CLOSED_FORMULA_THEOREM.md": {
+      "git_blob_sha": "c507860edace16baf6ea0a92eebaef9c90c543bf",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/phase3/CORE_A_HULL_DISTRIBUTION.md": {
+      "git_blob_sha": "e11bf2909abd6addf6165dfdcfae191e0bead75d",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/tools/check_closed_formula_documents.py": {
+      "git_blob_sha": "a2a60ed8f8b945d4d24938dba48f9ea646a5b40f",
+      "mode": "100644"
+    },
+    "autonomous_research/AR01/tools/verify_remote_checkpoint.py": {
+      "git_blob_sha": "a97740a9c6052a76c7b0e645f0889fa396992290",
+      "mode": "100644"
+    }
+  },
+  "expected_changed_path_count": 46,
+  "deleted_tracked_paths": [],
+  "working_tree_status_before_receipt": [],
+  "checker_sha256": "cdf151e01c90bdfc6c625d753decf80e74b2dd131b97494c2ce9b9b43ea388d5",
+  "scope": "Git synchronization and expected file identity only; not scientific truth, novelty or external review"
+}

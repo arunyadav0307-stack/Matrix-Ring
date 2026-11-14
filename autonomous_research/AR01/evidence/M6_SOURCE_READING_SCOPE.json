@@ -1,0 +1,154 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T02:54:33.571171+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session calendar or publication date",
+  "sources": [
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/149141/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/149141/source0.tex",
+      "blob_sha": "f69c94584591474664fda56b406e29661be2472d",
+      "sha256": "003feb94fd304201235bcfaba77374f7b087f7ff577d6fabd3bd01643396589c",
+      "bytes": 320049,
+      "line_count": 2900,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/160308/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/160308/source0.tex",
+      "blob_sha": "8fe15952359c30477ced9f8866486547a3872e2c",
+      "sha256": "8e10009187e05243e18983163e57fa356772b2e0c3e076e532548f2b8d979347",
+      "bytes": 63622,
+      "line_count": 1234,
+      "local_reading_id": "M6G1",
+      "explicit_complete_line_ranges_read": [
+        [
+          102,
+          164
+        ],
+        [
+          276,
+          340
+        ]
+      ],
+      "reading_scope": "Header/abstract/intro and reflexive-polar-space background only; not the full paper or main extremal proofs",
+      "positive_connection": "Classical rank2 symplectic/Hermitian generator products exactly specialize to proof P22; explicit reflexivity prevents unproved import to all k for non-involutive sigma",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/187028/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187028/source0.tex",
+      "blob_sha": "92bca585a618fb71d5011fe6057f2e874f923538",
+      "sha256": "aeae1a0270c7b09cb1601f51c4682bce1a60ac07f812d56d061fa85150e0dec2",
+      "bytes": 131952,
+      "line_count": 2570,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/187261/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/187261/source0.tex",
+      "blob_sha": "487733ab9710b23aec02e44b1cb9c98a8704b9a1",
+      "sha256": "09cc9f8eef7cef2f371015303b7a448dc96cd0a4c845c40d831a775c1db90608",
+      "bytes": 118292,
+      "line_count": 2824,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/195241/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/195241/source0.tex",
+      "blob_sha": "d0f600e7343ee79e614394ede4dc2dc5486e7958",
+      "sha256": "e877ab3ece30dd6d0a1db18d5a13d78418022664fe67886c3795552a8ec62dc0",
+      "bytes": 128789,
+      "line_count": 1196,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/207679/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/207679/source0.tex",
+      "blob_sha": "b7a3cfe668c95b03298f0c1de418bd072c3fe6d0",
+      "sha256": "f2e6b4ec998ad6cda66456cca72c3659a7c97584b5dfcb3e2e038af33beccd71",
+      "bytes": 135988,
+      "line_count": 2000,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/201195/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/201195/source0.tex",
+      "blob_sha": "028a5ac86f07ebef8ae9373b14127837afaf5e67",
+      "sha256": "c293518fd1ae5462c8f193cf1cbf36f0a6b931b8d88df7388d2c98fba6728d9a",
+      "bytes": 63282,
+      "line_count": 794,
+      "local_reading_id": "M6G2",
+      "explicit_complete_line_ranges_read": [
+        [
+          88,
+          254
+        ],
+        [
+          680,
+          758
+        ]
+      ],
+      "reading_scope": "Abstract/intro, standard Hermitian/line/point/intersection preliminaries and bibliography; not the main degenerate-variety proofs or the referenced works",
+      "positive_connection": "Hermitian point formula specializes to P22; Hermitian/quadric functional-code bibliography gives specific unread primary intersection-table leads",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    },
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "path": "editable-corpus/sources/202588/source0.tex",
+      "html_url": "https://github.com/AlexenderSokolov/cross-theory-formal-database/blob/92817451c2cf25194bff33da46a1d43e24045fd5/editable-corpus/sources/202588/source0.tex",
+      "blob_sha": "ba4abb9f6948088cb999559cfc18f868903def13",
+      "sha256": "6a697e9bb9492e92d4e6ee1fe93d1ede7487252a508a72f924d58b19df2d9972",
+      "bytes": 88026,
+      "line_count": 1343,
+      "local_reading_id": null,
+      "explicit_complete_line_ranges_read": [],
+      "reading_scope": "Header/keyword inventory only",
+      "disposition": "Rejected as a closest-source lead: optimization, real/complex differential geometry, higher Hermitian positivity, random matrices, Rota algebras or locally finite groups, not this finite-field hull problem",
+      "primary_or_final_version_authenticated": false,
+      "full_paper_read": false
+    }
+  ],
+  "all_acquired_mirror_blob_and_content_hashes_rechecked": true,
+  "referenced_primary_leads_not_read_or_authenticated": [
+    "Bose and Chakravarti 1966: Hermitian varieties in a finite projective space PG(N,q^2)",
+    "Bartoli, De Boeck, Fanali and Storme: On the functional codes defined by quadrics and Hermitian varieties",
+    "Edoukou: Codes defined by forms of degree2 on Hermitian surfaces and Sorensen conjecture",
+    "Edoukou: The weight distribution of the functional codes defined by forms of degree2 on Hermitian surfaces"
+  ],
+  "full_S01_or_S09_technical_text_acquired": false,
+  "off_host_or_Drive_access_or_author_contact_occurred": false,
+  "scope": "Exact additive reading/version-scope record. Larger truncated shell excerpts and keyword inventories do not count as a full technical reading. Mirrors and bibliography locators do not certify external novelty."
+}
