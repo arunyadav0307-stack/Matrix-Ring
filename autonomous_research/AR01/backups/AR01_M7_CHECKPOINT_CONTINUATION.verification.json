@@ -1,0 +1,11 @@
+{
+  "archive": "autonomous_research/AR01/backups/AR01_M7_CHECKPOINT_CONTINUATION.zip",
+  "bytes": 1230180,
+  "sha256": "d97052012c462b4c072c8b56fd17f5a5aa7a599196f8c2699bf44ee8884ffc63",
+  "payload_files": 149,
+  "zip_entries": 150,
+  "all_entries_reopened_byte_identical": true,
+  "scope": "AR01 working deliverables plus four root logs and .gitignore; excludes backups and all other original research trees",
+  "zip_timestamp": "Fixed technical reproducibility epoch, not claimed execution date",
+  "submission_package": false
+}

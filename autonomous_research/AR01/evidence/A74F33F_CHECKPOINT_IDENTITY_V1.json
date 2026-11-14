@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T05:05:29.728734+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session-calendar or publication date",
+  "checkpoint_commit": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+  "tree_oid": "e01bab242916b84b80caa6de390d47f6e41e7348",
+  "parents": [
+    "d278f163c6cdcc4010fb1c19d30fddee801b63ee"
+  ],
+  "commit_subject": "research(ar01): prove split-factor principality criterion and verify global hull certificates",
+  "GitHub_commit_tree_parent_and_subject_match_local_git_objects": true,
+  "github_response_sha256": "e57cc9cdea6489b3d9b850889a3e9c23363e17adddc6bc9add8aa065e0fade01",
+  "scope": "Identity of the original requested GitHub checkpoint; no new tag, branch, reset or replacement commit"
+}

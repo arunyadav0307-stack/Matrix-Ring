@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T05:06:18.245560+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session-calendar or publication date",
+  "branch": "arena/7d88376d-matrix-ring",
+  "precommit_HEAD": "48fb99064996c53bd3a60711ff666bf41559d64e",
+  "preserved_checkpoint": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+  "preserved_checkpoint_tree": "e01bab242916b84b80caa6de390d47f6e41e7348",
+  "checkpoint_ancestor_of_current_HEAD": true,
+  "protected_intake_files_unchanged": 2059,
+  "protected_intake_bytes": 110323589,
+  "fresh_recovery_baseline_equals_initial_intake_manifest": true,
+  "frozen_M5_input_files_unchanged": 19,
+  "prior_tracked_AR01_files_unchanged_except_two_appended_READMEs": 146,
+  "six_finalisation_documents_unchanged": true,
+  "six_tracked_changes_append_only": true,
+  "AST_parsed_script_hashes": {
+    "autonomous_research/AR01/computations/audit_core_a_distribution.py": "9559c9ed0c261a6d6dee881cdfd0b51f501d4a2b22ecff15e591b3cb280a88e8",
+    "autonomous_research/AR01/computations/audit_core_a_independent.py": "da17f535878b375fbe53530c746bc8967ee9b236abca5b3367435f559f8e467b",
+    "autonomous_research/AR01/computations/audit_core_a_scalar_qc.py": "2848bd2d0f2d3a393c566aa15ae4ca9249d2eece31e146260ab977189a40b38c",
+    "autonomous_research/AR01/computations/audit_core_a_structure_global.py": "fc4a86c6a0f0082625f2b5549655085e08d655c10a0a8993c4302d20d55430f9",
+    "autonomous_research/AR01/computations/audit_split_global.py": "703e1e07ad866dcddf09f108d5a8c473d953ca4ee10b46bc7b943f7acd1ec2aa",
+    "autonomous_research/AR01/computations/core_a.py": "06aaf30225f7c629e1e951f6cd7c294ef98b3eefdfdf2cb269800c57eb536148",
+    "autonomous_research/AR01/computations/core_a_distribution.py": "5a8276e58f3cc33fd209739ff34328e01bb66ff59a7d7cddbc12e126a190cbd7",
+    "autonomous_research/AR01/computations/verify_closed_formula_proof.py": "5525dc37579aa858f1027817eb363a0fa2a6116024c45ec0db305a7ab8a1d148",
+    "autonomous_research/AR01/computations/verify_core_a.py": "767774155a779c4c85958c16d27ee0207494edcc7bfffa136e4f8245336b17c1",
+    "autonomous_research/AR01/computations/verify_core_a_distribution.py": "49025cce5c1558f77c44873202f67d3ef32478ac7a3f565090aca6dd579e160a",
+    "autonomous_research/AR01/computations/verify_core_a_structure.py": "4eba8e306812498ac1dbce0af286e644e5f2bb0771334ef42fcae9d0b7e094e2",
+    "autonomous_research/AR01/computations/verify_split_coupling.py": "ac5317018c0f5232884fd22308dce23952b8904ceec8e6b409787c0d03f9778f",
+    "autonomous_research/AR01/tools/check_closed_formula_documents.py": "e79ec89cfcd83830aaa034d5385296097cfc8a032779480806e5d1a7842a125a",
+    "autonomous_research/AR01/tools/check_preservation.py": "fb50cd7ba02e1423020686252da35346d924d9f1ac9e6c6b83df2543b9577288",
+    "autonomous_research/AR01/tools/checkpoint.py": "0dcc6ac6b239bf7f2721802b2eb45ac0d561970439e553811e62a21afb867cfc",
+    "autonomous_research/AR01/tools/verify_remote_checkpoint.py": "cdf151e01c90bdfc6c625d753decf80e74b2dd131b97494c2ce9b9b43ea388d5"
+  },
+  "saved_result_source_input_hash_checks": 34,
+  "all_saved_result_summary_stdout_pairs_equal": true,
+  "fresh_runs": {
+    "checkpoint_continuation_proof_v1": {
+      "status": "PASS",
+      "byte_identical_result_files_to_deterministic_prior_run": "closed_formula_proof_v1",
+      "summary_sha256": "14137007ea37558e6840a66899209e204765090a6a2cc65a9d4cbc8e25a4d16c",
+      "distinct_objects_not_added_to_old_coverage": true
+    },
+    "checkpoint_continuation_scalar_qc_v1": {
+      "status": "PASS",
+      "byte_identical_result_files_to_deterministic_prior_run": "scalar_qc_v1",
+      "summary_sha256": "ab4ec150fbc440cdc0d7b9401cec5dabd9f3c968b30987fb22a91e1759785f23",
+      "distinct_objects_not_added_to_old_coverage": true
+    }
+  },
+  "prior_ZIPs_reopened_with_internal_manifest_hashes_verified": {
+    "AR01_M1_INTAKE.zip": "bc57c44ac2c6fbe38a8be76fd27665262a16fdec0238fd653c8bf21e66d8d72a",
+    "AR01_M2_CORE_A_CHECKS.zip": "18f355b5b4b0df79dc3eba911cd05536311886e4157750e7b5c863d87922ffef",
+    "AR01_M3_EMBEDDED_STRUCTURE.zip": "7d8d84020ad986e328d759e3a9c030f903d9cda4008fec67b10462eaa9633941",
+    "AR01_M4_SPLIT_COUPLING.zip": "85fab431331a867ad5ed7e1fe1bf34ed758623045cec0935a88e69241acf6333",
+    "AR01_M5_CLOSED_FORMULA_PROOF.zip": "d2e456902e9e0b56c38e351648c7cd883d023826005d57bd9bbd90989e2a8186",
+    "AR01_M6_SCALAR_QC_COMPARISON.zip": "aee3af08dd5faeac71debe972a38b1da77eb85a3da3db2112b3d2b926ea27f03"
+  },
+  "new_or_modified_markdown_local_links_checked": 42,
+  "bounded_new_text_credential_pattern_scan": "No matches; not exhaustive private-data certification",
+  "reviewed_modified_tracked_paths": [
+    "FINAL_CHANGELOG.md",
+    "GIT_PROGRESS_LOG.md",
+    "PHASE_COMPLETION_REGISTER.md",
+    "RESEARCH_PROGRESS_LOG.md",
+    "autonomous_research/AR01/README.md",
+    "autonomous_research/AR01/computations/README.md"
+  ],
+  "reviewed_untracked_paths_before_this_receipt_and_checkpoint": [
+    "autonomous_research/AR01/audits/CORE_A_CHECKPOINT_CONTINUATION_REPORT.md",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_proof_v1/noninvolution_control.json",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_proof_v1/stdout.txt",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_proof_v1/summary.json",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_proof_v1/trace_and_graph_cases.json",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_scalar_qc_v1/stdout.txt",
+    "autonomous_research/AR01/computations/results/checkpoint_continuation_scalar_qc_v1/summary.json",
+    "autonomous_research/AR01/evidence/A74F33F_CHECKPOINT_IDENTITY_V1.json",
+    "autonomous_research/AR01/evidence/A74F33F_CONTINUATION_ADOPTION_V1.json",
+    "autonomous_research/AR01/evidence/A74F33F_CONTINUATION_BASELINE_V1.json",
+    "autonomous_research/AR01/evidence/A74F33F_CONTINUATION_DOCUMENT_CHECKS_V1.json",
+    "autonomous_research/AR01/evidence/A74F33F_CONTINUATION_RECOVERY_V1.json",
+    "autonomous_research/AR01/evidence/A74F33F_REMOTE_BASELINE_VERIFICATION_V1.json"
+  ],
+  "scope_unchanged": true,
+  "full_q16_module_census_rerun": false,
+  "higher_q32_q64_module_census_claimed": false,
+  "independent_human_review_completed": false,
+  "external_originality_certified": false,
+  "scope": "Checkpoint/intake/proof/evidence preservation, fresh bounded regressions and document/source consistency only; not external human review, novelty or submission certification"
+}

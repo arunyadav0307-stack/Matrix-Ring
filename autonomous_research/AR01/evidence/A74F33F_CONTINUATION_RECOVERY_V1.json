@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "raw_environment_observed_at_utc": "2026-11-14T05:03:24.992799+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session-calendar or publication date",
+  "restored_branch": "arena/7d88376d-matrix-ring",
+  "requested_preserved_checkpoint": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+  "verified_fast_forward_from": "12db091726835cc6f264fb0f679afc759610c89a",
+  "verified_fast_forward_to": "48fb99064996c53bd3a60711ff666bf41559d64e",
+  "merge_command": "git merge --ff-only --no-stat FETCH_HEAD",
+  "merge_tool_exit_code": 0,
+  "tracked_worktree_and_index_clean_after_fast_forward": true,
+  "preexisting_files_hash_verified_unchanged": 2059,
+  "preexisting_bytes_hash_verified_unchanged": 110323589,
+  "deleted_checkpoint_paths": [],
+  "all_existing_checkpoint_path_changes_append_only": [
+    "FINAL_CHANGELOG.md",
+    "GIT_PROGRESS_LOG.md",
+    "PHASE_COMPLETION_REGISTER.md",
+    "RESEARCH_PROGRESS_LOG.md",
+    "autonomous_research/AR01/README.md",
+    "autonomous_research/AR01/computations/README.md",
+    "autonomous_research/AR01/phase1/DIRECTION_REASSESSMENT_AND_SPECIFICATION.md",
+    "autonomous_research/AR01/phase1/PRIMARY_SOURCE_READING_NOTES.md"
+  ],
+  "checkpoint_is_ancestor_of_restored_HEAD": true,
+  "history_rewrite_force_push_branch_switch_or_original_replacement": false,
+  "fetched_committed_proofs_and_results_are_restored_not_fresh_computation": true,
+  "cause_of_checkout_discontinuity": "Unknown",
+  "scope": "Verified exact-byte restoration and ancestor preservation. Any following fresh regression receives a new result label and is separate evidence."
+}

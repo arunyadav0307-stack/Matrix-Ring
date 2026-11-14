@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "all_six_required_documents_exist": true,
+  "documents": {
+    "phase3/CORE_A_CLOSED_FORMULA_THEOREM.md": {
+      "sha256": "6d42ef6b6b2caa1038b91ec28352a40880c7b00287e083217d0a12c972c7ae7d",
+      "lines": 93
+    },
+    "phase3/CORE_A_CLOSED_FORMULA_FULL_PROOF.md": {
+      "sha256": "9ba7f910bc19c88cc2eba055d42d6d2209b0183ea2d0241ccca98bb6b9efcae7",
+      "lines": 364
+    },
+    "audits/CORE_A_INDEPENDENT_PROOF_AUDIT.md": {
+      "sha256": "81f049ba197e51280918e582d814d03a6391eb393e1a8e465462482617ff8fa8",
+      "lines": 112
+    },
+    "audits/CORE_A_EXCEPTIONAL_CASES_REGISTER.md": {
+      "sha256": "d653a241f514ace7a2636c5d5a1ec3602037d87b36f957bbc2874b551241c455",
+      "lines": 40
+    },
+    "audits/CORE_A_THEORY_COMPUTATION_COMPARISON.md": {
+      "sha256": "94d3dfd59d745aa42b82d028364db128f46902d4ca112a756d00699c06d0b40c",
+      "lines": 85
+    },
+    "audits/CORE_A_PROOF_STATUS_REPORT.md": {
+      "sha256": "0b67be0e8eef4b5ef9ddfa434c79bb99f1efe6d7818cec1a00bc5d4ad13226ba",
+      "lines": 46
+    }
+  },
+  "proof_units_and_exact_audit_line_ranges": [
+    [
+      "P01",
+      9,
+      20
+    ],
+    [
+      "P02",
+      21,
+      34
+    ],
+    [
+      "P03",
+      35,
+      44
+    ],
+    [
+      "P04",
+      45,
+      58
+    ],
+    [
+      "P05",
+      59,
+      68
+    ],
+    [
+      "P06",
+      69,
+      83
+    ],
+    [
+      "P07",
+      84,
+      93
+    ],
+    [
+      "P08",
+      94,
+      112
+    ],
+    [
+      "P09",
+      113,
+      122
+    ],
+    [
+      "P10",
+      123,
+      140
+    ],
+    [
+      "P11",
+      141,
+      149
+    ],
+    [
+      "P12",
+      150,
+      161
+    ],
+    [
+      "P13",
+      162,
+      172
+    ],
+    [
+      "P14",
+      173,
+      187
+    ],
+    [
+      "P15",
+      188,
+      195
+    ],
+    [
+      "P16",
+      196,
+      208
+    ],
+    [
+      "P17",
+      209,
+      216
+    ],
+    [
+      "P18",
+      217,
+      230
+    ],
+    [
+      "P19",
+      231,
+      251
+    ],
+    [
+      "P20",
+      252,
+      263
+    ],
+    [
+      "P21",
+      264,
+      269
+    ],
+    [
+      "P22",
+      270,
+      283
+    ],
+    [
+      "P23",
+      284,
+      293
+    ],
+    [
+      "P24",
+      294,
+      304
+    ],
+    [
+      "P25",
+      305,
+      324
+    ],
+    [
+      "P26",
+      325,
+      335
+    ],
+    [
+      "P27",
+      336,
+      347
+    ],
+    [
+      "P28",
+      348,
+      355
+    ],
+    [
+      "P29",
+      356,
+      359
+    ],
+    [
+      "P30",
+      360,
+      364
+    ]
+  ],
+  "local_document_links_checked": 8,
+  "exact_five_variable_N2_assembly_identity": true,
+  "checker_sha256": "e79ec89cfcd83830aaa034d5385296097cfc8a032779480806e5d1a7842a125a",
+  "scope": "Textual/range/link/hash consistency and exact polynomial identity only, not automated logical proof or human review"
+}

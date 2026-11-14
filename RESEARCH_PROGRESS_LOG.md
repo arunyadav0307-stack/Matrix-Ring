@@ -63,3 +63,14 @@ M5's requested six-document proof milestone is completed and remotely verified a
 - **Decision:** keep A11+A13 as proved reproducible research output, but do not yet promote/select it as a sufficiently original Q1/main-paper contribution. Correct Morita/QC transport is not noncommutative novelty; closed scalar-QC aggregation and arbitrary-Frobenius geometry still require exact authentic closest-source/depth comparison. No forced application or cosmetic extension substitutes for it; no-paper remains legitimate.
 
 Specific next source targets, read ranges, pinned blobs and remaining evidence gates are in `A13_SCALAR_QC_REDUCTION_AND_CLOSEST_RESULT_COMPARISON.md`, `A13_NOVELTY_AND_DEPTH_M6.md` and the M6 reading-scope receipt. No Drive/off-host access, external contact, payment or submission occurred. M6 is a bounded continuation, not whole-phase or publication readiness.
+
+## AR01-M7 — preserve a74f33f and continue Core A in scope
+
+The requested checkpoint `a74f33f6c6fed1fd8315309815d9e98749c58026` is verified unchanged on GitHub and retained as an ancestor. Restored the already committed successor48fb990 by exact-byte, same-branch fast-forward after an unexplained base-only local checkout; all2,059 pre-existing files remain unchanged. No older theorem, output or source claim is retroactively rewritten.
+
+- Continued Core A from the existing proof/scalar-QC work; no ring/length/side/form/hypothesis or contribution claim changed. The six M5 finalisation files and M6 closest-source/QC assessment are byte-identical.
+- Fresh `checkpoint_continuation_proof_v1` PASS: all2,442 q4 global cases,176 selected q16 cases,4,608 basis/coefficient/shift checks,17 trace/graph cases, non-involutive double-dual control,5 exact identities and2,080 integer-only regressions. Existing666,084-case full q16 census was compared, not rerun. q32/q64 remain selected-twist geometry only.
+- Fresh `checkpoint_continuation_scalar_qc_v1` PASS: the same2,442 q4/176 q16 object sets through the A-valued scalar-QC route, complete hulls and176 exported duals, closure/top counts and1,152 basis/shift tests. Counts are not added to claim more distinct codes. Old stream hashes reproduced exactly.
+- Fresh document identity/range/link/N2-assembly checks PASS. Intake/frozen-input/old-result/source/ZIP integrity rechecked and recovery provenance recorded. These are bounded finite/integrity checks, not another independent human audit or universal proof-by-computation.
+
+The valid all-parameter marginal theorem remains the existing conventional proof. Scalar QC reformulation prevents using matrix packaging as novelty. Authentic closest-primary/version comparisons, sufficient paper depth, human review and publication/Q1 readiness remain open; this narrow checkpoint-continuation request does not expand or silently close those gates.

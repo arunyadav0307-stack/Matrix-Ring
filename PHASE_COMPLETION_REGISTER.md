@@ -93,3 +93,17 @@ M5 proof milestone synchronization is completed at `eef4ab6ab3461745dafadbcf4211
 |7–8|Do not promote the proved package as an original/Q1 manuscript/submission release yet|Scientific depth, source completeness, journal/declarations/permissions/readiness unestablished|
 
 Research backup/synchronization checks have only their stated integrity scope. Historical RF/claim/conflict/AD counts, old manuscripts and submitted-version/private facts remain untouched. M6 synchronization is pending at this pre-commit entry, to be verified after push without a routine approval question.
+
+## AR01-M7 — preserve a74f33f and continue Core A in scope
+
+**Specific continuation requirement fulfilled in scope:** a74f33f is verified as the unchanged original GitHub commit/tree and an ancestor of the restored successor48fb990. All2,059 intake files and prior committed research bytes are preserved; the unexpected local base-only checkout was remedied by reviewed same-branch fast-forward, not reset/reconstruction of the checkpoint.
+
+|Bounded requirement|Disposition|Limit retained|
+|---|---|---|
+|Preserve requested checkpoint|PASS: exact commit/tree identity and2,156 remote blobs/modes verified|No new branch/tag/history replacement; original checkpoint remains reachable|
+|Continue existing Core A work|PASS: restored committed proof/QC successors and executed fresh proof/global/scalar regressions|No parameter, theorem, application or research-direction expansion|
+|Maintain proof/evidence separation|PASS: six original finalisation files unchanged; both new execution labels preserved separately|Same objects rechecked; q16 full census not rerun; higher fields geometry only|
+|Preserve research originals|PASS:2,059 files/110,323,589 bytes unchanged, old evidence/archive hashes retained|Integrity is not mathematical or novelty certification|
+|Publication promotion|UNCHANGED: not certified|Closest-source completeness, originality/depth and external human review remain open|
+
+M7 is a bounded reproducibility/preservation checkpoint, not whole-phase completion or a manuscript/submission release. Commit/push is pending at this pre-commit entry and must be followed by explicit remote-ref/all-file verification. Historical issue/seal/version/private-fact registers remain untouched.

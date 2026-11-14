@@ -49,3 +49,9 @@ M4 is synchronized at `a74f33f6c6fed1fd8315309815d9e98749c58026`; M5's current s
 M5's six-document proof checkpoint is pushed and remotely verified at `eef4ab6ab3461745dafadbcf4211aa79286344b6` (all2,196 blobs/modes,46 paths). The [new exact scalar QC/source crosswalk](phase1/A13_SCALAR_QC_REDUCTION_AND_CLOSEST_RESULT_COMPARISON.md) proves that the whole family and its original-global hulls are scalar A-valued length4/index2 QC theory. Matrix-ring packaging/ceil-by2 is not a novelty argument. [Updated novelty/depth audit](audits/A13_NOVELTY_AND_DEPTH_M6.md) retains the valid result but withholds original/Q1-paper promotion pending authentic closest-source comparison.
 
 The fresh scalar-QC/original-global route passes all2,442 q4 and176 selected q16 cases plus1,152 basis/shift tests. Exact source-read ranges and unverified mirror/primary distinctions are recorded; all six proof records and old results remain unchanged. Specific Hermitian–quadric sources are comparison leads, not claimed as fully read or novel gaps. No external human review or physical/submission readiness is asserted.
+
+## AR01-M7 — preserve a74f33f and continue Core A in scope
+
+The [checkpoint continuation report](audits/CORE_A_CHECKPOINT_CONTINUATION_REPORT.md) verifies that original GitHub checkpoint `a74f33f6c6fed1fd8315309815d9e98749c58026` remains unchanged and ancestral. The committed M5/M6 successors were safely restored by same-branch fast-forward after an unexplained base-only local checkout; all2,059 existing originals remain byte-identical.
+
+Fresh proof/global and scalar-QC regressions PASS in new result directories, reproducing prior stream hashes without editing old outputs or six final proof records. Core A hypotheses/scope and the open originality/human-review/publication gates are unchanged. The report distinguishes restored old evidence from new executions; a research backup is not a submission package.

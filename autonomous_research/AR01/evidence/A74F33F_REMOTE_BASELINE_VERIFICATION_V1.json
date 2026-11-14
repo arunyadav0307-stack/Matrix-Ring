@@ -1,0 +1,25 @@
+{
+  "raw_environment_observed_at_utc": "2026-11-14T05:02:55.500357+00:00",
+  "timestamp_kind": "Raw sandbox observation, not normalized session-calendar or publication date",
+  "status": "PASS",
+  "branch": "arena/7d88376d-matrix-ring",
+  "checkpoint_ancestor_of_fetched_remote_successor": true,
+  "remote_ref_matched_before_and_after_checks": true,
+  "verified_trees": [
+    {
+      "commit": "a74f33f6c6fed1fd8315309815d9e98749c58026",
+      "root_tree_oid": "e01bab242916b84b80caa6de390d47f6e41e7348",
+      "blob_count": 2156,
+      "all_blob_paths_oids_and_modes_equal_GitHub": true,
+      "github_tree_response_sha256": "13fc5496162df90173c00096f7de837d8f12376279dd067b5af9941392511c3a"
+    },
+    {
+      "commit": "48fb99064996c53bd3a60711ff666bf41559d64e",
+      "root_tree_oid": "64efaa5812e13a9f7cb06f5d07050587ad28c0ce",
+      "blob_count": 2213,
+      "all_blob_paths_oids_and_modes_equal_GitHub": true,
+      "github_tree_response_sha256": "4660a4134ad667ca7315efd5c98ce3a6209634b67e7fef1ab51239f9662a3c8a"
+    }
+  ],
+  "scope": "Checkpoint identity/reachability and full remote Git trees, not mathematical proof or novelty"
+}
