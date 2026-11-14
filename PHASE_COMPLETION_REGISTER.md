@@ -107,3 +107,7 @@ Research backup/synchronization checks have only their stated integrity scope. H
 |Publication promotion|UNCHANGED: not certified|Closest-source completeness, originality/depth and external human review remain open|
 
 M7 is a bounded reproducibility/preservation checkpoint, not whole-phase completion or a manuscript/submission release. Commit/push is pending at this pre-commit entry and must be followed by explicit remote-ref/all-file verification. Historical issue/seal/version/private-fact registers remain untouched.
+
+## AR01-M7 — verified completion receipt
+
+The specific requirement **“continue Core A from a74f33f and preserve that checkpoint, without scope expansion”** is completed and synchronized at `bab577437a94dc3324b589699c0ce4bf8008a0e3`. The remote ref, all2,230 blobs/modes and23 expected continuation paths match. Original a74f33f remains unchanged/ancestral and all originals/old evidence are intact. Previous M7 pending entries are historical pre-commit states. This closes the bounded continuation/preservation requirement only, not any open originality/depth, external-human-review or submission-readiness gate.

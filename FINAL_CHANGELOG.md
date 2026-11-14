@@ -69,3 +69,8 @@ Session calendar **2026-11-12 UTC**. Previous M2 commit/push verified: `37d53afb
 - Rechecked all six final proof-document hashes/ranges/links and exact N2 assembly; preserved every older source/result/backup and frozen input. Existing q16 full census is read, not rerun; q32/q64 remain geometry only.
 - Added a checkpoint-continuation report and precise recovery/identity/integrity receipts; appended four logs and the two AR01 READMEs. Original root README and historical research registers remain untouched.
 - Kept all theorem hypotheses, original pairing and novelty/publication gates unchanged. M7's bounded research ZIP is reopened/hash-verified; its payload synchronization is pending in this pre-commit entry and is explicitly checked after push on the same branch.
+
+## AR01-M7 — verified completion receipt
+
+- Recorded actual M7 commit/push/remote verification: `bab577437a94dc3324b589699c0ce4bf8008a0e3`, all2,230 blobs/modes and23 expected paths. Archived the post-push receipt and appended actual-success records without overwriting pre-commit history.
+- Confirmed the original a74f33f checkpoint remains unchanged/ancestral, all originals and prior scientific bytes remain preserved, and the Core A scope is unchanged. Receipt-only documentation adds no mathematical/publication claim. The M7 research ZIP remains immutable with its original verified hash.

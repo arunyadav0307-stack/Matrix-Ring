@@ -74,3 +74,7 @@ The requested checkpoint `a74f33f6c6fed1fd8315309815d9e98749c58026` is verified 
 - Fresh document identity/range/link/N2-assembly checks PASS. Intake/frozen-input/old-result/source/ZIP integrity rechecked and recovery provenance recorded. These are bounded finite/integrity checks, not another independent human audit or universal proof-by-computation.
 
 The valid all-parameter marginal theorem remains the existing conventional proof. Scalar QC reformulation prevents using matrix packaging as novelty. Authentic closest-primary/version comparisons, sufficient paper depth, human review and publication/Q1 readiness remain open; this narrow checkpoint-continuation request does not expand or silently close those gates.
+
+## AR01-M7 — verified completion receipt
+
+The requested in-scope continuation from preserved a74f33f is completed at `bab577437a94dc3324b589699c0ce4bf8008a0e3`, with all2,230 remote blobs/modes and23 expected paths verified. Core A theorem/scalar-QC scope is unchanged; both fresh reproducibility runs pass, original results/proofs/intake bytes are preserved, and restored-vs-new evidence is documented. Post-push receipt/completion notes are documentary follow-up, not another theorem, independent human review, novelty clearance or publication promotion.

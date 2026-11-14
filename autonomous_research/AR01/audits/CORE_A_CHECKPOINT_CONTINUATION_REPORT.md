@@ -65,3 +65,9 @@ All intake bytes, the19 frozen pre-finalisation inputs, original six-document ha
 `AR01_M7_CHECKPOINT_CONTINUATION.zip` is a bounded research backup of AR01 plus the four progress logs and ignore file, reopened and checked against its internal SHA-256 manifest. It is not a manuscript/submission archive. Its sidecar verification records the actual final archive hash and coverage.
 
 The continuation payload is committed/pushed only on the existing fixed branch, without force-push, after reviewed staging. The containing commit cannot embed its own hash. Post-push remote-ref/all-blob/mode/expected-file verification and the final response identify that successor; this pre-commit report does not invent a self-referential hash or prematurely claim its push.
+
+## 6. Actual completion, appended after push
+
+The scientific/provenance continuation payload was committed and pushed as **`bab577437a94dc3324b589699c0ce4bf8008a0e3`**. The [post-push receipt](../evidence/A74F33F_CONTINUATION_REMOTE_RECEIPT_V1.json) verifies the fixed branch ref before/after comparison, all **2,230** local/remote blob paths/OIDs/modes and all **23** expected continuation paths. There are no deleted tracked paths. Original a74f33f remains unchanged and ancestral.
+
+This actual-success entry supersedes the pre-commit synchronization wording above. The receipt and this addendum were written **after** the immutable research ZIP; they are archived in a small documentary follow-up rather than silently modifying that ZIP. Its verified SHA-256 remains `d97052012c462b4c072c8b56fd17f5a5aa7a599196f8c2699bf44ee8884ffc63`. No new mathematical scope, external review or novelty claim follows. The final receipt-only commit is identified/verified through Git history, not a fabricated self-hash inside this document.
